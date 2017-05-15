@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibLicitacion", "LibLicitacion\LibLicitacion.csproj", "{48AD9FD2-4856-4A38-93EC-D34AD2E5D06B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CtrlsLicitacion", "CtrlsLicitacion\CtrlsLicitacion.csproj", "{47294A46-A057-4009-99D3-A3E8EA6EE0FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppLicitaciones", "AppLicitaciones\AppLicitaciones.csproj", "{DE4EC9E2-1D95-44BE-AAB8-76CEAB355063}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48AD9FD2-4856-4A38-93EC-D34AD2E5D06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48AD9FD2-4856-4A38-93EC-D34AD2E5D06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48AD9FD2-4856-4A38-93EC-D34AD2E5D06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48AD9FD2-4856-4A38-93EC-D34AD2E5D06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47294A46-A057-4009-99D3-A3E8EA6EE0FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47294A46-A057-4009-99D3-A3E8EA6EE0FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47294A46-A057-4009-99D3-A3E8EA6EE0FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47294A46-A057-4009-99D3-A3E8EA6EE0FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE4EC9E2-1D95-44BE-AAB8-76CEAB355063}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE4EC9E2-1D95-44BE-AAB8-76CEAB355063}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE4EC9E2-1D95-44BE-AAB8-76CEAB355063}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE4EC9E2-1D95-44BE-AAB8-76CEAB355063}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
