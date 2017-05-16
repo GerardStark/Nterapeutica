@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_ClavesReferencias));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -40,21 +39,14 @@
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idclaveregistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claverefcodDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadventaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrosclavesreferenciasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
-            this.registros_claves_referenciasTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.registros_claves_referenciasTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrosclavesreferenciasBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -141,103 +133,69 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idclaveregistroDataGridViewTextBoxColumn,
-            this.claverefcodDataGridViewTextBoxColumn,
-            this.descripcionDataGridViewTextBoxColumn,
-            this.unidadventaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.registrosclavesreferenciasBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(58, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(694, 661);
             this.dataGridView1.TabIndex = 1;
             // 
-            // idclaveregistroDataGridViewTextBoxColumn
-            // 
-            this.idclaveregistroDataGridViewTextBoxColumn.DataPropertyName = "id_clave_registro";
-            this.idclaveregistroDataGridViewTextBoxColumn.HeaderText = "#";
-            this.idclaveregistroDataGridViewTextBoxColumn.Name = "idclaveregistroDataGridViewTextBoxColumn";
-            this.idclaveregistroDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idclaveregistroDataGridViewTextBoxColumn.Width = 50;
-            // 
-            // claverefcodDataGridViewTextBoxColumn
-            // 
-            this.claverefcodDataGridViewTextBoxColumn.DataPropertyName = "clave_ref_cod";
-            this.claverefcodDataGridViewTextBoxColumn.HeaderText = "Clave/Codigo";
-            this.claverefcodDataGridViewTextBoxColumn.Name = "claverefcodDataGridViewTextBoxColumn";
-            this.claverefcodDataGridViewTextBoxColumn.ReadOnly = true;
-            this.claverefcodDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descripcionDataGridViewTextBoxColumn.Width = 300;
-            // 
-            // unidadventaDataGridViewTextBoxColumn
-            // 
-            this.unidadventaDataGridViewTextBoxColumn.DataPropertyName = "unidad_venta";
-            this.unidadventaDataGridViewTextBoxColumn.HeaderText = "Unidad de Venta";
-            this.unidadventaDataGridViewTextBoxColumn.Name = "unidadventaDataGridViewTextBoxColumn";
-            this.unidadventaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.unidadventaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // registrosclavesreferenciasBindingSource
-            // 
-            this.registrosclavesreferenciasBindingSource.DataMember = "registros_claves_referencias";
-            this.registrosclavesreferenciasBindingSource.DataSource = this.licitacionesDataSet;
-            // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // registros_claves_referenciasTableAdapter
-            // 
-            this.registros_claves_referenciasTableAdapter.ClearBeforeFill = true;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(823, 99);
+            this.label1.Location = new System.Drawing.Point(803, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
+            this.label1.Size = new System.Drawing.Size(184, 20);
             this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
+            this.label1.Text = "Clave/Codigo/Referencia";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(943, 99);
+            this.textBox1.Location = new System.Drawing.Point(807, 109);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
+            this.textBox1.Size = new System.Drawing.Size(308, 26);
             this.textBox1.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(827, 214);
+            this.label2.Location = new System.Drawing.Point(803, 138);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.Size = new System.Drawing.Size(96, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
+            this.label2.Text = "Descripcion:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(943, 214);
+            this.textBox2.Location = new System.Drawing.Point(807, 161);
+            this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
+            this.textBox2.Size = new System.Drawing.Size(308, 89);
             this.textBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(803, 253);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Unidad de Venta:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(807, 277);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(308, 26);
+            this.textBox3.TabIndex = 7;
             // 
             // Registros_ClavesReferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 685);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
@@ -248,12 +206,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Registros_ClavesReferencias";
             this.Text = "Panel de las Rerefencias, Claves o Codigos de los Registros Sanitarios";
-            this.Load += new System.EventHandler(this.Registros_ClavesReferencias_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrosclavesreferenciasBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,16 +226,11 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripButton btn_reg_editar;
-        private LicitacionesDataSet licitacionesDataSet;
-        private System.Windows.Forms.BindingSource registrosclavesreferenciasBindingSource;
-        private LicitacionesDataSetTableAdapters.registros_claves_referenciasTableAdapter registros_claves_referenciasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idclaveregistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn claverefcodDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadventaDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox3;
     }
 }

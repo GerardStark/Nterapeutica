@@ -16,5 +16,17 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
+
+        private void btn_reg_guardar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+        }
+
+        private void btn_reg_descartar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }

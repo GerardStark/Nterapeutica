@@ -282,6 +282,7 @@
             this.btn_reg_descartar.Name = "btn_reg_descartar";
             this.btn_reg_descartar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_descartar.Text = "Descartar";
+            this.btn_reg_descartar.Click += new System.EventHandler(this.btn_reg_descartar_Click);
             // 
             // btn_reg_guardar
             // 
@@ -292,6 +293,7 @@
             this.btn_reg_guardar.Name = "btn_reg_guardar";
             this.btn_reg_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_guardar.Text = "Guardar";
+            this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
             // button1
             // 

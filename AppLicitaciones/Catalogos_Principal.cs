@@ -16,12 +16,5 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
-
-        private void Catalogos_Principal_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.catalogos_productos' Puede moverla o quitarla según sea necesario.
-            this.catalogos_productosTableAdapter.Fill(this.licitacionesDataSet.catalogos_productos);
-
-        }
     }
 }

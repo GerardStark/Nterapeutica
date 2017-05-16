@@ -16,12 +16,5 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
-
-        private void FTD_Principal_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.fabricantes_titulares_distribuidores' Puede moverla o quitarla según sea necesario.
-            this.fabricantes_titulares_distribuidoresTableAdapter.Fill(this.licitacionesDataSet.fabricantes_titulares_distribuidores);
-
-        }
     }
 }

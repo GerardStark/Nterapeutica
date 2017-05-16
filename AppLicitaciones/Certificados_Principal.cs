@@ -16,12 +16,5 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
-
-        private void Certificados_Principal_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.certificados_calidad' Puede moverla o quitarla según sea necesario.
-            this.certificados_calidadTableAdapter.Fill(this.licitacionesDataSet.certificados_calidad);
-
-        }
     }
 }

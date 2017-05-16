@@ -16,12 +16,5 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
-
-        private void Cucop_Principal_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.cucop' Puede moverla o quitarla según sea necesario.
-            this.cucopTableAdapter.Fill(this.licitacionesDataSet.cucop);
-
-        }
     }
 }

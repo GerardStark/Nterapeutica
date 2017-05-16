@@ -11,7 +11,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public String con = @"Data Source=DESKTOP-D0FVDPE\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";
+        public String con = @"Data Source=APOYO3-LAP\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)

@@ -17,16 +17,16 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             //Verifica que el usuario sea administrador para poder entrar al menu de Herramientas de Admins.
-            bool admin = mc.ChecarTipoUsuario(tipo_usuario);
-            if (admin == true)
-            {
-                herramientasAdminToolStripMenuItem.Enabled = true;
-            }
-            else
-            {
-                MessageBox.Show("Necesitas ser Administrador para acceder a este modulo.");
-                herramientasAdminToolStripMenuItem.Enabled = false;
-            }
+            //bool admin = mc.ChecarTipoUsuario(tipo_usuario);
+            //if (admin == true)
+            //{
+            //    herramientasAdminToolStripMenuItem.Enabled = true;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Necesitas ser Administrador para acceder a este modulo.");
+            //    herramientasAdminToolStripMenuItem.Enabled = false;
+            //}
         }
         int tipo_usuario = Login.usertipo;
         MainConfig mc = new MainConfig();

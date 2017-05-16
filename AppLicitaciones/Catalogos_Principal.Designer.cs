@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_Principal));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
@@ -39,22 +38,11 @@
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idcatalogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombrecatalogoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.añoplublicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.especialidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fabricanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idiomaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catalogosproductosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
-            this.catalogos_productosTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.catalogos_productosTableAdapter();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catalogosproductosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -143,82 +131,6 @@
             this.toolStripButton7.Size = new System.Drawing.Size(88, 54);
             this.toolStripButton7.Text = "toolStripButton7";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcatalogoDataGridViewTextBoxColumn,
-            this.nombrecatalogoDataGridViewTextBoxColumn,
-            this.añoplublicacionDataGridViewTextBoxColumn,
-            this.especialidadDataGridViewTextBoxColumn,
-            this.fabricanteDataGridViewTextBoxColumn,
-            this.idiomaDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.catalogosproductosBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(95, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1243, 705);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // idcatalogoDataGridViewTextBoxColumn
-            // 
-            this.idcatalogoDataGridViewTextBoxColumn.DataPropertyName = "id_catalogo";
-            this.idcatalogoDataGridViewTextBoxColumn.HeaderText = "#";
-            this.idcatalogoDataGridViewTextBoxColumn.Name = "idcatalogoDataGridViewTextBoxColumn";
-            this.idcatalogoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombrecatalogoDataGridViewTextBoxColumn
-            // 
-            this.nombrecatalogoDataGridViewTextBoxColumn.DataPropertyName = "nombre_catalogo";
-            this.nombrecatalogoDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombrecatalogoDataGridViewTextBoxColumn.Name = "nombrecatalogoDataGridViewTextBoxColumn";
-            this.nombrecatalogoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // añoplublicacionDataGridViewTextBoxColumn
-            // 
-            this.añoplublicacionDataGridViewTextBoxColumn.DataPropertyName = "año_plublicacion";
-            this.añoplublicacionDataGridViewTextBoxColumn.HeaderText = "Año Publicación";
-            this.añoplublicacionDataGridViewTextBoxColumn.Name = "añoplublicacionDataGridViewTextBoxColumn";
-            this.añoplublicacionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // especialidadDataGridViewTextBoxColumn
-            // 
-            this.especialidadDataGridViewTextBoxColumn.DataPropertyName = "especialidad";
-            this.especialidadDataGridViewTextBoxColumn.HeaderText = "Especialidad";
-            this.especialidadDataGridViewTextBoxColumn.Name = "especialidadDataGridViewTextBoxColumn";
-            this.especialidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fabricanteDataGridViewTextBoxColumn
-            // 
-            this.fabricanteDataGridViewTextBoxColumn.DataPropertyName = "fabricante";
-            this.fabricanteDataGridViewTextBoxColumn.HeaderText = "Fabricante";
-            this.fabricanteDataGridViewTextBoxColumn.Name = "fabricanteDataGridViewTextBoxColumn";
-            this.fabricanteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // idiomaDataGridViewTextBoxColumn
-            // 
-            this.idiomaDataGridViewTextBoxColumn.DataPropertyName = "idioma";
-            this.idiomaDataGridViewTextBoxColumn.HeaderText = "Idioma";
-            this.idiomaDataGridViewTextBoxColumn.Name = "idiomaDataGridViewTextBoxColumn";
-            this.idiomaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // catalogosproductosBindingSource
-            // 
-            this.catalogosproductosBindingSource.DataMember = "catalogos_productos";
-            this.catalogosproductosBindingSource.DataSource = this.licitacionesDataSet;
-            // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // catalogos_productosTableAdapter
-            // 
-            this.catalogos_productosTableAdapter.ClearBeforeFill = true;
-            // 
             // toolStripButton2
             // 
             this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -234,6 +146,17 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(88, 15);
             this.toolStripLabel3.Text = "Visualizar";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(95, 12);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(1243, 705);
+            this.dataGridView1.TabIndex = 2;
+            // 
             // Catalogos_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -245,12 +168,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalogos_Principal";
             this.Text = "Panel Principal de Catálogos de Productos";
-            this.Load += new System.EventHandler(this.Catalogos_Principal_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.catalogosproductosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,15 +188,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private LicitacionesDataSet licitacionesDataSet;
-        private System.Windows.Forms.BindingSource catalogosproductosBindingSource;
-        private LicitacionesDataSetTableAdapters.catalogos_productosTableAdapter catalogos_productosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcatalogoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombrecatalogoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn añoplublicacionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn especialidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fabricanteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idiomaDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }

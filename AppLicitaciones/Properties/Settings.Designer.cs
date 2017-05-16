@@ -33,5 +33,16 @@ namespace AppLicitaciones.Properties {
                 return ((string)(this["LicitacionesConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=APOYO3-LAP\\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Securit" +
+            "y=True")]
+        public string LicitacionesCS {
+            get {
+                return ((string)(this["LicitacionesCS"]));
+            }
+        }
     }
 }

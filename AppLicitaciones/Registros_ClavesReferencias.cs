@@ -16,12 +16,5 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
-
-        private void Registros_ClavesReferencias_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.registros_claves_referencias' Puede moverla o quitarla según sea necesario.
-            this.registros_claves_referenciasTableAdapter.Fill(this.licitacionesDataSet.registros_claves_referencias);
-
-        }
     }
 }

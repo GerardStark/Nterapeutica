@@ -89,11 +89,6 @@
     <Compile Include="FTD_Principal.Designer.cs">
       <DependentUpon>FTD_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="LicitacionesDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LicitacionesDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Licitacion_Actuales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,17 +223,6 @@
     <EmbeddedResource Include="Registro_Editar.resx">
       <DependentUpon>Registro_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="LicitacionesDataSet.xsc">
-      <DependentUpon>LicitacionesDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LicitacionesDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LicitacionesDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LicitacionesDataSet.xss">
-      <DependentUpon>LicitacionesDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

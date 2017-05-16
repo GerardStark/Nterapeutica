@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_Principal));
             this.tt_registros = new System.Windows.Forms.ToolStrip();
             this.btn_reg_nuevo = new System.Windows.Forms.ToolStripButton();
@@ -39,29 +38,22 @@
             this.btn_reg_claves = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.btn_reg_prorrogas = new System.Windows.Forms.ToolStripButton();
-            this.DGVRegistros = new System.Windows.Forms.DataGridView();
-            this.idregistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroregistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numerosolicitudDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titularDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.denomdistintivaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.denomgenericaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fabricanteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nacionalidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tratadocomercioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaemisionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechavencimientoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registrossanitariosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
-            this.registros_sanitariosTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.registros_sanitariosTableAdapter();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.DGVRegistros = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nacColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tt_registros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrossanitariosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tt_registros
@@ -110,6 +102,7 @@
             this.btn_reg_buscar.Name = "btn_reg_buscar";
             this.btn_reg_buscar.Size = new System.Drawing.Size(88, 54);
             this.btn_reg_buscar.Text = "toolStripButton4";
+            this.btn_reg_buscar.Click += new System.EventHandler(this.btn_reg_buscar_Click);
             // 
             // toolStripLabel5
             // 
@@ -151,139 +144,6 @@
             this.btn_reg_prorrogas.Size = new System.Drawing.Size(88, 54);
             this.btn_reg_prorrogas.Text = "toolStripButton7";
             // 
-            // DGVRegistros
-            // 
-            this.DGVRegistros.AllowUserToAddRows = false;
-            this.DGVRegistros.AllowUserToDeleteRows = false;
-            this.DGVRegistros.AutoGenerateColumns = false;
-            this.DGVRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idregistroDataGridViewTextBoxColumn,
-            this.tipoDataGridViewTextBoxColumn,
-            this.numeroregistroDataGridViewTextBoxColumn,
-            this.numerosolicitudDataGridViewTextBoxColumn,
-            this.titularDataGridViewTextBoxColumn,
-            this.denomdistintivaDataGridViewTextBoxColumn,
-            this.denomgenericaDataGridViewTextBoxColumn,
-            this.fabricanteDataGridViewTextBoxColumn,
-            this.marcaDataGridViewTextBoxColumn,
-            this.nacionalidadDataGridViewTextBoxColumn,
-            this.tratadocomercioDataGridViewTextBoxColumn,
-            this.fechaemisionDataGridViewTextBoxColumn,
-            this.fechavencimientoDataGridViewTextBoxColumn});
-            this.DGVRegistros.DataSource = this.registrossanitariosBindingSource;
-            this.DGVRegistros.Location = new System.Drawing.Point(95, 13);
-            this.DGVRegistros.Name = "DGVRegistros";
-            this.DGVRegistros.ReadOnly = true;
-            this.DGVRegistros.RowHeadersVisible = false;
-            this.DGVRegistros.Size = new System.Drawing.Size(1243, 704);
-            this.DGVRegistros.TabIndex = 1;
-            // 
-            // idregistroDataGridViewTextBoxColumn
-            // 
-            this.idregistroDataGridViewTextBoxColumn.DataPropertyName = "id_registro";
-            this.idregistroDataGridViewTextBoxColumn.HeaderText = "#";
-            this.idregistroDataGridViewTextBoxColumn.Name = "idregistroDataGridViewTextBoxColumn";
-            this.idregistroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numeroregistroDataGridViewTextBoxColumn
-            // 
-            this.numeroregistroDataGridViewTextBoxColumn.DataPropertyName = "numero_registro";
-            this.numeroregistroDataGridViewTextBoxColumn.HeaderText = "Numero";
-            this.numeroregistroDataGridViewTextBoxColumn.Name = "numeroregistroDataGridViewTextBoxColumn";
-            this.numeroregistroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // numerosolicitudDataGridViewTextBoxColumn
-            // 
-            this.numerosolicitudDataGridViewTextBoxColumn.DataPropertyName = "numero_solicitud";
-            this.numerosolicitudDataGridViewTextBoxColumn.HeaderText = "Solicitud";
-            this.numerosolicitudDataGridViewTextBoxColumn.Name = "numerosolicitudDataGridViewTextBoxColumn";
-            this.numerosolicitudDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // titularDataGridViewTextBoxColumn
-            // 
-            this.titularDataGridViewTextBoxColumn.DataPropertyName = "titular";
-            this.titularDataGridViewTextBoxColumn.HeaderText = "Titular";
-            this.titularDataGridViewTextBoxColumn.Name = "titularDataGridViewTextBoxColumn";
-            this.titularDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // denomdistintivaDataGridViewTextBoxColumn
-            // 
-            this.denomdistintivaDataGridViewTextBoxColumn.DataPropertyName = "denom_distintiva";
-            this.denomdistintivaDataGridViewTextBoxColumn.HeaderText = "Distintiva";
-            this.denomdistintivaDataGridViewTextBoxColumn.Name = "denomdistintivaDataGridViewTextBoxColumn";
-            this.denomdistintivaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // denomgenericaDataGridViewTextBoxColumn
-            // 
-            this.denomgenericaDataGridViewTextBoxColumn.DataPropertyName = "denom_generica";
-            this.denomgenericaDataGridViewTextBoxColumn.HeaderText = "Generica";
-            this.denomgenericaDataGridViewTextBoxColumn.Name = "denomgenericaDataGridViewTextBoxColumn";
-            this.denomgenericaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fabricanteDataGridViewTextBoxColumn
-            // 
-            this.fabricanteDataGridViewTextBoxColumn.DataPropertyName = "fabricante";
-            this.fabricanteDataGridViewTextBoxColumn.HeaderText = "Fabricante";
-            this.fabricanteDataGridViewTextBoxColumn.Name = "fabricanteDataGridViewTextBoxColumn";
-            this.fabricanteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // marcaDataGridViewTextBoxColumn
-            // 
-            this.marcaDataGridViewTextBoxColumn.DataPropertyName = "marca";
-            this.marcaDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.marcaDataGridViewTextBoxColumn.Name = "marcaDataGridViewTextBoxColumn";
-            this.marcaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nacionalidadDataGridViewTextBoxColumn
-            // 
-            this.nacionalidadDataGridViewTextBoxColumn.DataPropertyName = "nacionalidad";
-            this.nacionalidadDataGridViewTextBoxColumn.HeaderText = "Nacionalidad";
-            this.nacionalidadDataGridViewTextBoxColumn.Name = "nacionalidadDataGridViewTextBoxColumn";
-            this.nacionalidadDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tratadocomercioDataGridViewTextBoxColumn
-            // 
-            this.tratadocomercioDataGridViewTextBoxColumn.DataPropertyName = "tratado_comercio";
-            this.tratadocomercioDataGridViewTextBoxColumn.HeaderText = "TLC";
-            this.tratadocomercioDataGridViewTextBoxColumn.Name = "tratadocomercioDataGridViewTextBoxColumn";
-            this.tratadocomercioDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechaemisionDataGridViewTextBoxColumn
-            // 
-            this.fechaemisionDataGridViewTextBoxColumn.DataPropertyName = "fecha_emision";
-            this.fechaemisionDataGridViewTextBoxColumn.HeaderText = "Emision";
-            this.fechaemisionDataGridViewTextBoxColumn.Name = "fechaemisionDataGridViewTextBoxColumn";
-            this.fechaemisionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechavencimientoDataGridViewTextBoxColumn
-            // 
-            this.fechavencimientoDataGridViewTextBoxColumn.DataPropertyName = "fecha_vencimiento";
-            this.fechavencimientoDataGridViewTextBoxColumn.HeaderText = "Vencimiento";
-            this.fechavencimientoDataGridViewTextBoxColumn.Name = "fechavencimientoDataGridViewTextBoxColumn";
-            this.fechavencimientoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // registrossanitariosBindingSource
-            // 
-            this.registrossanitariosBindingSource.DataMember = "registros_sanitarios";
-            this.registrossanitariosBindingSource.DataSource = this.licitacionesDataSet;
-            // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // registros_sanitariosTableAdapter
-            // 
-            this.registros_sanitariosTableAdapter.ClearBeforeFill = true;
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -299,6 +159,102 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(88, 15);
             this.toolStripLabel3.Text = "Visualizar";
             // 
+            // DGVRegistros
+            // 
+            this.DGVRegistros.AllowUserToAddRows = false;
+            this.DGVRegistros.AllowUserToDeleteRows = false;
+            this.DGVRegistros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVRegistros.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
+            this.numColumn,
+            this.solColumn,
+            this.tipoColumn,
+            this.titularColumn,
+            this.fabrColumn,
+            this.marcaColumn,
+            this.nacColumn,
+            this.tlcColumn,
+            this.emisionColumn,
+            this.vencimientoColumn});
+            this.DGVRegistros.Location = new System.Drawing.Point(95, 13);
+            this.DGVRegistros.Name = "DGVRegistros";
+            this.DGVRegistros.ReadOnly = true;
+            this.DGVRegistros.Size = new System.Drawing.Size(1243, 704);
+            this.DGVRegistros.TabIndex = 1;
+            // 
+            // idColumn
+            // 
+            this.idColumn.Frozen = true;
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            // 
+            // numColumn
+            // 
+            this.numColumn.HeaderText = "Numero";
+            this.numColumn.Name = "numColumn";
+            this.numColumn.ReadOnly = true;
+            this.numColumn.Width = 125;
+            // 
+            // solColumn
+            // 
+            this.solColumn.HeaderText = "Solicitud";
+            this.solColumn.Name = "solColumn";
+            this.solColumn.ReadOnly = true;
+            this.solColumn.Width = 125;
+            // 
+            // tipoColumn
+            // 
+            this.tipoColumn.HeaderText = "Tipo";
+            this.tipoColumn.Name = "tipoColumn";
+            this.tipoColumn.ReadOnly = true;
+            // 
+            // titularColumn
+            // 
+            this.titularColumn.HeaderText = "Titular";
+            this.titularColumn.Name = "titularColumn";
+            this.titularColumn.ReadOnly = true;
+            this.titularColumn.Width = 125;
+            // 
+            // fabrColumn
+            // 
+            this.fabrColumn.HeaderText = "Fabricante";
+            this.fabrColumn.Name = "fabrColumn";
+            this.fabrColumn.ReadOnly = true;
+            this.fabrColumn.Width = 125;
+            // 
+            // marcaColumn
+            // 
+            this.marcaColumn.HeaderText = "Marca";
+            this.marcaColumn.Name = "marcaColumn";
+            this.marcaColumn.ReadOnly = true;
+            this.marcaColumn.Width = 125;
+            // 
+            // nacColumn
+            // 
+            this.nacColumn.HeaderText = "Nacionalidad";
+            this.nacColumn.Name = "nacColumn";
+            this.nacColumn.ReadOnly = true;
+            this.nacColumn.Width = 75;
+            // 
+            // tlcColumn
+            // 
+            this.tlcColumn.HeaderText = "TLC";
+            this.tlcColumn.Name = "tlcColumn";
+            this.tlcColumn.ReadOnly = true;
+            // 
+            // emisionColumn
+            // 
+            this.emisionColumn.HeaderText = "Emision";
+            this.emisionColumn.Name = "emisionColumn";
+            this.emisionColumn.ReadOnly = true;
+            // 
+            // vencimientoColumn
+            // 
+            this.vencimientoColumn.HeaderText = "Vencimiento";
+            this.vencimientoColumn.Name = "vencimientoColumn";
+            this.vencimientoColumn.ReadOnly = true;
+            // 
             // Registros_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -310,12 +266,9 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Registros_Principal";
             this.Text = "Panel Principal de Registros Sanitarios";
-            this.Load += new System.EventHandler(this.Registros_Principal_Load);
             this.tt_registros.ResumeLayout(false);
             this.tt_registros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registrossanitariosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,23 +286,18 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.ToolStripButton btn_reg_prorrogas;
         private System.Windows.Forms.DataGridView DGVRegistros;
-        private LicitacionesDataSet licitacionesDataSet;
-        private System.Windows.Forms.BindingSource registrossanitariosBindingSource;
-        private LicitacionesDataSetTableAdapters.registros_sanitariosTableAdapter registros_sanitariosTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idregistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroregistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numerosolicitudDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn titularDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn denomdistintivaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn denomgenericaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fabricanteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nacionalidadDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tratadocomercioDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaemisionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechavencimientoDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn solColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titularColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fabrColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nacColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tlcColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emisionColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vencimientoColumn;
     }
 }
