@@ -41,17 +41,17 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGVRegistros = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nacColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tlcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nacColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tt_registros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).BeginInit();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.toolStripLabel3});
             this.tt_registros.Location = new System.Drawing.Point(0, 0);
             this.tt_registros.Name = "tt_registros";
-            this.tt_registros.Size = new System.Drawing.Size(91, 729);
+            this.tt_registros.Size = new System.Drawing.Size(91, 691);
             this.tt_registros.Stretch = true;
             this.tt_registros.TabIndex = 0;
             this.tt_registros.Text = "Herramientas";
@@ -179,56 +179,26 @@
             this.DGVRegistros.Location = new System.Drawing.Point(95, 13);
             this.DGVRegistros.Name = "DGVRegistros";
             this.DGVRegistros.ReadOnly = true;
-            this.DGVRegistros.Size = new System.Drawing.Size(1243, 704);
+            this.DGVRegistros.Size = new System.Drawing.Size(1243, 666);
             this.DGVRegistros.TabIndex = 1;
             // 
-            // idColumn
+            // vencimientoColumn
             // 
-            this.idColumn.Frozen = true;
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
+            this.vencimientoColumn.HeaderText = "Vencimiento";
+            this.vencimientoColumn.Name = "vencimientoColumn";
+            this.vencimientoColumn.ReadOnly = true;
             // 
-            // numColumn
+            // emisionColumn
             // 
-            this.numColumn.HeaderText = "Numero";
-            this.numColumn.Name = "numColumn";
-            this.numColumn.ReadOnly = true;
-            this.numColumn.Width = 125;
+            this.emisionColumn.HeaderText = "Emision";
+            this.emisionColumn.Name = "emisionColumn";
+            this.emisionColumn.ReadOnly = true;
             // 
-            // solColumn
+            // tlcColumn
             // 
-            this.solColumn.HeaderText = "Solicitud";
-            this.solColumn.Name = "solColumn";
-            this.solColumn.ReadOnly = true;
-            this.solColumn.Width = 125;
-            // 
-            // tipoColumn
-            // 
-            this.tipoColumn.HeaderText = "Tipo";
-            this.tipoColumn.Name = "tipoColumn";
-            this.tipoColumn.ReadOnly = true;
-            // 
-            // titularColumn
-            // 
-            this.titularColumn.HeaderText = "Titular";
-            this.titularColumn.Name = "titularColumn";
-            this.titularColumn.ReadOnly = true;
-            this.titularColumn.Width = 125;
-            // 
-            // fabrColumn
-            // 
-            this.fabrColumn.HeaderText = "Fabricante";
-            this.fabrColumn.Name = "fabrColumn";
-            this.fabrColumn.ReadOnly = true;
-            this.fabrColumn.Width = 125;
-            // 
-            // marcaColumn
-            // 
-            this.marcaColumn.HeaderText = "Marca";
-            this.marcaColumn.Name = "marcaColumn";
-            this.marcaColumn.ReadOnly = true;
-            this.marcaColumn.Width = 125;
+            this.tlcColumn.HeaderText = "TLC";
+            this.tlcColumn.Name = "tlcColumn";
+            this.tlcColumn.ReadOnly = true;
             // 
             // nacColumn
             // 
@@ -237,29 +207,59 @@
             this.nacColumn.ReadOnly = true;
             this.nacColumn.Width = 75;
             // 
-            // tlcColumn
+            // marcaColumn
             // 
-            this.tlcColumn.HeaderText = "TLC";
-            this.tlcColumn.Name = "tlcColumn";
-            this.tlcColumn.ReadOnly = true;
+            this.marcaColumn.HeaderText = "Marca";
+            this.marcaColumn.Name = "marcaColumn";
+            this.marcaColumn.ReadOnly = true;
+            this.marcaColumn.Width = 125;
             // 
-            // emisionColumn
+            // fabrColumn
             // 
-            this.emisionColumn.HeaderText = "Emision";
-            this.emisionColumn.Name = "emisionColumn";
-            this.emisionColumn.ReadOnly = true;
+            this.fabrColumn.HeaderText = "Fabricante";
+            this.fabrColumn.Name = "fabrColumn";
+            this.fabrColumn.ReadOnly = true;
+            this.fabrColumn.Width = 125;
             // 
-            // vencimientoColumn
+            // titularColumn
             // 
-            this.vencimientoColumn.HeaderText = "Vencimiento";
-            this.vencimientoColumn.Name = "vencimientoColumn";
-            this.vencimientoColumn.ReadOnly = true;
+            this.titularColumn.HeaderText = "Titular";
+            this.titularColumn.Name = "titularColumn";
+            this.titularColumn.ReadOnly = true;
+            this.titularColumn.Width = 125;
+            // 
+            // tipoColumn
+            // 
+            this.tipoColumn.HeaderText = "Tipo";
+            this.tipoColumn.Name = "tipoColumn";
+            this.tipoColumn.ReadOnly = true;
+            // 
+            // solColumn
+            // 
+            this.solColumn.HeaderText = "Solicitud";
+            this.solColumn.Name = "solColumn";
+            this.solColumn.ReadOnly = true;
+            this.solColumn.Width = 125;
+            // 
+            // numColumn
+            // 
+            this.numColumn.HeaderText = "Numero";
+            this.numColumn.Name = "numColumn";
+            this.numColumn.ReadOnly = true;
+            this.numColumn.Width = 125;
+            // 
+            // idColumn
+            // 
+            this.idColumn.Frozen = true;
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
             // 
             // Registros_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1350, 691);
             this.Controls.Add(this.DGVRegistros);
             this.Controls.Add(this.tt_registros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

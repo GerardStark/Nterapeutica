@@ -47,9 +47,13 @@ namespace AppLicitaciones
                     "fecha_emision,fecha_vencimiento from registros_sanitarios", con);
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                adapt.Fill(ds);
-                DGVRegistros.DataSource = ds;
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    DGVRegistros.Rows.Add(dr.ItemArray);
+
+                }
                 con.Close();
             }
             catch (Exception ex)

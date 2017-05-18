@@ -52,14 +52,15 @@
             this.btn_archivo = new System.Windows.Forms.Button();
             this.txt_generica = new System.Windows.Forms.TextBox();
             this.date_emision = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.date_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.tt_reg_nuevo = new System.Windows.Forms.ToolStrip();
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
+            this.txt_tipo = new System.Windows.Forms.Label();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -130,7 +131,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(596, 110);
+            this.label8.Location = new System.Drawing.Point(596, 154);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 20);
             this.label8.TabIndex = 7;
@@ -139,7 +140,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(662, 152);
+            this.label9.Location = new System.Drawing.Point(662, 196);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 20);
             this.label9.TabIndex = 8;
@@ -148,7 +149,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(560, 196);
+            this.label10.Location = new System.Drawing.Point(560, 240);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 20);
             this.label10.TabIndex = 9;
@@ -157,7 +158,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(528, 242);
+            this.label11.Location = new System.Drawing.Point(528, 286);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 20);
             this.label11.TabIndex = 10;
@@ -166,7 +167,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(635, 290);
+            this.label12.Location = new System.Drawing.Point(635, 334);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 20);
             this.label12.TabIndex = 11;
@@ -190,7 +191,7 @@
             // 
             this.txt_titular.Location = new System.Drawing.Point(210, 92);
             this.txt_titular.Name = "txt_titular";
-            this.txt_titular.Size = new System.Drawing.Size(167, 26);
+            this.txt_titular.Size = new System.Drawing.Size(290, 26);
             this.txt_titular.TabIndex = 3;
             // 
             // txt_distintiva
@@ -212,31 +213,32 @@
             // 
             this.txt_marca.Location = new System.Drawing.Point(707, 64);
             this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(166, 26);
+            this.txt_marca.Size = new System.Drawing.Size(288, 26);
             this.txt_marca.TabIndex = 7;
             // 
             // txt_nacionalidad
             // 
-            this.txt_nacionalidad.Location = new System.Drawing.Point(706, 107);
+            this.txt_nacionalidad.Location = new System.Drawing.Point(706, 151);
             this.txt_nacionalidad.Name = "txt_nacionalidad";
             this.txt_nacionalidad.Size = new System.Drawing.Size(289, 26);
-            this.txt_nacionalidad.TabIndex = 8;
+            this.txt_nacionalidad.TabIndex = 9;
             // 
             // txt_tlc
             // 
-            this.txt_tlc.Location = new System.Drawing.Point(706, 149);
+            this.txt_tlc.Location = new System.Drawing.Point(706, 193);
             this.txt_tlc.Name = "txt_tlc";
             this.txt_tlc.Size = new System.Drawing.Size(289, 26);
-            this.txt_tlc.TabIndex = 9;
+            this.txt_tlc.TabIndex = 10;
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(707, 282);
+            this.btn_archivo.Location = new System.Drawing.Point(707, 326);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(123, 36);
-            this.btn_archivo.TabIndex = 12;
+            this.btn_archivo.TabIndex = 13;
             this.btn_archivo.Text = "Seleccionar...";
             this.btn_archivo.UseVisualStyleBackColor = true;
+            this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
             // txt_generica
             // 
@@ -248,17 +250,17 @@
             // 
             // date_emision
             // 
-            this.date_emision.Location = new System.Drawing.Point(707, 191);
+            this.date_emision.Location = new System.Drawing.Point(707, 235);
             this.date_emision.Name = "date_emision";
             this.date_emision.Size = new System.Drawing.Size(288, 26);
-            this.date_emision.TabIndex = 10;
+            this.date_emision.TabIndex = 11;
             // 
-            // dateTimePicker2
+            // date_vencimiento
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(707, 237);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(288, 26);
-            this.dateTimePicker2.TabIndex = 11;
+            this.date_vencimiento.Location = new System.Drawing.Point(707, 281);
+            this.date_vencimiento.Name = "date_vencimiento";
+            this.date_vencimiento.Size = new System.Drawing.Size(288, 26);
+            this.date_vencimiento.TabIndex = 12;
             // 
             // tt_reg_nuevo
             // 
@@ -266,7 +268,8 @@
             this.tt_reg_nuevo.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.tt_reg_nuevo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_reg_descartar,
-            this.btn_reg_guardar});
+            this.btn_reg_guardar,
+            this.txt_limpiar_campos});
             this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 397);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(1029, 57);
@@ -295,15 +298,6 @@
             this.btn_reg_guardar.Text = "Guardar";
             this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(383, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(116, 26);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Seleccionar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(879, 14);
@@ -313,35 +307,54 @@
             this.button2.Text = "Seleccionar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(879, 64);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(116, 26);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Seleccionar";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // lbl_reg_archivo
             // 
             this.lbl_reg_archivo.AutoSize = true;
-            this.lbl_reg_archivo.Location = new System.Drawing.Point(639, 331);
+            this.lbl_reg_archivo.Location = new System.Drawing.Point(520, 375);
             this.lbl_reg_archivo.Name = "lbl_reg_archivo";
             this.lbl_reg_archivo.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_archivo.TabIndex = 31;
             this.lbl_reg_archivo.Text = "label13";
+            // 
+            // txt_tipo
+            // 
+            this.txt_tipo.AutoSize = true;
+            this.txt_tipo.Location = new System.Drawing.Point(656, 113);
+            this.txt_tipo.Name = "txt_tipo";
+            this.txt_tipo.Size = new System.Drawing.Size(43, 20);
+            this.txt_tipo.TabIndex = 32;
+            this.txt_tipo.Text = "Tipo:";
+            // 
+            // cmb_tipo
+            // 
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Location = new System.Drawing.Point(707, 110);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(288, 28);
+            this.cmb_tipo.TabIndex = 8;
+            // 
+            // txt_limpiar_campos
+            // 
+            this.txt_limpiar_campos.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txt_limpiar_campos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.txt_limpiar_campos.Image = ((System.Drawing.Image)(resources.GetObject("txt_limpiar_campos.Image")));
+            this.txt_limpiar_campos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.txt_limpiar_campos.Name = "txt_limpiar_campos";
+            this.txt_limpiar_campos.Size = new System.Drawing.Size(54, 54);
+            this.txt_limpiar_campos.Text = "Limpiar";
+            this.txt_limpiar_campos.Click += new System.EventHandler(this.txt_limpiar_campos_Click);
             // 
             // Registros_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 454);
+            this.Controls.Add(this.cmb_tipo);
+            this.Controls.Add(this.txt_tipo);
             this.Controls.Add(this.lbl_reg_archivo);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.tt_reg_nuevo);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.date_vencimiento);
             this.Controls.Add(this.date_emision);
             this.Controls.Add(this.txt_generica);
             this.Controls.Add(this.btn_archivo);
@@ -402,13 +415,14 @@
         private System.Windows.Forms.Button btn_archivo;
         private System.Windows.Forms.TextBox txt_generica;
         private System.Windows.Forms.DateTimePicker date_emision;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker date_vencimiento;
         private System.Windows.Forms.ToolStrip tt_reg_nuevo;
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label lbl_reg_archivo;
+        private System.Windows.Forms.Label txt_tipo;
+        private System.Windows.Forms.ComboBox cmb_tipo;
+        private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
     }
 }
