@@ -18,8 +18,8 @@ C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicit
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Principal.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_Nuevo.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_Visualizar.resources
-C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registro_Editar.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_Buscar.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.FTD_Principal.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.FTD_Contactos.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_ClavesReferencias.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_Editar.resources

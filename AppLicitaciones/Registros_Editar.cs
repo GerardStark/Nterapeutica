@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace AppLicitaciones
 {
-    public partial class Registro_Editar : Form
+    public partial class Registros_Editar : Form
     {
-        public Registro_Editar()
+        public Registros_Editar()
         {
             InitializeComponent();
         }

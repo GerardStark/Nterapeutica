@@ -56,11 +56,11 @@
             this.tt_reg_nuevo = new System.Windows.Forms.ToolStrip();
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
+            this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
             this.button2 = new System.Windows.Forms.Button();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
             this.txt_tipo = new System.Windows.Forms.Label();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
-            this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -298,6 +298,17 @@
             this.btn_reg_guardar.Text = "Guardar";
             this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
+            // txt_limpiar_campos
+            // 
+            this.txt_limpiar_campos.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txt_limpiar_campos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.txt_limpiar_campos.Image = ((System.Drawing.Image)(resources.GetObject("txt_limpiar_campos.Image")));
+            this.txt_limpiar_campos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.txt_limpiar_campos.Name = "txt_limpiar_campos";
+            this.txt_limpiar_campos.Size = new System.Drawing.Size(54, 54);
+            this.txt_limpiar_campos.Text = "Limpiar";
+            this.txt_limpiar_campos.Click += new System.EventHandler(this.txt_limpiar_campos_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(879, 14);
@@ -332,17 +343,6 @@
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(288, 28);
             this.cmb_tipo.TabIndex = 8;
-            // 
-            // txt_limpiar_campos
-            // 
-            this.txt_limpiar_campos.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txt_limpiar_campos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.txt_limpiar_campos.Image = ((System.Drawing.Image)(resources.GetObject("txt_limpiar_campos.Image")));
-            this.txt_limpiar_campos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.txt_limpiar_campos.Name = "txt_limpiar_campos";
-            this.txt_limpiar_campos.Size = new System.Drawing.Size(54, 54);
-            this.txt_limpiar_campos.Text = "Limpiar";
-            this.txt_limpiar_campos.Click += new System.EventHandler(this.txt_limpiar_campos_Click);
             // 
             // Registros_Nuevo
             // 

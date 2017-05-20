@@ -55,8 +55,8 @@
             this.lbl_reg_generica = new System.Windows.Forms.Label();
             this.tt_reg_editar = new System.Windows.Forms.ToolStrip();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
-            this.btn_reg_borrar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_editar = new System.Windows.Forms.ToolStripButton();
+            this.btn_reg_borrar = new System.Windows.Forms.ToolStripButton();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -302,16 +302,6 @@
             this.btn_reg_guardar.Text = "Guardar";
             this.btn_reg_guardar.ToolTipText = "OK";
             // 
-            // btn_reg_borrar
-            // 
-            this.btn_reg_borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_reg_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_reg_borrar.Image")));
-            this.btn_reg_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_reg_borrar.Name = "btn_reg_borrar";
-            this.btn_reg_borrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_reg_borrar.Text = "toolStripButton3";
-            this.btn_reg_borrar.ToolTipText = "Borrar";
-            // 
             // btn_reg_editar
             // 
             this.btn_reg_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -321,6 +311,17 @@
             this.btn_reg_editar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_editar.Text = "toolStripButton5";
             this.btn_reg_editar.ToolTipText = "Editar";
+            // 
+            // btn_reg_borrar
+            // 
+            this.btn_reg_borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_reg_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_reg_borrar.Image")));
+            this.btn_reg_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_reg_borrar.Name = "btn_reg_borrar";
+            this.btn_reg_borrar.Size = new System.Drawing.Size(54, 54);
+            this.btn_reg_borrar.Text = "toolStripButton3";
+            this.btn_reg_borrar.ToolTipText = "Borrar";
+            this.btn_reg_borrar.Click += new System.EventHandler(this.btn_reg_borrar_Click);
             // 
             // Registros_Visualizar
             // 

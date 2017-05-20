@@ -15,6 +15,7 @@ namespace AppLicitaciones
     public partial class Registros_Principal : Form
     {
         MainConfig mc = new MainConfig();
+        int id_registro = 0;
         public Registros_Principal()
         {
             InitializeComponent();
@@ -31,17 +32,40 @@ namespace AppLicitaciones
         }       
         private void btn_reg_buscar_Click(object sender, EventArgs e)
         {
-            Registros_Nuevo rn = new Registros_Nuevo();
+            Registros_Buscar rn = new Registros_Buscar();
             DialogResult result = rn.ShowDialog();
             if (result == DialogResult.OK)
             {
                 filtrartablaregistros();
             }
         }
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (id_registro == 0)
+            {
+                MessageBox.Show("Seleccione un Registro Sanitario de la lista para poder visualizarlo.");
+            }
+            else
+            {
+                Registros_Visualizar rn = new Registros_Visualizar();
+                rn.pasaridregistro(id_registro);
+                DialogResult result = rn.ShowDialog();               
+                if (result == DialogResult.OK)
+                {
+                    Registros_Editar re = new Registros_Editar();
+                    DialogResult result2 = re.ShowDialog();
+                    if (result2 == DialogResult.OK)
+                    {
+                        llenartablaregistros();
+                    }
+                }
+            }
+        }
         public void llenartablaregistros()
         {
             try
             {
+                DGVRegistros.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,fabricante,marca,nacionalidad,tratado_comercio," +
                     "fecha_emision,fecha_vencimiento from registros_sanitarios", con);
@@ -52,7 +76,6 @@ namespace AppLicitaciones
                 foreach (DataRow dr in dt.Rows)
                 {
                     DGVRegistros.Rows.Add(dr.ItemArray);
-
                 }
                 con.Close();
             }
@@ -86,6 +109,11 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void DGVRegistros_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
         }
     }
     

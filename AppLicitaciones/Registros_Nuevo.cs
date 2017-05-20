@@ -17,11 +17,25 @@ namespace AppLicitaciones
     public partial class Registros_Nuevo : Form
     {
         MainConfig mc = new MainConfig();
-        string columna, fileName, archivo, camino;
+        string fileName, archivo, camino;
         public Registros_Nuevo()
         {
             InitializeComponent();
             lbl_reg_archivo.Text = "";
+            string[] textos = new string[] { "Registro", "Modificación", "Prórroga" };
+            string[] values = new string[] { "Registro", "Modificación", "Prórroga" };
+            llenarcombobox(textos, values);
+        }
+        private void llenarcombobox(string[] textos, string [] values)
+        {
+            for (int i = 0; i < textos.Length; i++)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = textos[i].ToString();
+                item.Value = values[i].ToString();
+                cmb_tipo.Items.Add(item);
+            }
+            cmb_tipo.SelectedIndex = 0;
         }
 
         private void btn_reg_guardar_Click(object sender, EventArgs e)
@@ -30,20 +44,22 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 SqlCommand cmd = new SqlCommand("insert into registros_sanitarios (numero_registro,numero_solicitud,titular,denom_distintiva,denom_generica,fabricante,"+
-                "marca,nacionalidad,tratado_comercio,fecha_emision,fecha_vencimiento,dir_archivo,actualizado_en,tipo) OUTPUT INSERTED.Id "+
+                "marca,nacionalidad,tratado_comercio,fecha_emision,fecha_vencimiento,dir_archivo,actualizado_en,tipo) OUTPUT INSERTED.Id_registro "+
                 "values(@numero,@solicitud,@titular,@distintiva,@generica,@fabricante,@marca,@nacionalidad,@tlc,@emision,@vencimiento,@archivo,@actualizado,@tipo)", con);
+                con.Open();
                 cmd.Parameters.AddWithValue("@numero",txt_numero.Text);
                 cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text);
                 cmd.Parameters.AddWithValue("@titular",txt_titular.Text);
                 cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
                 cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
                 cmd.Parameters.AddWithValue("@fabricante",txt_fabricante.Text);
-                cmd.Parameters.AddWithValue("@@marca", txt_marca.Text);
+                cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
                 cmd.Parameters.AddWithValue("@nacionalidad", txt_nacionalidad.Text);
                 cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
                 cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
                 cmd.Parameters.AddWithValue("@vencimiento",date_vencimiento.Value.Date);
-                cmd.Parameters.AddWithValue("@tipo",cmb_tipo.SelectedValue);
+                cmd.Parameters.AddWithValue("@tipo",cmb_tipo.SelectedText);
+                cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 Int32 newId = (Int32)cmd.ExecuteScalar();
                 crearDirectorios(newId);
@@ -58,10 +74,23 @@ namespace AppLicitaciones
             this.Close();
         }
 
+        private void btn_archivo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "PDF Files|*.pdf|Word Files|*.docx";
+            openFileDialog1.Title = "Select a PDF/Word File";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                lbl_reg_archivo.Text = openFileDialog1.SafeFileName;
+                fileName = openFileDialog1.FileName;
+                camino = Path.GetDirectoryName(fileName);
+                archivo = Path.GetFileName(fileName);
+            }
+        }
+
         private void crearDirectorios(int id)
         {
             string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\";
-
             string pathanexos = newpath + "\\" + id + "\\";
             if (Directory.Exists(newpath + "\\" + id + "\\"))
             {
@@ -101,20 +130,6 @@ namespace AppLicitaciones
             lbl_reg_archivo.Text = "";
             date_emision.ResetText();
             date_vencimiento.ResetText();
-        }
-
-        private void btn_archivo_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "PDF Files|*.pdf|Word Files|*.docx";
-            openFileDialog1.Title = "Select a PDF/Word File";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                lbl_reg_archivo.Text = openFileDialog1.SafeFileName;
-                fileName = openFileDialog1.FileName;
-                camino = Path.GetDirectoryName(fileName);
-                archivo = Path.GetFileName(fileName);
-            }
         }
     }
 }

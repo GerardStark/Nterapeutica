@@ -41,17 +41,17 @@
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGVRegistros = new System.Windows.Forms.DataGridView();
-            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tlcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nacColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nacColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tlcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tt_registros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).BeginInit();
             this.SuspendLayout();
@@ -152,6 +152,7 @@
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(88, 54);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripLabel3
             // 
@@ -181,65 +182,14 @@
             this.DGVRegistros.ReadOnly = true;
             this.DGVRegistros.Size = new System.Drawing.Size(1243, 666);
             this.DGVRegistros.TabIndex = 1;
+            this.DGVRegistros.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVRegistros_RowHeaderMouseClick);
             // 
-            // vencimientoColumn
+            // idColumn
             // 
-            this.vencimientoColumn.HeaderText = "Vencimiento";
-            this.vencimientoColumn.Name = "vencimientoColumn";
-            this.vencimientoColumn.ReadOnly = true;
-            // 
-            // emisionColumn
-            // 
-            this.emisionColumn.HeaderText = "Emision";
-            this.emisionColumn.Name = "emisionColumn";
-            this.emisionColumn.ReadOnly = true;
-            // 
-            // tlcColumn
-            // 
-            this.tlcColumn.HeaderText = "TLC";
-            this.tlcColumn.Name = "tlcColumn";
-            this.tlcColumn.ReadOnly = true;
-            // 
-            // nacColumn
-            // 
-            this.nacColumn.HeaderText = "Nacionalidad";
-            this.nacColumn.Name = "nacColumn";
-            this.nacColumn.ReadOnly = true;
-            this.nacColumn.Width = 75;
-            // 
-            // marcaColumn
-            // 
-            this.marcaColumn.HeaderText = "Marca";
-            this.marcaColumn.Name = "marcaColumn";
-            this.marcaColumn.ReadOnly = true;
-            this.marcaColumn.Width = 125;
-            // 
-            // fabrColumn
-            // 
-            this.fabrColumn.HeaderText = "Fabricante";
-            this.fabrColumn.Name = "fabrColumn";
-            this.fabrColumn.ReadOnly = true;
-            this.fabrColumn.Width = 125;
-            // 
-            // titularColumn
-            // 
-            this.titularColumn.HeaderText = "Titular";
-            this.titularColumn.Name = "titularColumn";
-            this.titularColumn.ReadOnly = true;
-            this.titularColumn.Width = 125;
-            // 
-            // tipoColumn
-            // 
-            this.tipoColumn.HeaderText = "Tipo";
-            this.tipoColumn.Name = "tipoColumn";
-            this.tipoColumn.ReadOnly = true;
-            // 
-            // solColumn
-            // 
-            this.solColumn.HeaderText = "Solicitud";
-            this.solColumn.Name = "solColumn";
-            this.solColumn.ReadOnly = true;
-            this.solColumn.Width = 125;
+            this.idColumn.Frozen = true;
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
             // 
             // numColumn
             // 
@@ -248,12 +198,64 @@
             this.numColumn.ReadOnly = true;
             this.numColumn.Width = 125;
             // 
-            // idColumn
+            // solColumn
             // 
-            this.idColumn.Frozen = true;
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
+            this.solColumn.HeaderText = "Solicitud";
+            this.solColumn.Name = "solColumn";
+            this.solColumn.ReadOnly = true;
+            this.solColumn.Width = 125;
+            // 
+            // tipoColumn
+            // 
+            this.tipoColumn.HeaderText = "Tipo";
+            this.tipoColumn.Name = "tipoColumn";
+            this.tipoColumn.ReadOnly = true;
+            // 
+            // titularColumn
+            // 
+            this.titularColumn.HeaderText = "Titular";
+            this.titularColumn.Name = "titularColumn";
+            this.titularColumn.ReadOnly = true;
+            this.titularColumn.Width = 125;
+            // 
+            // fabrColumn
+            // 
+            this.fabrColumn.HeaderText = "Fabricante";
+            this.fabrColumn.Name = "fabrColumn";
+            this.fabrColumn.ReadOnly = true;
+            this.fabrColumn.Width = 125;
+            // 
+            // marcaColumn
+            // 
+            this.marcaColumn.HeaderText = "Marca";
+            this.marcaColumn.Name = "marcaColumn";
+            this.marcaColumn.ReadOnly = true;
+            this.marcaColumn.Width = 125;
+            // 
+            // nacColumn
+            // 
+            this.nacColumn.HeaderText = "Nacionalidad";
+            this.nacColumn.Name = "nacColumn";
+            this.nacColumn.ReadOnly = true;
+            this.nacColumn.Width = 75;
+            // 
+            // tlcColumn
+            // 
+            this.tlcColumn.HeaderText = "TLC";
+            this.tlcColumn.Name = "tlcColumn";
+            this.tlcColumn.ReadOnly = true;
+            // 
+            // emisionColumn
+            // 
+            this.emisionColumn.HeaderText = "Emision";
+            this.emisionColumn.Name = "emisionColumn";
+            this.emisionColumn.ReadOnly = true;
+            // 
+            // vencimientoColumn
+            // 
+            this.vencimientoColumn.HeaderText = "Vencimiento";
+            this.vencimientoColumn.Name = "vencimientoColumn";
+            this.vencimientoColumn.ReadOnly = true;
             // 
             // Registros_Principal
             // 
