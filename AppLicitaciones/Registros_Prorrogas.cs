@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace AppLicitaciones
 {
-    public partial class Registros_ClavesReferencias : Form
+    public partial class Registros_Prorrogas : Form
     {
-        public Registros_ClavesReferencias()
+        public Registros_Prorrogas()
         {
             InitializeComponent();
         }
-        //TODO llenar dgv con las clavevs asigandas al registro sanitario
-        public void mostrarclavesregistro(int id_registro)
+        public void mostrarprorrogasregistro(int id_registro)
         {
 
         }

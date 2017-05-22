@@ -39,28 +39,6 @@ namespace AppLicitaciones
                 filtrartablaregistros();
             }
         }
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            if (id_registro == 0)
-            {
-                MessageBox.Show("Seleccione un Registro Sanitario de la lista para poder visualizarlo.");
-            }
-            else
-            {
-                Registros_Visualizar rn = new Registros_Visualizar();
-                rn.pasaridregistro(id_registro);
-                DialogResult result = rn.ShowDialog();               
-                if (result == DialogResult.OK)
-                {
-                    Registros_Editar re = new Registros_Editar();
-                    DialogResult result2 = re.ShowDialog();
-                    if (result2 == DialogResult.OK)
-                    {
-                        llenartablaregistros();
-                    }
-                }
-            }
-        }
         public void llenartablaregistros()
         {
             try
@@ -114,6 +92,49 @@ namespace AppLicitaciones
         private void DGVRegistros_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
+        }
+
+        private void btn_visualizar_Click(object sender, EventArgs e)
+        {
+            if (id_registro == 0)
+            {
+                MessageBox.Show("Seleccione un Registro Sanitario de la lista para poder visualizarlo.");
+            }
+            else
+            {
+                Registros_Visualizar rn = new Registros_Visualizar();
+                rn.mostrarinforegistro(id_registro);
+                DialogResult result = rn.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    Registros_Editar re = new Registros_Editar();
+                    re.llenarcamposregistro(id_registro);
+                    DialogResult result2 = re.ShowDialog();
+                    //TODO Pasar a edicion del registro
+                    if (result2 == DialogResult.OK)
+                    {
+
+                    }
+                }
+            }
+        }
+
+        private void btn_reg_prorrogas_Click(object sender, EventArgs e)
+        {
+            Registros_Prorrogas rp = new Registros_Prorrogas();
+            rp.mostrarprorrogasregistro(id_registro);
+            DialogResult result = rp.ShowDialog();
+        }
+
+        private void btn_reg_claves_Click(object sender, EventArgs e)
+        {
+            Registros_ClavesReferencias rc = new Registros_ClavesReferencias();
+            rc.mostrarclavesregistro(id_registro);
+            DialogResult result = rc.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+
+            }
         }
     }
     

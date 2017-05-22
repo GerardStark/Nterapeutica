@@ -38,7 +38,7 @@
             this.btn_reg_claves = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.btn_reg_prorrogas = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGVRegistros = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +69,7 @@
             this.btn_reg_claves,
             this.toolStripLabel7,
             this.btn_reg_prorrogas,
-            this.toolStripButton1,
+            this.btn_visualizar,
             this.toolStripLabel3});
             this.tt_registros.Location = new System.Drawing.Point(0, 0);
             this.tt_registros.Name = "tt_registros";
@@ -126,6 +126,7 @@
             this.btn_reg_claves.Name = "btn_reg_claves";
             this.btn_reg_claves.Size = new System.Drawing.Size(88, 54);
             this.btn_reg_claves.Text = "toolStripButton6";
+            this.btn_reg_claves.Click += new System.EventHandler(this.btn_reg_claves_Click);
             // 
             // toolStripLabel7
             // 
@@ -143,16 +144,17 @@
             this.btn_reg_prorrogas.Name = "btn_reg_prorrogas";
             this.btn_reg_prorrogas.Size = new System.Drawing.Size(88, 54);
             this.btn_reg_prorrogas.Text = "toolStripButton7";
+            this.btn_reg_prorrogas.Click += new System.EventHandler(this.btn_reg_prorrogas_Click);
             // 
-            // toolStripButton1
+            // btn_visualizar
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(88, 54);
-            this.toolStripButton1.Text = "toolStripButton1";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.btn_visualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_visualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_visualizar.Image")));
+            this.btn_visualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_visualizar.Name = "btn_visualizar";
+            this.btn_visualizar.Size = new System.Drawing.Size(88, 54);
+            this.btn_visualizar.Text = "toolStripButton1";
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // toolStripLabel3
             // 
@@ -288,7 +290,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel7;
         private System.Windows.Forms.ToolStripButton btn_reg_prorrogas;
         private System.Windows.Forms.DataGridView DGVRegistros;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;

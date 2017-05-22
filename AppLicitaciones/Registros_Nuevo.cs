@@ -18,6 +18,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         string fileName, archivo, camino;
+        int id_fabricante;
         public Registros_Nuevo()
         {
             InitializeComponent();
@@ -52,7 +53,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@titular",txt_titular.Text);
                 cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
                 cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
-                cmd.Parameters.AddWithValue("@fabricante",txt_fabricante.Text);
+                cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
                 cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
                 cmd.Parameters.AddWithValue("@nacionalidad", txt_nacionalidad.Text);
                 cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
@@ -107,6 +108,18 @@ namespace AppLicitaciones
                 {
                     File.Copy(fileName, Path.Combine(pathanexos, archivo));
                 }
+            }
+        }
+
+        private void btn_selec_fabricante_Click(object sender, EventArgs e)
+        {
+            FTD_Principal ftdp = new FTD_Principal();
+            ftdp.llenartablaftd();
+            DialogResult result = ftdp.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                id_fabricante = ftdp.id_fabricante;
+                txt_fabricante.Text = ftdp.nombre_fabricante;
             }
         }
 

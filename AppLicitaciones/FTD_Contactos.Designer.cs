@@ -37,18 +37,25 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_email = new System.Windows.Forms.TextBox();
-            this.txt_email_dos = new System.Windows.Forms.TextBox();
-            this.txt_telefono = new System.Windows.Forms.TextBox();
-            this.txt_telefono_dos = new System.Windows.Forms.TextBox();
             this.txt_comentarios = new System.Windows.Forms.TextBox();
+            this.txt_telefono_dos = new System.Windows.Forms.TextBox();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
+            this.txt_email_dos = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emaildosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonodosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComentariosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -118,113 +125,157 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(58, 12);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
+            this.nombreColumn,
+            this.emailColumn,
+            this.emaildosColumn,
+            this.telefonoColumn,
+            this.telefonodosColumn,
+            this.ComentariosColumn});
+            this.dataGridView1.Location = new System.Drawing.Point(398, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(478, 418);
+            this.dataGridView1.Size = new System.Drawing.Size(684, 418);
             this.dataGridView1.TabIndex = 2;
             // 
-            // label1
+            // txt_comentarios
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(591, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Nombre:";
+            this.txt_comentarios.Location = new System.Drawing.Point(179, 200);
+            this.txt_comentarios.Multiline = true;
+            this.txt_comentarios.Name = "txt_comentarios";
+            this.txt_comentarios.Size = new System.Drawing.Size(213, 95);
+            this.txt_comentarios.TabIndex = 27;
             // 
-            // txt_nombre
+            // txt_telefono_dos
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(662, 36);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(213, 26);
-            this.txt_nombre.TabIndex = 4;
+            this.txt_telefono_dos.Location = new System.Drawing.Point(179, 168);
+            this.txt_telefono_dos.Name = "txt_telefono_dos";
+            this.txt_telefono_dos.Size = new System.Drawing.Size(213, 26);
+            this.txt_telefono_dos.TabIndex = 26;
             // 
-            // label2
+            // txt_telefono
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(604, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Email:";
+            this.txt_telefono.Location = new System.Drawing.Point(179, 136);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(213, 26);
+            this.txt_telefono.TabIndex = 25;
             // 
-            // label3
+            // txt_email_dos
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(591, 106);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 20);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Email 2:";
+            this.txt_email_dos.Location = new System.Drawing.Point(179, 104);
+            this.txt_email_dos.Name = "txt_email_dos";
+            this.txt_email_dos.Size = new System.Drawing.Size(213, 26);
+            this.txt_email_dos.TabIndex = 24;
             // 
-            // label4
+            // txt_email
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(581, 138);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Telefono:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(568, 170);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(88, 20);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Telefono 2:";
+            this.txt_email.Location = new System.Drawing.Point(179, 69);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(213, 26);
+            this.txt_email.TabIndex = 23;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(557, 202);
+            this.label6.Location = new System.Drawing.Point(74, 203);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 20);
-            this.label6.TabIndex = 9;
+            this.label6.TabIndex = 22;
             this.label6.Text = "Comentarios";
             // 
-            // txt_email
+            // label5
             // 
-            this.txt_email.Location = new System.Drawing.Point(662, 68);
-            this.txt_email.Name = "txt_email";
-            this.txt_email.Size = new System.Drawing.Size(213, 26);
-            this.txt_email.TabIndex = 11;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(85, 171);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(88, 20);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "Telefono 2:";
             // 
-            // txt_email_dos
+            // label4
             // 
-            this.txt_email_dos.Location = new System.Drawing.Point(662, 103);
-            this.txt_email_dos.Name = "txt_email_dos";
-            this.txt_email_dos.Size = new System.Drawing.Size(213, 26);
-            this.txt_email_dos.TabIndex = 12;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(98, 139);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(75, 20);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Telefono:";
             // 
-            // txt_telefono
+            // label3
             // 
-            this.txt_telefono.Location = new System.Drawing.Point(662, 135);
-            this.txt_telefono.Name = "txt_telefono";
-            this.txt_telefono.Size = new System.Drawing.Size(213, 26);
-            this.txt_telefono.TabIndex = 13;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(108, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 20);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Email 2:";
             // 
-            // txt_telefono_dos
+            // label2
             // 
-            this.txt_telefono_dos.Location = new System.Drawing.Point(662, 167);
-            this.txt_telefono_dos.Name = "txt_telefono_dos";
-            this.txt_telefono_dos.Size = new System.Drawing.Size(213, 26);
-            this.txt_telefono_dos.TabIndex = 14;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(121, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 20);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Email:";
             // 
-            // txt_comentarios
+            // txt_nombre
             // 
-            this.txt_comentarios.Location = new System.Drawing.Point(662, 199);
-            this.txt_comentarios.Multiline = true;
-            this.txt_comentarios.Name = "txt_comentarios";
-            this.txt_comentarios.Size = new System.Drawing.Size(213, 95);
-            this.txt_comentarios.TabIndex = 15;
+            this.txt_nombre.Location = new System.Drawing.Point(179, 37);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(213, 26);
+            this.txt_nombre.TabIndex = 17;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(108, 40);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Nombre:";
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.Width = 40;
+            // 
+            // nombreColumn
+            // 
+            this.nombreColumn.HeaderText = "Nombre";
+            this.nombreColumn.Name = "nombreColumn";
+            // 
+            // emailColumn
+            // 
+            this.emailColumn.HeaderText = "Email";
+            this.emailColumn.Name = "emailColumn";
+            // 
+            // emaildosColumn
+            // 
+            this.emaildosColumn.HeaderText = "Email 2";
+            this.emaildosColumn.Name = "emaildosColumn";
+            // 
+            // telefonoColumn
+            // 
+            this.telefonoColumn.HeaderText = "Telefono";
+            this.telefonoColumn.Name = "telefonoColumn";
+            // 
+            // telefonodosColumn
+            // 
+            this.telefonodosColumn.HeaderText = "Telefono 2";
+            this.telefonodosColumn.Name = "telefonodosColumn";
+            // 
+            // ComentariosColumn
+            // 
+            this.ComentariosColumn.HeaderText = "Comentarios";
+            this.ComentariosColumn.Name = "ComentariosColumn";
             // 
             // FTD_Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(951, 442);
+            this.ClientSize = new System.Drawing.Size(1092, 442);
             this.Controls.Add(this.txt_comentarios);
             this.Controls.Add(this.txt_telefono_dos);
             this.Controls.Add(this.txt_telefono);
@@ -261,17 +312,24 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_email;
-        private System.Windows.Forms.TextBox txt_email_dos;
-        private System.Windows.Forms.TextBox txt_telefono;
-        private System.Windows.Forms.TextBox txt_telefono_dos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emaildosColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonodosColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ComentariosColumn;
         private System.Windows.Forms.TextBox txt_comentarios;
+        private System.Windows.Forms.TextBox txt_telefono_dos;
+        private System.Windows.Forms.TextBox txt_telefono;
+        private System.Windows.Forms.TextBox txt_email_dos;
+        private System.Windows.Forms.TextBox txt_email;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.Label label1;
     }
 }

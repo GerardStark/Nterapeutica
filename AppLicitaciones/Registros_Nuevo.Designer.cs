@@ -57,7 +57,7 @@
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_selec_fabricante = new System.Windows.Forms.Button();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
             this.txt_tipo = new System.Windows.Forms.Label();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
@@ -206,6 +206,7 @@
             // 
             this.txt_fabricante.Location = new System.Drawing.Point(706, 17);
             this.txt_fabricante.Name = "txt_fabricante";
+            this.txt_fabricante.ReadOnly = true;
             this.txt_fabricante.Size = new System.Drawing.Size(167, 26);
             this.txt_fabricante.TabIndex = 6;
             // 
@@ -309,14 +310,15 @@
             this.txt_limpiar_campos.Text = "Limpiar";
             this.txt_limpiar_campos.Click += new System.EventHandler(this.txt_limpiar_campos_Click);
             // 
-            // button2
+            // btn_selec_fabricante
             // 
-            this.button2.Location = new System.Drawing.Point(879, 14);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(116, 26);
-            this.button2.TabIndex = 29;
-            this.button2.Text = "Seleccionar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_selec_fabricante.Location = new System.Drawing.Point(879, 14);
+            this.btn_selec_fabricante.Name = "btn_selec_fabricante";
+            this.btn_selec_fabricante.Size = new System.Drawing.Size(116, 26);
+            this.btn_selec_fabricante.TabIndex = 29;
+            this.btn_selec_fabricante.Text = "Seleccionar";
+            this.btn_selec_fabricante.UseVisualStyleBackColor = true;
+            this.btn_selec_fabricante.Click += new System.EventHandler(this.btn_selec_fabricante_Click);
             // 
             // lbl_reg_archivo
             // 
@@ -352,7 +354,7 @@
             this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.txt_tipo);
             this.Controls.Add(this.lbl_reg_archivo);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btn_selec_fabricante);
             this.Controls.Add(this.tt_reg_nuevo);
             this.Controls.Add(this.date_vencimiento);
             this.Controls.Add(this.date_emision);
@@ -419,7 +421,7 @@
         private System.Windows.Forms.ToolStrip tt_reg_nuevo;
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_selec_fabricante;
         private System.Windows.Forms.Label lbl_reg_archivo;
         private System.Windows.Forms.Label txt_tipo;
         private System.Windows.Forms.ComboBox cmb_tipo;

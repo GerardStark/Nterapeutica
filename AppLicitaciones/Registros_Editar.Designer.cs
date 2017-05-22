@@ -32,7 +32,7 @@
             this.tt_reg_editar = new System.Windows.Forms.ToolStrip();
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.date_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.date_emision = new System.Windows.Forms.DateTimePicker();
             this.txt_generica = new System.Windows.Forms.TextBox();
             this.btn_archivo = new System.Windows.Forms.Button();
@@ -56,6 +56,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lbl_archivo = new System.Windows.Forms.Label();
+            this.btn_select_fabricante = new System.Windows.Forms.Button();
+            this.btn_archivo_borrar = new System.Windows.Forms.Button();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,13 +94,14 @@
             this.btn_reg_guardar.Name = "btn_reg_guardar";
             this.btn_reg_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_guardar.Text = "Guardar";
+            this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
-            // dateTimePicker2
+            // date_vencimiento
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(707, 236);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(300, 26);
-            this.dateTimePicker2.TabIndex = 50;
+            this.date_vencimiento.Location = new System.Drawing.Point(707, 236);
+            this.date_vencimiento.Name = "date_vencimiento";
+            this.date_vencimiento.Size = new System.Drawing.Size(300, 26);
+            this.date_vencimiento.TabIndex = 50;
             // 
             // date_emision
             // 
@@ -127,28 +131,29 @@
             // 
             this.txt_tlc.Location = new System.Drawing.Point(706, 148);
             this.txt_tlc.Name = "txt_tlc";
-            this.txt_tlc.Size = new System.Drawing.Size(244, 26);
+            this.txt_tlc.Size = new System.Drawing.Size(301, 26);
             this.txt_tlc.TabIndex = 45;
             // 
             // txt_nacionalidad
             // 
             this.txt_nacionalidad.Location = new System.Drawing.Point(706, 106);
             this.txt_nacionalidad.Name = "txt_nacionalidad";
-            this.txt_nacionalidad.Size = new System.Drawing.Size(244, 26);
+            this.txt_nacionalidad.Size = new System.Drawing.Size(301, 26);
             this.txt_nacionalidad.TabIndex = 43;
             // 
             // txt_marca
             // 
             this.txt_marca.Location = new System.Drawing.Point(707, 63);
             this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(244, 26);
+            this.txt_marca.Size = new System.Drawing.Size(300, 26);
             this.txt_marca.TabIndex = 41;
             // 
             // txt_fabricante
             // 
             this.txt_fabricante.Location = new System.Drawing.Point(706, 16);
             this.txt_fabricante.Name = "txt_fabricante";
-            this.txt_fabricante.Size = new System.Drawing.Size(244, 26);
+            this.txt_fabricante.ReadOnly = true;
+            this.txt_fabricante.Size = new System.Drawing.Size(185, 26);
             this.txt_fabricante.TabIndex = 40;
             // 
             // txt_distintiva
@@ -289,13 +294,44 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Numero:";
             // 
-            // Registro_Editar
+            // lbl_archivo
+            // 
+            this.lbl_archivo.AutoSize = true;
+            this.lbl_archivo.Location = new System.Drawing.Point(564, 338);
+            this.lbl_archivo.Name = "lbl_archivo";
+            this.lbl_archivo.Size = new System.Drawing.Size(60, 20);
+            this.lbl_archivo.TabIndex = 53;
+            this.lbl_archivo.Text = "label13";
+            // 
+            // btn_select_fabricante
+            // 
+            this.btn_select_fabricante.Location = new System.Drawing.Point(897, 16);
+            this.btn_select_fabricante.Name = "btn_select_fabricante";
+            this.btn_select_fabricante.Size = new System.Drawing.Size(110, 29);
+            this.btn_select_fabricante.TabIndex = 54;
+            this.btn_select_fabricante.Text = "Seleccionar...";
+            this.btn_select_fabricante.UseVisualStyleBackColor = true;
+            this.btn_select_fabricante.Click += new System.EventHandler(this.btn_select_fabricante_Click);
+            // 
+            // btn_archivo_borrar
+            // 
+            this.btn_archivo_borrar.Location = new System.Drawing.Point(836, 281);
+            this.btn_archivo_borrar.Name = "btn_archivo_borrar";
+            this.btn_archivo_borrar.Size = new System.Drawing.Size(123, 36);
+            this.btn_archivo_borrar.TabIndex = 55;
+            this.btn_archivo_borrar.Text = "Borrar";
+            this.btn_archivo_borrar.UseVisualStyleBackColor = true;
+            // 
+            // Registros_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 454);
+            this.Controls.Add(this.btn_archivo_borrar);
+            this.Controls.Add(this.btn_select_fabricante);
+            this.Controls.Add(this.lbl_archivo);
             this.Controls.Add(this.tt_reg_editar);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.date_vencimiento);
             this.Controls.Add(this.date_emision);
             this.Controls.Add(this.txt_generica);
             this.Controls.Add(this.btn_archivo);
@@ -321,7 +357,7 @@
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Registro_Editar";
+            this.Name = "Registros_Editar";
             this.Text = "Editar Registro Sanitario";
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();
@@ -335,7 +371,7 @@
         private System.Windows.Forms.ToolStrip tt_reg_editar;
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker date_vencimiento;
         private System.Windows.Forms.DateTimePicker date_emision;
         private System.Windows.Forms.TextBox txt_generica;
         private System.Windows.Forms.Button btn_archivo;
@@ -359,5 +395,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_archivo;
+        private System.Windows.Forms.Button btn_select_fabricante;
+        private System.Windows.Forms.Button btn_archivo_borrar;
     }
 }
