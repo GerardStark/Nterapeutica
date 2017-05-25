@@ -80,12 +80,17 @@ namespace AppLicitaciones
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.Filter = "PDF Files|*.pdf|Word Files|*.docx";
             openFileDialog1.Title = "Select a PDF/Word File";
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            DialogResult result = openFileDialog1.ShowDialog();
+            if (result == DialogResult.OK)
             {
                 lbl_reg_archivo.Text = openFileDialog1.SafeFileName;
                 fileName = openFileDialog1.FileName;
                 camino = Path.GetDirectoryName(fileName);
                 archivo = Path.GetFileName(fileName);
+            }
+            else if (result == DialogResult.Cancel)
+            {
+                lbl_reg_archivo.Text = "(Vacio)";
             }
         }
 

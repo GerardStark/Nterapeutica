@@ -57,13 +57,16 @@
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_editar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_borrar = new System.Windows.Forms.ToolStripButton();
+            this.lbl_reg_tipo = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.btn_archivo_abrir = new System.Windows.Forms.Button();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(126, 280);
+            this.label12.Location = new System.Drawing.Point(126, 308);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(65, 20);
             this.label12.TabIndex = 73;
@@ -72,7 +75,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(19, 250);
+            this.label11.Location = new System.Drawing.Point(19, 278);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(172, 20);
             this.label11.TabIndex = 72;
@@ -81,7 +84,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(52, 220);
+            this.label10.Location = new System.Drawing.Point(52, 248);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(140, 20);
             this.label10.TabIndex = 70;
@@ -90,7 +93,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(153, 190);
+            this.label9.Location = new System.Drawing.Point(153, 218);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(38, 20);
             this.label9.TabIndex = 68;
@@ -99,7 +102,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(87, 160);
+            this.label8.Location = new System.Drawing.Point(87, 188);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(104, 20);
             this.label8.TabIndex = 66;
@@ -126,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 400);
+            this.label5.Location = new System.Drawing.Point(8, 418);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(184, 20);
             this.label5.TabIndex = 60;
@@ -135,7 +138,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 310);
+            this.label4.Location = new System.Drawing.Point(9, 334);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(183, 20);
             this.label4.TabIndex = 57;
@@ -217,7 +220,7 @@
             // lbl_reg_nacionalidad
             // 
             this.lbl_reg_nacionalidad.AutoSize = true;
-            this.lbl_reg_nacionalidad.Location = new System.Drawing.Point(197, 160);
+            this.lbl_reg_nacionalidad.Location = new System.Drawing.Point(197, 188);
             this.lbl_reg_nacionalidad.Name = "lbl_reg_nacionalidad";
             this.lbl_reg_nacionalidad.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_nacionalidad.TabIndex = 79;
@@ -226,7 +229,7 @@
             // lbl_reg_tlc
             // 
             this.lbl_reg_tlc.AutoSize = true;
-            this.lbl_reg_tlc.Location = new System.Drawing.Point(197, 190);
+            this.lbl_reg_tlc.Location = new System.Drawing.Point(197, 218);
             this.lbl_reg_tlc.Name = "lbl_reg_tlc";
             this.lbl_reg_tlc.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_tlc.TabIndex = 80;
@@ -235,7 +238,7 @@
             // lbl_reg_emision
             // 
             this.lbl_reg_emision.AutoSize = true;
-            this.lbl_reg_emision.Location = new System.Drawing.Point(197, 220);
+            this.lbl_reg_emision.Location = new System.Drawing.Point(197, 248);
             this.lbl_reg_emision.Name = "lbl_reg_emision";
             this.lbl_reg_emision.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_emision.TabIndex = 81;
@@ -244,7 +247,7 @@
             // lbl_reg_vencimiento
             // 
             this.lbl_reg_vencimiento.AutoSize = true;
-            this.lbl_reg_vencimiento.Location = new System.Drawing.Point(197, 250);
+            this.lbl_reg_vencimiento.Location = new System.Drawing.Point(197, 278);
             this.lbl_reg_vencimiento.Name = "lbl_reg_vencimiento";
             this.lbl_reg_vencimiento.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_vencimiento.TabIndex = 82;
@@ -253,7 +256,7 @@
             // lbl_reg_archivo
             // 
             this.lbl_reg_archivo.AutoSize = true;
-            this.lbl_reg_archivo.Location = new System.Drawing.Point(197, 280);
+            this.lbl_reg_archivo.Location = new System.Drawing.Point(197, 308);
             this.lbl_reg_archivo.Name = "lbl_reg_archivo";
             this.lbl_reg_archivo.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_archivo.TabIndex = 83;
@@ -262,7 +265,8 @@
             // lbl_reg_distintiva
             // 
             this.lbl_reg_distintiva.AutoSize = true;
-            this.lbl_reg_distintiva.Location = new System.Drawing.Point(199, 310);
+            this.lbl_reg_distintiva.Location = new System.Drawing.Point(198, 334);
+            this.lbl_reg_distintiva.MaximumSize = new System.Drawing.Size(800, 0);
             this.lbl_reg_distintiva.Name = "lbl_reg_distintiva";
             this.lbl_reg_distintiva.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_distintiva.TabIndex = 84;
@@ -271,7 +275,8 @@
             // lbl_reg_generica
             // 
             this.lbl_reg_generica.AutoSize = true;
-            this.lbl_reg_generica.Location = new System.Drawing.Point(197, 400);
+            this.lbl_reg_generica.Location = new System.Drawing.Point(197, 418);
+            this.lbl_reg_generica.MaximumSize = new System.Drawing.Size(800, 0);
             this.lbl_reg_generica.Name = "lbl_reg_generica";
             this.lbl_reg_generica.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_generica.TabIndex = 85;
@@ -287,7 +292,7 @@
             this.btn_reg_borrar});
             this.tt_reg_editar.Location = new System.Drawing.Point(0, 545);
             this.tt_reg_editar.Name = "tt_reg_editar";
-            this.tt_reg_editar.Size = new System.Drawing.Size(1128, 57);
+            this.tt_reg_editar.Size = new System.Drawing.Size(1251, 57);
             this.tt_reg_editar.TabIndex = 86;
             this.tt_reg_editar.Text = "Menú";
             // 
@@ -325,11 +330,42 @@
             this.btn_reg_borrar.ToolTipText = "Borrar";
             this.btn_reg_borrar.Click += new System.EventHandler(this.btn_reg_borrar_Click);
             // 
+            // lbl_reg_tipo
+            // 
+            this.lbl_reg_tipo.AutoSize = true;
+            this.lbl_reg_tipo.Location = new System.Drawing.Point(198, 159);
+            this.lbl_reg_tipo.Name = "lbl_reg_tipo";
+            this.lbl_reg_tipo.Size = new System.Drawing.Size(60, 20);
+            this.lbl_reg_tipo.TabIndex = 88;
+            this.lbl_reg_tipo.Text = "label22";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(148, 159);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(43, 20);
+            this.label14.TabIndex = 87;
+            this.label14.Text = "Tipo:";
+            // 
+            // btn_archivo_abrir
+            // 
+            this.btn_archivo_abrir.Location = new System.Drawing.Point(45, 304);
+            this.btn_archivo_abrir.Name = "btn_archivo_abrir";
+            this.btn_archivo_abrir.Size = new System.Drawing.Size(75, 27);
+            this.btn_archivo_abrir.TabIndex = 89;
+            this.btn_archivo_abrir.Text = "Abrir";
+            this.btn_archivo_abrir.UseVisualStyleBackColor = true;
+            this.btn_archivo_abrir.Click += new System.EventHandler(this.btn_archivo_abrir_Click);
+            // 
             // Registros_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 602);
+            this.ClientSize = new System.Drawing.Size(1251, 602);
+            this.Controls.Add(this.btn_archivo_abrir);
+            this.Controls.Add(this.lbl_reg_tipo);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.tt_reg_editar);
             this.Controls.Add(this.lbl_reg_generica);
             this.Controls.Add(this.lbl_reg_distintiva);
@@ -358,6 +394,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Registros_Visualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vizualizar información del Registro Sanitario";
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();
@@ -396,5 +433,8 @@
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.ToolStripButton btn_reg_editar;
         private System.Windows.Forms.ToolStripButton btn_reg_borrar;
+        private System.Windows.Forms.Label lbl_reg_tipo;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button btn_archivo_abrir;
     }
 }

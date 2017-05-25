@@ -73,7 +73,7 @@
             this.toolStripLabel3});
             this.tt_registros.Location = new System.Drawing.Point(0, 0);
             this.tt_registros.Name = "tt_registros";
-            this.tt_registros.Size = new System.Drawing.Size(91, 691);
+            this.tt_registros.Size = new System.Drawing.Size(91, 657);
             this.tt_registros.Stretch = true;
             this.tt_registros.TabIndex = 0;
             this.tt_registros.Text = "Herramientas";
@@ -182,8 +182,9 @@
             this.DGVRegistros.Location = new System.Drawing.Point(95, 13);
             this.DGVRegistros.Name = "DGVRegistros";
             this.DGVRegistros.ReadOnly = true;
-            this.DGVRegistros.Size = new System.Drawing.Size(1243, 666);
+            this.DGVRegistros.Size = new System.Drawing.Size(1243, 630);
             this.DGVRegistros.TabIndex = 1;
+            this.DGVRegistros.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGVRegistros_CellFormatting);
             this.DGVRegistros.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVRegistros_RowHeaderMouseClick);
             // 
             // idColumn
@@ -263,13 +264,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 691);
+            this.ClientSize = new System.Drawing.Size(1350, 657);
             this.Controls.Add(this.DGVRegistros);
             this.Controls.Add(this.tt_registros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Registros_Principal";
             this.Text = "Panel Principal de Registros Sanitarios";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.tt_registros.ResumeLayout(false);
             this.tt_registros.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).EndInit();

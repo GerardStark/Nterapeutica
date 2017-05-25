@@ -9,18 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibLicitacion;
+using System.IO;
 
 namespace AppLicitaciones
 {
     public partial class Registros_Visualizar : Form
     {
         MainConfig mc = new MainConfig();
+        int id_registro;
         public Registros_Visualizar()
         {
             InitializeComponent();
         }
         public void mostrarinforegistro(int id_registro)
         {
+            this.id_registro = id_registro;
             SqlConnection con = new SqlConnection(mc.con);
             con.Open();
             SqlCommand cmd = new SqlCommand("Select * from Registros_Sanitarios Where id_registro = @id",con);
@@ -34,7 +37,7 @@ namespace AppLicitaciones
                 lbl_reg_numero.Text = dt.Rows[0]["numero_registro"].ToString();
                 lbl_reg_solicitud.Text = dt.Rows[0]["numero_solicitud"].ToString();
                 lbl_reg_titular.Text = dt.Rows[0]["titular"].ToString();
-                lbl_reg_fabricante.Text = dt.Rows[0]["fabricante"].ToString();
+                lbl_reg_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
                 lbl_reg_marca.Text = dt.Rows[0]["marca"].ToString();
                 lbl_reg_nacionalidad.Text = dt.Rows[0]["nacionalidad"].ToString();
                 lbl_reg_tlc.Text = dt.Rows[0]["tratado_comercio"].ToString();
@@ -43,8 +46,9 @@ namespace AppLicitaciones
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
                 lbl_reg_distintiva.Text = dt.Rows[0]["denom_distintiva"].ToString();
                 lbl_reg_generica.Text = dt.Rows[0]["denom_generica"].ToString();
+                lbl_reg_tipo.Text = dt.Rows[0]["tipo"].ToString();
             }
-        }
+        }        
 
         private void btn_reg_borrar_Click(object sender, EventArgs e)
         {
@@ -70,6 +74,18 @@ namespace AppLicitaciones
         {
             this.DialogResult = DialogResult.Abort;
             this.Close();
+        }
+
+        private void btn_archivo_abrir_Click(object sender, EventArgs e)
+        {
+            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\";
+            string pathanexos = newpath + "\\" + id_registro + "\\"+lbl_reg_archivo.Text;
+
+            if (lbl_reg_archivo.Text != "(Vacio)")
+            {
+
+                System.Diagnostics.Process.Start(pathanexos);
+            }
         }
     }
 }

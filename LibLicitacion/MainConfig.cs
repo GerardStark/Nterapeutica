@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Data.SqlClient;
 
 namespace LibLicitacion
 {
@@ -22,6 +23,36 @@ namespace LibLicitacion
             {
                 return true;
             }
+        }
+        public string obtenernombrefabricante(int id_fabricante)
+        {
+            string nombre = "";
+            if (id_fabricante != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from fabricantes_titulares_distribuidores where id_ftd=@id", conec);
+                cmd.Parameters.AddWithValue("@id", id_fabricante);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "fabricantes");
+                conec.Close();
+                if (ds.Tables["fabricantes"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["fabricantes"].Rows[0]["nombre"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+
+                
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
         }
 
     }

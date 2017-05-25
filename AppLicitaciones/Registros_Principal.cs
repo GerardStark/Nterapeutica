@@ -113,7 +113,15 @@ namespace AppLicitaciones
                     //TODO Pasar a edicion del registro
                     if (result2 == DialogResult.OK)
                     {
-
+                        MessageBox.Show("Registro Actualizado.");
+                        rn.mostrarinforegistro(id_registro);
+                        result = rn.ShowDialog();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se hizo cambio alguno.");
+                        rn.mostrarinforegistro(id_registro);
+                        result = rn.ShowDialog();
                     }
                 }
             }
@@ -128,12 +136,37 @@ namespace AppLicitaciones
 
         private void btn_reg_claves_Click(object sender, EventArgs e)
         {
-            Registros_ClavesReferencias rc = new Registros_ClavesReferencias();
-            rc.mostrarclavesregistro(id_registro);
-            DialogResult result = rc.ShowDialog();
-            if (result == DialogResult.OK)
+            if (id_registro != 0)
             {
+                Registros_ClavesReferencias rc = new Registros_ClavesReferencias();
+                rc.mostrarclavesregistro(id_registro);
+                rc.Show();
+                
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un Registro Sanitario");
+            }
+        }
 
+        private void DGVRegistros_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.DGVRegistros.Columns[e.ColumnIndex].Name)
+            {
+                case "fabrColumn":
+                    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
+                    {
+                        if (Convert.ToInt32(e.Value) > 0)
+                        {
+                            int idfab = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["fabrColumn"].Value);
+                            e.Value = mc.obtenernombrefabricante(idfab);
+                        }
+                    }
+                    else
+                    {
+                        e.Value = "(Vacio)";
+                    }
+                    break;
             }
         }
     }
