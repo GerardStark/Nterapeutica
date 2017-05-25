@@ -223,6 +223,9 @@
     <EmbeddedResource Include="Registros_Principal.resx">
       <DependentUpon>Registros_Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros_Prorrogas.resx">
+      <DependentUpon>Registros_Prorrogas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros_Visualizar.resx">
       <DependentUpon>Registros_Visualizar.cs</DependentUpon>
     </EmbeddedResource>

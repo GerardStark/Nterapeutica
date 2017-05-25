@@ -76,12 +76,47 @@ namespace AppLicitaciones
         {
             if (id_referencia != 0)
             {
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("UPDATE registros_claves_referencias set clave_ref_cod = @clave , descripcion = @descripcion, unidad_venta = @unidad" +
+                        ",actualizado_en = @actualizado where id_clave_registro = @id", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", id_referencia);
+                    cmd.Parameters.AddWithValue("@idregistro", id_registro);
+                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
+                    cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
+                    cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Actualizado");
+                    mostrarclavesregistro(id_registro);
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+        }
+
+        private void DGV_Referencias_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (id_referencia != 0)
+            {
                 id_referencia = 0;
                 btn_guardar.Enabled = true;
                 txt_clave.Text = "";
                 txt_descripcion.Text = "";
                 txt_unidad.Text = "";
             }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            //Eliminar uno por uno las clavess
+
         }
 
         private void DGV_Referencias_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
