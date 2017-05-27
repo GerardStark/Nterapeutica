@@ -58,8 +58,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
             this.btn_select_fabricante = new System.Windows.Forms.Button();
-            this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.txt_tipo = new System.Windows.Forms.Label();
+            this.rad_prorroga = new System.Windows.Forms.RadioButton();
+            this.rad_modificacion = new System.Windows.Forms.RadioButton();
+            this.rad_registro = new System.Windows.Forms.RadioButton();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -316,14 +318,6 @@
             this.btn_select_fabricante.UseVisualStyleBackColor = true;
             this.btn_select_fabricante.Click += new System.EventHandler(this.btn_select_fabricante_Click);
             // 
-            // cmb_tipo
-            // 
-            this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Location = new System.Drawing.Point(706, 101);
-            this.cmb_tipo.Name = "cmb_tipo";
-            this.cmb_tipo.Size = new System.Drawing.Size(301, 28);
-            this.cmb_tipo.TabIndex = 56;
-            // 
             // txt_tipo
             // 
             this.txt_tipo.AutoSize = true;
@@ -333,12 +327,47 @@
             this.txt_tipo.TabIndex = 57;
             this.txt_tipo.Text = "Tipo:";
             // 
+            // rad_prorroga
+            // 
+            this.rad_prorroga.AutoSize = true;
+            this.rad_prorroga.Location = new System.Drawing.Point(920, 102);
+            this.rad_prorroga.Name = "rad_prorroga";
+            this.rad_prorroga.Size = new System.Drawing.Size(88, 24);
+            this.rad_prorroga.TabIndex = 60;
+            this.rad_prorroga.TabStop = true;
+            this.rad_prorroga.Text = "Prórroga";
+            this.rad_prorroga.UseVisualStyleBackColor = true;
+            // 
+            // rad_modificacion
+            // 
+            this.rad_modificacion.AutoSize = true;
+            this.rad_modificacion.Location = new System.Drawing.Point(799, 102);
+            this.rad_modificacion.Name = "rad_modificacion";
+            this.rad_modificacion.Size = new System.Drawing.Size(115, 24);
+            this.rad_modificacion.TabIndex = 59;
+            this.rad_modificacion.TabStop = true;
+            this.rad_modificacion.Text = "Modificación";
+            this.rad_modificacion.UseVisualStyleBackColor = true;
+            // 
+            // rad_registro
+            // 
+            this.rad_registro.AutoSize = true;
+            this.rad_registro.Location = new System.Drawing.Point(706, 102);
+            this.rad_registro.Name = "rad_registro";
+            this.rad_registro.Size = new System.Drawing.Size(87, 24);
+            this.rad_registro.TabIndex = 58;
+            this.rad_registro.TabStop = true;
+            this.rad_registro.Text = "Registro";
+            this.rad_registro.UseVisualStyleBackColor = true;
+            // 
             // Registros_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 454);
-            this.Controls.Add(this.cmb_tipo);
+            this.Controls.Add(this.rad_prorroga);
+            this.Controls.Add(this.rad_modificacion);
+            this.Controls.Add(this.rad_registro);
             this.Controls.Add(this.txt_tipo);
             this.Controls.Add(this.btn_select_fabricante);
             this.Controls.Add(this.lbl_reg_archivo);
@@ -409,7 +438,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_reg_archivo;
         private System.Windows.Forms.Button btn_select_fabricante;
-        private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.Label txt_tipo;
+        private System.Windows.Forms.RadioButton rad_prorroga;
+        private System.Windows.Forms.RadioButton rad_modificacion;
+        private System.Windows.Forms.RadioButton rad_registro;
     }
 }

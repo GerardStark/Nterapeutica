@@ -121,7 +121,7 @@ namespace AppLicitaciones
         private void btn_contactos_Click(object sender, EventArgs e)
         {
             FTD_Contactos fc = new FTD_Contactos();
-            //fc.llenarcontactosfabricante(id_fabricante);
+            fc.llenarcontactosfabricante(id_fabricante);
             DialogResult result = fc.ShowDialog();
             if (result == DialogResult.OK)
             {

@@ -45,6 +45,7 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noSeQueEstoyHaciendoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -100,7 +101,8 @@
             this.registrosSanitariosToolStripMenuItem,
             this.certificadosDeCalidadToolStripMenuItem,
             this.catálogosDeProductosToolStripMenuItem,
-            this.cuadroBasicoDelIMSSToolStripMenuItem});
+            this.cuadroBasicoDelIMSSToolStripMenuItem,
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem});
             this.bancoDeDatosToolStripMenuItem.Name = "bancoDeDatosToolStripMenuItem";
             this.bancoDeDatosToolStripMenuItem.Size = new System.Drawing.Size(129, 25);
             this.bancoDeDatosToolStripMenuItem.Text = "Banco de Datos";
@@ -108,28 +110,28 @@
             // registrosSanitariosToolStripMenuItem
             // 
             this.registrosSanitariosToolStripMenuItem.Name = "registrosSanitariosToolStripMenuItem";
-            this.registrosSanitariosToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.registrosSanitariosToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.registrosSanitariosToolStripMenuItem.Text = "Registros Sanitarios";
             this.registrosSanitariosToolStripMenuItem.Click += new System.EventHandler(this.registrosSanitariosToolStripMenuItem_Click);
             // 
             // certificadosDeCalidadToolStripMenuItem
             // 
             this.certificadosDeCalidadToolStripMenuItem.Name = "certificadosDeCalidadToolStripMenuItem";
-            this.certificadosDeCalidadToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.certificadosDeCalidadToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.certificadosDeCalidadToolStripMenuItem.Text = "Certificados de Calidad";
             this.certificadosDeCalidadToolStripMenuItem.Click += new System.EventHandler(this.certificadosDeCalidadToolStripMenuItem_Click);
             // 
             // catálogosDeProductosToolStripMenuItem
             // 
             this.catálogosDeProductosToolStripMenuItem.Name = "catálogosDeProductosToolStripMenuItem";
-            this.catálogosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.catálogosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.catálogosDeProductosToolStripMenuItem.Text = "Catálogos de Productos";
             this.catálogosDeProductosToolStripMenuItem.Click += new System.EventHandler(this.catálogosDeProductosToolStripMenuItem_Click);
             // 
             // cuadroBasicoDelIMSSToolStripMenuItem
             // 
             this.cuadroBasicoDelIMSSToolStripMenuItem.Name = "cuadroBasicoDelIMSSToolStripMenuItem";
-            this.cuadroBasicoDelIMSSToolStripMenuItem.Size = new System.Drawing.Size(244, 26);
+            this.cuadroBasicoDelIMSSToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
             this.cuadroBasicoDelIMSSToolStripMenuItem.Text = "Cuadro Basico del IMSS";
             this.cuadroBasicoDelIMSSToolStripMenuItem.Click += new System.EventHandler(this.cuadroBasicoDelIMSSToolStripMenuItem_Click);
             // 
@@ -145,7 +147,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(101, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 26);
             this.toolStripMenuItem2.Text = "???";
             // 
             // ayudaToolStripMenuItem
@@ -181,6 +183,13 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
             this.salirToolStripMenuItem.Text = "Salir";
+            // 
+            // fabricantesTitularesDistribuidoresToolStripMenuItem
+            // 
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Name = "fabricantesTitularesDistribuidoresToolStripMenuItem";
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Text = "Fabricantes,Titulares,Distribuidores";
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.fabricantesTitularesDistribuidoresToolStripMenuItem_Click);
             // 
             // Form_Principal
             // 
@@ -221,5 +230,6 @@
         private System.Windows.Forms.ToolStripMenuItem manualesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem informacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noSeQueEstoyHaciendoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fabricantesTitularesDistribuidoresToolStripMenuItem;
     }
 }

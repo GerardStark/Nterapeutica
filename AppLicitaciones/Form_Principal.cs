@@ -158,5 +158,22 @@ namespace AppLicitaciones
             newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }
+
+        private void fabricantesTitularesDistribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach(Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(FTD_Principal))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            FTD_Principal newForm = new FTD_Principal();
+            newForm.MdiParent = this;
+            newForm.llenartablaftd();
+            newForm.Show();
+        }
     }
 }

@@ -122,7 +122,12 @@ namespace AppLicitaciones
                         MessageBox.Show("No se hizo cambio alguno.");
                         rn.mostrarinforegistro(id_registro);
                         result = rn.ShowDialog();
+                        llenartablaregistros();
                     }
+                }
+                else
+                {
+                    llenartablaregistros();
                 }
             }
         }

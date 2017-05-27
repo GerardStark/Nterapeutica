@@ -21,20 +21,6 @@ namespace AppLicitaciones
         public Registros_Editar()
         {
             InitializeComponent();
-            string[] textos = new string[] { "Registro", "Modificación", "Prórroga" };
-            string[] values = new string[] { "Registro", "Modificación", "Prórroga" };
-            llenarcombobox(textos, values);
-        }
-        private void llenarcombobox(string[] textos, string[] values)
-        {
-            for (int i = 0; i < textos.Length; i++)
-            {
-                ComboboxItem item = new ComboboxItem();
-                item.Text = textos[i].ToString();
-                item.Value = values[i].ToString();
-                cmb_tipo.Items.Add(item);
-            }
-            cmb_tipo.SelectedIndex = 0;
         }
         public void llenarcamposregistro(int id_registro)
         {
@@ -63,7 +49,18 @@ namespace AppLicitaciones
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
                 txt_distintiva.Text = dt.Rows[0]["denom_distintiva"].ToString();
                 txt_generica.Text = dt.Rows[0]["denom_generica"].ToString();
-                cmb_tipo.SelectedText = dt.Rows[0]["tipo"].ToString();
+                switch (dt.Rows[0]["tipo"].ToString())
+                {
+                    case "Registro":
+                        rad_registro.Checked = true;
+                        break;
+                    case "Modificación":
+                        rad_modificacion.Checked = true;
+                        break;
+                    case "Prórroga":
+                        rad_prorroga.Checked = true;
+                        break;
+                }
             }
         }
 
@@ -136,6 +133,8 @@ namespace AppLicitaciones
 
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
+            var checkedButton = Controls.OfType<RadioButton>()
+                                      .FirstOrDefault(r => r.Checked);
             DialogResult dialogResult = MessageBox.Show("Se guardaran los cambios realizados, esta acción no se puede deshacer", "Actualizar Registro Sanitario", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -160,7 +159,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
                     cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
                     cmd.Parameters.AddWithValue("@vencimiento", date_vencimiento.Value.Date);
-                    cmd.Parameters.AddWithValue("@tipo", cmb_tipo.SelectedText);
+                    cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
                     cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                     cmd.ExecuteNonQuery();

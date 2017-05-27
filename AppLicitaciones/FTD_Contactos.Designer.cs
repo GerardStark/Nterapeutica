@@ -30,13 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FTD_Contactos));
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_contactos = new System.Windows.Forms.DataGridView();
             this.txt_comentarios = new System.Windows.Forms.TextBox();
             this.txt_telefono_dos = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
@@ -56,8 +54,10 @@
             this.telefonoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonodosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ComentariosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_editar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_contactos)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripButton3
@@ -68,34 +68,27 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(52, 54);
             this.toolStripButton3.Text = "toolStripButton3";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // toolStripButton2
+            // btn_guardar
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(52, 54);
-            this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(52, 54);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.btn_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
+            this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(52, 54);
+            this.btn_guardar.Text = "toolStripButton2";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripLabel1,
-            this.toolStripButton2,
+            this.btn_guardar,
             this.toolStripLabel2,
+            this.btn_editar,
+            this.toolStripLabel4,
             this.toolStripButton3,
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -103,12 +96,6 @@
             this.toolStrip1.Size = new System.Drawing.Size(55, 442);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(52, 15);
-            this.toolStripLabel1.Text = "Nuevo";
             // 
             // toolStripLabel2
             // 
@@ -122,10 +109,12 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel3.Text = "Eliminar";
             // 
-            // dataGridView1
+            // DGV_contactos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DGV_contactos.AllowUserToAddRows = false;
+            this.DGV_contactos.AllowUserToDeleteRows = false;
+            this.DGV_contactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_contactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
             this.nombreColumn,
             this.emailColumn,
@@ -133,10 +122,13 @@
             this.telefonoColumn,
             this.telefonodosColumn,
             this.ComentariosColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(398, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(684, 418);
-            this.dataGridView1.TabIndex = 2;
+            this.DGV_contactos.Location = new System.Drawing.Point(398, 12);
+            this.DGV_contactos.Name = "DGV_contactos";
+            this.DGV_contactos.ReadOnly = true;
+            this.DGV_contactos.Size = new System.Drawing.Size(698, 418);
+            this.DGV_contactos.TabIndex = 2;
+            this.DGV_contactos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_contactos_RowHeaderMouseClick);
+            this.DGV_contactos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_contactos_RowHeaderMouseDoubleClick);
             // 
             // txt_comentarios
             // 
@@ -239,43 +231,68 @@
             // 
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
             this.idColumn.Width = 40;
             // 
             // nombreColumn
             // 
             this.nombreColumn.HeaderText = "Nombre";
             this.nombreColumn.Name = "nombreColumn";
+            this.nombreColumn.ReadOnly = true;
             // 
             // emailColumn
             // 
             this.emailColumn.HeaderText = "Email";
             this.emailColumn.Name = "emailColumn";
+            this.emailColumn.ReadOnly = true;
             // 
             // emaildosColumn
             // 
             this.emaildosColumn.HeaderText = "Email 2";
             this.emaildosColumn.Name = "emaildosColumn";
+            this.emaildosColumn.ReadOnly = true;
             // 
             // telefonoColumn
             // 
             this.telefonoColumn.HeaderText = "Telefono";
             this.telefonoColumn.Name = "telefonoColumn";
+            this.telefonoColumn.ReadOnly = true;
             // 
             // telefonodosColumn
             // 
             this.telefonodosColumn.HeaderText = "Telefono 2";
             this.telefonodosColumn.Name = "telefonodosColumn";
+            this.telefonodosColumn.ReadOnly = true;
+            this.telefonodosColumn.Width = 110;
             // 
             // ComentariosColumn
             // 
             this.ComentariosColumn.HeaderText = "Comentarios";
             this.ComentariosColumn.Name = "ComentariosColumn";
+            this.ComentariosColumn.ReadOnly = true;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
+            this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(52, 54);
+            this.btn_editar.Text = "toolStripButton5";
+            this.btn_editar.ToolTipText = "Editar";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel4.Text = "Editar";
             // 
             // FTD_Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 442);
+            this.ClientSize = new System.Drawing.Size(1108, 442);
             this.Controls.Add(this.txt_comentarios);
             this.Controls.Add(this.txt_telefono_dos);
             this.Controls.Add(this.txt_telefono);
@@ -288,7 +305,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_contactos);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -296,7 +313,7 @@
             this.Text = "Panel de Contactos de los Fabricantes, Titulares y Distribuidores";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_contactos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,20 +322,11 @@
         #endregion
 
         private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btn_guardar;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emaildosColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefonodosColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ComentariosColumn;
+        private System.Windows.Forms.DataGridView DGV_contactos;
         private System.Windows.Forms.TextBox txt_comentarios;
         private System.Windows.Forms.TextBox txt_telefono_dos;
         private System.Windows.Forms.TextBox txt_telefono;
@@ -331,5 +339,14 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emaildosColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefonodosColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ComentariosColumn;
+        private System.Windows.Forms.ToolStripButton btn_editar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }

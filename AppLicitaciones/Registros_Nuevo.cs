@@ -23,24 +23,11 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             lbl_reg_archivo.Text = "";
-            string[] textos = new string[] { "Registro", "Modificación", "Prórroga" };
-            string[] values = new string[] { "Registro", "Modificación", "Prórroga" };
-            llenarcombobox(textos, values);
         }
-        private void llenarcombobox(string[] textos, string [] values)
-        {
-            for (int i = 0; i < textos.Length; i++)
-            {
-                ComboboxItem item = new ComboboxItem();
-                item.Text = textos[i].ToString();
-                item.Value = values[i].ToString();
-                cmb_tipo.Items.Add(item);
-            }
-            cmb_tipo.SelectedIndex = 0;
-        }
-
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
+            var checkedButton = Controls.OfType<RadioButton>()
+                                      .FirstOrDefault(r => r.Checked);
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
@@ -59,8 +46,8 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
                 cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
                 cmd.Parameters.AddWithValue("@vencimiento",date_vencimiento.Value.Date);
-                cmd.Parameters.AddWithValue("@tipo",cmb_tipo.SelectedText);
-                cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
+                cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
+                cmd.Parameters.AddWithValue("@archivo", checkedButton.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 Int32 newId = (Int32)cmd.ExecuteScalar();
                 crearDirectorios(newId);

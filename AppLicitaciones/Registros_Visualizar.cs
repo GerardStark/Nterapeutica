@@ -52,15 +52,72 @@ namespace AppLicitaciones
 
         private void btn_reg_borrar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(id_registro.ToString());
             DialogResult dialogResult = MessageBox.Show("Seguro que desea borrar el registro sanitario? Esta acción no se puede deshacer", "Borrar Registro Sanitario", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
+                SqlConnection con = new SqlConnection(mc.con);
+                con.Open();
+                SqlCommand cmd_referencias = new SqlCommand("Select id_clave_registro from registros_claves_referencias where id_registro_sanitario = @idref",con);
+                cmd_referencias.Parameters.AddWithValue("@idref", id_registro);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd_referencias);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    DialogResult resultclaves = MessageBox.Show("El Registro Sanitario tiene referencias que dependen de el y tiene que ser borrados primero, ¿Desea seguir?", "Borrar Referencias del Registro Sanitario", MessageBoxButtons.YesNo);
+                    if (resultclaves == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            SqlCommand cmd_claves = new SqlCommand("Delete from registros_claves_referencias where id_registro_sanitario = @id_ref", con);
+                            cmd_claves.Parameters.AddWithValue("@id_ref", id_registro);
+                            cmd_claves.ExecuteNonQuery();
+                            MessageBox.Show("Referencias Borradas");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+                SqlCommand cmd_prorrogas = new SqlCommand("Select id_tramite_prorroga from registros_tramites_prorroga where id_registro_sanitario = @idpro", con);
+                cmd_prorrogas.Parameters.AddWithValue("@idpro", id_registro);
+                SqlDataAdapter adaptd = new SqlDataAdapter(cmd_prorrogas);
+                DataTable dts = new DataTable();
+                adaptd.Fill(dts);
+                if (dts.Rows.Count > 0)
+                {
+                    DialogResult resultclaves = MessageBox.Show("El Registro Sanitario tiene prorrogas que dependen de el y tiene que ser borrados primero, ¿Desea seguir?", "Borrar Prorrogas del Registro Sanitario", MessageBoxButtons.YesNo);
+                    if (resultclaves == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            SqlCommand cmd_tramites = new SqlCommand("Delete from registros_tramites_prorroga where id_registro_sanitario = @id_pro", con);
+                            cmd_tramites.Parameters.AddWithValue("@id_pro", id_registro);
+                            cmd_tramites.ExecuteNonQuery();
+                            MessageBox.Show("Prorrogas Borradas");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+
+                    }
+                }
+                SqlCommand cmd_registro = new SqlCommand("Delete From registros_sanitarios where id_registro = @id_reg", con);
+                cmd_registro.Parameters.AddWithValue("@id_reg", id_registro);
+                cmd_registro.ExecuteNonQuery();
                 MessageBox.Show("Registro Borrado");
-                //TODO Borrar Registro
+                con.Close();
+                this.DialogResult = DialogResult.Abort;
+                this.Close();
             }
             else
             {
                 MessageBox.Show("Acción Cancelada");
+                this.DialogResult = DialogResult.Abort;
+                this.Close();
             }
         }
 
@@ -83,7 +140,6 @@ namespace AppLicitaciones
 
             if (lbl_reg_archivo.Text != "(Vacio)")
             {
-
                 System.Diagnostics.Process.Start(pathanexos);
             }
         }

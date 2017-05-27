@@ -59,8 +59,10 @@
             this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
             this.btn_selec_fabricante = new System.Windows.Forms.Button();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
-            this.txt_tipo = new System.Windows.Forms.Label();
-            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.lbl_tipo = new System.Windows.Forms.Label();
+            this.rad_registro = new System.Windows.Forms.RadioButton();
+            this.rad_modificacion = new System.Windows.Forms.RadioButton();
+            this.rad_prorroga = new System.Windows.Forms.RadioButton();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -329,30 +331,57 @@
             this.lbl_reg_archivo.TabIndex = 31;
             this.lbl_reg_archivo.Text = "label13";
             // 
-            // txt_tipo
+            // lbl_tipo
             // 
-            this.txt_tipo.AutoSize = true;
-            this.txt_tipo.Location = new System.Drawing.Point(656, 113);
-            this.txt_tipo.Name = "txt_tipo";
-            this.txt_tipo.Size = new System.Drawing.Size(43, 20);
-            this.txt_tipo.TabIndex = 32;
-            this.txt_tipo.Text = "Tipo:";
+            this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.Location = new System.Drawing.Point(656, 113);
+            this.lbl_tipo.Name = "lbl_tipo";
+            this.lbl_tipo.Size = new System.Drawing.Size(43, 20);
+            this.lbl_tipo.TabIndex = 32;
+            this.lbl_tipo.Text = "Tipo:";
             // 
-            // cmb_tipo
+            // rad_registro
             // 
-            this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Location = new System.Drawing.Point(707, 110);
-            this.cmb_tipo.Name = "cmb_tipo";
-            this.cmb_tipo.Size = new System.Drawing.Size(288, 28);
-            this.cmb_tipo.TabIndex = 8;
+            this.rad_registro.AutoSize = true;
+            this.rad_registro.Location = new System.Drawing.Point(707, 115);
+            this.rad_registro.Name = "rad_registro";
+            this.rad_registro.Size = new System.Drawing.Size(87, 24);
+            this.rad_registro.TabIndex = 33;
+            this.rad_registro.TabStop = true;
+            this.rad_registro.Text = "Registro";
+            this.rad_registro.UseVisualStyleBackColor = true;
+            // 
+            // rad_modificacion
+            // 
+            this.rad_modificacion.AutoSize = true;
+            this.rad_modificacion.Location = new System.Drawing.Point(800, 115);
+            this.rad_modificacion.Name = "rad_modificacion";
+            this.rad_modificacion.Size = new System.Drawing.Size(115, 24);
+            this.rad_modificacion.TabIndex = 34;
+            this.rad_modificacion.TabStop = true;
+            this.rad_modificacion.Text = "Modificación";
+            this.rad_modificacion.UseVisualStyleBackColor = true;
+            // 
+            // rad_prorroga
+            // 
+            this.rad_prorroga.AutoSize = true;
+            this.rad_prorroga.Location = new System.Drawing.Point(921, 115);
+            this.rad_prorroga.Name = "rad_prorroga";
+            this.rad_prorroga.Size = new System.Drawing.Size(88, 24);
+            this.rad_prorroga.TabIndex = 35;
+            this.rad_prorroga.TabStop = true;
+            this.rad_prorroga.Text = "Prórroga";
+            this.rad_prorroga.UseVisualStyleBackColor = true;
             // 
             // Registros_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1029, 454);
-            this.Controls.Add(this.cmb_tipo);
-            this.Controls.Add(this.txt_tipo);
+            this.Controls.Add(this.rad_prorroga);
+            this.Controls.Add(this.rad_modificacion);
+            this.Controls.Add(this.rad_registro);
+            this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.lbl_reg_archivo);
             this.Controls.Add(this.btn_selec_fabricante);
             this.Controls.Add(this.tt_reg_nuevo);
@@ -423,8 +452,10 @@
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.Button btn_selec_fabricante;
         private System.Windows.Forms.Label lbl_reg_archivo;
-        private System.Windows.Forms.Label txt_tipo;
-        private System.Windows.Forms.ComboBox cmb_tipo;
+        private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
+        private System.Windows.Forms.RadioButton rad_registro;
+        private System.Windows.Forms.RadioButton rad_modificacion;
+        private System.Windows.Forms.RadioButton rad_prorroga;
     }
 }
