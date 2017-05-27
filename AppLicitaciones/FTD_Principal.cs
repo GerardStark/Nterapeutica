@@ -48,7 +48,10 @@ namespace AppLicitaciones
         {
             id_fabricante = Convert.ToInt32(DGV_FTD.Rows[e.RowIndex].Cells["idColumn"].Value);
             nombre_fabricante = DGV_FTD.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
-
+            txt_nombre.Text = DGV_FTD.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
+            txt_apoyo.Text = DGV_FTD.Rows[e.RowIndex].Cells["apoyoColumn"].Value.ToString();
+            txt_mayorista.Text = DGV_FTD.Rows[e.RowIndex].Cells["mayoristaColumn"].Value.ToString();
+            btn_guardar.Enabled = false;
         }
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
@@ -69,18 +72,49 @@ namespace AppLicitaciones
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("insert into fabricantes_titulares_distribuidores (nombre,tipo_apoyo,distribuidor_mayorista) values(@nombre,@apoyo,@mayorista)", con);
+                SqlCommand cmd = new SqlCommand("insert into fabricantes_titulares_distribuidores (nombre,tipo_apoyo,distribuidor_mayorista, actualizado_en)"+
+                    " values(@nombre,@apoyo,@mayorista,@actualizado)", con);
                 con.Open();
-                cmd.Parameters.AddWithValue("@numero", txt_nombre.Text);
+                cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@apoyo", txt_apoyo.Text);
                 cmd.Parameters.AddWithValue("@mayorista", txt_mayorista.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                Int32 newId = (Int32)cmd.ExecuteScalar();
+                cmd.ExecuteNonQuery();
                 con.Close();
+                llenartablaftd();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            if (id_fabricante != 0)
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("update fabricantes_titulares_distribuidores set nombre = @nombre,tipo_apoyo = @apoyo,distribuidor_mayorista= @mayorista," +
+                        " actualizado_en = @actualizado where id_ftd = @id", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", id_fabricante);
+                    cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
+                    cmd.Parameters.AddWithValue("@apoyo", txt_apoyo.Text);
+                    cmd.Parameters.AddWithValue("@mayorista", txt_mayorista.Text);
+                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    llenartablaftd();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un fabricante a editar");
             }
         }
 
@@ -94,5 +128,17 @@ namespace AppLicitaciones
 
             }
         }
+
+        private void DGV_FTD_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            btn_guardar.Enabled = true;
+            txt_nombre.Text = "";
+            txt_apoyo.Text = "";
+            txt_mayorista.Text = "";
+            id_fabricante = 0;
+            nombre_fabricante = "";
+        }
+
+        
     }
 }

@@ -44,9 +44,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_archivo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btn_ver = new System.Windows.Forms.Button();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.archivoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -59,12 +61,15 @@
             this.DGV_Referencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
             this.numeroColumn,
-            this.fechaColumn});
+            this.fechaColumn,
+            this.archivoColumn});
             this.DGV_Referencias.Location = new System.Drawing.Point(58, 154);
             this.DGV_Referencias.Name = "DGV_Referencias";
             this.DGV_Referencias.ReadOnly = true;
             this.DGV_Referencias.Size = new System.Drawing.Size(546, 510);
             this.DGV_Referencias.TabIndex = 3;
+            this.DGV_Referencias.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseClick);
+            this.DGV_Referencias.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseDoubleClick);
             // 
             // toolStrip1
             // 
@@ -91,6 +96,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(52, 54);
             this.btn_guardar.Text = "toolStripButton2";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // toolStripLabel2
             // 
@@ -107,6 +113,7 @@
             this.btn_editar.Size = new System.Drawing.Size(52, 54);
             this.btn_editar.Text = "toolStripButton5";
             this.btn_editar.ToolTipText = "Editar";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // toolStripLabel4
             // 
@@ -158,8 +165,9 @@
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(122, 31);
             this.btn_archivo.TabIndex = 7;
-            this.btn_archivo.Text = "Selecionar...";
+            this.btn_archivo.Text = "Cambiar";
             this.btn_archivo.UseVisualStyleBackColor = true;
+            this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
             // label2
             // 
@@ -188,6 +196,16 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Archivo";
             // 
+            // btn_ver
+            // 
+            this.btn_ver.Location = new System.Drawing.Point(187, 97);
+            this.btn_ver.Name = "btn_ver";
+            this.btn_ver.Size = new System.Drawing.Size(114, 31);
+            this.btn_ver.TabIndex = 11;
+            this.btn_ver.Text = "Ver";
+            this.btn_ver.UseVisualStyleBackColor = true;
+            this.btn_ver.Click += new System.EventHandler(this.btn_ver_Click);
+            // 
             // idColumn
             // 
             this.idColumn.HeaderText = "#";
@@ -208,11 +226,18 @@
             this.fechaColumn.ReadOnly = true;
             this.fechaColumn.Width = 200;
             // 
+            // archivoColumn
+            // 
+            this.archivoColumn.HeaderText = "Archivo";
+            this.archivoColumn.Name = "archivoColumn";
+            this.archivoColumn.ReadOnly = true;
+            // 
             // Registros_Prorrogas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(623, 676);
+            this.Controls.Add(this.btn_ver);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_archivo);
             this.Controls.Add(this.label2);
@@ -251,8 +276,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_archivo;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btn_ver;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn archivoColumn;
     }
 }

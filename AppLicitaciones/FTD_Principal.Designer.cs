@@ -44,6 +44,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_mayorista = new System.Windows.Forms.TextBox();
             this.txt_apoyo = new System.Windows.Forms.TextBox();
+            this.btn_editar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_FTD = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -60,6 +62,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_guardar,
             this.toolStripLabel2,
+            this.btn_editar,
+            this.toolStripLabel1,
             this.btn_contactos,
             this.toolStripLabel5,
             this.toolStripLabel6,
@@ -152,7 +156,7 @@
             // 
             this.txt_nombre.Location = new System.Drawing.Point(263, 12);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(226, 26);
+            this.txt_nombre.Size = new System.Drawing.Size(320, 26);
             this.txt_nombre.TabIndex = 2;
             // 
             // label2
@@ -177,15 +181,32 @@
             // 
             this.txt_mayorista.Location = new System.Drawing.Point(263, 85);
             this.txt_mayorista.Name = "txt_mayorista";
-            this.txt_mayorista.Size = new System.Drawing.Size(226, 26);
+            this.txt_mayorista.Size = new System.Drawing.Size(320, 26);
             this.txt_mayorista.TabIndex = 5;
             // 
             // txt_apoyo
             // 
             this.txt_apoyo.Location = new System.Drawing.Point(263, 48);
             this.txt_apoyo.Name = "txt_apoyo";
-            this.txt_apoyo.Size = new System.Drawing.Size(226, 26);
+            this.txt_apoyo.Size = new System.Drawing.Size(320, 26);
             this.txt_apoyo.TabIndex = 6;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
+            this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(65, 54);
+            this.btn_editar.Text = "toolStripButton5";
+            this.btn_editar.ToolTipText = "Editar";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel1.Text = "Editar";
             // 
             // DGV_FTD
             // 
@@ -200,22 +221,24 @@
             this.DGV_FTD.Location = new System.Drawing.Point(71, 117);
             this.DGV_FTD.Name = "DGV_FTD";
             this.DGV_FTD.ReadOnly = true;
-            this.DGV_FTD.Size = new System.Drawing.Size(544, 510);
+            this.DGV_FTD.Size = new System.Drawing.Size(574, 510);
             this.DGV_FTD.TabIndex = 7;
             this.DGV_FTD.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_FTD_RowHeaderMouseClick);
+            this.DGV_FTD.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_FTD_RowHeaderMouseDoubleClick);
             // 
             // idColumn
             // 
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
             // 
             // nombreColumn
             // 
             this.nombreColumn.HeaderText = "Nombre";
             this.nombreColumn.Name = "nombreColumn";
             this.nombreColumn.ReadOnly = true;
-            this.nombreColumn.Width = 130;
+            this.nombreColumn.Width = 190;
             // 
             // apoyoColumn
             // 
@@ -229,13 +252,13 @@
             this.mayoristaColumn.HeaderText = "Distribuidor Mayorista";
             this.mayoristaColumn.Name = "mayoristaColumn";
             this.mayoristaColumn.ReadOnly = true;
-            this.mayoristaColumn.Width = 150;
+            this.mayoristaColumn.Width = 175;
             // 
             // FTD_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 639);
+            this.ClientSize = new System.Drawing.Size(657, 639);
             this.Controls.Add(this.DGV_FTD);
             this.Controls.Add(this.txt_apoyo);
             this.Controls.Add(this.txt_mayorista);
@@ -267,16 +290,18 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_mayorista;
         private System.Windows.Forms.TextBox txt_apoyo;
-        private System.Windows.Forms.DataGridView DGV_FTD;
         private System.Windows.Forms.ToolStripButton btn_seleccionar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripButton btn_contactos;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
+        private System.Windows.Forms.ToolStripButton btn_cancelar;
+        private System.Windows.Forms.ToolStripButton btn_editar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.DataGridView DGV_FTD;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apoyoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mayoristaColumn;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.ToolStripButton btn_cancelar;
     }
 }

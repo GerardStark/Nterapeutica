@@ -129,9 +129,16 @@ namespace AppLicitaciones
 
         private void btn_reg_prorrogas_Click(object sender, EventArgs e)
         {
-            Registros_Prorrogas rp = new Registros_Prorrogas();
-            rp.mostrarprorrogasregistro(id_registro);
-            DialogResult result = rp.ShowDialog();
+            if (id_registro > 0)
+            {
+                Registros_Prorrogas rp = new Registros_Prorrogas();
+                rp.mostrarprorrogasregistro(id_registro);
+                DialogResult result = rp.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un Registro Sanitario");
+            }
         }
 
         private void btn_reg_claves_Click(object sender, EventArgs e)

@@ -68,7 +68,6 @@ namespace AppLicitaciones
             }
             catch (Exception)
             {
-
                 throw;
             }
             this.DialogResult = DialogResult.OK;

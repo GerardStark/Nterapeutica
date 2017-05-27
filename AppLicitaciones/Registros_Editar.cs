@@ -103,7 +103,7 @@ namespace AppLicitaciones
                     try
                     {
                         File.Delete(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + @"\" + dt.Rows[0]["dir_archivo"].ToString());
-                        cmd = new SqlCommand("UPDATE registros_sanitarios set dir_archivo=@archivo where id=" + id_registro + "", con);
+                        cmd = new SqlCommand("UPDATE registros_sanitarios set dir_archivo=@archivo where id_registro=" + id_registro + "", con);
                         cmd.Parameters.AddWithValue("@archivo", "(Vacio)");
                         lbl_reg_archivo.Text = "(Vacio)";
                         cmd.ExecuteScalar();
