@@ -38,6 +38,7 @@
             this.certificadosDeCalidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.catálogosDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadroBasicoDelIMSSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.herramientasAdminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noSeQueEstoyHaciendoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,8 +67,8 @@
             // licitacionesToolStripMenuItem
             // 
             this.licitacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.licitacionesEnCursoToolStripMenuItem,
             this.nuevaLicitacionToolStripMenuItem,
+            this.licitacionesEnCursoToolStripMenuItem,
             this.licitacionesConcluidasToolStripMenuItem});
             this.licitacionesToolStripMenuItem.Name = "licitacionesToolStripMenuItem";
             this.licitacionesToolStripMenuItem.Size = new System.Drawing.Size(102, 25);
@@ -135,6 +135,13 @@
             this.cuadroBasicoDelIMSSToolStripMenuItem.Text = "Cuadro Basico del IMSS";
             this.cuadroBasicoDelIMSSToolStripMenuItem.Click += new System.EventHandler(this.cuadroBasicoDelIMSSToolStripMenuItem_Click);
             // 
+            // fabricantesTitularesDistribuidoresToolStripMenuItem
+            // 
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Name = "fabricantesTitularesDistribuidoresToolStripMenuItem";
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Text = "Fabricantes,Titulares,Distribuidores";
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.fabricantesTitularesDistribuidoresToolStripMenuItem_Click);
+            // 
             // herramientasAdminToolStripMenuItem
             // 
             this.herramientasAdminToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -147,7 +154,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 26);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(101, 26);
             this.toolStripMenuItem2.Text = "???";
             // 
             // ayudaToolStripMenuItem
@@ -183,13 +190,6 @@
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(53, 25);
             this.salirToolStripMenuItem.Text = "Salir";
-            // 
-            // fabricantesTitularesDistribuidoresToolStripMenuItem
-            // 
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Name = "fabricantesTitularesDistribuidoresToolStripMenuItem";
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(321, 26);
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Text = "Fabricantes,Titulares,Distribuidores";
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.fabricantesTitularesDistribuidoresToolStripMenuItem_Click);
             // 
             // Form_Principal
             // 

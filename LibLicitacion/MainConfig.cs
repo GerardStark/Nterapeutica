@@ -54,6 +54,14 @@ namespace LibLicitacion
             }
             return nombre;
         }
+        //public ComboboxItem llenarcombobox(string [] arreglo_items ,  combobox)
+        //{
+        //    for (int i = 0; i < arreglo_items.Length; i++)
+        //    {
+        //        ComboboxItem item = new ComboboxItem();
+        //    }
+        //    return item;
+        //}
 
     }
     public class ComboboxItem

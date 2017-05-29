@@ -36,7 +36,13 @@ namespace AppLicitaciones
             DialogResult result = rn.ShowDialog();
             if (result == DialogResult.OK)
             {
-                filtrartablaregistros();
+                string ctrl = rn.ctrl;
+                string valor = rn.valor;
+                filtrartablaregistros(ctrl, valor);
+            }
+            else
+            {
+                llenartablaregistros();
             }
         }
         public void llenartablaregistros()
@@ -62,26 +68,24 @@ namespace AppLicitaciones
                 MessageBox.Show(ex.ToString());
             }
         }
-        public void filtrartablaregistros()
+        public void filtrartablaregistros(string ctrl, string valor)
         {
             try
             {
+                DGVRegistros.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * from registros_sanitarios", con);
-                SqlDataAdapter adapt = new SqlDataAdapter();
-                adapt.SelectCommand = cmd;
+                SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,fabricante,marca,nacionalidad,tratado_comercio," +
+                    "fecha_emision,fecha_vencimiento from registros_sanitarios where "+ ctrl + " Like '%"+valor+"%'", con);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    DGVRegistros.Rows.Add(dr.ItemArray);
+                }
                 con.Close();
-                DataView dv = new DataView(dt);
-                //TODO
-                //StringBuilder sb = new StringBuilder();
-                //dv.RowFilter = string.Format("titular = '{2}' OR numero Like '%{0}%'" +
-                //    "OR tipo_producto = '{1}' OR solicitud_tramite Like '%{0}%' OR denominacion_distintiva Like '%{0}%' OR denominacion_generica Like '%{0}%'"
-                //    , txt_buscar.Text, buscartipoprod(txt_buscar.Text), getidproveedor(txt_buscar.Text));
-                //dataGridView1.DataSource = dv;
             }
             catch (Exception ex)
             {
