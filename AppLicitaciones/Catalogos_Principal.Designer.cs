@@ -41,6 +41,12 @@
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.yearColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especialidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabricanteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idiomaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -151,11 +157,60 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
+            this.nombreColumn,
+            this.yearColumn,
+            this.especialidadColumn,
+            this.fabricanteColumn,
+            this.idiomaColumn});
             this.dataGridView1.Location = new System.Drawing.Point(95, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(1243, 705);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 25;
+            // 
+            // nombreColumn
+            // 
+            this.nombreColumn.HeaderText = "Nombre";
+            this.nombreColumn.Name = "nombreColumn";
+            this.nombreColumn.ReadOnly = true;
+            this.nombreColumn.Width = 200;
+            // 
+            // yearColumn
+            // 
+            this.yearColumn.HeaderText = "Año";
+            this.yearColumn.Name = "yearColumn";
+            this.yearColumn.ReadOnly = true;
+            this.yearColumn.Width = 200;
+            // 
+            // especialidadColumn
+            // 
+            this.especialidadColumn.HeaderText = "Especialidad";
+            this.especialidadColumn.Name = "especialidadColumn";
+            this.especialidadColumn.ReadOnly = true;
+            this.especialidadColumn.Width = 200;
+            // 
+            // fabricanteColumn
+            // 
+            this.fabricanteColumn.HeaderText = "Fabricante";
+            this.fabricanteColumn.Name = "fabricanteColumn";
+            this.fabricanteColumn.ReadOnly = true;
+            this.fabricanteColumn.Width = 200;
+            // 
+            // idiomaColumn
+            // 
+            this.idiomaColumn.HeaderText = "Idioma";
+            this.idiomaColumn.Name = "idiomaColumn";
+            this.idiomaColumn.ReadOnly = true;
+            this.idiomaColumn.Width = 200;
             // 
             // Catalogos_Principal
             // 
@@ -190,5 +245,11 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn yearColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fabricanteColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idiomaColumn;
     }
 }

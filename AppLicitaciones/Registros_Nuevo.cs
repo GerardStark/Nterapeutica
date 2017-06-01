@@ -50,7 +50,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@archivo", checkedButton.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 Int32 newId = (Int32)cmd.ExecuteScalar();
-                crearDirectorios(newId);
+                mc.crearDirectorios(archivo, fileName, newId,"Registros-Sanitarios");
                 con.Close();
             }
             catch (Exception)
@@ -77,28 +77,6 @@ namespace AppLicitaciones
             else if (result == DialogResult.Cancel)
             {
                 lbl_reg_archivo.Text = "(Vacio)";
-            }
-        }
-
-        private void crearDirectorios(int id)
-        {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\";
-            string pathanexos = newpath + "\\" + id + "\\";
-            if (Directory.Exists(newpath + "\\" + id + "\\"))
-            {
-                if (archivo != null)
-                {
-                    File.Copy(fileName, Path.Combine(pathanexos, archivo));
-                }
-            }
-            else
-            {
-                Directory.CreateDirectory(newpath + "\\" + id + "\\");
-
-                if (archivo != null)
-                {
-                    File.Copy(fileName, Path.Combine(pathanexos, archivo));
-                }
             }
         }
 

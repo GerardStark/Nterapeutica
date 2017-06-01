@@ -15,7 +15,7 @@ namespace AppLicitaciones
     public partial class Registros_Principal : Form
     {
         MainConfig mc = new MainConfig();
-        int id_registro = 0;
+        int id_registro = 0, filtro_flag = 0;
         public Registros_Principal()
         {
             InitializeComponent();
@@ -86,6 +86,7 @@ namespace AppLicitaciones
                     DGVRegistros.Rows.Add(dr.ItemArray);
                 }
                 con.Close();
+                filtro_flag = 1;
             }
             catch (Exception ex)
             {
@@ -100,21 +101,20 @@ namespace AppLicitaciones
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
-            if (id_registro == 0)
+            //si hay registro seleccionado, procede a visualizar
+            if (id_registro != 0)
             {
-                MessageBox.Show("Seleccione un Registro Sanitario de la lista para poder visualizarlo.");
-            }
-            else
-            {
+                //abre el panel de visualizacion del registro
                 Registros_Visualizar rn = new Registros_Visualizar();
                 rn.mostrarinforegistro(id_registro);
                 DialogResult result = rn.ShowDialog();
                 if (result == DialogResult.OK)
                 {
+                    //si se da clic en el boton editar
                     Registros_Editar re = new Registros_Editar();
                     re.llenarcamposregistro(id_registro);
                     DialogResult result2 = re.ShowDialog();
-                    //TODO Pasar a edicion del registro
+                    //Pasar a edicion del registro
                     if (result2 == DialogResult.OK)
                     {
                         MessageBox.Show("Registro Actualizado.");
@@ -123,16 +123,24 @@ namespace AppLicitaciones
                     }
                     else
                     {
-                        MessageBox.Show("No se hizo cambio alguno.");
+                        MessageBox.Show("No se modifico el registro.");
                         rn.mostrarinforegistro(id_registro);
                         result = rn.ShowDialog();
                         llenartablaregistros();
                     }
                 }
+                //si da clic en la palomita, se cierra y mantiene el filtro si es que hay uno
                 else
                 {
-                    llenartablaregistros();
+                    if (filtro_flag == 0)
+                    {
+                        llenartablaregistros();
+                    }
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Registro Sanitario de la lista para poder visualizarlo.");
             }
         }
 

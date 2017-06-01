@@ -52,7 +52,7 @@ namespace AppLicitaciones
 
         private void btn_reg_borrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(id_registro.ToString());
+           // MessageBox.Show(id_registro.ToString());
             DialogResult dialogResult = MessageBox.Show("Seguro que desea borrar el registro sanitario? Esta acción no se puede deshacer", "Borrar Registro Sanitario", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
             {
@@ -140,7 +140,14 @@ namespace AppLicitaciones
 
             if (lbl_reg_archivo.Text != "(Vacio)")
             {
-                System.Diagnostics.Process.Start(pathanexos);
+                try
+                {
+                    System.Diagnostics.Process.Start(pathanexos);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
     }

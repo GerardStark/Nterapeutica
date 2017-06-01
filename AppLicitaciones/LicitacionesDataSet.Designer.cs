@@ -2869,6 +2869,8 @@ namespace AppLicitaciones {
             
             private global::System.Data.DataColumn columnactualizado_en;
             
+            private global::System.Data.DataColumn columncodigo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public cucopDataTable() {
@@ -2976,6 +2978,14 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn codigoColumn {
+                get {
+                    return this.columncodigo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3011,7 +3021,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public cucopRow AddcucopRow(string nombre_generico_espeficico, string nombre_producto, string grupo, registros_sanitariosRow parentregistros_sanitariosRowByFK_cucop_registros_sanitarios, catalogos_productosRow parentcatalogos_productosRowByFK_cucop_catalogos_productos, certificados_calidadRow parentcertificados_calidadRowByFK_cucop_certificados_calidad, System.DateTime creado_en, System.DateTime actualizado_en) {
+            public cucopRow AddcucopRow(string nombre_generico_espeficico, string nombre_producto, string grupo, registros_sanitariosRow parentregistros_sanitariosRowByFK_cucop_registros_sanitarios, catalogos_productosRow parentcatalogos_productosRowByFK_cucop_catalogos_productos, certificados_calidadRow parentcertificados_calidadRowByFK_cucop_certificados_calidad, System.DateTime creado_en, System.DateTime actualizado_en, string codigo) {
                 cucopRow rowcucopRow = ((cucopRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -3022,7 +3032,8 @@ namespace AppLicitaciones {
                         null,
                         null,
                         creado_en,
-                        actualizado_en};
+                        actualizado_en,
+                        codigo};
                 if ((parentregistros_sanitariosRowByFK_cucop_registros_sanitarios != null)) {
                     columnValuesArray[4] = parentregistros_sanitariosRowByFK_cucop_registros_sanitarios[0];
                 }
@@ -3070,6 +3081,7 @@ namespace AppLicitaciones {
                 this.columnid_certificado_calidad = base.Columns["id_certificado_calidad"];
                 this.columncreado_en = base.Columns["creado_en"];
                 this.columnactualizado_en = base.Columns["actualizado_en"];
+                this.columncodigo = base.Columns["codigo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3093,6 +3105,8 @@ namespace AppLicitaciones {
                 base.Columns.Add(this.columncreado_en);
                 this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnactualizado_en);
+                this.columncodigo = new global::System.Data.DataColumn("codigo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncodigo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_cucop}, true));
                 this.columnid_cucop.AutoIncrement = true;
@@ -3104,6 +3118,7 @@ namespace AppLicitaciones {
                 this.columnnombre_generico_espeficico.MaxLength = 5000;
                 this.columnnombre_producto.MaxLength = 5000;
                 this.columngrupo.MaxLength = 50;
+                this.columncodigo.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9024,6 +9039,22 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string codigo {
+                get {
+                    try {
+                        return ((string)(this[this.tablecucop.codigoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'codigo\' de la tabla \'cucop\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop.codigoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public catalogos_productosRow catalogos_productosRow {
                 get {
                     return ((catalogos_productosRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_catalogos_productos"])));
@@ -9149,6 +9180,18 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setactualizado_enNull() {
                 this[this.tablecucop.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IscodigoNull() {
+                return this.IsNull(this.tablecucop.codigoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetcodigoNull() {
+                this[this.tablecucop.codigoColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15639,10 +15682,11 @@ SELECT id_certificado, numero_identificador, tipo, descripcion_detallada, fabric
             tableMapping.ColumnMappings.Add("id_certificado_calidad", "id_certificado_calidad");
             tableMapping.ColumnMappings.Add("creado_en", "creado_en");
             tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            tableMapping.ColumnMappings.Add("codigo", "codigo");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[cucop] WHERE (([id_cucop] = @Original_id_cucop) AND ((@IsNull_nombre_generico_espeficico = 1 AND [nombre_generico_espeficico] IS NULL) OR ([nombre_generico_espeficico] = @Original_nombre_generico_espeficico)) AND ((@IsNull_nombre_producto = 1 AND [nombre_producto] IS NULL) OR ([nombre_producto] = @Original_nombre_producto)) AND ((@IsNull_grupo = 1 AND [grupo] IS NULL) OR ([grupo] = @Original_grupo)) AND ((@IsNull_id_registro_sanitario = 1 AND [id_registro_sanitario] IS NULL) OR ([id_registro_sanitario] = @Original_id_registro_sanitario)) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@IsNull_id_certificado_calidad = 1 AND [id_certificado_calidad] IS NULL) OR ([id_certificado_calidad] = @Original_id_certificado_calidad)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [cucop] WHERE (([id_cucop] = @Original_id_cucop) AND ((@IsNull_nombre_generico_espeficico = 1 AND [nombre_generico_espeficico] IS NULL) OR ([nombre_generico_espeficico] = @Original_nombre_generico_espeficico)) AND ((@IsNull_nombre_producto = 1 AND [nombre_producto] IS NULL) OR ([nombre_producto] = @Original_nombre_producto)) AND ((@IsNull_grupo = 1 AND [grupo] IS NULL) OR ([grupo] = @Original_grupo)) AND ((@IsNull_id_registro_sanitario = 1 AND [id_registro_sanitario] IS NULL) OR ([id_registro_sanitario] = @Original_id_registro_sanitario)) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@IsNull_id_certificado_calidad = 1 AND [id_certificado_calidad] IS NULL) OR ([id_certificado_calidad] = @Original_id_certificado_calidad)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_codigo = 1 AND [codigo] IS NULL) OR ([codigo] = @Original_codigo)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre_generico_espeficico", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_generico_espeficico", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -15661,10 +15705,12 @@ SELECT id_certificado, numero_identificador, tipo, descripcion_detallada, fabric
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[cucop] ([nombre_generico_espeficico], [nombre_producto], [grupo], [id_registro_sanitario], [id_catalogo_productos], [id_certificado_calidad], [creado_en], [actualizado_en]) VALUES (@nombre_generico_espeficico, @nombre_producto, @grupo, @id_registro_sanitario, @id_catalogo_productos, @id_certificado_calidad, @creado_en, @actualizado_en);
-SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro_sanitario, id_catalogo_productos, id_certificado_calidad, creado_en, actualizado_en FROM cucop WHERE (id_cucop = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [cucop] ([nombre_generico_espeficico], [nombre_producto], [grupo], [id_registro_sanitario], [id_catalogo_productos], [id_certificado_calidad], [creado_en], [actualizado_en], [codigo]) VALUES (@nombre_generico_espeficico, @nombre_producto, @grupo, @id_registro_sanitario, @id_catalogo_productos, @id_certificado_calidad, @creado_en, @actualizado_en, @codigo);
+SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro_sanitario, id_catalogo_productos, id_certificado_calidad, creado_en, actualizado_en, codigo FROM cucop WHERE (id_cucop = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_generico_espeficico", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_generico_espeficico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_producto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_producto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15674,28 +15720,31 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_certificado_calidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificado_calidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[cucop] SET [nombre_generico_espeficico] = @nombre_generico_espefici" +
-                "co, [nombre_producto] = @nombre_producto, [grupo] = @grupo, [id_registro_sanitar" +
-                "io] = @id_registro_sanitario, [id_catalogo_productos] = @id_catalogo_productos, " +
-                "[id_certificado_calidad] = @id_certificado_calidad, [creado_en] = @creado_en, [a" +
-                "ctualizado_en] = @actualizado_en WHERE (([id_cucop] = @Original_id_cucop) AND ((" +
-                "@IsNull_nombre_generico_espeficico = 1 AND [nombre_generico_espeficico] IS NULL)" +
-                " OR ([nombre_generico_espeficico] = @Original_nombre_generico_espeficico)) AND (" +
-                "(@IsNull_nombre_producto = 1 AND [nombre_producto] IS NULL) OR ([nombre_producto" +
-                "] = @Original_nombre_producto)) AND ((@IsNull_grupo = 1 AND [grupo] IS NULL) OR " +
-                "([grupo] = @Original_grupo)) AND ((@IsNull_id_registro_sanitario = 1 AND [id_reg" +
-                "istro_sanitario] IS NULL) OR ([id_registro_sanitario] = @Original_id_registro_sa" +
-                "nitario)) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS" +
-                " NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@Is" +
-                "Null_id_certificado_calidad = 1 AND [id_certificado_calidad] IS NULL) OR ([id_ce" +
-                "rtificado_calidad] = @Original_id_certificado_calidad)) AND ((@IsNull_creado_en " +
-                "= 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNu" +
-                "ll_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Orig" +
-                "inal_actualizado_en)));\r\nSELECT id_cucop, nombre_generico_espeficico, nombre_pro" +
-                "ducto, grupo, id_registro_sanitario, id_catalogo_productos, id_certificado_calid" +
-                "ad, creado_en, actualizado_en FROM cucop WHERE (id_cucop = @id_cucop)";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [cucop] SET [nombre_generico_espeficico] = @nombre_generico_espeficico, [n" +
+                "ombre_producto] = @nombre_producto, [grupo] = @grupo, [id_registro_sanitario] = " +
+                "@id_registro_sanitario, [id_catalogo_productos] = @id_catalogo_productos, [id_ce" +
+                "rtificado_calidad] = @id_certificado_calidad, [creado_en] = @creado_en, [actuali" +
+                "zado_en] = @actualizado_en, [codigo] = @codigo WHERE (([id_cucop] = @Original_id" +
+                "_cucop) AND ((@IsNull_nombre_generico_espeficico = 1 AND [nombre_generico_espefi" +
+                "cico] IS NULL) OR ([nombre_generico_espeficico] = @Original_nombre_generico_espe" +
+                "ficico)) AND ((@IsNull_nombre_producto = 1 AND [nombre_producto] IS NULL) OR ([n" +
+                "ombre_producto] = @Original_nombre_producto)) AND ((@IsNull_grupo = 1 AND [grupo" +
+                "] IS NULL) OR ([grupo] = @Original_grupo)) AND ((@IsNull_id_registro_sanitario =" +
+                " 1 AND [id_registro_sanitario] IS NULL) OR ([id_registro_sanitario] = @Original_" +
+                "id_registro_sanitario)) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo" +
+                "_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_product" +
+                "os)) AND ((@IsNull_id_certificado_calidad = 1 AND [id_certificado_calidad] IS NU" +
+                "LL) OR ([id_certificado_calidad] = @Original_id_certificado_calidad)) AND ((@IsN" +
+                "ull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en" +
+                ")) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualiza" +
+                "do_en] = @Original_actualizado_en)) AND ((@IsNull_codigo = 1 AND [codigo] IS NUL" +
+                "L) OR ([codigo] = @Original_codigo)));\r\nSELECT id_cucop, nombre_generico_espefic" +
+                "ico, nombre_producto, grupo, id_registro_sanitario, id_catalogo_productos, id_ce" +
+                "rtificado_calidad, creado_en, actualizado_en, codigo FROM cucop WHERE (id_cucop " +
+                "= @id_cucop)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_generico_espeficico", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_generico_espeficico", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_producto", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_producto", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15705,6 +15754,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_certificado_calidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificado_calidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@codigo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_nombre_generico_espeficico", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_generico_espeficico", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_nombre_generico_espeficico", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_generico_espeficico", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -15722,6 +15772,8 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_codigo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_codigo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "codigo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -15740,7 +15792,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro_" +
                 "sanitario, id_catalogo_productos, id_certificado_calidad, creado_en, actualizado" +
-                "_en FROM dbo.cucop";
+                "_en, codigo FROM cucop";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15801,7 +15853,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_cucop, string Original_nombre_generico_espeficico, string Original_nombre_producto, string Original_grupo, global::System.Nullable<int> Original_id_registro_sanitario, global::System.Nullable<int> Original_id_catalogo_productos, global::System.Nullable<int> Original_id_certificado_calidad, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+        public virtual int Delete(int Original_id_cucop, string Original_nombre_generico_espeficico, string Original_nombre_producto, string Original_grupo, global::System.Nullable<int> Original_id_registro_sanitario, global::System.Nullable<int> Original_id_catalogo_productos, global::System.Nullable<int> Original_id_certificado_calidad, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, string Original_codigo) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_cucop));
             if ((Original_nombre_generico_espeficico == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -15867,6 +15919,14 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
+            if ((Original_codigo == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_codigo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15887,7 +15947,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string nombre_generico_espeficico, string nombre_producto, string grupo, global::System.Nullable<int> id_registro_sanitario, global::System.Nullable<int> id_catalogo_productos, global::System.Nullable<int> id_certificado_calidad, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+        public virtual int Insert(string nombre_generico_espeficico, string nombre_producto, string grupo, global::System.Nullable<int> id_registro_sanitario, global::System.Nullable<int> id_catalogo_productos, global::System.Nullable<int> id_certificado_calidad, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, string codigo) {
             if ((nombre_generico_espeficico == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -15936,6 +15996,12 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((codigo == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(codigo));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15965,6 +16031,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
                     global::System.Nullable<int> id_certificado_calidad, 
                     global::System.Nullable<global::System.DateTime> creado_en, 
                     global::System.Nullable<global::System.DateTime> actualizado_en, 
+                    string codigo, 
                     int Original_id_cucop, 
                     string Original_nombre_generico_espeficico, 
                     string Original_nombre_producto, 
@@ -15974,6 +16041,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
                     global::System.Nullable<int> Original_id_certificado_calidad, 
                     global::System.Nullable<global::System.DateTime> Original_creado_en, 
                     global::System.Nullable<global::System.DateTime> Original_actualizado_en, 
+                    string Original_codigo, 
                     int id_cucop) {
             if ((nombre_generico_espeficico == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -16023,72 +16091,86 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_cucop));
-            if ((Original_nombre_generico_espeficico == null)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            if ((codigo == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_nombre_generico_espeficico));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(codigo));
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id_cucop));
+            if ((Original_nombre_generico_espeficico == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_nombre_generico_espeficico));
             }
             if ((Original_nombre_producto == null)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_nombre_producto));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_nombre_producto));
             }
             if ((Original_grupo == null)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_grupo));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_grupo));
             }
             if ((Original_id_registro_sanitario.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_id_registro_sanitario.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_id_registro_sanitario.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             if ((Original_id_catalogo_productos.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_id_catalogo_productos.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_id_catalogo_productos.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((Original_id_certificado_calidad.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_id_certificado_calidad.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((int)(Original_id_certificado_calidad.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_creado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_creado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_creado_en.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_actualizado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_actualizado_en.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(id_cucop));
+            if ((Original_codigo == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_codigo));
+            }
+            this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(id_cucop));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16118,6 +16200,7 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
                     global::System.Nullable<int> id_certificado_calidad, 
                     global::System.Nullable<global::System.DateTime> creado_en, 
                     global::System.Nullable<global::System.DateTime> actualizado_en, 
+                    string codigo, 
                     int Original_id_cucop, 
                     string Original_nombre_generico_espeficico, 
                     string Original_nombre_producto, 
@@ -16126,8 +16209,9 @@ SELECT id_cucop, nombre_generico_espeficico, nombre_producto, grupo, id_registro
                     global::System.Nullable<int> Original_id_catalogo_productos, 
                     global::System.Nullable<int> Original_id_certificado_calidad, 
                     global::System.Nullable<global::System.DateTime> Original_creado_en, 
-                    global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
-            return this.Update(nombre_generico_espeficico, nombre_producto, grupo, id_registro_sanitario, id_catalogo_productos, id_certificado_calidad, creado_en, actualizado_en, Original_id_cucop, Original_nombre_generico_espeficico, Original_nombre_producto, Original_grupo, Original_id_registro_sanitario, Original_id_catalogo_productos, Original_id_certificado_calidad, Original_creado_en, Original_actualizado_en, Original_id_cucop);
+                    global::System.Nullable<global::System.DateTime> Original_actualizado_en, 
+                    string Original_codigo) {
+            return this.Update(nombre_generico_espeficico, nombre_producto, grupo, id_registro_sanitario, id_catalogo_productos, id_certificado_calidad, creado_en, actualizado_en, codigo, Original_id_cucop, Original_nombre_generico_espeficico, Original_nombre_producto, Original_grupo, Original_id_registro_sanitario, Original_id_catalogo_productos, Original_id_certificado_calidad, Original_creado_en, Original_actualizado_en, Original_codigo, Original_id_cucop);
         }
     }
     

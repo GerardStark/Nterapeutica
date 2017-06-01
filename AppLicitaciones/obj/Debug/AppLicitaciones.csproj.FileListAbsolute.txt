@@ -24,3 +24,7 @@ C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicit
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_ClavesReferencias.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_Editar.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Registros_Prorrogas.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Nuevo.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Editar.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Visualizar.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Vincular_General.resources

@@ -30,21 +30,25 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Principal));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.btn_nuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.btn_buscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.btn_vincular = new System.Windows.Forms.ToolStripButton();
+            this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGV_cucop = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nprodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grupoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.registroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.catalogoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.certificadoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_cucop)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -52,17 +56,13 @@
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
+            this.btn_nuevo,
             this.toolStripLabel1,
-            this.toolStripButton5,
-            this.toolStripLabel2,
-            this.toolStripButton3,
-            this.toolStripLabel4,
-            this.toolStripButton4,
+            this.btn_buscar,
             this.toolStripLabel5,
             this.toolStripLabel6,
-            this.toolStripButton6,
-            this.toolStripButton2,
+            this.btn_vincular,
+            this.btn_visualizar,
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -71,14 +71,15 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btn_nuevo
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton1.Text = "Nuevo";
+            this.btn_nuevo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_nuevo.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo.Image")));
+            this.btn_nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_nuevo.Name = "btn_nuevo";
+            this.btn_nuevo.Size = new System.Drawing.Size(94, 54);
+            this.btn_nuevo.Text = "Nuevo";
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // toolStripLabel1
             // 
@@ -86,45 +87,15 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(94, 15);
             this.toolStripLabel1.Text = "Nuevo";
             // 
-            // toolStripButton5
+            // btn_buscar
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton5.Text = "toolStripButton5";
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(94, 15);
-            this.toolStripLabel2.Text = "Editar";
-            // 
-            // toolStripButton3
-            // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton3.Text = "toolStripButton3";
-            this.toolStripButton3.ToolTipText = "Borrar";
-            // 
-            // toolStripLabel4
-            // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(94, 15);
-            this.toolStripLabel4.Text = "Borrar";
-            // 
-            // toolStripButton4
-            // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.btn_buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
+            this.btn_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(94, 54);
+            this.btn_buscar.Text = "toolStripButton4";
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // toolStripLabel5
             // 
@@ -139,24 +110,26 @@
             this.toolStripLabel6.Size = new System.Drawing.Size(94, 15);
             this.toolStripLabel6.Text = "Vincular RECACE";
             // 
-            // toolStripButton6
+            // btn_vincular
             // 
-            this.toolStripButton6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton6.Text = "toolStripButton6";
+            this.btn_vincular.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btn_vincular.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_vincular.Image = ((System.Drawing.Image)(resources.GetObject("btn_vincular.Image")));
+            this.btn_vincular.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_vincular.Name = "btn_vincular";
+            this.btn_vincular.Size = new System.Drawing.Size(94, 54);
+            this.btn_vincular.Text = "toolStripButton6";
+            this.btn_vincular.Click += new System.EventHandler(this.btn_vincular_Click);
             // 
-            // toolStripButton2
+            // btn_visualizar
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(94, 54);
-            this.toolStripButton2.Text = "toolStripButton1";
+            this.btn_visualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_visualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_visualizar.Image")));
+            this.btn_visualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_visualizar.Name = "btn_visualizar";
+            this.btn_visualizar.Size = new System.Drawing.Size(94, 54);
+            this.btn_visualizar.Text = "toolStripButton1";
+            this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // toolStripLabel3
             // 
@@ -164,23 +137,89 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(94, 15);
             this.toolStripLabel3.Text = "Visualizar";
             // 
-            // dataGridView1
+            // DGV_cucop
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(100, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1243, 705);
-            this.dataGridView1.TabIndex = 2;
+            this.DGV_cucop.AllowUserToAddRows = false;
+            this.DGV_cucop.AllowUserToDeleteRows = false;
+            this.DGV_cucop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_cucop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
+            this.ngeColumn,
+            this.nprodColumn,
+            this.grupoColumn,
+            this.codigoColumn,
+            this.registroColumn,
+            this.catalogoColumn,
+            this.certificadoColumn});
+            this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
+            this.DGV_cucop.Name = "DGV_cucop";
+            this.DGV_cucop.ReadOnly = true;
+            this.DGV_cucop.Size = new System.Drawing.Size(1243, 667);
+            this.DGV_cucop.TabIndex = 2;
+            this.DGV_cucop.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_cucop_RowHeaderMouseClick);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 25;
+            // 
+            // ngeColumn
+            // 
+            this.ngeColumn.HeaderText = "Nombre Generico";
+            this.ngeColumn.Name = "ngeColumn";
+            this.ngeColumn.ReadOnly = true;
+            this.ngeColumn.Width = 200;
+            // 
+            // nprodColumn
+            // 
+            this.nprodColumn.HeaderText = "Nombre Producto";
+            this.nprodColumn.Name = "nprodColumn";
+            this.nprodColumn.ReadOnly = true;
+            this.nprodColumn.Width = 200;
+            // 
+            // grupoColumn
+            // 
+            this.grupoColumn.HeaderText = "Grupo";
+            this.grupoColumn.Name = "grupoColumn";
+            this.grupoColumn.ReadOnly = true;
+            this.grupoColumn.Width = 200;
+            // 
+            // codigoColumn
+            // 
+            this.codigoColumn.HeaderText = "Codigo";
+            this.codigoColumn.Name = "codigoColumn";
+            this.codigoColumn.ReadOnly = true;
+            this.codigoColumn.Width = 200;
+            // 
+            // registroColumn
+            // 
+            this.registroColumn.HeaderText = "Registro Sanitario";
+            this.registroColumn.Name = "registroColumn";
+            this.registroColumn.ReadOnly = true;
+            this.registroColumn.Width = 133;
+            // 
+            // catalogoColumn
+            // 
+            this.catalogoColumn.HeaderText = "Catalogo";
+            this.catalogoColumn.Name = "catalogoColumn";
+            this.catalogoColumn.ReadOnly = true;
+            this.catalogoColumn.Width = 133;
+            // 
+            // certificadoColumn
+            // 
+            this.certificadoColumn.HeaderText = "Certificado";
+            this.certificadoColumn.Name = "certificadoColumn";
+            this.certificadoColumn.ReadOnly = true;
+            this.certificadoColumn.Width = 133;
             // 
             // Cucop_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1350, 691);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.DGV_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -188,7 +227,7 @@
             this.Text = "Panel Principal de Codigos de Cuadro Básico del IMSS";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_cucop)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,18 +236,22 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton btn_nuevo;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton btn_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripButton btn_vincular;
+        private System.Windows.Forms.DataGridView DGV_cucop;
+        private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ngeColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nprodColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn grupoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codigoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn registroColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn catalogoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn certificadoColumn;
     }
 }

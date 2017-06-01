@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_Prorrogas));
             this.DGV_Referencias = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.archivoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -45,10 +49,6 @@
             this.lbl_archivo = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_ver = new System.Windows.Forms.Button();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.archivoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,32 @@
             this.DGV_Referencias.TabIndex = 3;
             this.DGV_Referencias.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseClick);
             this.DGV_Referencias.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseDoubleClick);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            // 
+            // numeroColumn
+            // 
+            this.numeroColumn.HeaderText = "Numero";
+            this.numeroColumn.Name = "numeroColumn";
+            this.numeroColumn.ReadOnly = true;
+            this.numeroColumn.Width = 200;
+            // 
+            // fechaColumn
+            // 
+            this.fechaColumn.HeaderText = "Fecha Emision";
+            this.fechaColumn.Name = "fechaColumn";
+            this.fechaColumn.ReadOnly = true;
+            this.fechaColumn.Width = 200;
+            // 
+            // archivoColumn
+            // 
+            this.archivoColumn.HeaderText = "Archivo";
+            this.archivoColumn.Name = "archivoColumn";
+            this.archivoColumn.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -205,32 +231,6 @@
             this.btn_ver.Text = "Ver";
             this.btn_ver.UseVisualStyleBackColor = true;
             this.btn_ver.Click += new System.EventHandler(this.btn_ver_Click);
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            // 
-            // numeroColumn
-            // 
-            this.numeroColumn.HeaderText = "Numero";
-            this.numeroColumn.Name = "numeroColumn";
-            this.numeroColumn.ReadOnly = true;
-            this.numeroColumn.Width = 200;
-            // 
-            // fechaColumn
-            // 
-            this.fechaColumn.HeaderText = "Fecha Emision";
-            this.fechaColumn.Name = "fechaColumn";
-            this.fechaColumn.ReadOnly = true;
-            this.fechaColumn.Width = 200;
-            // 
-            // archivoColumn
-            // 
-            this.archivoColumn.HeaderText = "Archivo";
-            this.archivoColumn.Name = "archivoColumn";
-            this.archivoColumn.ReadOnly = true;
             // 
             // Registros_Prorrogas
             // 

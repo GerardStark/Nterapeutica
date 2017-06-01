@@ -53,11 +53,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Catalogos_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_Buscar.Designer.cs">
+      <DependentUpon>Catalogos_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos_ClavesReferencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_ClavesReferencias.Designer.cs">
+      <DependentUpon>Catalogos_ClavesReferencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_Editar.Designer.cs">
+      <DependentUpon>Catalogos_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_Nuevo.Designer.cs">
+      <DependentUpon>Catalogos_Nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Catalogos_Principal.Designer.cs">
       <DependentUpon>Catalogos_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos_Traducciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_Traducciones.Designer.cs">
+      <DependentUpon>Catalogos_Traducciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Catalogos_Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_Visualizar.Designer.cs">
+      <DependentUpon>Catalogos_Visualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Certificados_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Certificados_Buscar.Designer.cs">
+      <DependentUpon>Certificados_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Certificados_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Certificados_Editar.Designer.cs">
+      <DependentUpon>Certificados_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Certificados_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Certificados_Nuevo.Designer.cs">
+      <DependentUpon>Certificados_Nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Certificados_Principal.cs">
       <SubType>Form</SubType>
@@ -65,11 +119,65 @@
     <Compile Include="Certificados_Principal.Designer.cs">
       <DependentUpon>Certificados_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Certificados_Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Certificados_Visualizar.Designer.cs">
+      <DependentUpon>Certificados_Visualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Buscar.Designer.cs">
+      <DependentUpon>Cucop_Buscar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Editar.Designer.cs">
+      <DependentUpon>Cucop_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Nuevo.Designer.cs">
+      <DependentUpon>Cucop_Nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cucop_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cucop_Principal.Designer.cs">
       <DependentUpon>Cucop_Principal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Vincular_Catalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Vincular_Catalogo.Designer.cs">
+      <DependentUpon>Cucop_Vincular_Catalogo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Vincular_Certificado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Vincular_Certificado.Designer.cs">
+      <DependentUpon>Cucop_Vincular_Certificado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Vincular_General.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Vincular_General.Designer.cs">
+      <DependentUpon>Cucop_Vincular_General.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Vincular_Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Vincular_Registro.Designer.cs">
+      <DependentUpon>Cucop_Vincular_Registro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cucop_Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cucop_Visualizar.Designer.cs">
+      <DependentUpon>Cucop_Visualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
@@ -192,8 +300,20 @@
     <EmbeddedResource Include="Certificados_Principal.resx">
       <DependentUpon>Certificados_Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cucop_Editar.resx">
+      <DependentUpon>Cucop_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cucop_Nuevo.resx">
+      <DependentUpon>Cucop_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cucop_Principal.resx">
       <DependentUpon>Cucop_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cucop_Vincular_General.resx">
+      <DependentUpon>Cucop_Vincular_General.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cucop_Visualizar.resx">
+      <DependentUpon>Cucop_Visualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>

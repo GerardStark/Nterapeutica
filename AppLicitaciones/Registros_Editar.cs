@@ -62,8 +62,73 @@ namespace AppLicitaciones
                         break;
                 }
             }
+        }      
+
+        private void btn_reg_descartar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
         }
 
+        private void btn_reg_guardar_Click(object sender, EventArgs e)
+        {
+            var checkedButton = Controls.OfType<RadioButton>()
+                                      .FirstOrDefault(r => r.Checked);
+            DialogResult dialogResult = MessageBox.Show("Se guardaran los cambios realizados, esta acción no se puede deshacer", "Actualizar Registro Sanitario", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                //TODO Actualizar Registro
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("update registros_sanitarios set numero_registro = @numero, numero_solicitud = @solicitud, titular = @titular," +
+                        "denom_distintiva = @distintiva, denom_generica = @generica, fabricante = @fabricante, marca = @marca, nacionalidad = @nacionalidad,"+
+                        "tratado_comercio = @tlc, fecha_emision = @emision, fecha_vencimiento = @vencimiento, dir_archivo = @archivo, actualizado_en = @actualizado "+
+                        "where id_registro = @id",con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", id_registro);
+                    cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
+                    cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text);
+                    cmd.Parameters.AddWithValue("@titular", txt_titular.Text);
+                    cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
+                    cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
+                    cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
+                    cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
+                    cmd.Parameters.AddWithValue("@nacionalidad", txt_nacionalidad.Text);
+                    cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
+                    cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
+                    cmd.Parameters.AddWithValue("@vencimiento", date_vencimiento.Value.Date);
+                    cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
+                    cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
+                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    mc.crearDirectorios(archivo, fileName, id_registro, "Registros-Sanitarios");
+                    con.Close();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Acción Cancelada");
+            }
+        }
+        private void btn_select_fabricante_Click(object sender, EventArgs e)
+        {
+            FTD_Principal ftdp = new FTD_Principal();
+            ftdp.llenartablaftd();
+            DialogResult result = ftdp.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                id_fabricante = ftdp.id_fabricante;
+                txt_fabricante.Text = ftdp.nombre_fabricante;
+            }
+        }
+        //pasar a mainconfig
         private void btn_archivo_Click(object sender, EventArgs e)
         {
             if (lbl_reg_archivo.Text == "(Vacio)")
@@ -121,93 +186,6 @@ namespace AppLicitaciones
                 else
                 {
                     MessageBox.Show("No se ha borrado el archivo");
-                }
-            }
-        }
-
-        private void btn_reg_descartar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
-
-        private void btn_reg_guardar_Click(object sender, EventArgs e)
-        {
-            var checkedButton = Controls.OfType<RadioButton>()
-                                      .FirstOrDefault(r => r.Checked);
-            DialogResult dialogResult = MessageBox.Show("Se guardaran los cambios realizados, esta acción no se puede deshacer", "Actualizar Registro Sanitario", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                //TODO Actualizar Registro
-                try
-                {
-                    SqlConnection con = new SqlConnection(mc.con);
-                    SqlCommand cmd = new SqlCommand("update registros_sanitarios set numero_registro = @numero, numero_solicitud = @solicitud, titular = @titular," +
-                        "denom_distintiva = @distintiva, denom_generica = @generica, fabricante = @fabricante, marca = @marca, nacionalidad = @nacionalidad,"+
-                        "tratado_comercio = @tlc, fecha_emision = @emision, fecha_vencimiento = @vencimiento, dir_archivo = @archivo, actualizado_en = @actualizado "+
-                        "where id_registro = @id",con);
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@id", id_registro);
-                    cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
-                    cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text);
-                    cmd.Parameters.AddWithValue("@titular", txt_titular.Text);
-                    cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
-                    cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
-                    cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
-                    cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
-                    cmd.Parameters.AddWithValue("@nacionalidad", txt_nacionalidad.Text);
-                    cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
-                    cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
-                    cmd.Parameters.AddWithValue("@vencimiento", date_vencimiento.Value.Date);
-                    cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
-                    cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
-                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                    cmd.ExecuteNonQuery();
-                    crearDirectorios(id_registro);
-                    con.Close();
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    throw;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Acción Cancelada");
-            }
-        }
-        private void btn_select_fabricante_Click(object sender, EventArgs e)
-        {
-            FTD_Principal ftdp = new FTD_Principal();
-            ftdp.llenartablaftd();
-            DialogResult result = ftdp.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                id_fabricante = ftdp.id_fabricante;
-                txt_fabricante.Text = ftdp.nombre_fabricante;
-            }
-        }
-        private void crearDirectorios(int id)
-        {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\";
-            string pathanexos = newpath + "\\" + id + "\\";
-            if (Directory.Exists(newpath + "\\" + id + "\\"))
-            {
-                if (archivo != null)
-                {
-                    File.Copy(fileName, Path.Combine(pathanexos, archivo));
-                }
-            }
-            else
-            {
-                Directory.CreateDirectory(newpath + "\\" + id + "\\");
-
-                if (archivo != null)
-                {
-                    File.Copy(fileName, Path.Combine(pathanexos, archivo));
                 }
             }
         }
