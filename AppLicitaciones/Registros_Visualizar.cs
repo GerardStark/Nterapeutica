@@ -123,8 +123,22 @@ namespace AppLicitaciones
 
         private void btn_reg_editar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            Registros_Editar re = new Registros_Editar();
+            re.llenarcamposregistro(id_registro);
+            DialogResult result2 = re.ShowDialog();
+            this.Hide();
+            if (result2 == DialogResult.OK)
+            {
+                MessageBox.Show("Registro Actualizado.");
+                mostrarinforegistro(id_registro);
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("No se modifico el registro.");
+                this.Show();
+                
+            }
         }
 
         private void btn_reg_guardar_Click(object sender, EventArgs e)

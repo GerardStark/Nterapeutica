@@ -15,7 +15,7 @@ namespace AppLicitaciones
     public partial class Cucop_Principal : Form
     {
         MainConfig mc = new MainConfig();
-        int id_cucop = 0;
+        int id_cucop = 0, filtro_flag = 0;
         public Cucop_Principal()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace AppLicitaciones
         {
             try
             {
+                DGV_cucop.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_espeficico,nombre_producto,"+
@@ -63,7 +64,6 @@ namespace AppLicitaciones
                 filtrarcucops();
             }
         }
-
         private void filtrarcucops()
         {
             //TODO filtrar cucops
@@ -71,16 +71,20 @@ namespace AppLicitaciones
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
-            Cucop_Visualizar cv = new Cucop_Visualizar();
-            DialogResult result = cv.ShowDialog();
-            if (result == DialogResult.OK)
+            if (id_cucop != 0)
             {
-                Cucop_Editar ce = new Cucop_Editar();
-                DialogResult result2 = ce.ShowDialog();
-                if (result2 == DialogResult.OK)
+                //abre el panel de visualizacion del registro
+                Cucop_Visualizar rn = new Cucop_Visualizar();
+                rn.mostrarinfocucop(id_cucop);
+                DialogResult result = rn.ShowDialog();
+                if (filtro_flag == 0)
                 {
-                    //TODO editar cucop seleccionado
+                    llenartablacucops();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Codigo de Cuadro Basico para visualizar");
             }
         }
 

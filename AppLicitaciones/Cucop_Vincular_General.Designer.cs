@@ -75,6 +75,9 @@
             this.lbl_ccb = new System.Windows.Forms.Label();
             this.lbl_grupo = new System.Windows.Forms.Label();
             this.lbl_nombre_gen = new System.Windows.Forms.Label();
+            this.btn_ver_cert = new System.Windows.Forms.Button();
+            this.btn_ver_cat = new System.Windows.Forms.Button();
+            this.btn_ver_reg = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -496,11 +499,44 @@
             this.lbl_nombre_gen.TabIndex = 135;
             this.lbl_nombre_gen.Text = "label21";
             // 
+            // btn_ver_cert
+            // 
+            this.btn_ver_cert.Enabled = false;
+            this.btn_ver_cert.Location = new System.Drawing.Point(799, 400);
+            this.btn_ver_cert.Name = "btn_ver_cert";
+            this.btn_ver_cert.Size = new System.Drawing.Size(85, 32);
+            this.btn_ver_cert.TabIndex = 140;
+            this.btn_ver_cert.Text = "Ver";
+            this.btn_ver_cert.UseVisualStyleBackColor = true;
+            // 
+            // btn_ver_cat
+            // 
+            this.btn_ver_cat.Enabled = false;
+            this.btn_ver_cat.Location = new System.Drawing.Point(467, 400);
+            this.btn_ver_cat.Name = "btn_ver_cat";
+            this.btn_ver_cat.Size = new System.Drawing.Size(85, 32);
+            this.btn_ver_cat.TabIndex = 139;
+            this.btn_ver_cat.Text = "Ver";
+            this.btn_ver_cat.UseVisualStyleBackColor = true;
+            // 
+            // btn_ver_reg
+            // 
+            this.btn_ver_reg.Enabled = false;
+            this.btn_ver_reg.Location = new System.Drawing.Point(138, 400);
+            this.btn_ver_reg.Name = "btn_ver_reg";
+            this.btn_ver_reg.Size = new System.Drawing.Size(85, 32);
+            this.btn_ver_reg.TabIndex = 138;
+            this.btn_ver_reg.Text = "Ver";
+            this.btn_ver_reg.UseVisualStyleBackColor = true;
+            // 
             // Cucop_Vincular_General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 620);
+            this.Controls.Add(this.btn_ver_cert);
+            this.Controls.Add(this.btn_ver_cat);
+            this.Controls.Add(this.btn_ver_reg);
             this.Controls.Add(this.lbl_ccb);
             this.Controls.Add(this.lbl_grupo);
             this.Controls.Add(this.lbl_nombre_gen);
@@ -603,5 +639,8 @@
         private System.Windows.Forms.Label lbl_ccb;
         private System.Windows.Forms.Label lbl_grupo;
         private System.Windows.Forms.Label lbl_nombre_gen;
+        private System.Windows.Forms.Button btn_ver_cert;
+        private System.Windows.Forms.Button btn_ver_cat;
+        private System.Windows.Forms.Button btn_ver_reg;
     }
 }

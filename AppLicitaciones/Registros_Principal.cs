@@ -32,6 +32,7 @@ namespace AppLicitaciones
         }       
         private void btn_reg_buscar_Click(object sender, EventArgs e)
         {
+            id_registro = 0;
             Registros_Buscar rn = new Registros_Buscar();
             DialogResult result = rn.ShowDialog();
             if (result == DialogResult.OK)
@@ -108,34 +109,9 @@ namespace AppLicitaciones
                 Registros_Visualizar rn = new Registros_Visualizar();
                 rn.mostrarinforegistro(id_registro);
                 DialogResult result = rn.ShowDialog();
-                if (result == DialogResult.OK)
+                if (filtro_flag == 0)
                 {
-                    //si se da clic en el boton editar
-                    Registros_Editar re = new Registros_Editar();
-                    re.llenarcamposregistro(id_registro);
-                    DialogResult result2 = re.ShowDialog();
-                    //Pasar a edicion del registro
-                    if (result2 == DialogResult.OK)
-                    {
-                        MessageBox.Show("Registro Actualizado.");
-                        rn.mostrarinforegistro(id_registro);
-                        result = rn.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("No se modifico el registro.");
-                        rn.mostrarinforegistro(id_registro);
-                        result = rn.ShowDialog();
-                        llenartablaregistros();
-                    }
-                }
-                //si da clic en la palomita, se cierra y mantiene el filtro si es que hay uno
-                else
-                {
-                    if (filtro_flag == 0)
-                    {
-                        llenartablaregistros();
-                    }
+                    llenartablaregistros();
                 }
             }
             else
