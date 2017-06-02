@@ -21,6 +21,29 @@ namespace AppLicitaciones
             InitializeComponent();
             llenartablaregistros();
         }
+        public void llenartablaregistros()
+        {
+            try
+            {
+                DGVRegistros.Rows.Clear();
+                SqlConnection con = new SqlConnection(mc.con);
+                SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,fabricante,marca,nacionalidad,tratado_comercio," +
+                    "fecha_emision,fecha_vencimiento from registros_sanitarios", con);
+                con.Open();
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    DGVRegistros.Rows.Add(dr.ItemArray);
+                }
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
         private void btn_reg_nuevo_Click(object sender, EventArgs e)
         {
             Registros_Nuevo rn = new Registros_Nuevo();
@@ -46,29 +69,7 @@ namespace AppLicitaciones
                 llenartablaregistros();
             }
         }
-        public void llenartablaregistros()
-        {
-            try
-            {
-                DGVRegistros.Rows.Clear();
-                SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,fabricante,marca,nacionalidad,tratado_comercio," +
-                    "fecha_emision,fecha_vencimiento from registros_sanitarios", con);
-                con.Open();
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
-                {
-                    DGVRegistros.Rows.Add(dr.ItemArray);
-                }
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
+        
         public void filtrartablaregistros(string ctrl, string valor)
         {
             try

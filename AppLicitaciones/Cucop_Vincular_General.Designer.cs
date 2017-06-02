@@ -43,7 +43,6 @@
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
             this.btn_descartar = new System.Windows.Forms.ToolStripButton();
-            this.txt_nombre_prod = new System.Windows.Forms.TextBox();
             this.lbl_cat_pagina = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_cert_vencimiento = new System.Windows.Forms.Label();
@@ -78,6 +77,7 @@
             this.btn_ver_cert = new System.Windows.Forms.Button();
             this.btn_ver_cat = new System.Windows.Forms.Button();
             this.btn_ver_reg = new System.Windows.Forms.Button();
+            this.lbl_nombre_prod = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -212,13 +212,6 @@
             this.btn_descartar.Name = "btn_descartar";
             this.btn_descartar.Size = new System.Drawing.Size(54, 54);
             this.btn_descartar.Text = "toolStripButton3";
-            // 
-            // txt_nombre_prod
-            // 
-            this.txt_nombre_prod.Location = new System.Drawing.Point(205, 161);
-            this.txt_nombre_prod.Name = "txt_nombre_prod";
-            this.txt_nombre_prod.Size = new System.Drawing.Size(316, 26);
-            this.txt_nombre_prod.TabIndex = 52;
             // 
             // lbl_cat_pagina
             // 
@@ -529,11 +522,21 @@
             this.btn_ver_reg.Text = "Ver";
             this.btn_ver_reg.UseVisualStyleBackColor = true;
             // 
+            // lbl_nombre_prod
+            // 
+            this.lbl_nombre_prod.AutoSize = true;
+            this.lbl_nombre_prod.Location = new System.Drawing.Point(209, 164);
+            this.lbl_nombre_prod.Name = "lbl_nombre_prod";
+            this.lbl_nombre_prod.Size = new System.Drawing.Size(60, 20);
+            this.lbl_nombre_prod.TabIndex = 141;
+            this.lbl_nombre_prod.Text = "label21";
+            // 
             // Cucop_Vincular_General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 620);
+            this.Controls.Add(this.lbl_nombre_prod);
             this.Controls.Add(this.btn_ver_cert);
             this.Controls.Add(this.btn_ver_cat);
             this.Controls.Add(this.btn_ver_reg);
@@ -568,7 +571,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.txt_nombre_prod);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btn_asign_cert);
             this.Controls.Add(this.btn_asign_cat);
@@ -607,7 +609,6 @@
         private System.Windows.Forms.ToolStripButton btn_guardar;
         private System.Windows.Forms.ToolStripButton btn_cancelar;
         private System.Windows.Forms.ToolStripButton btn_descartar;
-        private System.Windows.Forms.TextBox txt_nombre_prod;
         private System.Windows.Forms.Label lbl_cat_pagina;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lbl_cert_vencimiento;
@@ -642,5 +643,6 @@
         private System.Windows.Forms.Button btn_ver_cert;
         private System.Windows.Forms.Button btn_ver_cat;
         private System.Windows.Forms.Button btn_ver_reg;
+        private System.Windows.Forms.Label lbl_nombre_prod;
     }
 }

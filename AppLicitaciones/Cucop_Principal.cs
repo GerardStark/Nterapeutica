@@ -61,12 +61,39 @@ namespace AppLicitaciones
             DialogResult result = cb.ShowDialog();
             if (result == DialogResult.OK)
             {
-                filtrarcucops();
+                filtrarcucops("str","str");
             }
         }
-        private void filtrarcucops()
+
+        private void DGV_cucop_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            //TODO filtrar cucops
+            id_cucop = Convert.ToInt32(DGV_cucop.Rows[e.RowIndex].Cells["idColumn"].Value);
+        }
+        private void filtrarcucops(string ctrl, string valor)
+        {
+            try
+            {
+                DGV_cucop.Rows.Clear();
+                SqlConnection con = new SqlConnection(mc.con);
+                con = new SqlConnection(mc.con);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_espeficico,nombre_producto," +
+                   "grupo,codigo,id_registro_sanitario,id_catalogo_productos,id_certificado_calidad from cucop "+
+                   "where "+ctrl+" = "+valor+"", con);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                foreach (DataRow dr in dt.Rows)
+                {
+                    DGV_cucop.Rows.Add(dr.ItemArray);
+                }
+                con.Close();
+                filtro_flag = 1;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)
@@ -86,21 +113,19 @@ namespace AppLicitaciones
             {
                 MessageBox.Show("Seleccione un Codigo de Cuadro Basico para visualizar");
             }
-        }
-
-        private void DGV_cucop_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            id_cucop = Convert.ToInt32(DGV_cucop.Rows[e.RowIndex].Cells["idColumn"].Value);
-        }
+        }       
 
         private void btn_vincular_Click(object sender, EventArgs e)
         {
-            Cucop_Vincular_General cvg = new Cucop_Vincular_General();
-            cvg.mostrarvinculoscucop(id_cucop);
-            DialogResult result = cvg.ShowDialog();
-            if (result == DialogResult.OK)
+            if (id_cucop!=0)
             {
-                //TODO something
+                Cucop_Vincular_General cvg = new Cucop_Vincular_General();
+                cvg.mostrarvinculoscucop(id_cucop);
+                DialogResult result = cvg.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    llenartablacucops();
+                }
             }
         }
     }

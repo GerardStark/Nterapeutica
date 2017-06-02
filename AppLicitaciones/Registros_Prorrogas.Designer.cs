@@ -250,6 +250,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Registros_Prorrogas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registros_Prorrogas";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).EndInit();
             this.toolStrip1.ResumeLayout(false);

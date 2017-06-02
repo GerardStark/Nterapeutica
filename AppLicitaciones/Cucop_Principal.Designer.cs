@@ -154,7 +154,7 @@
             this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
-            this.DGV_cucop.Size = new System.Drawing.Size(1243, 667);
+            this.DGV_cucop.Size = new System.Drawing.Size(1243, 652);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_cucop_RowHeaderMouseClick);
             // 
