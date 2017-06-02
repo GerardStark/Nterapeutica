@@ -28,3 +28,4 @@ C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicit
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Editar.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Visualizar.resources
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Vincular_General.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Cucop_Vincular_Registro.resources

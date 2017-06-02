@@ -312,6 +312,9 @@
     <EmbeddedResource Include="Cucop_Vincular_General.resx">
       <DependentUpon>Cucop_Vincular_General.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cucop_Vincular_Registro.resx">
+      <DependentUpon>Cucop_Vincular_Registro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cucop_Visualizar.resx">
       <DependentUpon>Cucop_Visualizar.cs</DependentUpon>
     </EmbeddedResource>

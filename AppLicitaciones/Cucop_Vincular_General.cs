@@ -21,22 +21,22 @@ namespace AppLicitaciones
             InitializeComponent();
             txt_nombre_prod.Text = "";
             //registros
-            lbl_reg_numero.Text = "";
-            lbl_reg_fabricante.Text = "";
-            lbl_reg_denom_gen.Text = "";
-            lbl_reg_denom_dist.Text = "";
-            lbl_reg_vencimiento.Text = "";
-            //catalogos
-            lbl_cat_nombre.Text = "";
-            lbl_cat_fabricante.Text = "";
-            lbl_cat_idioma.Text = "";
-            lbl_cat_especialidad.Text = "";
-            lbl_cat_pagina.Text = "";
-            //certificados
-            lbl_cert_numero.Text = "";
-            lbl_cert_fabricante.Text = "";
-            lbl_cert_tipo.Text = "";
-            lbl_cert_vencimiento.Text = "";
+            //lbl_reg_numero.Text = "";
+            //lbl_reg_fabricante.Text = "";
+            //lbl_reg_denom_gen.Text = "";
+            //lbl_reg_denom_dist.Text = "";
+            //lbl_reg_vencimiento.Text = "";
+            ////catalogos
+            //lbl_cat_nombre.Text = "";
+            //lbl_cat_fabricante.Text = "";
+            //lbl_cat_idioma.Text = "";
+            //lbl_cat_especialidad.Text = "";
+            //lbl_cat_pagina.Text = "";
+            ////certificados
+            //lbl_cert_numero.Text = "";
+            //lbl_cert_fabricante.Text = "";
+            //lbl_cert_tipo.Text = "";
+            //lbl_cert_vencimiento.Text = "";
         }
         public void mostrarvinculoscucop(int id_cucop)
         {
@@ -62,6 +62,11 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_ver_reg_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
