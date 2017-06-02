@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Vincular_General));
-            this.btn_asign_cert = new System.Windows.Forms.Button();
-            this.btn_asign_cat = new System.Windows.Forms.Button();
-            this.btn_asign_reg = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -74,39 +71,16 @@
             this.lbl_ccb = new System.Windows.Forms.Label();
             this.lbl_grupo = new System.Windows.Forms.Label();
             this.lbl_nombre_gen = new System.Windows.Forms.Label();
-            this.btn_ver_cert = new System.Windows.Forms.Button();
-            this.btn_ver_cat = new System.Windows.Forms.Button();
-            this.btn_ver_reg = new System.Windows.Forms.Button();
-            this.lbl_nombre_prod = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btn_asign_cert
-            // 
-            this.btn_asign_cert.Location = new System.Drawing.Point(708, 400);
-            this.btn_asign_cert.Name = "btn_asign_cert";
-            this.btn_asign_cert.Size = new System.Drawing.Size(85, 32);
-            this.btn_asign_cert.TabIndex = 50;
-            this.btn_asign_cert.Text = "Buscar";
-            this.btn_asign_cert.UseVisualStyleBackColor = true;
-            // 
-            // btn_asign_cat
-            // 
-            this.btn_asign_cat.Location = new System.Drawing.Point(376, 400);
-            this.btn_asign_cat.Name = "btn_asign_cat";
-            this.btn_asign_cat.Size = new System.Drawing.Size(85, 32);
-            this.btn_asign_cat.TabIndex = 49;
-            this.btn_asign_cat.Text = "Buscar";
-            this.btn_asign_cat.UseVisualStyleBackColor = true;
-            // 
-            // btn_asign_reg
-            // 
-            this.btn_asign_reg.Location = new System.Drawing.Point(47, 400);
-            this.btn_asign_reg.Name = "btn_asign_reg";
-            this.btn_asign_reg.Size = new System.Drawing.Size(85, 32);
-            this.btn_asign_reg.TabIndex = 48;
-            this.btn_asign_reg.Text = "Buscar";
-            this.btn_asign_reg.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -492,54 +466,89 @@
             this.lbl_nombre_gen.TabIndex = 135;
             this.lbl_nombre_gen.Text = "label21";
             // 
-            // btn_ver_cert
+            // button1
             // 
-            this.btn_ver_cert.Enabled = false;
-            this.btn_ver_cert.Location = new System.Drawing.Point(799, 400);
-            this.btn_ver_cert.Name = "btn_ver_cert";
-            this.btn_ver_cert.Size = new System.Drawing.Size(85, 32);
-            this.btn_ver_cert.TabIndex = 140;
-            this.btn_ver_cert.Text = "Ver";
-            this.btn_ver_cert.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(79, 460);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 32);
+            this.button1.TabIndex = 142;
+            this.button1.Text = "Cambiar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-            // btn_ver_cat
+            // button2
             // 
-            this.btn_ver_cat.Enabled = false;
-            this.btn_ver_cat.Location = new System.Drawing.Point(467, 400);
-            this.btn_ver_cat.Name = "btn_ver_cat";
-            this.btn_ver_cat.Size = new System.Drawing.Size(85, 32);
-            this.btn_ver_cat.TabIndex = 139;
-            this.btn_ver_cat.Text = "Ver";
-            this.btn_ver_cat.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(404, 460);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(123, 32);
+            this.button2.TabIndex = 143;
+            this.button2.Text = "Cambiar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
-            // btn_ver_reg
+            // button3
             // 
-            this.btn_ver_reg.Enabled = false;
-            this.btn_ver_reg.Location = new System.Drawing.Point(138, 400);
-            this.btn_ver_reg.Name = "btn_ver_reg";
-            this.btn_ver_reg.Size = new System.Drawing.Size(85, 32);
-            this.btn_ver_reg.TabIndex = 138;
-            this.btn_ver_reg.Text = "Ver";
-            this.btn_ver_reg.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(739, 460);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(123, 32);
+            this.button3.TabIndex = 144;
+            this.button3.Text = "Cambiar";
+            this.button3.UseVisualStyleBackColor = true;
             // 
-            // lbl_nombre_prod
+            // textBox1
             // 
-            this.lbl_nombre_prod.AutoSize = true;
-            this.lbl_nombre_prod.Location = new System.Drawing.Point(209, 164);
-            this.lbl_nombre_prod.Name = "lbl_nombre_prod";
-            this.lbl_nombre_prod.Size = new System.Drawing.Size(60, 20);
-            this.lbl_nombre_prod.TabIndex = 141;
-            this.lbl_nombre_prod.Text = "label21";
+            this.textBox1.Location = new System.Drawing.Point(206, 164);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(264, 26);
+            this.textBox1.TabIndex = 145;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(476, 161);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(123, 32);
+            this.button4.TabIndex = 146;
+            this.button4.Text = "Cambiar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(44, 391);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(100, 27);
+            this.button5.TabIndex = 147;
+            this.button5.Text = "Ver archivo";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(361, 391);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(100, 27);
+            this.button6.TabIndex = 148;
+            this.button6.Text = "Ver archivo";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(696, 391);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(100, 27);
+            this.button7.TabIndex = 149;
+            this.button7.Text = "Ver archivo";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // Cucop_Vincular_General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 620);
-            this.Controls.Add(this.lbl_nombre_prod);
-            this.Controls.Add(this.btn_ver_cert);
-            this.Controls.Add(this.btn_ver_cat);
-            this.Controls.Add(this.btn_ver_reg);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_ccb);
             this.Controls.Add(this.lbl_grupo);
             this.Controls.Add(this.lbl_nombre_gen);
@@ -572,9 +581,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.btn_asign_cert);
-            this.Controls.Add(this.btn_asign_cat);
-            this.Controls.Add(this.btn_asign_reg);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -594,10 +600,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_asign_cert;
-        private System.Windows.Forms.Button btn_asign_cat;
-        private System.Windows.Forms.Button btn_asign_reg;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -640,9 +642,13 @@
         private System.Windows.Forms.Label lbl_ccb;
         private System.Windows.Forms.Label lbl_grupo;
         private System.Windows.Forms.Label lbl_nombre_gen;
-        private System.Windows.Forms.Button btn_ver_cert;
-        private System.Windows.Forms.Button btn_ver_cat;
-        private System.Windows.Forms.Button btn_ver_reg;
-        private System.Windows.Forms.Label lbl_nombre_prod;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
     }
 }
