@@ -19,7 +19,7 @@ namespace AppLicitaciones
         public Cucop_Vincular_General()
         {
             InitializeComponent();
-            lbl_nombre_prod.Text = "";
+            txt_nombre_prod.Text = "";
             //registros
             lbl_reg_numero.Text = "";
             lbl_reg_fabricante.Text = "";
