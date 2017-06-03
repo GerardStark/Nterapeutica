@@ -47,7 +47,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
                 cmd.Parameters.AddWithValue("@vencimiento",date_vencimiento.Value.Date);
                 cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
-                cmd.Parameters.AddWithValue("@archivo", checkedButton.Text);
+                cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 Int32 newId = (Int32)cmd.ExecuteScalar();
                 mc.crearDirectorios(archivo, fileName, newId,"Registros-Sanitarios");

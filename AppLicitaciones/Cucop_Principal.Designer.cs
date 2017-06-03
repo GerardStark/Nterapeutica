@@ -44,9 +44,6 @@
             this.nprodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grupoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.registroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.catalogoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.certificadoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_cucop)).BeginInit();
             this.SuspendLayout();
@@ -147,14 +144,11 @@
             this.ngeColumn,
             this.nprodColumn,
             this.grupoColumn,
-            this.codigoColumn,
-            this.registroColumn,
-            this.catalogoColumn,
-            this.certificadoColumn});
+            this.codigoColumn});
             this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
-            this.DGV_cucop.Size = new System.Drawing.Size(1243, 652);
+            this.DGV_cucop.Size = new System.Drawing.Size(1238, 652);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_cucop_RowHeaderMouseClick);
             // 
@@ -170,49 +164,28 @@
             this.ngeColumn.HeaderText = "Nombre Generico";
             this.ngeColumn.Name = "ngeColumn";
             this.ngeColumn.ReadOnly = true;
-            this.ngeColumn.Width = 200;
+            this.ngeColumn.Width = 425;
             // 
             // nprodColumn
             // 
             this.nprodColumn.HeaderText = "Nombre Producto";
             this.nprodColumn.Name = "nprodColumn";
             this.nprodColumn.ReadOnly = true;
-            this.nprodColumn.Width = 200;
+            this.nprodColumn.Width = 250;
             // 
             // grupoColumn
             // 
             this.grupoColumn.HeaderText = "Grupo";
             this.grupoColumn.Name = "grupoColumn";
             this.grupoColumn.ReadOnly = true;
-            this.grupoColumn.Width = 200;
+            this.grupoColumn.Width = 250;
             // 
             // codigoColumn
             // 
             this.codigoColumn.HeaderText = "Codigo";
             this.codigoColumn.Name = "codigoColumn";
             this.codigoColumn.ReadOnly = true;
-            this.codigoColumn.Width = 200;
-            // 
-            // registroColumn
-            // 
-            this.registroColumn.HeaderText = "Registro Sanitario";
-            this.registroColumn.Name = "registroColumn";
-            this.registroColumn.ReadOnly = true;
-            this.registroColumn.Width = 133;
-            // 
-            // catalogoColumn
-            // 
-            this.catalogoColumn.HeaderText = "Catalogo";
-            this.catalogoColumn.Name = "catalogoColumn";
-            this.catalogoColumn.ReadOnly = true;
-            this.catalogoColumn.Width = 133;
-            // 
-            // certificadoColumn
-            // 
-            this.certificadoColumn.HeaderText = "Certificado";
-            this.certificadoColumn.Name = "certificadoColumn";
-            this.certificadoColumn.ReadOnly = true;
-            this.certificadoColumn.Width = 133;
+            this.codigoColumn.Width = 240;
             // 
             // Cucop_Principal
             // 
@@ -250,8 +223,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nprodColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn grupoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn registroColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn catalogoColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn certificadoColumn;
     }
 }

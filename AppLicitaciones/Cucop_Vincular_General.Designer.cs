@@ -170,6 +170,7 @@
             this.btn_reg_vincular.TabIndex = 142;
             this.btn_reg_vincular.Text = "Cambiar";
             this.btn_reg_vincular.UseVisualStyleBackColor = true;
+            this.btn_reg_vincular.Click += new System.EventHandler(this.btn_reg_vincular_Click);
             // 
             // btm_cat_vincular
             // 
@@ -236,14 +237,18 @@
             // list_vinc_reg
             // 
             this.list_vinc_reg.Location = new System.Drawing.Point(12, 244);
+            this.list_vinc_reg.MultiSelect = false;
             this.list_vinc_reg.Name = "list_vinc_reg";
             this.list_vinc_reg.Size = new System.Drawing.Size(253, 246);
             this.list_vinc_reg.TabIndex = 147;
             this.list_vinc_reg.UseCompatibleStateImageBehavior = false;
+            this.list_vinc_reg.View = System.Windows.Forms.View.List;
+            this.list_vinc_reg.MouseClick += new System.Windows.Forms.MouseEventHandler(this.list_vinc_reg_MouseClick);
             // 
             // listView2
             // 
             this.listView2.Location = new System.Drawing.Point(346, 244);
+            this.listView2.MultiSelect = false;
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(253, 246);
             this.listView2.TabIndex = 148;
@@ -252,6 +257,7 @@
             // listView3
             // 
             this.listView3.Location = new System.Drawing.Point(673, 244);
+            this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(253, 246);
             this.listView3.TabIndex = 149;
