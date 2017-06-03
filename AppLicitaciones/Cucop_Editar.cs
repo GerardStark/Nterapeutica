@@ -28,7 +28,7 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select nombre_generico_espeficico,grupo,codigo from cucop where id_cucop = @id",con);
+                SqlCommand cmd = new SqlCommand("Select nombre_generico_especifico,grupo,codigo from cucop where id_cucop = @id", con);
                 cmd.Parameters.AddWithValue("@id",id_cucop);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -38,7 +38,7 @@ namespace AppLicitaciones
                 {
                     txt_codigo.Text = dt.Rows[0]["codigo"].ToString();
                     txt_grupo.Text = dt.Rows[0]["grupo"].ToString();
-                    txt_nombre_gen.Text = dt.Rows[0]["nombre_generico_espeficico"].ToString();
+                    txt_nombre_gen.Text = dt.Rows[0]["nombre_generico_especifico"].ToString();
                 }
             }
             catch (Exception ex)

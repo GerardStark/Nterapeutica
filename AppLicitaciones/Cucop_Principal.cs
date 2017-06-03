@@ -28,8 +28,8 @@ namespace AppLicitaciones
                 DGV_cucop.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_espeficico,nombre_producto,"+
-                    "grupo,codigo,id_registro_sanitario,id_catalogo_productos,id_certificado_calidad from cucop",con);
+                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_especifico,nombre_producto," +
+                    "grupo,codigo from cucop",con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -77,9 +77,8 @@ namespace AppLicitaciones
                 SqlConnection con = new SqlConnection(mc.con);
                 con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_espeficico,nombre_producto," +
-                   "grupo,codigo,id_registro_sanitario,id_catalogo_productos,id_certificado_calidad from cucop "+
-                   "where "+ctrl+" = "+valor+"", con);
+                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_especifico,nombre_producto," +
+                   "grupo,codigo from cucop where "+ctrl+" = "+valor+"", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -126,6 +125,10 @@ namespace AppLicitaciones
                 {
                     llenartablacucops();
                 }
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Codigo de Cuadro Basico para visualizar los vinculos");
             }
         }
     }

@@ -15,28 +15,11 @@ namespace AppLicitaciones
     public partial class Cucop_Vincular_General : Form
     {
         MainConfig mc = new MainConfig();
-        int id_cucop = 0;
+        int id_cucop = 0, id_registro = 0;
         public Cucop_Vincular_General()
         {
             InitializeComponent();
             txt_nombre_prod.Text = "";
-            //registros
-            //lbl_reg_numero.Text = "";
-            //lbl_reg_fabricante.Text = "";
-            //lbl_reg_denom_gen.Text = "";
-            //lbl_reg_denom_dist.Text = "";
-            //lbl_reg_vencimiento.Text = "";
-            ////catalogos
-            //lbl_cat_nombre.Text = "";
-            //lbl_cat_fabricante.Text = "";
-            //lbl_cat_idioma.Text = "";
-            //lbl_cat_especialidad.Text = "";
-            //lbl_cat_pagina.Text = "";
-            ////certificados
-            //lbl_cert_numero.Text = "";
-            //lbl_cert_fabricante.Text = "";
-            //lbl_cert_tipo.Text = "";
-            //lbl_cert_vencimiento.Text = "";
         }
         public void mostrarvinculoscucop(int id_cucop)
         {
@@ -45,7 +28,7 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select nombre_generico_espeficico,grupo,codigo from cucop where id_cucop = @id", con);
+                SqlCommand cmd = new SqlCommand("Select nombre_generico_especifico,grupo,codigo from cucop where id_cucop = @id", con);
                 cmd.Parameters.AddWithValue("@id", id_cucop);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -55,7 +38,8 @@ namespace AppLicitaciones
                 {
                     lbl_ccb.Text = dt.Rows[0]["codigo"].ToString();
                     lbl_grupo.Text = dt.Rows[0]["grupo"].ToString();
-                    lbl_nombre_gen.Text = dt.Rows[0]["nombre_generico_espeficico"].ToString();
+                    lbl_nombre_gen.Text = dt.Rows[0]["nombre_generico_especifico"].ToString();
+                    vervinculosregistros(id_cucop);
                 }
             }
             catch (Exception ex)
@@ -63,10 +47,37 @@ namespace AppLicitaciones
                 MessageBox.Show(ex.Message);
             }
         }
+        private void vervinculosregistros(int id_cucop)
+        {
+            try
+            {
+                SqlConnection con = new SqlConnection(mc.con);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select id_registro, numero_registro from registros_sanitarios", con);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapt.Fill(dt);
+                foreach (DataRow row in dt.Rows)
+                {
+                    ListViewItem item = new ListViewItem();
+                    item.Text = row["numero_registro"].ToString();
+                    item.Tag = Convert.ToInt32(row["id_registro"]);
+                    list_vinc_reg.Items.Add(item);
+                }
+                con.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void btn_ver_reg_Click(object sender, EventArgs e)
         {
+            if (id_registro != 0)
+            {
 
+            }
         }
     }
 }

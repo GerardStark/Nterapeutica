@@ -48,13 +48,19 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.list_vinc_reg = new System.Windows.Forms.ListView();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.listView3 = new System.Windows.Forms.ListView();
+            this.btn_ver_reg = new System.Windows.Forms.Button();
+            this.btn_ver_cat = new System.Windows.Forms.Button();
+            this.btn_ver_cert = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(99, 84);
+            this.label4.Location = new System.Drawing.Point(99, 93);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 20);
             this.label4.TabIndex = 31;
@@ -63,7 +69,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(141, 52);
+            this.label3.Location = new System.Drawing.Point(141, 61);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 20);
             this.label3.TabIndex = 30;
@@ -81,7 +87,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 21);
+            this.label1.Location = new System.Drawing.Point(62, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 28;
@@ -97,7 +103,7 @@
             this.btn_descartar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 563);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1095, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(948, 57);
             this.toolStrip1.TabIndex = 51;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -132,7 +138,7 @@
             // lbl_ccb
             // 
             this.lbl_ccb.AutoSize = true;
-            this.lbl_ccb.Location = new System.Drawing.Point(205, 84);
+            this.lbl_ccb.Location = new System.Drawing.Point(205, 93);
             this.lbl_ccb.Name = "lbl_ccb";
             this.lbl_ccb.Size = new System.Drawing.Size(60, 20);
             this.lbl_ccb.TabIndex = 137;
@@ -141,7 +147,7 @@
             // lbl_grupo
             // 
             this.lbl_grupo.AutoSize = true;
-            this.lbl_grupo.Location = new System.Drawing.Point(205, 52);
+            this.lbl_grupo.Location = new System.Drawing.Point(205, 61);
             this.lbl_grupo.Name = "lbl_grupo";
             this.lbl_grupo.Size = new System.Drawing.Size(60, 20);
             this.lbl_grupo.TabIndex = 136;
@@ -150,7 +156,7 @@
             // lbl_nombre_gen
             // 
             this.lbl_nombre_gen.AutoSize = true;
-            this.lbl_nombre_gen.Location = new System.Drawing.Point(205, 23);
+            this.lbl_nombre_gen.Location = new System.Drawing.Point(205, 32);
             this.lbl_nombre_gen.Name = "lbl_nombre_gen";
             this.lbl_nombre_gen.Size = new System.Drawing.Size(60, 20);
             this.lbl_nombre_gen.TabIndex = 135;
@@ -203,7 +209,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 221);
+            this.label5.Location = new System.Drawing.Point(55, 221);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 20);
             this.label5.TabIndex = 32;
@@ -212,7 +218,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(724, 221);
+            this.label6.Location = new System.Drawing.Point(688, 221);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 20);
             this.label6.TabIndex = 33;
@@ -221,17 +227,75 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(389, 221);
+            this.label7.Location = new System.Drawing.Point(354, 221);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 20);
             this.label7.TabIndex = 34;
             this.label7.Text = "Catálogos de Productos:";
             // 
+            // list_vinc_reg
+            // 
+            this.list_vinc_reg.Location = new System.Drawing.Point(12, 244);
+            this.list_vinc_reg.Name = "list_vinc_reg";
+            this.list_vinc_reg.Size = new System.Drawing.Size(253, 246);
+            this.list_vinc_reg.TabIndex = 147;
+            this.list_vinc_reg.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(346, 244);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(253, 246);
+            this.listView2.TabIndex = 148;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // listView3
+            // 
+            this.listView3.Location = new System.Drawing.Point(673, 244);
+            this.listView3.Name = "listView3";
+            this.listView3.Size = new System.Drawing.Size(253, 246);
+            this.listView3.TabIndex = 149;
+            this.listView3.UseCompatibleStateImageBehavior = false;
+            // 
+            // btn_ver_reg
+            // 
+            this.btn_ver_reg.Location = new System.Drawing.Point(209, 214);
+            this.btn_ver_reg.Name = "btn_ver_reg";
+            this.btn_ver_reg.Size = new System.Drawing.Size(56, 27);
+            this.btn_ver_reg.TabIndex = 150;
+            this.btn_ver_reg.Text = "Ver";
+            this.btn_ver_reg.UseVisualStyleBackColor = true;
+            this.btn_ver_reg.Click += new System.EventHandler(this.btn_ver_reg_Click);
+            // 
+            // btn_ver_cat
+            // 
+            this.btn_ver_cat.Location = new System.Drawing.Point(543, 214);
+            this.btn_ver_cat.Name = "btn_ver_cat";
+            this.btn_ver_cat.Size = new System.Drawing.Size(56, 27);
+            this.btn_ver_cat.TabIndex = 151;
+            this.btn_ver_cat.Text = "Ver";
+            this.btn_ver_cat.UseVisualStyleBackColor = true;
+            // 
+            // btn_ver_cert
+            // 
+            this.btn_ver_cert.Location = new System.Drawing.Point(870, 211);
+            this.btn_ver_cert.Name = "btn_ver_cert";
+            this.btn_ver_cert.Size = new System.Drawing.Size(56, 27);
+            this.btn_ver_cert.TabIndex = 152;
+            this.btn_ver_cert.Text = "Ver";
+            this.btn_ver_cert.UseVisualStyleBackColor = true;
+            // 
             // Cucop_Vincular_General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 620);
+            this.ClientSize = new System.Drawing.Size(948, 620);
+            this.Controls.Add(this.btn_ver_cert);
+            this.Controls.Add(this.btn_ver_cat);
+            this.Controls.Add(this.btn_ver_reg);
+            this.Controls.Add(this.listView3);
+            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.list_vinc_reg);
             this.Controls.Add(this.btn_cambiar_nomprod);
             this.Controls.Add(this.txt_nombre_prod);
             this.Controls.Add(this.btn_cert_vincular);
@@ -279,5 +343,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ListView list_vinc_reg;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.Button btn_ver_reg;
+        private System.Windows.Forms.Button btn_ver_cat;
+        private System.Windows.Forms.Button btn_ver_cert;
     }
 }

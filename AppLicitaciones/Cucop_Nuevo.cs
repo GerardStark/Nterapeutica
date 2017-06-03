@@ -27,7 +27,7 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO cucop (nombre_generico_espeficico,grupo,codigo) values(@nombre,@grupo,@ccb)",con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO cucop (nombre_generico_especifico,grupo,codigo) values(@nombre,@grupo,@ccb)", con);
                 cmd.Parameters.AddWithValue("@nombre",txt_nombre_gen.Text);
                 cmd.Parameters.AddWithValue("@grupo", txt_grupo.Text);
                 cmd.Parameters.AddWithValue("@ccb", txt_codigo.Text);
