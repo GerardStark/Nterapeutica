@@ -294,8 +294,26 @@
     <Compile Include="Registros_Editar.Designer.cs">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Catalogos_Buscar.resx">
+      <DependentUpon>Catalogos_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos_ClavesReferencias.resx">
+      <DependentUpon>Catalogos_ClavesReferencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos_Editar.resx">
+      <DependentUpon>Catalogos_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos_Nuevo.resx">
+      <DependentUpon>Catalogos_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos_Principal.resx">
       <DependentUpon>Catalogos_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos_Traducciones.resx">
+      <DependentUpon>Catalogos_Traducciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos_Visualizar.resx">
+      <DependentUpon>Catalogos_Visualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Certificados_Principal.resx">
       <DependentUpon>Certificados_Principal.cs</DependentUpon>
