@@ -193,6 +193,7 @@
             this.btn_reg_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_guardar.Text = "Guardar";
             this.btn_reg_guardar.ToolTipText = "OK";
+            this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
             // btn_reg_editar
             // 
@@ -203,6 +204,7 @@
             this.btn_reg_editar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_editar.Text = "toolStripButton5";
             this.btn_reg_editar.ToolTipText = "Editar";
+            this.btn_reg_editar.Click += new System.EventHandler(this.btn_reg_editar_Click);
             // 
             // btn_reg_borrar
             // 
@@ -213,6 +215,7 @@
             this.btn_reg_borrar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_borrar.Text = "toolStripButton3";
             this.btn_reg_borrar.ToolTipText = "Borrar";
+            this.btn_reg_borrar.Click += new System.EventHandler(this.btn_reg_borrar_Click);
             // 
             // label12
             // 

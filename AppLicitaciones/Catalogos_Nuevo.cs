@@ -21,13 +21,17 @@ namespace AppLicitaciones
         public Catalogos_Nuevo()
         {
             InitializeComponent();
-        }
+           
+            mc.llenarcombobox(mc.array_tipos_catalogo,cmb_tipo);
+            mc.llenarcombobox(mc.array_idiomas,cmb_idioma);
+        }        
 
         private void txt_limpiar_campos_Click(object sender, EventArgs e)
         {
             txt_nombre.Text = "";
             txt_year.Text = "";
-            txt_idioma.Text = "";
+            cmb_idioma.SelectedIndex = 0;
+            cmb_tipo.SelectedIndex = 0;
             txt_fabricante.Text = "";
             txt_especialidad.Text = "";
             lbl_archivo.Text = "";
@@ -45,28 +49,37 @@ namespace AppLicitaciones
             }
         }
 
+        private void btn_reg_descartar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
+            this.Close();
+        }
+
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Insert into catalogos_productos (nombre_catalogo, año_publicacion,especialidad,fabricante "+
-                    "idioma,dir_archivo,actualizado_en) values (@nombre,@año,@espec,@fabricante,@idioma,@archivo,@actualizado)", con);
                 con.Open();
+                SqlCommand cmd = new SqlCommand("Insert into catalogos_info_general (nombre_catalogo,publicacion,tipo_catalogo,spec_catalogo,fabricante, " +
+                    "idioma,dir_archivo,actualizado_en) OUTPUT INSERTED.id_catalogo values (@nombre,@año,@tipo,@espec,@fabricante,@idioma,@archivo,@actualizado)", con);
                 cmd.Parameters.AddWithValue("@nombre",txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@año",txt_year.Text);
                 cmd.Parameters.AddWithValue("@espec",txt_especialidad.Text);
+                cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@fabricante",id_fabricante);
-                cmd.Parameters.AddWithValue("@idioma",txt_idioma.Text);
+                cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@archivo",lbl_archivo.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 Int32 newId = (Int32)cmd.ExecuteScalar();
-                mc.crearDirectorios(archivo, fileName, newId, "Catálogos-Productos");
+                mc.crearDirectorios(archivo, fileName, newId, "Catalogos-Productos");
+                this.DialogResult = DialogResult.OK;
                 con.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
+
             }
         }
 

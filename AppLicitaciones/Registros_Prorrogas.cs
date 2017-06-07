@@ -116,6 +116,36 @@ namespace AppLicitaciones
             }
         }
 
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            if (id_tramite != 0)
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM registros_tramites_prorroga where id_tramite_prorroga = @id", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", id_tramite);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Borrado");
+                    borrararchivoprorroga(id_tramite);
+                    mostrarprorrogasregistro(id_registro);
+                    con.Close();
+                    btn_guardar.Enabled = true;
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una referencia");
+            }
+        }
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(mc.con);
@@ -215,6 +245,21 @@ namespace AppLicitaciones
                 {
                     MessageBox.Show("No se ha borrado el archivo");
                 }
+            }
+        }
+        private void borrararchivoprorroga(int id_tramite)
+        {
+            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + "\\tramites";
+            string pathanexos = newpath + "\\" + id_tramite + "\\" + lbl_archivo.Text;
+
+            if (lbl_archivo.Text != "(Vacio)")
+            {
+
+                File.Delete(pathanexos);
+            }
+            else
+            {
+                MessageBox.Show("No hay archivo");
             }
         }
 

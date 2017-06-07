@@ -36,17 +36,18 @@
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.btn_eliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.DGV_Referencias = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DGV_Traducciones = new System.Windows.Forms.DataGridView();
             this.btn_ver = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_archivo = new System.Windows.Forms.Label();
             this.btn_archivo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txt_desc = new System.Windows.Forms.TextBox();
+            this.btn_traduccion_referencias = new System.Windows.Forms.Button();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Traducciones)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -112,24 +113,19 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel3.Text = "Eliminar";
             // 
-            // DGV_Referencias
+            // DGV_Traducciones
             // 
-            this.DGV_Referencias.AllowUserToAddRows = false;
-            this.DGV_Referencias.AllowUserToDeleteRows = false;
-            this.DGV_Referencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGV_Referencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idColumn});
-            this.DGV_Referencias.Location = new System.Drawing.Point(58, 184);
-            this.DGV_Referencias.Name = "DGV_Referencias";
-            this.DGV_Referencias.ReadOnly = true;
-            this.DGV_Referencias.Size = new System.Drawing.Size(546, 480);
-            this.DGV_Referencias.TabIndex = 4;
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
+            this.DGV_Traducciones.AllowUserToAddRows = false;
+            this.DGV_Traducciones.AllowUserToDeleteRows = false;
+            this.DGV_Traducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGV_Traducciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
+            this.descColumn});
+            this.DGV_Traducciones.Location = new System.Drawing.Point(58, 184);
+            this.DGV_Traducciones.Name = "DGV_Traducciones";
+            this.DGV_Traducciones.ReadOnly = true;
+            this.DGV_Traducciones.Size = new System.Drawing.Size(519, 480);
+            this.DGV_Traducciones.TabIndex = 4;
             // 
             // btn_ver
             // 
@@ -176,36 +172,51 @@
             this.label1.TabIndex = 16;
             this.label1.Text = "Descripcion Corta:";
             // 
-            // textBox1
+            // txt_desc
             // 
-            this.textBox1.Location = new System.Drawing.Point(307, 46);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 97);
-            this.textBox1.TabIndex = 17;
+            this.txt_desc.Location = new System.Drawing.Point(307, 46);
+            this.txt_desc.Multiline = true;
+            this.txt_desc.Name = "txt_desc";
+            this.txt_desc.Size = new System.Drawing.Size(270, 97);
+            this.txt_desc.TabIndex = 17;
             // 
-            // button1
+            // btn_traduccion_referencias
             // 
-            this.button1.Location = new System.Drawing.Point(62, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(122, 31);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Referencias";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_traduccion_referencias.Location = new System.Drawing.Point(62, 33);
+            this.btn_traduccion_referencias.Name = "btn_traduccion_referencias";
+            this.btn_traduccion_referencias.Size = new System.Drawing.Size(122, 31);
+            this.btn_traduccion_referencias.TabIndex = 18;
+            this.btn_traduccion_referencias.Text = "Referencias";
+            this.btn_traduccion_referencias.UseVisualStyleBackColor = true;
+            this.btn_traduccion_referencias.Click += new System.EventHandler(this.btn_traduccion_referencias_Click);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
+            // 
+            // descColumn
+            // 
+            this.descColumn.HeaderText = "Descripcion";
+            this.descColumn.Name = "descColumn";
+            this.descColumn.ReadOnly = true;
+            this.descColumn.Width = 425;
             // 
             // Catalogos_Traducciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 676);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(596, 676);
+            this.Controls.Add(this.btn_traduccion_referencias);
+            this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_ver);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_archivo);
             this.Controls.Add(this.btn_archivo);
-            this.Controls.Add(this.DGV_Referencias);
+            this.Controls.Add(this.DGV_Traducciones);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -213,7 +224,7 @@
             this.Text = "Catalogos_Traducciones";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGV_Traducciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -228,14 +239,15 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripButton btn_eliminar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.DataGridView DGV_Referencias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridView DGV_Traducciones;
         private System.Windows.Forms.Button btn_ver;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_archivo;
         private System.Windows.Forms.Button btn_archivo;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txt_desc;
+        private System.Windows.Forms.Button btn_traduccion_referencias;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
     }
 }

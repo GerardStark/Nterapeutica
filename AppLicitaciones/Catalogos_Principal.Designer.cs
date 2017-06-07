@@ -176,7 +176,8 @@
             this.DGV_Catalogos.ReadOnly = true;
             this.DGV_Catalogos.Size = new System.Drawing.Size(1243, 649);
             this.DGV_Catalogos.TabIndex = 2;
-            this.DGV_Catalogos.RowDividerDoubleClick += new System.Windows.Forms.DataGridViewRowDividerDoubleClickEventHandler(this.DGV_Catalogos_RowDividerDoubleClick);
+            this.DGV_Catalogos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_Catalogos_CellFormatting);
+            this.DGV_Catalogos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Catalogos_RowHeaderMouseClick);
             // 
             // idColumn
             // 

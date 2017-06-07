@@ -155,6 +155,7 @@
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(52, 54);
             this.btn_eliminar.Text = "toolStripButton3";
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // toolStripLabel3
             // 

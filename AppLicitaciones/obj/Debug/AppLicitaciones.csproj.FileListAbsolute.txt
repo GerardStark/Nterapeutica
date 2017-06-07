@@ -37,3 +37,5 @@ C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicit
 C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Catalogos_ClavesReferencias.resources
 C:\Users\APOYOS3-LAP\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Catalogos_Buscar.resources
 C:\Users\APOYOS3-LAP\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Catalogos_Traducciones.resources
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\LibLicitacion.dll.config
+C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Catalogos_traduccion_referencias.resources

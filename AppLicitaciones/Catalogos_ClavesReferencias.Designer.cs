@@ -47,10 +47,10 @@
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.btn_eliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,6 +119,8 @@
             this.DGV_Referencias.ReadOnly = true;
             this.DGV_Referencias.Size = new System.Drawing.Size(692, 488);
             this.DGV_Referencias.TabIndex = 15;
+            this.DGV_Referencias.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseClick);
+            this.DGV_Referencias.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseDoubleClick);
             // 
             // idColumn
             // 
@@ -175,6 +177,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(65, 54);
             this.btn_guardar.Text = "toolStripButton2";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // toolStripLabel2
             // 
@@ -191,6 +194,7 @@
             this.btn_editar.Size = new System.Drawing.Size(65, 54);
             this.btn_editar.Text = "toolStripButton5";
             this.btn_editar.ToolTipText = "Editar";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // toolStripLabel4
             // 
@@ -206,12 +210,20 @@
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(65, 54);
             this.btn_eliminar.Text = "toolStripButton3";
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
             this.toolStripLabel3.Size = new System.Drawing.Size(65, 15);
             this.toolStripLabel3.Text = "Eliminar";
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel1.Text = "Seleccionar";
             // 
             // toolStripButton1
             // 
@@ -224,12 +236,12 @@
             this.toolStripButton1.Size = new System.Drawing.Size(65, 54);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // toolStripLabel1
+            // toolStripLabel5
             // 
-            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
-            this.toolStripLabel1.Text = "Seleccionar";
+            this.toolStripLabel5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel5.Text = "Buscar";
             // 
             // toolStripButton2
             // 
@@ -240,13 +252,6 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(65, 54);
             this.toolStripButton2.Text = "toolStripButton2";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(65, 15);
-            this.toolStripLabel5.Text = "Buscar";
             // 
             // Catalogos_ClavesReferencias
             // 

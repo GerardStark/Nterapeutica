@@ -14,7 +14,9 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public String con = @"Data Source=APOYO3-LAP\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";
+        public string con = @"Data Source=APOYO3-LAP\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";
+        public string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
+        public string[] array_idiomas = { "Español", "Inglés", "Francés", "Alemán", "Japonés", "Portugués", "Chino" };
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)
@@ -74,6 +76,17 @@ namespace LibLicitacion
                 }
             }
         }
+        public void llenarcombobox(string[] items, ComboBox cmb)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = items[i];
+                item.Value = i + 1;
+                cmb.Items.Add(item);
+            }
+        }
+        
     }
 
     public class ComboboxItem
@@ -85,16 +98,5 @@ namespace LibLicitacion
         {
             return Text;
         }
-    }
-
-    public class ListViewItemWithId
-    {
-        public string Text { get; set; }
-        public int Id { get; set; }
-
-        public override string ToString()
-        {
-            return Text.ToString();
-        }
-    }
+    }    
 }

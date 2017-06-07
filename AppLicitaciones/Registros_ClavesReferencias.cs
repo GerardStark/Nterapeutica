@@ -99,6 +99,10 @@ namespace AppLicitaciones
                     throw;
                 }
             }
+            else
+            {
+                MessageBox.Show("Selecciona una referencia");
+            }
         }
 
         private void DGV_Referencias_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -115,8 +119,31 @@ namespace AppLicitaciones
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            //Eliminar uno por uno las clavess
+            if (id_referencia != 0)
+            {
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("DELETE FROM registros_claves_referencias where id_clave_registro = @id", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@id", id_referencia);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Borrado");
+                    mostrarclavesregistro(id_registro);
+                    con.Close();
+                    btn_guardar.Enabled = true;
 
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una referencia");
+            }
         }
 
         private void DGV_Referencias_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)

@@ -32,13 +32,11 @@
             this.tt_reg_nuevo = new System.Windows.Forms.ToolStrip();
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
-            this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_select_fabricante = new System.Windows.Forms.Button();
             this.txt_especialidad = new System.Windows.Forms.TextBox();
             this.txt_fabricante = new System.Windows.Forms.TextBox();
-            this.txt_idioma = new System.Windows.Forms.TextBox();
             this.txt_year = new System.Windows.Forms.TextBox();
             this.lbl_archivo = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -49,6 +47,7 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_archivo = new System.Windows.Forms.Button();
+            this.cmb_idioma = new System.Windows.Forms.ComboBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +57,7 @@
             this.tt_reg_nuevo.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.tt_reg_nuevo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_reg_descartar,
-            this.btn_reg_guardar,
-            this.txt_limpiar_campos});
+            this.btn_reg_guardar});
             this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 323);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(536, 57);
@@ -75,6 +73,7 @@
             this.btn_reg_descartar.Name = "btn_reg_descartar";
             this.btn_reg_descartar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_descartar.Text = "Descartar";
+            this.btn_reg_descartar.Click += new System.EventHandler(this.btn_reg_descartar_Click);
             // 
             // btn_reg_guardar
             // 
@@ -85,25 +84,16 @@
             this.btn_reg_guardar.Name = "btn_reg_guardar";
             this.btn_reg_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_guardar.Text = "Guardar";
+            this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
-            // txt_limpiar_campos
+            // cmb_tipo
             // 
-            this.txt_limpiar_campos.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txt_limpiar_campos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.txt_limpiar_campos.Image = ((System.Drawing.Image)(resources.GetObject("txt_limpiar_campos.Image")));
-            this.txt_limpiar_campos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.txt_limpiar_campos.Name = "txt_limpiar_campos";
-            this.txt_limpiar_campos.Size = new System.Drawing.Size(54, 54);
-            this.txt_limpiar_campos.Text = "Limpiar";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(204, 84);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(267, 28);
-            this.comboBox1.TabIndex = 59;
+            this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Location = new System.Drawing.Point(204, 84);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(267, 28);
+            this.cmb_tipo.TabIndex = 59;
             // 
             // label7
             // 
@@ -122,6 +112,7 @@
             this.btn_select_fabricante.TabIndex = 57;
             this.btn_select_fabricante.Text = "Seleccionar";
             this.btn_select_fabricante.UseVisualStyleBackColor = true;
+            this.btn_select_fabricante.Click += new System.EventHandler(this.btn_select_fabricante_Click);
             // 
             // txt_especialidad
             // 
@@ -137,13 +128,6 @@
             this.txt_fabricante.ReadOnly = true;
             this.txt_fabricante.Size = new System.Drawing.Size(153, 26);
             this.txt_fabricante.TabIndex = 55;
-            // 
-            // txt_idioma
-            // 
-            this.txt_idioma.Location = new System.Drawing.Point(203, 120);
-            this.txt_idioma.Name = "txt_idioma";
-            this.txt_idioma.Size = new System.Drawing.Size(268, 26);
-            this.txt_idioma.TabIndex = 54;
             // 
             // txt_year
             // 
@@ -230,18 +214,28 @@
             this.btn_archivo.TabIndex = 44;
             this.btn_archivo.Text = "Seleccionar";
             this.btn_archivo.UseVisualStyleBackColor = true;
+            this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
+            // 
+            // cmb_idioma
+            // 
+            this.cmb_idioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_idioma.FormattingEnabled = true;
+            this.cmb_idioma.Location = new System.Drawing.Point(203, 119);
+            this.cmb_idioma.Name = "cmb_idioma";
+            this.cmb_idioma.Size = new System.Drawing.Size(267, 28);
+            this.cmb_idioma.TabIndex = 60;
             // 
             // Catalogos_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 380);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_idioma);
+            this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_select_fabricante);
             this.Controls.Add(this.txt_especialidad);
             this.Controls.Add(this.txt_fabricante);
-            this.Controls.Add(this.txt_idioma);
             this.Controls.Add(this.txt_year);
             this.Controls.Add(this.lbl_archivo);
             this.Controls.Add(this.label6);
@@ -269,13 +263,11 @@
         private System.Windows.Forms.ToolStrip tt_reg_nuevo;
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
-        private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_select_fabricante;
         private System.Windows.Forms.TextBox txt_especialidad;
         private System.Windows.Forms.TextBox txt_fabricante;
-        private System.Windows.Forms.TextBox txt_idioma;
         private System.Windows.Forms.TextBox txt_year;
         private System.Windows.Forms.Label lbl_archivo;
         private System.Windows.Forms.Label label6;
@@ -286,5 +278,6 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_archivo;
+        private System.Windows.Forms.ComboBox cmb_idioma;
     }
 }

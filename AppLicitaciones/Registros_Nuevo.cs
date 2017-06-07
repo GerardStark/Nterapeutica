@@ -53,9 +53,9 @@ namespace AppLicitaciones
                 mc.crearDirectorios(archivo, fileName, newId,"Registros-Sanitarios");
                 con.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                MessageBox.Show(ex.Message);
             }
             this.DialogResult = DialogResult.OK;
             this.Close();

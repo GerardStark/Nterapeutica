@@ -39,7 +39,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_archivo = new System.Windows.Forms.Label();
             this.txt_year = new System.Windows.Forms.TextBox();
-            this.txt_idioma = new System.Windows.Forms.TextBox();
             this.txt_fabricante = new System.Windows.Forms.TextBox();
             this.txt_especialidad = new System.Windows.Forms.TextBox();
             this.btn_select_fabricante = new System.Windows.Forms.Button();
@@ -48,7 +47,8 @@
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.cmb_idioma = new System.Windows.Forms.ComboBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.btn_archivo.Location = new System.Drawing.Point(174, 228);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(105, 26);
-            this.btn_archivo.TabIndex = 0;
+            this.btn_archivo.TabIndex = 7;
             this.btn_archivo.Text = "Seleccionar";
             this.btn_archivo.UseVisualStyleBackColor = true;
             this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
@@ -76,12 +76,12 @@
             this.txt_nombre.Location = new System.Drawing.Point(174, 29);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(268, 26);
-            this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 63);
+            this.label2.Location = new System.Drawing.Point(20, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 20);
             this.label2.TabIndex = 3;
@@ -134,17 +134,11 @@
             // 
             // txt_year
             // 
-            this.txt_year.Location = new System.Drawing.Point(174, 60);
+            this.txt_year.Location = new System.Drawing.Point(174, 62);
+            this.txt_year.MaxLength = 4;
             this.txt_year.Name = "txt_year";
-            this.txt_year.Size = new System.Drawing.Size(268, 26);
-            this.txt_year.TabIndex = 9;
-            // 
-            // txt_idioma
-            // 
-            this.txt_idioma.Location = new System.Drawing.Point(174, 131);
-            this.txt_idioma.Name = "txt_idioma";
-            this.txt_idioma.Size = new System.Drawing.Size(268, 26);
-            this.txt_idioma.TabIndex = 10;
+            this.txt_year.Size = new System.Drawing.Size(86, 26);
+            this.txt_year.TabIndex = 2;
             // 
             // txt_fabricante
             // 
@@ -152,21 +146,21 @@
             this.txt_fabricante.Name = "txt_fabricante";
             this.txt_fabricante.ReadOnly = true;
             this.txt_fabricante.Size = new System.Drawing.Size(153, 26);
-            this.txt_fabricante.TabIndex = 11;
+            this.txt_fabricante.TabIndex = 1000;
             // 
             // txt_especialidad
             // 
             this.txt_especialidad.Location = new System.Drawing.Point(174, 196);
             this.txt_especialidad.Name = "txt_especialidad";
             this.txt_especialidad.Size = new System.Drawing.Size(268, 26);
-            this.txt_especialidad.TabIndex = 12;
+            this.txt_especialidad.TabIndex = 6;
             // 
             // btn_select_fabricante
             // 
             this.btn_select_fabricante.Location = new System.Drawing.Point(333, 164);
             this.btn_select_fabricante.Name = "btn_select_fabricante";
             this.btn_select_fabricante.Size = new System.Drawing.Size(109, 26);
-            this.btn_select_fabricante.TabIndex = 13;
+            this.btn_select_fabricante.TabIndex = 5;
             this.btn_select_fabricante.Text = "Seleccionar";
             this.btn_select_fabricante.UseVisualStyleBackColor = true;
             this.btn_select_fabricante.Click += new System.EventHandler(this.btn_select_fabricante_Click);
@@ -194,6 +188,7 @@
             this.btn_reg_descartar.Name = "btn_reg_descartar";
             this.btn_reg_descartar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_descartar.Text = "Descartar";
+            this.btn_reg_descartar.Click += new System.EventHandler(this.btn_reg_descartar_Click);
             // 
             // btn_reg_guardar
             // 
@@ -226,27 +221,36 @@
             this.label7.TabIndex = 29;
             this.label7.Text = "Tipo:";
             // 
-            // comboBox1
+            // cmb_tipo
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(175, 95);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(267, 28);
-            this.comboBox1.TabIndex = 30;
+            this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_tipo.FormattingEnabled = true;
+            this.cmb_tipo.Location = new System.Drawing.Point(175, 95);
+            this.cmb_tipo.Name = "cmb_tipo";
+            this.cmb_tipo.Size = new System.Drawing.Size(267, 28);
+            this.cmb_tipo.TabIndex = 3;
+            // 
+            // cmb_idioma
+            // 
+            this.cmb_idioma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_idioma.FormattingEnabled = true;
+            this.cmb_idioma.Location = new System.Drawing.Point(174, 129);
+            this.cmb_idioma.Name = "cmb_idioma";
+            this.cmb_idioma.Size = new System.Drawing.Size(267, 28);
+            this.cmb_idioma.TabIndex = 4;
             // 
             // Catalogos_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 380);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_idioma);
+            this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tt_reg_nuevo);
             this.Controls.Add(this.btn_select_fabricante);
             this.Controls.Add(this.txt_especialidad);
             this.Controls.Add(this.txt_fabricante);
-            this.Controls.Add(this.txt_idioma);
             this.Controls.Add(this.txt_year);
             this.Controls.Add(this.lbl_archivo);
             this.Controls.Add(this.label6);
@@ -280,7 +284,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbl_archivo;
         private System.Windows.Forms.TextBox txt_year;
-        private System.Windows.Forms.TextBox txt_idioma;
         private System.Windows.Forms.TextBox txt_fabricante;
         private System.Windows.Forms.TextBox txt_especialidad;
         private System.Windows.Forms.Button btn_select_fabricante;
@@ -289,6 +292,7 @@
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_tipo;
+        private System.Windows.Forms.ComboBox cmb_idioma;
     }
 }

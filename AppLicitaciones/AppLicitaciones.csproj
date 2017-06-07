@@ -89,6 +89,12 @@
     <Compile Include="Catalogos_Traducciones.Designer.cs">
       <DependentUpon>Catalogos_Traducciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Catalogos_traduccion_referencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Catalogos_traduccion_referencias.Designer.cs">
+      <DependentUpon>Catalogos_traduccion_referencias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos_Visualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -311,6 +317,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos_Traducciones.resx">
       <DependentUpon>Catalogos_Traducciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Catalogos_traduccion_referencias.resx">
+      <DependentUpon>Catalogos_traduccion_referencias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Catalogos_Visualizar.resx">
       <DependentUpon>Catalogos_Visualizar.cs</DependentUpon>

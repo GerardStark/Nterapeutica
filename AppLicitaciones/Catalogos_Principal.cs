@@ -26,9 +26,10 @@ namespace AppLicitaciones
         {
             try
             {
+                DGV_Catalogos.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo,año_plublicacion,especialidad,fabricante,idioma from catalogos_productos", con);
+                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,idioma from catalogos_info_general", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -118,6 +119,7 @@ namespace AppLicitaciones
             if (id_catalogo != 0)
             {
                 Catalogos_ClavesReferencias ct = new Catalogos_ClavesReferencias();
+                ct.mostrarclavescatalogos(id_catalogo);
                 DialogResult result = ct.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -130,6 +132,32 @@ namespace AppLicitaciones
             }
         }
 
+        private void DGV_Catalogos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.DGV_Catalogos.Columns[e.ColumnIndex].Name)
+            {
+                case "fabricanteColumn":
+                    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
+                    {
+                        if (Convert.ToInt32(e.Value) > 0)
+                        {
+                            int idfab = Convert.ToInt32(DGV_Catalogos.Rows[e.RowIndex].Cells["fabricanteColumn"].Value);
+                            e.Value = mc.obtenernombrefabricante(idfab);
+                        }
+                    }
+                    else
+                    {
+                        e.Value = "(Vacio)";
+                    }
+                    break;
+            }
+        }
+
+        private void DGV_Catalogos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            id_catalogo = Convert.ToInt32(DGV_Catalogos.Rows[e.RowIndex].Cells["idColumn"].Value);
+        }
+
         private void filtrartablacatalogos (string ctrl, string valor)
         {
             try
@@ -139,8 +167,8 @@ namespace AppLicitaciones
                 con = new SqlConnection(mc.con);
                 con.Open();
                 //cambiar por tabla catalogos
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo,año_plublicacion,especialidad,fabricante,idioma " +
-                    "from catalogos_productos where " + ctrl + " Like '%" + valor + "%'", con);
+                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,plublicacion,spec_catalogo,fabricante,idioma " +
+                    "from catalogos_info_general where " + ctrl + " Like '%" + valor + "%'", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
