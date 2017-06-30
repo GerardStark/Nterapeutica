@@ -46,6 +46,7 @@
             this.btn_traduccion_referencias = new System.Windows.Forms.Button();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.archivoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Traducciones)).BeginInit();
             this.SuspendLayout();
@@ -75,6 +76,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(52, 54);
             this.btn_guardar.Text = "toolStripButton2";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // toolStripLabel2
             // 
@@ -91,6 +93,7 @@
             this.btn_editar.Size = new System.Drawing.Size(52, 54);
             this.btn_editar.Text = "toolStripButton5";
             this.btn_editar.ToolTipText = "Editar";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // toolStripLabel4
             // 
@@ -106,6 +109,7 @@
             this.btn_eliminar.Name = "btn_eliminar";
             this.btn_eliminar.Size = new System.Drawing.Size(52, 54);
             this.btn_eliminar.Text = "toolStripButton3";
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // toolStripLabel3
             // 
@@ -120,12 +124,15 @@
             this.DGV_Traducciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Traducciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
-            this.descColumn});
+            this.descColumn,
+            this.archivoColumn});
             this.DGV_Traducciones.Location = new System.Drawing.Point(58, 184);
             this.DGV_Traducciones.Name = "DGV_Traducciones";
             this.DGV_Traducciones.ReadOnly = true;
             this.DGV_Traducciones.Size = new System.Drawing.Size(519, 480);
             this.DGV_Traducciones.TabIndex = 4;
+            this.DGV_Traducciones.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Traducciones_RowHeaderMouseClick);
+            this.DGV_Traducciones.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Traducciones_RowHeaderMouseDoubleClick);
             // 
             // btn_ver
             // 
@@ -135,6 +142,7 @@
             this.btn_ver.TabIndex = 15;
             this.btn_ver.Text = "Ver";
             this.btn_ver.UseVisualStyleBackColor = true;
+            this.btn_ver.Click += new System.EventHandler(this.btn_ver_Click);
             // 
             // label3
             // 
@@ -162,6 +170,7 @@
             this.btn_archivo.TabIndex = 12;
             this.btn_archivo.Text = "Cambiar";
             this.btn_archivo.UseVisualStyleBackColor = true;
+            this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
             // label1
             // 
@@ -202,7 +211,14 @@
             this.descColumn.HeaderText = "Descripcion";
             this.descColumn.Name = "descColumn";
             this.descColumn.ReadOnly = true;
-            this.descColumn.Width = 425;
+            this.descColumn.Width = 300;
+            // 
+            // archivoColumn
+            // 
+            this.archivoColumn.HeaderText = "Archivo";
+            this.archivoColumn.Name = "archivoColumn";
+            this.archivoColumn.ReadOnly = true;
+            this.archivoColumn.Width = 125;
             // 
             // Catalogos_Traducciones
             // 
@@ -249,5 +265,6 @@
         private System.Windows.Forms.Button btn_traduccion_referencias;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn archivoColumn;
     }
 }

@@ -21,9 +21,10 @@ namespace AppLicitaciones
         public Catalogos_Nuevo()
         {
             InitializeComponent();
-           
-            mc.llenarcombobox(mc.array_tipos_catalogo,cmb_tipo);
-            mc.llenarcombobox(mc.array_idiomas,cmb_idioma);
+            string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
+            string[] array_idiomas = { "Español", "Inglés", "Francés", "Alemán", "Japonés", "Portugués", "Chino", "Koreano", "Irlandés" };
+            mc.llenarcombobox(array_tipos_catalogo,cmb_tipo);
+            mc.llenarcombobox(array_idiomas,cmb_idioma);
         }        
 
         private void txt_limpiar_campos_Click(object sender, EventArgs e)

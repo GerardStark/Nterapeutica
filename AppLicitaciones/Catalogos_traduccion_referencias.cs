@@ -19,8 +19,21 @@ namespace AppLicitaciones
         public Catalogos_traduccion_referencias()
         {
             InitializeComponent();
+            string[] array_filtros_referencias = { "Clave", "Descripcion", "Unidad" };
+            mc.llenarcombobox(array_filtros_referencias, cmb_filtros);
+            foreach (DataGridViewColumn col in DGV_Referencias.Columns)
+            {
+                if (col.Index == 4)
+                {                    
+                    col.ReadOnly = false;
+                }
+                else
+                {
+                    col.ReadOnly = true;
+                }
+            }
         }
-        public void mostrarreferenciascatalogo(int id_catalogo)
+        public void mostrarreferenciascatalogo(int id_catalogo,int id_traduccion)
         {
             this.id_catalogo = id_catalogo;
             try
@@ -44,6 +57,11 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

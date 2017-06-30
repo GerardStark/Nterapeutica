@@ -30,12 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_Buscar));
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.cmb_filtros = new System.Windows.Forms.ComboBox();
+            this.lbl_tipo_filtro = new System.Windows.Forms.Label();
+            this.txt_parametros = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_reg_buscar = new System.Windows.Forms.ToolStripButton();
+            this.btn_cat_buscar = new System.Windows.Forms.ToolStripButton();
             this.btn_buscar_cancelar = new System.Windows.Forms.ToolStripButton();
+            this.cmb_buscar_fabricante = new System.Windows.Forms.ComboBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,37 +49,38 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Filtros:";
             // 
-            // comboBox1
+            // cmb_filtros
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(150, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(272, 28);
-            this.comboBox1.TabIndex = 1;
+            this.cmb_filtros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_filtros.FormattingEnabled = true;
+            this.cmb_filtros.Location = new System.Drawing.Point(150, 27);
+            this.cmb_filtros.Name = "cmb_filtros";
+            this.cmb_filtros.Size = new System.Drawing.Size(272, 28);
+            this.cmb_filtros.TabIndex = 1;
+            this.cmb_filtros.SelectedIndexChanged += new System.EventHandler(this.cmb_filtros_SelectedIndexChanged);
             // 
-            // label2
+            // lbl_tipo_filtro
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(93, 112);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.lbl_tipo_filtro.AutoSize = true;
+            this.lbl_tipo_filtro.Location = new System.Drawing.Point(21, 110);
+            this.lbl_tipo_filtro.Name = "lbl_tipo_filtro";
+            this.lbl_tipo_filtro.Size = new System.Drawing.Size(0, 20);
+            this.lbl_tipo_filtro.TabIndex = 2;
             // 
-            // textBox1
+            // txt_parametros
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 109);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(272, 26);
-            this.textBox1.TabIndex = 3;
+            this.txt_parametros.Location = new System.Drawing.Point(150, 106);
+            this.txt_parametros.Name = "txt_parametros";
+            this.txt_parametros.Size = new System.Drawing.Size(272, 26);
+            this.txt_parametros.TabIndex = 3;
+            this.txt_parametros.Visible = false;
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_reg_buscar,
+            this.btn_cat_buscar,
             this.btn_buscar_cancelar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 176);
             this.toolStrip1.Name = "toolStrip1";
@@ -86,15 +88,16 @@
             this.toolStrip1.TabIndex = 99;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // btn_reg_buscar
+            // btn_cat_buscar
             // 
-            this.btn_reg_buscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_reg_buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_reg_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_reg_buscar.Image")));
-            this.btn_reg_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_reg_buscar.Name = "btn_reg_buscar";
-            this.btn_reg_buscar.Size = new System.Drawing.Size(54, 54);
-            this.btn_reg_buscar.Text = "toolStripButton1";
+            this.btn_cat_buscar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btn_cat_buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_cat_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cat_buscar.Image")));
+            this.btn_cat_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_cat_buscar.Name = "btn_cat_buscar";
+            this.btn_cat_buscar.Size = new System.Drawing.Size(54, 54);
+            this.btn_cat_buscar.Text = "toolStripButton1";
+            this.btn_cat_buscar.Click += new System.EventHandler(this.btn_cat_buscar_Click);
             // 
             // btn_buscar_cancelar
             // 
@@ -105,15 +108,25 @@
             this.btn_buscar_cancelar.Size = new System.Drawing.Size(54, 54);
             this.btn_buscar_cancelar.Text = "Opciones";
             // 
+            // cmb_buscar_fabricante
+            // 
+            this.cmb_buscar_fabricante.FormattingEnabled = true;
+            this.cmb_buscar_fabricante.Location = new System.Drawing.Point(150, 107);
+            this.cmb_buscar_fabricante.Name = "cmb_buscar_fabricante";
+            this.cmb_buscar_fabricante.Size = new System.Drawing.Size(272, 28);
+            this.cmb_buscar_fabricante.TabIndex = 100;
+            this.cmb_buscar_fabricante.Visible = false;
+            // 
             // Catalogos_Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 233);
+            this.Controls.Add(this.cmb_buscar_fabricante);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.txt_parametros);
+            this.Controls.Add(this.lbl_tipo_filtro);
+            this.Controls.Add(this.cmb_filtros);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -129,11 +142,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox cmb_filtros;
+        private System.Windows.Forms.Label lbl_tipo_filtro;
+        private System.Windows.Forms.TextBox txt_parametros;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btn_reg_buscar;
+        private System.Windows.Forms.ToolStripButton btn_cat_buscar;
         private System.Windows.Forms.ToolStripButton btn_buscar_cancelar;
+        private System.Windows.Forms.ComboBox cmb_buscar_fabricante;
     }
 }

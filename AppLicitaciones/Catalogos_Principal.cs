@@ -62,9 +62,9 @@ namespace AppLicitaciones
             DialogResult result = rn.ShowDialog();
             if (result == DialogResult.OK)
             {
-                //string ctrl = rn.ctrl;
-                //string valor = rn.valor;
-                filtrartablacatalogos("", "");
+                string ctrl = rn.ctrl;
+                string valor = rn.valor;
+                filtrartablacatalogos(ctrl, valor);
             }
             else
             {
@@ -102,6 +102,7 @@ namespace AppLicitaciones
             if (id_catalogo != 0)
             {
                 Catalogos_Traducciones ct = new Catalogos_Traducciones();
+                ct.mostrartraduccionescatalogo(id_catalogo);
                 DialogResult result = ct.ShowDialog();
                 if (result == DialogResult.OK)
                 {
@@ -167,7 +168,7 @@ namespace AppLicitaciones
                 con = new SqlConnection(mc.con);
                 con.Open();
                 //cambiar por tabla catalogos
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,plublicacion,spec_catalogo,fabricante,idioma " +
+                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,idioma " +
                     "from catalogos_info_general where " + ctrl + " Like '%" + valor + "%'", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

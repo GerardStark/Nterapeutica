@@ -14,9 +14,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public string con = @"Data Source=APOYO3-LAP\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";
-        public string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
-        public string[] array_idiomas = { "Español", "Inglés", "Francés", "Alemán", "Japonés", "Portugués", "Chino" };
+        public string con = @"Data Source=APOYO3-LAP\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";  
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)

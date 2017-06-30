@@ -20,7 +20,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             string[] opciones_busqueda = {"Seleccione un filtro","Numero", "Solicitud", "Titular", "Fabricante", "Marca", "Nacionalidad","Tratado de Libre Comercio","Denominación Generica","Denominación Distintiva" };
-            llenarcombobox(opciones_busqueda);
+            mc.llenarcombobox(opciones_busqueda,cmb_opciones_buscqueda);
             cmb_opciones_buscqueda.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         public void llenarcombobox(string[] arreglo_items)
@@ -128,8 +128,6 @@ namespace AppLicitaciones
                 case 2:
                     lbl_numero.Visible = true;
                     txt_buscar_numero.Visible = true;
-                    ctrl = "numero_registro";
-                    valor = txt_buscar_numero.Text;
                     break;
                 case 3:
                     lbl_solicitud.Visible = true;
