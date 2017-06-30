@@ -64,44 +64,44 @@ namespace AppLicitaciones
 
         private void btn_cat_buscar_Click(object sender, EventArgs e)
         {
-            if (((ComboboxItem)cmb_filtros.SelectedItem).Value != null)
+            int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
+            switch (value)
             {
-                int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
-                switch (value)
-                {
-                    case 2:
-                        ctrl = "nombre_catalogo";
-                        valor = txt_parametros.Text;
-                        break;
-                    case 3:
-                        ctrl = "tipo_catalogo";
-                        valor = txt_parametros.Text;
-                        break;
-                    case 4:
-                        ctrl = "publicacion";
-                        valor = txt_parametros.Text;
-                        break;
-                    case 5:
-                        ctrl = "spec_catalogo";
-                        valor = cmb_buscar_fabricante.SelectedValue.ToString();
-                        break;
-                    case 6:
-                        ctrl = "fabricante";
-                        valor = txt_parametros.Text;
-                        break;
-                    case 7:
-                        ctrl = "idioma";
-                        valor = txt_parametros.Text;
-                        break;
-                }
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                case 2:
+                    ctrl = "nombre_catalogo";
+                    valor = txt_parametros.Text;
+                    break;
+                case 3:
+                    ctrl = "tipo_catalogo";
+                    valor = txt_parametros.Text;
+                    break;
+                case 4:
+                    ctrl = "publicacion";
+                    valor = txt_parametros.Text;
+                    break;
+                case 5:
+                    ctrl = "spec_catalogo";
+                    valor = txt_parametros.Text;
+                    break;
+                case 6:
+                    ctrl = "fabricante";
+                    valor = cmb_buscar_fabricante.SelectedValue.ToString();
+                    break;
+                case 7:
+                    ctrl = "idioma";
+                    valor = txt_parametros.Text;
+                    break;
             }
-            else
-            {
-                this.DialogResult = DialogResult.Abort;
-                this.Close();
-            }
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+                        
+        }
+
+        private void Catalogos_Buscar_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.fabricantes_titulares_distribuidores' Puede moverla o quitarla según sea necesario.
+            this.fabricantes_titulares_distribuidoresTableAdapter.Fill(this.licitacionesDataSet.fabricantes_titulares_distribuidores);
+
         }
     }
 }

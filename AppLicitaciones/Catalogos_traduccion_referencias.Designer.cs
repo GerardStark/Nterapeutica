@@ -115,6 +115,7 @@
             this.cmb_filtros.Name = "cmb_filtros";
             this.cmb_filtros.Size = new System.Drawing.Size(121, 28);
             this.cmb_filtros.TabIndex = 20;
+            this.cmb_filtros.SelectedIndexChanged += new System.EventHandler(this.cmb_filtros_SelectedIndexChanged);
             // 
             // toolStrip1
             // 

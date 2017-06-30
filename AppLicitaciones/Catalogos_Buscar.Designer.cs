@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_Buscar));
             this.label1 = new System.Windows.Forms.Label();
             this.cmb_filtros = new System.Windows.Forms.ComboBox();
@@ -37,7 +38,12 @@
             this.btn_cat_buscar = new System.Windows.Forms.ToolStripButton();
             this.btn_buscar_cancelar = new System.Windows.Forms.ToolStripButton();
             this.cmb_buscar_fabricante = new System.Windows.Forms.ComboBox();
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.fabricantestitularesdistribuidoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fabricantes_titulares_distribuidoresTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.fabricantes_titulares_distribuidoresTableAdapter();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabricantestitularesdistribuidoresBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -110,12 +116,29 @@
             // 
             // cmb_buscar_fabricante
             // 
+            this.cmb_buscar_fabricante.DataSource = this.fabricantestitularesdistribuidoresBindingSource;
+            this.cmb_buscar_fabricante.DisplayMember = "nombre";
             this.cmb_buscar_fabricante.FormattingEnabled = true;
             this.cmb_buscar_fabricante.Location = new System.Drawing.Point(150, 107);
             this.cmb_buscar_fabricante.Name = "cmb_buscar_fabricante";
             this.cmb_buscar_fabricante.Size = new System.Drawing.Size(272, 28);
             this.cmb_buscar_fabricante.TabIndex = 100;
+            this.cmb_buscar_fabricante.ValueMember = "id_ftd";
             this.cmb_buscar_fabricante.Visible = false;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fabricantestitularesdistribuidoresBindingSource
+            // 
+            this.fabricantestitularesdistribuidoresBindingSource.DataMember = "fabricantes_titulares_distribuidores";
+            this.fabricantestitularesdistribuidoresBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // fabricantes_titulares_distribuidoresTableAdapter
+            // 
+            this.fabricantes_titulares_distribuidoresTableAdapter.ClearBeforeFill = true;
             // 
             // Catalogos_Buscar
             // 
@@ -132,8 +155,11 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalogos_Buscar";
             this.Text = "Catalogos_Buscar";
+            this.Load += new System.EventHandler(this.Catalogos_Buscar_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fabricantestitularesdistribuidoresBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +175,8 @@
         private System.Windows.Forms.ToolStripButton btn_cat_buscar;
         private System.Windows.Forms.ToolStripButton btn_buscar_cancelar;
         private System.Windows.Forms.ComboBox cmb_buscar_fabricante;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource fabricantestitularesdistribuidoresBindingSource;
+        private LicitacionesDataSetTableAdapters.fabricantes_titulares_distribuidoresTableAdapter fabricantes_titulares_distribuidoresTableAdapter;
     }
 }
