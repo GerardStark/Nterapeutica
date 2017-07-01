@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_traduccion_referencias));
             this.DGV_Referencias = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_terminos = new System.Windows.Forms.TextBox();
             this.cmb_filtros = new System.Windows.Forms.ComboBox();
@@ -42,6 +37,12 @@
             this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_filtrar = new System.Windows.Forms.Button();
+            this.chck_all = new System.Windows.Forms.CheckBox();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -61,35 +62,7 @@
             this.DGV_Referencias.Name = "DGV_Referencias";
             this.DGV_Referencias.Size = new System.Drawing.Size(813, 423);
             this.DGV_Referencias.TabIndex = 16;
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            // 
-            // claveColumn
-            // 
-            this.claveColumn.HeaderText = "Clave";
-            this.claveColumn.Name = "claveColumn";
-            // 
-            // descripcionColumn
-            // 
-            this.descripcionColumn.HeaderText = "Descripcion";
-            this.descripcionColumn.Name = "descripcionColumn";
-            this.descripcionColumn.Width = 320;
-            // 
-            // unidadColumn
-            // 
-            this.unidadColumn.HeaderText = "Unidad";
-            this.unidadColumn.Name = "unidadColumn";
-            this.unidadColumn.Width = 150;
-            // 
-            // checkColumn
-            // 
-            this.checkColumn.HeaderText = "Seleccionar";
-            this.checkColumn.Name = "checkColumn";
-            this.checkColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.checkColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DGV_Referencias.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellValueChanged);
             // 
             // label1
             // 
@@ -148,6 +121,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_guardar.Text = "toolStripButton2";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_filtrar
             // 
@@ -159,11 +133,51 @@
             this.btn_filtrar.UseVisualStyleBackColor = true;
             this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
+            // chck_all
+            // 
+            this.chck_all.AutoSize = true;
+            this.chck_all.Location = new System.Drawing.Point(747, 18);
+            this.chck_all.Name = "chck_all";
+            this.chck_all.Size = new System.Drawing.Size(72, 24);
+            this.chck_all.TabIndex = 23;
+            this.chck_all.Text = "Todas";
+            this.chck_all.UseVisualStyleBackColor = true;
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            // 
+            // claveColumn
+            // 
+            this.claveColumn.HeaderText = "Clave";
+            this.claveColumn.Name = "claveColumn";
+            // 
+            // descripcionColumn
+            // 
+            this.descripcionColumn.HeaderText = "Descripcion";
+            this.descripcionColumn.Name = "descripcionColumn";
+            this.descripcionColumn.Width = 320;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.Width = 150;
+            // 
+            // checkColumn
+            // 
+            this.checkColumn.HeaderText = "Seleccionar";
+            this.checkColumn.Name = "checkColumn";
+            this.checkColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // Catalogos_traduccion_referencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 535);
+            this.Controls.Add(this.chck_all);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.cmb_filtros);
@@ -185,11 +199,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DGV_Referencias;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn checkColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_terminos;
         private System.Windows.Forms.ComboBox cmb_filtros;
@@ -197,5 +206,11 @@
         private System.Windows.Forms.ToolStripButton btn_cancelar;
         private System.Windows.Forms.ToolStripButton btn_guardar;
         private System.Windows.Forms.Button btn_filtrar;
+        private System.Windows.Forms.CheckBox chck_all;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn checkColumn;
     }
 }

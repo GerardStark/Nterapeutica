@@ -66,6 +66,7 @@ namespace AppLicitaciones
         {
             try
             {
+                valor = txt_terminos.Text;
                 DGV_Referencias.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con = new SqlConnection(mc.con);
@@ -89,22 +90,56 @@ namespace AppLicitaciones
             }
         }
 
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            //if (Convert.ToBoolean(row.Cells["checkColumn"].Value) == true)
+            //{
+            //    MessageBox.Show(row.Index.ToString());
+            //}
+            //List<DataGridViewRow> rows_with_checked_column = new List<DataGridViewRow>();
+            //foreach (DataGridViewRow row in DGV_Referencias.Rows)
+            //{
+            //    if (Convert.ToBoolean(row.Cells["checkColumn"].Value) == true)
+            //    {
+            //        rows_with_checked_column.Add(row);
+            //    }
+            //}
+            //MessageBox.Show(rows_with_checked_column.Count().ToString());
+        }
+
+        private void DGV_Referencias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            if (DGV_Referencias.Rows.Count > 0)
+            {
+                if (Convert.ToBoolean(DGV_Referencias.Rows[e.RowIndex].Cells["checkColumn"].Value) == true)
+                {
+                    //List<DataGridViewRow> rows_with_checked_column = new List<DataGridViewRow>();
+                    ////agrega las filas checadas a una lista
+                    //foreach (DataGridViewRow row in DGV_Referencias.Rows)
+                    //{
+                    //    if (Convert.ToBoolean(row.Cells["checkColumn"].Value) == true)
+                    //    {
+                    //        rows_with_checked_column.Add(row);
+                    //    }
+                    //}
+                    MessageBox.Show(e.RowIndex.ToString());
+                }
+            }
+        }
+
         private void cmb_filtros_SelectedIndexChanged(object sender, EventArgs e)
         {
             int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
             switch (value)
             {
                 case 2:
-                    ctrl = "clave_ref_cod";
-                    valor = txt_terminos.Text;
+                    ctrl = "clave_ref_cod";                 
                     break;
                 case 3:
-                    ctrl = "descripcion";
-                    valor = txt_terminos.Text;
+                    ctrl = "descripcion";                    
                     break;
                 case 4:
-                    ctrl = "unidad_venta";
-                    valor = txt_terminos.Text;
+                    ctrl = "unidad_venta";                   
                     break;               
             }
         }
