@@ -14,10 +14,12 @@ namespace AppLicitaciones
 {
     public partial class Catalogos_traduccion_referencias : Form
     {
+        //INCOMPLETO
         int id_catalogo = 0;
         MainConfig mc = new MainConfig();
         int filtro_flag = 0;
         string ctrl, valor;
+        List<Int32> claves = new List<int>();
         public Catalogos_traduccion_referencias()
         {
             InitializeComponent();
@@ -92,19 +94,11 @@ namespace AppLicitaciones
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            //if (Convert.ToBoolean(row.Cells["checkColumn"].Value) == true)
-            //{
-            //    MessageBox.Show(row.Index.ToString());
-            //}
-            //List<DataGridViewRow> rows_with_checked_column = new List<DataGridViewRow>();
-            //foreach (DataGridViewRow row in DGV_Referencias.Rows)
-            //{
-            //    if (Convert.ToBoolean(row.Cells["checkColumn"].Value) == true)
-            //    {
-            //        rows_with_checked_column.Add(row);
-            //    }
-            //}
-            //MessageBox.Show(rows_with_checked_column.Count().ToString());
+            DGV_Referencias.EndEdit();
+            claves.ForEach(delegate (int id)
+            {
+                MessageBox.Show(id.ToString());
+            });
         }
 
         private void DGV_Referencias_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -113,16 +107,13 @@ namespace AppLicitaciones
             {
                 if (Convert.ToBoolean(DGV_Referencias.Rows[e.RowIndex].Cells["checkColumn"].Value) == true)
                 {
-                    //List<DataGridViewRow> rows_with_checked_column = new List<DataGridViewRow>();
-                    ////agrega las filas checadas a una lista
-                    //foreach (DataGridViewRow row in DGV_Referencias.Rows)
-                    //{
-                    //    if (Convert.ToBoolean(row.Cells["checkColumn"].Value) == true)
-                    //    {
-                    //        rows_with_checked_column.Add(row);
-                    //    }
-                    //}
-                    MessageBox.Show(e.RowIndex.ToString());
+                    claves.Add(Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value));
+                    
+                }
+                else
+                {
+                    claves.Remove(Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value));
+                    
                 }
             }
         }

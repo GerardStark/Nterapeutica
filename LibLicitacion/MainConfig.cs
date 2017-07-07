@@ -84,7 +84,20 @@ namespace LibLicitacion
                 cmb.Items.Add(item);
             }
         }
-        
+        public int obtenervaluecomboitem(string text, ComboBox cmbox)
+        {
+            int value = 0;
+            foreach (ComboboxItem item in cmbox.Items)
+            {
+                if (item.Text == text)
+                {
+                    value = Convert.ToInt32(item.Value);
+                }
+            }
+
+            return value - 1;
+        }
+
     }
 
     public class ComboboxItem

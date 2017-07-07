@@ -324,8 +324,20 @@
     <EmbeddedResource Include="Catalogos_Visualizar.resx">
       <DependentUpon>Catalogos_Visualizar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Certificados_Buscar.resx">
+      <DependentUpon>Certificados_Buscar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Certificados_Editar.resx">
+      <DependentUpon>Certificados_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Certificados_Nuevo.resx">
+      <DependentUpon>Certificados_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Certificados_Principal.resx">
       <DependentUpon>Certificados_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Certificados_Visualizar.resx">
+      <DependentUpon>Certificados_Visualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cucop_Editar.resx">
       <DependentUpon>Cucop_Editar.cs</DependentUpon>

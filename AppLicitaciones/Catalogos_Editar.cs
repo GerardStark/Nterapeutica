@@ -43,27 +43,14 @@ namespace AppLicitaciones
                 //dt.Rows[0][""].ToString();
                 txt_nombre.Text = dt.Rows[0]["nombre_catalogo"].ToString();
                 txt_year.Text = dt.Rows[0]["publicacion"].ToString();
-                cmb_tipo.SelectedIndex = obtenervaluecomboitem(dt.Rows[0]["tipo_catalogo"].ToString(), cmb_tipo);
-                cmb_idioma.SelectedIndex = obtenervaluecomboitem(dt.Rows[0]["idioma"].ToString(),cmb_idioma);
+                cmb_tipo.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["tipo_catalogo"].ToString(), cmb_tipo);
+                cmb_idioma.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["idioma"].ToString(),cmb_idioma);
                 txt_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
                 id_fabricante = Convert.ToInt32(dt.Rows[0]["fabricante"]);
                 txt_especialidad.Text = dt.Rows[0]["spec_catalogo"].ToString();
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
             }
-        }
-        private int obtenervaluecomboitem (string text, ComboBox cmbox)
-        {
-            int value = 0;
-            foreach (ComboboxItem item in cmbox.Items)
-            {
-                if (item.Text == text)
-                {
-                    value = Convert.ToInt32(item.Value);
-                }
-            }
-            
-            return value -1;
-        }
+        }        
 
         private void btn_select_fabricante_Click(object sender, EventArgs e)
         {
@@ -123,7 +110,7 @@ namespace AppLicitaciones
                     catch (Exception)
                     {
                         MessageBox.Show("El archivo no existe, se procede a limpar la base de datos");
-                        cmd = new SqlCommand("UPDATE catalogos_info_general set dir_archivo=@archivo where id_registro=" + id_catalogo + "", con);
+                        cmd = new SqlCommand("UPDATE catalogos_info_general set dir_archivo=@archivo where id_catalogo=" + id_catalogo + "", con);
                         cmd.Parameters.AddWithValue("@archivo", "(Vacio)");
                         lbl_archivo.Text = "(Vacio)";
                         cmd.ExecuteScalar();

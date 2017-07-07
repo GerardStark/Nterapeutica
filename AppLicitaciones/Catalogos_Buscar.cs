@@ -19,7 +19,7 @@ namespace AppLicitaciones
         public Catalogos_Buscar()
         {
             InitializeComponent();
-            string[] array_filtros_catalogos = { "Seleccione un filtro","Nombre", "Tipo", "Año", "Especialidad", "Fabricante", "Idioma" };
+            string[] array_filtros_catalogos = { "Seleccione un filtro","Nombre", "Tipo", "Año", "Especialidad", "Fabricante",};
             mc.llenarcombobox(array_filtros_catalogos, cmb_filtros);
             cmb_filtros.SelectedIndex = 0;
         }
@@ -55,10 +55,6 @@ namespace AppLicitaciones
                     txt_parametros.Visible = false;
                     cmb_buscar_fabricante.Visible = true;
                     break;
-                case 7:
-                    lbl_tipo_filtro.Text = "Idioma:";
-                    txt_parametros.Visible = true;
-                    break;
             }
         }
 
@@ -87,14 +83,9 @@ namespace AppLicitaciones
                     ctrl = "fabricante";
                     valor = cmb_buscar_fabricante.SelectedValue.ToString();
                     break;
-                case 7:
-                    ctrl = "idioma";
-                    valor = txt_parametros.Text;
-                    break;
             }
             this.DialogResult = DialogResult.OK;
-            this.Close();
-                        
+            this.Close();                        
         }
 
         private void Catalogos_Buscar_Load(object sender, EventArgs e)

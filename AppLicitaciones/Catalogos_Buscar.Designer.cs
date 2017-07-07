@@ -38,12 +38,12 @@
             this.btn_cat_buscar = new System.Windows.Forms.ToolStripButton();
             this.btn_buscar_cancelar = new System.Windows.Forms.ToolStripButton();
             this.cmb_buscar_fabricante = new System.Windows.Forms.ComboBox();
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.fabricantestitularesdistribuidoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.fabricantes_titulares_distribuidoresTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.fabricantes_titulares_distribuidoresTableAdapter();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fabricantestitularesdistribuidoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -118,6 +118,7 @@
             // 
             this.cmb_buscar_fabricante.DataSource = this.fabricantestitularesdistribuidoresBindingSource;
             this.cmb_buscar_fabricante.DisplayMember = "nombre";
+            this.cmb_buscar_fabricante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_buscar_fabricante.FormattingEnabled = true;
             this.cmb_buscar_fabricante.Location = new System.Drawing.Point(150, 107);
             this.cmb_buscar_fabricante.Name = "cmb_buscar_fabricante";
@@ -126,15 +127,15 @@
             this.cmb_buscar_fabricante.ValueMember = "id_ftd";
             this.cmb_buscar_fabricante.Visible = false;
             // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // fabricantestitularesdistribuidoresBindingSource
             // 
             this.fabricantestitularesdistribuidoresBindingSource.DataMember = "fabricantes_titulares_distribuidores";
             this.fabricantestitularesdistribuidoresBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // fabricantes_titulares_distribuidoresTableAdapter
             // 
@@ -158,8 +159,8 @@
             this.Load += new System.EventHandler(this.Catalogos_Buscar_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fabricantestitularesdistribuidoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
