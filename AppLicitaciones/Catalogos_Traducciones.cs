@@ -60,7 +60,7 @@ namespace AppLicitaciones
                 DialogResult result = ctr.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    //TODO something
+                    MessageBox.Show("Guardado");
                 }
                 else
                 {

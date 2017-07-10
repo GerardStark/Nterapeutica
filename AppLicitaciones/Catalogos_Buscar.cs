@@ -16,10 +16,25 @@ namespace AppLicitaciones
         MainConfig mc = new MainConfig();
         public string ctrl = "";
         public string valor = "";
+        
+                      
         public Catalogos_Buscar()
         {
             InitializeComponent();
-            string[] array_filtros_catalogos = { "Seleccione un filtro","Nombre", "Tipo", "Año", "Especialidad", "Fabricante",};
+            string[] array_filtros_catalogos = { "Seleccione un filtro", "Nombre", "Tipo", "Año", "Especialidad", "Fabricante", };
+            string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
+            string[] array_specs = {
+                "Cirugia Cardiovascular",
+                "Hemodinamia",
+                "Urología",
+                "Minima Invasion",
+                "Endoscopia",
+                "Terapia Endovascular Neurologica",
+                "Marcapasos",
+                "Material de Curacion",
+                "Subrogados" };
+            mc.llenarcombobox(array_tipos_catalogo, cmb_tipo);
+            mc.llenarcombobox(array_specs, cmb_spec);
             mc.llenarcombobox(array_filtros_catalogos, cmb_filtros);
             cmb_filtros.SelectedIndex = 0;
         }
@@ -40,7 +55,8 @@ namespace AppLicitaciones
                     break;
                 case 3:
                     lbl_tipo_filtro.Text = "Tipo:";
-                    txt_parametros.Visible = true;
+                    txt_parametros.Visible = false;
+                    cmb_tipo.Visible = true;
                     break;
                 case 4:
                     lbl_tipo_filtro.Text = "Año:";
@@ -48,7 +64,8 @@ namespace AppLicitaciones
                     break;
                 case 5:
                     lbl_tipo_filtro.Text = "Especialidad:";
-                    txt_parametros.Visible = true;
+                    txt_parametros.Visible = false;
+                    cmb_spec.Visible = true;
                     break;
                 case 6:
                     lbl_tipo_filtro.Text = "Fabricante:";
@@ -69,7 +86,7 @@ namespace AppLicitaciones
                     break;
                 case 3:
                     ctrl = "tipo_catalogo";
-                    valor = txt_parametros.Text;
+                    valor = ((ComboboxItem)cmb_tipo.SelectedItem).Text;
                     break;
                 case 4:
                     ctrl = "publicacion";
@@ -77,7 +94,7 @@ namespace AppLicitaciones
                     break;
                 case 5:
                     ctrl = "spec_catalogo";
-                    valor = txt_parametros.Text;
+                    valor = ((ComboboxItem)cmb_spec.SelectedItem).Text;
                     break;
                 case 6:
                     ctrl = "fabricante";

@@ -22,10 +22,21 @@ namespace AppLicitaciones
         public Catalogos_Editar()
         {
             InitializeComponent();
-            string[] array_tipos = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
-            string[] array_idiomas = { "Español", "Inglés", "Francés", "Alemán", "Japonés", "Portugués", "Chino" };
-            mc.llenarcombobox(array_tipos, cmb_tipo);
+            string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
+            string[] array_idiomas = { "Español", "Inglés", "Francés", "Alemán", "Japonés", "Portugués", "Chino", "Koreano", "Irlandés" };
+            string[] array_specs = {
+                "Cirugia Cardiovascular",
+                "Hemodinamia",
+                "Urología",
+                "Minima Invasion",
+                "Endoscopia",
+                "Terapia Endovascular Neurologica",
+                "Marcapasos",
+                "Material de Curacion",
+                "Subrogados" };
+            mc.llenarcombobox(array_tipos_catalogo, cmb_tipo);
             mc.llenarcombobox(array_idiomas, cmb_idioma);
+            mc.llenarcombobox(array_specs, cmb_spec);
         }
         public void llenarinfocatalogos(int id_catalogo)
         {
@@ -47,7 +58,7 @@ namespace AppLicitaciones
                 cmb_idioma.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["idioma"].ToString(),cmb_idioma);
                 txt_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
                 id_fabricante = Convert.ToInt32(dt.Rows[0]["fabricante"]);
-                txt_especialidad.Text = dt.Rows[0]["spec_catalogo"].ToString();
+                cmb_spec.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["spec_catalogo"].ToString(), cmb_spec); ;
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
             }
         }        
@@ -142,7 +153,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@id",id_catalogo);
                 cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@año", txt_year.Text);
-                cmd.Parameters.AddWithValue("@espec", txt_especialidad.Text);
+                cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
                 cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);

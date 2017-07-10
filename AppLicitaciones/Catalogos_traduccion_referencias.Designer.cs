@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_traduccion_referencias));
             this.DGV_Referencias = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_terminos = new System.Windows.Forms.TextBox();
             this.cmb_filtros = new System.Windows.Forms.ComboBox();
@@ -38,11 +43,6 @@
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.chck_all = new System.Windows.Forms.CheckBox();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.checkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -62,7 +62,37 @@
             this.DGV_Referencias.Name = "DGV_Referencias";
             this.DGV_Referencias.Size = new System.Drawing.Size(813, 423);
             this.DGV_Referencias.TabIndex = 16;
+            this.DGV_Referencias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_Referencias_CellFormatting);
             this.DGV_Referencias.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellValueChanged);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            // 
+            // claveColumn
+            // 
+            this.claveColumn.HeaderText = "Clave";
+            this.claveColumn.Name = "claveColumn";
+            // 
+            // descripcionColumn
+            // 
+            this.descripcionColumn.HeaderText = "Descripcion";
+            this.descripcionColumn.Name = "descripcionColumn";
+            this.descripcionColumn.Width = 320;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.Width = 150;
+            // 
+            // checkColumn
+            // 
+            this.checkColumn.HeaderText = "Seleccionar";
+            this.checkColumn.Name = "checkColumn";
+            this.checkColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.checkColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label1
             // 
@@ -142,35 +172,7 @@
             this.chck_all.TabIndex = 23;
             this.chck_all.Text = "Todas";
             this.chck_all.UseVisualStyleBackColor = true;
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            // 
-            // claveColumn
-            // 
-            this.claveColumn.HeaderText = "Clave";
-            this.claveColumn.Name = "claveColumn";
-            // 
-            // descripcionColumn
-            // 
-            this.descripcionColumn.HeaderText = "Descripcion";
-            this.descripcionColumn.Name = "descripcionColumn";
-            this.descripcionColumn.Width = 320;
-            // 
-            // unidadColumn
-            // 
-            this.unidadColumn.HeaderText = "Unidad";
-            this.unidadColumn.Name = "unidadColumn";
-            this.unidadColumn.Width = 150;
-            // 
-            // checkColumn
-            // 
-            this.checkColumn.HeaderText = "Seleccionar";
-            this.checkColumn.Name = "checkColumn";
-            this.checkColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.checkColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.chck_all.CheckedChanged += new System.EventHandler(this.chck_all_CheckedChanged);
             // 
             // Catalogos_traduccion_referencias
             // 
@@ -187,6 +189,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalogos_traduccion_referencias";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogos_traduccion_referencias";
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).EndInit();
             this.toolStrip1.ResumeLayout(false);

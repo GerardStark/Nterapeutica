@@ -23,8 +23,19 @@ namespace AppLicitaciones
             InitializeComponent();
             string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
             string[] array_idiomas = { "Español", "Inglés", "Francés", "Alemán", "Japonés", "Portugués", "Chino", "Koreano", "Irlandés" };
+            string[] array_specs = {
+                "Cirugia Cardiovascular",
+                "Hemodinamia",
+                "Urología",
+                "Minima Invasion",
+                "Endoscopia",
+                "Terapia Endovascular Neurologica",
+                "Marcapasos",
+                "Material de Curacion",
+                "Subrogados" };
             mc.llenarcombobox(array_tipos_catalogo,cmb_tipo);
             mc.llenarcombobox(array_idiomas,cmb_idioma);
+            mc.llenarcombobox(array_specs, cmb_spec);
         }        
 
         private void txt_limpiar_campos_Click(object sender, EventArgs e)
@@ -34,7 +45,7 @@ namespace AppLicitaciones
             cmb_idioma.SelectedIndex = 0;
             cmb_tipo.SelectedIndex = 0;
             txt_fabricante.Text = "";
-            txt_especialidad.Text = "";
+            cmb_spec.SelectedIndex = 0;
             lbl_archivo.Text = "";
         }
 
@@ -66,7 +77,7 @@ namespace AppLicitaciones
                     "idioma,dir_archivo,actualizado_en) OUTPUT INSERTED.id_catalogo values (@nombre,@año,@tipo,@espec,@fabricante,@idioma,@archivo,@actualizado)", con);
                 cmd.Parameters.AddWithValue("@nombre",txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@año",txt_year.Text);
-                cmd.Parameters.AddWithValue("@espec",txt_especialidad.Text);
+                cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@fabricante",id_fabricante);
                 cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);

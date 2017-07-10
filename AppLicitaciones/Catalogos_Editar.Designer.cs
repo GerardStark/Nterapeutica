@@ -35,7 +35,6 @@
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_select_fabricante = new System.Windows.Forms.Button();
-            this.txt_especialidad = new System.Windows.Forms.TextBox();
             this.txt_fabricante = new System.Windows.Forms.TextBox();
             this.txt_year = new System.Windows.Forms.TextBox();
             this.lbl_archivo = new System.Windows.Forms.Label();
@@ -48,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_archivo = new System.Windows.Forms.Button();
             this.cmb_idioma = new System.Windows.Forms.ComboBox();
+            this.cmb_spec = new System.Windows.Forms.ComboBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,13 +113,6 @@
             this.btn_select_fabricante.Text = "Seleccionar";
             this.btn_select_fabricante.UseVisualStyleBackColor = true;
             this.btn_select_fabricante.Click += new System.EventHandler(this.btn_select_fabricante_Click);
-            // 
-            // txt_especialidad
-            // 
-            this.txt_especialidad.Location = new System.Drawing.Point(203, 185);
-            this.txt_especialidad.Name = "txt_especialidad";
-            this.txt_especialidad.Size = new System.Drawing.Size(268, 26);
-            this.txt_especialidad.TabIndex = 56;
             // 
             // txt_fabricante
             // 
@@ -225,16 +218,25 @@
             this.cmb_idioma.Size = new System.Drawing.Size(267, 28);
             this.cmb_idioma.TabIndex = 60;
             // 
+            // cmb_spec
+            // 
+            this.cmb_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_spec.FormattingEnabled = true;
+            this.cmb_spec.Location = new System.Drawing.Point(203, 184);
+            this.cmb_spec.Name = "cmb_spec";
+            this.cmb_spec.Size = new System.Drawing.Size(267, 28);
+            this.cmb_spec.TabIndex = 1002;
+            // 
             // Catalogos_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(536, 380);
+            this.Controls.Add(this.cmb_spec);
             this.Controls.Add(this.cmb_idioma);
             this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_select_fabricante);
-            this.Controls.Add(this.txt_especialidad);
             this.Controls.Add(this.txt_fabricante);
             this.Controls.Add(this.txt_year);
             this.Controls.Add(this.lbl_archivo);
@@ -266,7 +268,6 @@
         private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_select_fabricante;
-        private System.Windows.Forms.TextBox txt_especialidad;
         private System.Windows.Forms.TextBox txt_fabricante;
         private System.Windows.Forms.TextBox txt_year;
         private System.Windows.Forms.Label lbl_archivo;
@@ -279,5 +280,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_archivo;
         private System.Windows.Forms.ComboBox cmb_idioma;
+        private System.Windows.Forms.ComboBox cmb_spec;
     }
 }
