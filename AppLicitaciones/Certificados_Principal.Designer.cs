@@ -136,8 +136,8 @@
             this.DGV_certificados.ReadOnly = true;
             this.DGV_certificados.Size = new System.Drawing.Size(1218, 652);
             this.DGV_certificados.TabIndex = 2;
+            this.DGV_certificados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_certificados_CellClick);
             this.DGV_certificados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_certificados_CellFormatting);
-            this.DGV_certificados.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_certificados_RowHeaderMouseClick);
             // 
             // idColumn
             // 

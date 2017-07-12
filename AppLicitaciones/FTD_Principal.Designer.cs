@@ -32,6 +32,8 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_editar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btn_contactos = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
@@ -44,13 +46,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_mayorista = new System.Windows.Forms.TextBox();
             this.txt_apoyo = new System.Windows.Forms.TextBox();
-            this.btn_editar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_FTD = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apoyoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mayoristaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rfcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_rfc = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_FTD)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +94,23 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(65, 15);
             this.toolStripLabel2.Text = "Guardar";
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
+            this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(65, 54);
+            this.btn_editar.Text = "toolStripButton5";
+            this.btn_editar.ToolTipText = "Editar";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel1.Text = "Editar";
             // 
             // btn_contactos
             // 
@@ -146,7 +166,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(192, 12);
+            this.label1.Location = new System.Drawing.Point(192, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 1;
@@ -157,12 +177,12 @@
             this.txt_nombre.Location = new System.Drawing.Point(263, 12);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(320, 26);
-            this.txt_nombre.TabIndex = 2;
+            this.txt_nombre.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(147, 48);
+            this.label2.Location = new System.Drawing.Point(147, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 20);
             this.label2.TabIndex = 3;
@@ -171,7 +191,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(96, 85);
+            this.label3.Location = new System.Drawing.Point(96, 77);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 20);
             this.label3.TabIndex = 4;
@@ -179,34 +199,17 @@
             // 
             // txt_mayorista
             // 
-            this.txt_mayorista.Location = new System.Drawing.Point(263, 85);
+            this.txt_mayorista.Location = new System.Drawing.Point(263, 74);
             this.txt_mayorista.Name = "txt_mayorista";
             this.txt_mayorista.Size = new System.Drawing.Size(320, 26);
-            this.txt_mayorista.TabIndex = 5;
+            this.txt_mayorista.TabIndex = 3;
             // 
             // txt_apoyo
             // 
-            this.txt_apoyo.Location = new System.Drawing.Point(263, 48);
+            this.txt_apoyo.Location = new System.Drawing.Point(263, 42);
             this.txt_apoyo.Name = "txt_apoyo";
             this.txt_apoyo.Size = new System.Drawing.Size(320, 26);
-            this.txt_apoyo.TabIndex = 6;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
-            this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(65, 54);
-            this.btn_editar.Text = "toolStripButton5";
-            this.btn_editar.ToolTipText = "Editar";
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
-            this.toolStripLabel1.Text = "Editar";
+            this.txt_apoyo.TabIndex = 2;
             // 
             // DGV_FTD
             // 
@@ -217,14 +220,15 @@
             this.idColumn,
             this.nombreColumn,
             this.apoyoColumn,
-            this.mayoristaColumn});
-            this.DGV_FTD.Location = new System.Drawing.Point(71, 117);
+            this.mayoristaColumn,
+            this.rfcColumn});
+            this.DGV_FTD.Location = new System.Drawing.Point(71, 138);
             this.DGV_FTD.Name = "DGV_FTD";
             this.DGV_FTD.ReadOnly = true;
-            this.DGV_FTD.Size = new System.Drawing.Size(574, 510);
+            this.DGV_FTD.Size = new System.Drawing.Size(681, 489);
             this.DGV_FTD.TabIndex = 7;
-            this.DGV_FTD.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_FTD_RowHeaderMouseClick);
-            this.DGV_FTD.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_FTD_RowHeaderMouseDoubleClick);
+            this.DGV_FTD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_FTD_CellClick);
+            this.DGV_FTD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_FTD_CellDoubleClick);
             // 
             // idColumn
             // 
@@ -254,11 +258,35 @@
             this.mayoristaColumn.ReadOnly = true;
             this.mayoristaColumn.Width = 175;
             // 
+            // rfcColumn
+            // 
+            this.rfcColumn.HeaderText = "RFC";
+            this.rfcColumn.Name = "rfcColumn";
+            this.rfcColumn.ReadOnly = true;
+            // 
+            // txt_rfc
+            // 
+            this.txt_rfc.Location = new System.Drawing.Point(263, 106);
+            this.txt_rfc.Name = "txt_rfc";
+            this.txt_rfc.Size = new System.Drawing.Size(320, 26);
+            this.txt_rfc.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(207, 109);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "R.F.C";
+            // 
             // FTD_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 639);
+            this.ClientSize = new System.Drawing.Size(775, 639);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_rfc);
             this.Controls.Add(this.DGV_FTD);
             this.Controls.Add(this.txt_apoyo);
             this.Controls.Add(this.txt_mayorista);
@@ -299,9 +327,12 @@
         private System.Windows.Forms.ToolStripButton btn_editar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.DataGridView DGV_FTD;
+        private System.Windows.Forms.TextBox txt_rfc;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn apoyoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mayoristaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rfcColumn;
     }
 }

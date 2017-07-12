@@ -40,10 +40,12 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_cucop = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nprodColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grupoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.especColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_cucop)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(97, 691);
+            this.toolStrip1.Size = new System.Drawing.Size(97, 684);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
@@ -141,16 +143,18 @@
             this.DGV_cucop.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_cucop.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
-            this.ngeColumn,
-            this.nprodColumn,
-            this.grupoColumn,
-            this.codigoColumn});
+            this.claveColumn,
+            this.descColumn,
+            this.especColumn,
+            this.tipoColumn,
+            this.cantColumn,
+            this.contColumn});
             this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
-            this.DGV_cucop.Size = new System.Drawing.Size(1238, 652);
+            this.DGV_cucop.Size = new System.Drawing.Size(896, 652);
             this.DGV_cucop.TabIndex = 2;
-            this.DGV_cucop.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_cucop_RowHeaderMouseClick);
+            this.DGV_cucop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_cucop_CellClick);
             // 
             // idColumn
             // 
@@ -159,39 +163,51 @@
             this.idColumn.ReadOnly = true;
             this.idColumn.Width = 25;
             // 
-            // ngeColumn
+            // claveColumn
             // 
-            this.ngeColumn.HeaderText = "Nombre Generico";
-            this.ngeColumn.Name = "ngeColumn";
-            this.ngeColumn.ReadOnly = true;
-            this.ngeColumn.Width = 425;
+            this.claveColumn.HeaderText = "Clave";
+            this.claveColumn.Name = "claveColumn";
+            this.claveColumn.ReadOnly = true;
+            this.claveColumn.Width = 125;
             // 
-            // nprodColumn
+            // descColumn
             // 
-            this.nprodColumn.HeaderText = "Nombre Producto";
-            this.nprodColumn.Name = "nprodColumn";
-            this.nprodColumn.ReadOnly = true;
-            this.nprodColumn.Width = 250;
+            this.descColumn.HeaderText = "Descripcion";
+            this.descColumn.Name = "descColumn";
+            this.descColumn.ReadOnly = true;
+            this.descColumn.Width = 250;
             // 
-            // grupoColumn
+            // especColumn
             // 
-            this.grupoColumn.HeaderText = "Grupo";
-            this.grupoColumn.Name = "grupoColumn";
-            this.grupoColumn.ReadOnly = true;
-            this.grupoColumn.Width = 250;
+            this.especColumn.HeaderText = "Especialidad";
+            this.especColumn.Name = "especColumn";
+            this.especColumn.ReadOnly = true;
+            this.especColumn.Width = 200;
             // 
-            // codigoColumn
+            // tipoColumn
             // 
-            this.codigoColumn.HeaderText = "Codigo";
-            this.codigoColumn.Name = "codigoColumn";
-            this.codigoColumn.ReadOnly = true;
-            this.codigoColumn.Width = 240;
+            this.tipoColumn.HeaderText = "Tipo";
+            this.tipoColumn.Name = "tipoColumn";
+            this.tipoColumn.ReadOnly = true;
+            this.tipoColumn.Width = 50;
+            // 
+            // cantColumn
+            // 
+            this.cantColumn.HeaderText = "Cantidad";
+            this.cantColumn.Name = "cantColumn";
+            this.cantColumn.ReadOnly = true;
+            // 
+            // contColumn
+            // 
+            this.contColumn.HeaderText = "Contenedor";
+            this.contColumn.Name = "contColumn";
+            this.contColumn.ReadOnly = true;
             // 
             // Cucop_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 691);
+            this.ClientSize = new System.Drawing.Size(1014, 684);
             this.Controls.Add(this.DGV_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,9 +235,11 @@
         private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngeColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nprodColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grupoColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codigoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contColumn;
     }
 }

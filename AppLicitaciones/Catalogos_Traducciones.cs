@@ -21,6 +21,8 @@ namespace AppLicitaciones
         public Catalogos_Traducciones()
         {
             InitializeComponent();
+            this.DGV_Traducciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Traducciones.MultiSelect = false;
         }
         public void mostrartraduccionescatalogo(int id_catalogo)
         {
@@ -199,7 +201,7 @@ namespace AppLicitaciones
             }
         }
 
-        private void DGV_Traducciones_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DGV_Traducciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btn_guardar.Enabled = false;
             id_traduccion = Convert.ToInt32(DGV_Traducciones.Rows[e.RowIndex].Cells["idColumn"].Value);
@@ -207,13 +209,13 @@ namespace AppLicitaciones
             lbl_archivo.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
         }
 
-        private void DGV_Traducciones_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DGV_Traducciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (id_traduccion != 0)
             {
                 id_traduccion = 0;
                 btn_guardar.Enabled = true;
-                txt_desc.Text = "";                
+                txt_desc.Text = "";
                 lbl_archivo.Text = "(Vacio)";
             }
         }

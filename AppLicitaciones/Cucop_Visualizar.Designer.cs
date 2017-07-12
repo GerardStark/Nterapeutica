@@ -29,45 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Visualizar));
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.tt_reg_editar = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_editar = new System.Windows.Forms.ToolStripButton();
             this.btn_borrar = new System.Windows.Forms.ToolStripButton();
-            this.lbl_nombre_gen = new System.Windows.Forms.Label();
-            this.lbl_grupo = new System.Windows.Forms.Label();
-            this.lbl_ccb = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_clave = new System.Windows.Forms.Label();
+            this.lbl_desc = new System.Windows.Forms.Label();
+            this.lbl_spec = new System.Windows.Forms.Label();
+            this.lbl_tipo = new System.Windows.Forms.Label();
+            this.lbl_cant = new System.Windows.Forms.Label();
+            this.lbl_cont = new System.Windows.Forms.Label();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(69, 100);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Codigo CCB:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(111, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 20);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Grupo:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 39);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Nombre Generico:";
             // 
             // tt_reg_editar
             // 
@@ -77,9 +57,9 @@
             this.btn_guardar,
             this.btn_editar,
             this.btn_borrar});
-            this.tt_reg_editar.Location = new System.Drawing.Point(0, 150);
+            this.tt_reg_editar.Location = new System.Drawing.Point(0, 365);
             this.tt_reg_editar.Name = "tt_reg_editar";
-            this.tt_reg_editar.Size = new System.Drawing.Size(531, 57);
+            this.tt_reg_editar.Size = new System.Drawing.Size(658, 57);
             this.tt_reg_editar.TabIndex = 87;
             this.tt_reg_editar.Text = "Menú";
             // 
@@ -117,45 +97,142 @@
             this.btn_borrar.ToolTipText = "Borrar";
             this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
-            // lbl_nombre_gen
+            // label9
             // 
-            this.lbl_nombre_gen.AutoSize = true;
-            this.lbl_nombre_gen.Location = new System.Drawing.Point(175, 39);
-            this.lbl_nombre_gen.Name = "lbl_nombre_gen";
-            this.lbl_nombre_gen.Size = new System.Drawing.Size(60, 20);
-            this.lbl_nombre_gen.TabIndex = 88;
-            this.lbl_nombre_gen.Text = "label21";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(9, 317);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(97, 20);
+            this.label9.TabIndex = 104;
+            this.label9.Text = "Contenedor:";
             // 
-            // lbl_grupo
+            // label8
             // 
-            this.lbl_grupo.AutoSize = true;
-            this.lbl_grupo.Location = new System.Drawing.Point(175, 68);
-            this.lbl_grupo.Name = "lbl_grupo";
-            this.lbl_grupo.Size = new System.Drawing.Size(60, 20);
-            this.lbl_grupo.TabIndex = 89;
-            this.lbl_grupo.Text = "label22";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(29, 287);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(77, 20);
+            this.label8.TabIndex = 103;
+            this.label8.Text = "Cantidad:";
             // 
-            // lbl_ccb
+            // label7
             // 
-            this.lbl_ccb.AutoSize = true;
-            this.lbl_ccb.Location = new System.Drawing.Point(175, 100);
-            this.lbl_ccb.Name = "lbl_ccb";
-            this.lbl_ccb.Size = new System.Drawing.Size(60, 20);
-            this.lbl_ccb.TabIndex = 90;
-            this.lbl_ccb.Text = "label23";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(63, 252);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(43, 20);
+            this.label7.TabIndex = 102;
+            this.label7.Text = "Tipo:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(63, 221);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(106, 20);
+            this.label6.TabIndex = 101;
+            this.label6.Text = "Presentación:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(96, 20);
+            this.label4.TabIndex = 93;
+            this.label4.Text = "Descripcion:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(54, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.TabIndex = 92;
+            this.label3.Text = "Clave:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 188);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(103, 20);
+            this.label1.TabIndex = 88;
+            this.label1.Text = "Especialidad:";
+            // 
+            // lbl_clave
+            // 
+            this.lbl_clave.AutoSize = true;
+            this.lbl_clave.Location = new System.Drawing.Point(112, 17);
+            this.lbl_clave.Name = "lbl_clave";
+            this.lbl_clave.Size = new System.Drawing.Size(51, 20);
+            this.lbl_clave.TabIndex = 105;
+            this.lbl_clave.Text = "label2";
+            // 
+            // lbl_desc
+            // 
+            this.lbl_desc.AutoSize = true;
+            this.lbl_desc.Location = new System.Drawing.Point(114, 46);
+            this.lbl_desc.Name = "lbl_desc";
+            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_desc.TabIndex = 107;
+            this.lbl_desc.Text = "label5";
+            // 
+            // lbl_spec
+            // 
+            this.lbl_spec.AutoSize = true;
+            this.lbl_spec.Location = new System.Drawing.Point(114, 188);
+            this.lbl_spec.Name = "lbl_spec";
+            this.lbl_spec.Size = new System.Drawing.Size(60, 20);
+            this.lbl_spec.TabIndex = 109;
+            this.lbl_spec.Text = "label10";
+            // 
+            // lbl_tipo
+            // 
+            this.lbl_tipo.AutoSize = true;
+            this.lbl_tipo.Location = new System.Drawing.Point(114, 252);
+            this.lbl_tipo.Name = "lbl_tipo";
+            this.lbl_tipo.Size = new System.Drawing.Size(60, 20);
+            this.lbl_tipo.TabIndex = 111;
+            this.lbl_tipo.Text = "label11";
+            // 
+            // lbl_cant
+            // 
+            this.lbl_cant.AutoSize = true;
+            this.lbl_cant.Location = new System.Drawing.Point(114, 287);
+            this.lbl_cant.Name = "lbl_cant";
+            this.lbl_cant.Size = new System.Drawing.Size(60, 20);
+            this.lbl_cant.TabIndex = 115;
+            this.lbl_cant.Text = "label13";
+            // 
+            // lbl_cont
+            // 
+            this.lbl_cont.AutoSize = true;
+            this.lbl_cont.Location = new System.Drawing.Point(114, 317);
+            this.lbl_cont.Name = "lbl_cont";
+            this.lbl_cont.Size = new System.Drawing.Size(60, 20);
+            this.lbl_cont.TabIndex = 117;
+            this.lbl_cont.Text = "label14";
             // 
             // Cucop_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 207);
-            this.Controls.Add(this.lbl_ccb);
-            this.Controls.Add(this.lbl_grupo);
-            this.Controls.Add(this.lbl_nombre_gen);
-            this.Controls.Add(this.tt_reg_editar);
+            this.ClientSize = new System.Drawing.Size(658, 422);
+            this.Controls.Add(this.lbl_cont);
+            this.Controls.Add(this.lbl_cant);
+            this.Controls.Add(this.lbl_tipo);
+            this.Controls.Add(this.lbl_spec);
+            this.Controls.Add(this.lbl_desc);
+            this.Controls.Add(this.lbl_clave);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.tt_reg_editar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Visualizar";
@@ -168,16 +245,22 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStrip tt_reg_editar;
         private System.Windows.Forms.ToolStripButton btn_guardar;
         private System.Windows.Forms.ToolStripButton btn_editar;
         private System.Windows.Forms.ToolStripButton btn_borrar;
-        private System.Windows.Forms.Label lbl_nombre_gen;
-        private System.Windows.Forms.Label lbl_grupo;
-        private System.Windows.Forms.Label lbl_ccb;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_clave;
+        private System.Windows.Forms.Label lbl_desc;
+        private System.Windows.Forms.Label lbl_spec;
+        private System.Windows.Forms.Label lbl_tipo;
+        private System.Windows.Forms.Label lbl_cant;
+        private System.Windows.Forms.Label lbl_cont;
     }
 }

@@ -14,7 +14,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public string con = @"Data Source=APOYO3-LAP\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=True";  
+        public string con = @"Data Source=192.168.1.101\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=False;User Id=user; Password=gerardo123;";  
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)
@@ -97,7 +97,6 @@ namespace LibLicitacion
 
             return value - 1;
         }
-
     }
 
     public class ComboboxItem

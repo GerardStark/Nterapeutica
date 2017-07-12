@@ -130,8 +130,8 @@
             this.DGV_Traducciones.ReadOnly = true;
             this.DGV_Traducciones.Size = new System.Drawing.Size(519, 480);
             this.DGV_Traducciones.TabIndex = 4;
-            this.DGV_Traducciones.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Traducciones_RowHeaderMouseClick);
-            this.DGV_Traducciones.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Traducciones_RowHeaderMouseDoubleClick);
+            this.DGV_Traducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Traducciones_CellClick);
+            this.DGV_Traducciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Traducciones_CellDoubleClick);
             // 
             // idColumn
             // 

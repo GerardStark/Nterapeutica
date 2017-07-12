@@ -27,7 +27,7 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select nombre_generico_especifico,grupo,codigo from cucop where id_cucop = @id", con);
+                SqlCommand cmd = new SqlCommand("Select * from cucop where id_cucop = @id", con);
                 cmd.Parameters.AddWithValue("@id", id_cucop);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -35,9 +35,12 @@ namespace AppLicitaciones
                 con.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    lbl_ccb.Text = dt.Rows[0]["codigo"].ToString();
-                    lbl_grupo.Text = dt.Rows[0]["grupo"].ToString();
-                    lbl_nombre_gen.Text = dt.Rows[0]["nombre_generico_espeficico"].ToString();
+                    lbl_clave.Text = dt.Rows[0]["clave"].ToString();
+                    lbl_desc.Text = dt.Rows[0]["descripcion"].ToString();
+                    lbl_spec.Text = dt.Rows[0]["especialidad"].ToString();
+                    lbl_tipo.Text = dt.Rows[0]["presentacion_tipo"].ToString();
+                    lbl_cant.Text = dt.Rows[0]["presentacion_cant"].ToString();
+                    lbl_cont.Text = dt.Rows[0]["presentacion_cont"].ToString();
                 }
 
             }
@@ -55,13 +58,13 @@ namespace AppLicitaciones
             this.Hide();
             if (result2 == DialogResult.OK)
             {
-                MessageBox.Show("Registro Actualizado.");
+                MessageBox.Show("CUCOP Actualizado.");
                 mostrarinfocucop(id_cucop);
                 this.Show();
             }
             else
             {
-                MessageBox.Show("No se modifico el registro.");
+                MessageBox.Show("No se modifico el CUCOP.");
                 this.Show();
 
             }

@@ -119,8 +119,8 @@
             this.DGV_Referencias.ReadOnly = true;
             this.DGV_Referencias.Size = new System.Drawing.Size(692, 488);
             this.DGV_Referencias.TabIndex = 15;
-            this.DGV_Referencias.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseClick);
-            this.DGV_Referencias.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_Referencias_RowHeaderMouseDoubleClick);
+            this.DGV_Referencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellClick);
+            this.DGV_Referencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellDoubleClick);
             // 
             // idColumn
             // 

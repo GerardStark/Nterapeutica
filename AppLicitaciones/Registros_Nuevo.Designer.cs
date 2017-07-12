@@ -210,7 +210,7 @@
             this.txt_fabricante.Name = "txt_fabricante";
             this.txt_fabricante.ReadOnly = true;
             this.txt_fabricante.Size = new System.Drawing.Size(167, 26);
-            this.txt_fabricante.TabIndex = 6;
+            this.txt_fabricante.TabIndex = 99;
             // 
             // txt_marca
             // 
@@ -224,21 +224,21 @@
             this.txt_nacionalidad.Location = new System.Drawing.Point(706, 151);
             this.txt_nacionalidad.Name = "txt_nacionalidad";
             this.txt_nacionalidad.Size = new System.Drawing.Size(289, 26);
-            this.txt_nacionalidad.TabIndex = 9;
+            this.txt_nacionalidad.TabIndex = 11;
             // 
             // txt_tlc
             // 
             this.txt_tlc.Location = new System.Drawing.Point(706, 193);
             this.txt_tlc.Name = "txt_tlc";
             this.txt_tlc.Size = new System.Drawing.Size(289, 26);
-            this.txt_tlc.TabIndex = 10;
+            this.txt_tlc.TabIndex = 12;
             // 
             // btn_archivo
             // 
             this.btn_archivo.Location = new System.Drawing.Point(707, 326);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(123, 36);
-            this.btn_archivo.TabIndex = 13;
+            this.btn_archivo.TabIndex = 15;
             this.btn_archivo.Text = "Seleccionar...";
             this.btn_archivo.UseVisualStyleBackColor = true;
             this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
@@ -256,14 +256,15 @@
             this.date_emision.Location = new System.Drawing.Point(707, 235);
             this.date_emision.Name = "date_emision";
             this.date_emision.Size = new System.Drawing.Size(288, 26);
-            this.date_emision.TabIndex = 11;
+            this.date_emision.TabIndex = 13;
+            this.date_emision.ValueChanged += new System.EventHandler(this.date_emision_ValueChanged);
             // 
             // date_vencimiento
             // 
             this.date_vencimiento.Location = new System.Drawing.Point(707, 281);
             this.date_vencimiento.Name = "date_vencimiento";
             this.date_vencimiento.Size = new System.Drawing.Size(288, 26);
-            this.date_vencimiento.TabIndex = 12;
+            this.date_vencimiento.TabIndex = 14;
             // 
             // tt_reg_nuevo
             // 
@@ -317,7 +318,7 @@
             this.btn_selec_fabricante.Location = new System.Drawing.Point(879, 14);
             this.btn_selec_fabricante.Name = "btn_selec_fabricante";
             this.btn_selec_fabricante.Size = new System.Drawing.Size(116, 26);
-            this.btn_selec_fabricante.TabIndex = 29;
+            this.btn_selec_fabricante.TabIndex = 6;
             this.btn_selec_fabricante.Text = "Seleccionar";
             this.btn_selec_fabricante.UseVisualStyleBackColor = true;
             this.btn_selec_fabricante.Click += new System.EventHandler(this.btn_selec_fabricante_Click);
@@ -346,7 +347,7 @@
             this.rad_registro.Location = new System.Drawing.Point(707, 115);
             this.rad_registro.Name = "rad_registro";
             this.rad_registro.Size = new System.Drawing.Size(87, 24);
-            this.rad_registro.TabIndex = 33;
+            this.rad_registro.TabIndex = 8;
             this.rad_registro.TabStop = true;
             this.rad_registro.Text = "Registro";
             this.rad_registro.UseVisualStyleBackColor = true;
@@ -357,7 +358,7 @@
             this.rad_modificacion.Location = new System.Drawing.Point(800, 115);
             this.rad_modificacion.Name = "rad_modificacion";
             this.rad_modificacion.Size = new System.Drawing.Size(115, 24);
-            this.rad_modificacion.TabIndex = 34;
+            this.rad_modificacion.TabIndex = 9;
             this.rad_modificacion.TabStop = true;
             this.rad_modificacion.Text = "Modificación";
             this.rad_modificacion.UseVisualStyleBackColor = true;
@@ -368,7 +369,7 @@
             this.rad_prorroga.Location = new System.Drawing.Point(921, 115);
             this.rad_prorroga.Name = "rad_prorroga";
             this.rad_prorroga.Size = new System.Drawing.Size(88, 24);
-            this.rad_prorroga.TabIndex = 35;
+            this.rad_prorroga.TabIndex = 10;
             this.rad_prorroga.TabStop = true;
             this.rad_prorroga.Text = "Prórroga";
             this.rad_prorroga.UseVisualStyleBackColor = true;

@@ -19,6 +19,8 @@ namespace AppLicitaciones
         public Registros_ClavesReferencias()
         {
             InitializeComponent();
+            this.DGV_Referencias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Referencias.MultiSelect = false;
         }
         //TODO llenar dgv con las clavevs asigandas al registro sanitario
         public void mostrarclavesregistro(int id_registro)
@@ -105,18 +107,6 @@ namespace AppLicitaciones
             }
         }
 
-        private void DGV_Referencias_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (id_referencia != 0)
-            {
-                id_referencia = 0;
-                btn_guardar.Enabled = true;
-                txt_clave.Text = "";
-                txt_descripcion.Text = "";
-                txt_unidad.Text = "";
-            }
-        }
-
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
             if (id_referencia != 0)
@@ -146,13 +136,25 @@ namespace AppLicitaciones
             }
         }
 
-        private void DGV_Referencias_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DGV_Referencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id_referencia = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
             txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
             txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
             txt_unidad.Text = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
             btn_guardar.Enabled = false;
+        }
+
+        private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (id_referencia != 0)
+            {
+                id_referencia = 0;
+                btn_guardar.Enabled = true;
+                txt_clave.Text = "";
+                txt_descripcion.Text = "";
+                txt_unidad.Text = "";
+            }
         }
     }
 }

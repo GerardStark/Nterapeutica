@@ -20,6 +20,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablacatalogos();
+            this.DGV_Catalogos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Catalogos.MultiSelect = false;
         }
 
         public void llenartablacatalogos()
@@ -41,7 +43,7 @@ namespace AppLicitaciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -154,7 +156,7 @@ namespace AppLicitaciones
             }
         }
 
-        private void DGV_Catalogos_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DGV_Catalogos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id_catalogo = Convert.ToInt32(DGV_Catalogos.Rows[e.RowIndex].Cells["idColumn"].Value);
         }

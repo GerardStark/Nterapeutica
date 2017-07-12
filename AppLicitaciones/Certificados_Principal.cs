@@ -21,6 +21,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablacertificados();
+            this.DGV_certificados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_certificados.MultiSelect = false;
         }
         public void llenartablacertificados()
         {
@@ -42,7 +44,7 @@ namespace AppLicitaciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -137,7 +139,7 @@ namespace AppLicitaciones
             }
         }
 
-        private void DGV_certificados_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        private void DGV_certificados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             id_certificado = Convert.ToInt32(DGV_certificados.Rows[e.RowIndex].Cells["idColumn"].Value);
         }

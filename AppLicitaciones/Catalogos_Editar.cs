@@ -58,7 +58,7 @@ namespace AppLicitaciones
                 cmb_idioma.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["idioma"].ToString(),cmb_idioma);
                 txt_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
                 id_fabricante = Convert.ToInt32(dt.Rows[0]["fabricante"]);
-                cmb_spec.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["spec_catalogo"].ToString(), cmb_spec); ;
+                cmb_spec.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["spec_catalogo"].ToString(), cmb_spec);
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
             }
         }        

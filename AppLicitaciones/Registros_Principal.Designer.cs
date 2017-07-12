@@ -40,6 +40,8 @@
             this.btn_reg_prorrogas = new System.Windows.Forms.ToolStripButton();
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.DGVRegistros = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,7 +72,9 @@
             this.toolStripLabel7,
             this.btn_reg_prorrogas,
             this.btn_visualizar,
-            this.toolStripLabel3});
+            this.toolStripLabel3,
+            this.toolStripButton1,
+            this.toolStripLabel2});
             this.tt_registros.Location = new System.Drawing.Point(0, 0);
             this.tt_registros.Name = "tt_registros";
             this.tt_registros.Size = new System.Drawing.Size(91, 657);
@@ -162,6 +166,21 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(88, 15);
             this.toolStripLabel3.Text = "Visualizar";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(88, 54);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(88, 15);
+            this.toolStripLabel2.Text = "Kagebunshin";
+            // 
             // DGVRegistros
             // 
             this.DGVRegistros.AllowUserToAddRows = false;
@@ -182,10 +201,10 @@
             this.DGVRegistros.Location = new System.Drawing.Point(95, 13);
             this.DGVRegistros.Name = "DGVRegistros";
             this.DGVRegistros.ReadOnly = true;
-            this.DGVRegistros.Size = new System.Drawing.Size(1243, 630);
+            this.DGVRegistros.Size = new System.Drawing.Size(1240, 630);
             this.DGVRegistros.TabIndex = 1;
+            this.DGVRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVRegistros_CellClick);
             this.DGVRegistros.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGVRegistros_CellFormatting);
-            this.DGVRegistros.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGVRegistros_RowHeaderMouseClick);
             // 
             // idColumn
             // 
@@ -193,6 +212,7 @@
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
             // 
             // numColumn
             // 
@@ -253,18 +273,20 @@
             this.emisionColumn.HeaderText = "Emision";
             this.emisionColumn.Name = "emisionColumn";
             this.emisionColumn.ReadOnly = true;
+            this.emisionColumn.Width = 125;
             // 
             // vencimientoColumn
             // 
             this.vencimientoColumn.HeaderText = "Vencimiento";
             this.vencimientoColumn.Name = "vencimientoColumn";
             this.vencimientoColumn.ReadOnly = true;
+            this.vencimientoColumn.Width = 125;
             // 
             // Registros_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 657);
+            this.ClientSize = new System.Drawing.Size(1348, 657);
             this.Controls.Add(this.DGVRegistros);
             this.Controls.Add(this.tt_registros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,6 +316,8 @@
         private System.Windows.Forms.DataGridView DGVRegistros;
         private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn solColumn;

@@ -23,6 +23,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             lbl_reg_archivo.Text = "";
+            
         }
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
@@ -90,6 +91,13 @@ namespace AppLicitaciones
                 id_fabricante = ftdp.id_fabricante;
                 txt_fabricante.Text = ftdp.nombre_fabricante;
             }
+        }
+
+        private void date_emision_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime vencimiento = date_emision.Value.Date;
+            vencimiento = vencimiento.AddYears(5);
+            date_vencimiento.Value = vencimiento;
         }
 
         private void btn_reg_descartar_Click(object sender, EventArgs e)

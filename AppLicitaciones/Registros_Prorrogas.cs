@@ -23,6 +23,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             lbl_archivo.Text = "(Vacio)";
+            this.DGV_Referencias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_Referencias.MultiSelect = false;
         }
 
         public void mostrarprorrogasregistro(int id_registro)
@@ -49,17 +51,6 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void DGV_Referencias_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            btn_guardar.Enabled = false;
-            id_tramite = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
-            txt_numero.Text = DGV_Referencias.Rows[e.RowIndex].Cells["numeroColumn"].Value.ToString();
-            date_tramite.Value = DateTime.Parse(DGV_Referencias.Rows[e.RowIndex].Cells["fechaColumn"].Value.ToString());
-            lbl_archivo.Text = DGV_Referencias.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
-
-
         }
 
         private void btn_ver_Click(object sender, EventArgs e)
@@ -101,18 +92,6 @@ namespace AppLicitaciones
             {
 
                 throw;
-            }
-        }
-
-        private void DGV_Referencias_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (id_tramite != 0)
-            {
-                id_tramite = 0;
-                btn_guardar.Enabled = true;
-                txt_numero.Text = "";
-                date_tramite.Value = DateTime.Today;
-                lbl_archivo.Text = "(Vacio)";
             }
         }
 
@@ -162,6 +141,28 @@ namespace AppLicitaciones
             con.Close();
             mostrarprorrogasregistro(id_registro);
         }
+
+        private void DGV_Referencias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_guardar.Enabled = false;
+            id_tramite = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
+            txt_numero.Text = DGV_Referencias.Rows[e.RowIndex].Cells["numeroColumn"].Value.ToString();
+            date_tramite.Value = DateTime.Parse(DGV_Referencias.Rows[e.RowIndex].Cells["fechaColumn"].Value.ToString());
+            lbl_archivo.Text = DGV_Referencias.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
+        }
+
+        private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (id_tramite != 0)
+            {
+                id_tramite = 0;
+                btn_guardar.Enabled = true;
+                txt_numero.Text = "";
+                date_tramite.Value = DateTime.Today;
+                lbl_archivo.Text = "(Vacio)";
+            }
+        }
+
         private void crearDirectorios(int id)
         {
             string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + "\\tramites";

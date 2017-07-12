@@ -20,6 +20,8 @@ namespace AppLicitaciones
         public FTD_Principal()
         {
             InitializeComponent();
+            this.DGV_FTD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_FTD.MultiSelect = false;
         }
         public void llenartablaftd()
         {
@@ -27,7 +29,7 @@ namespace AppLicitaciones
             {
                 DGV_FTD.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_ftd,nombre,tipo_apoyo,distribuidor_mayorista from fabricantes_titulares_distribuidores", con);
+                SqlCommand cmd = new SqlCommand("Select id_ftd,nombre,tipo_apoyo,distribuidor_mayorista,rfc from fabricantes_titulares_distribuidores", con);
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -46,12 +48,7 @@ namespace AppLicitaciones
 
         private void DGV_FTD_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            id_fabricante = Convert.ToInt32(DGV_FTD.Rows[e.RowIndex].Cells["idColumn"].Value);
-            nombre_fabricante = DGV_FTD.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
-            txt_nombre.Text = DGV_FTD.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
-            txt_apoyo.Text = DGV_FTD.Rows[e.RowIndex].Cells["apoyoColumn"].Value.ToString();
-            txt_mayorista.Text = DGV_FTD.Rows[e.RowIndex].Cells["mayoristaColumn"].Value.ToString();
-            btn_guardar.Enabled = false;
+           
         }
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
@@ -72,16 +69,18 @@ namespace AppLicitaciones
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("insert into fabricantes_titulares_distribuidores (nombre,tipo_apoyo,distribuidor_mayorista, actualizado_en)"+
-                    " values(@nombre,@apoyo,@mayorista,@actualizado)", con);
+                SqlCommand cmd = new SqlCommand("insert into fabricantes_titulares_distribuidores (nombre,tipo_apoyo,distribuidor_mayorista,rfc,actualizado_en)"+
+                    " values(@nombre,@apoyo,@mayorista,@rfc, @actualizado)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@apoyo", txt_apoyo.Text);
                 cmd.Parameters.AddWithValue("@mayorista", txt_mayorista.Text);
+                cmd.Parameters.AddWithValue("@rfc",txt_rfc.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 llenartablaftd();
+                limpiarcampos();
             }
             catch (Exception ex)
             {
@@ -96,16 +95,18 @@ namespace AppLicitaciones
                 {
                     SqlConnection con = new SqlConnection(mc.con);
                     SqlCommand cmd = new SqlCommand("update fabricantes_titulares_distribuidores set nombre = @nombre,tipo_apoyo = @apoyo,distribuidor_mayorista= @mayorista," +
-                        " actualizado_en = @actualizado where id_ftd = @id", con);
+                        " rfc = @rfc, actualizado_en = @actualizado where id_ftd = @id", con);
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", id_fabricante);
                     cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                     cmd.Parameters.AddWithValue("@apoyo", txt_apoyo.Text);
                     cmd.Parameters.AddWithValue("@mayorista", txt_mayorista.Text);
+                    cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     con.Close();
                     llenartablaftd();
+                    limpiarcampos();
                 }
                 catch (Exception ex)
                 {
@@ -131,14 +132,33 @@ namespace AppLicitaciones
 
         private void DGV_FTD_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            
+        }
+        private void limpiarcampos()
+        {
             btn_guardar.Enabled = true;
             txt_nombre.Text = "";
             txt_apoyo.Text = "";
             txt_mayorista.Text = "";
+            txt_rfc.Text = "";
             id_fabricante = 0;
             nombre_fabricante = "";
         }
 
-        
+        private void DGV_FTD_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_fabricante = Convert.ToInt32(DGV_FTD.Rows[e.RowIndex].Cells["idColumn"].Value);
+            nombre_fabricante = DGV_FTD.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
+            txt_nombre.Text = DGV_FTD.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
+            txt_apoyo.Text = DGV_FTD.Rows[e.RowIndex].Cells["apoyoColumn"].Value.ToString();
+            txt_mayorista.Text = DGV_FTD.Rows[e.RowIndex].Cells["mayoristaColumn"].Value.ToString();
+            txt_rfc.Text = DGV_FTD.Rows[e.RowIndex].Cells["rfcColumn"].Value.ToString();
+            btn_guardar.Enabled = false;
+        }
+
+        private void DGV_FTD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            limpiarcampos();
+        }
     }
 }

@@ -20,6 +20,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablaregistros();
+            this.DGVRegistros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGVRegistros.MultiSelect = false;
         }
         public void llenartablaregistros()
         {
@@ -41,7 +43,7 @@ namespace AppLicitaciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
         private void btn_reg_nuevo_Click(object sender, EventArgs e)
@@ -98,7 +100,7 @@ namespace AppLicitaciones
 
         private void DGVRegistros_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
+           
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)
@@ -141,13 +143,18 @@ namespace AppLicitaciones
             {
                 Registros_ClavesReferencias rc = new Registros_ClavesReferencias();
                 rc.mostrarclavesregistro(id_registro);
-                rc.Show();
-                
+                DialogResult result = rc.ShowDialog();
+
             }
             else
             {
                 MessageBox.Show("Selecciona un Registro Sanitario");
             }
+        }
+
+        private void DGVRegistros_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
         }
 
         private void DGVRegistros_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

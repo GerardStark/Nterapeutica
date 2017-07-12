@@ -20,6 +20,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablacucops();
+            this.DGV_cucop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.DGV_cucop.MultiSelect = false;
         }
         public void llenartablacucops()
         {
@@ -28,8 +30,7 @@ namespace AppLicitaciones
                 DGV_cucop.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_especifico,nombre_producto," +
-                    "grupo,codigo from cucop",con);
+                SqlCommand cmd = new SqlCommand("SELECT id_cucop,clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont from cucop", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -64,11 +65,6 @@ namespace AppLicitaciones
                 filtrarcucops("str","str");
             }
         }
-
-        private void DGV_cucop_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            id_cucop = Convert.ToInt32(DGV_cucop.Rows[e.RowIndex].Cells["idColumn"].Value);
-        }
         private void filtrarcucops(string ctrl, string valor)
         {
             try
@@ -77,8 +73,8 @@ namespace AppLicitaciones
                 SqlConnection con = new SqlConnection(mc.con);
                 con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_cucop,nombre_generico_especifico,nombre_producto," +
-                   "grupo,codigo from cucop where "+ctrl+" = "+valor+"", con);
+                SqlCommand cmd = new SqlCommand("SELECT id_cucop,clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont from cucop "+
+                    "where " + ctrl+" = "+valor+"", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -112,7 +108,12 @@ namespace AppLicitaciones
             {
                 MessageBox.Show("Seleccione un Codigo de Cuadro Basico para visualizar");
             }
-        }       
+        }
+
+        private void DGV_cucop_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            id_cucop = Convert.ToInt32(DGV_cucop.Rows[e.RowIndex].Cells["idColumn"].Value);
+        }
 
         private void btn_vincular_Click(object sender, EventArgs e)
         {
