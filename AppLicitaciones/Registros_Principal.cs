@@ -98,11 +98,6 @@ namespace AppLicitaciones
             }
         }
 
-        private void DGVRegistros_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-           
-        }
-
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
             //si hay registro seleccionado, procede a visualizar
@@ -154,7 +149,10 @@ namespace AppLicitaciones
 
         private void DGVRegistros_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
+            if (e.RowIndex != -1)
+            {
+                id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
+            }
         }
 
         private void DGVRegistros_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

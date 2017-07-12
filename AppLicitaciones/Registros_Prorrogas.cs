@@ -55,7 +55,7 @@ namespace AppLicitaciones
 
         private void btn_ver_Click(object sender, EventArgs e)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\"+id_registro+ "\\tramites";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Registros-Sanitarios\"+id_registro+ "\\tramites";
             string pathanexos = newpath + "\\" + id_tramite + "\\" + lbl_archivo.Text;
 
             if (lbl_archivo.Text != "(Vacio)")
@@ -144,16 +144,19 @@ namespace AppLicitaciones
 
         private void DGV_Referencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_guardar.Enabled = false;
-            id_tramite = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
-            txt_numero.Text = DGV_Referencias.Rows[e.RowIndex].Cells["numeroColumn"].Value.ToString();
-            date_tramite.Value = DateTime.Parse(DGV_Referencias.Rows[e.RowIndex].Cells["fechaColumn"].Value.ToString());
-            lbl_archivo.Text = DGV_Referencias.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                btn_guardar.Enabled = false;
+                id_tramite = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
+                txt_numero.Text = DGV_Referencias.Rows[e.RowIndex].Cells["numeroColumn"].Value.ToString();
+                date_tramite.Value = DateTime.Parse(DGV_Referencias.Rows[e.RowIndex].Cells["fechaColumn"].Value.ToString());
+                lbl_archivo.Text = DGV_Referencias.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
+            }
         }
 
         private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (id_tramite != 0)
+            if (id_tramite != 0 && e.RowIndex != -1)
             {
                 id_tramite = 0;
                 btn_guardar.Enabled = true;
@@ -165,7 +168,7 @@ namespace AppLicitaciones
 
         private void crearDirectorios(int id)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + "\\tramites";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + "\\tramites";
             string pathanexos = newpath + "\\" + id + "\\";
             if (Directory.Exists(newpath + "\\" + id + "\\"))
             {
@@ -221,7 +224,7 @@ namespace AppLicitaciones
                     adapt.Fill(dt);
                     try
                     {
-                        File.Delete(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + 
+                        File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + 
                             @"\DocumentosNT\Registros-Sanitarios\" + id_registro + @"\tramites\" + id_tramite +
                             @"\" + dt.Rows[0]["dir_archivo"].ToString());
                         cmd = new SqlCommand("UPDATE registros_tramites_prorroga set dir_archivo=@archivo where id_tramite_prorroga=" + id_tramite + "", con);
@@ -250,7 +253,7 @@ namespace AppLicitaciones
         }
         private void borrararchivoprorroga(int id_tramite)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + "\\tramites";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Registros-Sanitarios\" + id_registro + "\\tramites";
             string pathanexos = newpath + "\\" + id_tramite + "\\" + lbl_archivo.Text;
 
             if (lbl_archivo.Text != "(Vacio)")

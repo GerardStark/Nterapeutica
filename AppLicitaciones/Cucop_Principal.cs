@@ -112,7 +112,10 @@ namespace AppLicitaciones
 
         private void DGV_cucop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id_cucop = Convert.ToInt32(DGV_cucop.Rows[e.RowIndex].Cells["idColumn"].Value);
+            if (e.RowIndex != -1)
+            {
+                id_cucop = Convert.ToInt32(DGV_cucop.Rows[e.RowIndex].Cells["idColumn"].Value);
+            }
         }
 
         private void btn_vincular_Click(object sender, EventArgs e)

@@ -135,7 +135,7 @@ namespace AppLicitaciones
                     adapt.Fill(dt);
                     try
                     {
-                        File.Delete(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) +
+                        File.Delete(Path.GetDirectoryName(Application.ExecutablePath) +
                             @"\DocumentosNT\Registros-Sanitarios\" + id_catalogo + @"\traducciones\" + id_traduccion +
                             @"\" + dt.Rows[0]["dir_archivo"].ToString());
                         cmd = new SqlCommand("UPDATE catalogos_traducciones set dir_archivo=@archivo where id_traduccion_cat=" + id_traduccion + "", con);
@@ -165,7 +165,7 @@ namespace AppLicitaciones
 
         private void btn_ver_Click(object sender, EventArgs e)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Catalogos-Productos\" + id_catalogo + "\\traducciones";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Catalogos-Productos\" + id_catalogo + "\\traducciones";
             string pathanexos = newpath + "\\" + id_traduccion + "\\" + lbl_archivo.Text;
 
             if (lbl_archivo.Text != "(Vacio)")
@@ -181,7 +181,7 @@ namespace AppLicitaciones
 
         private void crearDirectorios(int id)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Catalogos-Productos\" + id_catalogo + "\\traducciones";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Catalogos-Productos\" + id_catalogo + "\\traducciones";
             string pathanexos = newpath + "\\" + id + "\\";
             if (Directory.Exists(newpath + "\\" + id + "\\"))
             {
@@ -203,15 +203,18 @@ namespace AppLicitaciones
 
         private void DGV_Traducciones_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btn_guardar.Enabled = false;
-            id_traduccion = Convert.ToInt32(DGV_Traducciones.Rows[e.RowIndex].Cells["idColumn"].Value);
-            txt_desc.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["descColumn"].Value.ToString();
-            lbl_archivo.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
+            if (e.RowIndex != -1)
+            {
+                btn_guardar.Enabled = false;
+                id_traduccion = Convert.ToInt32(DGV_Traducciones.Rows[e.RowIndex].Cells["idColumn"].Value);
+                txt_desc.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["descColumn"].Value.ToString();
+                lbl_archivo.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
+            }
         }
 
         private void DGV_Traducciones_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (id_traduccion != 0)
+            if (id_traduccion != 0 && e.RowIndex != -1)
             {
                 id_traduccion = 0;
                 btn_guardar.Enabled = true;
@@ -267,7 +270,7 @@ namespace AppLicitaciones
         }
         private void borrararchivotraduccion(int id_traduccion)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Catalogos-Productos\" + id_traduccion + "\\traducciones";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Catalogos-Productos\" + id_traduccion + "\\traducciones";
             string pathanexos = newpath + "\\" + id_traduccion + "\\" + lbl_archivo.Text;
 
             if (lbl_archivo.Text != "(Vacio)")

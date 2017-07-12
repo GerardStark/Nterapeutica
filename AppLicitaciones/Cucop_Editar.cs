@@ -68,10 +68,11 @@ namespace AppLicitaciones
                     }
                     else
                     {
+                        string[] substrings = cucop.Split('.');
                         chk_sccb.Checked = false;
-                        txt_clave_gpo.Text = cucop.Substring(0,2);
-                        txt_clave_gen.Text = cucop.Substring(1,3);
-                        txt_clave_esp.Text = cucop.Substring(1,4);
+                        txt_clave_gpo.Text = substrings[0];
+                        txt_clave_gen.Text = substrings[1];
+                        txt_clave_esp.Text = substrings[2];
                     }
 
                 }
@@ -84,28 +85,67 @@ namespace AppLicitaciones
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            try
+            if (chk_sccb.Checked == true)
             {
-                SqlConnection con = new SqlConnection(mc.con);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE cucop SET clave = @clave,descripcion = @desc,especialidad = @spec,presentacion_tipo = @tipo,"
-                    +"presentacion_cant = @cant,presentacion_cont = @cont,actualizado_en = @updated " +
-                    "WHERE id_cucop = @id",con);
-                cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
-                cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
-                cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
-                cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
-                cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
-                cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
-                cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UPDATE cucop SET clave = @clave,descripcion = @desc,especialidad = @spec,presentacion_tipo = @tipo,"
+                        + "presentacion_cant = @cant,presentacion_cont = @cont,actualizado_en = @updated " +
+                        "WHERE id_cucop = @id", con);
+                    cmd.Parameters.AddWithValue("@id", id_cucop);
+                    cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
+                    cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
+                    cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
+                    cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                if (txt_clave_gpo.Text.Length == 3 || txt_clave_gen.Text.Length == 3 || txt_clave_esp.Text.Length == 4)
+                {
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(mc.con);
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("UPDATE cucop SET clave = @clave,descripcion = @desc,especialidad = @spec,presentacion_tipo = @tipo,"
+                        + "presentacion_cant = @cant,presentacion_cont = @cont,actualizado_en = @updated " +
+                        "WHERE id_cucop = @id", con);
+                        cmd.Parameters.AddWithValue("@id", id_cucop);
+                        cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
+                        cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
+                        cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
+                        cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("El cucop debe consistir en 12 digitos como se muestra acontinuacion: xxx.xxx.xxxx");
+                }
             }
         }
 

@@ -138,16 +138,19 @@ namespace AppLicitaciones
 
         private void DGV_Referencias_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id_referencia = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
-            txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
-            txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
-            txt_unidad.Text = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
-            btn_guardar.Enabled = false;
+            if (e.RowIndex != -1)
+            {
+                id_referencia = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
+                txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
+                txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
+                txt_unidad.Text = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
+                btn_guardar.Enabled = false;
+            }
         }
 
         private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (id_referencia != 0)
+            if (id_referencia != 0 && e.RowIndex != -1)
             {
                 id_referencia = 0;
                 btn_guardar.Enabled = true;

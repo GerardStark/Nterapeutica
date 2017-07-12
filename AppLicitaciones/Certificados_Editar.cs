@@ -65,7 +65,7 @@ namespace AppLicitaciones
                     adapt.Fill(dt);
                     try
                     {
-                        File.Delete(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Certificados-Calidad\" + id_certificado + @"\" + dt.Rows[0]["dir_archivo"].ToString());
+                        File.Delete(Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Certificados-Calidad\" + id_certificado + @"\" + dt.Rows[0]["dir_archivo"].ToString());
                         cmd = new SqlCommand("UPDATE certificados_calidad set dir_archivo=@archivo where id_certificado=" + id_certificado + "", con);
                         cmd.Parameters.AddWithValue("@archivo", "(Vacio)");
                         lbl_archivo.Text = "(Vacio)";

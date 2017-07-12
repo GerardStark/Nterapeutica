@@ -107,6 +107,7 @@
             this.chk_sccb.TabIndex = 36;
             this.chk_sccb.Text = "S.C.C.B";
             this.chk_sccb.UseVisualStyleBackColor = true;
+            this.chk_sccb.CheckedChanged += new System.EventHandler(this.chk_sccb_CheckedChanged);
             // 
             // cmb_spec
             // 

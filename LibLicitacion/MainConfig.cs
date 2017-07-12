@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace LibLicitacion
 {
@@ -57,7 +58,7 @@ namespace LibLicitacion
         public void crearDirectorios(string nombre_archivo, string archivo_origen, int id, string tipo_archivo)
         {
             //obtener la direccion donde se van a guardar los archivos
-            string directorio = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\"+tipo_archivo+@"\"+id+"";
+            string directorio = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\"+tipo_archivo+@"\"+id+"";
             if (Directory.Exists(directorio))
             {
                 if (archivo_origen != null)
