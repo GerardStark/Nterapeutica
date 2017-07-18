@@ -1,0 +1,5 @@
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\LibLicitacion.dll.config
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\LibLicitacion.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\LibLicitacion.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Release\LibLicitacion.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Release\LibLicitacion.pdb

@@ -38,12 +38,10 @@ namespace AppLicitaciones
                 txt_numero.Text = dt.Rows[0]["numero_registro"].ToString();
                 txt_solicitud.Text = dt.Rows[0]["numero_solicitud"].ToString();
                 txt_titular.Text = dt.Rows[0]["titular"].ToString();
-                //TODO buscar nombre con el id del fabricante
-                id_fabricante = Convert.ToInt32(dt.Rows[0]["fabricante"]);
-                txt_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
+                txt_rfc.Text = dt.Rows[0]["rfc"].ToString();
+                txt_fabricante.Text = dt.Rows[0]["fabricante"].ToString();
                 txt_marca.Text = dt.Rows[0]["marca"].ToString();
-                txt_nacionalidad.Text = dt.Rows[0]["nacionalidad"].ToString();
-                txt_tlc.Text = dt.Rows[0]["tratado_comercio"].ToString();
+                cmb_pais.SelectedValue = Convert.ToInt32(dt.Rows[0]["pais_origen"]);
                 date_emision.Value = Convert.ToDateTime(dt.Rows[0]["fecha_emision"]);
                 date_vencimiento.Value = Convert.ToDateTime(dt.Rows[0]["fecha_vencimiento"]);
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
@@ -70,6 +68,13 @@ namespace AppLicitaciones
             this.Close();
         }
 
+        private void Registros_Editar_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.paises_origen' Puede moverla o quitarla según sea necesario.
+            this.paises_origenTableAdapter.Fill(this.licitacionesDataSet.paises_origen);
+
+        }
+
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
             var checkedButton = Controls.OfType<RadioButton>()
@@ -82,20 +87,20 @@ namespace AppLicitaciones
                 {
                     SqlConnection con = new SqlConnection(mc.con);
                     SqlCommand cmd = new SqlCommand("update registros_sanitarios set numero_registro = @numero, numero_solicitud = @solicitud, titular = @titular," +
-                        "denom_distintiva = @distintiva, denom_generica = @generica, fabricante = @fabricante, marca = @marca, nacionalidad = @nacionalidad,"+
-                        "tratado_comercio = @tlc, fecha_emision = @emision, fecha_vencimiento = @vencimiento, dir_archivo = @archivo, actualizado_en = @actualizado "+
+                        "rfc = @rfc, denom_distintiva = @distintiva, denom_generica = @generica, fabricante = @fabricante, marca = @marca,pais_origen = @pais,"+
+                        "fecha_emision = @emision, fecha_vencimiento = @vencimiento, dir_archivo = @archivo, actualizado_en = @actualizado "+
                         "where id_registro = @id",con);
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", id_registro);
                     cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
                     cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text);
                     cmd.Parameters.AddWithValue("@titular", txt_titular.Text);
+                    cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
                     cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
                     cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
-                    cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
+                    cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
                     cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
-                    cmd.Parameters.AddWithValue("@nacionalidad", txt_nacionalidad.Text);
-                    cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
+                    cmd.Parameters.AddWithValue("@pais", cmb_pais.SelectedValue);
                     cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
                     cmd.Parameters.AddWithValue("@vencimiento", date_vencimiento.Value.Date);
                     cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);

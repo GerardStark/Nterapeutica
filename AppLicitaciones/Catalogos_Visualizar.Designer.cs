@@ -48,13 +48,15 @@
             this.btn_reg_borrar = new System.Windows.Forms.ToolStripButton();
             this.label12 = new System.Windows.Forms.Label();
             this.lbl_tipo = new System.Windows.Forms.Label();
+            this.lbl_marca = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_archivo
             // 
             this.lbl_archivo.AutoSize = true;
-            this.lbl_archivo.Location = new System.Drawing.Point(100, 246);
+            this.lbl_archivo.Location = new System.Drawing.Point(100, 275);
             this.lbl_archivo.Name = "lbl_archivo";
             this.lbl_archivo.Size = new System.Drawing.Size(42, 20);
             this.lbl_archivo.TabIndex = 51;
@@ -63,7 +65,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(96, 215);
+            this.label6.Location = new System.Drawing.Point(96, 244);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 50;
@@ -90,7 +92,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 183);
+            this.label3.Location = new System.Drawing.Point(58, 212);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(103, 20);
             this.label3.TabIndex = 47;
@@ -116,7 +118,7 @@
             // 
             // btn_ver_archivo
             // 
-            this.btn_ver_archivo.Location = new System.Drawing.Point(167, 212);
+            this.btn_ver_archivo.Location = new System.Drawing.Point(167, 241);
             this.btn_ver_archivo.Name = "btn_ver_archivo";
             this.btn_ver_archivo.Size = new System.Drawing.Size(75, 26);
             this.btn_ver_archivo.TabIndex = 43;
@@ -163,7 +165,7 @@
             // lbl_especialidad
             // 
             this.lbl_especialidad.AutoSize = true;
-            this.lbl_especialidad.Location = new System.Drawing.Point(167, 183);
+            this.lbl_especialidad.Location = new System.Drawing.Point(167, 212);
             this.lbl_especialidad.Name = "lbl_especialidad";
             this.lbl_especialidad.Size = new System.Drawing.Size(42, 20);
             this.lbl_especialidad.TabIndex = 56;
@@ -177,7 +179,7 @@
             this.btn_reg_guardar,
             this.btn_reg_editar,
             this.btn_reg_borrar});
-            this.tt_reg_editar.Location = new System.Drawing.Point(0, 345);
+            this.tt_reg_editar.Location = new System.Drawing.Point(0, 390);
             this.tt_reg_editar.Name = "tt_reg_editar";
             this.tt_reg_editar.Size = new System.Drawing.Size(663, 57);
             this.tt_reg_editar.TabIndex = 87;
@@ -235,11 +237,31 @@
             this.lbl_tipo.TabIndex = 89;
             this.lbl_tipo.Text = "label";
             // 
+            // lbl_marca
+            // 
+            this.lbl_marca.AutoSize = true;
+            this.lbl_marca.Location = new System.Drawing.Point(167, 180);
+            this.lbl_marca.Name = "lbl_marca";
+            this.lbl_marca.Size = new System.Drawing.Size(42, 20);
+            this.lbl_marca.TabIndex = 91;
+            this.lbl_marca.Text = "label";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(108, 180);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 20);
+            this.label8.TabIndex = 90;
+            this.label8.Text = "Marca";
+            // 
             // Catalogos_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 402);
+            this.ClientSize = new System.Drawing.Size(663, 447);
+            this.Controls.Add(this.lbl_marca);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.tt_reg_editar);
@@ -288,5 +310,7 @@
         private System.Windows.Forms.ToolStripButton btn_reg_borrar;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lbl_tipo;
+        private System.Windows.Forms.Label lbl_marca;
+        private System.Windows.Forms.Label label8;
     }
 }

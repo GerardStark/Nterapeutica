@@ -31,7 +31,7 @@ namespace AppLicitaciones
                 DGV_Catalogos.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,idioma from catalogos_info_general", con);
+                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma from catalogos_info_general", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -142,20 +142,7 @@ namespace AppLicitaciones
         {
             switch (this.DGV_Catalogos.Columns[e.ColumnIndex].Name)
             {
-                case "fabricanteColumn":
-                    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
-                    {
-                        if (Convert.ToInt32(e.Value) > 0)
-                        {
-                            int idfab = Convert.ToInt32(DGV_Catalogos.Rows[e.RowIndex].Cells["fabricanteColumn"].Value);
-                            e.Value = mc.obtenernombrefabricante(idfab);
-                        }
-                    }
-                    else
-                    {
-                        e.Value = "(Vacio)";
-                    }
-                    break;
+                
             }
         }
 
@@ -173,7 +160,7 @@ namespace AppLicitaciones
                 con = new SqlConnection(mc.con);
                 con.Open();
                 //cambiar por tabla catalogos
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,idioma " +
+                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma " +
                     "from catalogos_info_general where " + ctrl + " Like '%" + valor + "%'", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();

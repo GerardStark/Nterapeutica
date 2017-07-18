@@ -23,6 +23,7 @@ namespace AppLicitaciones
             InitializeComponent();
             this.DGV_Traducciones.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Traducciones.MultiSelect = false;
+            lbl_archivo.Text = "(Vacio)";
         }
         public void mostrartraduccionescatalogo(int id_catalogo)
         {

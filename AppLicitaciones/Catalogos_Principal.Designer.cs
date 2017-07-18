@@ -47,6 +47,7 @@
             this.yearColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.especialidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fabricanteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idiomaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Catalogos)).BeginInit();
@@ -170,6 +171,7 @@
             this.yearColumn,
             this.especialidadColumn,
             this.fabricanteColumn,
+            this.marcaColumn,
             this.idiomaColumn});
             this.DGV_Catalogos.Location = new System.Drawing.Point(95, 12);
             this.DGV_Catalogos.Name = "DGV_Catalogos";
@@ -191,7 +193,6 @@
             this.nombreColumn.HeaderText = "Nombre";
             this.nombreColumn.Name = "nombreColumn";
             this.nombreColumn.ReadOnly = true;
-            this.nombreColumn.Width = 200;
             // 
             // tipoColumn
             // 
@@ -205,7 +206,6 @@
             this.yearColumn.HeaderText = "Año";
             this.yearColumn.Name = "yearColumn";
             this.yearColumn.ReadOnly = true;
-            this.yearColumn.Width = 200;
             // 
             // especialidadColumn
             // 
@@ -220,6 +220,13 @@
             this.fabricanteColumn.Name = "fabricanteColumn";
             this.fabricanteColumn.ReadOnly = true;
             this.fabricanteColumn.Width = 200;
+            // 
+            // marcaColumn
+            // 
+            this.marcaColumn.HeaderText = "Marca";
+            this.marcaColumn.Name = "marcaColumn";
+            this.marcaColumn.ReadOnly = true;
+            this.marcaColumn.Width = 200;
             // 
             // idiomaColumn
             // 
@@ -268,6 +275,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn yearColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn especialidadColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fabricanteColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn marcaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idiomaColumn;
     }
 }

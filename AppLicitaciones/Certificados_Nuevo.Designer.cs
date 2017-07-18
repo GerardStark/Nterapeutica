@@ -33,9 +33,6 @@
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
-            this.btn_selec_fabricante = new System.Windows.Forms.Button();
-            this.txt_fabricante = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.date_vencimiento = new System.Windows.Forms.DateTimePicker();
             this.date_emision = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
@@ -52,6 +49,8 @@
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.cmb_idioma = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.txt_fabricante = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,33 +100,6 @@
             this.txt_limpiar_campos.Size = new System.Drawing.Size(54, 54);
             this.txt_limpiar_campos.Text = "Limpiar";
             this.txt_limpiar_campos.Click += new System.EventHandler(this.txt_limpiar_campos_Click);
-            // 
-            // btn_selec_fabricante
-            // 
-            this.btn_selec_fabricante.Location = new System.Drawing.Point(373, 243);
-            this.btn_selec_fabricante.Name = "btn_selec_fabricante";
-            this.btn_selec_fabricante.Size = new System.Drawing.Size(116, 26);
-            this.btn_selec_fabricante.TabIndex = 32;
-            this.btn_selec_fabricante.Text = "Seleccionar";
-            this.btn_selec_fabricante.UseVisualStyleBackColor = true;
-            this.btn_selec_fabricante.Click += new System.EventHandler(this.btn_selec_fabricante_Click);
-            // 
-            // txt_fabricante
-            // 
-            this.txt_fabricante.Location = new System.Drawing.Point(200, 246);
-            this.txt_fabricante.Name = "txt_fabricante";
-            this.txt_fabricante.ReadOnly = true;
-            this.txt_fabricante.Size = new System.Drawing.Size(167, 26);
-            this.txt_fabricante.TabIndex = 31;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(105, 249);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 20);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Fabricante:";
             // 
             // date_vencimiento
             // 
@@ -268,11 +240,29 @@
             this.label4.TabIndex = 48;
             this.label4.Text = "Idioma:";
             // 
+            // txt_fabricante
+            // 
+            this.txt_fabricante.Location = new System.Drawing.Point(200, 245);
+            this.txt_fabricante.Name = "txt_fabricante";
+            this.txt_fabricante.Size = new System.Drawing.Size(288, 26);
+            this.txt_fabricante.TabIndex = 51;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(104, 248);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.TabIndex = 50;
+            this.label6.Text = "Fabricante:";
+            // 
             // Certificados_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 477);
+            this.Controls.Add(this.txt_fabricante);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cmb_idioma);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmb_tipo);
@@ -289,9 +279,6 @@
             this.Controls.Add(this.date_emision);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btn_selec_fabricante);
-            this.Controls.Add(this.txt_fabricante);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.tt_reg_nuevo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -311,9 +298,6 @@
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
-        private System.Windows.Forms.Button btn_selec_fabricante;
-        private System.Windows.Forms.TextBox txt_fabricante;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker date_vencimiento;
         private System.Windows.Forms.DateTimePicker date_emision;
         private System.Windows.Forms.Label label11;
@@ -330,5 +314,7 @@
         private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.ComboBox cmb_idioma;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_fabricante;
+        private System.Windows.Forms.Label label6;
     }
 }

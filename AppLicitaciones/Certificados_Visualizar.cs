@@ -39,7 +39,7 @@ namespace AppLicitaciones
                 lbl_tipo.Text = dt.Rows[0]["tipo"].ToString();
                 lbl_descripcion.Text = dt.Rows[0]["descripcion_detallada"].ToString();
                 lbl_idioma.Text = dt.Rows[0]["idioma"].ToString();
-                lbl_fabr.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
+                lbl_fabr.Text = dt.Rows[0]["fabricante"].ToString();
                 lbl_emision.Text = dt.Rows[0]["fecha_emision"].ToString();
                 lbl_vencimiento.Text = dt.Rows[0]["fecha_vencimiento"].ToString();
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
@@ -105,6 +105,25 @@ namespace AppLicitaciones
             {
                 MessageBox.Show("No se modifico el Certificado.");
                 this.Show();
+            }
+        }
+
+        private void btn_reg_borrar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Seguro que desea borrar el certificado? Esta accion no se puede deshacer","Borrar Catalogo", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                SqlConnection con = new SqlConnection(mc.con);
+                SqlCommand cmd = new SqlCommand("Delete from certificados_calidad where id_certificado = @id",con);
+                con.Open();
+                cmd.Parameters.AddWithValue("id",id_certificado);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Borrado");
+            }
+            else
+            {
+                MessageBox.Show("Cancelado" );
             }
         }
     }

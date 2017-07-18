@@ -56,8 +56,8 @@ namespace AppLicitaciones
                 txt_year.Text = dt.Rows[0]["publicacion"].ToString();
                 cmb_tipo.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["tipo_catalogo"].ToString(), cmb_tipo);
                 cmb_idioma.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["idioma"].ToString(),cmb_idioma);
-                txt_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
-                id_fabricante = Convert.ToInt32(dt.Rows[0]["fabricante"]);
+                txt_fabricante.Text = dt.Rows[0]["fabricante"].ToString();
+                txt_marca.Text = dt.Rows[0]["marca"].ToString();
                 cmb_spec.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["spec_catalogo"].ToString(), cmb_spec);
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
             }
@@ -136,6 +136,14 @@ namespace AppLicitaciones
             }
         }
 
+        private void txt_year_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btn_reg_descartar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -148,14 +156,15 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("update catalogos_info_general set nombre_catalogo = @nombre,publicacion = @año,tipo_catalogo = @tipo,spec_catalogo=@espec,fabricante=@fabricante, " +
+                SqlCommand cmd = new SqlCommand("update catalogos_info_general set nombre_catalogo = @nombre,publicacion = @año,tipo_catalogo = @tipo,spec_catalogo=@espec,fabricante=@fabricante,marca = @marca, " +
                     "idioma=@idioma,dir_archivo=@archivo,actualizado_en=@actualizado WHERE id_catalogo = @id", con);
                 cmd.Parameters.AddWithValue("@id",id_catalogo);
                 cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@año", txt_year.Text);
                 cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
-                cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
+                cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
+                cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
                 cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@archivo", lbl_archivo.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);

@@ -37,10 +37,12 @@ namespace AppLicitaciones
                 lbl_reg_numero.Text = dt.Rows[0]["numero_registro"].ToString();
                 lbl_reg_solicitud.Text = dt.Rows[0]["numero_solicitud"].ToString();
                 lbl_reg_titular.Text = dt.Rows[0]["titular"].ToString();
-                lbl_reg_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
+                lbl_reg_fabricante.Text = dt.Rows[0]["fabricante"].ToString();
                 lbl_reg_marca.Text = dt.Rows[0]["marca"].ToString();
-                lbl_reg_nacionalidad.Text = dt.Rows[0]["nacionalidad"].ToString();
-                lbl_reg_tlc.Text = dt.Rows[0]["tratado_comercio"].ToString();
+                lbl_rfc.Text = dt.Rows[0]["rfc"].ToString();
+                //encontrar pais
+                lbl_reg_pais.Text = dt.Rows[0]["pais_origen"].ToString();
+                
                 lbl_reg_emision.Text = dt.Rows[0]["fecha_emision"].ToString();
                 lbl_reg_vencimiento.Text = dt.Rows[0]["fecha_vencimiento"].ToString();
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
@@ -149,7 +151,7 @@ namespace AppLicitaciones
 
         private void btn_archivo_abrir_Click(object sender, EventArgs e)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Registros-Sanitarios\";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Registros-Sanitarios\";
             string pathanexos = newpath + "\\" + id_registro + "\\"+lbl_reg_archivo.Text;
 
             if (lbl_reg_archivo.Text != "(Vacio)")

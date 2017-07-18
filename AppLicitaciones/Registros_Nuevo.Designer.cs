@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_Nuevo));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -37,7 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -47,8 +47,6 @@
             this.txt_distintiva = new System.Windows.Forms.TextBox();
             this.txt_fabricante = new System.Windows.Forms.TextBox();
             this.txt_marca = new System.Windows.Forms.TextBox();
-            this.txt_nacionalidad = new System.Windows.Forms.TextBox();
-            this.txt_tlc = new System.Windows.Forms.TextBox();
             this.btn_archivo = new System.Windows.Forms.Button();
             this.txt_generica = new System.Windows.Forms.TextBox();
             this.date_emision = new System.Windows.Forms.DateTimePicker();
@@ -57,13 +55,20 @@
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
-            this.btn_selec_fabricante = new System.Windows.Forms.Button();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
             this.lbl_tipo = new System.Windows.Forms.Label();
             this.rad_registro = new System.Windows.Forms.RadioButton();
             this.rad_modificacion = new System.Windows.Forms.RadioButton();
             this.rad_prorroga = new System.Windows.Forms.RadioButton();
+            this.txt_rfc = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmb_pais = new System.Windows.Forms.ComboBox();
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.paisesorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.paises_origenTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.paises_origenTableAdapter();
             this.tt_reg_nuevo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisesorigenBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +77,7 @@
             this.label1.Location = new System.Drawing.Point(135, 17);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(87, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Numero:";
             // 
@@ -81,7 +86,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(131, 55);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(92, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "Solicitud:";
             // 
@@ -90,25 +95,25 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(148, 95);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.Size = new System.Drawing.Size(72, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Titular:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 133);
+            this.label4.Location = new System.Drawing.Point(21, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 20);
+            this.label4.Size = new System.Drawing.Size(226, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Denominacion Distintiva:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 261);
+            this.label5.Location = new System.Drawing.Point(20, 297);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 20);
+            this.label5.Size = new System.Drawing.Size(227, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "Denominacion Generica:";
             // 
@@ -117,7 +122,7 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(611, 20);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.Size = new System.Drawing.Size(110, 25);
             this.label6.TabIndex = 5;
             this.label6.Text = "Fabricante:";
             // 
@@ -126,52 +131,43 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(643, 67);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.Size = new System.Drawing.Size(73, 25);
             this.label7.TabIndex = 6;
             this.label7.Text = "Marca:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(596, 154);
+            this.label8.Location = new System.Drawing.Point(584, 157);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 20);
+            this.label8.Size = new System.Drawing.Size(147, 25);
             this.label8.TabIndex = 7;
-            this.label8.Text = "Nacionalidad:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(662, 196);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 20);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "TLC";
+            this.label8.Text = "Pais de Origen:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(560, 240);
+            this.label10.Location = new System.Drawing.Point(560, 207);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 20);
+            this.label10.Size = new System.Drawing.Size(174, 25);
             this.label10.TabIndex = 9;
             this.label10.Text = "Fecha de Emision:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(528, 286);
+            this.label11.Location = new System.Drawing.Point(528, 253);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(172, 20);
+            this.label11.Size = new System.Drawing.Size(213, 25);
             this.label11.TabIndex = 10;
             this.label11.Text = "Fecha de Vencimiento:";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(635, 334);
+            this.label12.Location = new System.Drawing.Point(635, 301);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 20);
+            this.label12.Size = new System.Drawing.Size(84, 25);
             this.label12.TabIndex = 11;
             this.label12.Text = "Archivo:";
             // 
@@ -179,63 +175,48 @@
             // 
             this.txt_numero.Location = new System.Drawing.Point(211, 14);
             this.txt_numero.Name = "txt_numero";
-            this.txt_numero.Size = new System.Drawing.Size(289, 26);
+            this.txt_numero.Size = new System.Drawing.Size(289, 30);
             this.txt_numero.TabIndex = 1;
             // 
             // txt_solicitud
             // 
             this.txt_solicitud.Location = new System.Drawing.Point(210, 52);
             this.txt_solicitud.Name = "txt_solicitud";
-            this.txt_solicitud.Size = new System.Drawing.Size(290, 26);
+            this.txt_solicitud.Size = new System.Drawing.Size(290, 30);
             this.txt_solicitud.TabIndex = 2;
             // 
             // txt_titular
             // 
             this.txt_titular.Location = new System.Drawing.Point(210, 92);
             this.txt_titular.Name = "txt_titular";
-            this.txt_titular.Size = new System.Drawing.Size(290, 26);
+            this.txt_titular.Size = new System.Drawing.Size(290, 30);
             this.txt_titular.TabIndex = 3;
             // 
             // txt_distintiva
             // 
-            this.txt_distintiva.Location = new System.Drawing.Point(210, 130);
+            this.txt_distintiva.Location = new System.Drawing.Point(211, 163);
             this.txt_distintiva.Multiline = true;
             this.txt_distintiva.Name = "txt_distintiva";
             this.txt_distintiva.Size = new System.Drawing.Size(290, 110);
-            this.txt_distintiva.TabIndex = 4;
+            this.txt_distintiva.TabIndex = 5;
             // 
             // txt_fabricante
             // 
-            this.txt_fabricante.Location = new System.Drawing.Point(706, 17);
+            this.txt_fabricante.Location = new System.Drawing.Point(707, 17);
             this.txt_fabricante.Name = "txt_fabricante";
-            this.txt_fabricante.ReadOnly = true;
-            this.txt_fabricante.Size = new System.Drawing.Size(167, 26);
-            this.txt_fabricante.TabIndex = 99;
+            this.txt_fabricante.Size = new System.Drawing.Size(288, 30);
+            this.txt_fabricante.TabIndex = 7;
             // 
             // txt_marca
             // 
             this.txt_marca.Location = new System.Drawing.Point(707, 64);
             this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(288, 26);
-            this.txt_marca.TabIndex = 7;
-            // 
-            // txt_nacionalidad
-            // 
-            this.txt_nacionalidad.Location = new System.Drawing.Point(706, 151);
-            this.txt_nacionalidad.Name = "txt_nacionalidad";
-            this.txt_nacionalidad.Size = new System.Drawing.Size(289, 26);
-            this.txt_nacionalidad.TabIndex = 11;
-            // 
-            // txt_tlc
-            // 
-            this.txt_tlc.Location = new System.Drawing.Point(706, 193);
-            this.txt_tlc.Name = "txt_tlc";
-            this.txt_tlc.Size = new System.Drawing.Size(289, 26);
-            this.txt_tlc.TabIndex = 12;
+            this.txt_marca.Size = new System.Drawing.Size(288, 30);
+            this.txt_marca.TabIndex = 8;
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(707, 326);
+            this.btn_archivo.Location = new System.Drawing.Point(707, 293);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(123, 36);
             this.btn_archivo.TabIndex = 15;
@@ -245,25 +226,25 @@
             // 
             // txt_generica
             // 
-            this.txt_generica.Location = new System.Drawing.Point(211, 261);
+            this.txt_generica.Location = new System.Drawing.Point(212, 294);
             this.txt_generica.Multiline = true;
             this.txt_generica.Name = "txt_generica";
             this.txt_generica.Size = new System.Drawing.Size(289, 110);
-            this.txt_generica.TabIndex = 5;
+            this.txt_generica.TabIndex = 6;
             // 
             // date_emision
             // 
-            this.date_emision.Location = new System.Drawing.Point(707, 235);
+            this.date_emision.Location = new System.Drawing.Point(707, 202);
             this.date_emision.Name = "date_emision";
-            this.date_emision.Size = new System.Drawing.Size(288, 26);
+            this.date_emision.Size = new System.Drawing.Size(288, 30);
             this.date_emision.TabIndex = 13;
             this.date_emision.ValueChanged += new System.EventHandler(this.date_emision_ValueChanged);
             // 
             // date_vencimiento
             // 
-            this.date_vencimiento.Location = new System.Drawing.Point(707, 281);
+            this.date_vencimiento.Location = new System.Drawing.Point(707, 248);
             this.date_vencimiento.Name = "date_vencimiento";
-            this.date_vencimiento.Size = new System.Drawing.Size(288, 26);
+            this.date_vencimiento.Size = new System.Drawing.Size(288, 30);
             this.date_vencimiento.TabIndex = 14;
             // 
             // tt_reg_nuevo
@@ -274,7 +255,7 @@
             this.btn_reg_descartar,
             this.btn_reg_guardar,
             this.txt_limpiar_campos});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 397);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 427);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(1029, 57);
             this.tt_reg_nuevo.TabIndex = 27;
@@ -313,22 +294,12 @@
             this.txt_limpiar_campos.Text = "Limpiar";
             this.txt_limpiar_campos.Click += new System.EventHandler(this.txt_limpiar_campos_Click);
             // 
-            // btn_selec_fabricante
-            // 
-            this.btn_selec_fabricante.Location = new System.Drawing.Point(879, 14);
-            this.btn_selec_fabricante.Name = "btn_selec_fabricante";
-            this.btn_selec_fabricante.Size = new System.Drawing.Size(116, 26);
-            this.btn_selec_fabricante.TabIndex = 6;
-            this.btn_selec_fabricante.Text = "Seleccionar";
-            this.btn_selec_fabricante.UseVisualStyleBackColor = true;
-            this.btn_selec_fabricante.Click += new System.EventHandler(this.btn_selec_fabricante_Click);
-            // 
             // lbl_reg_archivo
             // 
             this.lbl_reg_archivo.AutoSize = true;
-            this.lbl_reg_archivo.Location = new System.Drawing.Point(520, 375);
+            this.lbl_reg_archivo.Location = new System.Drawing.Point(520, 342);
             this.lbl_reg_archivo.Name = "lbl_reg_archivo";
-            this.lbl_reg_archivo.Size = new System.Drawing.Size(60, 20);
+            this.lbl_reg_archivo.Size = new System.Drawing.Size(75, 25);
             this.lbl_reg_archivo.TabIndex = 31;
             this.lbl_reg_archivo.Text = "label13";
             // 
@@ -337,7 +308,7 @@
             this.lbl_tipo.AutoSize = true;
             this.lbl_tipo.Location = new System.Drawing.Point(656, 113);
             this.lbl_tipo.Name = "lbl_tipo";
-            this.lbl_tipo.Size = new System.Drawing.Size(43, 20);
+            this.lbl_tipo.Size = new System.Drawing.Size(57, 25);
             this.lbl_tipo.TabIndex = 32;
             this.lbl_tipo.Text = "Tipo:";
             // 
@@ -346,8 +317,8 @@
             this.rad_registro.AutoSize = true;
             this.rad_registro.Location = new System.Drawing.Point(707, 115);
             this.rad_registro.Name = "rad_registro";
-            this.rad_registro.Size = new System.Drawing.Size(87, 24);
-            this.rad_registro.TabIndex = 8;
+            this.rad_registro.Size = new System.Drawing.Size(104, 29);
+            this.rad_registro.TabIndex = 9;
             this.rad_registro.TabStop = true;
             this.rad_registro.Text = "Registro";
             this.rad_registro.UseVisualStyleBackColor = true;
@@ -357,8 +328,8 @@
             this.rad_modificacion.AutoSize = true;
             this.rad_modificacion.Location = new System.Drawing.Point(800, 115);
             this.rad_modificacion.Name = "rad_modificacion";
-            this.rad_modificacion.Size = new System.Drawing.Size(115, 24);
-            this.rad_modificacion.TabIndex = 9;
+            this.rad_modificacion.Size = new System.Drawing.Size(142, 29);
+            this.rad_modificacion.TabIndex = 10;
             this.rad_modificacion.TabStop = true;
             this.rad_modificacion.Text = "Modificación";
             this.rad_modificacion.UseVisualStyleBackColor = true;
@@ -368,30 +339,72 @@
             this.rad_prorroga.AutoSize = true;
             this.rad_prorroga.Location = new System.Drawing.Point(921, 115);
             this.rad_prorroga.Name = "rad_prorroga";
-            this.rad_prorroga.Size = new System.Drawing.Size(88, 24);
-            this.rad_prorroga.TabIndex = 10;
+            this.rad_prorroga.Size = new System.Drawing.Size(108, 29);
+            this.rad_prorroga.TabIndex = 11;
             this.rad_prorroga.TabStop = true;
             this.rad_prorroga.Text = "Prórroga";
             this.rad_prorroga.UseVisualStyleBackColor = true;
             // 
+            // txt_rfc
+            // 
+            this.txt_rfc.Location = new System.Drawing.Point(211, 128);
+            this.txt_rfc.Name = "txt_rfc";
+            this.txt_rfc.Size = new System.Drawing.Size(290, 30);
+            this.txt_rfc.TabIndex = 4;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(158, 131);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 25);
+            this.label9.TabIndex = 100;
+            this.label9.Text = "RFC:";
+            // 
+            // cmb_pais
+            // 
+            this.cmb_pais.DataSource = this.paisesorigenBindingSource;
+            this.cmb_pais.DisplayMember = "nombre";
+            this.cmb_pais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_pais.FormattingEnabled = true;
+            this.cmb_pais.Location = new System.Drawing.Point(707, 155);
+            this.cmb_pais.Name = "cmb_pais";
+            this.cmb_pais.Size = new System.Drawing.Size(288, 33);
+            this.cmb_pais.TabIndex = 101;
+            this.cmb_pais.ValueMember = "id_pais";
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // paisesorigenBindingSource
+            // 
+            this.paisesorigenBindingSource.DataMember = "paises_origen";
+            this.paisesorigenBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // paises_origenTableAdapter
+            // 
+            this.paises_origenTableAdapter.ClearBeforeFill = true;
+            // 
             // Registros_Nuevo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 454);
+            this.ClientSize = new System.Drawing.Size(1029, 484);
+            this.Controls.Add(this.cmb_pais);
+            this.Controls.Add(this.txt_rfc);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.rad_prorroga);
             this.Controls.Add(this.rad_modificacion);
             this.Controls.Add(this.rad_registro);
             this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.lbl_reg_archivo);
-            this.Controls.Add(this.btn_selec_fabricante);
             this.Controls.Add(this.tt_reg_nuevo);
             this.Controls.Add(this.date_vencimiento);
             this.Controls.Add(this.date_emision);
             this.Controls.Add(this.txt_generica);
             this.Controls.Add(this.btn_archivo);
-            this.Controls.Add(this.txt_tlc);
-            this.Controls.Add(this.txt_nacionalidad);
             this.Controls.Add(this.txt_marca);
             this.Controls.Add(this.txt_fabricante);
             this.Controls.Add(this.txt_distintiva);
@@ -401,7 +414,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -415,8 +427,11 @@
             this.Name = "Registros_Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario de captura para Registros Sanitarios";
+            this.Load += new System.EventHandler(this.Registros_Nuevo_Load);
             this.tt_reg_nuevo.ResumeLayout(false);
             this.tt_reg_nuevo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.paisesorigenBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,7 +447,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
@@ -442,8 +456,6 @@
         private System.Windows.Forms.TextBox txt_distintiva;
         private System.Windows.Forms.TextBox txt_fabricante;
         private System.Windows.Forms.TextBox txt_marca;
-        private System.Windows.Forms.TextBox txt_nacionalidad;
-        private System.Windows.Forms.TextBox txt_tlc;
         private System.Windows.Forms.Button btn_archivo;
         private System.Windows.Forms.TextBox txt_generica;
         private System.Windows.Forms.DateTimePicker date_emision;
@@ -451,12 +463,17 @@
         private System.Windows.Forms.ToolStrip tt_reg_nuevo;
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
-        private System.Windows.Forms.Button btn_selec_fabricante;
         private System.Windows.Forms.Label lbl_reg_archivo;
         private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
         private System.Windows.Forms.RadioButton rad_registro;
         private System.Windows.Forms.RadioButton rad_modificacion;
         private System.Windows.Forms.RadioButton rad_prorroga;
+        private System.Windows.Forms.TextBox txt_rfc;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cmb_pais;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource paisesorigenBindingSource;
+        private LicitacionesDataSetTableAdapters.paises_origenTableAdapter paises_origenTableAdapter;
     }
 }

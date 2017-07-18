@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibLicitacion;
+using System.IO;
 
 namespace AppLicitaciones
 {
@@ -38,7 +39,8 @@ namespace AppLicitaciones
                 lbl_year.Text = dt.Rows[0]["publicacion"].ToString();
                 lbl_tipo.Text = dt.Rows[0]["tipo_catalogo"].ToString();
                 lbl_idioma.Text = dt.Rows[0]["idioma"].ToString();
-                lbl_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
+                lbl_fabricante.Text = dt.Rows[0]["fabricante"].ToString();
+                lbl_marca.Text = dt.Rows[0]["marca"].ToString();
                 lbl_especialidad.Text = dt.Rows[0]["spec_catalogo"].ToString();
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
             }
@@ -46,7 +48,7 @@ namespace AppLicitaciones
 
         private void btn_ver_archivo_Click(object sender, EventArgs e)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Catalogos-Productos\";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Catalogos-Productos\";
             string pathanexos = newpath + "\\" + id_catalogo + "\\" + lbl_archivo.Text;
 
             if (lbl_archivo.Text != "(Vacio)")

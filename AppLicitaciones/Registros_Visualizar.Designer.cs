@@ -33,7 +33,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,8 +45,7 @@
             this.lbl_reg_titular = new System.Windows.Forms.Label();
             this.lbl_reg_fabricante = new System.Windows.Forms.Label();
             this.lbl_reg_marca = new System.Windows.Forms.Label();
-            this.lbl_reg_nacionalidad = new System.Windows.Forms.Label();
-            this.lbl_reg_tlc = new System.Windows.Forms.Label();
+            this.lbl_reg_pais = new System.Windows.Forms.Label();
             this.lbl_reg_emision = new System.Windows.Forms.Label();
             this.lbl_reg_vencimiento = new System.Windows.Forms.Label();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
@@ -60,6 +58,8 @@
             this.lbl_reg_tipo = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btn_archivo_abrir = new System.Windows.Forms.Button();
+            this.lbl_rfc = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,25 +93,16 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(153, 218);
+            this.label9.Location = new System.Drawing.Point(148, 218);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(38, 20);
+            this.label9.Size = new System.Drawing.Size(43, 20);
             this.label9.TabIndex = 68;
-            this.label9.Text = "TLC";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(87, 188);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(104, 20);
-            this.label8.TabIndex = 66;
-            this.label8.Text = "Nacionalidad:";
+            this.label9.Text = "Pais:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(135, 130);
+            this.label7.Location = new System.Drawing.Point(135, 161);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 20);
             this.label7.TabIndex = 63;
@@ -120,7 +111,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(102, 100);
+            this.label6.Location = new System.Drawing.Point(102, 131);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 61;
@@ -147,7 +138,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(135, 70);
+            this.label3.Location = new System.Drawing.Point(136, 69);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 56;
@@ -193,7 +184,7 @@
             // lbl_reg_titular
             // 
             this.lbl_reg_titular.AutoSize = true;
-            this.lbl_reg_titular.Location = new System.Drawing.Point(197, 70);
+            this.lbl_reg_titular.Location = new System.Drawing.Point(198, 69);
             this.lbl_reg_titular.Name = "lbl_reg_titular";
             this.lbl_reg_titular.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_titular.TabIndex = 76;
@@ -202,7 +193,7 @@
             // lbl_reg_fabricante
             // 
             this.lbl_reg_fabricante.AutoSize = true;
-            this.lbl_reg_fabricante.Location = new System.Drawing.Point(197, 100);
+            this.lbl_reg_fabricante.Location = new System.Drawing.Point(197, 131);
             this.lbl_reg_fabricante.Name = "lbl_reg_fabricante";
             this.lbl_reg_fabricante.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_fabricante.TabIndex = 77;
@@ -211,29 +202,20 @@
             // lbl_reg_marca
             // 
             this.lbl_reg_marca.AutoSize = true;
-            this.lbl_reg_marca.Location = new System.Drawing.Point(197, 130);
+            this.lbl_reg_marca.Location = new System.Drawing.Point(197, 161);
             this.lbl_reg_marca.Name = "lbl_reg_marca";
             this.lbl_reg_marca.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_marca.TabIndex = 78;
             this.lbl_reg_marca.Text = "label17";
             // 
-            // lbl_reg_nacionalidad
+            // lbl_reg_pais
             // 
-            this.lbl_reg_nacionalidad.AutoSize = true;
-            this.lbl_reg_nacionalidad.Location = new System.Drawing.Point(197, 188);
-            this.lbl_reg_nacionalidad.Name = "lbl_reg_nacionalidad";
-            this.lbl_reg_nacionalidad.Size = new System.Drawing.Size(60, 20);
-            this.lbl_reg_nacionalidad.TabIndex = 79;
-            this.lbl_reg_nacionalidad.Text = "label18";
-            // 
-            // lbl_reg_tlc
-            // 
-            this.lbl_reg_tlc.AutoSize = true;
-            this.lbl_reg_tlc.Location = new System.Drawing.Point(197, 218);
-            this.lbl_reg_tlc.Name = "lbl_reg_tlc";
-            this.lbl_reg_tlc.Size = new System.Drawing.Size(60, 20);
-            this.lbl_reg_tlc.TabIndex = 80;
-            this.lbl_reg_tlc.Text = "label19";
+            this.lbl_reg_pais.AutoSize = true;
+            this.lbl_reg_pais.Location = new System.Drawing.Point(197, 218);
+            this.lbl_reg_pais.Name = "lbl_reg_pais";
+            this.lbl_reg_pais.Size = new System.Drawing.Size(60, 20);
+            this.lbl_reg_pais.TabIndex = 80;
+            this.lbl_reg_pais.Text = "label19";
             // 
             // lbl_reg_emision
             // 
@@ -333,7 +315,7 @@
             // lbl_reg_tipo
             // 
             this.lbl_reg_tipo.AutoSize = true;
-            this.lbl_reg_tipo.Location = new System.Drawing.Point(198, 159);
+            this.lbl_reg_tipo.Location = new System.Drawing.Point(198, 190);
             this.lbl_reg_tipo.Name = "lbl_reg_tipo";
             this.lbl_reg_tipo.Size = new System.Drawing.Size(60, 20);
             this.lbl_reg_tipo.TabIndex = 88;
@@ -342,7 +324,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(148, 159);
+            this.label14.Location = new System.Drawing.Point(148, 190);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(43, 20);
             this.label14.TabIndex = 87;
@@ -358,11 +340,31 @@
             this.btn_archivo_abrir.UseVisualStyleBackColor = true;
             this.btn_archivo_abrir.Click += new System.EventHandler(this.btn_archivo_abrir_Click);
             // 
+            // lbl_rfc
+            // 
+            this.lbl_rfc.AutoSize = true;
+            this.lbl_rfc.Location = new System.Drawing.Point(198, 99);
+            this.lbl_rfc.Name = "lbl_rfc";
+            this.lbl_rfc.Size = new System.Drawing.Size(60, 20);
+            this.lbl_rfc.TabIndex = 91;
+            this.lbl_rfc.Text = "label19";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(146, 100);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 20);
+            this.label13.TabIndex = 90;
+            this.label13.Text = "RFC:";
+            // 
             // Registros_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 602);
+            this.Controls.Add(this.lbl_rfc);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_archivo_abrir);
             this.Controls.Add(this.lbl_reg_tipo);
             this.Controls.Add(this.label14);
@@ -372,8 +374,7 @@
             this.Controls.Add(this.lbl_reg_archivo);
             this.Controls.Add(this.lbl_reg_vencimiento);
             this.Controls.Add(this.lbl_reg_emision);
-            this.Controls.Add(this.lbl_reg_tlc);
-            this.Controls.Add(this.lbl_reg_nacionalidad);
+            this.Controls.Add(this.lbl_reg_pais);
             this.Controls.Add(this.lbl_reg_marca);
             this.Controls.Add(this.lbl_reg_fabricante);
             this.Controls.Add(this.lbl_reg_titular);
@@ -383,7 +384,6 @@
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -409,7 +409,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -422,8 +421,7 @@
         private System.Windows.Forms.Label lbl_reg_titular;
         private System.Windows.Forms.Label lbl_reg_fabricante;
         private System.Windows.Forms.Label lbl_reg_marca;
-        private System.Windows.Forms.Label lbl_reg_nacionalidad;
-        private System.Windows.Forms.Label lbl_reg_tlc;
+        private System.Windows.Forms.Label lbl_reg_pais;
         private System.Windows.Forms.Label lbl_reg_emision;
         private System.Windows.Forms.Label lbl_reg_vencimiento;
         private System.Windows.Forms.Label lbl_reg_archivo;
@@ -436,5 +434,7 @@
         private System.Windows.Forms.Label lbl_reg_tipo;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btn_archivo_abrir;
+        private System.Windows.Forms.Label lbl_rfc;
+        private System.Windows.Forms.Label label13;
     }
 }

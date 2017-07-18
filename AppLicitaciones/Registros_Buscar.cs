@@ -52,7 +52,7 @@ namespace AppLicitaciones
             txt_buscar_numero.Visible = false;
             txt_buscar_solicitud.Visible = false;
             txt_buscar_titular.Visible = false;
-            cmb_buscar_fabricante.Visible = false;
+            txt_fabricante.Visible = false;
             txt_buscar_marca.Visible = false;
             txt_buscar_nacionalidad.Visible = false;
             txt_buscar_tlc.Visible = false;
@@ -80,7 +80,7 @@ namespace AppLicitaciones
                     break;
                 case 5:
                     ctrl = "fabricante";
-                    valor = cmb_buscar_fabricante.SelectedValue.ToString();
+                    valor = txt_fabricante.Text;
                     break;
                 case 6:
                     ctrl = "marca";
@@ -113,12 +113,7 @@ namespace AppLicitaciones
             this.Close();
         }
 
-        private void Registros_Buscar_Load(object sender, EventArgs e)
-        {
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.fabricantes_titulares_distribuidores' Puede moverla o quitarla según sea necesario.
-            this.fabricantes_titulares_distribuidoresTableAdapter.Fill(this.licitacionesDataSet.fabricantes_titulares_distribuidores);
-            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.fabricantes_titulares_distribuidores' Puede moverla o quitarla según sea necesario.
-        }
+       
         private void cmb_opciones_buscqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
             escondercontroles();
@@ -139,7 +134,7 @@ namespace AppLicitaciones
                     break;
                 case 5:
                     lbl_fabricante.Visible = true;
-                    cmb_buscar_fabricante.Visible = true;                   
+                    txt_fabricante.Visible = true;                   
                     break;
                 case 6:
                     lbl_marca.Visible = true;

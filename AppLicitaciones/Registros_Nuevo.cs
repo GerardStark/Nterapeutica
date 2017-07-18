@@ -32,19 +32,19 @@ namespace AppLicitaciones
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("insert into registros_sanitarios (numero_registro,numero_solicitud,titular,denom_distintiva,denom_generica,fabricante,"+
-                "marca,nacionalidad,tratado_comercio,fecha_emision,fecha_vencimiento,dir_archivo,actualizado_en,tipo) OUTPUT INSERTED.Id_registro "+
-                "values(@numero,@solicitud,@titular,@distintiva,@generica,@fabricante,@marca,@nacionalidad,@tlc,@emision,@vencimiento,@archivo,@actualizado,@tipo)", con);
+                SqlCommand cmd = new SqlCommand("insert into registros_sanitarios (numero_registro,numero_solicitud,titular,rfc,denom_distintiva,denom_generica,fabricante,"+
+                "marca,pais_origen,fecha_emision,fecha_vencimiento,dir_archivo,actualizado_en,tipo) OUTPUT INSERTED.Id_registro "+
+                "values(@numero,@solicitud,@titular,@rfc,@distintiva,@generica,@fabricante,@marca,@pais,@emision,@vencimiento,@archivo,@actualizado,@tipo)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@numero",txt_numero.Text);
                 cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text);
                 cmd.Parameters.AddWithValue("@titular",txt_titular.Text);
+                cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
                 cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
                 cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
-                cmd.Parameters.AddWithValue("@fabricante", id_fabricante);
+                cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
                 cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
-                cmd.Parameters.AddWithValue("@nacionalidad", txt_nacionalidad.Text);
-                cmd.Parameters.AddWithValue("@tlc", txt_tlc.Text);
+                cmd.Parameters.AddWithValue("@pais", cmb_pais.SelectedValue);
                 cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
                 cmd.Parameters.AddWithValue("@vencimiento",date_vencimiento.Value.Date);
                 cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
@@ -100,6 +100,13 @@ namespace AppLicitaciones
             date_vencimiento.Value = vencimiento;
         }
 
+        private void Registros_Nuevo_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.paises_origen' Puede moverla o quitarla según sea necesario.
+            this.paises_origenTableAdapter.Fill(this.licitacionesDataSet.paises_origen);
+
+        }
+
         private void btn_reg_descartar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -111,12 +118,12 @@ namespace AppLicitaciones
             txt_numero.Text = "";
             txt_solicitud.Text = "";
             txt_titular.Text = "";
+            txt_rfc.Text = "";
             txt_distintiva.Text = "";
             txt_generica.Text = "";
             txt_fabricante.Text = "";
             txt_marca.Text = "";
-            txt_nacionalidad.Text = "";
-            txt_tlc.Text = "";
+            cmb_pais.SelectedIndex = 0;
             lbl_reg_archivo.Text = "";
             date_emision.ResetText();
             date_vencimiento.ResetText();

@@ -170,8 +170,7 @@ namespace AppLicitaciones
                 txt_descripcion.Text = dt.Rows[0]["descripcion_detallada"].ToString();
                 cmb_tipo.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["tipo"].ToString(), cmb_tipo);
                 cmb_idioma.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["idioma"].ToString(), cmb_idioma);
-                txt_fabricante.Text = mc.obtenernombrefabricante(Convert.ToInt32(dt.Rows[0]["fabricante"]));
-                id_fabricante = Convert.ToInt32(dt.Rows[0]["fabricante"]);
+                txt_fabricante.Text = dt.Rows[0]["fabricante"].ToString();              
                 date_emision.Text = dt.Rows[0]["fecha_emision"].ToString();
                 date_vencimiento.Text = dt.Rows[0]["fecha_vencimiento"].ToString();
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
@@ -194,7 +193,7 @@ namespace AppLicitaciones
             cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
             cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
             cmd.Parameters.AddWithValue("@desc", txt_descripcion.Text);
-            cmd.Parameters.AddWithValue("@fabr", id_fabricante);
+            cmd.Parameters.AddWithValue("@fabr", txt_fabricante.Text);
             cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
             cmd.Parameters.AddWithValue("@vencimento", date_vencimiento.Value.Date);
             cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);

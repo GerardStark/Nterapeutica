@@ -15,7 +15,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public string con = @"Data Source=192.168.1.101\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=False;User Id=user; Password=gerardo123;";  
+        public string con = @"Data Source=192.168.1.108\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=oirwbg6v23; ";  
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)
@@ -97,6 +97,35 @@ namespace LibLicitacion
             }
 
             return value - 1;
+        }
+
+        public string obtenernombrepais(int idpais)
+        {
+            string nombre = "";
+            if (idpais != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from paises_origen where id_pais=@id", conec);
+                cmd.Parameters.AddWithValue("@id", idpais);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "paises");
+                conec.Close();
+                if (ds.Tables["paises"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["paises"].Rows[0]["nombre"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
         }
     }
 

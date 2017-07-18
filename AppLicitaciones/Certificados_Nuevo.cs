@@ -105,7 +105,7 @@ namespace AppLicitaciones
             cmd.Parameters.AddWithValue("@clave",txt_clave.Text);
             cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
             cmd.Parameters.AddWithValue("@desc",txt_descripcion.Text);
-            cmd.Parameters.AddWithValue("@fabr",id_fabricante);
+            cmd.Parameters.AddWithValue("@fabr", txt_fabricante.Text);
             cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
             cmd.Parameters.AddWithValue("@vencimento", date_vencimiento.Value.Date);
             cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);

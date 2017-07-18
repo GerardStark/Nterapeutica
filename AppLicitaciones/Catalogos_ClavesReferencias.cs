@@ -30,7 +30,7 @@ namespace AppLicitaciones
             {
                 DGV_Referencias.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_clave_catalogo, clave_ref_cod, descripcion, unidad_venta " +
+                SqlCommand cmd = new SqlCommand("Select id_clave_catalogo, clave_ref_cod, descripcion, unidad_venta, pagina_pdf,pagina_cat " +
                     "from catalogos_claves_referencias where id_catalogo_productos = @id", con);
                 cmd.Parameters.AddWithValue("@id", id_catalogo);
                 con.Open();
@@ -54,13 +54,15 @@ namespace AppLicitaciones
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("INSERT into catalogos_claves_referencias (id_catalogo_productos,clave_ref_cod, descripcion, unidad_venta,actualizado_en)" +
-                    "values (@idcatalogo,@clave,@descripcion,@unidad,@actualizado)", con);
+                SqlCommand cmd = new SqlCommand("INSERT into catalogos_claves_referencias (id_catalogo_productos,clave_ref_cod,descripcion,unidad_venta,pagina_pdf,pagina_cat,actualizado_en)" +
+                    "values (@idcatalogo,@clave,@descripcion,@unidad,@pagpdf,@pagcat,@actualizado)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
                 cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
                 cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
+                cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -82,13 +84,15 @@ namespace AppLicitaciones
                 {
                     SqlConnection con = new SqlConnection(mc.con);
                     SqlCommand cmd = new SqlCommand("UPDATE catalogos_claves_referencias set clave_ref_cod = @clave , descripcion = @descripcion, unidad_venta = @unidad" +
-                        ",actualizado_en = @actualizado where id_clave_catalogo = @id", con);
+                        ",pagina_pdf = @pagpdf,pagina_cat = @pagcat, actualizado_en = @actualizado where id_clave_catalogo = @id", con);
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", id_referencia);
                     cmd.Parameters.AddWithValue("@idregistro", id_catalogo);
                     cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
                     cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                    cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
+                    cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -144,6 +148,8 @@ namespace AppLicitaciones
                 txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
                 txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
                 txt_unidad.Text = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
+                txt_pag_pdf.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagpdfColumn"].Value.ToString();
+                txt_pag_cat.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagcatColumn"].Value.ToString();
                 btn_guardar.Enabled = false;
             }
         }
@@ -157,6 +163,8 @@ namespace AppLicitaciones
                 txt_clave.Text = "";
                 txt_descripcion.Text = "";
                 txt_unidad.Text = "";
+                txt_pag_cat.Text = "";
+                txt_pag_pdf.Text = "";
             }
         }
     }

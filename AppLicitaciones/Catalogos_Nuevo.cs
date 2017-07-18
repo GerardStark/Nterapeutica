@@ -45,6 +45,7 @@ namespace AppLicitaciones
             cmb_idioma.SelectedIndex = 0;
             cmb_tipo.SelectedIndex = 0;
             txt_fabricante.Text = "";
+            txt_marca.Text = "";
             cmb_spec.SelectedIndex = 0;
             lbl_archivo.Text = "";
         }
@@ -67,19 +68,28 @@ namespace AppLicitaciones
             this.Close();
         }
 
+        private void txt_year_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into catalogos_info_general (nombre_catalogo,publicacion,tipo_catalogo,spec_catalogo,fabricante, " +
-                    "idioma,dir_archivo,actualizado_en) OUTPUT INSERTED.id_catalogo values (@nombre,@año,@tipo,@espec,@fabricante,@idioma,@archivo,@actualizado)", con);
+                SqlCommand cmd = new SqlCommand("Insert into catalogos_info_general (id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca, " +
+                    "idioma,dir_archivo,actualizado_en) OUTPUT INSERTED.id_catalogo values (@nombre,@año,@tipo,@espec,@fabricante,@marca,@idioma,@archivo,@actualizado)", con);
                 cmd.Parameters.AddWithValue("@nombre",txt_nombre.Text);
                 cmd.Parameters.AddWithValue("@año",txt_year.Text);
                 cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
-                cmd.Parameters.AddWithValue("@fabricante",id_fabricante);
+                cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
+                cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
                 cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@archivo",lbl_archivo.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);

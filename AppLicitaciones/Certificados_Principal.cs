@@ -104,20 +104,7 @@ namespace AppLicitaciones
         {
             switch (this.DGV_certificados.Columns[e.ColumnIndex].Name)
             {
-                case "fabrColumn":
-                    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
-                    {
-                        if (Convert.ToInt32(e.Value) > 0)
-                        {
-                            int idfab = Convert.ToInt32(DGV_certificados.Rows[e.RowIndex].Cells["fabrColumn"].Value);
-                            e.Value = mc.obtenernombrefabricante(idfab);
-                        }
-                    }
-                    else
-                    {
-                        e.Value = "(Vacio)";
-                    }
-                    break;
+                
             }
         }
 

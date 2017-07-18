@@ -29,7 +29,7 @@ namespace AppLicitaciones
             {
                 DGVRegistros.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,fabricante,marca,nacionalidad,tratado_comercio," +
+                SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,rfc,tipo,titular,fabricante,marca,pais_origen," +
                     "fecha_emision,fecha_vencimiento from registros_sanitarios", con);
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
@@ -155,17 +155,22 @@ namespace AppLicitaciones
             }
         }
 
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Aun eres muy joven para usar esta técnica");
+        }
+
         private void DGVRegistros_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             switch (this.DGVRegistros.Columns[e.ColumnIndex].Name)
             {
-                case "fabrColumn":
+                case "paisColumn":
                     if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
                     {
                         if (Convert.ToInt32(e.Value) > 0)
                         {
-                            int idfab = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["fabrColumn"].Value);
-                            e.Value = mc.obtenernombrefabricante(idfab);
+                            int idpais = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["paisColumn"].Value);
+                            e.Value = mc.obtenernombrepais(idpais);
                         }
                     }
                     else
