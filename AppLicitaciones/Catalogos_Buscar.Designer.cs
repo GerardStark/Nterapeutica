@@ -37,7 +37,6 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_cat_buscar = new System.Windows.Forms.ToolStripButton();
             this.btn_buscar_cancelar = new System.Windows.Forms.ToolStripButton();
-            this.cmb_buscar_fabricante = new System.Windows.Forms.ComboBox();
             this.fabricantestitularesdistribuidoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.fabricantes_titulares_distribuidoresTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.fabricantes_titulares_distribuidoresTableAdapter();
@@ -116,17 +115,6 @@
             this.btn_buscar_cancelar.Size = new System.Drawing.Size(54, 54);
             this.btn_buscar_cancelar.Text = "Opciones";
             // 
-            // cmb_buscar_fabricante
-            // 
-            this.cmb_buscar_fabricante.DataSource = this.fabricantestitularesdistribuidoresBindingSource;
-            this.cmb_buscar_fabricante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_buscar_fabricante.FormattingEnabled = true;
-            this.cmb_buscar_fabricante.Location = new System.Drawing.Point(150, 107);
-            this.cmb_buscar_fabricante.Name = "cmb_buscar_fabricante";
-            this.cmb_buscar_fabricante.Size = new System.Drawing.Size(272, 28);
-            this.cmb_buscar_fabricante.TabIndex = 100;
-            this.cmb_buscar_fabricante.Visible = false;
-            // 
             // fabricantestitularesdistribuidoresBindingSource
             // 
             this.fabricantestitularesdistribuidoresBindingSource.DataMember = "fabricantes_titulares_distribuidores";
@@ -145,7 +133,7 @@
             // 
             this.cmb_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_spec.FormattingEnabled = true;
-            this.cmb_spec.Location = new System.Drawing.Point(150, 106);
+            this.cmb_spec.Location = new System.Drawing.Point(150, 104);
             this.cmb_spec.Name = "cmb_spec";
             this.cmb_spec.Size = new System.Drawing.Size(272, 28);
             this.cmb_spec.TabIndex = 101;
@@ -155,7 +143,7 @@
             // 
             this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Location = new System.Drawing.Point(150, 106);
+            this.cmb_tipo.Location = new System.Drawing.Point(150, 107);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(272, 28);
             this.cmb_tipo.TabIndex = 102;
@@ -168,7 +156,6 @@
             this.ClientSize = new System.Drawing.Size(526, 233);
             this.Controls.Add(this.cmb_tipo);
             this.Controls.Add(this.cmb_spec);
-            this.Controls.Add(this.cmb_buscar_fabricante);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txt_parametros);
             this.Controls.Add(this.lbl_tipo_filtro);
@@ -197,7 +184,6 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_cat_buscar;
         private System.Windows.Forms.ToolStripButton btn_buscar_cancelar;
-        private System.Windows.Forms.ComboBox cmb_buscar_fabricante;
         private LicitacionesDataSet licitacionesDataSet;
         private System.Windows.Forms.BindingSource fabricantestitularesdistribuidoresBindingSource;
         private LicitacionesDataSetTableAdapters.fabricantes_titulares_distribuidoresTableAdapter fabricantes_titulares_distribuidoresTableAdapter;

@@ -302,7 +302,6 @@
             this.Name = "Registros_Buscar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar Registros Sanitarios";
-            
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

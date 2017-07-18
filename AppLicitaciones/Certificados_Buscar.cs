@@ -50,7 +50,7 @@ namespace AppLicitaciones
                     break;
                 case 5:
                     ctrl = "fabricante";
-                    valor = cmb_buscar_fabricante.SelectedValue.ToString();
+                    valor = txt_parametros.Text;
                     break;
             }
             this.DialogResult = DialogResult.OK;
@@ -60,7 +60,7 @@ namespace AppLicitaciones
         private void cmb_filtros_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_parametros.Visible = false;
-            cmb_buscar_fabricante.Visible = false;
+            
             int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
             switch (value)
             {

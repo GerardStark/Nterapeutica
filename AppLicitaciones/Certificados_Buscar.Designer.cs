@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Certificados_Buscar));
-            this.cmb_buscar_fabricante = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_cat_buscar = new System.Windows.Forms.ToolStripButton();
             this.btn_buscar_cancelar = new System.Windows.Forms.ToolStripButton();
@@ -39,18 +38,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cmb_buscar_fabricante
-            // 
-            this.cmb_buscar_fabricante.DisplayMember = "nombre";
-            this.cmb_buscar_fabricante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_buscar_fabricante.FormattingEnabled = true;
-            this.cmb_buscar_fabricante.Location = new System.Drawing.Point(150, 94);
-            this.cmb_buscar_fabricante.Name = "cmb_buscar_fabricante";
-            this.cmb_buscar_fabricante.Size = new System.Drawing.Size(272, 28);
-            this.cmb_buscar_fabricante.TabIndex = 106;
-            this.cmb_buscar_fabricante.ValueMember = "id_ftd";
-            this.cmb_buscar_fabricante.Visible = false;
             // 
             // toolStrip1
             // 
@@ -126,7 +113,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 233);
-            this.Controls.Add(this.cmb_buscar_fabricante);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.txt_parametros);
             this.Controls.Add(this.lbl_tipo_filtro);
@@ -144,8 +130,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cmb_buscar_fabricante;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_cat_buscar;
         private System.Windows.Forms.ToolStripButton btn_buscar_cancelar;

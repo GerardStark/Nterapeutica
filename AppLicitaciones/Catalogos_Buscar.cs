@@ -42,7 +42,7 @@ namespace AppLicitaciones
         private void cmb_filtros_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_parametros.Visible = false;
-            cmb_buscar_fabricante.Visible = false;
+            
             int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
             switch (value)
             {
@@ -69,8 +69,8 @@ namespace AppLicitaciones
                     break;
                 case 6:
                     lbl_tipo_filtro.Text = "Fabricante:";
-                    txt_parametros.Visible = false;
-                    cmb_buscar_fabricante.Visible = true;
+                    txt_parametros.Visible = true;
+
                     break;
             }
         }
@@ -98,7 +98,7 @@ namespace AppLicitaciones
                     break;
                 case 6:
                     ctrl = "fabricante";
-                    valor = cmb_buscar_fabricante.SelectedValue.ToString();
+                    valor = txt_parametros.Text;
                     break;
             }
             this.DialogResult = DialogResult.OK;
@@ -109,7 +109,6 @@ namespace AppLicitaciones
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.fabricantes_titulares_distribuidores' Puede moverla o quitarla según sea necesario.
             this.fabricantes_titulares_distribuidoresTableAdapter.Fill(this.licitacionesDataSet.fabricantes_titulares_distribuidores);
-
         }
     }
 }
