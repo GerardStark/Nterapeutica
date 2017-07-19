@@ -41,7 +41,7 @@ namespace AppLicitaciones
                 lbl_reg_marca.Text = dt.Rows[0]["marca"].ToString();
                 lbl_rfc.Text = dt.Rows[0]["rfc"].ToString();
                 //encontrar pais
-                lbl_reg_pais.Text = dt.Rows[0]["pais_origen"].ToString();
+                lbl_reg_pais.Text = mc.obtenernombrepais(Convert.ToInt32(dt.Rows[0]["pais_origen"]));
                 
                 lbl_reg_emision.Text = dt.Rows[0]["fecha_emision"].ToString();
                 lbl_reg_vencimiento.Text = dt.Rows[0]["fecha_vencimiento"].ToString();

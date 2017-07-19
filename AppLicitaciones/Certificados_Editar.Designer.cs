@@ -45,12 +45,13 @@
             this.date_emision = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.btn_selec_fabricante = new System.Windows.Forms.Button();
-            this.txt_fabricante = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.tt_reg_nuevo = new System.Windows.Forms.ToolStrip();
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txt_fabricante = new System.Windows.Forms.TextBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,7 +85,7 @@
             // lbl_trad
             // 
             this.lbl_trad.AutoSize = true;
-            this.lbl_trad.Location = new System.Drawing.Point(205, 366);
+            this.lbl_trad.Location = new System.Drawing.Point(214, 424);
             this.lbl_trad.Name = "lbl_trad";
             this.lbl_trad.Size = new System.Drawing.Size(59, 20);
             this.lbl_trad.TabIndex = 65;
@@ -93,7 +94,7 @@
             // lbl_archivo
             // 
             this.lbl_archivo.AutoSize = true;
-            this.lbl_archivo.Location = new System.Drawing.Point(205, 336);
+            this.lbl_archivo.Location = new System.Drawing.Point(214, 361);
             this.lbl_archivo.Name = "lbl_archivo";
             this.lbl_archivo.Size = new System.Drawing.Size(59, 20);
             this.lbl_archivo.TabIndex = 64;
@@ -101,21 +102,21 @@
             // 
             // btn_traduccion
             // 
-            this.btn_traduccion.Location = new System.Drawing.Point(75, 362);
+            this.btn_traduccion.Location = new System.Drawing.Point(84, 420);
             this.btn_traduccion.Name = "btn_traduccion";
             this.btn_traduccion.Size = new System.Drawing.Size(124, 28);
             this.btn_traduccion.TabIndex = 63;
-            this.btn_traduccion.Text = "Traduccion";
+            this.btn_traduccion.Text = "Buscar";
             this.btn_traduccion.UseVisualStyleBackColor = true;
             this.btn_traduccion.Click += new System.EventHandler(this.btn_traduccion_Click);
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(92, 328);
+            this.btn_archivo.Location = new System.Drawing.Point(84, 357);
             this.btn_archivo.Name = "btn_archivo";
-            this.btn_archivo.Size = new System.Drawing.Size(105, 28);
+            this.btn_archivo.Size = new System.Drawing.Size(124, 28);
             this.btn_archivo.TabIndex = 62;
-            this.btn_archivo.Text = "Archivo";
+            this.btn_archivo.Text = "Buscar";
             this.btn_archivo.UseVisualStyleBackColor = true;
             this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
@@ -193,23 +194,6 @@
             this.label10.TabIndex = 53;
             this.label10.Text = "Fecha de Emision:";
             // 
-            // btn_selec_fabricante
-            // 
-            this.btn_selec_fabricante.Location = new System.Drawing.Point(379, 233);
-            this.btn_selec_fabricante.Name = "btn_selec_fabricante";
-            this.btn_selec_fabricante.Size = new System.Drawing.Size(116, 26);
-            this.btn_selec_fabricante.TabIndex = 52;
-            this.btn_selec_fabricante.Text = "Seleccionar";
-            this.btn_selec_fabricante.UseVisualStyleBackColor = true;
-            // 
-            // txt_fabricante
-            // 
-            this.txt_fabricante.Location = new System.Drawing.Point(206, 236);
-            this.txt_fabricante.Name = "txt_fabricante";
-            this.txt_fabricante.ReadOnly = true;
-            this.txt_fabricante.Size = new System.Drawing.Size(167, 26);
-            this.txt_fabricante.TabIndex = 51;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -226,7 +210,7 @@
             this.tt_reg_nuevo.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_reg_descartar,
             this.btn_reg_guardar});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 420);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 483);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(563, 57);
             this.tt_reg_nuevo.TabIndex = 69;
@@ -254,11 +238,39 @@
             this.btn_reg_guardar.Text = "Guardar";
             this.btn_reg_guardar.Click += new System.EventHandler(this.btn_reg_guardar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(92, 334);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(65, 20);
+            this.label5.TabIndex = 70;
+            this.label5.Text = "Archivo:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(80, 397);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 20);
+            this.label7.TabIndex = 71;
+            this.label7.Text = "Traduccion:";
+            // 
+            // txt_fabricante
+            // 
+            this.txt_fabricante.Location = new System.Drawing.Point(208, 236);
+            this.txt_fabricante.Name = "txt_fabricante";
+            this.txt_fabricante.Size = new System.Drawing.Size(287, 26);
+            this.txt_fabricante.TabIndex = 72;
+            // 
             // Certificados_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 477);
+            this.ClientSize = new System.Drawing.Size(563, 540);
+            this.Controls.Add(this.txt_fabricante);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.tt_reg_nuevo);
             this.Controls.Add(this.cmb_idioma);
             this.Controls.Add(this.label4);
@@ -276,8 +288,6 @@
             this.Controls.Add(this.date_emision);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.btn_selec_fabricante);
-            this.Controls.Add(this.txt_fabricante);
             this.Controls.Add(this.label6);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -308,11 +318,12 @@
         private System.Windows.Forms.DateTimePicker date_emision;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btn_selec_fabricante;
-        private System.Windows.Forms.TextBox txt_fabricante;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ToolStrip tt_reg_nuevo;
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txt_fabricante;
     }
 }

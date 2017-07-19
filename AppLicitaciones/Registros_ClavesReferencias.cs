@@ -60,7 +60,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@idregistro", id_registro);
                 cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -88,7 +88,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@idregistro", id_registro);
                     cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                    cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -143,9 +143,16 @@ namespace AppLicitaciones
                 id_referencia = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
                 txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
                 txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
-                txt_unidad.Text = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
+                cmb_unidad.SelectedText = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
                 btn_guardar.Enabled = false;
             }
+        }
+
+        private void Registros_ClavesReferencias_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+
         }
 
         private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -156,7 +163,7 @@ namespace AppLicitaciones
                 btn_guardar.Enabled = true;
                 txt_clave.Text = "";
                 txt_descripcion.Text = "";
-                txt_unidad.Text = "";
+                cmb_unidad.SelectedIndex = 0;
             }
         }
     }

@@ -28,7 +28,7 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select nombre_generico_especifico,grupo,codigo from cucop where id_cucop = @id", con);
+                SqlCommand cmd = new SqlCommand("Select * from cucop where id_cucop = @id", con);
                 cmd.Parameters.AddWithValue("@id", id_cucop);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -36,10 +36,7 @@ namespace AppLicitaciones
                 con.Close();
                 if (dt.Rows.Count > 0)
                 {
-                    lbl_ccb.Text = dt.Rows[0]["codigo"].ToString();
-                    lbl_grupo.Text = dt.Rows[0]["grupo"].ToString();
-                    lbl_nombre_gen.Text = dt.Rows[0]["nombre_generico_especifico"].ToString();
-                    vervinculosregistros(id_cucop);
+                    
                 }
             }
             catch (Exception ex)

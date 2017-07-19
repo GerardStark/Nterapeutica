@@ -14,7 +14,7 @@ namespace AppLicitaciones
     public partial class Catalogos_Buscar : Form
     {
         MainConfig mc = new MainConfig();
-        public string ctrl = "";
+        public string ctrl = "";  
         public string valor = "";
         
                       

@@ -30,31 +30,33 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Vincular_Registro));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.idregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tiporegColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.genericaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genericaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tiporegColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -70,6 +72,20 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(320, 540);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // idvincregColumn
+            // 
+            this.idvincregColumn.HeaderText = "#";
+            this.idvincregColumn.Name = "idvincregColumn";
+            this.idvincregColumn.ReadOnly = true;
+            this.idvincregColumn.Width = 25;
+            // 
+            // numvincregColumn
+            // 
+            this.numvincregColumn.HeaderText = "Numero";
+            this.numvincregColumn.Name = "numvincregColumn";
+            this.numvincregColumn.ReadOnly = true;
+            this.numvincregColumn.Width = 250;
             // 
             // dataGridView2
             // 
@@ -87,54 +103,6 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(544, 540);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // idregColumn
-            // 
-            this.idregColumn.HeaderText = "#";
-            this.idregColumn.Name = "idregColumn";
-            this.idregColumn.ReadOnly = true;
-            this.idregColumn.Width = 25;
-            // 
-            // numeroregColumn
-            // 
-            this.numeroregColumn.HeaderText = "Numero";
-            this.numeroregColumn.Name = "numeroregColumn";
-            this.numeroregColumn.ReadOnly = true;
-            this.numeroregColumn.Width = 125;
-            // 
-            // tiporegColumn
-            // 
-            this.tiporegColumn.HeaderText = "Tipo";
-            this.tiporegColumn.Name = "tiporegColumn";
-            this.tiporegColumn.ReadOnly = true;
-            // 
-            // genericaColumn
-            // 
-            this.genericaColumn.HeaderText = "Denom Gen";
-            this.genericaColumn.Name = "genericaColumn";
-            this.genericaColumn.ReadOnly = true;
-            this.genericaColumn.Width = 125;
-            // 
-            // vencimientoColumn
-            // 
-            this.vencimientoColumn.HeaderText = "Vencimiento";
-            this.vencimientoColumn.Name = "vencimientoColumn";
-            this.vencimientoColumn.ReadOnly = true;
-            this.vencimientoColumn.Width = 125;
-            // 
-            // idvincregColumn
-            // 
-            this.idvincregColumn.HeaderText = "#";
-            this.idvincregColumn.Name = "idvincregColumn";
-            this.idvincregColumn.ReadOnly = true;
-            this.idvincregColumn.Width = 25;
-            // 
-            // numvincregColumn
-            // 
-            this.numvincregColumn.HeaderText = "Numero";
-            this.numvincregColumn.Name = "numvincregColumn";
-            this.numvincregColumn.ReadOnly = true;
-            this.numvincregColumn.Width = 250;
             // 
             // toolStrip1
             // 
@@ -161,6 +129,22 @@
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // toolStripButton6
+            // 
+            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
+            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton6.Name = "toolStripButton6";
+            this.toolStripButton6.Size = new System.Drawing.Size(55, 54);
+            this.toolStripButton6.Text = "toolStripButton6";
+            this.toolStripButton6.ToolTipText = "Buscar";
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel6.Text = "Buscar";
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -170,6 +154,12 @@
             this.toolStripButton1.Size = new System.Drawing.Size(55, 54);
             this.toolStripButton1.Text = "toolStripButton1";
             this.toolStripButton1.ToolTipText = "Agregar";
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel5.Text = "Agregar";
             // 
             // toolStripButton2
             // 
@@ -181,6 +171,12 @@
             this.toolStripButton2.Text = "toolStripButton2";
             this.toolStripButton2.ToolTipText = "Quitar";
             // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel4.Text = "Quitar";
+            // 
             // toolStripButton3
             // 
             this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -190,6 +186,17 @@
             this.toolStripButton3.Size = new System.Drawing.Size(55, 54);
             this.toolStripButton3.Text = "toolStripButton3";
             this.toolStripButton3.ToolTipText = "Ver información";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel3.Text = "Info";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(55, 6);
             // 
             // toolStripButton4
             // 
@@ -201,6 +208,12 @@
             this.toolStripButton4.Text = "toolStripButton4";
             this.toolStripButton4.ToolTipText = "Guardar";
             // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel2.Text = "Guardar";
+            // 
             // toolStripButton5
             // 
             this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -211,56 +224,50 @@
             this.toolStripButton5.Text = "toolStripButton5";
             this.toolStripButton5.ToolTipText = "Descartar";
             // 
-            // toolStripButton6
-            // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(55, 54);
-            this.toolStripButton6.Text = "toolStripButton6";
-            this.toolStripButton6.ToolTipText = "Buscar";
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(55, 6);
-            // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
             this.toolStripLabel1.Size = new System.Drawing.Size(55, 15);
             this.toolStripLabel1.Text = "Descartar";
             // 
-            // toolStripLabel2
+            // licitacionesDataSet
             // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(55, 15);
-            this.toolStripLabel2.Text = "Guardar";
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // toolStripLabel3
+            // vencimientoColumn
             // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(55, 15);
-            this.toolStripLabel3.Text = "Info";
+            this.vencimientoColumn.HeaderText = "Vencimiento";
+            this.vencimientoColumn.Name = "vencimientoColumn";
+            this.vencimientoColumn.ReadOnly = true;
+            this.vencimientoColumn.Width = 125;
             // 
-            // toolStripLabel4
+            // genericaColumn
             // 
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(55, 15);
-            this.toolStripLabel4.Text = "Quitar";
+            this.genericaColumn.HeaderText = "Denom Gen";
+            this.genericaColumn.Name = "genericaColumn";
+            this.genericaColumn.ReadOnly = true;
+            this.genericaColumn.Width = 125;
             // 
-            // toolStripLabel5
+            // tiporegColumn
             // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(55, 15);
-            this.toolStripLabel5.Text = "Agregar";
+            this.tiporegColumn.HeaderText = "Tipo";
+            this.tiporegColumn.Name = "tiporegColumn";
+            this.tiporegColumn.ReadOnly = true;
             // 
-            // toolStripLabel6
+            // numeroregColumn
             // 
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(55, 15);
-            this.toolStripLabel6.Text = "Buscar";
+            this.numeroregColumn.HeaderText = "Numero";
+            this.numeroregColumn.Name = "numeroregColumn";
+            this.numeroregColumn.ReadOnly = true;
+            this.numeroregColumn.Width = 125;
+            // 
+            // idregColumn
+            // 
+            this.idregColumn.HeaderText = "#";
+            this.idregColumn.Name = "idregColumn";
+            this.idregColumn.ReadOnly = true;
+            this.idregColumn.Width = 25;
             // 
             // Cucop_Vincular_Registro
             // 
@@ -278,6 +285,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,11 +295,6 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idregColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numeroregColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tiporegColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn genericaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vencimientoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idvincregColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numvincregColumn;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -308,5 +311,11 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idregColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroregColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tiporegColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genericaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vencimientoColumn;
     }
 }

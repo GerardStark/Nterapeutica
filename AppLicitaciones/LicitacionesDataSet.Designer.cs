@@ -66,6 +66,8 @@ namespace AppLicitaciones {
         
         private registros_tramites_prorrogaDataTable tableregistros_tramites_prorroga;
         
+        private data_unidadesDataTable tabledata_unidades;
+        
         private global::System.Data.DataRelation relationFK_aux_cat_trad_ref_catalogos_claves_referencias;
         
         private global::System.Data.DataRelation relationFK_aux_cat_trad_ref_catalogos_traducciones;
@@ -184,6 +186,9 @@ namespace AppLicitaciones {
                 }
                 if ((ds.Tables["registros_tramites_prorroga"] != null)) {
                     base.Tables.Add(new registros_tramites_prorrogaDataTable(ds.Tables["registros_tramites_prorroga"]));
+                }
+                if ((ds.Tables["data_unidades"] != null)) {
+                    base.Tables.Add(new data_unidadesDataTable(ds.Tables["data_unidades"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -415,6 +420,16 @@ namespace AppLicitaciones {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public data_unidadesDataTable data_unidades {
+            get {
+                return this.tabledata_unidades;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -542,6 +557,9 @@ namespace AppLicitaciones {
                 }
                 if ((ds.Tables["registros_tramites_prorroga"] != null)) {
                     base.Tables.Add(new registros_tramites_prorrogaDataTable(ds.Tables["registros_tramites_prorroga"]));
+                }
+                if ((ds.Tables["data_unidades"] != null)) {
+                    base.Tables.Add(new data_unidadesDataTable(ds.Tables["data_unidades"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -702,6 +720,12 @@ namespace AppLicitaciones {
                     this.tableregistros_tramites_prorroga.InitVars();
                 }
             }
+            this.tabledata_unidades = ((data_unidadesDataTable)(base.Tables["data_unidades"]));
+            if ((initTable == true)) {
+                if ((this.tabledata_unidades != null)) {
+                    this.tabledata_unidades.InitVars();
+                }
+            }
             this.relationFK_aux_cat_trad_ref_catalogos_claves_referencias = this.Relations["FK_aux_cat_trad_ref_catalogos_claves_referencias"];
             this.relationFK_aux_cat_trad_ref_catalogos_traducciones = this.Relations["FK_aux_cat_trad_ref_catalogos_traducciones"];
             this.relationFK_catalogos_claves_referencias_catalogos_info_general = this.Relations["FK_catalogos_claves_referencias_catalogos_info_general"];
@@ -768,6 +792,8 @@ namespace AppLicitaciones {
             base.Tables.Add(this.tableregistros_sanitarios);
             this.tableregistros_tramites_prorroga = new registros_tramites_prorrogaDataTable();
             base.Tables.Add(this.tableregistros_tramites_prorroga);
+            this.tabledata_unidades = new data_unidadesDataTable();
+            base.Tables.Add(this.tabledata_unidades);
             this.relationFK_aux_cat_trad_ref_catalogos_claves_referencias = new global::System.Data.DataRelation("FK_aux_cat_trad_ref_catalogos_claves_referencias", new global::System.Data.DataColumn[] {
                         this.tablecatalogos_claves_referencias.id_clave_catalogoColumn}, new global::System.Data.DataColumn[] {
                         this.tableaux_cat_trad_ref.id_referenciaColumn}, false);
@@ -954,6 +980,12 @@ namespace AppLicitaciones {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializedata_unidades() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1069,6 +1101,9 @@ namespace AppLicitaciones {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void registros_tramites_prorrogaRowChangeEventHandler(object sender, registros_tramites_prorrogaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void data_unidadesRowChangeEventHandler(object sender, data_unidadesRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -2082,6 +2117,10 @@ namespace AppLicitaciones {
             
             private global::System.Data.DataColumn columnactualizado_en;
             
+            private global::System.Data.DataColumn columnpagina_pdf;
+            
+            private global::System.Data.DataColumn columnpagina_cat;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public catalogos_claves_referenciasDataTable() {
@@ -2173,6 +2212,22 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pagina_pdfColumn {
+                get {
+                    return this.columnpagina_pdf;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn pagina_catColumn {
+                get {
+                    return this.columnpagina_cat;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2208,7 +2263,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public catalogos_claves_referenciasRow Addcatalogos_claves_referenciasRow(catalogos_info_generalRow parentcatalogos_info_generalRowByFK_catalogos_claves_referencias_catalogos_info_general, string clave_ref_cod, string descripcion, string unidad_venta, System.DateTime creado_en, System.DateTime actualizado_en) {
+            public catalogos_claves_referenciasRow Addcatalogos_claves_referenciasRow(catalogos_info_generalRow parentcatalogos_info_generalRowByFK_catalogos_claves_referencias_catalogos_info_general, string clave_ref_cod, string descripcion, string unidad_venta, System.DateTime creado_en, System.DateTime actualizado_en, string pagina_pdf, string pagina_cat) {
                 catalogos_claves_referenciasRow rowcatalogos_claves_referenciasRow = ((catalogos_claves_referenciasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2217,7 +2272,9 @@ namespace AppLicitaciones {
                         descripcion,
                         unidad_venta,
                         creado_en,
-                        actualizado_en};
+                        actualizado_en,
+                        pagina_pdf,
+                        pagina_cat};
                 if ((parentcatalogos_info_generalRowByFK_catalogos_claves_referencias_catalogos_info_general != null)) {
                     columnValuesArray[1] = parentcatalogos_info_generalRowByFK_catalogos_claves_referencias_catalogos_info_general[0];
                 }
@@ -2257,6 +2314,8 @@ namespace AppLicitaciones {
                 this.columnunidad_venta = base.Columns["unidad_venta"];
                 this.columncreado_en = base.Columns["creado_en"];
                 this.columnactualizado_en = base.Columns["actualizado_en"];
+                this.columnpagina_pdf = base.Columns["pagina_pdf"];
+                this.columnpagina_cat = base.Columns["pagina_cat"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2276,6 +2335,10 @@ namespace AppLicitaciones {
                 base.Columns.Add(this.columncreado_en);
                 this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnactualizado_en);
+                this.columnpagina_pdf = new global::System.Data.DataColumn("pagina_pdf", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpagina_pdf);
+                this.columnpagina_cat = new global::System.Data.DataColumn("pagina_cat", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpagina_cat);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_clave_catalogo}, true));
                 this.columnid_clave_catalogo.AutoIncrement = true;
@@ -2287,6 +2350,8 @@ namespace AppLicitaciones {
                 this.columnclave_ref_cod.MaxLength = 500;
                 this.columndescripcion.MaxLength = 5000;
                 this.columnunidad_venta.MaxLength = 500;
+                this.columnpagina_pdf.MaxLength = 50;
+                this.columnpagina_cat.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2440,6 +2505,8 @@ namespace AppLicitaciones {
             
             private global::System.Data.DataColumn columnactualizado_en;
             
+            private global::System.Data.DataColumn columnmarca;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public catalogos_info_generalDataTable() {
@@ -2555,6 +2622,14 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn marcaColumn {
+                get {
+                    return this.columnmarca;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2590,7 +2665,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public catalogos_info_generalRow Addcatalogos_info_generalRow(string tipo_catalogo, string nombre_catalogo, int publicacion, string spec_catalogo, string fabricante, string idioma, string dir_archivo, System.DateTime creado_en, System.DateTime actualizado_en) {
+            public catalogos_info_generalRow Addcatalogos_info_generalRow(string tipo_catalogo, string nombre_catalogo, int publicacion, string spec_catalogo, string fabricante, string idioma, string dir_archivo, System.DateTime creado_en, System.DateTime actualizado_en, string marca) {
                 catalogos_info_generalRow rowcatalogos_info_generalRow = ((catalogos_info_generalRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2602,7 +2677,8 @@ namespace AppLicitaciones {
                         idioma,
                         dir_archivo,
                         creado_en,
-                        actualizado_en};
+                        actualizado_en,
+                        marca};
                 rowcatalogos_info_generalRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowcatalogos_info_generalRow);
                 return rowcatalogos_info_generalRow;
@@ -2642,6 +2718,7 @@ namespace AppLicitaciones {
                 this.columndir_archivo = base.Columns["dir_archivo"];
                 this.columncreado_en = base.Columns["creado_en"];
                 this.columnactualizado_en = base.Columns["actualizado_en"];
+                this.columnmarca = base.Columns["marca"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2667,6 +2744,8 @@ namespace AppLicitaciones {
                 base.Columns.Add(this.columncreado_en);
                 this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnactualizado_en);
+                this.columnmarca = new global::System.Data.DataColumn("marca", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmarca);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_catalogo}, true));
                 this.columnid_catalogo.AutoIncrement = true;
@@ -2681,6 +2760,7 @@ namespace AppLicitaciones {
                 this.columnfabricante.MaxLength = 500;
                 this.columnidioma.MaxLength = 500;
                 this.columndir_archivo.MaxLength = 2147483647;
+                this.columnmarca.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8639,6 +8719,283 @@ namespace AppLicitaciones {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class data_unidadesDataTable : global::System.Data.TypedTableBase<data_unidadesRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnunidad;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesDataTable() {
+                this.TableName = "data_unidades";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal data_unidadesDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected data_unidadesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn unidadColumn {
+                get {
+                    return this.columnunidad;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesRow this[int index] {
+                get {
+                    return ((data_unidadesRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event data_unidadesRowChangeEventHandler data_unidadesRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event data_unidadesRowChangeEventHandler data_unidadesRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event data_unidadesRowChangeEventHandler data_unidadesRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event data_unidadesRowChangeEventHandler data_unidadesRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Adddata_unidadesRow(data_unidadesRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesRow Adddata_unidadesRow(string unidad) {
+                data_unidadesRow rowdata_unidadesRow = ((data_unidadesRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        unidad};
+                rowdata_unidadesRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdata_unidadesRow);
+                return rowdata_unidadesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesRow FindByid(int id) {
+                return ((data_unidadesRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                data_unidadesDataTable cln = ((data_unidadesDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new data_unidadesDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnunidad = base.Columns["unidad"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnunidad = new global::System.Data.DataColumn("unidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnunidad);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+                this.columnunidad.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesRow Newdata_unidadesRow() {
+                return ((data_unidadesRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new data_unidadesRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(data_unidadesRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.data_unidadesRowChanged != null)) {
+                    this.data_unidadesRowChanged(this, new data_unidadesRowChangeEvent(((data_unidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.data_unidadesRowChanging != null)) {
+                    this.data_unidadesRowChanging(this, new data_unidadesRowChangeEvent(((data_unidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.data_unidadesRowDeleted != null)) {
+                    this.data_unidadesRowDeleted(this, new data_unidadesRowChangeEvent(((data_unidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.data_unidadesRowDeleting != null)) {
+                    this.data_unidadesRowDeleting(this, new data_unidadesRowChangeEvent(((data_unidadesRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removedata_unidadesRow(data_unidadesRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LicitacionesDataSet ds = new LicitacionesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "data_unidadesDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class aux_cat_trad_refRow : global::System.Data.DataRow {
@@ -9308,6 +9665,40 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pagina_pdf {
+                get {
+                    try {
+                        return ((string)(this[this.tablecatalogos_claves_referencias.pagina_pdfColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'pagina_pdf\' de la tabla \'catalogos_claves_referencias\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecatalogos_claves_referencias.pagina_pdfColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string pagina_cat {
+                get {
+                    try {
+                        return ((string)(this[this.tablecatalogos_claves_referencias.pagina_catColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'pagina_cat\' de la tabla \'catalogos_claves_referencias\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecatalogos_claves_referencias.pagina_catColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public catalogos_info_generalRow catalogos_info_generalRow {
                 get {
                     return ((catalogos_info_generalRow)(this.GetParentRow(this.Table.ParentRelations["FK_catalogos_claves_referencias_catalogos_info_general"])));
@@ -9387,6 +9778,30 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setactualizado_enNull() {
                 this[this.tablecatalogos_claves_referencias.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispagina_pdfNull() {
+                return this.IsNull(this.tablecatalogos_claves_referencias.pagina_pdfColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpagina_pdfNull() {
+                this[this.tablecatalogos_claves_referencias.pagina_pdfColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Ispagina_catNull() {
+                return this.IsNull(this.tablecatalogos_claves_referencias.pagina_catColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setpagina_catNull() {
+                this[this.tablecatalogos_claves_referencias.pagina_catColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9580,6 +9995,22 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string marca {
+                get {
+                    try {
+                        return ((string)(this[this.tablecatalogos_info_general.marcaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'marca\' de la tabla \'catalogos_info_general\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecatalogos_info_general.marcaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Istipo_catalogoNull() {
                 return this.IsNull(this.tablecatalogos_info_general.tipo_catalogoColumn);
             }
@@ -9684,6 +10115,18 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setactualizado_enNull() {
                 this[this.tablecatalogos_info_general.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsmarcaNull() {
+                return this.IsNull(this.tablecatalogos_info_general.marcaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetmarcaNull() {
+                this[this.tablecatalogos_info_general.marcaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13527,6 +13970,60 @@ namespace AppLicitaciones {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class data_unidadesRow : global::System.Data.DataRow {
+            
+            private data_unidadesDataTable tabledata_unidades;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal data_unidadesRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledata_unidades = ((data_unidadesDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tabledata_unidades.idColumn]));
+                }
+                set {
+                    this[this.tabledata_unidades.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string unidad {
+                get {
+                    try {
+                        return ((string)(this[this.tabledata_unidades.unidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'unidad\' de la tabla \'data_unidades\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledata_unidades.unidadColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsunidadNull() {
+                return this.IsNull(this.tabledata_unidades.unidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetunidadNull() {
+                this[this.tabledata_unidades.unidadColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14226,6 +14723,40 @@ namespace AppLicitaciones {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public registros_tramites_prorrogaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class data_unidadesRowChangeEvent : global::System.EventArgs {
+            
+            private data_unidadesRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesRowChangeEvent(data_unidadesRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public data_unidadesRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15610,10 +16141,12 @@ SELECT id_usuario, tipo, nombre_usuario, contraseña_hash, nombre, apellido, cre
             tableMapping.ColumnMappings.Add("unidad_venta", "unidad_venta");
             tableMapping.ColumnMappings.Add("creado_en", "creado_en");
             tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            tableMapping.ColumnMappings.Add("pagina_pdf", "pagina_pdf");
+            tableMapping.ColumnMappings.Add("pagina_cat", "pagina_cat");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[catalogos_claves_referencias] WHERE (([id_clave_catalogo] = @Original_id_clave_catalogo) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@IsNull_clave_ref_cod = 1 AND [clave_ref_cod] IS NULL) OR ([clave_ref_cod] = @Original_clave_ref_cod)) AND ((@IsNull_descripcion = 1 AND [descripcion] IS NULL) OR ([descripcion] = @Original_descripcion)) AND ((@IsNull_unidad_venta = 1 AND [unidad_venta] IS NULL) OR ([unidad_venta] = @Original_unidad_venta)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [catalogos_claves_referencias] WHERE (([id_clave_catalogo] = @Original_id_clave_catalogo) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@IsNull_clave_ref_cod = 1 AND [clave_ref_cod] IS NULL) OR ([clave_ref_cod] = @Original_clave_ref_cod)) AND ((@IsNull_descripcion = 1 AND [descripcion] IS NULL) OR ([descripcion] = @Original_descripcion)) AND ((@IsNull_unidad_venta = 1 AND [unidad_venta] IS NULL) OR ([unidad_venta] = @Original_unidad_venta)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_pagina_cat = 1 AND [pagina_cat] IS NULL) OR ([pagina_cat] = @Original_pagina_cat)) AND ((@IsNull_pagina_pdf = 1 AND [pagina_pdf] IS NULL) OR ([pagina_pdf] = @Original_pagina_pdf)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_clave_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_clave_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_catalogo_productos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo_productos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -15628,10 +16161,14 @@ SELECT id_usuario, tipo, nombre_usuario, contraseña_hash, nombre, apellido, cre
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pagina_cat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_cat", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pagina_cat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_cat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pagina_pdf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_pdf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pagina_pdf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_pdf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[catalogos_claves_referencias] ([id_catalogo_productos], [clave_ref_cod], [descripcion], [unidad_venta], [creado_en], [actualizado_en]) VALUES (@id_catalogo_productos, @clave_ref_cod, @descripcion, @unidad_venta, @creado_en, @actualizado_en);
-SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, unidad_venta, creado_en, actualizado_en FROM catalogos_claves_referencias WHERE (id_clave_catalogo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [catalogos_claves_referencias] ([id_catalogo_productos], [clave_ref_cod], [descripcion], [unidad_venta], [creado_en], [actualizado_en], [pagina_cat], [pagina_pdf]) VALUES (@id_catalogo_productos, @clave_ref_cod, @descripcion, @unidad_venta, @creado_en, @actualizado_en, @pagina_cat, @pagina_pdf);
+SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, unidad_venta, creado_en, actualizado_en, pagina_cat, pagina_pdf FROM catalogos_claves_referencias WHERE (id_clave_catalogo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_catalogo_productos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo_productos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave_ref_cod", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clave_ref_cod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15639,10 +16176,12 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unidad_venta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad_venta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagina_cat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_cat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagina_pdf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_pdf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[catalogos_claves_referencias] SET [id_catalogo_productos] = @id_catalogo_productos, [clave_ref_cod] = @clave_ref_cod, [descripcion] = @descripcion, [unidad_venta] = @unidad_venta, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id_clave_catalogo] = @Original_id_clave_catalogo) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@IsNull_clave_ref_cod = 1 AND [clave_ref_cod] IS NULL) OR ([clave_ref_cod] = @Original_clave_ref_cod)) AND ((@IsNull_descripcion = 1 AND [descripcion] IS NULL) OR ([descripcion] = @Original_descripcion)) AND ((@IsNull_unidad_venta = 1 AND [unidad_venta] IS NULL) OR ([unidad_venta] = @Original_unidad_venta)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
-SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, unidad_venta, creado_en, actualizado_en FROM catalogos_claves_referencias WHERE (id_clave_catalogo = @id_clave_catalogo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [catalogos_claves_referencias] SET [id_catalogo_productos] = @id_catalogo_productos, [clave_ref_cod] = @clave_ref_cod, [descripcion] = @descripcion, [unidad_venta] = @unidad_venta, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en, [pagina_cat] = @pagina_cat, [pagina_pdf] = @pagina_pdf WHERE (([id_clave_catalogo] = @Original_id_clave_catalogo) AND ((@IsNull_id_catalogo_productos = 1 AND [id_catalogo_productos] IS NULL) OR ([id_catalogo_productos] = @Original_id_catalogo_productos)) AND ((@IsNull_clave_ref_cod = 1 AND [clave_ref_cod] IS NULL) OR ([clave_ref_cod] = @Original_clave_ref_cod)) AND ((@IsNull_descripcion = 1 AND [descripcion] IS NULL) OR ([descripcion] = @Original_descripcion)) AND ((@IsNull_unidad_venta = 1 AND [unidad_venta] IS NULL) OR ([unidad_venta] = @Original_unidad_venta)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_pagina_cat = 1 AND [pagina_cat] IS NULL) OR ([pagina_cat] = @Original_pagina_cat)) AND ((@IsNull_pagina_pdf = 1 AND [pagina_pdf] IS NULL) OR ([pagina_pdf] = @Original_pagina_pdf)));
+SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, unidad_venta, creado_en, actualizado_en, pagina_cat, pagina_pdf FROM catalogos_claves_referencias WHERE (id_clave_catalogo = @id_clave_catalogo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_catalogo_productos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo_productos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@clave_ref_cod", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "clave_ref_cod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -15650,6 +16189,8 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unidad_venta", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad_venta", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagina_cat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_cat", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pagina_pdf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_pdf", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_clave_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_clave_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_catalogo_productos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo_productos", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_catalogo_productos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo_productos", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -15663,6 +16204,10 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pagina_cat", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_cat", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pagina_cat", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_cat", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_pagina_pdf", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_pdf", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pagina_pdf", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pagina_pdf", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_clave_catalogo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_clave_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -15680,7 +16225,8 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, unid" +
-                "ad_venta, creado_en, actualizado_en FROM dbo.catalogos_claves_referencias";
+                "ad_venta, creado_en, actualizado_en, pagina_cat, pagina_pdf FROM catalogos_clave" +
+                "s_referencias";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -15741,7 +16287,7 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_clave_catalogo, global::System.Nullable<int> Original_id_catalogo_productos, string Original_clave_ref_cod, string Original_descripcion, string Original_unidad_venta, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+        public virtual int Delete(int Original_id_clave_catalogo, global::System.Nullable<int> Original_id_catalogo_productos, string Original_clave_ref_cod, string Original_descripcion, string Original_unidad_venta, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, string Original_pagina_cat, string Original_pagina_pdf) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_clave_catalogo));
             if ((Original_id_catalogo_productos.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -15791,6 +16337,22 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
+            if ((Original_pagina_cat == null)) {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((string)(Original_pagina_cat));
+            }
+            if ((Original_pagina_pdf == null)) {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((string)(Original_pagina_pdf));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15811,7 +16373,7 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> id_catalogo_productos, string clave_ref_cod, string descripcion, string unidad_venta, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+        public virtual int Insert(global::System.Nullable<int> id_catalogo_productos, string clave_ref_cod, string descripcion, string unidad_venta, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, string pagina_cat, string pagina_pdf) {
             if ((id_catalogo_productos.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_catalogo_productos.Value));
             }
@@ -15848,6 +16410,18 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
+            if ((pagina_cat == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(pagina_cat));
+            }
+            if ((pagina_pdf == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(pagina_pdf));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15868,7 +16442,25 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_catalogo_productos, string clave_ref_cod, string descripcion, string unidad_venta, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id_clave_catalogo, global::System.Nullable<int> Original_id_catalogo_productos, string Original_clave_ref_cod, string Original_descripcion, string Original_unidad_venta, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id_clave_catalogo) {
+        public virtual int Update(
+                    global::System.Nullable<int> id_catalogo_productos, 
+                    string clave_ref_cod, 
+                    string descripcion, 
+                    string unidad_venta, 
+                    global::System.Nullable<global::System.DateTime> creado_en, 
+                    global::System.Nullable<global::System.DateTime> actualizado_en, 
+                    string pagina_cat, 
+                    string pagina_pdf, 
+                    int Original_id_clave_catalogo, 
+                    global::System.Nullable<int> Original_id_catalogo_productos, 
+                    string Original_clave_ref_cod, 
+                    string Original_descripcion, 
+                    string Original_unidad_venta, 
+                    global::System.Nullable<global::System.DateTime> Original_creado_en, 
+                    global::System.Nullable<global::System.DateTime> Original_actualizado_en, 
+                    string Original_pagina_cat, 
+                    string Original_pagina_pdf, 
+                    int id_clave_catalogo) {
             if ((id_catalogo_productos.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_catalogo_productos.Value));
             }
@@ -15905,56 +16497,84 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id_clave_catalogo));
-            if ((Original_id_catalogo_productos.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_catalogo_productos.Value));
+            if ((pagina_cat == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(pagina_cat));
             }
-            if ((Original_clave_ref_cod == null)) {
+            if ((pagina_pdf == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(pagina_pdf));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_clave_catalogo));
+            if ((Original_id_catalogo_productos.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_id_catalogo_productos.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_clave_ref_cod));
-            }
-            if ((Original_descripcion == null)) {
+            if ((Original_clave_ref_cod == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_descripcion));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_clave_ref_cod));
             }
-            if ((Original_unidad_venta == null)) {
+            if ((Original_descripcion == null)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_unidad_venta));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_descripcion));
             }
-            if ((Original_creado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_creado_en.Value));
-            }
-            else {
+            if ((Original_unidad_venta == null)) {
                 this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_actualizado_en.HasValue == true)) {
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_unidad_venta));
+            }
+            if ((Original_creado_en.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_creado_en.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(id_clave_catalogo));
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((Original_pagina_cat == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_pagina_cat));
+            }
+            if ((Original_pagina_pdf == null)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_pagina_pdf));
+            }
+            this.Adapter.UpdateCommand.Parameters[25].Value = ((int)(id_clave_catalogo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -15975,8 +16595,25 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_catalogo_productos, string clave_ref_cod, string descripcion, string unidad_venta, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id_clave_catalogo, global::System.Nullable<int> Original_id_catalogo_productos, string Original_clave_ref_cod, string Original_descripcion, string Original_unidad_venta, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
-            return this.Update(id_catalogo_productos, clave_ref_cod, descripcion, unidad_venta, creado_en, actualizado_en, Original_id_clave_catalogo, Original_id_catalogo_productos, Original_clave_ref_cod, Original_descripcion, Original_unidad_venta, Original_creado_en, Original_actualizado_en, Original_id_clave_catalogo);
+        public virtual int Update(
+                    global::System.Nullable<int> id_catalogo_productos, 
+                    string clave_ref_cod, 
+                    string descripcion, 
+                    string unidad_venta, 
+                    global::System.Nullable<global::System.DateTime> creado_en, 
+                    global::System.Nullable<global::System.DateTime> actualizado_en, 
+                    string pagina_cat, 
+                    string pagina_pdf, 
+                    int Original_id_clave_catalogo, 
+                    global::System.Nullable<int> Original_id_catalogo_productos, 
+                    string Original_clave_ref_cod, 
+                    string Original_descripcion, 
+                    string Original_unidad_venta, 
+                    global::System.Nullable<global::System.DateTime> Original_creado_en, 
+                    global::System.Nullable<global::System.DateTime> Original_actualizado_en, 
+                    string Original_pagina_cat, 
+                    string Original_pagina_pdf) {
+            return this.Update(id_catalogo_productos, clave_ref_cod, descripcion, unidad_venta, creado_en, actualizado_en, pagina_cat, pagina_pdf, Original_id_clave_catalogo, Original_id_catalogo_productos, Original_clave_ref_cod, Original_descripcion, Original_unidad_venta, Original_creado_en, Original_actualizado_en, Original_pagina_cat, Original_pagina_pdf, Original_id_clave_catalogo);
         }
     }
     
@@ -16111,10 +16748,11 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             tableMapping.ColumnMappings.Add("dir_archivo", "dir_archivo");
             tableMapping.ColumnMappings.Add("creado_en", "creado_en");
             tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            tableMapping.ColumnMappings.Add("marca", "marca");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[catalogos_info_general] WHERE (([id_catalogo] = @Original_id_catalogo) AND ((@IsNull_tipo_catalogo = 1 AND [tipo_catalogo] IS NULL) OR ([tipo_catalogo] = @Original_tipo_catalogo)) AND ((@IsNull_nombre_catalogo = 1 AND [nombre_catalogo] IS NULL) OR ([nombre_catalogo] = @Original_nombre_catalogo)) AND ((@IsNull_publicacion = 1 AND [publicacion] IS NULL) OR ([publicacion] = @Original_publicacion)) AND ((@IsNull_spec_catalogo = 1 AND [spec_catalogo] IS NULL) OR ([spec_catalogo] = @Original_spec_catalogo)) AND ((@IsNull_fabricante = 1 AND [fabricante] IS NULL) OR ([fabricante] = @Original_fabricante)) AND ((@IsNull_idioma = 1 AND [idioma] IS NULL) OR ([idioma] = @Original_idioma)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [catalogos_info_general] WHERE (([id_catalogo] = @Original_id_catalogo) AND ((@IsNull_tipo_catalogo = 1 AND [tipo_catalogo] IS NULL) OR ([tipo_catalogo] = @Original_tipo_catalogo)) AND ((@IsNull_nombre_catalogo = 1 AND [nombre_catalogo] IS NULL) OR ([nombre_catalogo] = @Original_nombre_catalogo)) AND ((@IsNull_publicacion = 1 AND [publicacion] IS NULL) OR ([publicacion] = @Original_publicacion)) AND ((@IsNull_spec_catalogo = 1 AND [spec_catalogo] IS NULL) OR ([spec_catalogo] = @Original_spec_catalogo)) AND ((@IsNull_fabricante = 1 AND [fabricante] IS NULL) OR ([fabricante] = @Original_fabricante)) AND ((@IsNull_idioma = 1 AND [idioma] IS NULL) OR ([idioma] = @Original_idioma)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_marca = 1 AND [marca] IS NULL) OR ([marca] = @Original_marca)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tipo_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_catalogo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -16133,10 +16771,12 @@ SELECT id_clave_catalogo, id_catalogo_productos, clave_ref_cod, descripcion, uni
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[catalogos_info_general] ([tipo_catalogo], [nombre_catalogo], [publicacion], [spec_catalogo], [fabricante], [idioma], [dir_archivo], [creado_en], [actualizado_en]) VALUES (@tipo_catalogo, @nombre_catalogo, @publicacion, @spec_catalogo, @fabricante, @idioma, @dir_archivo, @creado_en, @actualizado_en);
-SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, fabricante, idioma, dir_archivo, creado_en, actualizado_en FROM catalogos_info_general WHERE (id_catalogo = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [catalogos_info_general] ([tipo_catalogo], [nombre_catalogo], [publicacion], [spec_catalogo], [fabricante], [idioma], [dir_archivo], [creado_en], [actualizado_en], [marca]) VALUES (@tipo_catalogo, @nombre_catalogo, @publicacion, @spec_catalogo, @fabricante, @idioma, @dir_archivo, @creado_en, @actualizado_en, @marca);
+SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, fabricante, idioma, dir_archivo, creado_en, actualizado_en, marca FROM catalogos_info_general WHERE (id_catalogo = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo_catalogo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_catalogo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16147,10 +16787,11 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dir_archivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dir_archivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[catalogos_info_general] SET [tipo_catalogo] = @tipo_catalogo, [nombre_catalogo] = @nombre_catalogo, [publicacion] = @publicacion, [spec_catalogo] = @spec_catalogo, [fabricante] = @fabricante, [idioma] = @idioma, [dir_archivo] = @dir_archivo, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id_catalogo] = @Original_id_catalogo) AND ((@IsNull_tipo_catalogo = 1 AND [tipo_catalogo] IS NULL) OR ([tipo_catalogo] = @Original_tipo_catalogo)) AND ((@IsNull_nombre_catalogo = 1 AND [nombre_catalogo] IS NULL) OR ([nombre_catalogo] = @Original_nombre_catalogo)) AND ((@IsNull_publicacion = 1 AND [publicacion] IS NULL) OR ([publicacion] = @Original_publicacion)) AND ((@IsNull_spec_catalogo = 1 AND [spec_catalogo] IS NULL) OR ([spec_catalogo] = @Original_spec_catalogo)) AND ((@IsNull_fabricante = 1 AND [fabricante] IS NULL) OR ([fabricante] = @Original_fabricante)) AND ((@IsNull_idioma = 1 AND [idioma] IS NULL) OR ([idioma] = @Original_idioma)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
-SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, fabricante, idioma, dir_archivo, creado_en, actualizado_en FROM catalogos_info_general WHERE (id_catalogo = @id_catalogo)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [catalogos_info_general] SET [tipo_catalogo] = @tipo_catalogo, [nombre_catalogo] = @nombre_catalogo, [publicacion] = @publicacion, [spec_catalogo] = @spec_catalogo, [fabricante] = @fabricante, [idioma] = @idioma, [dir_archivo] = @dir_archivo, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en, [marca] = @marca WHERE (([id_catalogo] = @Original_id_catalogo) AND ((@IsNull_tipo_catalogo = 1 AND [tipo_catalogo] IS NULL) OR ([tipo_catalogo] = @Original_tipo_catalogo)) AND ((@IsNull_nombre_catalogo = 1 AND [nombre_catalogo] IS NULL) OR ([nombre_catalogo] = @Original_nombre_catalogo)) AND ((@IsNull_publicacion = 1 AND [publicacion] IS NULL) OR ([publicacion] = @Original_publicacion)) AND ((@IsNull_spec_catalogo = 1 AND [spec_catalogo] IS NULL) OR ([spec_catalogo] = @Original_spec_catalogo)) AND ((@IsNull_fabricante = 1 AND [fabricante] IS NULL) OR ([fabricante] = @Original_fabricante)) AND ((@IsNull_idioma = 1 AND [idioma] IS NULL) OR ([idioma] = @Original_idioma)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_marca = 1 AND [marca] IS NULL) OR ([marca] = @Original_marca)));
+SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, fabricante, idioma, dir_archivo, creado_en, actualizado_en, marca FROM catalogos_info_general WHERE (id_catalogo = @id_catalogo)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tipo_catalogo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_catalogo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -16161,6 +16802,7 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dir_archivo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "dir_archivo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tipo_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_catalogo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tipo_catalogo", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tipo_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -16178,6 +16820,8 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_marca", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_marca", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "marca", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_catalogo", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -16195,8 +16839,8 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, f" +
-                "abricante, idioma, dir_archivo, creado_en, actualizado_en FROM dbo.catalogos_inf" +
-                "o_general";
+                "abricante, idioma, dir_archivo, creado_en, actualizado_en, marca FROM catalogos_" +
+                "info_general";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -16257,7 +16901,7 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id_catalogo, string Original_tipo_catalogo, string Original_nombre_catalogo, global::System.Nullable<int> Original_publicacion, string Original_spec_catalogo, string Original_fabricante, string Original_idioma, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+        public virtual int Delete(int Original_id_catalogo, string Original_tipo_catalogo, string Original_nombre_catalogo, global::System.Nullable<int> Original_publicacion, string Original_spec_catalogo, string Original_fabricante, string Original_idioma, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, string Original_marca) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_catalogo));
             if ((Original_tipo_catalogo == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
@@ -16323,6 +16967,14 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
+            if ((Original_marca == null)) {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((string)(Original_marca));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16343,7 +16995,7 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string tipo_catalogo, string nombre_catalogo, global::System.Nullable<int> publicacion, string spec_catalogo, string fabricante, string idioma, string dir_archivo, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+        public virtual int Insert(string tipo_catalogo, string nombre_catalogo, global::System.Nullable<int> publicacion, string spec_catalogo, string fabricante, string idioma, string dir_archivo, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, string marca) {
             if ((tipo_catalogo == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -16398,6 +17050,12 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
+            if ((marca == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(marca));
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16428,6 +17086,7 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
                     string dir_archivo, 
                     global::System.Nullable<global::System.DateTime> creado_en, 
                     global::System.Nullable<global::System.DateTime> actualizado_en, 
+                    string marca, 
                     int Original_id_catalogo, 
                     string Original_tipo_catalogo, 
                     string Original_nombre_catalogo, 
@@ -16437,6 +17096,7 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
                     string Original_idioma, 
                     global::System.Nullable<global::System.DateTime> Original_creado_en, 
                     global::System.Nullable<global::System.DateTime> Original_actualizado_en, 
+                    string Original_marca, 
                     int id_catalogo) {
             if ((tipo_catalogo == null)) {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -16492,72 +17152,86 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id_catalogo));
-            if ((Original_tipo_catalogo == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            if ((marca == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_tipo_catalogo));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(marca));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_id_catalogo));
+            if ((Original_tipo_catalogo == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_tipo_catalogo));
             }
             if ((Original_nombre_catalogo == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_nombre_catalogo));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_nombre_catalogo));
             }
             if ((Original_publicacion.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_publicacion.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_publicacion.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             if ((Original_spec_catalogo == null)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_spec_catalogo));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_spec_catalogo));
             }
             if ((Original_fabricante == null)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((string)(Original_fabricante));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_fabricante));
             }
             if ((Original_idioma == null)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_idioma));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_idioma));
             }
             if ((Original_creado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_creado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_creado_en.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             if ((Original_actualizado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_actualizado_en.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[26].Value = ((int)(id_catalogo));
+            if ((Original_marca == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_marca));
+            }
+            this.Adapter.UpdateCommand.Parameters[29].Value = ((int)(id_catalogo));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -16588,6 +17262,7 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
                     string dir_archivo, 
                     global::System.Nullable<global::System.DateTime> creado_en, 
                     global::System.Nullable<global::System.DateTime> actualizado_en, 
+                    string marca, 
                     int Original_id_catalogo, 
                     string Original_tipo_catalogo, 
                     string Original_nombre_catalogo, 
@@ -16596,8 +17271,9 @@ SELECT id_catalogo, tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, 
                     string Original_fabricante, 
                     string Original_idioma, 
                     global::System.Nullable<global::System.DateTime> Original_creado_en, 
-                    global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
-            return this.Update(tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, fabricante, idioma, dir_archivo, creado_en, actualizado_en, Original_id_catalogo, Original_tipo_catalogo, Original_nombre_catalogo, Original_publicacion, Original_spec_catalogo, Original_fabricante, Original_idioma, Original_creado_en, Original_actualizado_en, Original_id_catalogo);
+                    global::System.Nullable<global::System.DateTime> Original_actualizado_en, 
+                    string Original_marca) {
+            return this.Update(tipo_catalogo, nombre_catalogo, publicacion, spec_catalogo, fabricante, idioma, dir_archivo, creado_en, actualizado_en, marca, Original_id_catalogo, Original_tipo_catalogo, Original_nombre_catalogo, Original_publicacion, Original_spec_catalogo, Original_fabricante, Original_idioma, Original_creado_en, Original_actualizado_en, Original_marca, Original_id_catalogo);
         }
     }
     
@@ -25333,6 +26009,330 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class data_unidadesTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public data_unidadesTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "data_unidades";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("unidad", "unidad");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[data_unidades] WHERE (([id] = @Original_id) AND ((@IsNull_unid" +
+                "ad = 1 AND [unidad] IS NULL) OR ([unidad] = @Original_unidad)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_unidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_unidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[data_unidades] ([unidad]) VALUES (@unidad);\r\nSELECT id, unidad" +
+                " FROM data_unidades WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[data_unidades] SET [unidad] = @unidad WHERE (([id] = @Original_id) " +
+                "AND ((@IsNull_unidad = 1 AND [unidad] IS NULL) OR ([unidad] = @Original_unidad))" +
+                ");\r\nSELECT id, unidad FROM data_unidades WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@unidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_unidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_unidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "unidad", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, unidad FROM dbo.data_unidades";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LicitacionesDataSet.data_unidadesDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LicitacionesDataSet.data_unidadesDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            LicitacionesDataSet.data_unidadesDataTable dataTable = new LicitacionesDataSet.data_unidadesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet.data_unidadesDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "data_unidades");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, string Original_unidad) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_unidad == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_unidad));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string unidad) {
+            if ((unidad == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(unidad));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string unidad, int Original_id, string Original_unidad, int id) {
+            if ((unidad == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(unidad));
+            }
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Original_id));
+            if ((Original_unidad == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_unidad));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string unidad, int Original_id, string Original_unidad) {
+            return this.Update(unidad, Original_id, Original_unidad, Original_id);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -25385,6 +26385,8 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         private registros_sanitariosTableAdapter _registros_sanitariosTableAdapter;
         
         private registros_tramites_prorrogaTableAdapter _registros_tramites_prorrogaTableAdapter;
+        
+        private data_unidadesTableAdapter _data_unidadesTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -25697,6 +26699,20 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public data_unidadesTableAdapter data_unidadesTableAdapter {
+            get {
+                return this._data_unidadesTableAdapter;
+            }
+            set {
+                this._data_unidadesTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -25798,6 +26814,10 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                             && (this._registros_tramites_prorrogaTableAdapter.Connection != null))) {
                     return this._registros_tramites_prorrogaTableAdapter.Connection;
                 }
+                if (((this._data_unidadesTableAdapter != null) 
+                            && (this._data_unidadesTableAdapter.Connection != null))) {
+                    return this._data_unidadesTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -25874,6 +26894,9 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if ((this._registros_tramites_prorrogaTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._data_unidadesTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -25912,21 +26935,21 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._paises_origenTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._paises_origenTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._catalogos_info_generalTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._catalogos_info_generalTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._paises_origenTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._paises_origenTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -25945,6 +26968,15 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._licitacion_itemsTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -25975,15 +27007,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._registros_claves_referenciasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.registros_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -26008,6 +27031,15 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._aux_cat_trad_refTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26065,12 +27097,12 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._data_unidadesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(updatedRows));
+                    result = (result + this._data_unidadesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26108,19 +27140,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._paises_origenTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._paises_origenTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._catalogos_info_generalTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._catalogos_info_generalTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._paises_origenTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._paises_origenTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26137,6 +27169,14 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._licitacion_itemsTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26164,14 +27204,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._registros_claves_referenciasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.registros_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -26193,6 +27225,14 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._aux_cat_trad_refTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26244,11 +27284,11 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._data_unidadesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(addedRows));
+                    result = (result + this._data_unidadesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -26262,11 +27302,11 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(LicitacionesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._data_unidadesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(deletedRows));
+                    result = (result + this._data_unidadesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -26318,6 +27358,14 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._aux_cat_trad_refTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -26339,14 +27387,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._registros_claves_referenciasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -26374,6 +27414,14 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._licitacion_itemsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -26390,19 +27438,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._paises_origenTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._paises_origenTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -26571,6 +27619,11 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
             }
             if (((this._registros_tramites_prorrogaTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._registros_tramites_prorrogaTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
+            if (((this._data_unidadesTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._data_unidadesTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -26795,6 +27848,15 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                         adaptersWithAcceptChangesDuringUpdate.Add(this._registros_tramites_prorrogaTableAdapter.Adapter);
                     }
                 }
+                if ((this._data_unidadesTableAdapter != null)) {
+                    revertConnections.Add(this._data_unidadesTableAdapter, this._data_unidadesTableAdapter.Connection);
+                    this._data_unidadesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._data_unidadesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._data_unidadesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._data_unidadesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._data_unidadesTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -26936,6 +27998,10 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if ((this._registros_tramites_prorrogaTableAdapter != null)) {
                     this._registros_tramites_prorrogaTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._registros_tramites_prorrogaTableAdapter]));
                     this._registros_tramites_prorrogaTableAdapter.Transaction = null;
+                }
+                if ((this._data_unidadesTableAdapter != null)) {
+                    this._data_unidadesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._data_unidadesTableAdapter]));
+                    this._data_unidadesTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

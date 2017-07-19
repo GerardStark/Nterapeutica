@@ -45,6 +45,10 @@ namespace AppLicitaciones
                 date_emision.Value = Convert.ToDateTime(dt.Rows[0]["fecha_emision"]);
                 date_vencimiento.Value = Convert.ToDateTime(dt.Rows[0]["fecha_vencimiento"]);
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
+                if (lbl_reg_archivo.Text != "(Vacio)")
+                {
+                    btn_archivo.Text = "Cambiar";
+                }
                 txt_distintiva.Text = dt.Rows[0]["denom_distintiva"].ToString();
                 txt_generica.Text = dt.Rows[0]["denom_generica"].ToString();
                 switch (dt.Rows[0]["tipo"].ToString())
@@ -173,6 +177,7 @@ namespace AppLicitaciones
                         cmd = new SqlCommand("UPDATE registros_sanitarios set dir_archivo=@archivo where id_registro=" + id_registro + "", con);
                         cmd.Parameters.AddWithValue("@archivo", "(Vacio)");
                         lbl_reg_archivo.Text = "(Vacio)";
+                        btn_archivo.Text = "Buscar";
                         cmd.ExecuteScalar();
                         con.Close();
                         MessageBox.Show("Archivo Borrado");
@@ -183,6 +188,7 @@ namespace AppLicitaciones
                         cmd = new SqlCommand("UPDATE registros_sanitarios set dir_archivo=@archivo where id_registro=" + id_registro + "", con);
                         cmd.Parameters.AddWithValue("@archivo", "(Vacio)");
                         lbl_reg_archivo.Text = "(Vacio)";
+                        btn_archivo.Text = "Buscar";
                         cmd.ExecuteScalar();
                         con.Close();
                         MessageBox.Show("Se eliminó el archivo, ya puede capturar un archivo nuevo");

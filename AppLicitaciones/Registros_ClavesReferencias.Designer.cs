@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_ClavesReferencias));
             this.DGV_Referencias = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_unidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,8 +47,14 @@
             this.btn_eliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.cmb_unidad = new System.Windows.Forms.ComboBox();
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DGV_Referencias
@@ -94,13 +100,6 @@
             this.unidadColumn.Name = "unidadColumn";
             this.unidadColumn.ReadOnly = true;
             this.unidadColumn.Width = 150;
-            // 
-            // txt_unidad
-            // 
-            this.txt_unidad.Location = new System.Drawing.Point(116, 107);
-            this.txt_unidad.Name = "txt_unidad";
-            this.txt_unidad.Size = new System.Drawing.Size(308, 26);
-            this.txt_unidad.TabIndex = 13;
             // 
             // label3
             // 
@@ -210,12 +209,38 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // cmb_unidad
+            // 
+            this.cmb_unidad.DataSource = this.dataunidadesBindingSource;
+            this.cmb_unidad.DisplayMember = "unidad";
+            this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_unidad.FormattingEnabled = true;
+            this.cmb_unidad.Location = new System.Drawing.Point(116, 107);
+            this.cmb_unidad.Name = "cmb_unidad";
+            this.cmb_unidad.Size = new System.Drawing.Size(308, 28);
+            this.cmb_unidad.TabIndex = 13;
+            this.cmb_unidad.ValueMember = "id";
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataunidadesBindingSource
+            // 
+            this.dataunidadesBindingSource.DataMember = "data_unidades";
+            this.dataunidadesBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // data_unidadesTableAdapter
+            // 
+            this.data_unidadesTableAdapter.ClearBeforeFill = true;
+            // 
             // Registros_ClavesReferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 652);
-            this.Controls.Add(this.txt_unidad);
+            this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.label2);
@@ -228,9 +253,12 @@
             this.Name = "Registros_ClavesReferencias";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel de las Rerefencias, Claves o Codigos de los Registros Sanitarios";
+            this.Load += new System.EventHandler(this.Registros_ClavesReferencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +266,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView DGV_Referencias;
-        private System.Windows.Forms.TextBox txt_unidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label label2;
@@ -255,5 +282,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
+        private System.Windows.Forms.ComboBox cmb_unidad;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource;
+        private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
     }
 }

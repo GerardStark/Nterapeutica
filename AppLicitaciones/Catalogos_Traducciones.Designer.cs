@@ -46,6 +46,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_desc = new System.Windows.Forms.TextBox();
             this.btn_traduccion_referencias = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Traducciones)).BeginInit();
             this.SuspendLayout();
@@ -125,10 +126,10 @@
             this.idColumn,
             this.descColumn,
             this.archivoColumn});
-            this.DGV_Traducciones.Location = new System.Drawing.Point(58, 184);
+            this.DGV_Traducciones.Location = new System.Drawing.Point(58, 212);
             this.DGV_Traducciones.Name = "DGV_Traducciones";
             this.DGV_Traducciones.ReadOnly = true;
-            this.DGV_Traducciones.Size = new System.Drawing.Size(519, 480);
+            this.DGV_Traducciones.Size = new System.Drawing.Size(519, 452);
             this.DGV_Traducciones.TabIndex = 4;
             this.DGV_Traducciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Traducciones_CellClick);
             this.DGV_Traducciones.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Traducciones_CellDoubleClick);
@@ -156,7 +157,7 @@
             // 
             // btn_ver
             // 
-            this.btn_ver.Location = new System.Drawing.Point(79, 118);
+            this.btn_ver.Location = new System.Drawing.Point(58, 155);
             this.btn_ver.Name = "btn_ver";
             this.btn_ver.Size = new System.Drawing.Size(122, 31);
             this.btn_ver.TabIndex = 15;
@@ -167,7 +168,7 @@
             // lbl_archivo
             // 
             this.lbl_archivo.AutoSize = true;
-            this.lbl_archivo.Location = new System.Drawing.Point(75, 152);
+            this.lbl_archivo.Location = new System.Drawing.Point(58, 189);
             this.lbl_archivo.Name = "lbl_archivo";
             this.lbl_archivo.Size = new System.Drawing.Size(48, 20);
             this.lbl_archivo.TabIndex = 13;
@@ -175,11 +176,11 @@
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(79, 81);
+            this.btn_archivo.Location = new System.Drawing.Point(58, 118);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(122, 31);
             this.btn_archivo.TabIndex = 12;
-            this.btn_archivo.Text = "Cambiar";
+            this.btn_archivo.Text = "Buscar Archivo";
             this.btn_archivo.UseVisualStyleBackColor = true;
             this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
@@ -197,12 +198,12 @@
             this.txt_desc.Location = new System.Drawing.Point(207, 46);
             this.txt_desc.Multiline = true;
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(370, 103);
+            this.txt_desc.Size = new System.Drawing.Size(370, 140);
             this.txt_desc.TabIndex = 17;
             // 
             // btn_traduccion_referencias
             // 
-            this.btn_traduccion_referencias.Location = new System.Drawing.Point(79, 44);
+            this.btn_traduccion_referencias.Location = new System.Drawing.Point(58, 44);
             this.btn_traduccion_referencias.Name = "btn_traduccion_referencias";
             this.btn_traduccion_referencias.Size = new System.Drawing.Size(122, 31);
             this.btn_traduccion_referencias.TabIndex = 18;
@@ -210,11 +211,21 @@
             this.btn_traduccion_referencias.UseVisualStyleBackColor = true;
             this.btn_traduccion_referencias.Click += new System.EventHandler(this.btn_traduccion_referencias_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(58, 95);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 20);
+            this.label2.TabIndex = 19;
+            this.label2.Text = "Archivo:";
+            // 
             // Catalogos_Traducciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(596, 676);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_traduccion_referencias);
             this.Controls.Add(this.txt_desc);
             this.Controls.Add(this.label1);
@@ -255,5 +266,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn archivoColumn;
+        private System.Windows.Forms.Label label2;
     }
 }

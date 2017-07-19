@@ -44,7 +44,7 @@ namespace AppLicitaciones
                     
                 }
                 con.Close();
-                //marcarclavesexistentes(id_traduccion);
+                
         }
             catch (Exception ex)
             {
@@ -210,6 +210,10 @@ namespace AppLicitaciones
                 id_traduccion = Convert.ToInt32(DGV_Traducciones.Rows[e.RowIndex].Cells["idColumn"].Value);
                 txt_desc.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["descColumn"].Value.ToString();
                 lbl_archivo.Text = DGV_Traducciones.Rows[e.RowIndex].Cells["archivoColumn"].Value.ToString();
+                if (lbl_archivo.Text != "(Vacio)")
+                {
+                    btn_archivo.Text = "Cambiar";
+                }
             }
         }
 

@@ -60,7 +60,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
                 cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
                 cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
                 cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
@@ -90,7 +90,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@idregistro", id_catalogo);
                     cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                    cmd.Parameters.AddWithValue("@unidad", txt_unidad.Text);
+                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
                     cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
                     cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
@@ -147,7 +147,7 @@ namespace AppLicitaciones
                 id_referencia = Convert.ToInt32(DGV_Referencias.Rows[e.RowIndex].Cells["idColumn"].Value);
                 txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
                 txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
-                txt_unidad.Text = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
+                cmb_unidad.SelectedText = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
                 txt_pag_pdf.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagpdfColumn"].Value.ToString();
                 txt_pag_cat.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagcatColumn"].Value.ToString();
                 btn_guardar.Enabled = false;
@@ -162,7 +162,7 @@ namespace AppLicitaciones
                 btn_guardar.Enabled = true;
                 txt_clave.Text = "";
                 txt_descripcion.Text = "";
-                txt_unidad.Text = "";
+                cmb_unidad.SelectedIndex = 0;
                 txt_pag_cat.Text = "";
                 txt_pag_pdf.Text = "";
             }

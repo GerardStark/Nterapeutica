@@ -60,6 +60,10 @@ namespace AppLicitaciones
                 txt_marca.Text = dt.Rows[0]["marca"].ToString();
                 cmb_spec.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["spec_catalogo"].ToString(), cmb_spec);
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
+                if (lbl_archivo.Text != "(Vacio)")
+                {
+                    btn_archivo.Text = "Cambiar";
+                }
             }
         }        
 

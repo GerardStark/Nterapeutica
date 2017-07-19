@@ -17,7 +17,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         int id_certificado = 0;
-        int id_fabricante = 0;
+        
         string fileName, archivo, camino;
         string fileNametrad, archivotrad, caminotrad;
 
@@ -174,7 +174,15 @@ namespace AppLicitaciones
                 date_emision.Text = dt.Rows[0]["fecha_emision"].ToString();
                 date_vencimiento.Text = dt.Rows[0]["fecha_vencimiento"].ToString();
                 lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
+                if (lbl_archivo.Text != "(Vacio)")
+                {
+                    btn_archivo.Text = "Cambiar";
+                }
                 lbl_trad.Text = dt.Rows[0]["dir_archivo_traduccion"].ToString();
+                if (lbl_trad.Text != "(Vacio)")
+                {
+                    btn_archivo.Text = "Cambiar";
+                }
             }
         }
 

@@ -151,7 +151,7 @@
             // lbl_archivo
             // 
             this.lbl_archivo.AutoSize = true;
-            this.lbl_archivo.Location = new System.Drawing.Point(131, 300);
+            this.lbl_archivo.Location = new System.Drawing.Point(131, 307);
             this.lbl_archivo.Name = "lbl_archivo";
             this.lbl_archivo.Size = new System.Drawing.Size(42, 20);
             this.lbl_archivo.TabIndex = 1014;
@@ -160,7 +160,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 269);
+            this.label6.Location = new System.Drawing.Point(127, 273);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 20);
             this.label6.TabIndex = 1012;
@@ -211,11 +211,11 @@
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(198, 266);
+            this.btn_archivo.Location = new System.Drawing.Point(198, 270);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(105, 26);
             this.btn_archivo.TabIndex = 1013;
-            this.btn_archivo.Text = "Seleccionar";
+            this.btn_archivo.Text = "Buscar";
             this.btn_archivo.UseVisualStyleBackColor = true;
             this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 

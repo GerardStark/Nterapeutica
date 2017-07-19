@@ -34,6 +34,8 @@
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.cmb_pais = new System.Windows.Forms.ComboBox();
+            this.paisesorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.txt_rfc = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.rad_prorroga = new System.Windows.Forms.RadioButton();
@@ -62,12 +64,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
-            this.paisesorigenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.paises_origenTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.paises_origenTableAdapter();
             this.tt_reg_editar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisesorigenBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tt_reg_editar
@@ -116,6 +116,16 @@
             this.cmb_pais.Size = new System.Drawing.Size(288, 28);
             this.cmb_pais.TabIndex = 130;
             this.cmb_pais.ValueMember = "id_pais";
+            // 
+            // paisesorigenBindingSource
+            // 
+            this.paisesorigenBindingSource.DataMember = "paises_origen";
+            this.paisesorigenBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // txt_rfc
             // 
@@ -212,8 +222,9 @@
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(123, 36);
             this.btn_archivo.TabIndex = 126;
-            this.btn_archivo.Text = "Seleccionar...";
+            this.btn_archivo.Text = "Buscar";
             this.btn_archivo.UseVisualStyleBackColor = true;
+            this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
             // txt_marca
             // 
@@ -358,16 +369,6 @@
             this.label1.TabIndex = 102;
             this.label1.Text = "Numero:";
             // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // paisesorigenBindingSource
-            // 
-            this.paisesorigenBindingSource.DataMember = "paises_origen";
-            this.paisesorigenBindingSource.DataSource = this.licitacionesDataSet;
-            // 
             // paises_origenTableAdapter
             // 
             this.paises_origenTableAdapter.ClearBeforeFill = true;
@@ -415,8 +416,8 @@
             this.Load += new System.EventHandler(this.Registros_Editar_Load);
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paisesorigenBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

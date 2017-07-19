@@ -29,13 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_ClavesReferencias));
-            this.txt_unidad = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Referencias = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagpdfColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagcatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -51,22 +56,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_pag_cat = new System.Windows.Forms.TextBox();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagpdfColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagcatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmb_unidad = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // txt_unidad
-            // 
-            this.txt_unidad.Location = new System.Drawing.Point(88, 101);
-            this.txt_unidad.Name = "txt_unidad";
-            this.txt_unidad.Size = new System.Drawing.Size(308, 26);
-            this.txt_unidad.TabIndex = 21;
             // 
             // label3
             // 
@@ -129,6 +122,44 @@
             this.DGV_Referencias.TabIndex = 15;
             this.DGV_Referencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellClick);
             this.DGV_Referencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellDoubleClick);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            // 
+            // claveColumn
+            // 
+            this.claveColumn.HeaderText = "Clave";
+            this.claveColumn.Name = "claveColumn";
+            this.claveColumn.ReadOnly = true;
+            // 
+            // descripcionColumn
+            // 
+            this.descripcionColumn.HeaderText = "Descripcion";
+            this.descripcionColumn.Name = "descripcionColumn";
+            this.descripcionColumn.ReadOnly = true;
+            this.descripcionColumn.Width = 320;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.ReadOnly = true;
+            this.unidadColumn.Width = 150;
+            // 
+            // pagpdfColumn
+            // 
+            this.pagpdfColumn.HeaderText = "Pag. PDF";
+            this.pagpdfColumn.Name = "pagpdfColumn";
+            this.pagpdfColumn.ReadOnly = true;
+            // 
+            // pagcatColumn
+            // 
+            this.pagcatColumn.HeaderText = "Pag. Cat";
+            this.pagcatColumn.Name = "pagcatColumn";
+            this.pagcatColumn.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -267,54 +298,27 @@
             this.txt_pag_cat.Size = new System.Drawing.Size(148, 26);
             this.txt_pag_cat.TabIndex = 26;
             // 
-            // idColumn
+            // cmb_unidad
             // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            // 
-            // claveColumn
-            // 
-            this.claveColumn.HeaderText = "Clave";
-            this.claveColumn.Name = "claveColumn";
-            this.claveColumn.ReadOnly = true;
-            // 
-            // descripcionColumn
-            // 
-            this.descripcionColumn.HeaderText = "Descripcion";
-            this.descripcionColumn.Name = "descripcionColumn";
-            this.descripcionColumn.ReadOnly = true;
-            this.descripcionColumn.Width = 320;
-            // 
-            // unidadColumn
-            // 
-            this.unidadColumn.HeaderText = "Unidad";
-            this.unidadColumn.Name = "unidadColumn";
-            this.unidadColumn.ReadOnly = true;
-            this.unidadColumn.Width = 150;
-            // 
-            // pagpdfColumn
-            // 
-            this.pagpdfColumn.HeaderText = "Pag. PDF";
-            this.pagpdfColumn.Name = "pagpdfColumn";
-            this.pagpdfColumn.ReadOnly = true;
-            // 
-            // pagcatColumn
-            // 
-            this.pagcatColumn.HeaderText = "Pag. Cat";
-            this.pagcatColumn.Name = "pagcatColumn";
-            this.pagcatColumn.ReadOnly = true;
+            this.cmb_unidad.DisplayMember = "unidad";
+            this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_unidad.FormattingEnabled = true;
+            this.cmb_unidad.Location = new System.Drawing.Point(88, 100);
+            this.cmb_unidad.Name = "cmb_unidad";
+            this.cmb_unidad.Size = new System.Drawing.Size(308, 28);
+            this.cmb_unidad.TabIndex = 27;
+            this.cmb_unidad.ValueMember = "id";
             // 
             // Catalogos_ClavesReferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 741);
+            this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.txt_pag_cat);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_pag_pdf);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txt_unidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.label2);
@@ -335,8 +339,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txt_unidad;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label label2;
@@ -364,5 +366,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagpdfColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagcatColumn;
+        private System.Windows.Forms.ComboBox cmb_unidad;
     }
 }
