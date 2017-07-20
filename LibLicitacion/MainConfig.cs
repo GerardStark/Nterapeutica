@@ -15,7 +15,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public string con = @"Data Source=192.168.1.108\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=oirwbg6v23; ";  
+        public string con = @"Data Source=192.168.1.85\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=oirwbg6v23; ";  
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)
@@ -127,6 +127,35 @@ namespace LibLicitacion
             }
             return nombre;
         }
+
+        public string obtenernumeroregistro(int id_registro)
+        {
+            string nombre = "";
+            if (id_registro != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from registros_sanitarios where id_registro=@id", conec);
+                cmd.Parameters.AddWithValue("@id", id_registro);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "registros");
+                conec.Close();
+                if (ds.Tables["registros"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["registros"].Rows[0]["numero_registro"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
+        }
     }
 
     public class ComboboxItem
@@ -138,5 +167,5 @@ namespace LibLicitacion
         {
             return Text;
         }
-    }    
+    }
 }

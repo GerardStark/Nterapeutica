@@ -140,10 +140,7 @@ namespace AppLicitaciones
 
         private void DGV_Catalogos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            switch (this.DGV_Catalogos.Columns[e.ColumnIndex].Name)
-            {
-                
-            }
+            
         }
 
         private void DGV_Catalogos_CellClick(object sender, DataGridViewCellEventArgs e)

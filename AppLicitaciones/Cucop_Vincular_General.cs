@@ -20,6 +20,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             txt_nombre_prod.Text = "";
+            
         }
         public void mostrarvinculoscucop(int id_cucop)
         {
@@ -78,6 +79,7 @@ namespace AppLicitaciones
         private void btn_reg_vincular_Click(object sender, EventArgs e)
         {
             Cucop_Vincular_Registro cvr = new Cucop_Vincular_Registro();
+            cvr.llenartablasregistros(id_cucop);
             DialogResult result = cvr.ShowDialog();
             if (result == DialogResult.OK)
             {

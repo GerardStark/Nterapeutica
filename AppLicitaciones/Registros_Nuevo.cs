@@ -23,6 +23,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             lbl_reg_archivo.Text = "";
+            rad_registro.Checked = true;
             
         }
         private void btn_reg_guardar_Click(object sender, EventArgs e)
