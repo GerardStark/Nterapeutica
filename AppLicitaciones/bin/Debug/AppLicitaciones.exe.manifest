@@ -42,26 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="1547208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="1549768">
       <assemblyIdentity name="AppLicitaciones" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MA+MgEkFxyH2IkBVSfIoPIUGEU4UiPaNKOVlrw3lTQ0=</dsig:DigestValue>
+        <dsig:DigestValue>3teToTu24r02bUCQVkiXhZgxxPpDQaUtM4gMZ0H1CzY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CtrlsLicitacion.dll" size="4096">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CtrlsLicitacion.dll" size="8192">
       <assemblyIdentity name="CtrlsLicitacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BwydUQE40AIxYiRN5/WDGsuYbB9MpFqlDN507TApJJc=</dsig:DigestValue>
+        <dsig:DigestValue>xuEcilG38fNTQaguFvxFn7K75b0dRHG9maPsQbuOq4I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +73,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xBpeE26IUB4tdI9vzat3IX19PZyLHLiFSdQsEpNuYF8=</dsig:DigestValue>
+        <dsig:DigestValue>VH0QSl5S1qXU1uJNc1ouQ8iqoOBINDNMKFT21pOAW3I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -60,7 +60,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
                 cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
+                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                 cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
                 cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
@@ -90,7 +90,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@idregistro", id_catalogo);
                     cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
+                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                     cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
                     cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
@@ -152,6 +152,13 @@ namespace AppLicitaciones
                 txt_pag_cat.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagcatColumn"].Value.ToString();
                 btn_guardar.Enabled = false;
             }
+        }
+
+        private void Catalogos_ClavesReferencias_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+
         }
 
         private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

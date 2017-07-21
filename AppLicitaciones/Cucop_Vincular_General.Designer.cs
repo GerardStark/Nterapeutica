@@ -29,46 +29,77 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Vincular_General));
-            this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_agregar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_quitar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.tabOpciones = new System.Windows.Forms.TabControl();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
-            this.btn_descartar = new System.Windows.Forms.ToolStripButton();
-            this.btn_reg_vincular = new System.Windows.Forms.Button();
-            this.btm_cat_vincular = new System.Windows.Forms.Button();
-            this.btn_cert_vincular = new System.Windows.Forms.Button();
-            this.txt_nombre_prod = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.list_vinc_reg = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.listView3 = new System.Windows.Forms.ListView();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(69, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(137, 20);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Nombre Producto:";
-            // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_guardar,
+            this.btn_agregar,
+            this.toolStripLabel1,
+            this.btn_quitar,
+            this.toolStripLabel2,
+            this.toolStripLabel4,
             this.btn_cancelar,
-            this.btn_descartar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 401);
+            this.toolStripLabel3,
+            this.btn_guardar});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(948, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(55, 631);
             this.toolStrip1.TabIndex = 51;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btn_agregar
+            // 
+            this.btn_agregar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_agregar.Image")));
+            this.btn_agregar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(52, 54);
+            this.btn_agregar.Text = "toolStripButton1";
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel1.Text = "Agregar";
+            // 
+            // btn_quitar
+            // 
+            this.btn_quitar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_quitar.Image = ((System.Drawing.Image)(resources.GetObject("btn_quitar.Image")));
+            this.btn_quitar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_quitar.Name = "btn_quitar";
+            this.btn_quitar.Size = new System.Drawing.Size(52, 54);
+            this.btn_quitar.Text = "toolStripButton1";
+            this.btn_quitar.Click += new System.EventHandler(this.btn_quitar_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel2.Text = "Quitar";
+            // 
+            // tabOpciones
+            // 
+            this.tabOpciones.Location = new System.Drawing.Point(58, 12);
+            this.tabOpciones.Name = "tabOpciones";
+            this.tabOpciones.SelectedIndex = 0;
+            this.tabOpciones.Size = new System.Drawing.Size(1247, 607);
+            this.tabOpciones.TabIndex = 52;
             // 
             // btn_guardar
             // 
@@ -77,140 +108,45 @@
             this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
             this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(54, 54);
+            this.btn_guardar.Size = new System.Drawing.Size(52, 54);
             this.btn_guardar.Text = "toolStripButton1";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel3.Text = "Guardar";
             // 
             // btn_cancelar
             // 
+            this.btn_cancelar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.btn_cancelar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.btn_cancelar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.Image")));
             this.btn_cancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
-            this.btn_cancelar.Text = "toolStripButton2";
+            this.btn_cancelar.Size = new System.Drawing.Size(52, 54);
+            this.btn_cancelar.Text = "toolStripButton1";
             // 
-            // btn_descartar
+            // toolStripLabel4
             // 
-            this.btn_descartar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_descartar.Image = ((System.Drawing.Image)(resources.GetObject("btn_descartar.Image")));
-            this.btn_descartar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_descartar.Name = "btn_descartar";
-            this.btn_descartar.Size = new System.Drawing.Size(54, 54);
-            this.btn_descartar.Text = "toolStripButton3";
-            // 
-            // btn_reg_vincular
-            // 
-            this.btn_reg_vincular.Location = new System.Drawing.Point(85, 347);
-            this.btn_reg_vincular.Name = "btn_reg_vincular";
-            this.btn_reg_vincular.Size = new System.Drawing.Size(123, 32);
-            this.btn_reg_vincular.TabIndex = 142;
-            this.btn_reg_vincular.Text = "Cambiar";
-            this.btn_reg_vincular.UseVisualStyleBackColor = true;
-            this.btn_reg_vincular.Click += new System.EventHandler(this.btn_reg_vincular_Click);
-            // 
-            // btm_cat_vincular
-            // 
-            this.btm_cat_vincular.Location = new System.Drawing.Point(410, 347);
-            this.btm_cat_vincular.Name = "btm_cat_vincular";
-            this.btm_cat_vincular.Size = new System.Drawing.Size(123, 32);
-            this.btm_cat_vincular.TabIndex = 143;
-            this.btm_cat_vincular.Text = "Cambiar";
-            this.btm_cat_vincular.UseVisualStyleBackColor = true;
-            // 
-            // btn_cert_vincular
-            // 
-            this.btn_cert_vincular.Location = new System.Drawing.Point(745, 347);
-            this.btn_cert_vincular.Name = "btn_cert_vincular";
-            this.btn_cert_vincular.Size = new System.Drawing.Size(123, 32);
-            this.btn_cert_vincular.TabIndex = 144;
-            this.btn_cert_vincular.Text = "Cambiar";
-            this.btn_cert_vincular.UseVisualStyleBackColor = true;
-            // 
-            // txt_nombre_prod
-            // 
-            this.txt_nombre_prod.Location = new System.Drawing.Point(212, 15);
-            this.txt_nombre_prod.Name = "txt_nombre_prod";
-            this.txt_nombre_prod.Size = new System.Drawing.Size(321, 26);
-            this.txt_nombre_prod.TabIndex = 145;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(61, 72);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(148, 20);
-            this.label5.TabIndex = 32;
-            this.label5.Text = "Registros Sanitario:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(694, 72);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(176, 20);
-            this.label6.TabIndex = 33;
-            this.label6.Text = "Certificados de Calidad:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(360, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(183, 20);
-            this.label7.TabIndex = 34;
-            this.label7.Text = "Catálogos de Productos:";
-            // 
-            // list_vinc_reg
-            // 
-            this.list_vinc_reg.Location = new System.Drawing.Point(18, 95);
-            this.list_vinc_reg.MultiSelect = false;
-            this.list_vinc_reg.Name = "list_vinc_reg";
-            this.list_vinc_reg.Size = new System.Drawing.Size(253, 246);
-            this.list_vinc_reg.TabIndex = 147;
-            this.list_vinc_reg.UseCompatibleStateImageBehavior = false;
-            this.list_vinc_reg.View = System.Windows.Forms.View.List;
-            this.list_vinc_reg.MouseClick += new System.Windows.Forms.MouseEventHandler(this.list_vinc_reg_MouseClick);
-            // 
-            // listView2
-            // 
-            this.listView2.Location = new System.Drawing.Point(352, 95);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(253, 246);
-            this.listView2.TabIndex = 148;
-            this.listView2.UseCompatibleStateImageBehavior = false;
-            // 
-            // listView3
-            // 
-            this.listView3.Location = new System.Drawing.Point(679, 95);
-            this.listView3.MultiSelect = false;
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(253, 246);
-            this.listView3.TabIndex = 149;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.toolStripLabel4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel4.Text = "Cancelar";
             // 
             // Cucop_Vincular_General
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(948, 458);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.listView2);
-            this.Controls.Add(this.list_vinc_reg);
-            this.Controls.Add(this.txt_nombre_prod);
-            this.Controls.Add(this.btn_cert_vincular);
-            this.Controls.Add(this.btm_cat_vincular);
-            this.Controls.Add(this.btn_reg_vincular);
+            this.ClientSize = new System.Drawing.Size(1317, 631);
+            this.Controls.Add(this.tabOpciones);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Vincular_General";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cucop_Vincular_General";
+            this.Text = "Opciones";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -219,20 +155,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btn_agregar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.TabControl tabOpciones;
+        private System.Windows.Forms.ToolStripButton btn_quitar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton btn_guardar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
         private System.Windows.Forms.ToolStripButton btn_cancelar;
-        private System.Windows.Forms.ToolStripButton btn_descartar;
-        private System.Windows.Forms.Button btn_reg_vincular;
-        private System.Windows.Forms.Button btm_cat_vincular;
-        private System.Windows.Forms.Button btn_cert_vincular;
-        private System.Windows.Forms.TextBox txt_nombre_prod;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListView list_vinc_reg;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.ListView listView3;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }

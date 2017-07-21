@@ -48,7 +48,7 @@ namespace AppLicitaciones
                     SqlConnection con = new SqlConnection(mc.con);
                     con.Open();
                     SqlCommand cmd = new SqlCommand("INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)" +
-                        "values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
+                        " OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
                     cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
                     cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
                     cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
@@ -56,7 +56,8 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
                     cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                    cmd.ExecuteNonQuery();
+                    Int32 newId = (Int32)cmd.ExecuteScalar();
+                    //crearvinculodb(newId);
                     con.Close();
                     this.DialogResult = DialogResult.OK;
                     this.Close();
@@ -75,7 +76,7 @@ namespace AppLicitaciones
                         SqlConnection con = new SqlConnection(mc.con);
                         con.Open();
                         SqlCommand cmd = new SqlCommand("INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)" +
-                            "values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
+                            " OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
                         cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
                         cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
                         cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
@@ -83,7 +84,8 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
                         cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                        cmd.ExecuteNonQuery();
+                        Int32 newId = (Int32)cmd.ExecuteScalar();
+                        //crearvinculodb(newId);
                         con.Close();
                         this.DialogResult = DialogResult.OK;
                         this.Close();
@@ -99,6 +101,24 @@ namespace AppLicitaciones
                     MessageBox.Show("El cucop debe consistir en 12 digitos como se muestra acontinuacion: xxx.xxx.xxxx");
                 }
             }    
+        }
+        private void crearvinculodb(int id_cucop)
+        {
+            try
+            {
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("INSERT INTO aux_vinculos (id_cucop_item) VALUES (@idcucop) ", con);
+                    cmd.Parameters.AddWithValue("@idcucop", id_cucop);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Exito");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_descartar_Click(object sender, EventArgs e)

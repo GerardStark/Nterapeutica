@@ -42,7 +42,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="NuevaOpcion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NuevaOpcion.Designer.cs">
+      <DependentUpon>NuevaOpcion.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="NuevaOpcion.resx">
+      <DependentUpon>NuevaOpcion.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppLicitaciones\AppLicitaciones.csproj">
+      <Project>{de4ec9e2-1d95-44be-aab8-76ceab355063}</Project>
+      <Name>AppLicitaciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibLicitacion\LibLicitacion.csproj">
+      <Project>{48ad9fd2-4856-4a38-93ec-d34ad2e5d06b}</Project>
+      <Name>LibLicitacion</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogos_ClavesReferencias));
             this.label3 = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
@@ -57,8 +58,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txt_pag_cat = new System.Windows.Forms.TextBox();
             this.cmb_unidad = new System.Windows.Forms.ComboBox();
+            this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -118,7 +124,7 @@
             this.DGV_Referencias.Location = new System.Drawing.Point(70, 197);
             this.DGV_Referencias.Name = "DGV_Referencias";
             this.DGV_Referencias.ReadOnly = true;
-            this.DGV_Referencias.Size = new System.Drawing.Size(914, 532);
+            this.DGV_Referencias.Size = new System.Drawing.Size(914, 339);
             this.DGV_Referencias.TabIndex = 15;
             this.DGV_Referencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellClick);
             this.DGV_Referencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellDoubleClick);
@@ -178,7 +184,7 @@
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(68, 741);
+            this.toolStrip1.Size = new System.Drawing.Size(68, 563);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -300,6 +306,7 @@
             // 
             // cmb_unidad
             // 
+            this.cmb_unidad.DataSource = this.dataunidadesBindingSource;
             this.cmb_unidad.DisplayMember = "unidad";
             this.cmb_unidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_unidad.FormattingEnabled = true;
@@ -307,13 +314,27 @@
             this.cmb_unidad.Name = "cmb_unidad";
             this.cmb_unidad.Size = new System.Drawing.Size(308, 28);
             this.cmb_unidad.TabIndex = 27;
-            this.cmb_unidad.ValueMember = "id";
+            this.cmb_unidad.ValueMember = "unidad";
+            // 
+            // dataunidadesBindingSource
+            // 
+            this.dataunidadesBindingSource.DataMember = "data_unidades";
+            this.dataunidadesBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // data_unidadesTableAdapter
+            // 
+            this.data_unidadesTableAdapter.ClearBeforeFill = true;
             // 
             // Catalogos_ClavesReferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1007, 741);
+            this.ClientSize = new System.Drawing.Size(1007, 563);
             this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.txt_pag_cat);
             this.Controls.Add(this.label5);
@@ -330,9 +351,12 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalogos_ClavesReferencias";
             this.Text = "Catalogos_ClavesReferencias";
+            this.Load += new System.EventHandler(this.Catalogos_ClavesReferencias_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +391,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pagpdfColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagcatColumn;
         private System.Windows.Forms.ComboBox cmb_unidad;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource;
+        private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
     }
 }

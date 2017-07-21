@@ -2,3 +2,6 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitaci
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitacion\bin\Release\CtrlsLicitacion.pdb
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitacion\obj\Release\CtrlsLicitacion.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitacion\obj\Release\CtrlsLicitacion.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitacion\obj\Release\CtrlsLicitacion.csprojResolveAssemblyReference.cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitacion\obj\Release\CtrlsLicitacion.NuevaOpcion.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\CtrlsLicitacion\obj\Release\CtrlsLicitacion.csproj.GenerateResource.Cache

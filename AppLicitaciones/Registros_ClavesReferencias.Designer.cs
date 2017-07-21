@@ -48,13 +48,13 @@
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.cmb_unidad = new System.Windows.Forms.ComboBox();
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // DGV_Referencias
@@ -70,7 +70,7 @@
             this.DGV_Referencias.Location = new System.Drawing.Point(58, 145);
             this.DGV_Referencias.Name = "DGV_Referencias";
             this.DGV_Referencias.ReadOnly = true;
-            this.DGV_Referencias.Size = new System.Drawing.Size(714, 488);
+            this.DGV_Referencias.Size = new System.Drawing.Size(714, 395);
             this.DGV_Referencias.TabIndex = 1;
             this.DGV_Referencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellClick);
             this.DGV_Referencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellDoubleClick);
@@ -205,7 +205,7 @@
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(55, 652);
+            this.toolStrip1.Size = new System.Drawing.Size(55, 563);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -221,15 +221,15 @@
             this.cmb_unidad.TabIndex = 13;
             this.cmb_unidad.ValueMember = "id";
             // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // dataunidadesBindingSource
             // 
             this.dataunidadesBindingSource.DataMember = "data_unidades";
             this.dataunidadesBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // data_unidadesTableAdapter
             // 
@@ -239,7 +239,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 652);
+            this.ClientSize = new System.Drawing.Size(788, 563);
             this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_descripcion);
@@ -257,8 +257,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

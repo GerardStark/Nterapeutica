@@ -145,7 +145,10 @@ namespace AppLicitaciones
 
         private void DGV_Catalogos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id_catalogo = Convert.ToInt32(DGV_Catalogos.Rows[e.RowIndex].Cells["idColumn"].Value);
+            if (e.RowIndex != -1)
+            {
+                id_catalogo = Convert.ToInt32(DGV_Catalogos.Rows[e.RowIndex].Cells["idColumn"].Value);
+            }
         }
 
         private void filtrartablacatalogos (string ctrl, string valor)

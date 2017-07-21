@@ -60,7 +60,7 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@idregistro", id_registro);
                 cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                 cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
+                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -88,7 +88,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@idregistro", id_registro);
                     cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.SelectedText);
+                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     con.Close();

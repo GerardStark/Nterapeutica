@@ -124,7 +124,6 @@ namespace AppLicitaciones
             if (id_cucop!=0)
             {
                 Cucop_Vincular_General cvg = new Cucop_Vincular_General();
-                cvg.mostrarvinculoscucop(id_cucop);
                 DialogResult result = cvg.ShowDialog();
                 if (result == DialogResult.OK)
                 {

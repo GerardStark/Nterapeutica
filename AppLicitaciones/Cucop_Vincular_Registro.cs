@@ -63,10 +63,12 @@ namespace AppLicitaciones
             //agregar registros a la lista de registros vinculados a la descripcion
             if (id_registro != 0 && numeroregistro != "")
             {
-                int newId = dgv_vinculados.Rows.Count + 1;
-                registrosID.Add(id_registro);
-                dgv_registros.Rows.RemoveAt(regrowindex);
-                dgv_vinculados.Rows.Add(newId,numeroregistro);
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    //SqlCommand cmd = new SqlCommand("INSERT into aux_vinculos value",con);
+                }
+
             }
             else
             {
