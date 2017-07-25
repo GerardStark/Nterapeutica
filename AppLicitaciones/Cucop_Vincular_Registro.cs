@@ -16,8 +16,7 @@ namespace AppLicitaciones
     {
         int id_vinculo = 0;
         int id_registro = 0;
-        int regrowindex = 0, numeroregistro = 0;
-        List<Int32> registrosID = new List<int>();
+        int id_vinculo_reg = 0;        
         MainConfig mc = new MainConfig();
         public Cucop_Vincular_Registro()
         {
@@ -31,6 +30,8 @@ namespace AppLicitaciones
         public void mostrarVinculosRegistros(int idVinc)
         {
             this.id_vinculo = idVinc;
+            dgv_registros.Rows.Clear();
+            dgv_vinculados.Rows.Clear();
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
@@ -45,8 +46,9 @@ namespace AppLicitaciones
                     dgv_vinculados.Rows.Add(drt.ItemArray);
                 }
                 SqlCommand cmdreg = new SqlCommand(@"SELECT a.id_registro, a.numero_registro, a.titular, a.denom_distintiva, a.denom_generica, a.fabricante, a.pais_origen 
-                FROM registros_sanitarios as a LEFT OUTER JOIN cucop_vinculos_registros as b ON a.id_registro = b.id_registro
-                WHERE b.id IS NULL", con);                
+                FROM registros_sanitarios as a LEFT OUTER JOIN cucop_vinculos_registros as b ON a.id_registro = b.id_registro AND b.id_cucop_vinculo = @vinc
+                WHERE b.id IS NULL", con);
+                cmdreg.Parameters.AddWithValue("@vinc", idVinc);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmdreg);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -61,12 +63,27 @@ namespace AppLicitaciones
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             //agregar registros a la lista de registros vinculados a la descripcion
-            if (id_registro != 0 && numeroregistro != 0)
+            if (id_registro != 0)
             {
-                using (SqlConnection con = new SqlConnection(mc.con))
+                try
                 {
-                    con.Open();
-                    //SqlCommand cmd = new SqlCommand("INSERT into aux_vinculos value",con);
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos_registros (id_cucop_vinculo,id_registro,actualizado_en) 
+                        VALUES(@idVinculo,@idRegistro,@updated)", con);
+                        cmd.Parameters.AddWithValue("@idVinculo", id_vinculo);
+                        cmd.Parameters.AddWithValue("@idRegistro", id_registro);
+                        cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Agregado");
+                        mostrarVinculosRegistros(id_vinculo);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw;
                 }
 
             }
@@ -79,25 +96,52 @@ namespace AppLicitaciones
         private void btn_quitar_Click(object sender, EventArgs e)
         {
             //quitar registro de la lista de vinculados, regresarlo a la lista de registros
-            if (id_vinculo != 0)
+            if (id_vinculo_reg != 0)
             {
-
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand(@"DELETE FROM cucop_vinculos_registros WHERE id = @idVinculoReg", con);
+                        cmd.Parameters.AddWithValue("@idVinculoReg", id_vinculo_reg);                        
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Removido");
+                        mostrarVinculosRegistros(id_vinculo);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona un Vinculo");
             }
         }
 
         private void btn_info_Click(object sender, EventArgs e)
         {
-            //informacion del registro sanitario y sus referencias
+            //si hay registro seleccionado, procede a visualizar
+            if (id_registro != 0)
+            {
+                //abre el panel de visualizacion del registro
+                Registros_Visualizar rn = new Registros_Visualizar();
+                rn.mostrarinforegistro(id_registro);
+                DialogResult result = rn.ShowDialog();                
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Registro Sanitario de la lista para poder visualizarlo.");
+            }
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            //guarda todos los cambias
-        }
-
-        private void btn_descartar_Click(object sender, EventArgs e)
-        {
-            //cierra sin guardar los cambios
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void dgv_registros_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -105,8 +149,6 @@ namespace AppLicitaciones
             if (e.RowIndex != -1)
             {
                 id_registro = Convert.ToInt32(dgv_registros.Rows[e.RowIndex].Cells["idColumn"].Value);
-                regrowindex = e.RowIndex;
-                numeroregistro = (Int32)dgv_registros.Rows[e.RowIndex].Cells["numeroColumn"].Value;
             }
         }
 
@@ -127,9 +169,8 @@ namespace AppLicitaciones
         {
             if (e.RowIndex != -1)
             {
-                id_vinculo = (Int32)dgv_vinculados.Rows[e.RowIndex].Cells["idvincregColumn"].Value;
-                regrowindex = e.RowIndex;
-                numeroregistro = (Int32)dgv_vinculados.Rows[e.RowIndex].Cells["numvincregColumn"].Value;
+                id_vinculo_reg = (Int32)dgv_vinculados.Rows[e.RowIndex].Cells["idvincregColumn"].Value;
+                id_registro = (Int32)dgv_vinculados.Rows[e.RowIndex].Cells["numvincregColumn"].Value;
             }
         }
 

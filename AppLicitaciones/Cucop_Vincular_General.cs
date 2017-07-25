@@ -28,6 +28,7 @@ namespace AppLicitaciones
         public void mostrarvinculoscucop(int idCucop)
         {
             this.idCucop = idCucop;
+            tabOpciones.Controls.Clear();
             try
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
@@ -63,12 +64,6 @@ namespace AppLicitaciones
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
-            cont = cont + 1;            
-            TabPage opcion = new TabPage();
-            opcion.Text = "Opcion " + cont;
-            NuevaOpcion opt = new NuevaOpcion();
-            opcion.Controls.Add(opt);
-            tabOpciones.Controls.Add(opcion);
             try
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
@@ -79,8 +74,9 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@opt", cont);
                     cmd.Parameters.AddWithValue("@cucop", idCucop);
                     cmd.Parameters.AddWithValue("@update", DateTime.Now);
+                    //cmd.Parameters.AddWithValue("@nombre");
                     Int32 newId = (Int32)cmd.ExecuteScalar();
-                    opt.pasardatosvinculo(idCucop, cont, newId);
+                    mostrarvinculoscucop(idCucop);
                 }
             }
             catch (Exception ex)

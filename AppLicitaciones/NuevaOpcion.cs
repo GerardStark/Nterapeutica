@@ -30,6 +30,7 @@ namespace AppLicitaciones
         public void buscarRegistros(int idVinculo)
         {
             //Llena la lista de registros de la opcion existente
+            list_vinc_reg.Items.Clear();
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
@@ -49,6 +50,7 @@ namespace AppLicitaciones
         public void buscarCatalogos(int idVinculo)
         {
             //Llena la lista de catalogos de la opcion existente
+            list_vinc_cat.Items.Clear();
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
@@ -70,6 +72,7 @@ namespace AppLicitaciones
             //Llena la lista de certificados de la opcion existente
             using (SqlConnection con = new SqlConnection(mc.con))
             {
+                list_vinc_cert.Items.Clear();
                 con.Open();
                 SqlCommand cmd = new SqlCommand(@"select a.id_certificado from certificados_calidad as a LEFT OUTER JOIN cucop_vinculos_certificados as b ON a.id_certificado = b.id_certificados 
                 WHERE b.id_cucop_vinculo = @idVinculo", con);
