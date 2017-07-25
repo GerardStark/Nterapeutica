@@ -14,11 +14,9 @@ namespace AppLicitaciones
 {
     public partial class Cucop_Vincular_Registro : Form
     {
-        int id_cucop = 0;
         int id_vinculo = 0;
         int id_registro = 0;
-        int regrowindex = 0;
-        string numeroregistro = "";
+        int regrowindex = 0, numeroregistro = 0;
         List<Int32> registrosID = new List<int>();
         MainConfig mc = new MainConfig();
         public Cucop_Vincular_Registro()
@@ -30,39 +28,40 @@ namespace AppLicitaciones
             this.dgv_vinculados.MultiSelect = false;
         }
 
-        public void mostrarVinculosRegistros(int id_cucop)
+        public void mostrarVinculosRegistros(int idVinc)
         {
-            this.id_cucop = id_cucop;
+            this.id_vinculo = idVinc;
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
-                SqlCommand cmdreg = new SqlCommand("SELECT id_registro,numero_registro,titular,denom_distintiva,denom_generica,fabricante,pais_origen FROM registros_sanitarios as a LEFT OUTER JOIN aux_vinculos as b"+
-                    " ON a.id_registro = b.id_registro_sanitario AND b.id_cucop_item = @idcucop WHERE b.id_vinculacion IS null", con);
-                cmdreg.Parameters.AddWithValue("@idcucop",id_cucop);
+                SqlCommand cmdvinc = new SqlCommand(@"select id, id_registro from cucop_vinculos_registros 
+                WHERE id_cucop_vinculo = @vinc", con);
+                cmdvinc.Parameters.AddWithValue("@vinc", idVinc);
+                SqlDataAdapter adaptvinc = new SqlDataAdapter(cmdvinc);
+                DataTable dtvinc = new DataTable();
+                adaptvinc.Fill(dtvinc);
+                foreach (DataRow drt in dtvinc.Rows)
+                {
+                    dgv_vinculados.Rows.Add(drt.ItemArray);
+                }
+                SqlCommand cmdreg = new SqlCommand(@"SELECT a.id_registro, a.numero_registro, a.titular, a.denom_distintiva, a.denom_generica, a.fabricante, a.pais_origen 
+                FROM registros_sanitarios as a LEFT OUTER JOIN cucop_vinculos_registros as b ON a.id_registro = b.id_registro
+                WHERE b.id IS NULL", con);                
                 SqlDataAdapter adapt = new SqlDataAdapter(cmdreg);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
                 foreach (DataRow dr in dt.Rows)
                 {
                     dgv_registros.Rows.Add(dr.ItemArray);
-                }
-                SqlCommand cmdvinc = new SqlCommand("SELECT id_vinculacion,id_registro_sanitario FROM aux_vinculos WHERE id_cucop_item = @idcucop", con);
-                cmdvinc.Parameters.AddWithValue("@idcucop",id_cucop);
-                SqlDataAdapter adaptvinc = new SqlDataAdapter(cmdvinc);
-                DataTable dtvinc = new DataTable();
-                adaptvinc.Fill(dtvinc);
-                foreach (DataRow drv in dtvinc.Rows)
-                {
-                    dgv_vinculados.Rows.Add(drv.ItemArray);
-                }
+                }                
             }
-            lbl_cucop.Text = id_cucop.ToString();
+            lbl_cucop.Text = id_vinculo.ToString();
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             //agregar registros a la lista de registros vinculados a la descripcion
-            if (id_registro != 0 && numeroregistro != "")
+            if (id_registro != 0 && numeroregistro != 0)
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
                 {
@@ -107,25 +106,43 @@ namespace AppLicitaciones
             {
                 id_registro = Convert.ToInt32(dgv_registros.Rows[e.RowIndex].Cells["idColumn"].Value);
                 regrowindex = e.RowIndex;
-                numeroregistro = dgv_registros.Rows[e.RowIndex].Cells["numeroColumn"].Value.ToString();
+                numeroregistro = (Int32)dgv_registros.Rows[e.RowIndex].Cells["numeroColumn"].Value;
             }
         }
 
         private void dgv_registros_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            //if (dgv_vinculados.Rows[e.RowIndex].Cells["numvincregColumn"].Value != DBNull.Value)
-            //{
-            //    //formatear texto para que en lugar del id se vea el numero de registro sanitario.
-            //}
+            if (this.dgv_registros.Columns[e.ColumnIndex].Name == "paisColumn")
+            {
+                if (e.Value != null)
+                {
+
+                    e.Value = mc.obtenernombrepais((Int32)e.Value);
+
+                }
+            }
         }
 
         private void dgv_vinculados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
-                id_vinculo = Convert.ToInt32(dgv_registros.Rows[e.RowIndex].Cells["idColumn"].Value);
+                id_vinculo = (Int32)dgv_vinculados.Rows[e.RowIndex].Cells["idvincregColumn"].Value;
                 regrowindex = e.RowIndex;
-                numeroregistro = dgv_registros.Rows[e.RowIndex].Cells["numeroColumn"].Value.ToString();
+                numeroregistro = (Int32)dgv_vinculados.Rows[e.RowIndex].Cells["numvincregColumn"].Value;
+            }
+        }
+
+        private void dgv_vinculados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (this.dgv_vinculados.Columns[e.ColumnIndex].Name == "numvincregColumn")
+            {
+                if (e.Value != null)
+                {
+                    
+                    e.Value = mc.obtenernumeroregistro((Int32)e.Value);
+
+                }
             }
         }
     }

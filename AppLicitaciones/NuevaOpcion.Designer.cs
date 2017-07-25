@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.list_vinc_cert = new System.Windows.Forms.ListView();
+            this.list_vinc_cat = new System.Windows.Forms.ListView();
             this.list_vinc_reg = new System.Windows.Forms.ListView();
             this.txt_nombre_prod = new System.Windows.Forms.TextBox();
             this.btn_cert_vincular = new System.Windows.Forms.Button();
@@ -41,26 +41,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // listView3
+            // list_vinc_cert
             // 
-            this.listView3.Location = new System.Drawing.Point(810, 107);
-            this.listView3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listView3.MultiSelect = false;
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(378, 292);
-            this.listView3.TabIndex = 182;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.list_vinc_cert.Location = new System.Drawing.Point(810, 107);
+            this.list_vinc_cert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.list_vinc_cert.MultiSelect = false;
+            this.list_vinc_cert.Name = "list_vinc_cert";
+            this.list_vinc_cert.Size = new System.Drawing.Size(378, 292);
+            this.list_vinc_cert.TabIndex = 182;
+            this.list_vinc_cert.UseCompatibleStateImageBehavior = false;
             // 
-            // listView2
+            // list_vinc_cat
             // 
-            this.listView2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView2.Location = new System.Drawing.Point(416, 107);
-            this.listView2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.listView2.MultiSelect = false;
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(378, 292);
-            this.listView2.TabIndex = 181;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.list_vinc_cat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_vinc_cat.Location = new System.Drawing.Point(416, 107);
+            this.list_vinc_cat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.list_vinc_cat.MultiSelect = false;
+            this.list_vinc_cat.Name = "list_vinc_cat";
+            this.list_vinc_cat.Size = new System.Drawing.Size(378, 292);
+            this.list_vinc_cat.TabIndex = 181;
+            this.list_vinc_cat.UseCompatibleStateImageBehavior = false;
             // 
             // list_vinc_reg
             // 
@@ -158,8 +158,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.list_vinc_cert);
+            this.Controls.Add(this.list_vinc_cat);
             this.Controls.Add(this.list_vinc_reg);
             this.Controls.Add(this.txt_nombre_prod);
             this.Controls.Add(this.btn_cert_vincular);
@@ -180,8 +180,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView list_vinc_cert;
+        private System.Windows.Forms.ListView list_vinc_cat;
         private System.Windows.Forms.ListView list_vinc_reg;
         private System.Windows.Forms.TextBox txt_nombre_prod;
         private System.Windows.Forms.Button btn_cert_vincular;

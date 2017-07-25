@@ -28,8 +28,6 @@ namespace AppLicitaciones {
         
         private aux_usersDataTable tableaux_users;
         
-        private aux_vinculosDataTable tableaux_vinculos;
-        
         private catalogos_claves_referenciasDataTable tablecatalogos_claves_referencias;
         
         private catalogos_info_generalDataTable tablecatalogos_info_general;
@@ -68,6 +66,14 @@ namespace AppLicitaciones {
         
         private data_unidadesDataTable tabledata_unidades;
         
+        private cucop_vinculosDataTable tablecucop_vinculos;
+        
+        private cucop_vinculos_catalogosDataTable tablecucop_vinculos_catalogos;
+        
+        private cucop_vinculos_certificadosDataTable tablecucop_vinculos_certificados;
+        
+        private cucop_vinculos_registrosDataTable tablecucop_vinculos_registros;
+        
         private global::System.Data.DataRelation relationFK_aux_cat_trad_ref_catalogos_claves_referencias;
         
         private global::System.Data.DataRelation relationFK_aux_cat_trad_ref_catalogos_traducciones;
@@ -95,6 +101,20 @@ namespace AppLicitaciones {
         private global::System.Data.DataRelation relationFK_registros_sanitarios_paises_origen;
         
         private global::System.Data.DataRelation relationFK_registros_tramites_prorroga_registros_sanitarios;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_cucop;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_catalogos_catalogos_info_general;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_catalogos_cucop_vinculos;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_certificados_certificados_calidad;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_certificados_cucop_vinculos;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_registros_cucop_vinculos;
+        
+        private global::System.Data.DataRelation relationFK_cucop_vinculos_registros_registros_sanitarios;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -129,9 +149,6 @@ namespace AppLicitaciones {
                 }
                 if ((ds.Tables["aux_users"] != null)) {
                     base.Tables.Add(new aux_usersDataTable(ds.Tables["aux_users"]));
-                }
-                if ((ds.Tables["aux_vinculos"] != null)) {
-                    base.Tables.Add(new aux_vinculosDataTable(ds.Tables["aux_vinculos"]));
                 }
                 if ((ds.Tables["catalogos_claves_referencias"] != null)) {
                     base.Tables.Add(new catalogos_claves_referenciasDataTable(ds.Tables["catalogos_claves_referencias"]));
@@ -190,6 +207,18 @@ namespace AppLicitaciones {
                 if ((ds.Tables["data_unidades"] != null)) {
                     base.Tables.Add(new data_unidadesDataTable(ds.Tables["data_unidades"]));
                 }
+                if ((ds.Tables["cucop_vinculos"] != null)) {
+                    base.Tables.Add(new cucop_vinculosDataTable(ds.Tables["cucop_vinculos"]));
+                }
+                if ((ds.Tables["cucop_vinculos_catalogos"] != null)) {
+                    base.Tables.Add(new cucop_vinculos_catalogosDataTable(ds.Tables["cucop_vinculos_catalogos"]));
+                }
+                if ((ds.Tables["cucop_vinculos_certificados"] != null)) {
+                    base.Tables.Add(new cucop_vinculos_certificadosDataTable(ds.Tables["cucop_vinculos_certificados"]));
+                }
+                if ((ds.Tables["cucop_vinculos_registros"] != null)) {
+                    base.Tables.Add(new cucop_vinculos_registrosDataTable(ds.Tables["cucop_vinculos_registros"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -225,16 +254,6 @@ namespace AppLicitaciones {
         public aux_usersDataTable aux_users {
             get {
                 return this.tableaux_users;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public aux_vinculosDataTable aux_vinculos {
-            get {
-                return this.tableaux_vinculos;
             }
         }
         
@@ -430,6 +449,46 @@ namespace AppLicitaciones {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public cucop_vinculosDataTable cucop_vinculos {
+            get {
+                return this.tablecucop_vinculos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public cucop_vinculos_catalogosDataTable cucop_vinculos_catalogos {
+            get {
+                return this.tablecucop_vinculos_catalogos;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public cucop_vinculos_certificadosDataTable cucop_vinculos_certificados {
+            get {
+                return this.tablecucop_vinculos_certificados;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public cucop_vinculos_registrosDataTable cucop_vinculos_registros {
+            get {
+                return this.tablecucop_vinculos_registros;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -501,9 +560,6 @@ namespace AppLicitaciones {
                 if ((ds.Tables["aux_users"] != null)) {
                     base.Tables.Add(new aux_usersDataTable(ds.Tables["aux_users"]));
                 }
-                if ((ds.Tables["aux_vinculos"] != null)) {
-                    base.Tables.Add(new aux_vinculosDataTable(ds.Tables["aux_vinculos"]));
-                }
                 if ((ds.Tables["catalogos_claves_referencias"] != null)) {
                     base.Tables.Add(new catalogos_claves_referenciasDataTable(ds.Tables["catalogos_claves_referencias"]));
                 }
@@ -561,6 +617,18 @@ namespace AppLicitaciones {
                 if ((ds.Tables["data_unidades"] != null)) {
                     base.Tables.Add(new data_unidadesDataTable(ds.Tables["data_unidades"]));
                 }
+                if ((ds.Tables["cucop_vinculos"] != null)) {
+                    base.Tables.Add(new cucop_vinculosDataTable(ds.Tables["cucop_vinculos"]));
+                }
+                if ((ds.Tables["cucop_vinculos_catalogos"] != null)) {
+                    base.Tables.Add(new cucop_vinculos_catalogosDataTable(ds.Tables["cucop_vinculos_catalogos"]));
+                }
+                if ((ds.Tables["cucop_vinculos_certificados"] != null)) {
+                    base.Tables.Add(new cucop_vinculos_certificadosDataTable(ds.Tables["cucop_vinculos_certificados"]));
+                }
+                if ((ds.Tables["cucop_vinculos_registros"] != null)) {
+                    base.Tables.Add(new cucop_vinculos_registrosDataTable(ds.Tables["cucop_vinculos_registros"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -604,12 +672,6 @@ namespace AppLicitaciones {
             if ((initTable == true)) {
                 if ((this.tableaux_users != null)) {
                     this.tableaux_users.InitVars();
-                }
-            }
-            this.tableaux_vinculos = ((aux_vinculosDataTable)(base.Tables["aux_vinculos"]));
-            if ((initTable == true)) {
-                if ((this.tableaux_vinculos != null)) {
-                    this.tableaux_vinculos.InitVars();
                 }
             }
             this.tablecatalogos_claves_referencias = ((catalogos_claves_referenciasDataTable)(base.Tables["catalogos_claves_referencias"]));
@@ -726,6 +788,30 @@ namespace AppLicitaciones {
                     this.tabledata_unidades.InitVars();
                 }
             }
+            this.tablecucop_vinculos = ((cucop_vinculosDataTable)(base.Tables["cucop_vinculos"]));
+            if ((initTable == true)) {
+                if ((this.tablecucop_vinculos != null)) {
+                    this.tablecucop_vinculos.InitVars();
+                }
+            }
+            this.tablecucop_vinculos_catalogos = ((cucop_vinculos_catalogosDataTable)(base.Tables["cucop_vinculos_catalogos"]));
+            if ((initTable == true)) {
+                if ((this.tablecucop_vinculos_catalogos != null)) {
+                    this.tablecucop_vinculos_catalogos.InitVars();
+                }
+            }
+            this.tablecucop_vinculos_certificados = ((cucop_vinculos_certificadosDataTable)(base.Tables["cucop_vinculos_certificados"]));
+            if ((initTable == true)) {
+                if ((this.tablecucop_vinculos_certificados != null)) {
+                    this.tablecucop_vinculos_certificados.InitVars();
+                }
+            }
+            this.tablecucop_vinculos_registros = ((cucop_vinculos_registrosDataTable)(base.Tables["cucop_vinculos_registros"]));
+            if ((initTable == true)) {
+                if ((this.tablecucop_vinculos_registros != null)) {
+                    this.tablecucop_vinculos_registros.InitVars();
+                }
+            }
             this.relationFK_aux_cat_trad_ref_catalogos_claves_referencias = this.Relations["FK_aux_cat_trad_ref_catalogos_claves_referencias"];
             this.relationFK_aux_cat_trad_ref_catalogos_traducciones = this.Relations["FK_aux_cat_trad_ref_catalogos_traducciones"];
             this.relationFK_catalogos_claves_referencias_catalogos_info_general = this.Relations["FK_catalogos_claves_referencias_catalogos_info_general"];
@@ -740,6 +826,13 @@ namespace AppLicitaciones {
             this.relationFK_registros_claves_referencias_registros_sanitarios = this.Relations["FK_registros_claves_referencias_registros_sanitarios"];
             this.relationFK_registros_sanitarios_paises_origen = this.Relations["FK_registros_sanitarios_paises_origen"];
             this.relationFK_registros_tramites_prorroga_registros_sanitarios = this.Relations["FK_registros_tramites_prorroga_registros_sanitarios"];
+            this.relationFK_cucop_vinculos_cucop = this.Relations["FK_cucop_vinculos_cucop"];
+            this.relationFK_cucop_vinculos_catalogos_catalogos_info_general = this.Relations["FK_cucop_vinculos_catalogos_catalogos_info_general"];
+            this.relationFK_cucop_vinculos_catalogos_cucop_vinculos = this.Relations["FK_cucop_vinculos_catalogos_cucop_vinculos"];
+            this.relationFK_cucop_vinculos_certificados_certificados_calidad = this.Relations["FK_cucop_vinculos_certificados_certificados_calidad"];
+            this.relationFK_cucop_vinculos_certificados_cucop_vinculos = this.Relations["FK_cucop_vinculos_certificados_cucop_vinculos"];
+            this.relationFK_cucop_vinculos_registros_cucop_vinculos = this.Relations["FK_cucop_vinculos_registros_cucop_vinculos"];
+            this.relationFK_cucop_vinculos_registros_registros_sanitarios = this.Relations["FK_cucop_vinculos_registros_registros_sanitarios"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -754,8 +847,6 @@ namespace AppLicitaciones {
             base.Tables.Add(this.tableaux_cat_trad_ref);
             this.tableaux_users = new aux_usersDataTable();
             base.Tables.Add(this.tableaux_users);
-            this.tableaux_vinculos = new aux_vinculosDataTable();
-            base.Tables.Add(this.tableaux_vinculos);
             this.tablecatalogos_claves_referencias = new catalogos_claves_referenciasDataTable();
             base.Tables.Add(this.tablecatalogos_claves_referencias);
             this.tablecatalogos_info_general = new catalogos_info_generalDataTable();
@@ -794,6 +885,14 @@ namespace AppLicitaciones {
             base.Tables.Add(this.tableregistros_tramites_prorroga);
             this.tabledata_unidades = new data_unidadesDataTable();
             base.Tables.Add(this.tabledata_unidades);
+            this.tablecucop_vinculos = new cucop_vinculosDataTable();
+            base.Tables.Add(this.tablecucop_vinculos);
+            this.tablecucop_vinculos_catalogos = new cucop_vinculos_catalogosDataTable();
+            base.Tables.Add(this.tablecucop_vinculos_catalogos);
+            this.tablecucop_vinculos_certificados = new cucop_vinculos_certificadosDataTable();
+            base.Tables.Add(this.tablecucop_vinculos_certificados);
+            this.tablecucop_vinculos_registros = new cucop_vinculos_registrosDataTable();
+            base.Tables.Add(this.tablecucop_vinculos_registros);
             this.relationFK_aux_cat_trad_ref_catalogos_claves_referencias = new global::System.Data.DataRelation("FK_aux_cat_trad_ref_catalogos_claves_referencias", new global::System.Data.DataColumn[] {
                         this.tablecatalogos_claves_referencias.id_clave_catalogoColumn}, new global::System.Data.DataColumn[] {
                         this.tableaux_cat_trad_ref.id_referenciaColumn}, false);
@@ -850,6 +949,34 @@ namespace AppLicitaciones {
                         this.tableregistros_sanitarios.id_registroColumn}, new global::System.Data.DataColumn[] {
                         this.tableregistros_tramites_prorroga.id_registro_sanitarioColumn}, false);
             this.Relations.Add(this.relationFK_registros_tramites_prorroga_registros_sanitarios);
+            this.relationFK_cucop_vinculos_cucop = new global::System.Data.DataRelation("FK_cucop_vinculos_cucop", new global::System.Data.DataColumn[] {
+                        this.tablecucop.id_cucopColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos.id_cucop_itemColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_cucop);
+            this.relationFK_cucop_vinculos_catalogos_catalogos_info_general = new global::System.Data.DataRelation("FK_cucop_vinculos_catalogos_catalogos_info_general", new global::System.Data.DataColumn[] {
+                        this.tablecatalogos_info_general.id_catalogoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos_catalogos.id_catalogoColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_catalogos_catalogos_info_general);
+            this.relationFK_cucop_vinculos_catalogos_cucop_vinculos = new global::System.Data.DataRelation("FK_cucop_vinculos_catalogos_cucop_vinculos", new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos.id_vinculacionColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos_catalogos.id_cucop_vinculoColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_catalogos_cucop_vinculos);
+            this.relationFK_cucop_vinculos_certificados_certificados_calidad = new global::System.Data.DataRelation("FK_cucop_vinculos_certificados_certificados_calidad", new global::System.Data.DataColumn[] {
+                        this.tablecertificados_calidad.id_certificadoColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos_certificados.id_certificadosColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_certificados_certificados_calidad);
+            this.relationFK_cucop_vinculos_certificados_cucop_vinculos = new global::System.Data.DataRelation("FK_cucop_vinculos_certificados_cucop_vinculos", new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos.id_vinculacionColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos_certificados.id_cucop_vinculoColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_certificados_cucop_vinculos);
+            this.relationFK_cucop_vinculos_registros_cucop_vinculos = new global::System.Data.DataRelation("FK_cucop_vinculos_registros_cucop_vinculos", new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos.id_vinculacionColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos_registros.id_cucop_vinculoColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_registros_cucop_vinculos);
+            this.relationFK_cucop_vinculos_registros_registros_sanitarios = new global::System.Data.DataRelation("FK_cucop_vinculos_registros_registros_sanitarios", new global::System.Data.DataColumn[] {
+                        this.tableregistros_sanitarios.id_registroColumn}, new global::System.Data.DataColumn[] {
+                        this.tablecucop_vinculos_registros.id_registroColumn}, false);
+            this.Relations.Add(this.relationFK_cucop_vinculos_registros_registros_sanitarios);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -861,12 +988,6 @@ namespace AppLicitaciones {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeaux_users() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeaux_vinculos() {
             return false;
         }
         
@@ -986,6 +1107,30 @@ namespace AppLicitaciones {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializecucop_vinculos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializecucop_vinculos_catalogos() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializecucop_vinculos_certificados() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializecucop_vinculos_registros() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1046,9 +1191,6 @@ namespace AppLicitaciones {
         public delegate void aux_usersRowChangeEventHandler(object sender, aux_usersRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void aux_vinculosRowChangeEventHandler(object sender, aux_vinculosRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void catalogos_claves_referenciasRowChangeEventHandler(object sender, catalogos_claves_referenciasRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1104,6 +1246,18 @@ namespace AppLicitaciones {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void data_unidadesRowChangeEventHandler(object sender, data_unidadesRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void cucop_vinculosRowChangeEventHandler(object sender, cucop_vinculosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void cucop_vinculos_catalogosRowChangeEventHandler(object sender, cucop_vinculos_catalogosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void cucop_vinculos_certificadosRowChangeEventHandler(object sender, cucop_vinculos_certificadosRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void cucop_vinculos_registrosRowChangeEventHandler(object sender, cucop_vinculos_registrosRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1753,309 +1907,6 @@ namespace AppLicitaciones {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "aux_usersDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class aux_vinculosDataTable : global::System.Data.TypedTableBase<aux_vinculosRow> {
-            
-            private global::System.Data.DataColumn columnid_vinculacion;
-            
-            private global::System.Data.DataColumn columnid_registro_sanitario;
-            
-            private global::System.Data.DataColumn columnid_certificado_calidad;
-            
-            private global::System.Data.DataColumn columnid_catalogo_productos;
-            
-            private global::System.Data.DataColumn columnid_cucop_item;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aux_vinculosDataTable() {
-                this.TableName = "aux_vinculos";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal aux_vinculosDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected aux_vinculosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_vinculacionColumn {
-                get {
-                    return this.columnid_vinculacion;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_registro_sanitarioColumn {
-                get {
-                    return this.columnid_registro_sanitario;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_certificado_calidadColumn {
-                get {
-                    return this.columnid_certificado_calidad;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_catalogo_productosColumn {
-                get {
-                    return this.columnid_catalogo_productos;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_cucop_itemColumn {
-                get {
-                    return this.columnid_cucop_item;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aux_vinculosRow this[int index] {
-                get {
-                    return ((aux_vinculosRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event aux_vinculosRowChangeEventHandler aux_vinculosRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event aux_vinculosRowChangeEventHandler aux_vinculosRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event aux_vinculosRowChangeEventHandler aux_vinculosRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event aux_vinculosRowChangeEventHandler aux_vinculosRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addaux_vinculosRow(aux_vinculosRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aux_vinculosRow Addaux_vinculosRow(int id_vinculacion, int id_registro_sanitario, int id_certificado_calidad, int id_catalogo_productos, int id_cucop_item) {
-                aux_vinculosRow rowaux_vinculosRow = ((aux_vinculosRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        id_vinculacion,
-                        id_registro_sanitario,
-                        id_certificado_calidad,
-                        id_catalogo_productos,
-                        id_cucop_item};
-                rowaux_vinculosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowaux_vinculosRow);
-                return rowaux_vinculosRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                aux_vinculosDataTable cln = ((aux_vinculosDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new aux_vinculosDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnid_vinculacion = base.Columns["id_vinculacion"];
-                this.columnid_registro_sanitario = base.Columns["id_registro_sanitario"];
-                this.columnid_certificado_calidad = base.Columns["id_certificado_calidad"];
-                this.columnid_catalogo_productos = base.Columns["id_catalogo_productos"];
-                this.columnid_cucop_item = base.Columns["id_cucop_item"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnid_vinculacion = new global::System.Data.DataColumn("id_vinculacion", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_vinculacion);
-                this.columnid_registro_sanitario = new global::System.Data.DataColumn("id_registro_sanitario", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_registro_sanitario);
-                this.columnid_certificado_calidad = new global::System.Data.DataColumn("id_certificado_calidad", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_certificado_calidad);
-                this.columnid_catalogo_productos = new global::System.Data.DataColumn("id_catalogo_productos", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_catalogo_productos);
-                this.columnid_cucop_item = new global::System.Data.DataColumn("id_cucop_item", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_cucop_item);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aux_vinculosRow Newaux_vinculosRow() {
-                return ((aux_vinculosRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new aux_vinculosRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(aux_vinculosRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.aux_vinculosRowChanged != null)) {
-                    this.aux_vinculosRowChanged(this, new aux_vinculosRowChangeEvent(((aux_vinculosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.aux_vinculosRowChanging != null)) {
-                    this.aux_vinculosRowChanging(this, new aux_vinculosRowChangeEvent(((aux_vinculosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.aux_vinculosRowDeleted != null)) {
-                    this.aux_vinculosRowDeleted(this, new aux_vinculosRowChangeEvent(((aux_vinculosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.aux_vinculosRowDeleting != null)) {
-                    this.aux_vinculosRowDeleting(this, new aux_vinculosRowChangeEvent(((aux_vinculosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removeaux_vinculosRow(aux_vinculosRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                LicitacionesDataSet ds = new LicitacionesDataSet();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "aux_vinculosDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -8996,6 +8847,1299 @@ namespace AppLicitaciones {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class cucop_vinculosDataTable : global::System.Data.TypedTableBase<cucop_vinculosRow> {
+            
+            private global::System.Data.DataColumn columnid_vinculacion;
+            
+            private global::System.Data.DataColumn columnopcion;
+            
+            private global::System.Data.DataColumn columnid_cucop_item;
+            
+            private global::System.Data.DataColumn columncreado_en;
+            
+            private global::System.Data.DataColumn columnactualizado_en;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosDataTable() {
+                this.TableName = "cucop_vinculos";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected cucop_vinculosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_vinculacionColumn {
+                get {
+                    return this.columnid_vinculacion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn opcionColumn {
+                get {
+                    return this.columnopcion;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_cucop_itemColumn {
+                get {
+                    return this.columnid_cucop_item;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn creado_enColumn {
+                get {
+                    return this.columncreado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn actualizado_enColumn {
+                get {
+                    return this.columnactualizado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow this[int index] {
+                get {
+                    return ((cucop_vinculosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculosRowChangeEventHandler cucop_vinculosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculosRowChangeEventHandler cucop_vinculosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculosRowChangeEventHandler cucop_vinculosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculosRowChangeEventHandler cucop_vinculosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addcucop_vinculosRow(cucop_vinculosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow Addcucop_vinculosRow(int opcion, cucopRow parentcucopRowByFK_cucop_vinculos_cucop, System.DateTime creado_en, System.DateTime actualizado_en) {
+                cucop_vinculosRow rowcucop_vinculosRow = ((cucop_vinculosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        opcion,
+                        null,
+                        creado_en,
+                        actualizado_en};
+                if ((parentcucopRowByFK_cucop_vinculos_cucop != null)) {
+                    columnValuesArray[2] = parentcucopRowByFK_cucop_vinculos_cucop[0];
+                }
+                rowcucop_vinculosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcucop_vinculosRow);
+                return rowcucop_vinculosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow FindByid_vinculacion(int id_vinculacion) {
+                return ((cucop_vinculosRow)(this.Rows.Find(new object[] {
+                            id_vinculacion})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                cucop_vinculosDataTable cln = ((cucop_vinculosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new cucop_vinculosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid_vinculacion = base.Columns["id_vinculacion"];
+                this.columnopcion = base.Columns["opcion"];
+                this.columnid_cucop_item = base.Columns["id_cucop_item"];
+                this.columncreado_en = base.Columns["creado_en"];
+                this.columnactualizado_en = base.Columns["actualizado_en"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid_vinculacion = new global::System.Data.DataColumn("id_vinculacion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_vinculacion);
+                this.columnopcion = new global::System.Data.DataColumn("opcion", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnopcion);
+                this.columnid_cucop_item = new global::System.Data.DataColumn("id_cucop_item", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_cucop_item);
+                this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreado_en);
+                this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactualizado_en);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid_vinculacion}, true));
+                this.columnid_vinculacion.AutoIncrement = true;
+                this.columnid_vinculacion.AutoIncrementSeed = -1;
+                this.columnid_vinculacion.AutoIncrementStep = -1;
+                this.columnid_vinculacion.AllowDBNull = false;
+                this.columnid_vinculacion.ReadOnly = true;
+                this.columnid_vinculacion.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow Newcucop_vinculosRow() {
+                return ((cucop_vinculosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new cucop_vinculosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(cucop_vinculosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.cucop_vinculosRowChanged != null)) {
+                    this.cucop_vinculosRowChanged(this, new cucop_vinculosRowChangeEvent(((cucop_vinculosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.cucop_vinculosRowChanging != null)) {
+                    this.cucop_vinculosRowChanging(this, new cucop_vinculosRowChangeEvent(((cucop_vinculosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.cucop_vinculosRowDeleted != null)) {
+                    this.cucop_vinculosRowDeleted(this, new cucop_vinculosRowChangeEvent(((cucop_vinculosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.cucop_vinculosRowDeleting != null)) {
+                    this.cucop_vinculosRowDeleting(this, new cucop_vinculosRowChangeEvent(((cucop_vinculosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removecucop_vinculosRow(cucop_vinculosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LicitacionesDataSet ds = new LicitacionesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "cucop_vinculosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class cucop_vinculos_catalogosDataTable : global::System.Data.TypedTableBase<cucop_vinculos_catalogosRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnid_cucop_vinculo;
+            
+            private global::System.Data.DataColumn columnid_catalogo;
+            
+            private global::System.Data.DataColumn columncreado_en;
+            
+            private global::System.Data.DataColumn columnactualizado_en;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosDataTable() {
+                this.TableName = "cucop_vinculos_catalogos";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculos_catalogosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected cucop_vinculos_catalogosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_cucop_vinculoColumn {
+                get {
+                    return this.columnid_cucop_vinculo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_catalogoColumn {
+                get {
+                    return this.columnid_catalogo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn creado_enColumn {
+                get {
+                    return this.columncreado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn actualizado_enColumn {
+                get {
+                    return this.columnactualizado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow this[int index] {
+                get {
+                    return ((cucop_vinculos_catalogosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_catalogosRowChangeEventHandler cucop_vinculos_catalogosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_catalogosRowChangeEventHandler cucop_vinculos_catalogosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_catalogosRowChangeEventHandler cucop_vinculos_catalogosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_catalogosRowChangeEventHandler cucop_vinculos_catalogosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addcucop_vinculos_catalogosRow(cucop_vinculos_catalogosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow Addcucop_vinculos_catalogosRow(cucop_vinculosRow parentcucop_vinculosRowByFK_cucop_vinculos_catalogos_cucop_vinculos, catalogos_info_generalRow parentcatalogos_info_generalRowByFK_cucop_vinculos_catalogos_catalogos_info_general, System.DateTime creado_en, System.DateTime actualizado_en) {
+                cucop_vinculos_catalogosRow rowcucop_vinculos_catalogosRow = ((cucop_vinculos_catalogosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        null,
+                        creado_en,
+                        actualizado_en};
+                if ((parentcucop_vinculosRowByFK_cucop_vinculos_catalogos_cucop_vinculos != null)) {
+                    columnValuesArray[1] = parentcucop_vinculosRowByFK_cucop_vinculos_catalogos_cucop_vinculos[0];
+                }
+                if ((parentcatalogos_info_generalRowByFK_cucop_vinculos_catalogos_catalogos_info_general != null)) {
+                    columnValuesArray[2] = parentcatalogos_info_generalRowByFK_cucop_vinculos_catalogos_catalogos_info_general[0];
+                }
+                rowcucop_vinculos_catalogosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcucop_vinculos_catalogosRow);
+                return rowcucop_vinculos_catalogosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow FindByid(int id) {
+                return ((cucop_vinculos_catalogosRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                cucop_vinculos_catalogosDataTable cln = ((cucop_vinculos_catalogosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new cucop_vinculos_catalogosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnid_cucop_vinculo = base.Columns["id_cucop_vinculo"];
+                this.columnid_catalogo = base.Columns["id_catalogo"];
+                this.columncreado_en = base.Columns["creado_en"];
+                this.columnactualizado_en = base.Columns["actualizado_en"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_cucop_vinculo = new global::System.Data.DataColumn("id_cucop_vinculo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_cucop_vinculo);
+                this.columnid_catalogo = new global::System.Data.DataColumn("id_catalogo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_catalogo);
+                this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreado_en);
+                this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactualizado_en);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow Newcucop_vinculos_catalogosRow() {
+                return ((cucop_vinculos_catalogosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new cucop_vinculos_catalogosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(cucop_vinculos_catalogosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.cucop_vinculos_catalogosRowChanged != null)) {
+                    this.cucop_vinculos_catalogosRowChanged(this, new cucop_vinculos_catalogosRowChangeEvent(((cucop_vinculos_catalogosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.cucop_vinculos_catalogosRowChanging != null)) {
+                    this.cucop_vinculos_catalogosRowChanging(this, new cucop_vinculos_catalogosRowChangeEvent(((cucop_vinculos_catalogosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.cucop_vinculos_catalogosRowDeleted != null)) {
+                    this.cucop_vinculos_catalogosRowDeleted(this, new cucop_vinculos_catalogosRowChangeEvent(((cucop_vinculos_catalogosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.cucop_vinculos_catalogosRowDeleting != null)) {
+                    this.cucop_vinculos_catalogosRowDeleting(this, new cucop_vinculos_catalogosRowChangeEvent(((cucop_vinculos_catalogosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removecucop_vinculos_catalogosRow(cucop_vinculos_catalogosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LicitacionesDataSet ds = new LicitacionesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "cucop_vinculos_catalogosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class cucop_vinculos_certificadosDataTable : global::System.Data.TypedTableBase<cucop_vinculos_certificadosRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnid_cucop_vinculo;
+            
+            private global::System.Data.DataColumn columnid_certificados;
+            
+            private global::System.Data.DataColumn columncreado_en;
+            
+            private global::System.Data.DataColumn columnactualizado_en;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosDataTable() {
+                this.TableName = "cucop_vinculos_certificados";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculos_certificadosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected cucop_vinculos_certificadosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_cucop_vinculoColumn {
+                get {
+                    return this.columnid_cucop_vinculo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_certificadosColumn {
+                get {
+                    return this.columnid_certificados;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn creado_enColumn {
+                get {
+                    return this.columncreado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn actualizado_enColumn {
+                get {
+                    return this.columnactualizado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow this[int index] {
+                get {
+                    return ((cucop_vinculos_certificadosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_certificadosRowChangeEventHandler cucop_vinculos_certificadosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_certificadosRowChangeEventHandler cucop_vinculos_certificadosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_certificadosRowChangeEventHandler cucop_vinculos_certificadosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_certificadosRowChangeEventHandler cucop_vinculos_certificadosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addcucop_vinculos_certificadosRow(cucop_vinculos_certificadosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow Addcucop_vinculos_certificadosRow(cucop_vinculosRow parentcucop_vinculosRowByFK_cucop_vinculos_certificados_cucop_vinculos, certificados_calidadRow parentcertificados_calidadRowByFK_cucop_vinculos_certificados_certificados_calidad, System.DateTime creado_en, System.DateTime actualizado_en) {
+                cucop_vinculos_certificadosRow rowcucop_vinculos_certificadosRow = ((cucop_vinculos_certificadosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        null,
+                        creado_en,
+                        actualizado_en};
+                if ((parentcucop_vinculosRowByFK_cucop_vinculos_certificados_cucop_vinculos != null)) {
+                    columnValuesArray[1] = parentcucop_vinculosRowByFK_cucop_vinculos_certificados_cucop_vinculos[0];
+                }
+                if ((parentcertificados_calidadRowByFK_cucop_vinculos_certificados_certificados_calidad != null)) {
+                    columnValuesArray[2] = parentcertificados_calidadRowByFK_cucop_vinculos_certificados_certificados_calidad[0];
+                }
+                rowcucop_vinculos_certificadosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcucop_vinculos_certificadosRow);
+                return rowcucop_vinculos_certificadosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow FindByid(int id) {
+                return ((cucop_vinculos_certificadosRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                cucop_vinculos_certificadosDataTable cln = ((cucop_vinculos_certificadosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new cucop_vinculos_certificadosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnid_cucop_vinculo = base.Columns["id_cucop_vinculo"];
+                this.columnid_certificados = base.Columns["id_certificados"];
+                this.columncreado_en = base.Columns["creado_en"];
+                this.columnactualizado_en = base.Columns["actualizado_en"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_cucop_vinculo = new global::System.Data.DataColumn("id_cucop_vinculo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_cucop_vinculo);
+                this.columnid_certificados = new global::System.Data.DataColumn("id_certificados", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_certificados);
+                this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreado_en);
+                this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactualizado_en);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow Newcucop_vinculos_certificadosRow() {
+                return ((cucop_vinculos_certificadosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new cucop_vinculos_certificadosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(cucop_vinculos_certificadosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.cucop_vinculos_certificadosRowChanged != null)) {
+                    this.cucop_vinculos_certificadosRowChanged(this, new cucop_vinculos_certificadosRowChangeEvent(((cucop_vinculos_certificadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.cucop_vinculos_certificadosRowChanging != null)) {
+                    this.cucop_vinculos_certificadosRowChanging(this, new cucop_vinculos_certificadosRowChangeEvent(((cucop_vinculos_certificadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.cucop_vinculos_certificadosRowDeleted != null)) {
+                    this.cucop_vinculos_certificadosRowDeleted(this, new cucop_vinculos_certificadosRowChangeEvent(((cucop_vinculos_certificadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.cucop_vinculos_certificadosRowDeleting != null)) {
+                    this.cucop_vinculos_certificadosRowDeleting(this, new cucop_vinculos_certificadosRowChangeEvent(((cucop_vinculos_certificadosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removecucop_vinculos_certificadosRow(cucop_vinculos_certificadosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LicitacionesDataSet ds = new LicitacionesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "cucop_vinculos_certificadosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class cucop_vinculos_registrosDataTable : global::System.Data.TypedTableBase<cucop_vinculos_registrosRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnid_cucop_vinculo;
+            
+            private global::System.Data.DataColumn columnid_registro;
+            
+            private global::System.Data.DataColumn columncreado_en;
+            
+            private global::System.Data.DataColumn columnactualizado_en;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosDataTable() {
+                this.TableName = "cucop_vinculos_registros";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculos_registrosDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected cucop_vinculos_registrosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_cucop_vinculoColumn {
+                get {
+                    return this.columnid_cucop_vinculo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_registroColumn {
+                get {
+                    return this.columnid_registro;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn creado_enColumn {
+                get {
+                    return this.columncreado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn actualizado_enColumn {
+                get {
+                    return this.columnactualizado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow this[int index] {
+                get {
+                    return ((cucop_vinculos_registrosRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_registrosRowChangeEventHandler cucop_vinculos_registrosRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_registrosRowChangeEventHandler cucop_vinculos_registrosRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_registrosRowChangeEventHandler cucop_vinculos_registrosRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event cucop_vinculos_registrosRowChangeEventHandler cucop_vinculos_registrosRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addcucop_vinculos_registrosRow(cucop_vinculos_registrosRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow Addcucop_vinculos_registrosRow(cucop_vinculosRow parentcucop_vinculosRowByFK_cucop_vinculos_registros_cucop_vinculos, registros_sanitariosRow parentregistros_sanitariosRowByFK_cucop_vinculos_registros_registros_sanitarios, System.DateTime creado_en, System.DateTime actualizado_en) {
+                cucop_vinculos_registrosRow rowcucop_vinculos_registrosRow = ((cucop_vinculos_registrosRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        null,
+                        creado_en,
+                        actualizado_en};
+                if ((parentcucop_vinculosRowByFK_cucop_vinculos_registros_cucop_vinculos != null)) {
+                    columnValuesArray[1] = parentcucop_vinculosRowByFK_cucop_vinculos_registros_cucop_vinculos[0];
+                }
+                if ((parentregistros_sanitariosRowByFK_cucop_vinculos_registros_registros_sanitarios != null)) {
+                    columnValuesArray[2] = parentregistros_sanitariosRowByFK_cucop_vinculos_registros_registros_sanitarios[0];
+                }
+                rowcucop_vinculos_registrosRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowcucop_vinculos_registrosRow);
+                return rowcucop_vinculos_registrosRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow FindByid(int id) {
+                return ((cucop_vinculos_registrosRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                cucop_vinculos_registrosDataTable cln = ((cucop_vinculos_registrosDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new cucop_vinculos_registrosDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnid_cucop_vinculo = base.Columns["id_cucop_vinculo"];
+                this.columnid_registro = base.Columns["id_registro"];
+                this.columncreado_en = base.Columns["creado_en"];
+                this.columnactualizado_en = base.Columns["actualizado_en"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_cucop_vinculo = new global::System.Data.DataColumn("id_cucop_vinculo", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_cucop_vinculo);
+                this.columnid_registro = new global::System.Data.DataColumn("id_registro", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_registro);
+                this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreado_en);
+                this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactualizado_en);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow Newcucop_vinculos_registrosRow() {
+                return ((cucop_vinculos_registrosRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new cucop_vinculos_registrosRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(cucop_vinculos_registrosRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.cucop_vinculos_registrosRowChanged != null)) {
+                    this.cucop_vinculos_registrosRowChanged(this, new cucop_vinculos_registrosRowChangeEvent(((cucop_vinculos_registrosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.cucop_vinculos_registrosRowChanging != null)) {
+                    this.cucop_vinculos_registrosRowChanging(this, new cucop_vinculos_registrosRowChangeEvent(((cucop_vinculos_registrosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.cucop_vinculos_registrosRowDeleted != null)) {
+                    this.cucop_vinculos_registrosRowDeleted(this, new cucop_vinculos_registrosRowChangeEvent(((cucop_vinculos_registrosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.cucop_vinculos_registrosRowDeleting != null)) {
+                    this.cucop_vinculos_registrosRowDeleting(this, new cucop_vinculos_registrosRowChangeEvent(((cucop_vinculos_registrosRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removecucop_vinculos_registrosRow(cucop_vinculos_registrosRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LicitacionesDataSet ds = new LicitacionesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "cucop_vinculos_registrosDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class aux_cat_trad_refRow : global::System.Data.DataRow {
@@ -9375,164 +10519,6 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setactualizado_enNull() {
                 this[this.tableaux_users.actualizado_enColumn] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class aux_vinculosRow : global::System.Data.DataRow {
-            
-            private aux_vinculosDataTable tableaux_vinculos;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal aux_vinculosRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableaux_vinculos = ((aux_vinculosDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_vinculacion {
-                get {
-                    try {
-                        return ((int)(this[this.tableaux_vinculos.id_vinculacionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_vinculacion\' de la tabla \'aux_vinculos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableaux_vinculos.id_vinculacionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_registro_sanitario {
-                get {
-                    try {
-                        return ((int)(this[this.tableaux_vinculos.id_registro_sanitarioColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_registro_sanitario\' de la tabla \'aux_vinculos\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableaux_vinculos.id_registro_sanitarioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_certificado_calidad {
-                get {
-                    try {
-                        return ((int)(this[this.tableaux_vinculos.id_certificado_calidadColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_certificado_calidad\' de la tabla \'aux_vinculos\' es DBN" +
-                                "ull.", e);
-                    }
-                }
-                set {
-                    this[this.tableaux_vinculos.id_certificado_calidadColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_catalogo_productos {
-                get {
-                    try {
-                        return ((int)(this[this.tableaux_vinculos.id_catalogo_productosColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_catalogo_productos\' de la tabla \'aux_vinculos\' es DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableaux_vinculos.id_catalogo_productosColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_cucop_item {
-                get {
-                    try {
-                        return ((int)(this[this.tableaux_vinculos.id_cucop_itemColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cucop_item\' de la tabla \'aux_vinculos\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableaux_vinculos.id_cucop_itemColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_vinculacionNull() {
-                return this.IsNull(this.tableaux_vinculos.id_vinculacionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_vinculacionNull() {
-                this[this.tableaux_vinculos.id_vinculacionColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_registro_sanitarioNull() {
-                return this.IsNull(this.tableaux_vinculos.id_registro_sanitarioColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_registro_sanitarioNull() {
-                this[this.tableaux_vinculos.id_registro_sanitarioColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_certificado_calidadNull() {
-                return this.IsNull(this.tableaux_vinculos.id_certificado_calidadColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_certificado_calidadNull() {
-                this[this.tableaux_vinculos.id_certificado_calidadColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_catalogo_productosNull() {
-                return this.IsNull(this.tableaux_vinculos.id_catalogo_productosColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_catalogo_productosNull() {
-                this[this.tableaux_vinculos.id_catalogo_productosColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_cucop_itemNull() {
-                return this.IsNull(this.tableaux_vinculos.id_cucop_itemColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_cucop_itemNull() {
-                this[this.tableaux_vinculos.id_cucop_itemColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10150,6 +11136,17 @@ namespace AppLicitaciones {
                     return ((catalogos_traduccionesRow[])(base.GetChildRows(this.Table.ChildRelations["FK_catalogos_traducciones_catalogos_info_general"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow[] Getcucop_vinculos_catalogosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_catalogos_catalogos_info_general"] == null)) {
+                    return new cucop_vinculos_catalogosRow[0];
+                }
+                else {
+                    return ((cucop_vinculos_catalogosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_catalogos_catalogos_info_general"])));
+                }
+            }
         }
         
         /// <summary>
@@ -10714,6 +11711,17 @@ namespace AppLicitaciones {
             public void Setactualizado_enNull() {
                 this[this.tablecertificados_calidad.actualizado_enColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow[] Getcucop_vinculos_certificadosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_certificados_certificados_calidad"] == null)) {
+                    return new cucop_vinculos_certificadosRow[0];
+                }
+                else {
+                    return ((cucop_vinculos_certificadosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_certificados_certificados_calidad"])));
+                }
+            }
         }
         
         /// <summary>
@@ -10973,6 +11981,17 @@ namespace AppLicitaciones {
                 }
                 else {
                     return ((licitacion_vinculacionRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_vinculacion_cucop"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow[] Getcucop_vinculosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_cucop"] == null)) {
+                    return new cucop_vinculosRow[0];
+                }
+                else {
+                    return ((cucop_vinculosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_cucop"])));
                 }
             }
         }
@@ -13756,6 +14775,17 @@ namespace AppLicitaciones {
                     return ((registros_tramites_prorrogaRow[])(base.GetChildRows(this.Table.ChildRelations["FK_registros_tramites_prorroga_registros_sanitarios"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow[] Getcucop_vinculos_registrosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_registros_registros_sanitarios"] == null)) {
+                    return new cucop_vinculos_registrosRow[0];
+                }
+                else {
+                    return ((cucop_vinculos_registrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_registros_registros_sanitarios"])));
+                }
+            }
         }
         
         /// <summary>
@@ -14024,6 +15054,680 @@ namespace AppLicitaciones {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class cucop_vinculosRow : global::System.Data.DataRow {
+            
+            private cucop_vinculosDataTable tablecucop_vinculos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablecucop_vinculos = ((cucop_vinculosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_vinculacion {
+                get {
+                    return ((int)(this[this.tablecucop_vinculos.id_vinculacionColumn]));
+                }
+                set {
+                    this[this.tablecucop_vinculos.id_vinculacionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int opcion {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos.opcionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'opcion\' de la tabla \'cucop_vinculos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos.opcionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_cucop_item {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos.id_cucop_itemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cucop_item\' de la tabla \'cucop_vinculos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos.id_cucop_itemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime creado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos.creado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'cucop_vinculos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos.creado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime actualizado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos.actualizado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'cucop_vinculos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos.actualizado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucopRow cucopRow {
+                get {
+                    return ((cucopRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_cucop"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_cucop"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsopcionNull() {
+                return this.IsNull(this.tablecucop_vinculos.opcionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetopcionNull() {
+                this[this.tablecucop_vinculos.opcionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_cucop_itemNull() {
+                return this.IsNull(this.tablecucop_vinculos.id_cucop_itemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_cucop_itemNull() {
+                this[this.tablecucop_vinculos.id_cucop_itemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscreado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos.creado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcreado_enNull() {
+                this[this.tablecucop_vinculos.creado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactualizado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos.actualizado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactualizado_enNull() {
+                this[this.tablecucop_vinculos.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow[] Getcucop_vinculos_catalogosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_catalogos_cucop_vinculos"] == null)) {
+                    return new cucop_vinculos_catalogosRow[0];
+                }
+                else {
+                    return ((cucop_vinculos_catalogosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_catalogos_cucop_vinculos"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow[] Getcucop_vinculos_certificadosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_certificados_cucop_vinculos"] == null)) {
+                    return new cucop_vinculos_certificadosRow[0];
+                }
+                else {
+                    return ((cucop_vinculos_certificadosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_certificados_cucop_vinculos"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow[] Getcucop_vinculos_registrosRows() {
+                if ((this.Table.ChildRelations["FK_cucop_vinculos_registros_cucop_vinculos"] == null)) {
+                    return new cucop_vinculos_registrosRow[0];
+                }
+                else {
+                    return ((cucop_vinculos_registrosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_cucop_vinculos_registros_cucop_vinculos"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class cucop_vinculos_catalogosRow : global::System.Data.DataRow {
+            
+            private cucop_vinculos_catalogosDataTable tablecucop_vinculos_catalogos;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculos_catalogosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablecucop_vinculos_catalogos = ((cucop_vinculos_catalogosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablecucop_vinculos_catalogos.idColumn]));
+                }
+                set {
+                    this[this.tablecucop_vinculos_catalogos.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_cucop_vinculo {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos_catalogos.id_cucop_vinculoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cucop_vinculo\' de la tabla \'cucop_vinculos_catalogos\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_catalogos.id_cucop_vinculoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_catalogo {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos_catalogos.id_catalogoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_catalogo\' de la tabla \'cucop_vinculos_catalogos\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_catalogos.id_catalogoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime creado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos_catalogos.creado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'cucop_vinculos_catalogos\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_catalogos.creado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime actualizado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos_catalogos.actualizado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'cucop_vinculos_catalogos\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_catalogos.actualizado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public catalogos_info_generalRow catalogos_info_generalRow {
+                get {
+                    return ((catalogos_info_generalRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_catalogos_catalogos_info_general"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_catalogos_catalogos_info_general"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow cucop_vinculosRow {
+                get {
+                    return ((cucop_vinculosRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_catalogos_cucop_vinculos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_catalogos_cucop_vinculos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_cucop_vinculoNull() {
+                return this.IsNull(this.tablecucop_vinculos_catalogos.id_cucop_vinculoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_cucop_vinculoNull() {
+                this[this.tablecucop_vinculos_catalogos.id_cucop_vinculoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_catalogoNull() {
+                return this.IsNull(this.tablecucop_vinculos_catalogos.id_catalogoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_catalogoNull() {
+                this[this.tablecucop_vinculos_catalogos.id_catalogoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscreado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos_catalogos.creado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcreado_enNull() {
+                this[this.tablecucop_vinculos_catalogos.creado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactualizado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos_catalogos.actualizado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactualizado_enNull() {
+                this[this.tablecucop_vinculos_catalogos.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class cucop_vinculos_certificadosRow : global::System.Data.DataRow {
+            
+            private cucop_vinculos_certificadosDataTable tablecucop_vinculos_certificados;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculos_certificadosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablecucop_vinculos_certificados = ((cucop_vinculos_certificadosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablecucop_vinculos_certificados.idColumn]));
+                }
+                set {
+                    this[this.tablecucop_vinculos_certificados.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_cucop_vinculo {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos_certificados.id_cucop_vinculoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cucop_vinculo\' de la tabla \'cucop_vinculos_certificado" +
+                                "s\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_certificados.id_cucop_vinculoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_certificados {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos_certificados.id_certificadosColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_certificados\' de la tabla \'cucop_vinculos_certificados" +
+                                "\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_certificados.id_certificadosColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime creado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos_certificados.creado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'cucop_vinculos_certificados\' es D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_certificados.creado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime actualizado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos_certificados.actualizado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'cucop_vinculos_certificados\'" +
+                                " es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_certificados.actualizado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public certificados_calidadRow certificados_calidadRow {
+                get {
+                    return ((certificados_calidadRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_certificados_certificados_calidad"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_certificados_certificados_calidad"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow cucop_vinculosRow {
+                get {
+                    return ((cucop_vinculosRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_certificados_cucop_vinculos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_certificados_cucop_vinculos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_cucop_vinculoNull() {
+                return this.IsNull(this.tablecucop_vinculos_certificados.id_cucop_vinculoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_cucop_vinculoNull() {
+                this[this.tablecucop_vinculos_certificados.id_cucop_vinculoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_certificadosNull() {
+                return this.IsNull(this.tablecucop_vinculos_certificados.id_certificadosColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_certificadosNull() {
+                this[this.tablecucop_vinculos_certificados.id_certificadosColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscreado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos_certificados.creado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcreado_enNull() {
+                this[this.tablecucop_vinculos_certificados.creado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactualizado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos_certificados.actualizado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactualizado_enNull() {
+                this[this.tablecucop_vinculos_certificados.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class cucop_vinculos_registrosRow : global::System.Data.DataRow {
+            
+            private cucop_vinculos_registrosDataTable tablecucop_vinculos_registros;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal cucop_vinculos_registrosRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablecucop_vinculos_registros = ((cucop_vinculos_registrosDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablecucop_vinculos_registros.idColumn]));
+                }
+                set {
+                    this[this.tablecucop_vinculos_registros.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_cucop_vinculo {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos_registros.id_cucop_vinculoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_cucop_vinculo\' de la tabla \'cucop_vinculos_registros\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_registros.id_cucop_vinculoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_registro {
+                get {
+                    try {
+                        return ((int)(this[this.tablecucop_vinculos_registros.id_registroColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_registro\' de la tabla \'cucop_vinculos_registros\' es DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_registros.id_registroColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime creado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos_registros.creado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'cucop_vinculos_registros\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_registros.creado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime actualizado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablecucop_vinculos_registros.actualizado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'cucop_vinculos_registros\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablecucop_vinculos_registros.actualizado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow cucop_vinculosRow {
+                get {
+                    return ((cucop_vinculosRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_registros_cucop_vinculos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_registros_cucop_vinculos"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public registros_sanitariosRow registros_sanitariosRow {
+                get {
+                    return ((registros_sanitariosRow)(this.GetParentRow(this.Table.ParentRelations["FK_cucop_vinculos_registros_registros_sanitarios"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_cucop_vinculos_registros_registros_sanitarios"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_cucop_vinculoNull() {
+                return this.IsNull(this.tablecucop_vinculos_registros.id_cucop_vinculoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_cucop_vinculoNull() {
+                this[this.tablecucop_vinculos_registros.id_cucop_vinculoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_registroNull() {
+                return this.IsNull(this.tablecucop_vinculos_registros.id_registroColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_registroNull() {
+                this[this.tablecucop_vinculos_registros.id_registroColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscreado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos_registros.creado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcreado_enNull() {
+                this[this.tablecucop_vinculos_registros.creado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactualizado_enNull() {
+                return this.IsNull(this.tablecucop_vinculos_registros.actualizado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactualizado_enNull() {
+                this[this.tablecucop_vinculos_registros.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -14077,40 +15781,6 @@ namespace AppLicitaciones {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public aux_usersRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class aux_vinculosRowChangeEvent : global::System.EventArgs {
-            
-            private aux_vinculosRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aux_vinculosRowChangeEvent(aux_vinculosRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public aux_vinculosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -14757,6 +16427,142 @@ namespace AppLicitaciones {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public data_unidadesRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class cucop_vinculosRowChangeEvent : global::System.EventArgs {
+            
+            private cucop_vinculosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRowChangeEvent(cucop_vinculosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class cucop_vinculos_catalogosRowChangeEvent : global::System.EventArgs {
+            
+            private cucop_vinculos_catalogosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRowChangeEvent(cucop_vinculos_catalogosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_catalogosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class cucop_vinculos_certificadosRowChangeEvent : global::System.EventArgs {
+            
+            private cucop_vinculos_certificadosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRowChangeEvent(cucop_vinculos_certificadosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_certificadosRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class cucop_vinculos_registrosRowChangeEvent : global::System.EventArgs {
+            
+            private cucop_vinculos_registrosRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRowChangeEvent(cucop_vinculos_registrosRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public cucop_vinculos_registrosRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -15749,267 +17555,6 @@ SELECT id_usuario, tipo, nombre_usuario, contraseña_hash, nombre, apellido, cre
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> tipo, string nombre_usuario, string contraseña_hash, string nombre, string apellido, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id_usuario, global::System.Nullable<int> Original_tipo, string Original_nombre_usuario, string Original_contraseña_hash, string Original_nombre, string Original_apellido, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
             return this.Update(tipo, nombre_usuario, contraseña_hash, nombre, apellido, creado_en, actualizado_en, Original_id_usuario, Original_tipo, Original_nombre_usuario, Original_contraseña_hash, Original_nombre, Original_apellido, Original_creado_en, Original_actualizado_en, Original_id_usuario);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class aux_vinculosTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public aux_vinculosTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "aux_vinculos";
-            tableMapping.ColumnMappings.Add("id_vinculacion", "id_vinculacion");
-            tableMapping.ColumnMappings.Add("id_registro_sanitario", "id_registro_sanitario");
-            tableMapping.ColumnMappings.Add("id_certificado_calidad", "id_certificado_calidad");
-            tableMapping.ColumnMappings.Add("id_catalogo_productos", "id_catalogo_productos");
-            tableMapping.ColumnMappings.Add("id_cucop_item", "id_cucop_item");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[aux_vinculos] ([id_vinculacion], [id_registro_sanitario], [id_certificado_calidad], [id_catalogo_productos], [id_cucop_item]) VALUES (@id_vinculacion, @id_registro_sanitario, @id_certificado_calidad, @id_catalogo_productos, @id_cucop_item)";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_vinculacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_vinculacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_registro_sanitario", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro_sanitario", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_certificado_calidad", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificado_calidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_catalogo_productos", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo_productos", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_vinculacion, id_registro_sanitario, id_certificado_calidad, id_catalogo" +
-                "_productos, id_cucop_item FROM dbo.aux_vinculos";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LicitacionesDataSet.aux_vinculosDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LicitacionesDataSet.aux_vinculosDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            LicitacionesDataSet.aux_vinculosDataTable dataTable = new LicitacionesDataSet.aux_vinculosDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LicitacionesDataSet.aux_vinculosDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LicitacionesDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "aux_vinculos");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> id_vinculacion, global::System.Nullable<int> id_registro_sanitario, global::System.Nullable<int> id_certificado_calidad, global::System.Nullable<int> id_catalogo_productos, global::System.Nullable<int> id_cucop_item) {
-            if ((id_vinculacion.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_vinculacion.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((id_registro_sanitario.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_registro_sanitario.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((id_certificado_calidad.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(id_certificado_calidad.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            if ((id_catalogo_productos.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((int)(id_catalogo_productos.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            if ((id_cucop_item.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(id_cucop_item.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
         }
     }
     
@@ -26333,6 +27878,1718 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class cucop_vinculosTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public cucop_vinculosTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "cucop_vinculos";
+            tableMapping.ColumnMappings.Add("id_vinculacion", "id_vinculacion");
+            tableMapping.ColumnMappings.Add("opcion", "opcion");
+            tableMapping.ColumnMappings.Add("id_cucop_item", "id_cucop_item");
+            tableMapping.ColumnMappings.Add("creado_en", "creado_en");
+            tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[cucop_vinculos] WHERE (([id_vinculacion] = @Original_id_vinculacion) AND ((@IsNull_opcion = 1 AND [opcion] IS NULL) OR ([opcion] = @Original_opcion)) AND ((@IsNull_id_cucop_item = 1 AND [id_cucop_item] IS NULL) OR ([id_cucop_item] = @Original_id_cucop_item)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_vinculacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_vinculacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opcion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[cucop_vinculos] ([opcion], [id_cucop_item], [creado_en], [actualizado_en]) VALUES (@opcion, @id_cucop_item, @creado_en, @actualizado_en);
+SELECT id_vinculacion, opcion, id_cucop_item, creado_en, actualizado_en FROM cucop_vinculos WHERE (id_vinculacion = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[cucop_vinculos] SET [opcion] = @opcion, [id_cucop_item] = @id_cucop_item, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id_vinculacion] = @Original_id_vinculacion) AND ((@IsNull_opcion = 1 AND [opcion] IS NULL) OR ([opcion] = @Original_opcion)) AND ((@IsNull_id_cucop_item = 1 AND [id_cucop_item] IS NULL) OR ([id_cucop_item] = @Original_id_cucop_item)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
+SELECT id_vinculacion, opcion, id_cucop_item, creado_en, actualizado_en FROM cucop_vinculos WHERE (id_vinculacion = @id_vinculacion)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@opcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_vinculacion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_vinculacion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_opcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opcion", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_opcion", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "opcion", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_vinculacion", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id_vinculacion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id_vinculacion, opcion, id_cucop_item, creado_en, actualizado_en FROM dbo." +
+                "cucop_vinculos";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LicitacionesDataSet.cucop_vinculosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LicitacionesDataSet.cucop_vinculosDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            LicitacionesDataSet.cucop_vinculosDataTable dataTable = new LicitacionesDataSet.cucop_vinculosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet.cucop_vinculosDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "cucop_vinculos");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id_vinculacion, global::System.Nullable<int> Original_opcion, global::System.Nullable<int> Original_id_cucop_item, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id_vinculacion));
+            if ((Original_opcion.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_opcion.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_cucop_item.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_id_cucop_item.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> opcion, global::System.Nullable<int> id_cucop_item, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+            if ((opcion.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(opcion.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_cucop_item.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_cucop_item.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> opcion, global::System.Nullable<int> id_cucop_item, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id_vinculacion, global::System.Nullable<int> Original_opcion, global::System.Nullable<int> Original_id_cucop_item, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id_vinculacion) {
+            if ((opcion.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(opcion.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_cucop_item.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id_cucop_item.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id_vinculacion));
+            if ((Original_opcion.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_opcion.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_cucop_item.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_cucop_item.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id_vinculacion));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> opcion, global::System.Nullable<int> id_cucop_item, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id_vinculacion, global::System.Nullable<int> Original_opcion, global::System.Nullable<int> Original_id_cucop_item, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            return this.Update(opcion, id_cucop_item, creado_en, actualizado_en, Original_id_vinculacion, Original_opcion, Original_id_cucop_item, Original_creado_en, Original_actualizado_en, Original_id_vinculacion);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class cucop_vinculos_catalogosTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public cucop_vinculos_catalogosTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "cucop_vinculos_catalogos";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("id_cucop_vinculo", "id_cucop_vinculo");
+            tableMapping.ColumnMappings.Add("id_catalogo", "id_catalogo");
+            tableMapping.ColumnMappings.Add("creado_en", "creado_en");
+            tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[cucop_vinculos_catalogos] WHERE (([id] = @Original_id) AND ((@IsNull_id_cucop_vinculo = 1 AND [id_cucop_vinculo] IS NULL) OR ([id_cucop_vinculo] = @Original_id_cucop_vinculo)) AND ((@IsNull_id_catalogo = 1 AND [id_catalogo] IS NULL) OR ([id_catalogo] = @Original_id_catalogo)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[cucop_vinculos_catalogos] ([id_cucop_vinculo], [id_catalogo], [creado_en], [actualizado_en]) VALUES (@id_cucop_vinculo, @id_catalogo, @creado_en, @actualizado_en);
+SELECT id, id_cucop_vinculo, id_catalogo, creado_en, actualizado_en FROM cucop_vinculos_catalogos WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[cucop_vinculos_catalogos] SET [id_cucop_vinculo] = @id_cucop_vinculo, [id_catalogo] = @id_catalogo, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id] = @Original_id) AND ((@IsNull_id_cucop_vinculo = 1 AND [id_cucop_vinculo] IS NULL) OR ([id_cucop_vinculo] = @Original_id_cucop_vinculo)) AND ((@IsNull_id_catalogo = 1 AND [id_catalogo] IS NULL) OR ([id_catalogo] = @Original_id_catalogo)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
+SELECT id, id_cucop_vinculo, id_catalogo, creado_en, actualizado_en FROM cucop_vinculos_catalogos WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_catalogo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_catalogo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, id_cucop_vinculo, id_catalogo, creado_en, actualizado_en FROM dbo.cuco" +
+                "p_vinculos_catalogos";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LicitacionesDataSet.cucop_vinculos_catalogosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LicitacionesDataSet.cucop_vinculos_catalogosDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            LicitacionesDataSet.cucop_vinculos_catalogosDataTable dataTable = new LicitacionesDataSet.cucop_vinculos_catalogosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet.cucop_vinculos_catalogosDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "cucop_vinculos_catalogos");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_catalogo, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_catalogo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_id_catalogo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_catalogo, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+            if ((id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_catalogo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_catalogo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_catalogo, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_catalogo, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id) {
+            if ((id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_catalogo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id_catalogo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            if ((Original_id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_catalogo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_catalogo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_catalogo, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_catalogo, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            return this.Update(id_cucop_vinculo, id_catalogo, creado_en, actualizado_en, Original_id, Original_id_cucop_vinculo, Original_id_catalogo, Original_creado_en, Original_actualizado_en, Original_id);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class cucop_vinculos_certificadosTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public cucop_vinculos_certificadosTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "cucop_vinculos_certificados";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("id_cucop_vinculo", "id_cucop_vinculo");
+            tableMapping.ColumnMappings.Add("id_certificados", "id_certificados");
+            tableMapping.ColumnMappings.Add("creado_en", "creado_en");
+            tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[cucop_vinculos_certificados] WHERE (([id] = @Original_id) AND ((@IsNull_id_cucop_vinculo = 1 AND [id_cucop_vinculo] IS NULL) OR ([id_cucop_vinculo] = @Original_id_cucop_vinculo)) AND ((@IsNull_id_certificados = 1 AND [id_certificados] IS NULL) OR ([id_certificados] = @Original_id_certificados)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_certificados", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificados", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_certificados", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificados", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[cucop_vinculos_certificados] ([id_cucop_vinculo], [id_certificados], [creado_en], [actualizado_en]) VALUES (@id_cucop_vinculo, @id_certificados, @creado_en, @actualizado_en);
+SELECT id, id_cucop_vinculo, id_certificados, creado_en, actualizado_en FROM cucop_vinculos_certificados WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_certificados", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificados", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[cucop_vinculos_certificados] SET [id_cucop_vinculo] = @id_cucop_vinculo, [id_certificados] = @id_certificados, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id] = @Original_id) AND ((@IsNull_id_cucop_vinculo = 1 AND [id_cucop_vinculo] IS NULL) OR ([id_cucop_vinculo] = @Original_id_cucop_vinculo)) AND ((@IsNull_id_certificados = 1 AND [id_certificados] IS NULL) OR ([id_certificados] = @Original_id_certificados)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
+SELECT id, id_cucop_vinculo, id_certificados, creado_en, actualizado_en FROM cucop_vinculos_certificados WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_certificados", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificados", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_certificados", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificados", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_certificados", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_certificados", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, id_cucop_vinculo, id_certificados, creado_en, actualizado_en FROM dbo." +
+                "cucop_vinculos_certificados";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LicitacionesDataSet.cucop_vinculos_certificadosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LicitacionesDataSet.cucop_vinculos_certificadosDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            LicitacionesDataSet.cucop_vinculos_certificadosDataTable dataTable = new LicitacionesDataSet.cucop_vinculos_certificadosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet.cucop_vinculos_certificadosDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "cucop_vinculos_certificados");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_certificados, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_certificados.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_id_certificados.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_certificados, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+            if ((id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_certificados.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_certificados.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_certificados, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_certificados, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id) {
+            if ((id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_certificados.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id_certificados.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            if ((Original_id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_certificados.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_certificados.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_certificados, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_certificados, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            return this.Update(id_cucop_vinculo, id_certificados, creado_en, actualizado_en, Original_id, Original_id_cucop_vinculo, Original_id_certificados, Original_creado_en, Original_actualizado_en, Original_id);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class cucop_vinculos_registrosTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public cucop_vinculos_registrosTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "cucop_vinculos_registros";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("id_cucop_vinculo", "id_cucop_vinculo");
+            tableMapping.ColumnMappings.Add("id_registro", "id_registro");
+            tableMapping.ColumnMappings.Add("creado_en", "creado_en");
+            tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[cucop_vinculos_registros] WHERE (([id] = @Original_id) AND ((@IsNull_id_cucop_vinculo = 1 AND [id_cucop_vinculo] IS NULL) OR ([id_cucop_vinculo] = @Original_id_cucop_vinculo)) AND ((@IsNull_id_registro = 1 AND [id_registro] IS NULL) OR ([id_registro] = @Original_id_registro)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[cucop_vinculos_registros] ([id_cucop_vinculo], [id_registro], [creado_en], [actualizado_en]) VALUES (@id_cucop_vinculo, @id_registro, @creado_en, @actualizado_en);
+SELECT id, id_cucop_vinculo, id_registro, creado_en, actualizado_en FROM cucop_vinculos_registros WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[cucop_vinculos_registros] SET [id_cucop_vinculo] = @id_cucop_vinculo, [id_registro] = @id_registro, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id] = @Original_id) AND ((@IsNull_id_cucop_vinculo = 1 AND [id_cucop_vinculo] IS NULL) OR ([id_cucop_vinculo] = @Original_id_cucop_vinculo)) AND ((@IsNull_id_registro = 1 AND [id_registro] IS NULL) OR ([id_registro] = @Original_id_registro)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
+SELECT id, id_cucop_vinculo, id_registro, creado_en, actualizado_en FROM cucop_vinculos_registros WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_cucop_vinculo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_cucop_vinculo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_registro", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_registro", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, id_cucop_vinculo, id_registro, creado_en, actualizado_en FROM dbo.cuco" +
+                "p_vinculos_registros";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LicitacionesDataSet.cucop_vinculos_registrosDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LicitacionesDataSet.cucop_vinculos_registrosDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            LicitacionesDataSet.cucop_vinculos_registrosDataTable dataTable = new LicitacionesDataSet.cucop_vinculos_registrosDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet.cucop_vinculos_registrosDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "cucop_vinculos_registros");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_registro, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_registro.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_id_registro.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_registro, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+            if ((id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_registro.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(id_registro.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_registro, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_registro, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id) {
+            if ((id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((id_registro.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id_registro.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            if ((Original_id_cucop_vinculo.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id_cucop_vinculo.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_id_registro.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_registro.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_cucop_vinculo, global::System.Nullable<int> id_registro, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_cucop_vinculo, global::System.Nullable<int> Original_id_registro, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            return this.Update(id_cucop_vinculo, id_registro, creado_en, actualizado_en, Original_id, Original_id_cucop_vinculo, Original_id_registro, Original_creado_en, Original_actualizado_en, Original_id);
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -26347,8 +29604,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         private aux_cat_trad_refTableAdapter _aux_cat_trad_refTableAdapter;
         
         private aux_usersTableAdapter _aux_usersTableAdapter;
-        
-        private aux_vinculosTableAdapter _aux_vinculosTableAdapter;
         
         private catalogos_claves_referenciasTableAdapter _catalogos_claves_referenciasTableAdapter;
         
@@ -26387,6 +29642,14 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         private registros_tramites_prorrogaTableAdapter _registros_tramites_prorrogaTableAdapter;
         
         private data_unidadesTableAdapter _data_unidadesTableAdapter;
+        
+        private cucop_vinculosTableAdapter _cucop_vinculosTableAdapter;
+        
+        private cucop_vinculos_catalogosTableAdapter _cucop_vinculos_catalogosTableAdapter;
+        
+        private cucop_vinculos_certificadosTableAdapter _cucop_vinculos_certificadosTableAdapter;
+        
+        private cucop_vinculos_registrosTableAdapter _cucop_vinculos_registrosTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -26428,20 +29691,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
             }
             set {
                 this._aux_usersTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public aux_vinculosTableAdapter aux_vinculosTableAdapter {
-            get {
-                return this._aux_vinculosTableAdapter;
-            }
-            set {
-                this._aux_vinculosTableAdapter = value;
             }
         }
         
@@ -26713,6 +29962,62 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public cucop_vinculosTableAdapter cucop_vinculosTableAdapter {
+            get {
+                return this._cucop_vinculosTableAdapter;
+            }
+            set {
+                this._cucop_vinculosTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public cucop_vinculos_catalogosTableAdapter cucop_vinculos_catalogosTableAdapter {
+            get {
+                return this._cucop_vinculos_catalogosTableAdapter;
+            }
+            set {
+                this._cucop_vinculos_catalogosTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public cucop_vinculos_certificadosTableAdapter cucop_vinculos_certificadosTableAdapter {
+            get {
+                return this._cucop_vinculos_certificadosTableAdapter;
+            }
+            set {
+                this._cucop_vinculos_certificadosTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public cucop_vinculos_registrosTableAdapter cucop_vinculos_registrosTableAdapter {
+            get {
+                return this._cucop_vinculos_registrosTableAdapter;
+            }
+            set {
+                this._cucop_vinculos_registrosTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -26737,10 +30042,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((this._aux_usersTableAdapter != null) 
                             && (this._aux_usersTableAdapter.Connection != null))) {
                     return this._aux_usersTableAdapter.Connection;
-                }
-                if (((this._aux_vinculosTableAdapter != null) 
-                            && (this._aux_vinculosTableAdapter.Connection != null))) {
-                    return this._aux_vinculosTableAdapter.Connection;
                 }
                 if (((this._catalogos_claves_referenciasTableAdapter != null) 
                             && (this._catalogos_claves_referenciasTableAdapter.Connection != null))) {
@@ -26818,6 +30119,22 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                             && (this._data_unidadesTableAdapter.Connection != null))) {
                     return this._data_unidadesTableAdapter.Connection;
                 }
+                if (((this._cucop_vinculosTableAdapter != null) 
+                            && (this._cucop_vinculosTableAdapter.Connection != null))) {
+                    return this._cucop_vinculosTableAdapter.Connection;
+                }
+                if (((this._cucop_vinculos_catalogosTableAdapter != null) 
+                            && (this._cucop_vinculos_catalogosTableAdapter.Connection != null))) {
+                    return this._cucop_vinculos_catalogosTableAdapter.Connection;
+                }
+                if (((this._cucop_vinculos_certificadosTableAdapter != null) 
+                            && (this._cucop_vinculos_certificadosTableAdapter.Connection != null))) {
+                    return this._cucop_vinculos_certificadosTableAdapter.Connection;
+                }
+                if (((this._cucop_vinculos_registrosTableAdapter != null) 
+                            && (this._cucop_vinculos_registrosTableAdapter.Connection != null))) {
+                    return this._cucop_vinculos_registrosTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -26835,9 +30152,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     count = (count + 1);
                 }
                 if ((this._aux_usersTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._aux_vinculosTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._catalogos_claves_referenciasTableAdapter != null)) {
@@ -26897,6 +30211,18 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if ((this._data_unidadesTableAdapter != null)) {
                     count = (count + 1);
                 }
+                if ((this._cucop_vinculosTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._cucop_vinculos_certificadosTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 return count;
             }
         }
@@ -26935,21 +30261,12 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._licitacion_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._paises_origenTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._paises_origenTableAdapter.Update(updatedRows));
+                    result = (result + this._licitacion_itemsTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26962,30 +30279,21 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._licitacion_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._paises_origenTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._licitacion_itemsTableAdapter.Update(updatedRows));
+                    result = (result + this._paises_origenTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(updatedRows));
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -26998,12 +30306,66 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._cucop_vinculosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cucop_vinculos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cucop_vinculosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._licitacion_vinculacionTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._licitacion_vinculacionTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._certificados_calidadTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._certificados_calidadTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cucop_vinculos_catalogos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._cucop_vinculos_catalogosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27016,12 +30378,12 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._licitacion_preguntasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._data_unidadesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._licitacion_preguntasTableAdapter.Update(updatedRows));
+                    result = (result + this._data_unidadesTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27034,12 +30396,21 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cucop_vinculos_certificadosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cucop_vinculos_certificados.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(updatedRows));
+                    result = (result + this._cucop_vinculos_certificadosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._licitacion_calendarioTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._licitacion_calendarioTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27061,24 +30432,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._certificados_calidadTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._certificados_calidadTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._aux_vinculosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.aux_vinculos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._aux_vinculosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             if ((this._aux_usersTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.aux_users.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -27088,21 +30441,21 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._licitacion_calendarioTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._licitacion_preguntasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._licitacion_calendarioTableAdapter.Update(updatedRows));
+                    result = (result + this._licitacion_preguntasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._data_unidadesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cucop_vinculos_registros.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._data_unidadesTableAdapter.Update(updatedRows));
+                    result = (result + this._cucop_vinculos_registrosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -27140,19 +30493,11 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._licitacion_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._paises_origenTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._paises_origenTableAdapter.Update(addedRows));
+                    result = (result + this._licitacion_itemsTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27164,27 +30509,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._licitacion_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._paises_origenTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.paises_origen.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._licitacion_itemsTableAdapter.Update(addedRows));
+                    result = (result + this._paises_origenTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(addedRows));
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27196,11 +30533,59 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._cucop_vinculosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cucop_vinculos.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cucop_vinculosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._licitacion_vinculacionTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._licitacion_vinculacionTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._certificados_calidadTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._certificados_calidadTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cucop_vinculos_catalogos.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._cucop_vinculos_catalogosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27212,11 +30597,11 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._licitacion_preguntasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._data_unidadesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._licitacion_preguntasTableAdapter.Update(addedRows));
+                    result = (result + this._data_unidadesTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27228,11 +30613,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cucop_vinculos_certificadosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cucop_vinculos_certificados.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(addedRows));
+                    result = (result + this._cucop_vinculos_certificadosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._licitacion_calendarioTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._licitacion_calendarioTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27252,22 +30645,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._certificados_calidadTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._certificados_calidadTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._aux_vinculosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.aux_vinculos.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._aux_vinculosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._aux_usersTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.aux_users.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -27276,19 +30653,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._licitacion_calendarioTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._licitacion_preguntasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._licitacion_calendarioTableAdapter.Update(addedRows));
+                    result = (result + this._licitacion_preguntasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._data_unidadesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cucop_vinculos_registros.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._data_unidadesTableAdapter.Update(addedRows));
+                    result = (result + this._cucop_vinculos_registrosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -27302,19 +30679,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(LicitacionesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._data_unidadesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_registros.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._data_unidadesTableAdapter.Update(deletedRows));
+                    result = (result + this._cucop_vinculos_registrosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._licitacion_calendarioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._licitacion_preguntasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_calendarioTableAdapter.Update(deletedRows));
+                    result = (result + this._licitacion_preguntasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27323,22 +30700,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._aux_usersTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._aux_vinculosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.aux_vinculos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._aux_vinculosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._certificados_calidadTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._certificados_calidadTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27358,11 +30719,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._licitacion_calendarioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(deletedRows));
+                    result = (result + this._licitacion_calendarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cucop_vinculos_certificadosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_certificados.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cucop_vinculos_certificadosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27374,11 +30743,11 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._licitacion_preguntasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._data_unidadesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.data_unidades.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_preguntasTableAdapter.Update(deletedRows));
+                    result = (result + this._data_unidadesTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27390,27 +30759,27 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._licitacion_vinculacionTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_catalogos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_vinculacionTableAdapter.Update(deletedRows));
+                    result = (result + this._cucop_vinculos_catalogosTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._catalogos_traduccionesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._registros_tramites_prorrogaTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.registros_tramites_prorroga.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_traduccionesTableAdapter.Update(deletedRows));
+                    result = (result + this._registros_tramites_prorrogaTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._certificados_calidadTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(deletedRows));
+                    result = (result + this._certificados_calidadTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27422,19 +30791,43 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._licitacion_itemsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_itemsTableAdapter.Update(deletedRows));
+                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cucopTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._licitacion_vinculacionTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cucopTableAdapter.Update(deletedRows));
+                    result = (result + this._licitacion_vinculacionTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cucop_vinculosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cucop_vinculosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._catalogos_traduccionesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._catalogos_traduccionesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27446,11 +30839,19 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._cucopTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(deletedRows));
+                    result = (result + this._cucopTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._licitacion_itemsTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._licitacion_itemsTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -27524,11 +30925,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
             }
             if (((this._aux_usersTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._aux_usersTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
-                        "sma cadena de conexión.");
-            }
-            if (((this._aux_vinculosTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._aux_vinculosTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -27627,6 +31023,26 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
+            if (((this._cucop_vinculosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cucop_vinculosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
+            if (((this._cucop_vinculos_catalogosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cucop_vinculos_catalogosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
+            if (((this._cucop_vinculos_certificadosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cucop_vinculos_certificadosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
+            if (((this._cucop_vinculos_registrosTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._cucop_vinculos_registrosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda" +
@@ -27675,15 +31091,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                     if (this._aux_usersTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._aux_usersTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._aux_usersTableAdapter.Adapter);
-                    }
-                }
-                if ((this._aux_vinculosTableAdapter != null)) {
-                    revertConnections.Add(this._aux_vinculosTableAdapter, this._aux_vinculosTableAdapter.Connection);
-                    this._aux_vinculosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._aux_vinculosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._aux_vinculosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._aux_vinculosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._aux_vinculosTableAdapter.Adapter);
                     }
                 }
                 if ((this._catalogos_claves_referenciasTableAdapter != null)) {
@@ -27857,6 +31264,42 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                         adaptersWithAcceptChangesDuringUpdate.Add(this._data_unidadesTableAdapter.Adapter);
                     }
                 }
+                if ((this._cucop_vinculosTableAdapter != null)) {
+                    revertConnections.Add(this._cucop_vinculosTableAdapter, this._cucop_vinculosTableAdapter.Connection);
+                    this._cucop_vinculosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cucop_vinculosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cucop_vinculosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cucop_vinculosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cucop_vinculosTableAdapter.Adapter);
+                    }
+                }
+                if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                    revertConnections.Add(this._cucop_vinculos_catalogosTableAdapter, this._cucop_vinculos_catalogosTableAdapter.Connection);
+                    this._cucop_vinculos_catalogosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cucop_vinculos_catalogosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cucop_vinculos_catalogosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cucop_vinculos_catalogosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cucop_vinculos_catalogosTableAdapter.Adapter);
+                    }
+                }
+                if ((this._cucop_vinculos_certificadosTableAdapter != null)) {
+                    revertConnections.Add(this._cucop_vinculos_certificadosTableAdapter, this._cucop_vinculos_certificadosTableAdapter.Connection);
+                    this._cucop_vinculos_certificadosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cucop_vinculos_certificadosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cucop_vinculos_certificadosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cucop_vinculos_certificadosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cucop_vinculos_certificadosTableAdapter.Adapter);
+                    }
+                }
+                if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                    revertConnections.Add(this._cucop_vinculos_registrosTableAdapter, this._cucop_vinculos_registrosTableAdapter.Connection);
+                    this._cucop_vinculos_registrosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._cucop_vinculos_registrosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._cucop_vinculos_registrosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._cucop_vinculos_registrosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._cucop_vinculos_registrosTableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -27922,10 +31365,6 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if ((this._aux_usersTableAdapter != null)) {
                     this._aux_usersTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aux_usersTableAdapter]));
                     this._aux_usersTableAdapter.Transaction = null;
-                }
-                if ((this._aux_vinculosTableAdapter != null)) {
-                    this._aux_vinculosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aux_vinculosTableAdapter]));
-                    this._aux_vinculosTableAdapter.Transaction = null;
                 }
                 if ((this._catalogos_claves_referenciasTableAdapter != null)) {
                     this._catalogos_claves_referenciasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._catalogos_claves_referenciasTableAdapter]));
@@ -28002,6 +31441,22 @@ SELECT id_tramite_prorroga, id_registro_sanitario, numero_tramite, fecha_emision
                 if ((this._data_unidadesTableAdapter != null)) {
                     this._data_unidadesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._data_unidadesTableAdapter]));
                     this._data_unidadesTableAdapter.Transaction = null;
+                }
+                if ((this._cucop_vinculosTableAdapter != null)) {
+                    this._cucop_vinculosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cucop_vinculosTableAdapter]));
+                    this._cucop_vinculosTableAdapter.Transaction = null;
+                }
+                if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                    this._cucop_vinculos_catalogosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cucop_vinculos_catalogosTableAdapter]));
+                    this._cucop_vinculos_catalogosTableAdapter.Transaction = null;
+                }
+                if ((this._cucop_vinculos_certificadosTableAdapter != null)) {
+                    this._cucop_vinculos_certificadosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cucop_vinculos_certificadosTableAdapter]));
+                    this._cucop_vinculos_certificadosTableAdapter.Transaction = null;
+                }
+                if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                    this._cucop_vinculos_registrosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._cucop_vinculos_registrosTableAdapter]));
+                    this._cucop_vinculos_registrosTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

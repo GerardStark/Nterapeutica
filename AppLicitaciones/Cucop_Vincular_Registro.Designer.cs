@@ -33,13 +33,6 @@
             this.idvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_registros = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.distColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.generColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paisColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_buscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
@@ -54,8 +47,15 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btn_descartar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.lbl_cucop = new System.Windows.Forms.Label();
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.generColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -76,6 +76,7 @@
             this.dgv_vinculados.Size = new System.Drawing.Size(320, 540);
             this.dgv_vinculados.TabIndex = 0;
             this.dgv_vinculados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vinculados_CellClick);
+            this.dgv_vinculados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_vinculados_CellFormatting);
             // 
             // idvincregColumn
             // 
@@ -107,52 +108,10 @@
             this.dgv_registros.Location = new System.Drawing.Point(427, 24);
             this.dgv_registros.Name = "dgv_registros";
             this.dgv_registros.ReadOnly = true;
-            this.dgv_registros.Size = new System.Drawing.Size(544, 540);
+            this.dgv_registros.Size = new System.Drawing.Size(819, 540);
             this.dgv_registros.TabIndex = 1;
             this.dgv_registros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_registros_CellClick);
             this.dgv_registros.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_registros_CellFormatting);
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            // 
-            // numeroColumn
-            // 
-            this.numeroColumn.HeaderText = "Numero";
-            this.numeroColumn.Name = "numeroColumn";
-            this.numeroColumn.ReadOnly = true;
-            // 
-            // titularColumn
-            // 
-            this.titularColumn.HeaderText = "Titular";
-            this.titularColumn.Name = "titularColumn";
-            this.titularColumn.ReadOnly = true;
-            // 
-            // distColumn
-            // 
-            this.distColumn.HeaderText = "Distintiva";
-            this.distColumn.Name = "distColumn";
-            this.distColumn.ReadOnly = true;
-            // 
-            // generColumn
-            // 
-            this.generColumn.HeaderText = "Generica";
-            this.generColumn.Name = "generColumn";
-            this.generColumn.ReadOnly = true;
-            // 
-            // fabrColumn
-            // 
-            this.fabrColumn.HeaderText = "Fabricante";
-            this.fabrColumn.Name = "fabrColumn";
-            this.fabrColumn.ReadOnly = true;
-            // 
-            // paisColumn
-            // 
-            this.paisColumn.HeaderText = "Pais";
-            this.paisColumn.Name = "paisColumn";
-            this.paisColumn.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -285,11 +244,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(55, 15);
             this.toolStripLabel1.Text = "Descartar";
             // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // lbl_cucop
             // 
             this.lbl_cucop.AutoSize = true;
@@ -299,11 +253,62 @@
             this.lbl_cucop.TabIndex = 3;
             this.lbl_cucop.Text = "label1";
             // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
+            // 
+            // numeroColumn
+            // 
+            this.numeroColumn.HeaderText = "Numero";
+            this.numeroColumn.Name = "numeroColumn";
+            this.numeroColumn.ReadOnly = true;
+            this.numeroColumn.Width = 125;
+            // 
+            // titularColumn
+            // 
+            this.titularColumn.HeaderText = "Titular";
+            this.titularColumn.Name = "titularColumn";
+            this.titularColumn.ReadOnly = true;
+            this.titularColumn.Width = 125;
+            // 
+            // distColumn
+            // 
+            this.distColumn.HeaderText = "Distintiva";
+            this.distColumn.Name = "distColumn";
+            this.distColumn.ReadOnly = true;
+            // 
+            // generColumn
+            // 
+            this.generColumn.HeaderText = "Generica";
+            this.generColumn.Name = "generColumn";
+            this.generColumn.ReadOnly = true;
+            // 
+            // fabrColumn
+            // 
+            this.fabrColumn.HeaderText = "Fabricante";
+            this.fabrColumn.Name = "fabrColumn";
+            this.fabrColumn.ReadOnly = true;
+            // 
+            // paisColumn
+            // 
+            this.paisColumn.HeaderText = "Pais";
+            this.paisColumn.Name = "paisColumn";
+            this.paisColumn.ReadOnly = true;
+            this.paisColumn.Width = 175;
+            // 
             // Cucop_Vincular_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(985, 584);
+            this.ClientSize = new System.Drawing.Size(1262, 584);
             this.Controls.Add(this.lbl_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv_registros);
@@ -344,6 +349,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.Label lbl_cucop;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titularColumn;
@@ -351,6 +357,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn generColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fabrColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paisColumn;
-        private System.Windows.Forms.Label lbl_cucop;
     }
 }

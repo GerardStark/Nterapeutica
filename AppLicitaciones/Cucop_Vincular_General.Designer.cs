@@ -34,11 +34,11 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btn_quitar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.tabOpciones = new System.Windows.Forms.TabControl();
-            this.btn_guardar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_guardar = new System.Windows.Forms.ToolStripButton();
+            this.tabOpciones = new System.Windows.Forms.TabControl();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,30 +93,12 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel2.Text = "Quitar";
             // 
-            // tabOpciones
+            // toolStripLabel4
             // 
-            this.tabOpciones.Location = new System.Drawing.Point(58, 12);
-            this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 0;
-            this.tabOpciones.Size = new System.Drawing.Size(1247, 607);
-            this.tabOpciones.TabIndex = 52;
-            // 
-            // btn_guardar
-            // 
-            this.btn_guardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
-            this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(52, 54);
-            this.btn_guardar.Text = "toolStripButton1";
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
-            this.toolStripLabel3.Text = "Guardar";
+            this.toolStripLabel4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel4.Text = "Cancelar";
             // 
             // btn_cancelar
             // 
@@ -128,12 +110,31 @@
             this.btn_cancelar.Size = new System.Drawing.Size(52, 54);
             this.btn_cancelar.Text = "toolStripButton1";
             // 
-            // toolStripLabel4
+            // toolStripLabel3
             // 
-            this.toolStripLabel4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(52, 15);
-            this.toolStripLabel4.Text = "Cancelar";
+            this.toolStripLabel3.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel3.Text = "Guardar";
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.btn_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
+            this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(52, 54);
+            this.btn_guardar.Text = "toolStripButton1";
+            // 
+            // tabOpciones
+            // 
+            this.tabOpciones.Location = new System.Drawing.Point(58, 12);
+            this.tabOpciones.Name = "tabOpciones";
+            this.tabOpciones.SelectedIndex = 0;
+            this.tabOpciones.Size = new System.Drawing.Size(1247, 607);
+            this.tabOpciones.TabIndex = 52;
+            this.tabOpciones.SelectedIndexChanged += new System.EventHandler(this.tabOpciones_SelectedIndexChanged);
             // 
             // Cucop_Vincular_General
             // 
