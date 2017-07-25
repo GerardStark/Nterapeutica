@@ -46,9 +46,7 @@ C:\Users\APOYOS3-LAP\documents\visual studio 2017\Projects\licitaciones\AppLicit
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\AppLicitaciones.exe.config
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\AppLicitaciones.exe
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\AppLicitaciones.pdb
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\CtrlsLicitacion.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\LibLicitacion.dll
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\CtrlsLicitacion.pdb
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\LibLicitacion.pdb
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\LibLicitacion.dll.config
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.csprojResolveAssemblyReference.cache
@@ -137,3 +135,4 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\AppLicitaciones.application
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.exe.manifest
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.application
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.NuevaOpcion.resources

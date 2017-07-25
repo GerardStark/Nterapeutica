@@ -4,3 +4,8 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Release\LibLicitacion.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Release\LibLicitacion.pdb
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Release\LibLicitacion.csprojResolveAssemblyReference.cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\AppLicitaciones.exe
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\CtrlsLicitacion.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\AppLicitaciones.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\AppLicitaciones.exe.config
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\CtrlsLicitacion.pdb

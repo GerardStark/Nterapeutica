@@ -44,10 +44,10 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -192,6 +192,13 @@
             this.dataGridView2.Size = new System.Drawing.Size(544, 540);
             this.dataGridView2.TabIndex = 4;
             // 
+            // idregColumn
+            // 
+            this.idregColumn.HeaderText = "#";
+            this.idregColumn.Name = "idregColumn";
+            this.idregColumn.ReadOnly = true;
+            this.idregColumn.Width = 25;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -220,13 +227,6 @@
             this.numvincregColumn.ReadOnly = true;
             this.numvincregColumn.Width = 250;
             // 
-            // idregColumn
-            // 
-            this.idregColumn.HeaderText = "#";
-            this.idregColumn.Name = "idregColumn";
-            this.idregColumn.ReadOnly = true;
-            this.idregColumn.Width = 25;
-            // 
             // Cucop_Vincular_Certificado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -238,6 +238,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Vincular_Certificado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Vincular_Certificado";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

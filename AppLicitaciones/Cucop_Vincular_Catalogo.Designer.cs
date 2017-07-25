@@ -44,8 +44,8 @@
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idvincregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -191,6 +191,13 @@
             this.dataGridView2.Size = new System.Drawing.Size(544, 540);
             this.dataGridView2.TabIndex = 4;
             // 
+            // idregColumn
+            // 
+            this.idregColumn.HeaderText = "#";
+            this.idregColumn.Name = "idregColumn";
+            this.idregColumn.ReadOnly = true;
+            this.idregColumn.Width = 25;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -203,13 +210,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(320, 540);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // idregColumn
-            // 
-            this.idregColumn.HeaderText = "#";
-            this.idregColumn.Name = "idregColumn";
-            this.idregColumn.ReadOnly = true;
-            this.idregColumn.Width = 25;
             // 
             // idvincregColumn
             // 
@@ -229,6 +229,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Vincular_Catalogo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Vincular_Catalogo";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

@@ -9,15 +9,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CtrlsLicitacion;
 
 namespace AppLicitaciones
 {
     public partial class Cucop_Vincular_General : Form
     {
         MainConfig mc = new MainConfig();
-        
-        int cont = 0;
+        public int idCucop = 0;
+        public int cont = 0;
         public Cucop_Vincular_General()
         {
             InitializeComponent();
@@ -26,13 +25,19 @@ namespace AppLicitaciones
                 btn_quitar.Enabled = false;
             }
         }
+        public void mostrarvinculoscucop(int idCucop)
+        {
+            this.idCucop = idCucop;
+        }
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             cont = cont + 1;            
             TabPage opcion = new TabPage();
             opcion.Text = "Opcion " + cont;
-            opcion.Controls.Add(new NuevaOpcion());
+            NuevaOpcion opt = new NuevaOpcion();
+            opt.pasaridcucop(idCucop);
+            opcion.Controls.Add(opt);
             tabOpciones.Controls.Add(opcion);
         }
 
@@ -42,6 +47,7 @@ namespace AppLicitaciones
             tabOpciones.Controls.RemoveAt(tab);
             cont = cont - 1;
         }
+
         public void obtenerdatoscontrol()
         {
             

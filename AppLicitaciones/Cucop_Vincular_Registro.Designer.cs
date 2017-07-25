@@ -55,6 +55,7 @@
             this.btn_descartar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.lbl_cucop = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -289,17 +290,28 @@
             this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
             this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // lbl_cucop
+            // 
+            this.lbl_cucop.AutoSize = true;
+            this.lbl_cucop.Location = new System.Drawing.Point(357, 522);
+            this.lbl_cucop.Name = "lbl_cucop";
+            this.lbl_cucop.Size = new System.Drawing.Size(51, 20);
+            this.lbl_cucop.TabIndex = 3;
+            this.lbl_cucop.Text = "label1";
+            // 
             // Cucop_Vincular_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(985, 584);
+            this.Controls.Add(this.lbl_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv_registros);
             this.Controls.Add(this.dgv_vinculados);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Vincular_Registro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Vincular_Registro";
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
@@ -339,5 +351,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn generColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn fabrColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paisColumn;
+        private System.Windows.Forms.Label lbl_cucop;
     }
 }

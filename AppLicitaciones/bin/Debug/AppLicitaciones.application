@@ -7,14 +7,14 @@
     <framework targetVersion="4.5.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="AppLicitaciones.exe.manifest" size="4827">
+    <dependentAssembly dependencyType="install" codebase="AppLicitaciones.exe.manifest" size="4180">
       <assemblyIdentity name="AppLicitaciones.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Di86ioabYACDt0JDjKOV3OzehcUeaXDpQKLpEQAnjXQ=</dsig:DigestValue>
+        <dsig:DigestValue>79R2Vpr1WNRGTTPqlwfYodg/ON06H/OJZog7gxAYpmQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

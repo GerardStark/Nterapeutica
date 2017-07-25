@@ -30,7 +30,7 @@ namespace AppLicitaciones
             this.dgv_vinculados.MultiSelect = false;
         }
 
-        public void llenartablasregistros(int id_cucop)
+        public void mostrarVinculosRegistros(int id_cucop)
         {
             this.id_cucop = id_cucop;
             using (SqlConnection con = new SqlConnection(mc.con))
@@ -56,6 +56,7 @@ namespace AppLicitaciones
                     dgv_vinculados.Rows.Add(drv.ItemArray);
                 }
             }
+            lbl_cucop.Text = id_cucop.ToString();
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)

@@ -49,19 +49,31 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>p3K3dO4cGhVyDFXIY2l6LEdvos3aQdWn9bUVBUwqwXk=</dsig:DigestValue>
+        <dsig:DigestValue>hiMkjpdNar15aVeyE2vM7GXYlQz/OITdANDs9bdo1B0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CtrlsLicitacion.dll" size="8192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="1548800">
+      <assemblyIdentity name="AppLicitaciones" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>VbDURN8UkEEBZme+wD42FsKwA0PD4lrTurLGmRpAnMc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CtrlsLicitacion.dll" size="8704">
       <assemblyIdentity name="CtrlsLicitacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xuEcilG38fNTQaguFvxFn7K75b0dRHG9maPsQbuOq4I=</dsig:DigestValue>
+        <dsig:DigestValue>x2U+PidNDwQUVy0k3yCA5zQSr2+2jRTMh6hwOjWN7rg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -73,7 +85,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>smQOZtALslhpDZElDNty+NtNFbJBVaAGi5ayt1Mg9sE=</dsig:DigestValue>
+        <dsig:DigestValue>Vn7li4+kD19HwKh8PQ0tv1rUKZaDh1li7aACnjRoCMk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

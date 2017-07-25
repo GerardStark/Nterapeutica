@@ -155,15 +155,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btn_agregar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.TabControl tabOpciones;
-        private System.Windows.Forms.ToolStripButton btn_quitar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton btn_guardar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripButton btn_cancelar;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        public System.Windows.Forms.ToolStrip toolStrip1;
+        public System.Windows.Forms.ToolStripButton btn_agregar;
+        public System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        public System.Windows.Forms.TabControl tabOpciones;
+        public System.Windows.Forms.ToolStripButton btn_quitar;
+        public System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        public System.Windows.Forms.ToolStripButton btn_guardar;
+        public System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        public System.Windows.Forms.ToolStripButton btn_cancelar;
+        public System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }
