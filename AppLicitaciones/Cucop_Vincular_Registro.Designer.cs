@@ -52,7 +52,6 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.lbl_cucop = new System.Windows.Forms.Label();
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -191,11 +190,12 @@
             this.btn_buscar.Size = new System.Drawing.Size(53, 54);
             this.btn_buscar.Text = "toolStripButton6";
             this.btn_buscar.ToolTipText = "Buscar";
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel6.Size = new System.Drawing.Size(53, 15);
             this.toolStripLabel6.Text = "Buscar";
             // 
             // btn_agregar
@@ -204,7 +204,7 @@
             this.btn_agregar.Image = ((System.Drawing.Image)(resources.GetObject("btn_agregar.Image")));
             this.btn_agregar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(55, 54);
+            this.btn_agregar.Size = new System.Drawing.Size(53, 54);
             this.btn_agregar.Text = "toolStripButton1";
             this.btn_agregar.ToolTipText = "Agregar";
             this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
@@ -212,7 +212,7 @@
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel5.Size = new System.Drawing.Size(53, 15);
             this.toolStripLabel5.Text = "Agregar";
             // 
             // btn_quitar
@@ -221,7 +221,7 @@
             this.btn_quitar.Image = ((System.Drawing.Image)(resources.GetObject("btn_quitar.Image")));
             this.btn_quitar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_quitar.Name = "btn_quitar";
-            this.btn_quitar.Size = new System.Drawing.Size(55, 54);
+            this.btn_quitar.Size = new System.Drawing.Size(53, 54);
             this.btn_quitar.Text = "toolStripButton2";
             this.btn_quitar.ToolTipText = "Quitar";
             this.btn_quitar.Click += new System.EventHandler(this.btn_quitar_Click);
@@ -229,7 +229,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel4.Size = new System.Drawing.Size(53, 15);
             this.toolStripLabel4.Text = "Remover";
             // 
             // btn_info
@@ -238,7 +238,7 @@
             this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
             this.btn_info.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_info.Name = "btn_info";
-            this.btn_info.Size = new System.Drawing.Size(55, 54);
+            this.btn_info.Size = new System.Drawing.Size(53, 54);
             this.btn_info.Text = "toolStripButton3";
             this.btn_info.ToolTipText = "Ver información";
             this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
@@ -246,13 +246,13 @@
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(55, 15);
+            this.toolStripLabel3.Size = new System.Drawing.Size(53, 15);
             this.toolStripLabel3.Text = "Info";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(55, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(53, 6);
             // 
             // btn_guardar
             // 
@@ -260,7 +260,7 @@
             this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
             this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(55, 54);
+            this.btn_guardar.Size = new System.Drawing.Size(53, 54);
             this.btn_guardar.Text = "toolStripButton4";
             this.btn_guardar.ToolTipText = "Guardar";
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
@@ -270,15 +270,6 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(53, 15);
             this.toolStripLabel2.Text = "Terminar";
-            // 
-            // lbl_cucop
-            // 
-            this.lbl_cucop.AutoSize = true;
-            this.lbl_cucop.Location = new System.Drawing.Point(357, 545);
-            this.lbl_cucop.Name = "lbl_cucop";
-            this.lbl_cucop.Size = new System.Drawing.Size(51, 20);
-            this.lbl_cucop.TabIndex = 3;
-            this.lbl_cucop.Text = "label1";
             // 
             // licitacionesDataSet
             // 
@@ -310,7 +301,6 @@
             this.ClientSize = new System.Drawing.Size(1262, 602);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv_registros);
             this.Controls.Add(this.dgv_vinculados);
@@ -348,7 +338,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private LicitacionesDataSet licitacionesDataSet;
-        private System.Windows.Forms.Label lbl_cucop;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn titularColumn;

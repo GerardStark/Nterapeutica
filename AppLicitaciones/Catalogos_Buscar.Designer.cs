@@ -50,7 +50,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(93, 30);
+            this.label1.Location = new System.Drawing.Point(51, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
             this.label1.TabIndex = 0;
@@ -60,25 +60,25 @@
             // 
             this.cmb_filtros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_filtros.FormattingEnabled = true;
-            this.cmb_filtros.Location = new System.Drawing.Point(150, 27);
+            this.cmb_filtros.Location = new System.Drawing.Point(113, 27);
             this.cmb_filtros.Name = "cmb_filtros";
-            this.cmb_filtros.Size = new System.Drawing.Size(272, 28);
+            this.cmb_filtros.Size = new System.Drawing.Size(309, 28);
             this.cmb_filtros.TabIndex = 1;
             this.cmb_filtros.SelectedIndexChanged += new System.EventHandler(this.cmb_filtros_SelectedIndexChanged);
             // 
             // lbl_tipo_filtro
             // 
             this.lbl_tipo_filtro.AutoSize = true;
-            this.lbl_tipo_filtro.Location = new System.Drawing.Point(21, 110);
+            this.lbl_tipo_filtro.Location = new System.Drawing.Point(109, 91);
             this.lbl_tipo_filtro.Name = "lbl_tipo_filtro";
             this.lbl_tipo_filtro.Size = new System.Drawing.Size(0, 20);
             this.lbl_tipo_filtro.TabIndex = 2;
             // 
             // txt_parametros
             // 
-            this.txt_parametros.Location = new System.Drawing.Point(150, 106);
+            this.txt_parametros.Location = new System.Drawing.Point(113, 114);
             this.txt_parametros.Name = "txt_parametros";
-            this.txt_parametros.Size = new System.Drawing.Size(272, 26);
+            this.txt_parametros.Size = new System.Drawing.Size(309, 26);
             this.txt_parametros.TabIndex = 3;
             this.txt_parametros.Visible = false;
             // 
@@ -133,9 +133,9 @@
             // 
             this.cmb_spec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_spec.FormattingEnabled = true;
-            this.cmb_spec.Location = new System.Drawing.Point(150, 104);
+            this.cmb_spec.Location = new System.Drawing.Point(113, 114);
             this.cmb_spec.Name = "cmb_spec";
-            this.cmb_spec.Size = new System.Drawing.Size(272, 28);
+            this.cmb_spec.Size = new System.Drawing.Size(309, 28);
             this.cmb_spec.TabIndex = 101;
             this.cmb_spec.Visible = false;
             // 
@@ -143,9 +143,9 @@
             // 
             this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Location = new System.Drawing.Point(150, 107);
+            this.cmb_tipo.Location = new System.Drawing.Point(113, 114);
             this.cmb_tipo.Name = "cmb_tipo";
-            this.cmb_tipo.Size = new System.Drawing.Size(272, 28);
+            this.cmb_tipo.Size = new System.Drawing.Size(309, 28);
             this.cmb_tipo.TabIndex = 102;
             this.cmb_tipo.Visible = false;
             // 
@@ -164,6 +164,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Catalogos_Buscar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Catalogos_Buscar";
             this.Load += new System.EventHandler(this.Catalogos_Buscar_Load);
             this.toolStrip1.ResumeLayout(false);

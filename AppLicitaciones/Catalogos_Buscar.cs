@@ -21,7 +21,7 @@ namespace AppLicitaciones
         public Catalogos_Buscar()
         {
             InitializeComponent();
-            string[] array_filtros_catalogos = { "Seleccione un filtro", "Nombre", "Tipo", "Año", "Especialidad", "Fabricante", };
+            string[] array_filtros_catalogos = { "Seleccione un filtro", "Nombre", "Tipo", "Año", "Especialidad", "Fabricante", "Referencia" };
             string[] array_tipos_catalogo = { "Catálogo", "Brochure", "Manual", "Ficha Técnica", };
             string[] array_specs = {
                 "Cirugia Cardiovascular",
@@ -70,7 +70,10 @@ namespace AppLicitaciones
                 case 6:
                     lbl_tipo_filtro.Text = "Fabricante:";
                     txt_parametros.Visible = true;
-
+                    break;
+                case 7:
+                    lbl_tipo_filtro.Text = "Referencia";
+                    txt_parametros.Visible = true;
                     break;
             }
         }
@@ -98,6 +101,10 @@ namespace AppLicitaciones
                     break;
                 case 6:
                     ctrl = "fabricante";
+                    valor = txt_parametros.Text;
+                    break;
+                case 7:
+                    ctrl = "referencia";
                     valor = txt_parametros.Text;
                     break;
             }

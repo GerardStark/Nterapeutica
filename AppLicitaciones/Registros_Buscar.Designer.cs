@@ -29,187 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_Buscar));
-            this.lbl_tlc = new System.Windows.Forms.Label();
-            this.lbl_nacionalidad = new System.Windows.Forms.Label();
-            this.lbl_marca = new System.Windows.Forms.Label();
-            this.lbl_fabricante = new System.Windows.Forms.Label();
-            this.lbl_generica = new System.Windows.Forms.Label();
-            this.lbl_distintiva = new System.Windows.Forms.Label();
-            this.lbl_titular = new System.Windows.Forms.Label();
-            this.lbl_solicitud = new System.Windows.Forms.Label();
-            this.lbl_numero = new System.Windows.Forms.Label();
-            this.txt_buscar_numero = new System.Windows.Forms.TextBox();
-            this.txt_buscar_solicitud = new System.Windows.Forms.TextBox();
-            this.txt_buscar_titular = new System.Windows.Forms.TextBox();
-            this.txt_buscar_marca = new System.Windows.Forms.TextBox();
-            this.txt_buscar_nacionalidad = new System.Windows.Forms.TextBox();
-            this.txt_buscar_tlc = new System.Windows.Forms.TextBox();
-            this.txt_buscar_distintiva = new System.Windows.Forms.TextBox();
-            this.txt_buscar_generica = new System.Windows.Forms.TextBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_reg_buscar = new System.Windows.Forms.ToolStripButton();
             this.btn_buscar_cancelar = new System.Windows.Forms.ToolStripButton();
             this.label10 = new System.Windows.Forms.Label();
             this.cmb_opciones_buscqueda = new System.Windows.Forms.ComboBox();
-            this.txt_fabricante = new System.Windows.Forms.TextBox();
+            this.lbl_parametro = new System.Windows.Forms.Label();
+            this.txt_parametros = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lbl_tlc
-            // 
-            this.lbl_tlc.AutoSize = true;
-            this.lbl_tlc.Location = new System.Drawing.Point(146, 106);
-            this.lbl_tlc.Name = "lbl_tlc";
-            this.lbl_tlc.Size = new System.Drawing.Size(42, 20);
-            this.lbl_tlc.TabIndex = 82;
-            this.lbl_tlc.Text = "TLC:";
-            this.lbl_tlc.Visible = false;
-            // 
-            // lbl_nacionalidad
-            // 
-            this.lbl_nacionalidad.AutoSize = true;
-            this.lbl_nacionalidad.Location = new System.Drawing.Point(83, 106);
-            this.lbl_nacionalidad.Name = "lbl_nacionalidad";
-            this.lbl_nacionalidad.Size = new System.Drawing.Size(104, 20);
-            this.lbl_nacionalidad.TabIndex = 81;
-            this.lbl_nacionalidad.Text = "Nacionalidad:";
-            this.lbl_nacionalidad.Visible = false;
-            // 
-            // lbl_marca
-            // 
-            this.lbl_marca.AutoSize = true;
-            this.lbl_marca.Location = new System.Drawing.Point(131, 106);
-            this.lbl_marca.Name = "lbl_marca";
-            this.lbl_marca.Size = new System.Drawing.Size(57, 20);
-            this.lbl_marca.TabIndex = 80;
-            this.lbl_marca.Text = "Marca:";
-            this.lbl_marca.Visible = false;
-            // 
-            // lbl_fabricante
-            // 
-            this.lbl_fabricante.AutoSize = true;
-            this.lbl_fabricante.Location = new System.Drawing.Point(98, 106);
-            this.lbl_fabricante.Name = "lbl_fabricante";
-            this.lbl_fabricante.Size = new System.Drawing.Size(89, 20);
-            this.lbl_fabricante.TabIndex = 79;
-            this.lbl_fabricante.Text = "Fabricante:";
-            this.lbl_fabricante.Visible = false;
-            // 
-            // lbl_generica
-            // 
-            this.lbl_generica.AutoSize = true;
-            this.lbl_generica.Location = new System.Drawing.Point(6, 106);
-            this.lbl_generica.Name = "lbl_generica";
-            this.lbl_generica.Size = new System.Drawing.Size(184, 20);
-            this.lbl_generica.TabIndex = 78;
-            this.lbl_generica.Text = "Denominacion Generica:";
-            this.lbl_generica.Visible = false;
-            // 
-            // lbl_distintiva
-            // 
-            this.lbl_distintiva.AutoSize = true;
-            this.lbl_distintiva.Location = new System.Drawing.Point(6, 107);
-            this.lbl_distintiva.Name = "lbl_distintiva";
-            this.lbl_distintiva.Size = new System.Drawing.Size(183, 20);
-            this.lbl_distintiva.TabIndex = 77;
-            this.lbl_distintiva.Text = "Denominacion Distintiva:";
-            this.lbl_distintiva.Visible = false;
-            // 
-            // lbl_titular
-            // 
-            this.lbl_titular.AutoSize = true;
-            this.lbl_titular.Location = new System.Drawing.Point(131, 107);
-            this.lbl_titular.Name = "lbl_titular";
-            this.lbl_titular.Size = new System.Drawing.Size(56, 20);
-            this.lbl_titular.TabIndex = 76;
-            this.lbl_titular.Text = "Titular:";
-            this.lbl_titular.Visible = false;
-            // 
-            // lbl_solicitud
-            // 
-            this.lbl_solicitud.AutoSize = true;
-            this.lbl_solicitud.Location = new System.Drawing.Point(114, 107);
-            this.lbl_solicitud.Name = "lbl_solicitud";
-            this.lbl_solicitud.Size = new System.Drawing.Size(73, 20);
-            this.lbl_solicitud.TabIndex = 75;
-            this.lbl_solicitud.Text = "Solicitud:";
-            this.lbl_solicitud.Visible = false;
-            // 
-            // lbl_numero
-            // 
-            this.lbl_numero.AutoSize = true;
-            this.lbl_numero.Location = new System.Drawing.Point(119, 108);
-            this.lbl_numero.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbl_numero.Name = "lbl_numero";
-            this.lbl_numero.Size = new System.Drawing.Size(69, 20);
-            this.lbl_numero.TabIndex = 74;
-            this.lbl_numero.Text = "Numero:";
-            this.lbl_numero.Visible = false;
-            // 
-            // txt_buscar_numero
-            // 
-            this.txt_buscar_numero.Location = new System.Drawing.Point(195, 102);
-            this.txt_buscar_numero.Name = "txt_buscar_numero";
-            this.txt_buscar_numero.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_numero.TabIndex = 86;
-            this.txt_buscar_numero.Visible = false;
-            this.txt_buscar_numero.WordWrap = false;
-            // 
-            // txt_buscar_solicitud
-            // 
-            this.txt_buscar_solicitud.Location = new System.Drawing.Point(195, 102);
-            this.txt_buscar_solicitud.Name = "txt_buscar_solicitud";
-            this.txt_buscar_solicitud.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_solicitud.TabIndex = 87;
-            this.txt_buscar_solicitud.Visible = false;
-            // 
-            // txt_buscar_titular
-            // 
-            this.txt_buscar_titular.Location = new System.Drawing.Point(193, 102);
-            this.txt_buscar_titular.Name = "txt_buscar_titular";
-            this.txt_buscar_titular.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_titular.TabIndex = 88;
-            this.txt_buscar_titular.Visible = false;
-            // 
-            // txt_buscar_marca
-            // 
-            this.txt_buscar_marca.Location = new System.Drawing.Point(193, 102);
-            this.txt_buscar_marca.Name = "txt_buscar_marca";
-            this.txt_buscar_marca.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_marca.TabIndex = 90;
-            this.txt_buscar_marca.Visible = false;
-            // 
-            // txt_buscar_nacionalidad
-            // 
-            this.txt_buscar_nacionalidad.Location = new System.Drawing.Point(193, 102);
-            this.txt_buscar_nacionalidad.Name = "txt_buscar_nacionalidad";
-            this.txt_buscar_nacionalidad.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_nacionalidad.TabIndex = 91;
-            this.txt_buscar_nacionalidad.Visible = false;
-            // 
-            // txt_buscar_tlc
-            // 
-            this.txt_buscar_tlc.Location = new System.Drawing.Point(195, 103);
-            this.txt_buscar_tlc.Name = "txt_buscar_tlc";
-            this.txt_buscar_tlc.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_tlc.TabIndex = 92;
-            this.txt_buscar_tlc.Visible = false;
-            // 
-            // txt_buscar_distintiva
-            // 
-            this.txt_buscar_distintiva.Location = new System.Drawing.Point(195, 104);
-            this.txt_buscar_distintiva.Name = "txt_buscar_distintiva";
-            this.txt_buscar_distintiva.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_distintiva.TabIndex = 96;
-            this.txt_buscar_distintiva.Visible = false;
-            // 
-            // txt_buscar_generica
-            // 
-            this.txt_buscar_generica.Location = new System.Drawing.Point(194, 103);
-            this.txt_buscar_generica.Name = "txt_buscar_generica";
-            this.txt_buscar_generica.Size = new System.Drawing.Size(309, 26);
-            this.txt_buscar_generica.TabIndex = 97;
-            this.txt_buscar_generica.Visible = false;
             // 
             // toolStrip1
             // 
@@ -220,7 +48,7 @@
             this.btn_buscar_cancelar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 176);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(526, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(550, 57);
             this.toolStrip1.TabIndex = 98;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -257,6 +85,7 @@
             // 
             // cmb_opciones_buscqueda
             // 
+            this.cmb_opciones_buscqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_opciones_buscqueda.FormattingEnabled = true;
             this.cmb_opciones_buscqueda.Location = new System.Drawing.Point(179, 29);
             this.cmb_opciones_buscqueda.Name = "cmb_opciones_buscqueda";
@@ -264,39 +93,32 @@
             this.cmb_opciones_buscqueda.TabIndex = 102;
             this.cmb_opciones_buscqueda.SelectedIndexChanged += new System.EventHandler(this.cmb_opciones_buscqueda_SelectedIndexChanged);
             // 
-            // txt_fabricante
+            // lbl_parametro
             // 
-            this.txt_fabricante.Location = new System.Drawing.Point(193, 103);
-            this.txt_fabricante.Name = "txt_fabricante";
-            this.txt_fabricante.Size = new System.Drawing.Size(311, 26);
-            this.txt_fabricante.TabIndex = 103;
+            this.lbl_parametro.AutoSize = true;
+            this.lbl_parametro.Location = new System.Drawing.Point(145, 92);
+            this.lbl_parametro.Name = "lbl_parametro";
+            this.lbl_parametro.Size = new System.Drawing.Size(0, 20);
+            this.lbl_parametro.TabIndex = 104;
+            // 
+            // txt_parametros
+            // 
+            this.txt_parametros.Location = new System.Drawing.Point(149, 115);
+            this.txt_parametros.Name = "txt_parametros";
+            this.txt_parametros.Size = new System.Drawing.Size(325, 26);
+            this.txt_parametros.TabIndex = 105;
+            this.txt_parametros.Visible = false;
             // 
             // Registros_Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 233);
-            this.Controls.Add(this.txt_fabricante);
+            this.ClientSize = new System.Drawing.Size(550, 233);
+            this.Controls.Add(this.txt_parametros);
+            this.Controls.Add(this.lbl_parametro);
             this.Controls.Add(this.cmb_opciones_buscqueda);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.txt_buscar_generica);
-            this.Controls.Add(this.txt_buscar_distintiva);
-            this.Controls.Add(this.txt_buscar_tlc);
-            this.Controls.Add(this.txt_buscar_nacionalidad);
-            this.Controls.Add(this.txt_buscar_marca);
-            this.Controls.Add(this.txt_buscar_titular);
-            this.Controls.Add(this.txt_buscar_solicitud);
-            this.Controls.Add(this.txt_buscar_numero);
-            this.Controls.Add(this.lbl_tlc);
-            this.Controls.Add(this.lbl_nacionalidad);
-            this.Controls.Add(this.lbl_marca);
-            this.Controls.Add(this.lbl_fabricante);
-            this.Controls.Add(this.lbl_generica);
-            this.Controls.Add(this.lbl_distintiva);
-            this.Controls.Add(this.lbl_titular);
-            this.Controls.Add(this.lbl_solicitud);
-            this.Controls.Add(this.lbl_numero);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Registros_Buscar";
@@ -310,28 +132,12 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lbl_tlc;
-        private System.Windows.Forms.Label lbl_nacionalidad;
-        private System.Windows.Forms.Label lbl_marca;
-        private System.Windows.Forms.Label lbl_fabricante;
-        private System.Windows.Forms.Label lbl_generica;
-        private System.Windows.Forms.Label lbl_distintiva;
-        private System.Windows.Forms.Label lbl_titular;
-        private System.Windows.Forms.Label lbl_solicitud;
-        private System.Windows.Forms.Label lbl_numero;
-        private System.Windows.Forms.TextBox txt_buscar_numero;
-        private System.Windows.Forms.TextBox txt_buscar_solicitud;
-        private System.Windows.Forms.TextBox txt_buscar_titular;
-        private System.Windows.Forms.TextBox txt_buscar_marca;
-        private System.Windows.Forms.TextBox txt_buscar_nacionalidad;
-        private System.Windows.Forms.TextBox txt_buscar_tlc;
-        private System.Windows.Forms.TextBox txt_buscar_distintiva;
-        private System.Windows.Forms.TextBox txt_buscar_generica;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_reg_buscar;
         private System.Windows.Forms.ToolStripButton btn_buscar_cancelar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmb_opciones_buscqueda;
-        private System.Windows.Forms.TextBox txt_fabricante;
+        private System.Windows.Forms.Label lbl_parametro;
+        private System.Windows.Forms.TextBox txt_parametros;
     }
 }

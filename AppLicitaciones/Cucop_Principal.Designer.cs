@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Principal));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_nuevo = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -152,7 +153,10 @@
             this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
-            this.DGV_cucop.Size = new System.Drawing.Size(896, 652);
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV_cucop.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.DGV_cucop.RowTemplate.Height = 100;
+            this.DGV_cucop.Size = new System.Drawing.Size(1194, 652);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_cucop_CellClick);
             // 
@@ -175,7 +179,7 @@
             this.descColumn.HeaderText = "Descripcion";
             this.descColumn.Name = "descColumn";
             this.descColumn.ReadOnly = true;
-            this.descColumn.Width = 250;
+            this.descColumn.Width = 550;
             // 
             // especColumn
             // 
@@ -207,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 684);
+            this.ClientSize = new System.Drawing.Size(1314, 684);
             this.Controls.Add(this.DGV_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -17,18 +17,18 @@ namespace AppLicitaciones
         MainConfig mc = new MainConfig();
         public int idCucop = 0;
         public int cont = 0;
+        public int idVinculo = 0;
         public Cucop_Vincular_General()
         {
             InitializeComponent();
-            if (tabOpciones.TabCount <= 0)
-            {
-                btn_quitar.Enabled = false;
-            }
         }
         public void mostrarvinculoscucop(int idCucop)
         {
             this.idCucop = idCucop;
-            tabOpciones.Controls.Clear();
+            while (tabOpciones.TabPages.Count > 0)
+            {
+                tabOpciones.TabPages[0].Dispose();
+            }
             try
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
@@ -47,7 +47,7 @@ namespace AppLicitaciones
                         opcion.Text = "Opcion " + current;
                         NuevaOpcion opt = new NuevaOpcion();
                         opcion.Controls.Add(opt);
-                        tabOpciones.Controls.Add(opcion);
+                        tabOpciones.TabPages.Add(opcion);
                         opt.pasardatosvinculo(idCucop, current, Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
                         opt.mostrarNombreProducto(Text = dt.Rows[i]["nombre"].ToString());
                         opt.buscarRegistros(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
@@ -83,36 +83,6 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void btn_quitar_Click(object sender, EventArgs e)
-        {
-            int tab = tabOpciones.SelectedIndex;
-            tabOpciones.Controls.RemoveAt(tab);
-            cont = cont - 1;
-            try
-            {
-                using (SqlConnection con = new SqlConnection(mc.con))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM cucop_vinculos ", con);                    
-                    cmd.ExecuteNonQuery();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        public void obtenerdatoscontrol()
-        {
-            //something
-        }
-
-        private void tabOpciones_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //MessageBox.Show(tabOpciones.SelectedIndex.ToString());
-        }
+        }       
     }  
 }

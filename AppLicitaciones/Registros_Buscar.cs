@@ -19,88 +19,88 @@ namespace AppLicitaciones
         public Registros_Buscar()
         {
             InitializeComponent();
-            string[] opciones_busqueda = {"Seleccione un filtro","Numero", "Solicitud", "Titular", "Fabricante", "Marca", "Nacionalidad","Tratado de Libre Comercio","Denominación Generica","Denominación Distintiva" };
-            mc.llenarcombobox(opciones_busqueda,cmb_opciones_buscqueda);
-            cmb_opciones_buscqueda.DropDownStyle = ComboBoxStyle.DropDownList;
+            string[] opciones_busqueda = {"Seleccione un filtro","Numero", "Referencia", "Solicitud", "Titular", "Fabricante", "Marca", "Denominación Generica","Denominación Distintiva" };
+            mc.llenarcombobox(opciones_busqueda,cmb_opciones_buscqueda);            
         }
-        public void llenarcombobox(string[] arreglo_items)
+
+        private void cmb_opciones_buscqueda_SelectedIndexChanged(object sender, EventArgs e)
         {
-            for (int i = 0; i < arreglo_items.Length; i++)
+            lbl_parametro.Text = "";
+            txt_parametros.Visible = false;
+            int value = Convert.ToInt32(((ComboboxItem)cmb_opciones_buscqueda.SelectedItem).Value);
+            switch (value)
             {
-                ComboboxItem item = new ComboboxItem();
-                item.Text = arreglo_items[i].ToString();
-                item.Value = i+1;
-                cmb_opciones_buscqueda.Items.Add(item);
+                case 2:
+                    lbl_parametro.Text = "Numero de RS:";
+                    txt_parametros.Visible = true;
+                    break;
+                case 3:
+                    lbl_parametro.Text = "Referencia:";
+                    txt_parametros.Visible = true;
+                    break;
+                case 4:
+                    lbl_parametro.Text = "Numemro de Solicitud:";
+                    txt_parametros.Visible = true;
+                    break;
+                case 5:
+                    lbl_parametro.Text = "Titular:";
+                    txt_parametros.Visible = true;
+                    break;
+                case 6:
+                    lbl_parametro.Text = "Fabricante:";
+                    txt_parametros.Visible = true;
+                    break;
+                case 7:
+                    lbl_parametro.Text = "Marca:";
+                    txt_parametros.Visible = true;
+                    break;
+                case 8:
+                    lbl_parametro.Text = "Denominación Generica";
+                    txt_parametros.Visible = true;
+                    break;
+                case 9:
+                    lbl_parametro.Text = "Denominación Distintiva";
+                    txt_parametros.Visible = true;
+                    break;
             }
-        }
-        public void escondercontroles()
-        {
-            //variables
-            ctrl = "";
-            valor = "";
-            //labels
-            lbl_numero.Visible = false;
-            lbl_solicitud.Visible = false;
-            lbl_titular.Visible = false;
-            lbl_fabricante.Visible = false;
-            lbl_marca.Visible = false;
-            lbl_nacionalidad.Visible = false;
-            lbl_tlc.Visible = false;
-            lbl_distintiva.Visible = false;
-            lbl_generica.Visible = false;
-            //txts
-            txt_buscar_numero.Visible = false;
-            txt_buscar_solicitud.Visible = false;
-            txt_buscar_titular.Visible = false;
-            txt_fabricante.Visible = false;
-            txt_buscar_marca.Visible = false;
-            txt_buscar_nacionalidad.Visible = false;
-            txt_buscar_tlc.Visible = false;
-            txt_buscar_distintiva.Visible = false;
-            txt_buscar_generica.Visible = false;
         }
 
         private void btn_reg_buscar_Click(object sender, EventArgs e)
         {
-            escondercontroles();
             int value = Convert.ToInt32(((ComboboxItem)cmb_opciones_buscqueda.SelectedItem).Value);
             switch (value)
             {
                 case 2:
                     ctrl = "numero_registro";
-                    valor = txt_buscar_numero.Text;
+                    valor = txt_parametros.Text;
                     break;
                 case 3:
-                    ctrl = "numero_solicitud";
-                    valor = txt_buscar_solicitud.Text;                    
+                    ctrl = "referencia";
+                    valor = txt_parametros.Text;
                     break;
                 case 4:
-                    ctrl = "titular";
-                    valor = txt_buscar_titular.Text;
+                    ctrl = "numero_solicitud";
+                    valor = txt_parametros.Text;
                     break;
                 case 5:
-                    ctrl = "fabricante";
-                    valor = txt_fabricante.Text;
+                    ctrl = "titular";
+                    valor = txt_parametros.Text;
                     break;
                 case 6:
-                    ctrl = "marca";
-                    valor = txt_buscar_marca.Text;
+                    ctrl = "fabricante";
+                    valor = txt_parametros.Text;
                     break;
                 case 7:
-                    ctrl = "nacionalidad";
-                    valor = txt_buscar_nacionalidad.Text;
+                    ctrl = "marca";
+                    valor = txt_parametros.Text;
                     break;
                 case 8:
-                    ctrl = "tratado_comercio";
-                    valor = txt_buscar_tlc.Text;
+                    ctrl = "denom_distintiva";
+                    valor = txt_parametros.Text;
                     break;
                 case 9:
                     ctrl = "denom_generica";
-                    valor = txt_buscar_generica.Text;
-                    break;
-                case 10:
-                    ctrl = "denom_distintiva";
-                    valor = txt_buscar_distintiva.Text;
+                    valor = txt_parametros.Text;
                     break;
             }
             this.DialogResult = DialogResult.OK;
@@ -112,51 +112,6 @@ namespace AppLicitaciones
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
-
-       
-        private void cmb_opciones_buscqueda_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            escondercontroles();
-            int value = Convert.ToInt32(((ComboboxItem)cmb_opciones_buscqueda.SelectedItem).Value);
-            switch (value)
-            {               
-                case 2:
-                    lbl_numero.Visible = true;
-                    txt_buscar_numero.Visible = true;
-                    break;
-                case 3:
-                    lbl_solicitud.Visible = true;
-                    txt_buscar_solicitud.Visible = true;
-                    break;
-                case 4:
-                    lbl_titular.Visible = true;
-                    txt_buscar_titular.Visible = true;
-                    break;
-                case 5:
-                    lbl_fabricante.Visible = true;
-                    txt_fabricante.Visible = true;                   
-                    break;
-                case 6:
-                    lbl_marca.Visible = true;
-                    txt_buscar_marca.Visible = true;
-                    break;
-                case 7:
-                    lbl_nacionalidad.Visible = true;
-                    txt_buscar_nacionalidad.Visible = true;
-                    break;
-                case 8:
-                    lbl_tlc.Visible = true;
-                    txt_buscar_tlc.Visible = true;
-                    break;
-                case 9:
-                    lbl_distintiva.Visible = true;
-                    txt_buscar_distintiva.Visible = true;
-                    break;
-                case 10:
-                    lbl_generica.Visible = true;
-                    txt_buscar_generica.Visible = true;
-                    break;
-            }
-        }
+        
     }
 }

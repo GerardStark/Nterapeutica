@@ -155,26 +155,49 @@ namespace AppLicitaciones
         {
             try
             {
-                DGV_Catalogos.Rows.Clear();
-                SqlConnection con = new SqlConnection(mc.con);
-                con = new SqlConnection(mc.con);
-                con.Open();
-                //cambiar por tabla catalogos
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma " +
-                    "from catalogos_info_general where " + ctrl + " Like '%" + valor + "%'", con);
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                if (ctrl == "referencia")
                 {
-                    DGV_Catalogos.Rows.Add(dr.ItemArray);
+                    DGV_Catalogos.Rows.Clear();
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con = new SqlConnection(mc.con);
+                    con.Open();
+                    //cambiar por tabla catalogos
+                    SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma " +
+                        "from catalogos_info_general where id_catalogo in"+
+                        "(SELECT Id_catalogo_productos FROM catalogos_claves_referencias WHERE clave_ref_cod Like '%" + valor + "%')", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DGV_Catalogos.Rows.Add(dr.ItemArray);
+                    }
+                    con.Close();
+                    filtro_flag = 1;
                 }
-                con.Close();
-                filtro_flag = 1;
+                else
+                {
+                    DGV_Catalogos.Rows.Clear();
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con = new SqlConnection(mc.con);
+                    con.Open();
+                    //cambiar por tabla catalogos
+                    SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma " +
+                        "from catalogos_info_general where " + ctrl + " Like '%" + valor + "%'", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DGV_Catalogos.Rows.Add(dr.ItemArray);
+                    }
+                    con.Close();
+                    filtro_flag = 1;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
     }

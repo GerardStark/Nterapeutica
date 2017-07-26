@@ -76,25 +76,45 @@ namespace AppLicitaciones
         {
             try
             {
-                DGVRegistros.Rows.Clear();
-                SqlConnection con = new SqlConnection(mc.con);
-                con = new SqlConnection(mc.con);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,rfc,fabricante,marca,pais_origen," +
-                    "fecha_emision,fecha_vencimiento from registros_sanitarios where "+ ctrl + " Like '%"+valor+"%'", con);
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                if (ctrl == "referencia")
                 {
-                    DGVRegistros.Rows.Add(dr.ItemArray);
+                    DGVRegistros.Rows.Clear();
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con = new SqlConnection(mc.con);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("select id_registro,numero_registro,numero_solicitud,tipo,titular,rfc,fabricante,marca,pais_origen," +
+                        "fecha_emision,fecha_vencimiento from registros_sanitarios where id_registro in " +
+                        "(SELECT Id_registro_sanitario FROM registros_claves_referencias WHERE clave_ref_cod Like '%" + valor + "%')", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DGVRegistros.Rows.Add(dr.ItemArray);
+                    }
+                    con.Close();
                 }
-                con.Close();
-                filtro_flag = 1;
+                else
+                {
+                    DGVRegistros.Rows.Clear();
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con = new SqlConnection(mc.con);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,tipo,titular,rfc,fabricante,marca,pais_origen," +
+                        "fecha_emision,fecha_vencimiento from registros_sanitarios where " + ctrl + " Like '%" + valor + "%'", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DGVRegistros.Rows.Add(dr.ItemArray);
+                    }
+                    con.Close();
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 

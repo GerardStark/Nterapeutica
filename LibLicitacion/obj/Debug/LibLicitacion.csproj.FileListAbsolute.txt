@@ -15,3 +15,4 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitacionesdev\LibLicitac
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitacionesdev\LibLicitacion\bin\Debug\LibLicitacion.dll.config
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitacionesdev\LibLicitacion\bin\Debug\LibLicitacion.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitacionesdev\LibLicitacion\bin\Debug\LibLicitacion.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Debug\LibLicitacion.csprojResolveAssemblyReference.cache

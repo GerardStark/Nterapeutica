@@ -75,7 +75,7 @@
             // 
             // txt_parametros
             // 
-            this.txt_parametros.Location = new System.Drawing.Point(150, 93);
+            this.txt_parametros.Location = new System.Drawing.Point(139, 117);
             this.txt_parametros.Name = "txt_parametros";
             this.txt_parametros.Size = new System.Drawing.Size(272, 26);
             this.txt_parametros.TabIndex = 104;
@@ -84,7 +84,7 @@
             // lbl_tipo_filtro
             // 
             this.lbl_tipo_filtro.AutoSize = true;
-            this.lbl_tipo_filtro.Location = new System.Drawing.Point(21, 97);
+            this.lbl_tipo_filtro.Location = new System.Drawing.Point(135, 94);
             this.lbl_tipo_filtro.Name = "lbl_tipo_filtro";
             this.lbl_tipo_filtro.Size = new System.Drawing.Size(0, 20);
             this.lbl_tipo_filtro.TabIndex = 103;

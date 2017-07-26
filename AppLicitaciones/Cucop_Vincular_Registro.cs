@@ -57,7 +57,7 @@ namespace AppLicitaciones
                     dgv_registros.Rows.Add(dr.ItemArray);
                 }                
             }
-            lbl_cucop.Text = id_vinculo.ToString();
+            
         }
 
         private void btn_agregar_Click(object sender, EventArgs e)
@@ -184,6 +184,66 @@ namespace AppLicitaciones
                     e.Value = mc.obtenernumeroregistro((Int32)e.Value);
 
                 }
+            }
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            Registros_Buscar rn = new Registros_Buscar();
+            DialogResult result = rn.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                string ctrl = rn.ctrl;
+                string valor = rn.valor;
+                filtrartablaregistros(ctrl, valor);
+            }
+            else
+            {
+                mostrarVinculosRegistros(id_vinculo);
+            }
+        }
+        public void filtrartablaregistros(string ctrl, string valor)
+        {
+            try
+            {
+                if (ctrl == "referencia")
+                {
+                    dgv_registros.Rows.Clear();
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con = new SqlConnection(mc.con);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("select id_registro, numero_registro, titular, denom_distintiva, denom_generica, fabricante, pais_origen from registros_sanitarios where id_registro in " +
+                        "(SELECT Id_registro_sanitario FROM registros_claves_referencias WHERE clave_ref_cod Like '%" + valor + "%')", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dgv_registros.Rows.Add(dr.ItemArray);
+                    }
+                    con.Close();
+                }
+                else
+                {
+                    dgv_registros.Rows.Clear();
+                    SqlConnection con = new SqlConnection(mc.con);
+                    con = new SqlConnection(mc.con);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select id_registro, numero_registro, titular, denom_distintiva, denom_generica, fabricante, pais_origen " +
+                        "from registros_sanitarios where " + ctrl + " Like '%" + valor + "%'", con);
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dgv_registros.Rows.Add(dr.ItemArray);
+                    }
+                    con.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

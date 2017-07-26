@@ -22,7 +22,7 @@ namespace AppLicitaciones
             llenartablacucops();
             this.DGV_cucop.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGV_cucop.MultiSelect = false;
-            
+
         }
         public void llenartablacucops()
         {

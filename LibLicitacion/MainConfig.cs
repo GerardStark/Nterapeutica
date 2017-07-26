@@ -156,6 +156,64 @@ namespace LibLicitacion
             }
             return nombre;
         }
+
+        public string obtenernombrecatalogo(int id_catalogo)
+        {
+            string nombre = "";
+            if (id_catalogo != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from catalogos_info_general where id_catalogo=@id", conec);
+                cmd.Parameters.AddWithValue("@id", id_catalogo);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "catalogos");
+                conec.Close();
+                if (ds.Tables["catalogos"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["catalogos"].Rows[0]["nombre_catalogo"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
+        }
+
+        public string obtenernumerocertificado (int id_certificado)
+        {
+            string nombre = "";
+            if (id_certificado != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from certificados_calidad where id_certificado=@id", conec);
+                cmd.Parameters.AddWithValue("@id", id_certificado);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "certificados");
+                conec.Close();
+                if (ds.Tables["certificados"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["certificados"].Rows[0]["numero_identificador"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
+        }
     }
 
     public class ComboboxItem
