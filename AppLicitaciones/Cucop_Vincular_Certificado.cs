@@ -194,9 +194,17 @@ namespace AppLicitaciones
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                if (dt.Rows.Count > 0)
                 {
-                    dgv_certificados.Rows.Add(dr.ItemArray);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        dgv_certificados.Rows.Add(dr.ItemArray);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay concidiencias");
+                    mostrarVinculosCertificados(id_vinculo);
                 }
                 con.Close();                
             }

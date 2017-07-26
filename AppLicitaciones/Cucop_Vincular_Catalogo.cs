@@ -204,9 +204,17 @@ namespace AppLicitaciones
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
-                    foreach (DataRow dr in dt.Rows)
+                    if (dt.Rows.Count > 0)
                     {
-                        dgv_catalogos.Rows.Add(dr.ItemArray);
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            dgv_catalogos.Rows.Add(dr.ItemArray);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay concidiencias");
+                        mostrarVinculosCatalogos(id_vinculo);
                     }
                     con.Close();
                     
@@ -223,9 +231,17 @@ namespace AppLicitaciones
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
-                    foreach (DataRow dr in dt.Rows)
+                    if (dt.Rows.Count > 0)
                     {
-                        dgv_catalogos.Rows.Add(dr.ItemArray);
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            dgv_catalogos.Rows.Add(dr.ItemArray);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("No hay concidiencias");
+                        mostrarVinculosCatalogos(id_vinculo);
                     }
                     con.Close();
                    

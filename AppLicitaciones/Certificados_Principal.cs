@@ -88,9 +88,17 @@ namespace AppLicitaciones
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                if (dt.Rows.Count >0)
                 {
-                    DGV_certificados.Rows.Add(dr.ItemArray);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DGV_certificados.Rows.Add(dr.ItemArray);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No hay coincidencias");
+                    llenartablacertificados();
                 }
                 con.Close();
                 filtro_flag = 1;
