@@ -60,13 +60,10 @@ namespace AppLicitaciones
         private void cmb_filtros_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_parametros.Visible = false;
-            
+            lbl_tipo_filtro.Text = "";
             int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
             switch (value)
             {
-                case 1:
-                    lbl_tipo_filtro.Text = "";
-                    break;
                 case 2:
                     lbl_tipo_filtro.Text = "Clave/Referencia:";
                     txt_parametros.Visible = true;

@@ -63,7 +63,9 @@ namespace AppLicitaciones
             DialogResult result = cb.ShowDialog();
             if (result == DialogResult.OK)
             {
-                filtrarcucops("str","str");
+                string ctrl = cb.ctrl;
+                string valor = cb.valor;
+                filtrarcucops(ctrl, valor);
             }
         }
         private void filtrarcucops(string ctrl, string valor)
@@ -75,7 +77,7 @@ namespace AppLicitaciones
                 con = new SqlConnection(mc.con);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("SELECT id_cucop,clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont from cucop "+
-                    "where " + ctrl+" = "+valor+"", con);
+                    "Where " + ctrl + " Like '%" + valor + "%'", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
