@@ -227,7 +227,7 @@
             this.btn_reg_borrar});
             this.tt_reg_editar.Location = new System.Drawing.Point(0, 420);
             this.tt_reg_editar.Name = "tt_reg_editar";
-            this.tt_reg_editar.Size = new System.Drawing.Size(563, 57);
+            this.tt_reg_editar.Size = new System.Drawing.Size(645, 57);
             this.tt_reg_editar.TabIndex = 88;
             this.tt_reg_editar.Text = "Menú";
             // 
@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 477);
+            this.ClientSize = new System.Drawing.Size(645, 477);
             this.Controls.Add(this.tt_reg_editar);
             this.Controls.Add(this.lbl_traduccion);
             this.Controls.Add(this.lbl_archivo);
@@ -292,6 +292,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Certificados_Visualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Certificados_Visualizar";
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();

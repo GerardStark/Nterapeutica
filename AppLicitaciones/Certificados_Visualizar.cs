@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibLicitacion;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace AppLicitaciones
 {
@@ -49,7 +50,7 @@ namespace AppLicitaciones
 
         private void btn_archivo_Click(object sender, EventArgs e)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Certificados-Calidad\";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Certificados-Calidad\";
             string pathanexos = newpath + "\\" + id_certificado + "\\" + lbl_archivo.Text;
 
             if (lbl_archivo.Text != "(Vacio)")
@@ -67,7 +68,7 @@ namespace AppLicitaciones
 
         private void btn_traduccion_Click(object sender, EventArgs e)
         {
-            string newpath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\DocumentosNT\Certificados-Calidad\";
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Certificados-Calidad\";
             string pathanexos = newpath + "\\" + id_certificado + "\\" + lbl_traduccion.Text;
 
             if (lbl_archivo.Text != "(Vacio)")

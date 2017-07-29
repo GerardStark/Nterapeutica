@@ -101,7 +101,7 @@ namespace AppLicitaciones
             try
             {
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave,tipo = @tipo,fabricante =@fabr)
+                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave AND tipo = @tipo AND fabricante = @fabr)
                 BEGIN
                     INSERT INTO certificados_calidad (numero_identificador,tipo,descripcion_detallada,fabricante,fecha_emision,fecha_vencimiento,idioma,dir_archivo,dir_archivo_traduccion,actualizado_en)
                     OUTPUT INSERTED.id_certificado

@@ -195,7 +195,7 @@ namespace AppLicitaciones
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(mc.con);
-            SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave,tipo = @tipo,fabricante =@fabr)
+            SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave AND tipo = @tipo AND fabricante =@fabr)
                 BEGIN
                     UPDATE certificados_calidad SET numero_identificador = @clave, tipo = @tipo,descripcion_detallada = @desc,fabricante = @fabr,
                     fecha_emision = @emision,fecha_vencimiento = @vencimento,idioma = @idioma,dir_archivo = @archivo,dir_archivo_traduccion = @trad ,actualizado_en = @updated

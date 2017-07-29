@@ -82,7 +82,7 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT nombre_catalogo,tipo_catalogo,spec_catalogo FROM catalogos_info_general WHERE nombre_catalogo = @nombre,tipo_catalogo = @tipo,spec_catalogo =@espec)
+                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT nombre_catalogo,tipo_catalogo,spec_catalogo FROM catalogos_info_general WHERE nombre_catalogo = @nombre AND tipo_catalogo = @tipo AND spec_catalogo =@espec)
                     BEGIN
                         INSERT INTO catalogos_info_general (id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma,dir_archivo,actualizado_en)
                         OUTPUT INSERTED.id_catalogo VALUES (@nombre,@año,@tipo,@espec,@fabricante,@marca,@idioma,@archivo,@actualizado)
