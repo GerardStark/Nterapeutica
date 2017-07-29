@@ -246,21 +246,19 @@
             // 
             // lbl_reg_distintiva
             // 
-            this.lbl_reg_distintiva.AutoSize = true;
             this.lbl_reg_distintiva.Location = new System.Drawing.Point(198, 334);
             this.lbl_reg_distintiva.MaximumSize = new System.Drawing.Size(800, 0);
             this.lbl_reg_distintiva.Name = "lbl_reg_distintiva";
-            this.lbl_reg_distintiva.Size = new System.Drawing.Size(60, 20);
+            this.lbl_reg_distintiva.Size = new System.Drawing.Size(697, 84);
             this.lbl_reg_distintiva.TabIndex = 84;
             this.lbl_reg_distintiva.Text = "label23";
             // 
             // lbl_reg_generica
             // 
-            this.lbl_reg_generica.AutoSize = true;
-            this.lbl_reg_generica.Location = new System.Drawing.Point(197, 418);
+            this.lbl_reg_generica.Location = new System.Drawing.Point(198, 428);
             this.lbl_reg_generica.MaximumSize = new System.Drawing.Size(800, 0);
             this.lbl_reg_generica.Name = "lbl_reg_generica";
-            this.lbl_reg_generica.Size = new System.Drawing.Size(60, 20);
+            this.lbl_reg_generica.Size = new System.Drawing.Size(697, 117);
             this.lbl_reg_generica.TabIndex = 85;
             this.lbl_reg_generica.Text = "label24";
             // 

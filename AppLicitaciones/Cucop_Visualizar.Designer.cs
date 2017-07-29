@@ -57,9 +57,9 @@
             this.btn_guardar,
             this.btn_editar,
             this.btn_borrar});
-            this.tt_reg_editar.Location = new System.Drawing.Point(0, 365);
+            this.tt_reg_editar.Location = new System.Drawing.Point(0, 566);
             this.tt_reg_editar.Name = "tt_reg_editar";
-            this.tt_reg_editar.Size = new System.Drawing.Size(658, 57);
+            this.tt_reg_editar.Size = new System.Drawing.Size(1127, 57);
             this.tt_reg_editar.TabIndex = 87;
             this.tt_reg_editar.Text = "Menú";
             // 
@@ -100,7 +100,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(9, 317);
+            this.label9.Location = new System.Drawing.Point(9, 362);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(97, 20);
             this.label9.TabIndex = 104;
@@ -109,7 +109,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(29, 287);
+            this.label8.Location = new System.Drawing.Point(29, 332);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(77, 20);
             this.label8.TabIndex = 103;
@@ -118,7 +118,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(63, 252);
+            this.label7.Location = new System.Drawing.Point(63, 297);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 20);
             this.label7.TabIndex = 102;
@@ -127,7 +127,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(63, 221);
+            this.label6.Location = new System.Drawing.Point(63, 266);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 20);
             this.label6.TabIndex = 101;
@@ -154,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 188);
+            this.label1.Location = new System.Drawing.Point(3, 233);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 20);
             this.label1.TabIndex = 88;
@@ -171,17 +171,16 @@
             // 
             // lbl_desc
             // 
-            this.lbl_desc.AutoSize = true;
             this.lbl_desc.Location = new System.Drawing.Point(114, 46);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(51, 20);
+            this.lbl_desc.Size = new System.Drawing.Size(1001, 187);
             this.lbl_desc.TabIndex = 107;
             this.lbl_desc.Text = "label5";
             // 
             // lbl_spec
             // 
             this.lbl_spec.AutoSize = true;
-            this.lbl_spec.Location = new System.Drawing.Point(114, 188);
+            this.lbl_spec.Location = new System.Drawing.Point(114, 233);
             this.lbl_spec.Name = "lbl_spec";
             this.lbl_spec.Size = new System.Drawing.Size(60, 20);
             this.lbl_spec.TabIndex = 109;
@@ -190,7 +189,7 @@
             // lbl_tipo
             // 
             this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Location = new System.Drawing.Point(114, 252);
+            this.lbl_tipo.Location = new System.Drawing.Point(114, 297);
             this.lbl_tipo.Name = "lbl_tipo";
             this.lbl_tipo.Size = new System.Drawing.Size(60, 20);
             this.lbl_tipo.TabIndex = 111;
@@ -199,7 +198,7 @@
             // lbl_cant
             // 
             this.lbl_cant.AutoSize = true;
-            this.lbl_cant.Location = new System.Drawing.Point(114, 287);
+            this.lbl_cant.Location = new System.Drawing.Point(114, 332);
             this.lbl_cant.Name = "lbl_cant";
             this.lbl_cant.Size = new System.Drawing.Size(60, 20);
             this.lbl_cant.TabIndex = 115;
@@ -208,7 +207,7 @@
             // lbl_cont
             // 
             this.lbl_cont.AutoSize = true;
-            this.lbl_cont.Location = new System.Drawing.Point(114, 317);
+            this.lbl_cont.Location = new System.Drawing.Point(114, 362);
             this.lbl_cont.Name = "lbl_cont";
             this.lbl_cont.Size = new System.Drawing.Size(60, 20);
             this.lbl_cont.TabIndex = 117;
@@ -218,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 422);
+            this.ClientSize = new System.Drawing.Size(1127, 623);
             this.Controls.Add(this.lbl_cont);
             this.Controls.Add(this.lbl_cant);
             this.Controls.Add(this.lbl_tipo);

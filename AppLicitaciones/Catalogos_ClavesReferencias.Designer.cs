@@ -36,12 +36,6 @@
             this.txt_clave = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.DGV_Referencias = new System.Windows.Forms.DataGridView();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagpdfColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pagcatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
@@ -49,8 +43,6 @@
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.btn_eliminar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.txt_pag_pdf = new System.Windows.Forms.TextBox();
@@ -61,6 +53,13 @@
             this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagpdfColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pagcatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
@@ -120,52 +119,15 @@
             this.descripcionColumn,
             this.unidadColumn,
             this.pagpdfColumn,
-            this.pagcatColumn});
+            this.pagcatColumn,
+            this.updatedColumn});
             this.DGV_Referencias.Location = new System.Drawing.Point(70, 197);
             this.DGV_Referencias.Name = "DGV_Referencias";
             this.DGV_Referencias.ReadOnly = true;
-            this.DGV_Referencias.Size = new System.Drawing.Size(914, 339);
+            this.DGV_Referencias.Size = new System.Drawing.Size(914, 354);
             this.DGV_Referencias.TabIndex = 15;
             this.DGV_Referencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellClick);
             this.DGV_Referencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellDoubleClick);
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            // 
-            // claveColumn
-            // 
-            this.claveColumn.HeaderText = "Clave";
-            this.claveColumn.Name = "claveColumn";
-            this.claveColumn.ReadOnly = true;
-            // 
-            // descripcionColumn
-            // 
-            this.descripcionColumn.HeaderText = "Descripcion";
-            this.descripcionColumn.Name = "descripcionColumn";
-            this.descripcionColumn.ReadOnly = true;
-            this.descripcionColumn.Width = 320;
-            // 
-            // unidadColumn
-            // 
-            this.unidadColumn.HeaderText = "Unidad";
-            this.unidadColumn.Name = "unidadColumn";
-            this.unidadColumn.ReadOnly = true;
-            this.unidadColumn.Width = 150;
-            // 
-            // pagpdfColumn
-            // 
-            this.pagpdfColumn.HeaderText = "Pag. PDF";
-            this.pagpdfColumn.Name = "pagpdfColumn";
-            this.pagpdfColumn.ReadOnly = true;
-            // 
-            // pagcatColumn
-            // 
-            this.pagcatColumn.HeaderText = "Pag. Cat";
-            this.pagcatColumn.Name = "pagcatColumn";
-            this.pagcatColumn.ReadOnly = true;
             // 
             // toolStrip1
             // 
@@ -178,13 +140,11 @@
             this.toolStripLabel4,
             this.btn_eliminar,
             this.toolStripLabel3,
-            this.toolStripLabel1,
-            this.toolStripButton1,
             this.toolStripLabel5,
             this.toolStripButton2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(68, 563);
+            this.toolStrip1.Size = new System.Drawing.Size(55, 563);
             this.toolStrip1.TabIndex = 14;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -194,14 +154,14 @@
             this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
             this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(65, 54);
+            this.btn_guardar.Size = new System.Drawing.Size(52, 54);
             this.btn_guardar.Text = "toolStripButton2";
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel2.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel2.Text = "Nuevo";
             // 
             // btn_editar
@@ -210,7 +170,7 @@
             this.btn_editar.Image = ((System.Drawing.Image)(resources.GetObject("btn_editar.Image")));
             this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(65, 54);
+            this.btn_editar.Size = new System.Drawing.Size(52, 54);
             this.btn_editar.Text = "toolStripButton5";
             this.btn_editar.ToolTipText = "Editar";
             this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
@@ -218,7 +178,7 @@
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel4.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel4.Text = "Editar";
             // 
             // btn_eliminar
@@ -227,39 +187,21 @@
             this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
             this.btn_eliminar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(65, 54);
+            this.btn_eliminar.Size = new System.Drawing.Size(52, 54);
             this.btn_eliminar.Text = "toolStripButton3";
             this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel3.Text = "Eliminar";
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
-            this.toolStripLabel1.Text = "Seleccionar";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Enabled = false;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(65, 54);
-            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel5.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel5.Text = "Buscar";
             // 
             // toolStripButton2
@@ -269,7 +211,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(65, 54);
+            this.toolStripButton2.Size = new System.Drawing.Size(52, 54);
             this.toolStripButton2.Text = "toolStripButton2";
             // 
             // txt_pag_pdf
@@ -330,6 +272,51 @@
             // 
             this.data_unidadesTableAdapter.ClearBeforeFill = true;
             // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            // 
+            // claveColumn
+            // 
+            this.claveColumn.HeaderText = "Clave";
+            this.claveColumn.Name = "claveColumn";
+            this.claveColumn.ReadOnly = true;
+            // 
+            // descripcionColumn
+            // 
+            this.descripcionColumn.HeaderText = "Descripcion";
+            this.descripcionColumn.Name = "descripcionColumn";
+            this.descripcionColumn.ReadOnly = true;
+            this.descripcionColumn.Width = 320;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.ReadOnly = true;
+            this.unidadColumn.Width = 150;
+            // 
+            // pagpdfColumn
+            // 
+            this.pagpdfColumn.HeaderText = "Pag. PDF";
+            this.pagpdfColumn.Name = "pagpdfColumn";
+            this.pagpdfColumn.ReadOnly = true;
+            // 
+            // pagcatColumn
+            // 
+            this.pagcatColumn.HeaderText = "Pag. Cat";
+            this.pagcatColumn.Name = "pagcatColumn";
+            this.pagcatColumn.ReadOnly = true;
+            // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
+            // 
             // Catalogos_ClavesReferencias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -376,23 +363,22 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
         private System.Windows.Forms.ToolStripButton btn_eliminar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.TextBox txt_pag_pdf;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_pag_cat;
+        private System.Windows.Forms.ComboBox cmb_unidad;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource;
+        private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagpdfColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pagcatColumn;
-        private System.Windows.Forms.ComboBox cmb_unidad;
-        private LicitacionesDataSet licitacionesDataSet;
-        private System.Windows.Forms.BindingSource dataunidadesBindingSource;
-        private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
     }
 }

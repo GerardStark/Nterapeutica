@@ -98,26 +98,43 @@ namespace AppLicitaciones
 
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection(mc.con);
-            SqlCommand cmd = new SqlCommand("INSERT INTO certificados_calidad (numero_identificador,tipo,descripcion_detallada,fabricante,"+
-                "fecha_emision,fecha_vencimiento,idioma,dir_archivo,dir_archivo_traduccion,actualizado_en) OUTPUT INSERTED.id_certificado "+
-                "VALUES(@clave,@tipo,@desc,@fabr,@emision,@vencimento,@idioma,@archivo,@trad,@updated) ", con);
-            cmd.Parameters.AddWithValue("@clave",txt_clave.Text);
-            cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
-            cmd.Parameters.AddWithValue("@desc",txt_descripcion.Text);
-            cmd.Parameters.AddWithValue("@fabr", txt_fabricante.Text);
-            cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
-            cmd.Parameters.AddWithValue("@vencimento", date_vencimiento.Value.Date);
-            cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);
-            cmd.Parameters.AddWithValue("@archivo",lbl_archivo.Text);
-            cmd.Parameters.AddWithValue("@trad",lbl_trad.Text);
-            cmd.Parameters.AddWithValue("@updated",DateTime.Now);
-            con.Open();
-            Int32 newid = (Int32)cmd.ExecuteScalar();
-            mc.crearDirectorios(archivo, fileName, newid, "Certificados-Calidad");
-            mc.crearDirectorios(archivotrad, fileNametrad, newid, "Certificados-Calidad");
-            this.DialogResult = DialogResult.OK;
-            con.Close();
+            try
+            {
+                SqlConnection con = new SqlConnection(mc.con);
+                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave,tipo = @tipo,fabricante =@fabr)
+                BEGIN
+                    INSERT INTO certificados_calidad (numero_identificador,tipo,descripcion_detallada,fabricante,fecha_emision,fecha_vencimiento,idioma,dir_archivo,dir_archivo_traduccion,actualizado_en)
+                    OUTPUT INSERTED.id_certificado
+                    VALUES(@clave,@tipo,@desc,@fabr,@emision,@vencimento,@idioma,@archivo,@trad,@updated) 
+                END", con);
+                cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_descripcion.Text));
+                cmd.Parameters.AddWithValue("@fabr", txt_fabricante.Text);
+                cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
+                cmd.Parameters.AddWithValue("@vencimento", date_vencimiento.Value.Date);
+                cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);
+                cmd.Parameters.AddWithValue("@archivo", lbl_archivo.Text);
+                cmd.Parameters.AddWithValue("@trad", lbl_trad.Text);
+                cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                con.Open();
+                Int32 newid = (Int32)cmd.ExecuteScalar();
+                mc.crearDirectorios(archivo, fileName, newid, "Certificados-Calidad");
+                mc.crearDirectorios(archivotrad, fileNametrad, newid, "Certificados-Calidad");
+                this.DialogResult = DialogResult.OK;
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                if (ex is NullReferenceException)
+                {
+                    MessageBox.Show("Ya existe el Certificado");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

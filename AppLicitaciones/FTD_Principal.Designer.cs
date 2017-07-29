@@ -225,7 +225,7 @@
             this.DGV_FTD.Location = new System.Drawing.Point(71, 138);
             this.DGV_FTD.Name = "DGV_FTD";
             this.DGV_FTD.ReadOnly = true;
-            this.DGV_FTD.Size = new System.Drawing.Size(681, 489);
+            this.DGV_FTD.Size = new System.Drawing.Size(680, 489);
             this.DGV_FTD.TabIndex = 7;
             this.DGV_FTD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_FTD_CellClick);
             this.DGV_FTD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_FTD_CellDoubleClick);
@@ -284,7 +284,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(775, 639);
+            this.ClientSize = new System.Drawing.Size(771, 639);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_rfc);
             this.Controls.Add(this.DGV_FTD);

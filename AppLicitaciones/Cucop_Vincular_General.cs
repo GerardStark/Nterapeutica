@@ -16,7 +16,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         public int idCucop = 0;
-        public int cont = 0;
+       
         public int idVinculo = 0;
         public Cucop_Vincular_General()
         {
@@ -25,10 +25,7 @@ namespace AppLicitaciones
         public void mostrarvinculoscucop(int idCucop)
         {
             this.idCucop = idCucop;
-            while (tabOpciones.TabPages.Count > 0)
-            {
-                tabOpciones.TabPages[0].Dispose();
-            }
+            tabOpciones.TabPages.Clear();
             try
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
@@ -48,7 +45,7 @@ namespace AppLicitaciones
                         NuevaOpcion opt = new NuevaOpcion();
                         opcion.Controls.Add(opt);
                         tabOpciones.TabPages.Add(opcion);
-                        opt.pasardatosvinculo(idCucop, current, Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
+                        opt.pasardatosvinculo(idCucop, current, Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));                       
                         opt.mostrarNombreProducto(Text = dt.Rows[i]["nombre"].ToString());
                         opt.buscarRegistros(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
                         opt.buscarCatalogos(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
@@ -69,9 +66,10 @@ namespace AppLicitaciones
                 using (SqlConnection con = new SqlConnection(mc.con))
                 {
                     con.Open();
+                    int cont = tabOpciones.TabPages.Count;
                     SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos (opcion,id_cucop_item,actualizado_en) OUTPUT INSERTED.id_vinculacion
                     VALUES (@opt,@cucop,@update)", con);
-                    cmd.Parameters.AddWithValue("@opt", cont);
+                    cmd.Parameters.AddWithValue("@opt", cont + 1);
                     cmd.Parameters.AddWithValue("@cucop", idCucop);
                     cmd.Parameters.AddWithValue("@update", DateTime.Now);
                     //cmd.Parameters.AddWithValue("@nombre");
@@ -83,6 +81,17 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.Message);
             }
-        }       
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Cucop_Vinculos_Eliminar cve = new Cucop_Vinculos_Eliminar();
+            cve.mostrarvinculoscucop(idCucop);
+            DialogResult result = cve.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                mostrarvinculoscucop(idCucop);
+            }
+        }
     }  
 }

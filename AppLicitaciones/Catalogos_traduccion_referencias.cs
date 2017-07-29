@@ -60,6 +60,7 @@ namespace AppLicitaciones
                     marcarclaves(Convert.ToInt32(dr["id_clave_catalogo"]));                
                 }
                 con.Close();
+                mc.buscarultimafilaeditada("catalogos_claves_referencias",DGV_Referencias);
 
             }
             catch (Exception ex)

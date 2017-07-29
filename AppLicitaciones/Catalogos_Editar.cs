@@ -160,10 +160,13 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("update catalogos_info_general set nombre_catalogo = @nombre,publicacion = @año,tipo_catalogo = @tipo,spec_catalogo=@espec,fabricante=@fabricante,marca = @marca, " +
-                    "idioma=@idioma,dir_archivo=@archivo,actualizado_en=@actualizado WHERE id_catalogo = @id", con);
+                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT nombre_catalogo,tipo_catalogo,spec_catalogo FROM catalogos_info_general WHERE nombre_catalogo = @nombre,tipo_catalogo = @tipo,spec_catalogo =@espec)
+                    BEGIN
+                        UPDATE catalogos_info_general SET nombre_catalogo = @nombre,publicacion = @año,tipo_catalogo = @tipo,spec_catalogo=@espec,
+                        fabricante=@fabricante,marca = @marca, idioma=@idioma,dir_archivo=@archivo,actualizado_en=@actualizado WHERE id_catalogo = @id
+                    END", con);
                 cmd.Parameters.AddWithValue("@id",id_catalogo);
-                cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
+                cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text.ToUpper());
                 cmd.Parameters.AddWithValue("@año", txt_year.Text);
                 cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);

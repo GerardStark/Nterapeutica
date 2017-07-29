@@ -157,10 +157,9 @@
             // 
             // lbl_descripcion
             // 
-            this.lbl_descripcion.AutoSize = true;
             this.lbl_descripcion.Location = new System.Drawing.Point(193, 88);
             this.lbl_descripcion.Name = "lbl_descripcion";
-            this.lbl_descripcion.Size = new System.Drawing.Size(51, 20);
+            this.lbl_descripcion.Size = new System.Drawing.Size(358, 108);
             this.lbl_descripcion.TabIndex = 70;
             this.lbl_descripcion.Text = "label8";
             // 

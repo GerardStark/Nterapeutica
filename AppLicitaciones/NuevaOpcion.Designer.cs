@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NuevaOpcion));
             this.txt_nombre_prod = new System.Windows.Forms.TextBox();
             this.btn_cert_vincular = new System.Windows.Forms.Button();
             this.btm_cat_vincular = new System.Windows.Forms.Button();
@@ -39,15 +38,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_id_vinculo = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btn_borrar = new System.Windows.Forms.ToolStripButton();
             this.btn_cambiar_nombre = new System.Windows.Forms.Button();
             this.list_vinc_reg = new System.Windows.Forms.DataGridView();
-            this.list_vinc_cat = new System.Windows.Forms.DataGridView();
-            this.list_vinc_cert = new System.Windows.Forms.DataGridView();
             this.datColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.list_vinc_cat = new System.Windows.Forms.DataGridView();
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.list_vinc_cert = new System.Windows.Forms.DataGridView();
             this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_reg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cert)).BeginInit();
@@ -148,24 +145,11 @@
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_borrar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 512);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 544);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1222, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(1222, 25);
             this.toolStrip1.TabIndex = 184;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // btn_borrar
-            // 
-            this.btn_borrar.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_borrar.Image")));
-            this.btn_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_borrar.Name = "btn_borrar";
-            this.btn_borrar.Size = new System.Drawing.Size(54, 54);
-            this.btn_borrar.Text = "toolStripButton1";
-            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
             // btn_cambiar_nombre
             // 
@@ -193,6 +177,13 @@
             this.list_vinc_reg.Size = new System.Drawing.Size(335, 306);
             this.list_vinc_reg.TabIndex = 186;
             // 
+            // datColumn
+            // 
+            this.datColumn.HeaderText = "Numero de Registro:";
+            this.datColumn.Name = "datColumn";
+            this.datColumn.ReadOnly = true;
+            this.datColumn.Width = 330;
+            // 
             // list_vinc_cat
             // 
             this.list_vinc_cat.AllowUserToAddRows = false;
@@ -207,6 +198,13 @@
             this.list_vinc_cat.Size = new System.Drawing.Size(334, 306);
             this.list_vinc_cat.TabIndex = 187;
             // 
+            // nombreColumn
+            // 
+            this.nombreColumn.HeaderText = "Nombre del Catalogo";
+            this.nombreColumn.Name = "nombreColumn";
+            this.nombreColumn.ReadOnly = true;
+            this.nombreColumn.Width = 330;
+            // 
             // list_vinc_cert
             // 
             this.list_vinc_cert.AllowUserToAddRows = false;
@@ -220,20 +218,6 @@
             this.list_vinc_cert.RowHeadersVisible = false;
             this.list_vinc_cert.Size = new System.Drawing.Size(334, 306);
             this.list_vinc_cert.TabIndex = 188;
-            // 
-            // datColumn
-            // 
-            this.datColumn.HeaderText = "Numero de Registro:";
-            this.datColumn.Name = "datColumn";
-            this.datColumn.ReadOnly = true;
-            this.datColumn.Width = 330;
-            // 
-            // nombreColumn
-            // 
-            this.nombreColumn.HeaderText = "Nombre del Catalogo";
-            this.nombreColumn.Name = "nombreColumn";
-            this.nombreColumn.ReadOnly = true;
-            this.nombreColumn.Width = 330;
             // 
             // numeroColumn
             // 
@@ -264,8 +248,6 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "NuevaOpcion";
             this.Size = new System.Drawing.Size(1222, 569);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_reg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cert)).EndInit();
@@ -285,7 +267,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lbl_id_vinculo;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btn_borrar;
         private System.Windows.Forms.Button btn_cambiar_nombre;
         private System.Windows.Forms.DataGridView list_vinc_reg;
         private System.Windows.Forms.DataGridView list_vinc_cat;

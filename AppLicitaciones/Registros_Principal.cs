@@ -22,6 +22,8 @@ namespace AppLicitaciones
             llenartablaregistros();
             this.DGVRegistros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGVRegistros.MultiSelect = false;
+            //DGVRegistros.DefaultCellStyle.SelectionBackColor = DGVRegistros.DefaultCellStyle.BackColor;
+            //DGVRegistros.DefaultCellStyle.SelectionForeColor = DGVRegistros.DefaultCellStyle.ForeColor;
         }
         public void llenartablaregistros()
         {
@@ -30,7 +32,7 @@ namespace AppLicitaciones
                 DGVRegistros.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,rfc,tipo,titular,fabricante,marca,pais_origen," +
-                    "fecha_emision,fecha_vencimiento from registros_sanitarios", con);
+                    "fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios", con);
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -39,11 +41,14 @@ namespace AppLicitaciones
                 {
                     DGVRegistros.Rows.Add(dr.ItemArray);
                 }
+                mc.buscarultimafilaeditada("registros_sanitarios", DGVRegistros);
+                
                 con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                throw;
             }
         }
         private void btn_reg_nuevo_Click(object sender, EventArgs e)
@@ -65,6 +70,7 @@ namespace AppLicitaciones
                 string ctrl = rn.ctrl;
                 string valor = rn.valor;
                 filtrartablaregistros(ctrl, valor);
+                
             }
             else
             {
@@ -187,6 +193,8 @@ namespace AppLicitaciones
             if (e.RowIndex != -1)
             {
                 id_registro = Convert.ToInt32(DGVRegistros.Rows[e.RowIndex].Cells["idColumn"].Value);
+                //DGVRegistros.DefaultCellStyle.SelectionBackColor = DGVRegistros.DefaultCellStyle.ForeColor;
+                //DGVRegistros.DefaultCellStyle.SelectionForeColor = DGVRegistros.DefaultCellStyle.BackColor;
             }
         }
 

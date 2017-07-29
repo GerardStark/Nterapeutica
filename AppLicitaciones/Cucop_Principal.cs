@@ -31,7 +31,7 @@ namespace AppLicitaciones
                 DGV_cucop.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT id_cucop,clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont from cucop", con);
+                SqlCommand cmd = new SqlCommand("SELECT id_cucop,clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en from cucop", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -40,6 +40,7 @@ namespace AppLicitaciones
                     DGV_cucop.Rows.Add(dr.ItemArray);
                 }
                 con.Close();
+                mc.buscarultimafilaeditada("cucop",DGV_cucop);
             }
             catch (Exception ex)
             {
@@ -133,7 +134,11 @@ namespace AppLicitaciones
                 DialogResult result = cvg.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    llenartablacucops();
+                    //llenartablacucops();
+                }
+                else if(result == DialogResult.No)
+                {
+                    
                 }
             }
             else

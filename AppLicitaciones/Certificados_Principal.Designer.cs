@@ -46,6 +46,7 @@
             this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.archivoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tradColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_certificados)).BeginInit();
             this.SuspendLayout();
@@ -130,7 +131,8 @@
             this.idiomaColumn,
             this.vencimientoColumn,
             this.archivoColumn,
-            this.tradColumn});
+            this.tradColumn,
+            this.updatedColumn});
             this.DGV_certificados.Location = new System.Drawing.Point(60, 12);
             this.DGV_certificados.Name = "DGV_certificados";
             this.DGV_certificados.ReadOnly = true;
@@ -202,6 +204,13 @@
             this.tradColumn.ReadOnly = true;
             this.tradColumn.Width = 125;
             // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
+            // 
             // Certificados_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -240,5 +249,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimientoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn archivoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tradColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
     }
 }

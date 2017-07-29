@@ -49,6 +49,7 @@
             this.fabricanteColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idiomaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Catalogos)).BeginInit();
             this.SuspendLayout();
@@ -172,7 +173,8 @@
             this.especialidadColumn,
             this.fabricanteColumn,
             this.marcaColumn,
-            this.idiomaColumn});
+            this.idiomaColumn,
+            this.updatedColumn});
             this.DGV_Catalogos.Location = new System.Drawing.Point(95, 12);
             this.DGV_Catalogos.Name = "DGV_Catalogos";
             this.DGV_Catalogos.ReadOnly = true;
@@ -235,6 +237,13 @@
             this.idiomaColumn.ReadOnly = true;
             this.idiomaColumn.Width = 200;
             // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
+            // 
             // Catalogos_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -277,5 +286,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fabricanteColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idiomaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
     }
 }

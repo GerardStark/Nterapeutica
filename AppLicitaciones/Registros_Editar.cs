@@ -89,30 +89,29 @@ namespace AppLicitaciones
                 //TODO Actualizar Registro
                 try
                 {
-                    SqlConnection con = new SqlConnection(mc.con);
-                    SqlCommand cmd = new SqlCommand("update registros_sanitarios set numero_registro = @numero, numero_solicitud = @solicitud, titular = @titular," +
-                        "rfc = @rfc, denom_distintiva = @distintiva, denom_generica = @generica, fabricante = @fabricante, marca = @marca,pais_origen = @pais,"+
-                        "fecha_emision = @emision, fecha_vencimiento = @vencimiento, dir_archivo = @archivo, actualizado_en = @actualizado "+
-                        "where id_registro = @id",con);
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@id", id_registro);
-                    cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
-                    cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text);
-                    cmd.Parameters.AddWithValue("@titular", txt_titular.Text);
-                    cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
-                    cmd.Parameters.AddWithValue("@distintiva", txt_distintiva.Text);
-                    cmd.Parameters.AddWithValue("@generica", txt_generica.Text);
-                    cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
-                    cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
-                    cmd.Parameters.AddWithValue("@pais", cmb_pais.SelectedValue);
-                    cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
-                    cmd.Parameters.AddWithValue("@vencimiento", date_vencimiento.Value.Date);
-                    cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
-                    cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
-                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                    cmd.ExecuteNonQuery();
-                    mc.crearDirectorios(archivo, fileName, id_registro, "Registros-Sanitarios");
-                    con.Close();
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand("registros_update", con);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", id_registro);
+                        cmd.Parameters.AddWithValue("@numero", txt_numero.Text.ToUpper());
+                        cmd.Parameters.AddWithValue("@solicitud", txt_solicitud.Text.ToUpper());
+                        cmd.Parameters.AddWithValue("@titular", txt_titular.Text);
+                        cmd.Parameters.AddWithValue("@rfc", txt_rfc.Text);
+                        cmd.Parameters.AddWithValue("@distintiva", mc.convertirasentencia(txt_distintiva.Text));
+                        cmd.Parameters.AddWithValue("@generica", mc.convertirasentencia(txt_generica.Text));
+                        cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
+                        cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
+                        cmd.Parameters.AddWithValue("@pais", cmb_pais.SelectedValue);
+                        cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
+                        cmd.Parameters.AddWithValue("@vencimiento", date_vencimiento.Value.Date);
+                        cmd.Parameters.AddWithValue("@tipo", checkedButton.Text);
+                        cmd.Parameters.AddWithValue("@archivo", lbl_reg_archivo.Text);
+                        cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                        mc.crearDirectorios(archivo, fileName, id_registro, "Registros-Sanitarios");
+                    }
                     this.DialogResult = DialogResult.OK;
                     this.Close();
                 }

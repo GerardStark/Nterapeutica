@@ -195,12 +195,16 @@ namespace AppLicitaciones
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(mc.con);
-            SqlCommand cmd = new SqlCommand("UPDATE certificados_calidad SET numero_identificador = @clave, tipo = @tipo,descripcion_detallada = @desc,fabricante = @fabr," +
-                "fecha_emision = @emision,fecha_vencimiento = @vencimento,idioma = @idioma,dir_archivo = @archivo,dir_archivo_traduccion = @trad ,actualizado_en = @updated WHERE id_certificado = @id ", con);
+            SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave,tipo = @tipo,fabricante =@fabr)
+                BEGIN
+                    UPDATE certificados_calidad SET numero_identificador = @clave, tipo = @tipo,descripcion_detallada = @desc,fabricante = @fabr,
+                    fecha_emision = @emision,fecha_vencimiento = @vencimento,idioma = @idioma,dir_archivo = @archivo,dir_archivo_traduccion = @trad ,actualizado_en = @updated
+                    WHERE id_certificado = @id 
+                END", con);
             cmd.Parameters.AddWithValue("@id", id_certificado);
-            cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
+            cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
             cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
-            cmd.Parameters.AddWithValue("@desc", txt_descripcion.Text);
+            cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_descripcion.Text));
             cmd.Parameters.AddWithValue("@fabr", txt_fabricante.Text);
             cmd.Parameters.AddWithValue("@emision", date_emision.Value.Date);
             cmd.Parameters.AddWithValue("@vencimento", date_vencimiento.Value.Date);

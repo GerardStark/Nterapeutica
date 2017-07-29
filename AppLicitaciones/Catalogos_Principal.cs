@@ -31,7 +31,7 @@ namespace AppLicitaciones
                 DGV_Catalogos.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma from catalogos_info_general", con);
+                SqlCommand cmd = new SqlCommand("Select id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma,actualizado_en from catalogos_info_general", con);
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
@@ -40,6 +40,7 @@ namespace AppLicitaciones
                     DGV_Catalogos.Rows.Add(dr.ItemArray);
                 }
                 con.Close();
+                mc.buscarultimafilaeditada("catalogos_info_general", DGV_Catalogos);
             }
             catch (Exception ex)
             {

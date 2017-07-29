@@ -50,7 +50,7 @@ namespace AppLicitaciones
                     SqlCommand cmd = new SqlCommand("INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)" +
                         " OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
                     cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
-                    cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
+                    cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                     cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
@@ -78,7 +78,7 @@ namespace AppLicitaciones
                         SqlCommand cmd = new SqlCommand("INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)" +
                             " OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
                         cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
-                        cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
+                        cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                         cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                         cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                         cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);

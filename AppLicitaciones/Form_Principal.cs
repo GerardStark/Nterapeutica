@@ -103,7 +103,7 @@ namespace AppLicitaciones
             newForm.Show();
         }
         //termina la aplicacion cuando se da clic en cerrar
-        private void FormClosing(object sender, FormClosingEventArgs e)
+        private new void FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

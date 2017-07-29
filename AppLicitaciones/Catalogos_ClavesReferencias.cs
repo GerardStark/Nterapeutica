@@ -29,23 +29,28 @@ namespace AppLicitaciones
             try
             {
                 DGV_Referencias.Rows.Clear();
-                SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_clave_catalogo, clave_ref_cod, descripcion, unidad_venta, pagina_pdf,pagina_cat " +
-                    "from catalogos_claves_referencias where id_catalogo_productos = @id", con);
-                cmd.Parameters.AddWithValue("@id", id_catalogo);
-                con.Open();
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                foreach (DataRow dr in dt.Rows)
+                using (SqlConnection con = new SqlConnection(mc.con))
                 {
-                    DGV_Referencias.Rows.Add(dr.ItemArray);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("Select id_clave_catalogo, clave_ref_cod, descripcion, unidad_venta, pagina_pdf,pagina_cat,actualizado_en " +
+                        "from catalogos_claves_referencias where id_catalogo_productos = @id", con);
+                    cmd.Parameters.AddWithValue("@id", id_catalogo);                    
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        DGV_Referencias.Rows.Add(dr.ItemArray);
+                    }
+                    mc.buscarultimafilaeditada("catalogos_claves_referencias", DGV_Referencias);
+                    
                 }
-                con.Close();
+               
+               
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -58,8 +63,8 @@ namespace AppLicitaciones
                     "values (@idcatalogo,@clave,@descripcion,@unidad,@pagpdf,@pagcat,@actualizado)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
-                cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
+                cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
                 cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                 cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
                 cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
@@ -87,9 +92,9 @@ namespace AppLicitaciones
                         ",pagina_pdf = @pagpdf,pagina_cat = @pagcat, actualizado_en = @actualizado where id_clave_catalogo = @id", con);
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", id_referencia);
-                    cmd.Parameters.AddWithValue("@idregistro", id_catalogo);
-                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
-                    cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
+                    cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
+                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                    cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
                     cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                     cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
                     cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);

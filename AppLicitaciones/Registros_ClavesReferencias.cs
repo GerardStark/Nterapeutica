@@ -30,7 +30,7 @@ namespace AppLicitaciones
             {
                 DGV_Referencias.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_clave_registro, clave_ref_cod, descripcion, unidad_venta "+
+                SqlCommand cmd = new SqlCommand("Select id_clave_registro, clave_ref_cod, descripcion, unidad_venta,actualizado_en "+
                     "from registros_claves_referencias where id_registro_sanitario = @id", con);
                 cmd.Parameters.AddWithValue("@id", id_registro);
                 con.Open();
@@ -41,6 +41,8 @@ namespace AppLicitaciones
                 {
                     DGV_Referencias.Rows.Add(dr.ItemArray);
                 }
+                mc.buscarultimafilaeditada("registros_claves_referencias", DGV_Referencias);
+                
                 con.Close();
             }
             catch (Exception ex)
@@ -58,8 +60,8 @@ namespace AppLicitaciones
                     "values (@idregistro,@clave,@descripcion,@unidad,@actualizado)", con);
                 con.Open();
                 cmd.Parameters.AddWithValue("@idregistro", id_registro);
-                cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
-                cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
+                cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
                 cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                 cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                 cmd.ExecuteNonQuery();
@@ -86,8 +88,8 @@ namespace AppLicitaciones
                     con.Open();
                     cmd.Parameters.AddWithValue("@id", id_referencia);
                     cmd.Parameters.AddWithValue("@idregistro", id_registro);
-                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text);
-                    cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
+                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                    cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
                     cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
                     cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
                     cmd.ExecuteNonQuery();

@@ -135,33 +135,6 @@ namespace AppLicitaciones
             btn_cambiar_nombre.Enabled = true;
         }
 
-        private void btn_borrar_Click(object sender, EventArgs e)
-        {
-            DialogResult result =  MessageBox.Show("Seguro que desea eliminar la opcion " + optCucop + "? Esto eliminara todos los vinculos de RECACE", "Borrar Opcion", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                try
-                {
-                    using (SqlConnection con = new SqlConnection(mc.con))
-                    {
-                        con.Open();
-                        SqlCommand cmd = new SqlCommand(@" DELETE FROM cucop_vinculos_registros WHERE id_cucop_vinculo = @vinc;
-                        DELETE FROM cucop_vinculos_catalogos WHERE id_cucop_vinculo = @vinc; 
-                        DELETE FROM cucop_vinculos_certificados WHERE id_cucop_vinculo = @vinc;
-                        DELETE FROM cucop_vinculos WHERE id_vinculacion = @vinc;
-                        ", con);
-                        cmd.Parameters.AddWithValue("@vinc", idVinculo);
-                        cmd.ExecuteNonQuery();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    throw;
-                }               
-            }
-        }
-
         private void btn_cambiar_nombre_Click(object sender, EventArgs e)
         {
             try

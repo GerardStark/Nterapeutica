@@ -47,6 +47,7 @@
             this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_cucop)).BeginInit();
             this.SuspendLayout();
@@ -149,7 +150,8 @@
             this.especColumn,
             this.tipoColumn,
             this.cantColumn,
-            this.contColumn});
+            this.contColumn,
+            this.updatedColumn});
             this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
@@ -207,6 +209,13 @@
             this.contColumn.Name = "contColumn";
             this.contColumn.ReadOnly = true;
             // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
+            // 
             // Cucop_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -245,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn contColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
     }
 }

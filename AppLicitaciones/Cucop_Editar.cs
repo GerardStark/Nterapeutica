@@ -96,7 +96,7 @@ namespace AppLicitaciones
                         "WHERE id_cucop = @id", con);
                     cmd.Parameters.AddWithValue("@id", id_cucop);
                     cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
-                    cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
+                    cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                     cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
@@ -125,7 +125,7 @@ namespace AppLicitaciones
                         "WHERE id_cucop = @id", con);
                         cmd.Parameters.AddWithValue("@id", id_cucop);
                         cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
-                        cmd.Parameters.AddWithValue("@desc", txt_desc.Text);
+                        cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                         cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                         cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
                         cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);

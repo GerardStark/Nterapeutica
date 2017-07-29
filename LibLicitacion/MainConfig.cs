@@ -10,6 +10,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Text.RegularExpressions;
 
 namespace LibLicitacion
 {
@@ -213,6 +214,41 @@ namespace LibLicitacion
                 nombre = "(Vacio)";
             }
             return nombre;
+        }
+
+        public string convertirasentencia(string original)
+        {
+            var sourcestring = original;
+            // start by converting entire string to lower case
+            var lowerCase = sourcestring.ToLower();
+            // matches the first sentence of a string, as well as subsequent sentences
+            var r = new Regex(@"(^[a-z])|\.\s+(.)", RegexOptions.ExplicitCapture);
+            // MatchEvaluator delegate defines replacement of setence starts to uppercase
+            var result = r.Replace(lowerCase, s => s.Value.ToUpper());
+            return result;
+        }
+
+        public void buscarultimafilaeditada(string tabla, DataGridView dgv)
+        {
+            using (SqlConnection conect = new SqlConnection(con))
+            {
+                using (SqlCommand cmdlatest = new SqlCommand(@"SELECT MAX(actualizado_en) FROM "+tabla+"", conect))
+                {
+                    SqlDataAdapter adaptlatest = new SqlDataAdapter(cmdlatest);
+                    DataTable dtlatest = new DataTable();
+                    adaptlatest.Fill(dtlatest);
+                    foreach (DataGridViewRow row in dgv.Rows)
+                    {
+                        if (row.Cells["updatedColumn"].Value.ToString().Equals(dtlatest.Rows[0][0].ToString()))
+                        {
+                            dgv.FirstDisplayedScrollingRowIndex = row.Index;
+                            dgv.Rows[row.Index].Selected = true;
+                        }
+                    }
+                }
+
+            }
+            
         }
     }
 

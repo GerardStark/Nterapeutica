@@ -30,7 +30,7 @@ namespace AppLicitaciones
             {
                 DGV_certificados.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("Select id_certificado,numero_identificador,tipo,descripcion_detallada,fabricante,idioma,fecha_vencimiento,dir_archivo,dir_archivo_traduccion " +
+                SqlCommand cmd = new SqlCommand("Select id_certificado,numero_identificador,tipo,descripcion_detallada,fabricante,idioma,fecha_vencimiento,dir_archivo,dir_archivo_traduccion,actualizado_en " +
                     "From certificados_calidad", con);
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
@@ -41,6 +41,7 @@ namespace AppLicitaciones
                     DGV_certificados.Rows.Add(dr.ItemArray);
                 }
                 con.Close();
+                mc.buscarultimafilaeditada("certificados_calidad",DGV_certificados);
             }
             catch (Exception ex)
             {
@@ -110,10 +111,7 @@ namespace AppLicitaciones
         }
         private void DGV_certificados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            switch (this.DGV_certificados.Columns[e.ColumnIndex].Name)
-            {
-                
-            }
+            
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)

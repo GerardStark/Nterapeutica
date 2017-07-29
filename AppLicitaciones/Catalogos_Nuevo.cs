@@ -82,9 +82,12 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Insert into catalogos_info_general (id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca, " +
-                    "idioma,dir_archivo,actualizado_en) OUTPUT INSERTED.id_catalogo values (@nombre,@año,@tipo,@espec,@fabricante,@marca,@idioma,@archivo,@actualizado)", con);
-                cmd.Parameters.AddWithValue("@nombre",txt_nombre.Text);
+                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT nombre_catalogo,tipo_catalogo,spec_catalogo FROM catalogos_info_general WHERE nombre_catalogo = @nombre,tipo_catalogo = @tipo,spec_catalogo =@espec)
+                    BEGIN
+                        INSERT INTO catalogos_info_general (id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma,dir_archivo,actualizado_en)
+                        OUTPUT INSERTED.id_catalogo VALUES (@nombre,@año,@tipo,@espec,@fabricante,@marca,@idioma,@archivo,@actualizado)
+                    END", con);
+                cmd.Parameters.AddWithValue("@nombre",txt_nombre.Text.ToUpper());
                 cmd.Parameters.AddWithValue("@año",txt_year.Text);
                 cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
@@ -100,7 +103,14 @@ namespace AppLicitaciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                if (ex is NullReferenceException)
+                {
+                    MessageBox.Show("El Catálogo ya existe");
+                }
+                else
+                {
+                    MessageBox.Show(ex.Message);
+                }
 
             }
         }
