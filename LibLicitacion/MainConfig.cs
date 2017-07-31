@@ -56,6 +56,7 @@ namespace LibLicitacion
             }
             return nombre;
         }
+
         public void crearDirectorios(string nombre_archivo, string archivo_origen, int id, string tipo_archivo)
         {
             //obtener la direccion donde se van a guardar los archivos
@@ -76,6 +77,7 @@ namespace LibLicitacion
                 }
             }
         }
+
         public void llenarcombobox(string[] items, ComboBox cmb)
         {
             for (int i = 0; i < items.Length; i++)
@@ -246,9 +248,7 @@ namespace LibLicitacion
                         }
                     }
                 }
-
-            }
-            
+            }            
         }
     }
 

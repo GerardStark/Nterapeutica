@@ -35,14 +35,14 @@
             this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
             this.txt_terminos = new System.Windows.Forms.TextBox();
-            this.cmb_filtros = new System.Windows.Forms.ComboBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
-            this.btn_filtrar = new System.Windows.Forms.Button();
             this.chck_all = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cmb_filtros = new System.Windows.Forms.ComboBox();
+            this.btn_filtrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_Referencias)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -94,31 +94,12 @@
             this.checkColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.checkColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 17);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Filtrar:";
-            // 
             // txt_terminos
             // 
             this.txt_terminos.Location = new System.Drawing.Point(219, 17);
             this.txt_terminos.Name = "txt_terminos";
             this.txt_terminos.Size = new System.Drawing.Size(315, 26);
             this.txt_terminos.TabIndex = 19;
-            // 
-            // cmb_filtros
-            // 
-            this.cmb_filtros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_filtros.FormattingEnabled = true;
-            this.cmb_filtros.Location = new System.Drawing.Point(92, 15);
-            this.cmb_filtros.Name = "cmb_filtros";
-            this.cmb_filtros.Size = new System.Drawing.Size(121, 28);
-            this.cmb_filtros.TabIndex = 20;
-            this.cmb_filtros.SelectedIndexChanged += new System.EventHandler(this.cmb_filtros_SelectedIndexChanged);
             // 
             // toolStrip1
             // 
@@ -153,16 +134,6 @@
             this.btn_guardar.Text = "toolStripButton2";
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.Location = new System.Drawing.Point(541, 15);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(75, 28);
-            this.btn_filtrar.TabIndex = 22;
-            this.btn_filtrar.Text = "Filtrar";
-            this.btn_filtrar.UseVisualStyleBackColor = true;
-            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
-            // 
             // chck_all
             // 
             this.chck_all.AutoSize = true;
@@ -173,6 +144,35 @@
             this.chck_all.Text = "Todas";
             this.chck_all.UseVisualStyleBackColor = true;
             this.chck_all.CheckedChanged += new System.EventHandler(this.chck_all_CheckedChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(32, 17);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Filtrar:";
+            // 
+            // cmb_filtros
+            // 
+            this.cmb_filtros.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_filtros.FormattingEnabled = true;
+            this.cmb_filtros.Location = new System.Drawing.Point(92, 15);
+            this.cmb_filtros.Name = "cmb_filtros";
+            this.cmb_filtros.Size = new System.Drawing.Size(121, 28);
+            this.cmb_filtros.TabIndex = 20;
+            this.cmb_filtros.SelectedIndexChanged += new System.EventHandler(this.cmb_filtros_SelectedIndexChanged);
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.Location = new System.Drawing.Point(541, 15);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(75, 28);
+            this.btn_filtrar.TabIndex = 22;
+            this.btn_filtrar.Text = "Filtrar";
+            this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // Catalogos_traduccion_referencias
             // 
@@ -202,18 +202,18 @@
         #endregion
 
         private System.Windows.Forms.DataGridView DGV_Referencias;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_terminos;
-        private System.Windows.Forms.ComboBox cmb_filtros;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_cancelar;
         private System.Windows.Forms.ToolStripButton btn_guardar;
-        private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.CheckBox chck_all;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn checkColumn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cmb_filtros;
+        private System.Windows.Forms.Button btn_filtrar;
     }
 }

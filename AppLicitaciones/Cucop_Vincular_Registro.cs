@@ -70,14 +70,25 @@ namespace AppLicitaciones
                     using (SqlConnection con = new SqlConnection(mc.con))
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos_registros (id_cucop_vinculo,id_registro,actualizado_en) 
+                        SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos_registros (id_cucop_vinculo,id_registro,actualizado_en) OUTPUT INSERTED.id
                         VALUES(@idVinculo,@idRegistro,@updated)", con);
                         cmd.Parameters.AddWithValue("@idVinculo", id_vinculo);
                         cmd.Parameters.AddWithValue("@idRegistro", id_registro);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Agregado");
-                        mostrarVinculosRegistros(id_vinculo);
+                        Int32 newId = (Int32)cmd.ExecuteScalar();
+                        Cucop_Vincular_Registros_Referencias cvrr = new Cucop_Vincular_Registros_Referencias();
+                        cvrr.mostrarReferenciasRegistro(id_registro, newId);
+                        DialogResult result = cvrr.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            MessageBox.Show("Agregado");
+                            mostrarVinculosRegistros(id_vinculo);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Es recomendado que se agreguen las referencias al asignar el registro, pueden asignarse luego.");
+                        }
+                        
                     }
                 }
                 catch (Exception ex)
@@ -103,7 +114,8 @@ namespace AppLicitaciones
                     using (SqlConnection con = new SqlConnection(mc.con))
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand(@"DELETE FROM cucop_vinculos_registros WHERE id = @idVinculoReg", con);
+                        SqlCommand cmd = new SqlCommand(@"DELETE FROM cucop_vinculos_registros_referencias Where id_vinculo_registro =  @idVinculoReg;
+                        DELETE FROM cucop_vinculos_registros WHERE id = @idVinculoReg", con);
                         cmd.Parameters.AddWithValue("@idVinculoReg", id_vinculo_reg);                        
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Removido");
@@ -257,10 +269,27 @@ namespace AppLicitaciones
                     con.Close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception ex) 
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Cucop_Vincular_Registros_Referencias cvrr = new Cucop_Vincular_Registros_Referencias();
+            cvrr.mostrarReferenciasRegistro(id_registro,id_vinculo_reg);
+            DialogResult result = cvrr.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //something
+            }
+
+        }
+
+        private void toolStripLabel1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -55,6 +55,8 @@
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -173,11 +175,13 @@
             this.toolStripLabel3,
             this.toolStripSeparator1,
             this.btn_guardar,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.toolStripButton1,
+            this.toolStripLabel1});
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
-            this.toolStrip1.Location = new System.Drawing.Point(357, 47);
+            this.toolStrip1.Location = new System.Drawing.Point(347, 47);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(55, 411);
+            this.toolStrip1.Size = new System.Drawing.Size(68, 486);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -187,7 +191,7 @@
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
             this.btn_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(53, 54);
+            this.btn_buscar.Size = new System.Drawing.Size(66, 54);
             this.btn_buscar.Text = "toolStripButton6";
             this.btn_buscar.ToolTipText = "Buscar";
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
@@ -294,6 +298,23 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Registros Sanitarios";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(66, 54);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(66, 15);
+            this.toolStripLabel1.Text = "Referencias";
+            this.toolStripLabel1.Click += new System.EventHandler(this.toolStripLabel1_Click);
+            // 
             // Cucop_Vincular_Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -347,5 +368,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paisColumn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
     }
 }

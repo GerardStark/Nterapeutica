@@ -58,9 +58,7 @@ namespace AppLicitaciones
                 }
             }
            
-        }
-
-        
+        }       
 
         private void btn_agregar_Click(object sender, EventArgs e)
         {
@@ -71,14 +69,25 @@ namespace AppLicitaciones
                     using (SqlConnection con = new SqlConnection(mc.con))
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos_catalogos (id_cucop_vinculo,id_catalogo,actualizado_en) 
+                        SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos_catalogos (id_cucop_vinculo,id_catalogo,actualizado_en) OUTPUT INSERTED.id
                         VALUES(@idVinculo,@idCatalogo,@updated)", con);
                         cmd.Parameters.AddWithValue("@idVinculo", id_vinculo);
                         cmd.Parameters.AddWithValue("@idCatalogo", id_catalogo);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Agregado");
-                        mostrarVinculosCatalogos(id_vinculo);
+                        Int32 newId = (Int32)cmd.ExecuteScalar();
+                        Cucop_Vincular_Catalogos_Referencias cvrc = new Cucop_Vincular_Catalogos_Referencias();
+                        cvrc.mostrarReferenciasCatalogos(id_catalogo, newId);
+                        DialogResult result = cvrc.ShowDialog();
+                        if (result == DialogResult.OK)
+                        {
+                            MessageBox.Show("Agregado");
+                            mostrarVinculosCatalogos(id_vinculo);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Es recomendado que se agreguen las referencias al asignar el registro, pueden asignarse luego.");
+                        }
+                        
                     }
                 }
                 catch (Exception ex)
@@ -104,7 +113,8 @@ namespace AppLicitaciones
                     using (SqlConnection con = new SqlConnection(mc.con))
                     {
                         con.Open();
-                        SqlCommand cmd = new SqlCommand(@"DELETE FROM cucop_vinculos_catalogos WHERE id = @idVinculoCat", con);
+                        SqlCommand cmd = new SqlCommand(@"DELETE FROM cucop_vinculos_catalogos_referencias Where id_vinculo_catalogo = @idVinculoCat
+                        DELETE FROM cucop_vinculos_catalogos WHERE id = @idVinculoCat", con);
                         cmd.Parameters.AddWithValue("@idVinculoCat", id_vinculo_cat);
                         cmd.ExecuteNonQuery();
                         MessageBox.Show("Removido");
@@ -250,6 +260,17 @@ namespace AppLicitaciones
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Cucop_Vincular_Catalogos_Referencias cvcr = new Cucop_Vincular_Catalogos_Referencias();
+            cvcr.mostrarReferenciasCatalogos(id_catalogo, id_vinculo_cat);
+            DialogResult result = cvcr.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //something
             }
         }
     }
