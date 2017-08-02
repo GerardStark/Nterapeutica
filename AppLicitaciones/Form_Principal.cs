@@ -175,5 +175,21 @@ namespace AppLicitaciones
             newForm.llenartablaftd();
             newForm.Show();
         }
+
+        private void licitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(Licitaciones_Princpial))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Licitaciones_Princpial newForm = new Licitaciones_Princpial();
+            newForm.MdiParent = this;            
+            newForm.Show();
+        }
     }
 }

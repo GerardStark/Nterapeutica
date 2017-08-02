@@ -63,6 +63,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -259,6 +260,12 @@
     <Compile Include="Licitacion_Actuales.Designer.cs">
       <DependentUpon>Licitacion_Actuales.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Calendario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Calendario.Designer.cs">
+      <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Historico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +283,30 @@
     </Compile>
     <Compile Include="Licitacion_Nueva.Designer.cs">
       <DependentUpon>Licitacion_Nueva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Abierta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Abierta.Designer.cs">
+      <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Adjudicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Adjudicacion.Designer.cs">
+      <DependentUpon>Licitacion_Nueva_Adjudicacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Invitacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Invitacion.Designer.cs">
+      <DependentUpon>Licitacion_Nueva_Invitacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Mercado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Nueva_Mercado.Designer.cs">
+      <DependentUpon>Licitacion_Nueva_Mercado.cs</DependentUpon>
     </Compile>
     <Compile Include="Licitacion_Paquetes.cs">
       <SubType>Form</SubType>
@@ -350,6 +381,12 @@
     </Compile>
     <Compile Include="Registros_Editar.Designer.cs">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visualizar_Opciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Visualizar_Opciones.Designer.cs">
+      <DependentUpon>Visualizar_Opciones.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Catalogos_Buscar.resx">
       <DependentUpon>Catalogos_Buscar.cs</DependentUpon>
@@ -438,6 +475,18 @@
     <EmbeddedResource Include="Licitaciones_Princpial.resx">
       <DependentUpon>Licitaciones_Princpial.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Actuales.resx">
+      <DependentUpon>Licitacion_Actuales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Calendario.resx">
+      <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Nueva.resx">
+      <DependentUpon>Licitacion_Nueva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Nueva_Abierta.resx">
+      <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,6 +522,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros_Editar.resx">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visualizar_Opciones.resx">
+      <DependentUpon>Visualizar_Opciones.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="AppLicitaciones_TemporaryKey.pfx" />
     <None Include="LicitacionesDataSet.xsc">

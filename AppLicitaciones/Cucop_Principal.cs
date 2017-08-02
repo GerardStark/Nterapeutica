@@ -127,24 +127,7 @@ namespace AppLicitaciones
 
         private void btn_vincular_Click(object sender, EventArgs e)
         {
-            if (id_cucop!=0)
-            {
-                Cucop_Vincular_General cvg = new Cucop_Vincular_General();
-                cvg.mostrarvinculoscucop(id_cucop);
-                DialogResult result = cvg.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    //llenartablacucops();
-                }
-                else if(result == DialogResult.No)
-                {
-                    
-                }
-            }
-            else
-            {
-                MessageBox.Show("Seleccione un Codigo de Cuadro Basico para visualizar los vinculos");
-            }
+            
         }
     }
 }

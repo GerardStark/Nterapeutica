@@ -35,8 +35,6 @@
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btn_buscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_vincular = new System.Windows.Forms.ToolStripButton();
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_cucop = new System.Windows.Forms.DataGridView();
@@ -61,13 +59,11 @@
             this.toolStripLabel1,
             this.btn_buscar,
             this.toolStripLabel5,
-            this.toolStripLabel6,
-            this.btn_vincular,
             this.btn_visualizar,
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(97, 684);
+            this.toolStrip1.Size = new System.Drawing.Size(57, 684);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
@@ -78,14 +74,14 @@
             this.btn_nuevo.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo.Image")));
             this.btn_nuevo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(94, 54);
+            this.btn_nuevo.Size = new System.Drawing.Size(54, 54);
             this.btn_nuevo.Text = "Nuevo";
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(94, 15);
+            this.toolStripLabel1.Size = new System.Drawing.Size(54, 15);
             this.toolStripLabel1.Text = "Nuevo";
             // 
             // btn_buscar
@@ -94,33 +90,15 @@
             this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
             this.btn_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(94, 54);
+            this.btn_buscar.Size = new System.Drawing.Size(54, 54);
             this.btn_buscar.Text = "toolStripButton4";
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(94, 15);
+            this.toolStripLabel5.Size = new System.Drawing.Size(54, 15);
             this.toolStripLabel5.Text = "Buscar";
-            // 
-            // toolStripLabel6
-            // 
-            this.toolStripLabel6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripLabel6.Name = "toolStripLabel6";
-            this.toolStripLabel6.Size = new System.Drawing.Size(94, 15);
-            this.toolStripLabel6.Text = "Vincular RECACE";
-            // 
-            // btn_vincular
-            // 
-            this.btn_vincular.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_vincular.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_vincular.Image = ((System.Drawing.Image)(resources.GetObject("btn_vincular.Image")));
-            this.btn_vincular.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_vincular.Name = "btn_vincular";
-            this.btn_vincular.Size = new System.Drawing.Size(94, 54);
-            this.btn_vincular.Text = "toolStripButton6";
-            this.btn_vincular.Click += new System.EventHandler(this.btn_vincular_Click);
             // 
             // btn_visualizar
             // 
@@ -128,14 +106,14 @@
             this.btn_visualizar.Image = ((System.Drawing.Image)(resources.GetObject("btn_visualizar.Image")));
             this.btn_visualizar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_visualizar.Name = "btn_visualizar";
-            this.btn_visualizar.Size = new System.Drawing.Size(94, 54);
+            this.btn_visualizar.Size = new System.Drawing.Size(54, 54);
             this.btn_visualizar.Text = "toolStripButton1";
             this.btn_visualizar.Click += new System.EventHandler(this.btn_visualizar_Click);
             // 
             // toolStripLabel3
             // 
             this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(94, 15);
+            this.toolStripLabel3.Size = new System.Drawing.Size(54, 15);
             this.toolStripLabel3.Text = "Visualizar";
             // 
             // DGV_cucop
@@ -152,13 +130,13 @@
             this.cantColumn,
             this.contColumn,
             this.updatedColumn});
-            this.DGV_cucop.Location = new System.Drawing.Point(100, 12);
+            this.DGV_cucop.Location = new System.Drawing.Point(60, 12);
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_cucop.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_cucop.RowTemplate.Height = 100;
-            this.DGV_cucop.Size = new System.Drawing.Size(1194, 652);
+            this.DGV_cucop.Size = new System.Drawing.Size(1234, 652);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_cucop_CellClick);
             // 
@@ -242,8 +220,6 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton btn_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
-        private System.Windows.Forms.ToolStripButton btn_vincular;
         private System.Windows.Forms.DataGridView DGV_cucop;
         private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;

@@ -41,11 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_clave = new System.Windows.Forms.Label();
-            this.lbl_desc = new System.Windows.Forms.Label();
             this.lbl_spec = new System.Windows.Forms.Label();
             this.lbl_tipo = new System.Windows.Forms.Label();
             this.lbl_cant = new System.Windows.Forms.Label();
             this.lbl_cont = new System.Windows.Forms.Label();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
+            this.btn_vincular = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,10 +58,12 @@
             this.tt_reg_editar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_guardar,
             this.btn_editar,
-            this.btn_borrar});
-            this.tt_reg_editar.Location = new System.Drawing.Point(0, 566);
+            this.btn_borrar,
+            this.btn_vincular,
+            this.toolStripLabel6});
+            this.tt_reg_editar.Location = new System.Drawing.Point(0, 406);
             this.tt_reg_editar.Name = "tt_reg_editar";
-            this.tt_reg_editar.Size = new System.Drawing.Size(1127, 57);
+            this.tt_reg_editar.Size = new System.Drawing.Size(1069, 57);
             this.tt_reg_editar.TabIndex = 87;
             this.tt_reg_editar.Text = "Menú";
             // 
@@ -169,14 +173,6 @@
             this.lbl_clave.TabIndex = 105;
             this.lbl_clave.Text = "label2";
             // 
-            // lbl_desc
-            // 
-            this.lbl_desc.Location = new System.Drawing.Point(114, 46);
-            this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(1001, 187);
-            this.lbl_desc.TabIndex = 107;
-            this.lbl_desc.Text = "label5";
-            // 
             // lbl_spec
             // 
             this.lbl_spec.AutoSize = true;
@@ -213,16 +209,42 @@
             this.lbl_cont.TabIndex = 117;
             this.lbl_cont.Text = "label14";
             // 
+            // txt_descripcion
+            // 
+            this.txt_descripcion.Location = new System.Drawing.Point(118, 45);
+            this.txt_descripcion.Multiline = true;
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.ReadOnly = true;
+            this.txt_descripcion.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txt_descripcion.Size = new System.Drawing.Size(939, 185);
+            this.txt_descripcion.TabIndex = 118;
+            // 
+            // btn_vincular
+            // 
+            this.btn_vincular.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_vincular.Image = ((System.Drawing.Image)(resources.GetObject("btn_vincular.Image")));
+            this.btn_vincular.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_vincular.Name = "btn_vincular";
+            this.btn_vincular.Size = new System.Drawing.Size(54, 54);
+            this.btn_vincular.Text = "toolStripButton6";
+            this.btn_vincular.Click += new System.EventHandler(this.btn_vincular_Click);
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(96, 54);
+            this.toolStripLabel6.Text = "Vincular RECACE";
+            // 
             // Cucop_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1127, 623);
+            this.ClientSize = new System.Drawing.Size(1069, 463);
+            this.Controls.Add(this.txt_descripcion);
             this.Controls.Add(this.lbl_cont);
             this.Controls.Add(this.lbl_cant);
             this.Controls.Add(this.lbl_tipo);
             this.Controls.Add(this.lbl_spec);
-            this.Controls.Add(this.lbl_desc);
             this.Controls.Add(this.lbl_clave);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -235,6 +257,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Visualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Visualizar";
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();
@@ -256,10 +279,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_clave;
-        private System.Windows.Forms.Label lbl_desc;
         private System.Windows.Forms.Label lbl_spec;
         private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.Label lbl_cant;
         private System.Windows.Forms.Label lbl_cont;
+        private System.Windows.Forms.TextBox txt_descripcion;
+        private System.Windows.Forms.ToolStripButton btn_vincular;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
     }
 }

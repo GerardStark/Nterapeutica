@@ -16,5 +16,17 @@ namespace AppLicitaciones
         {
             InitializeComponent();
         }
+
+        private void btn_nuevas_Click(object sender, EventArgs e)
+        {
+            Licitacion_Nueva form = new Licitacion_Nueva();            
+            form.ShowDialog();
+        }
+
+        private void btn_activas_Click(object sender, EventArgs e)
+        {
+            Licitacion_Actuales form = new Licitacion_Actuales();
+            form.ShowDialog();
+        }
     }
 }
