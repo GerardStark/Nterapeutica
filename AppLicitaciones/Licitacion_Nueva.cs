@@ -20,7 +20,7 @@ namespace AppLicitaciones
         private void btn_nueva_la_Click(object sender, EventArgs e)
         {
             Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
-            this.Hide();
+            form.pasarTipoLicitacion("LA");
             DialogResult result = form.ShowDialog();
             
             if (result == DialogResult.Cancel)
@@ -31,8 +31,8 @@ namespace AppLicitaciones
 
         private void btn_nueva_it_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva_Invitacion form = new Licitacion_Nueva_Invitacion();
-            this.Hide();
+            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
+            form.pasarTipoLicitacion("I3");
             DialogResult result = form.ShowDialog();
             
             if (result == DialogResult.Cancel)
@@ -43,8 +43,8 @@ namespace AppLicitaciones
 
         private void btn_nueva_ad_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva_Adjudicacion form = new Licitacion_Nueva_Adjudicacion();
-            this.Hide();
+            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
+            form.pasarTipoLicitacion("AA");
             DialogResult result = form.ShowDialog();
             
             if (result == DialogResult.Cancel)
@@ -55,8 +55,8 @@ namespace AppLicitaciones
 
         private void btn_nueva_im_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva_Mercado form = new Licitacion_Nueva_Mercado();
-            this.Hide();
+            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
+            form.pasarTipoLicitacion("EC");
             DialogResult result =  form.ShowDialog();
             
             if (result == DialogResult.Cancel)

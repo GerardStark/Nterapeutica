@@ -50,7 +50,6 @@
             this.lbl_reg_vencimiento = new System.Windows.Forms.Label();
             this.lbl_reg_archivo = new System.Windows.Forms.Label();
             this.lbl_reg_distintiva = new System.Windows.Forms.Label();
-            this.lbl_reg_generica = new System.Windows.Forms.Label();
             this.tt_reg_editar = new System.Windows.Forms.ToolStrip();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_editar = new System.Windows.Forms.ToolStripButton();
@@ -60,6 +59,8 @@
             this.btn_archivo_abrir = new System.Windows.Forms.Button();
             this.lbl_rfc = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.lbl_distintiva = new System.Windows.Forms.Label();
+            this.lbl_generica = new System.Windows.Forms.Label();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -120,7 +121,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 418);
+            this.label5.Location = new System.Drawing.Point(7, 428);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(184, 20);
             this.label5.TabIndex = 60;
@@ -249,18 +250,9 @@
             this.lbl_reg_distintiva.Location = new System.Drawing.Point(198, 334);
             this.lbl_reg_distintiva.MaximumSize = new System.Drawing.Size(800, 0);
             this.lbl_reg_distintiva.Name = "lbl_reg_distintiva";
-            this.lbl_reg_distintiva.Size = new System.Drawing.Size(697, 84);
+            this.lbl_reg_distintiva.Size = new System.Drawing.Size(697, 0);
             this.lbl_reg_distintiva.TabIndex = 84;
             this.lbl_reg_distintiva.Text = "label23";
-            // 
-            // lbl_reg_generica
-            // 
-            this.lbl_reg_generica.Location = new System.Drawing.Point(198, 428);
-            this.lbl_reg_generica.MaximumSize = new System.Drawing.Size(800, 0);
-            this.lbl_reg_generica.Name = "lbl_reg_generica";
-            this.lbl_reg_generica.Size = new System.Drawing.Size(697, 117);
-            this.lbl_reg_generica.TabIndex = 85;
-            this.lbl_reg_generica.Text = "label24";
             // 
             // tt_reg_editar
             // 
@@ -356,18 +348,35 @@
             this.label13.TabIndex = 90;
             this.label13.Text = "RFC:";
             // 
+            // lbl_distintiva
+            // 
+            this.lbl_distintiva.Location = new System.Drawing.Point(198, 334);
+            this.lbl_distintiva.Name = "lbl_distintiva";
+            this.lbl_distintiva.Size = new System.Drawing.Size(570, 84);
+            this.lbl_distintiva.TabIndex = 92;
+            this.lbl_distintiva.Text = "label22";
+            // 
+            // lbl_generica
+            // 
+            this.lbl_generica.Location = new System.Drawing.Point(197, 428);
+            this.lbl_generica.Name = "lbl_generica";
+            this.lbl_generica.Size = new System.Drawing.Size(570, 94);
+            this.lbl_generica.TabIndex = 93;
+            this.lbl_generica.Text = "label22";
+            // 
             // Registros_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1251, 602);
+            this.Controls.Add(this.lbl_generica);
+            this.Controls.Add(this.lbl_distintiva);
             this.Controls.Add(this.lbl_rfc);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btn_archivo_abrir);
             this.Controls.Add(this.lbl_reg_tipo);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tt_reg_editar);
-            this.Controls.Add(this.lbl_reg_generica);
             this.Controls.Add(this.lbl_reg_distintiva);
             this.Controls.Add(this.lbl_reg_archivo);
             this.Controls.Add(this.lbl_reg_vencimiento);
@@ -424,7 +433,6 @@
         private System.Windows.Forms.Label lbl_reg_vencimiento;
         private System.Windows.Forms.Label lbl_reg_archivo;
         private System.Windows.Forms.Label lbl_reg_distintiva;
-        private System.Windows.Forms.Label lbl_reg_generica;
         private System.Windows.Forms.ToolStrip tt_reg_editar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.ToolStripButton btn_reg_editar;
@@ -434,5 +442,7 @@
         private System.Windows.Forms.Button btn_archivo_abrir;
         private System.Windows.Forms.Label lbl_rfc;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lbl_distintiva;
+        private System.Windows.Forms.Label lbl_generica;
     }
 }

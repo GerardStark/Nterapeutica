@@ -26,6 +26,7 @@ namespace AppLicitaciones
         private void btn_activas_Click(object sender, EventArgs e)
         {
             Licitacion_Actuales form = new Licitacion_Actuales();
+            form.mostrarLicitacionesActivas();
             form.ShowDialog();
         }
     }

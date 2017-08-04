@@ -46,8 +46,8 @@ namespace AppLicitaciones
                 lbl_reg_emision.Text = dt.Rows[0]["fecha_emision"].ToString();
                 lbl_reg_vencimiento.Text = dt.Rows[0]["fecha_vencimiento"].ToString();
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
-                lbl_reg_distintiva.Text = dt.Rows[0]["denom_distintiva"].ToString();
-                lbl_reg_generica.Text = dt.Rows[0]["denom_generica"].ToString();
+                lbl_distintiva.Text = dt.Rows[0]["denom_distintiva"].ToString();
+                lbl_generica.Text = dt.Rows[0]["denom_generica"].ToString();
                 lbl_reg_tipo.Text = dt.Rows[0]["tipo"].ToString();
             }
         }        

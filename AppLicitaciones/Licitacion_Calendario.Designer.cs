@@ -33,17 +33,17 @@
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_publicacion = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_junta = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_propuestas = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker4 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_fallo = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker5 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_firma = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker6 = new System.Windows.Forms.DateTimePicker();
+            this.dtp_visita = new System.Windows.Forms.DateTimePicker();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,6 +69,7 @@
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(54, 54);
             this.btn_guardar.Text = "toolStripButton1";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_cancelar
             // 
@@ -78,6 +79,7 @@
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(54, 54);
             this.btn_cancelar.Text = "toolStripButton2";
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // label1
             // 
@@ -88,12 +90,12 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Fecha de Publicacion en Compranet";
             // 
-            // dateTimePicker1
+            // dtp_publicacion
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(51, 45);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(320, 26);
-            this.dateTimePicker1.TabIndex = 20;
+            this.dtp_publicacion.Location = new System.Drawing.Point(51, 45);
+            this.dtp_publicacion.Name = "dtp_publicacion";
+            this.dtp_publicacion.Size = new System.Drawing.Size(320, 26);
+            this.dtp_publicacion.TabIndex = 20;
             // 
             // label2
             // 
@@ -104,12 +106,12 @@
             this.label2.TabIndex = 21;
             this.label2.Text = "Fecha de la Junta de Aclaraciones:";
             // 
-            // dateTimePicker2
+            // dtp_junta
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(51, 97);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(320, 26);
-            this.dateTimePicker2.TabIndex = 22;
+            this.dtp_junta.Location = new System.Drawing.Point(51, 97);
+            this.dtp_junta.Name = "dtp_junta";
+            this.dtp_junta.Size = new System.Drawing.Size(320, 26);
+            this.dtp_junta.TabIndex = 22;
             // 
             // label3
             // 
@@ -120,12 +122,12 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Fecha de la Apertura de Propuestas:";
             // 
-            // dateTimePicker3
+            // dtp_propuestas
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(51, 149);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(320, 26);
-            this.dateTimePicker3.TabIndex = 24;
+            this.dtp_propuestas.Location = new System.Drawing.Point(51, 149);
+            this.dtp_propuestas.Name = "dtp_propuestas";
+            this.dtp_propuestas.Size = new System.Drawing.Size(320, 26);
+            this.dtp_propuestas.TabIndex = 24;
             // 
             // label4
             // 
@@ -136,12 +138,12 @@
             this.label4.TabIndex = 25;
             this.label4.Text = "Fecha del Anuncio de Fallo:";
             // 
-            // dateTimePicker4
+            // dtp_fallo
             // 
-            this.dateTimePicker4.Location = new System.Drawing.Point(51, 201);
-            this.dateTimePicker4.Name = "dateTimePicker4";
-            this.dateTimePicker4.Size = new System.Drawing.Size(320, 26);
-            this.dateTimePicker4.TabIndex = 26;
+            this.dtp_fallo.Location = new System.Drawing.Point(51, 201);
+            this.dtp_fallo.Name = "dtp_fallo";
+            this.dtp_fallo.Size = new System.Drawing.Size(320, 26);
+            this.dtp_fallo.TabIndex = 26;
             // 
             // label5
             // 
@@ -152,12 +154,12 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "Fecha de la Firma del Contrato";
             // 
-            // dateTimePicker5
+            // dtp_firma
             // 
-            this.dateTimePicker5.Location = new System.Drawing.Point(51, 253);
-            this.dateTimePicker5.Name = "dateTimePicker5";
-            this.dateTimePicker5.Size = new System.Drawing.Size(320, 26);
-            this.dateTimePicker5.TabIndex = 28;
+            this.dtp_firma.Location = new System.Drawing.Point(51, 253);
+            this.dtp_firma.Name = "dtp_firma";
+            this.dtp_firma.Size = new System.Drawing.Size(320, 26);
+            this.dtp_firma.TabIndex = 28;
             // 
             // label6
             // 
@@ -168,34 +170,35 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "Fecha de la Visita a Instalaciones:";
             // 
-            // dateTimePicker6
+            // dtp_visita
             // 
-            this.dateTimePicker6.Location = new System.Drawing.Point(51, 305);
-            this.dateTimePicker6.Name = "dateTimePicker6";
-            this.dateTimePicker6.Size = new System.Drawing.Size(320, 26);
-            this.dateTimePicker6.TabIndex = 30;
+            this.dtp_visita.Location = new System.Drawing.Point(51, 305);
+            this.dtp_visita.Name = "dtp_visita";
+            this.dtp_visita.Size = new System.Drawing.Size(320, 26);
+            this.dtp_visita.TabIndex = 30;
             // 
             // Licitacion_Calendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 405);
-            this.Controls.Add(this.dateTimePicker6);
+            this.Controls.Add(this.dtp_visita);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker5);
+            this.Controls.Add(this.dtp_firma);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dateTimePicker4);
+            this.Controls.Add(this.dtp_fallo);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dateTimePicker3);
+            this.Controls.Add(this.dtp_propuestas);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker2);
+            this.Controls.Add(this.dtp_junta);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtp_publicacion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Licitacion_Calendario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Calendario";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -210,16 +213,16 @@
         private System.Windows.Forms.ToolStripButton btn_guardar;
         private System.Windows.Forms.ToolStripButton btn_cancelar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_publicacion;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtp_junta;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.DateTimePicker dtp_propuestas;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker4;
+        private System.Windows.Forms.DateTimePicker dtp_fallo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker5;
+        private System.Windows.Forms.DateTimePicker dtp_firma;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker6;
+        private System.Windows.Forms.DateTimePicker dtp_visita;
     }
 }

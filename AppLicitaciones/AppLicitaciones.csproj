@@ -290,24 +290,6 @@
     <Compile Include="Licitacion_Nueva_Abierta.Designer.cs">
       <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licitacion_Nueva_Adjudicacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Licitacion_Nueva_Adjudicacion.Designer.cs">
-      <DependentUpon>Licitacion_Nueva_Adjudicacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Licitacion_Nueva_Invitacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Licitacion_Nueva_Invitacion.Designer.cs">
-      <DependentUpon>Licitacion_Nueva_Invitacion.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Licitacion_Nueva_Mercado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Licitacion_Nueva_Mercado.Designer.cs">
-      <DependentUpon>Licitacion_Nueva_Mercado.cs</DependentUpon>
-    </Compile>
     <Compile Include="Licitacion_Paquetes.cs">
       <SubType>Form</SubType>
     </Compile>
