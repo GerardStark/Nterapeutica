@@ -16,7 +16,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public string con = @"Data Source=192.168.1.85\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=oirwbg6v23; ";  
+        public string con = @"Data Source=192.168.1.134\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=oirwbg6v23; ";  
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)
@@ -218,6 +218,35 @@ namespace LibLicitacion
             return nombre;
         }
 
+        public string obtenertipoexpediente(int id_expediente)
+        {
+            string nombre = "";
+            if (id_expediente != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from aux_tipos_expediente where id=@id", conec);
+                cmd.Parameters.AddWithValue("@id", id_expediente);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "expedientes");
+                conec.Close();
+                if (ds.Tables["expedientes"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["expedientes"].Rows[0]["tipo_expediente"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
+        }
+
         public string convertirasentencia(string original)
         {
             var sourcestring = original;
@@ -250,6 +279,8 @@ namespace LibLicitacion
                 }
             }            
         }
+
+
     }
 
     public class ComboboxItem

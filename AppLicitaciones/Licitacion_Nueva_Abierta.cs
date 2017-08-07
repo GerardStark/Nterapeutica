@@ -113,7 +113,12 @@ namespace AppLicitaciones
                         {
                             Licitacion_Calendario form = new Licitacion_Calendario();
                             form.pasarIdLicitaciones(newId);
-                            form.ShowDialog();
+                            DialogResult result =  form.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
                         }
                     }
                 }

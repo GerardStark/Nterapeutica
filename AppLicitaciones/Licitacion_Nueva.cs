@@ -25,7 +25,8 @@ namespace AppLicitaciones
             
             if (result == DialogResult.Cancel)
             {
-                this.Show();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
 
@@ -37,7 +38,8 @@ namespace AppLicitaciones
             
             if (result == DialogResult.Cancel)
             {
-                this.Show();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
 
@@ -49,10 +51,11 @@ namespace AppLicitaciones
             
             if (result == DialogResult.Cancel)
             {
-                this.Show();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
-
+        
         private void btn_nueva_im_Click(object sender, EventArgs e)
         {
             Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
@@ -61,7 +64,8 @@ namespace AppLicitaciones
             
             if (result == DialogResult.Cancel)
             {
-                this.Show();
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
         }
     }

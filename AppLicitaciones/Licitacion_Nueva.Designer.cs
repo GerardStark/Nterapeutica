@@ -36,7 +36,7 @@
             // 
             // btn_nueva_la
             // 
-            this.btn_nueva_la.Location = new System.Drawing.Point(12, 91);
+            this.btn_nueva_la.Location = new System.Drawing.Point(12, 12);
             this.btn_nueva_la.Name = "btn_nueva_la";
             this.btn_nueva_la.Size = new System.Drawing.Size(157, 163);
             this.btn_nueva_la.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // btn_nueva_it
             // 
-            this.btn_nueva_it.Location = new System.Drawing.Point(175, 91);
+            this.btn_nueva_it.Location = new System.Drawing.Point(175, 12);
             this.btn_nueva_it.Name = "btn_nueva_it";
             this.btn_nueva_it.Size = new System.Drawing.Size(157, 163);
             this.btn_nueva_it.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btn_nueva_ad
             // 
-            this.btn_nueva_ad.Location = new System.Drawing.Point(338, 91);
+            this.btn_nueva_ad.Location = new System.Drawing.Point(338, 12);
             this.btn_nueva_ad.Name = "btn_nueva_ad";
             this.btn_nueva_ad.Size = new System.Drawing.Size(157, 163);
             this.btn_nueva_ad.TabIndex = 2;
@@ -66,7 +66,7 @@
             // 
             // btn_nueva_im
             // 
-            this.btn_nueva_im.Location = new System.Drawing.Point(501, 91);
+            this.btn_nueva_im.Location = new System.Drawing.Point(501, 12);
             this.btn_nueva_im.Name = "btn_nueva_im";
             this.btn_nueva_im.Size = new System.Drawing.Size(157, 163);
             this.btn_nueva_im.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(672, 357);
+            this.ClientSize = new System.Drawing.Size(672, 192);
             this.Controls.Add(this.btn_nueva_im);
             this.Controls.Add(this.btn_nueva_ad);
             this.Controls.Add(this.btn_nueva_it);

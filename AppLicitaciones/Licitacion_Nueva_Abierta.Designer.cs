@@ -83,7 +83,7 @@
             this.cmb_especialidad.FormattingEnabled = true;
             this.cmb_especialidad.Location = new System.Drawing.Point(179, 111);
             this.cmb_especialidad.Name = "cmb_especialidad";
-            this.cmb_especialidad.Size = new System.Drawing.Size(362, 28);
+            this.cmb_especialidad.Size = new System.Drawing.Size(549, 28);
             this.cmb_especialidad.TabIndex = 4;
             // 
             // cmb_entidad
@@ -94,7 +94,7 @@
             this.cmb_entidad.FormattingEnabled = true;
             this.cmb_entidad.Location = new System.Drawing.Point(179, 77);
             this.cmb_entidad.Name = "cmb_entidad";
-            this.cmb_entidad.Size = new System.Drawing.Size(362, 28);
+            this.cmb_entidad.Size = new System.Drawing.Size(549, 28);
             this.cmb_entidad.TabIndex = 3;
             this.cmb_entidad.ValueMember = "id";
             // 
@@ -112,7 +112,7 @@
             // 
             this.txt_unidad_compradora.Location = new System.Drawing.Point(179, 44);
             this.txt_unidad_compradora.Name = "txt_unidad_compradora";
-            this.txt_unidad_compradora.Size = new System.Drawing.Size(362, 26);
+            this.txt_unidad_compradora.Size = new System.Drawing.Size(549, 26);
             this.txt_unidad_compradora.TabIndex = 2;
             // 
             // label6
@@ -160,7 +160,7 @@
             this.btn_cancelar});
             this.toolStrip1.Location = new System.Drawing.Point(0, 461);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(577, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(740, 57);
             this.toolStrip1.TabIndex = 17;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -199,7 +199,7 @@
             // 
             this.txt_numero.Location = new System.Drawing.Point(179, 12);
             this.txt_numero.Name = "txt_numero";
-            this.txt_numero.Size = new System.Drawing.Size(362, 26);
+            this.txt_numero.Size = new System.Drawing.Size(549, 26);
             this.txt_numero.TabIndex = 1;
             // 
             // label1
@@ -224,14 +224,14 @@
             // 
             this.txt_duracion_contrato.Location = new System.Drawing.Point(179, 177);
             this.txt_duracion_contrato.Name = "txt_duracion_contrato";
-            this.txt_duracion_contrato.Size = new System.Drawing.Size(362, 26);
+            this.txt_duracion_contrato.Size = new System.Drawing.Size(549, 26);
             this.txt_duracion_contrato.TabIndex = 6;
             // 
             // txt_num_expediente
             // 
             this.txt_num_expediente.Location = new System.Drawing.Point(179, 209);
             this.txt_num_expediente.Name = "txt_num_expediente";
-            this.txt_num_expediente.Size = new System.Drawing.Size(362, 26);
+            this.txt_num_expediente.Size = new System.Drawing.Size(549, 26);
             this.txt_num_expediente.TabIndex = 7;
             this.txt_num_expediente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_num_expediente_KeyPress);
             // 
@@ -257,14 +257,14 @@
             // 
             this.txt_nombre_operador.Location = new System.Drawing.Point(179, 273);
             this.txt_nombre_operador.Name = "txt_nombre_operador";
-            this.txt_nombre_operador.Size = new System.Drawing.Size(362, 26);
+            this.txt_nombre_operador.Size = new System.Drawing.Size(549, 26);
             this.txt_nombre_operador.TabIndex = 9;
             // 
             // txt_correo_operador
             // 
             this.txt_correo_operador.Location = new System.Drawing.Point(179, 305);
             this.txt_correo_operador.Name = "txt_correo_operador";
-            this.txt_correo_operador.Size = new System.Drawing.Size(362, 26);
+            this.txt_correo_operador.Size = new System.Drawing.Size(549, 26);
             this.txt_correo_operador.TabIndex = 10;
             // 
             // label10
@@ -293,7 +293,7 @@
             // 
             this.txt_tipo_contrato.Location = new System.Drawing.Point(179, 145);
             this.txt_tipo_contrato.Name = "txt_tipo_contrato";
-            this.txt_tipo_contrato.Size = new System.Drawing.Size(362, 26);
+            this.txt_tipo_contrato.Size = new System.Drawing.Size(549, 26);
             this.txt_tipo_contrato.TabIndex = 5;
             // 
             // label5
@@ -309,7 +309,7 @@
             // 
             this.txt_desc.Location = new System.Drawing.Point(179, 337);
             this.txt_desc.Name = "txt_desc";
-            this.txt_desc.Size = new System.Drawing.Size(362, 26);
+            this.txt_desc.Size = new System.Drawing.Size(549, 26);
             this.txt_desc.TabIndex = 11;
             // 
             // label12
@@ -329,8 +329,8 @@
             this.cmb_tipo_exp.FormattingEnabled = true;
             this.cmb_tipo_exp.Location = new System.Drawing.Point(179, 239);
             this.cmb_tipo_exp.Name = "cmb_tipo_exp";
-            this.cmb_tipo_exp.Size = new System.Drawing.Size(362, 28);
-            this.cmb_tipo_exp.TabIndex = 41;
+            this.cmb_tipo_exp.Size = new System.Drawing.Size(549, 28);
+            this.cmb_tipo_exp.TabIndex = 8;
             this.cmb_tipo_exp.ValueMember = "id";
             // 
             // auxtiposexpedienteBindingSource
@@ -346,7 +346,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(577, 518);
+            this.ClientSize = new System.Drawing.Size(740, 518);
             this.Controls.Add(this.cmb_tipo_exp);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.txt_desc);

@@ -37,13 +37,13 @@ namespace AppLicitaciones
                         con.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idbases", idBases);
-                        cmd.Parameters.AddWithValue("@junta", dtp_junta.Text);
-                        cmd.Parameters.AddWithValue("@apertura", dtp_propuestas.Text);
-                        cmd.Parameters.AddWithValue("@fallo", dtp_fallo.Text);
-                        cmd.Parameters.AddWithValue("@firma", dtp_firma.Text);
-                        cmd.Parameters.AddWithValue("@visita", dtp_visita.Text);
+                        cmd.Parameters.AddWithValue("@junta", dtp_junta.Value.Date);
+                        cmd.Parameters.AddWithValue("@apertura", dtp_propuestas.Value.Date);
+                        cmd.Parameters.AddWithValue("@fallo", dtp_fallo.Value.Date);
+                        cmd.Parameters.AddWithValue("@firma", dtp_firma.Value.Date);
+                        cmd.Parameters.AddWithValue("@visita", dtp_visita.Value.Date);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                        cmd.Parameters.AddWithValue("@publicacion", dtp_publicacion.Text);
+                        cmd.Parameters.AddWithValue("@publicacion", dtp_publicacion.Value.Date);
                         Int32 newId = cmd.ExecuteNonQuery();
                         if (newId != 0)
                         {

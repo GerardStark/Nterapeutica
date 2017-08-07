@@ -26,8 +26,23 @@ namespace AppLicitaciones
         private void btn_activas_Click(object sender, EventArgs e)
         {
             Licitacion_Actuales form = new Licitacion_Actuales();
-            form.mostrarLicitacionesActivas();
-            form.ShowDialog();
+            form.mostrarLicitacionesActivas(1);
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //something
+            }
+        }
+
+        private void btn_historico_Click(object sender, EventArgs e)
+        {
+            Licitacion_Actuales form = new Licitacion_Actuales();
+            form.mostrarLicitacionesActivas(0);
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //something
+            }
         }
     }
 }

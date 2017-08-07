@@ -84,6 +84,7 @@
             this.btn_historico.Name = "btn_historico";
             this.btn_historico.Size = new System.Drawing.Size(66, 54);
             this.btn_historico.Text = "toolStripButton3";
+            this.btn_historico.Click += new System.EventHandler(this.btn_historico_Click);
             // 
             // toolStripLabel5
             // 

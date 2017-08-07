@@ -56,5 +56,3 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Calendario.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Nueva.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Nueva_Abierta.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Nueva_Adjudicacion.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Nueva_Invitacion.resources

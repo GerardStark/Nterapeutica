@@ -140,24 +140,7 @@ namespace AppLicitaciones
             newForm.MdiParent = this;
             newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
-        }
-
-        private void licitacionesConcluidasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form.GetType() == typeof(Licitacion_Historico))
-                {
-                    form.Activate();
-                    return;
-                }
-            }
-
-            Licitacion_Historico newForm = new Licitacion_Historico();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
-            newForm.Show();
-        }
+        }       
 
         private void fabricantesTitularesDistribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
