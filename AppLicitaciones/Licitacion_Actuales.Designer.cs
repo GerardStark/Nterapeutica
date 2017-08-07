@@ -107,6 +107,7 @@
             this.btn_tecnica.Name = "btn_tecnica";
             this.btn_tecnica.Size = new System.Drawing.Size(76, 54);
             this.btn_tecnica.Text = "toolStripButton2";
+            this.btn_tecnica.Click += new System.EventHandler(this.btn_tecnica_Click);
             // 
             // toolStripLabel1
             // 

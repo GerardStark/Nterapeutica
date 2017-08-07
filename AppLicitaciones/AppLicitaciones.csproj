@@ -266,12 +266,6 @@
     <Compile Include="Licitacion_Calendario.Designer.cs">
       <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licitacion_Items.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Licitacion_Items.Designer.cs">
-      <DependentUpon>Licitacion_Items.cs</DependentUpon>
-    </Compile>
     <Compile Include="Licitacion_Nueva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,23 +278,11 @@
     <Compile Include="Licitacion_Nueva_Abierta.Designer.cs">
       <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Licitacion_Paquetes.cs">
+    <Compile Include="Licitacion_Tecnica.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Licitacion_Paquetes.Designer.cs">
-      <DependentUpon>Licitacion_Paquetes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Licitacion_Partidas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Licitacion_Partidas.Designer.cs">
-      <DependentUpon>Licitacion_Partidas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Licitacion_Vinculacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Licitacion_Vinculacion.Designer.cs">
-      <DependentUpon>Licitacion_Vinculacion.cs</DependentUpon>
+    <Compile Include="Licitacion_Tecnica.Designer.cs">
+      <DependentUpon>Licitacion_Tecnica.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -463,6 +445,9 @@
     <EmbeddedResource Include="Licitacion_Nueva_Abierta.resx">
       <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Tecnica.resx">
+      <DependentUpon>Licitacion_Tecnica.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -543,6 +528,10 @@
     <ProjectReference Include="..\LibLicitacion\LibLicitacion.csproj">
       <Project>{48ad9fd2-4856-4a38-93ec-d34ad2e5d06b}</Project>
       <Name>LibLicitacion</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
+      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Name>ObjectListView2012</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

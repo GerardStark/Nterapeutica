@@ -30,17 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registros_Principal));
             this.DGVRegistros = new System.Windows.Forms.DataGridView();
-            this.btn_reg_nuevo = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_reg_buscar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_reg_claves = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_reg_prorrogas = new System.Windows.Forms.ToolStripButton();
-            this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.tt_registros = new System.Windows.Forms.ToolStrip();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +42,17 @@
             this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_reg_nuevo = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_reg_buscar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_reg_claves = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_reg_prorrogas = new System.Windows.Forms.ToolStripButton();
+            this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.tt_registros = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).BeginInit();
             this.tt_registros.SuspendLayout();
             this.SuspendLayout();
@@ -75,13 +75,96 @@
             this.emisionColumn,
             this.vencimientoColumn,
             this.updatedColumn});
-            this.DGVRegistros.Location = new System.Drawing.Point(94, 12);
+            this.DGVRegistros.Location = new System.Drawing.Point(84, 10);
+            this.DGVRegistros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGVRegistros.Name = "DGVRegistros";
             this.DGVRegistros.ReadOnly = true;
-            this.DGVRegistros.Size = new System.Drawing.Size(1271, 632);
+            this.DGVRegistros.Size = new System.Drawing.Size(1130, 506);
             this.DGVRegistros.TabIndex = 1;
             this.DGVRegistros.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVRegistros_CellClick);
             this.DGVRegistros.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGVRegistros_CellFormatting);
+            // 
+            // idColumn
+            // 
+            this.idColumn.Frozen = true;
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
+            // 
+            // numColumn
+            // 
+            this.numColumn.HeaderText = "Numero";
+            this.numColumn.Name = "numColumn";
+            this.numColumn.ReadOnly = true;
+            this.numColumn.Width = 125;
+            // 
+            // solColumn
+            // 
+            this.solColumn.HeaderText = "Solicitud";
+            this.solColumn.Name = "solColumn";
+            this.solColumn.ReadOnly = true;
+            this.solColumn.Width = 125;
+            // 
+            // rfcColumn
+            // 
+            this.rfcColumn.HeaderText = "RFC";
+            this.rfcColumn.Name = "rfcColumn";
+            this.rfcColumn.ReadOnly = true;
+            // 
+            // tipoColumn
+            // 
+            this.tipoColumn.HeaderText = "Tipo";
+            this.tipoColumn.Name = "tipoColumn";
+            this.tipoColumn.ReadOnly = true;
+            // 
+            // titularColumn
+            // 
+            this.titularColumn.HeaderText = "Titular";
+            this.titularColumn.Name = "titularColumn";
+            this.titularColumn.ReadOnly = true;
+            this.titularColumn.Width = 125;
+            // 
+            // fabrColumn
+            // 
+            this.fabrColumn.HeaderText = "Fabricante";
+            this.fabrColumn.Name = "fabrColumn";
+            this.fabrColumn.ReadOnly = true;
+            this.fabrColumn.Width = 125;
+            // 
+            // marcaColumn
+            // 
+            this.marcaColumn.HeaderText = "Marca";
+            this.marcaColumn.Name = "marcaColumn";
+            this.marcaColumn.ReadOnly = true;
+            this.marcaColumn.Width = 125;
+            // 
+            // paisColumn
+            // 
+            this.paisColumn.HeaderText = "Pais";
+            this.paisColumn.Name = "paisColumn";
+            this.paisColumn.ReadOnly = true;
+            // 
+            // emisionColumn
+            // 
+            this.emisionColumn.HeaderText = "Emision";
+            this.emisionColumn.Name = "emisionColumn";
+            this.emisionColumn.ReadOnly = true;
+            this.emisionColumn.Width = 125;
+            // 
+            // vencimientoColumn
+            // 
+            this.vencimientoColumn.HeaderText = "Vencimiento";
+            this.vencimientoColumn.Name = "vencimientoColumn";
+            this.vencimientoColumn.ReadOnly = true;
+            this.vencimientoColumn.Width = 125;
+            // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
             // 
             // btn_reg_nuevo
             // 
@@ -184,102 +267,20 @@
             this.toolStripLabel3});
             this.tt_registros.Location = new System.Drawing.Point(0, 0);
             this.tt_registros.Name = "tt_registros";
-            this.tt_registros.Size = new System.Drawing.Size(91, 657);
+            this.tt_registros.Size = new System.Drawing.Size(91, 526);
             this.tt_registros.Stretch = true;
             this.tt_registros.TabIndex = 0;
             this.tt_registros.Text = "Herramientas";
             // 
-            // idColumn
-            // 
-            this.idColumn.Frozen = true;
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 50;
-            // 
-            // numColumn
-            // 
-            this.numColumn.HeaderText = "Numero";
-            this.numColumn.Name = "numColumn";
-            this.numColumn.ReadOnly = true;
-            this.numColumn.Width = 125;
-            // 
-            // solColumn
-            // 
-            this.solColumn.HeaderText = "Solicitud";
-            this.solColumn.Name = "solColumn";
-            this.solColumn.ReadOnly = true;
-            this.solColumn.Width = 125;
-            // 
-            // rfcColumn
-            // 
-            this.rfcColumn.HeaderText = "RFC";
-            this.rfcColumn.Name = "rfcColumn";
-            this.rfcColumn.ReadOnly = true;
-            // 
-            // tipoColumn
-            // 
-            this.tipoColumn.HeaderText = "Tipo";
-            this.tipoColumn.Name = "tipoColumn";
-            this.tipoColumn.ReadOnly = true;
-            // 
-            // titularColumn
-            // 
-            this.titularColumn.HeaderText = "Titular";
-            this.titularColumn.Name = "titularColumn";
-            this.titularColumn.ReadOnly = true;
-            this.titularColumn.Width = 125;
-            // 
-            // fabrColumn
-            // 
-            this.fabrColumn.HeaderText = "Fabricante";
-            this.fabrColumn.Name = "fabrColumn";
-            this.fabrColumn.ReadOnly = true;
-            this.fabrColumn.Width = 125;
-            // 
-            // marcaColumn
-            // 
-            this.marcaColumn.HeaderText = "Marca";
-            this.marcaColumn.Name = "marcaColumn";
-            this.marcaColumn.ReadOnly = true;
-            this.marcaColumn.Width = 125;
-            // 
-            // paisColumn
-            // 
-            this.paisColumn.HeaderText = "Pais";
-            this.paisColumn.Name = "paisColumn";
-            this.paisColumn.ReadOnly = true;
-            // 
-            // emisionColumn
-            // 
-            this.emisionColumn.HeaderText = "Emision";
-            this.emisionColumn.Name = "emisionColumn";
-            this.emisionColumn.ReadOnly = true;
-            this.emisionColumn.Width = 125;
-            // 
-            // vencimientoColumn
-            // 
-            this.vencimientoColumn.HeaderText = "Vencimiento";
-            this.vencimientoColumn.Name = "vencimientoColumn";
-            this.vencimientoColumn.ReadOnly = true;
-            this.vencimientoColumn.Width = 125;
-            // 
-            // updatedColumn
-            // 
-            this.updatedColumn.HeaderText = "Actualizado";
-            this.updatedColumn.Name = "updatedColumn";
-            this.updatedColumn.ReadOnly = true;
-            this.updatedColumn.Visible = false;
-            // 
             // Registros_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1376, 657);
+            this.ClientSize = new System.Drawing.Size(1223, 526);
             this.Controls.Add(this.DGVRegistros);
             this.Controls.Add(this.tt_registros);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Registros_Principal";
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

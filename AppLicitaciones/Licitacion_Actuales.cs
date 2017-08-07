@@ -89,5 +89,15 @@ namespace AppLicitaciones
                     break;
             }
         }
+
+        private void btn_tecnica_Click(object sender, EventArgs e)
+        {
+            Licitacion_Tecnica form = new Licitacion_Tecnica();
+            DialogResult result =  form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //something
+            }
+        }
     }
 }

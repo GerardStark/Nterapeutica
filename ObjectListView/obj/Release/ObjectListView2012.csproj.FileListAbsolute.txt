@@ -1,0 +1,9 @@
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\bin\Release\ObjectListView.XML
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\bin\Release\ObjectListView.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\bin\Release\ObjectListView.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Release\ObjectListView2012.csprojResolveAssemblyReference.cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Release\BrightIdeasSoftware.Properties.Resources.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Release\BrightIdeasSoftware.ColumnSelectionForm.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Release\ObjectListView2012.csproj.GenerateResource.Cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Release\ObjectListView.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Release\ObjectListView.pdb

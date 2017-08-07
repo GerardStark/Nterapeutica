@@ -136,7 +136,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_cucop.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_cucop.RowTemplate.Height = 100;
-            this.DGV_cucop.Size = new System.Drawing.Size(1234, 652);
+            this.DGV_cucop.Size = new System.Drawing.Size(1228, 660);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_cucop_CellClick);
             // 
@@ -159,7 +159,7 @@
             this.descColumn.HeaderText = "Descripcion";
             this.descColumn.Name = "descColumn";
             this.descColumn.ReadOnly = true;
-            this.descColumn.Width = 550;
+            this.descColumn.Width = 585;
             // 
             // especColumn
             // 
@@ -198,7 +198,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1314, 684);
+            this.ClientSize = new System.Drawing.Size(1300, 684);
             this.Controls.Add(this.DGV_cucop);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
