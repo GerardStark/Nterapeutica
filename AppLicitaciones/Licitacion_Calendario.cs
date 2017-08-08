@@ -47,9 +47,13 @@ namespace AppLicitaciones
                         Int32 newId = cmd.ExecuteNonQuery();
                         if (newId != 0)
                         {
-                            MessageBox.Show("Success");
-                            this.DialogResult = DialogResult.OK;
-                            this.Close();
+                            Licitacion_Columnas form = new Licitacion_Columnas();
+                            DialogResult result = form.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                this.DialogResult = DialogResult.OK;
+                                this.Close();
+                            }
                         }
                         else
                         {

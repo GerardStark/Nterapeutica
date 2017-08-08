@@ -15,12 +15,17 @@ namespace AppLicitaciones
         public Licitacion_Tecnica()
         {
             InitializeComponent();
+
             SetupTree();
         }
 
         private void SetupTree()
         {
-
+            //iniciando el treeListView
+            //this.tree_items.CanExpandGetter = delegate (object x)
+            //{
+            //    return (0);
+            //};
         }
     }
 

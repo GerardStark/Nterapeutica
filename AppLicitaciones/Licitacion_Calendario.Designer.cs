@@ -54,9 +54,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_guardar,
             this.btn_cancelar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 348);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 267);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(424, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(377, 57);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -84,104 +84,110 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 22);
+            this.label1.Location = new System.Drawing.Point(42, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(265, 20);
+            this.label1.Size = new System.Drawing.Size(225, 16);
             this.label1.TabIndex = 19;
             this.label1.Text = "Fecha de Publicacion en Compranet";
             // 
             // dtp_publicacion
             // 
-            this.dtp_publicacion.Location = new System.Drawing.Point(51, 45);
+            this.dtp_publicacion.Location = new System.Drawing.Point(45, 36);
+            this.dtp_publicacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_publicacion.Name = "dtp_publicacion";
-            this.dtp_publicacion.Size = new System.Drawing.Size(320, 26);
+            this.dtp_publicacion.Size = new System.Drawing.Size(285, 22);
             this.dtp_publicacion.TabIndex = 20;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 74);
+            this.label2.Location = new System.Drawing.Point(42, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(257, 20);
+            this.label2.Size = new System.Drawing.Size(218, 16);
             this.label2.TabIndex = 21;
             this.label2.Text = "Fecha de la Junta de Aclaraciones:";
             // 
             // dtp_junta
             // 
-            this.dtp_junta.Location = new System.Drawing.Point(51, 97);
+            this.dtp_junta.Location = new System.Drawing.Point(45, 78);
+            this.dtp_junta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_junta.Name = "dtp_junta";
-            this.dtp_junta.Size = new System.Drawing.Size(320, 26);
+            this.dtp_junta.Size = new System.Drawing.Size(285, 22);
             this.dtp_junta.TabIndex = 22;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 126);
+            this.label3.Location = new System.Drawing.Point(42, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 20);
+            this.label3.Size = new System.Drawing.Size(227, 16);
             this.label3.TabIndex = 23;
             this.label3.Text = "Fecha de la Apertura de Propuestas:";
             // 
             // dtp_propuestas
             // 
-            this.dtp_propuestas.Location = new System.Drawing.Point(51, 149);
+            this.dtp_propuestas.Location = new System.Drawing.Point(45, 119);
+            this.dtp_propuestas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_propuestas.Name = "dtp_propuestas";
-            this.dtp_propuestas.Size = new System.Drawing.Size(320, 26);
+            this.dtp_propuestas.Size = new System.Drawing.Size(285, 22);
             this.dtp_propuestas.TabIndex = 24;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 178);
+            this.label4.Location = new System.Drawing.Point(42, 142);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(205, 20);
+            this.label4.Size = new System.Drawing.Size(174, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Fecha del Anuncio de Fallo:";
             // 
             // dtp_fallo
             // 
-            this.dtp_fallo.Location = new System.Drawing.Point(51, 201);
+            this.dtp_fallo.Location = new System.Drawing.Point(45, 161);
+            this.dtp_fallo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_fallo.Name = "dtp_fallo";
-            this.dtp_fallo.Size = new System.Drawing.Size(320, 26);
+            this.dtp_fallo.Size = new System.Drawing.Size(285, 22);
             this.dtp_fallo.TabIndex = 26;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(47, 230);
+            this.label5.Location = new System.Drawing.Point(42, 184);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(227, 20);
+            this.label5.Size = new System.Drawing.Size(191, 16);
             this.label5.TabIndex = 27;
             this.label5.Text = "Fecha de la Firma del Contrato";
             // 
             // dtp_firma
             // 
-            this.dtp_firma.Location = new System.Drawing.Point(51, 253);
+            this.dtp_firma.Location = new System.Drawing.Point(45, 202);
+            this.dtp_firma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_firma.Name = "dtp_firma";
-            this.dtp_firma.Size = new System.Drawing.Size(320, 26);
+            this.dtp_firma.Size = new System.Drawing.Size(285, 22);
             this.dtp_firma.TabIndex = 28;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(47, 282);
+            this.label6.Location = new System.Drawing.Point(42, 226);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(250, 20);
+            this.label6.Size = new System.Drawing.Size(211, 16);
             this.label6.TabIndex = 29;
             this.label6.Text = "Fecha de la Visita a Instalaciones:";
             // 
             // dtp_visita
             // 
-            this.dtp_visita.Location = new System.Drawing.Point(51, 305);
+            this.dtp_visita.Location = new System.Drawing.Point(45, 244);
+            this.dtp_visita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_visita.Name = "dtp_visita";
-            this.dtp_visita.Size = new System.Drawing.Size(320, 26);
+            this.dtp_visita.Size = new System.Drawing.Size(285, 22);
             this.dtp_visita.TabIndex = 30;
             // 
             // Licitacion_Calendario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 405);
+            this.ClientSize = new System.Drawing.Size(377, 324);
             this.Controls.Add(this.dtp_visita);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtp_firma);
@@ -195,8 +201,8 @@
             this.Controls.Add(this.dtp_publicacion);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Licitacion_Calendario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Calendario";
