@@ -15,6 +15,7 @@ namespace AppLicitaciones
     public partial class Licitacion_Actuales : Form
     {
         MainConfig mc = new MainConfig();
+        int idLicitacion = 0;
         public Licitacion_Actuales()
         {
             InitializeComponent();
@@ -97,6 +98,29 @@ namespace AppLicitaciones
             if (result == DialogResult.OK)
             {
                 //something
+            }
+        }
+
+        private void btn_columnas_Click(object sender, EventArgs e)
+        {
+            if (idLicitacion !=0)
+            {
+                Licitacion_Columnas form = new Licitacion_Columnas();
+                form.mostrarColumnasBases(idLicitacion);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    //something
+                }
+            }
+        }
+
+        private void dgv_licitaciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                idLicitacion = Convert.ToInt32(dgv_licitaciones.Rows[e.RowIndex].Cells["idColumn"].Value);
+                
             }
         }
     }

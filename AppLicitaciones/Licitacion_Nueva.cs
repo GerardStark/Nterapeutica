@@ -17,56 +17,37 @@ namespace AppLicitaciones
             InitializeComponent();
         }
 
-        private void btn_nueva_la_Click(object sender, EventArgs e)
+        public void nuevaLicitacion(string tipo)
         {
             Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
-            form.pasarTipoLicitacion("LA");
+            form.pasarTipoLicitacion(tipo);
             DialogResult result = form.ShowDialog();
-            
-            if (result == DialogResult.Cancel)
+
+            if (result == DialogResult.OK)
             {
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
+        }
+
+        private void btn_nueva_la_Click(object sender, EventArgs e)
+        {
+            nuevaLicitacion("LA");
         }
 
         private void btn_nueva_it_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
-            form.pasarTipoLicitacion("I3");
-            DialogResult result = form.ShowDialog();
-            
-            if (result == DialogResult.Cancel)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            nuevaLicitacion("I3");
         }
 
         private void btn_nueva_ad_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
-            form.pasarTipoLicitacion("AA");
-            DialogResult result = form.ShowDialog();
-            
-            if (result == DialogResult.Cancel)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            nuevaLicitacion("AA");
         }
         
         private void btn_nueva_im_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();
-            form.pasarTipoLicitacion("EC");
-            DialogResult result =  form.ShowDialog();
-            
-            if (result == DialogResult.Cancel)
-            {
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+            nuevaLicitacion("IM");
         }
     }
 }

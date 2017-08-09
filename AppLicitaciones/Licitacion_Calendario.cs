@@ -48,6 +48,7 @@ namespace AppLicitaciones
                         if (newId != 0)
                         {
                             Licitacion_Columnas form = new Licitacion_Columnas();
+                            form.mostrarColumnasBases(idBases);
                             DialogResult result = form.ShowDialog();
                             if (result == DialogResult.OK)
                             {
