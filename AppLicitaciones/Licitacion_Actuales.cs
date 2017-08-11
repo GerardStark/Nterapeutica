@@ -105,13 +105,13 @@ namespace AppLicitaciones
         {
             if (idLicitacion !=0)
             {
-                Licitacion_Columnas form = new Licitacion_Columnas();
-                form.mostrarColumnasBases(idLicitacion);
-                DialogResult result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    //something
-                }
+                //Licitacion_Columnas form = new Licitacion_Columnas();
+                //form.mostrarColumnasBases(idLicitacion);
+                //DialogResult result = form.ShowDialog();
+                //if (result == DialogResult.OK)
+                //{
+                //    //something
+                //}
             }
         }
 
@@ -122,6 +122,14 @@ namespace AppLicitaciones
                 idLicitacion = Convert.ToInt32(dgv_licitaciones.Rows[e.RowIndex].Cells["idColumn"].Value);
                 
             }
+        }
+
+        private void btn_calendario_Click(object sender, EventArgs e)
+        {
+            Licitacion_Calendario form = new Licitacion_Calendario();
+            form.mostrarFechasCalendario(idLicitacion);
+            DialogResult result = form.ShowDialog();
+
         }
     }
 }

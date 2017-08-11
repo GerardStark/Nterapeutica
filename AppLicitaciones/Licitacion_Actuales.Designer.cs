@@ -39,14 +39,18 @@
             this.tipoExpColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.btn_tecnica = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btn_economica = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_columnas = new System.Windows.Forms.ToolStripButton();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btn_calendario = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_licitaciones)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -73,7 +77,7 @@
             this.dgv_licitaciones.ReadOnly = true;
             this.dgv_licitaciones.RowHeadersVisible = false;
             this.dgv_licitaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_licitaciones.Size = new System.Drawing.Size(1169, 585);
+            this.dgv_licitaciones.Size = new System.Drawing.Size(655, 585);
             this.dgv_licitaciones.TabIndex = 6;
             this.dgv_licitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_licitaciones_CellClick);
             this.dgv_licitaciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_licitaciones_CellFormatting);
@@ -141,25 +145,6 @@
             this.updatedColumn.ReadOnly = true;
             this.updatedColumn.Visible = false;
             // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_visualizar,
-            this.toolStripLabel1,
-            this.btn_tecnica,
-            this.toolStripLabel2,
-            this.btn_economica,
-            this.toolStripLabel3,
-            this.toolStripLabel4,
-            this.btn_columnas});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(79, 609);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // btn_visualizar
             // 
             this.btn_visualizar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -206,29 +191,87 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(76, 15);
             this.toolStripLabel3.Text = "Economica";
             // 
-            // btn_columnas
+            // toolStrip1
             // 
-            this.btn_columnas.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.btn_columnas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_columnas.Image = ((System.Drawing.Image)(resources.GetObject("btn_columnas.Image")));
-            this.btn_columnas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_columnas.Name = "btn_columnas";
-            this.btn_columnas.Size = new System.Drawing.Size(76, 54);
-            this.btn_columnas.Text = "toolStripButton1";
-            this.btn_columnas.Click += new System.EventHandler(this.btn_columnas_Click);
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_visualizar,
+            this.toolStripLabel1,
+            this.btn_tecnica,
+            this.toolStripLabel2,
+            this.btn_economica,
+            this.toolStripLabel3,
+            this.btn_calendario,
+            this.toolStripLabel4});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(79, 609);
+            this.toolStrip1.TabIndex = 7;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // treeView1
+            // 
+            this.treeView1.Location = new System.Drawing.Point(743, 12);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.Size = new System.Drawing.Size(528, 228);
+            this.treeView1.TabIndex = 8;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(743, 246);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 50);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(829, 246);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 50);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(915, 246);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(80, 50);
+            this.button3.TabIndex = 11;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btn_calendario
+            // 
+            this.btn_calendario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_calendario.Image = ((System.Drawing.Image)(resources.GetObject("btn_calendario.Image")));
+            this.btn_calendario.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_calendario.Name = "btn_calendario";
+            this.btn_calendario.Size = new System.Drawing.Size(76, 54);
+            this.btn_calendario.Text = "toolStripButton1";
+            this.btn_calendario.Click += new System.EventHandler(this.btn_calendario_Click);
             // 
             // toolStripLabel4
             // 
-            this.toolStripLabel4.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.toolStripLabel4.Name = "toolStripLabel4";
             this.toolStripLabel4.Size = new System.Drawing.Size(76, 15);
-            this.toolStripLabel4.Text = "Columnas";
+            this.toolStripLabel4.Text = "Calendario";
             // 
             // Licitacion_Actuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1263, 609);
+            this.ClientSize = new System.Drawing.Size(1283, 609);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.treeView1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.dgv_licitaciones);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,11 +289,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgv_licitaciones;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton btn_visualizar;
-        private System.Windows.Forms.ToolStripButton btn_tecnica;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unicompColumn;
@@ -260,9 +298,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoExpColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
+        private System.Windows.Forms.ToolStripButton btn_visualizar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton btn_tecnica;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton btn_economica;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
-        private System.Windows.Forms.ToolStripButton btn_columnas;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ToolStripButton btn_calendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
     }
 }

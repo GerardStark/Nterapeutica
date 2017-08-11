@@ -28,21 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.treeListView1 = new BrightIdeasSoftware.TreeListView();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // treeListView1
+            // 
+            this.treeListView1.CellEditUseWholeCell = false;
+            this.treeListView1.Location = new System.Drawing.Point(12, 12);
+            this.treeListView1.Name = "treeListView1";
+            this.treeListView1.ShowGroups = false;
+            this.treeListView1.Size = new System.Drawing.Size(1068, 579);
+            this.treeListView1.TabIndex = 0;
+            this.treeListView1.UseCompatibleStateImageBehavior = false;
+            this.treeListView1.View = System.Windows.Forms.View.Details;
+            this.treeListView1.VirtualMode = true;
             // 
             // Licitacion_Tecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1092, 603);
+            this.Controls.Add(this.treeListView1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Tecnica";
             this.Text = "Licitacion_Tecnica";
+            ((System.ComponentModel.ISupportInitialize)(this.treeListView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private BrightIdeasSoftware.TreeListView treeListView1;
     }
 }
