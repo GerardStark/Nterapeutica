@@ -53,26 +53,57 @@ namespace AppLicitaciones
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            try
+            if (id_referencia != 0)
             {
-                SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("INSERT into registros_claves_referencias (id_registro_sanitario,clave_ref_cod, descripcion, unidad_venta,actualizado_en)" +
-                    "values (@idregistro,@clave,@descripcion,@unidad,@actualizado)", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@idregistro", id_registro);
-                cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
-                cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
-                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
-                cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Guardado");
-                mostrarclavesregistro(id_registro);
+                DialogResult result = MessageBox.Show("Se va a duplicar la información capturada en una Referencia Nueva, ¿seguir?","Aviso de duplicado",MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(mc.con);
+                        SqlCommand cmd = new SqlCommand("INSERT into registros_claves_referencias (id_registro_sanitario,clave_ref_cod, descripcion, unidad_venta,actualizado_en)" +
+                            "values (@idregistro,@clave,@descripcion,@unidad,@actualizado)", con);
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@idregistro", id_registro);
+                        cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                        cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
+                        cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
+                        cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Guardado");
+                        mostrarclavesregistro(id_registro);
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("INSERT into registros_claves_referencias (id_registro_sanitario,clave_ref_cod, descripcion, unidad_venta,actualizado_en)" +
+                        "values (@idregistro,@clave,@descripcion,@unidad,@actualizado)", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idregistro", id_registro);
+                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                    cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
+                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
+                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Guardado");
+                    mostrarclavesregistro(id_registro);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
@@ -146,7 +177,6 @@ namespace AppLicitaciones
                 txt_clave.Text = DGV_Referencias.Rows[e.RowIndex].Cells["claveColumn"].Value.ToString();
                 txt_descripcion.Text = DGV_Referencias.Rows[e.RowIndex].Cells["descripcionColumn"].Value.ToString();
                 cmb_unidad.SelectedText = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
-                btn_guardar.Enabled = false;
             }
         }
 
@@ -161,11 +191,10 @@ namespace AppLicitaciones
         {
             if (id_referencia != 0 && e.RowIndex != -1)
             {
-                id_referencia = 0;
-                btn_guardar.Enabled = true;
+                id_referencia = 0;                
                 txt_clave.Text = "";
                 txt_descripcion.Text = "";
-                cmb_unidad.SelectedIndex = 0;
+                cmb_unidad.SelectedIndex = 0;                
             }
         }
     }

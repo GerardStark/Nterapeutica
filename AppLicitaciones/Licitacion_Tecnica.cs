@@ -1,7 +1,9 @@
-﻿using System;
+﻿using LibLicitacion;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,21 +14,26 @@ namespace AppLicitaciones
 {
     public partial class Licitacion_Tecnica : Form
     {
+        int idLicitacion;
+        MainConfig mc = new MainConfig();
         public Licitacion_Tecnica()
         {
             InitializeComponent();
-
-            SetupTree();
         }
-
-        private void SetupTree()
+        public void mostrarListadoLicitacion(int idLicitacion)
         {
-            //iniciando el treeListView
-            //this.tree_items.CanExpandGetter = delegate (object x)
-            //{
-            //    return (0);
-            //};
+            //Muestra el listado de item de la licitacion
+            this.idLicitacion = idLicitacion;
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand("",con))
+                {
+                    
+                }
+            }
         }
+
+        
     }
 
 }

@@ -61,6 +61,25 @@ namespace AppLicitaciones
                             mc.buscarultimafilaeditada("licitacion_bases", dgv_licitaciones);
                         }
                     }
+                    else
+                    {
+                        
+                        using (SqlCommand cmd = new SqlCommand(@"SELECT id_bases,numero_licitacion,unidad_compradora,entidad_federativa,especialidad,expediente,tipo_expediente,descripcion,actualizado_en 
+                                                        FROM licitacion_bases", con))
+                        {
+                            con.Open();
+                            cmd.Parameters.AddWithValue("@hoy", DateTime.Now);
+                            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                            DataTable dt = new DataTable();
+                            adapt.Fill(dt);
+                            foreach (DataRow dr in dt.Rows)
+                            {
+                                dgv_licitaciones.Rows.Add(dr.ItemArray);
+                            }
+                            mc.buscarultimafilaeditada("licitacion_bases", dgv_licitaciones);
+                        }
+                        
+                    }
                 }
             }
             catch (Exception ex)
@@ -93,11 +112,15 @@ namespace AppLicitaciones
 
         private void btn_tecnica_Click(object sender, EventArgs e)
         {
-            Licitacion_Tecnica form = new Licitacion_Tecnica();
-            DialogResult result =  form.ShowDialog();
-            if (result == DialogResult.OK)
+            if (idLicitacion != 0) 
             {
-                //something
+                Licitacion_Tecnica form = new Licitacion_Tecnica();
+                form.mostrarListadoLicitacion(idLicitacion);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    //something
+                }
             }
         }
 
@@ -126,9 +149,22 @@ namespace AppLicitaciones
 
         private void btn_calendario_Click(object sender, EventArgs e)
         {
-            Licitacion_Calendario form = new Licitacion_Calendario();
-            form.mostrarFechasCalendario(idLicitacion);
-            DialogResult result = form.ShowDialog();
+            if (idLicitacion != 0)
+            {
+                Licitacion_Calendario form = new Licitacion_Calendario();
+                form.mostrarFechasCalendario(idLicitacion);
+                DialogResult result = form.ShowDialog();
+            }
+
+        }
+
+        private void btn_economica_Click(object sender, EventArgs e)
+        {
+            //something
+        }
+
+        private void btn_visualizar_Click(object sender, EventArgs e)
+        {
 
         }
     }

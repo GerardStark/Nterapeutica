@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace LibLicitacion
 {
-    class LicitacionPartida
+    class CatalogoProductos
     {
-
     }
 }

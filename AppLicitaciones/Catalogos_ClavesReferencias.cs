@@ -56,28 +56,61 @@ namespace AppLicitaciones
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            try
+            if (id_referencia != 0)
             {
-                SqlConnection con = new SqlConnection(mc.con);
-                SqlCommand cmd = new SqlCommand("INSERT into catalogos_claves_referencias (id_catalogo_productos,clave_ref_cod,descripcion,unidad_venta,pagina_pdf,pagina_cat,actualizado_en)" +
-                    "values (@idcatalogo,@clave,@descripcion,@unidad,@pagpdf,@pagcat,@actualizado)", con);
-                con.Open();
-                cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
-                cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
-                cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
-                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
-                cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
-                cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
-                cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                MessageBox.Show("Guardado");
-                mostrarclavescatalogos(id_catalogo);
+                DialogResult result = MessageBox.Show("Se va a duplicar la información capturada en una Referencia Nueva, ¿seguir?", "Aviso de duplicado", MessageBoxButtons.OKCancel);
+                if (result == DialogResult.OK)
+                {
+                    try
+                    {
+                        SqlConnection con = new SqlConnection(mc.con);
+                        SqlCommand cmd = new SqlCommand("INSERT into catalogos_claves_referencias (id_catalogo_productos,clave_ref_cod,descripcion,unidad_venta,pagina_pdf,pagina_cat,actualizado_en)" +
+                            "values (@idcatalogo,@clave,@descripcion,@unidad,@pagpdf,@pagcat,@actualizado)", con);
+                        con.Open();
+                        cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
+                        cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                        cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
+                        cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
+                        cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
+                        cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
+                        cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        MessageBox.Show("Guardado");
+                        mostrarclavescatalogos(id_catalogo);
 
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                    }
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    SqlConnection con = new SqlConnection(mc.con);
+                    SqlCommand cmd = new SqlCommand("INSERT into catalogos_claves_referencias (id_catalogo_productos,clave_ref_cod,descripcion,unidad_venta,pagina_pdf,pagina_cat,actualizado_en)" +
+                        "values (@idcatalogo,@clave,@descripcion,@unidad,@pagpdf,@pagcat,@actualizado)", con);
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@idcatalogo", id_catalogo);
+                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                    cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
+                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
+                    cmd.Parameters.AddWithValue("@pagpdf", txt_pag_pdf.Text);
+                    cmd.Parameters.AddWithValue("@pagcat", txt_pag_cat.Text);
+                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Guardado");
+                    mostrarclavescatalogos(id_catalogo);
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
@@ -155,7 +188,7 @@ namespace AppLicitaciones
                 cmb_unidad.SelectedText = DGV_Referencias.Rows[e.RowIndex].Cells["unidadColumn"].Value.ToString();
                 txt_pag_pdf.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagpdfColumn"].Value.ToString();
                 txt_pag_cat.Text = DGV_Referencias.Rows[e.RowIndex].Cells["pagcatColumn"].Value.ToString();
-                btn_guardar.Enabled = false;
+               
             }
         }
 

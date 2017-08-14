@@ -44,5 +44,16 @@ namespace AppLicitaciones
                 //something
             }
         }
+
+        private void btn_todas_Click(object sender, EventArgs e)
+        {
+            Licitacion_Actuales form = new Licitacion_Actuales();
+            form.mostrarLicitacionesActivas(2);
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //something
+            }
+        }
     }
 }
