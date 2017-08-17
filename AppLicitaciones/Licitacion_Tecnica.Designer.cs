@@ -28,84 +28,157 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.objlistview_listado = new BrightIdeasSoftware.ObjectListView();
-            this.descColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.subColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.itemColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.cartaColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.cucopColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            ((System.ComponentModel.ISupportInitialize)(this.objlistview_listado)).BeginInit();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.idSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPartParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ofertaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
-            // objlistview_listado
+            // label2
             // 
-            this.objlistview_listado.AllColumns.Add(this.descColumn);
-            this.objlistview_listado.AllColumns.Add(this.subColumn);
-            this.objlistview_listado.AllColumns.Add(this.itemColumn);
-            this.objlistview_listado.AllColumns.Add(this.cartaColumn);
-            this.objlistview_listado.AllColumns.Add(this.cucopColumn);
-            this.objlistview_listado.CellEditUseWholeCell = false;
-            this.objlistview_listado.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.descColumn,
-            this.subColumn,
-            this.itemColumn,
-            this.cartaColumn,
-            this.cucopColumn});
-            this.objlistview_listado.Cursor = System.Windows.Forms.Cursors.Default;
-            this.objlistview_listado.Location = new System.Drawing.Point(12, 12);
-            this.objlistview_listado.Name = "objlistview_listado";
-            this.objlistview_listado.Size = new System.Drawing.Size(870, 579);
-            this.objlistview_listado.TabIndex = 0;
-            this.objlistview_listado.UseCompatibleStateImageBehavior = false;
-            this.objlistview_listado.View = System.Windows.Forms.View.Details;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(99, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(188, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Procedimientos y Subpartidas";
             // 
-            // descColumn
+            // dataGridView2
             // 
-            this.descColumn.Text = "Partida";
-            this.descColumn.Width = 63;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idSubColumn,
+            this.idPartParentColumn,
+            this.numSubColumn,
+            this.nomSubColumn});
+            this.dataGridView2.Location = new System.Drawing.Point(12, 28);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.Size = new System.Drawing.Size(454, 180);
+            this.dataGridView2.TabIndex = 3;
             // 
-            // subColumn
+            // idSubColumn
             // 
-            this.subColumn.Text = "Subpartida/Procedimiento";
-            this.subColumn.Width = 170;
+            this.idSubColumn.HeaderText = "#";
+            this.idSubColumn.Name = "idSubColumn";
+            this.idSubColumn.ReadOnly = true;
+            this.idSubColumn.Width = 50;
             // 
-            // itemColumn
+            // idPartParentColumn
             // 
-            this.itemColumn.Text = "Items Requeridos";
-            this.itemColumn.Width = 246;
+            this.idPartParentColumn.HeaderText = "Partida";
+            this.idPartParentColumn.Name = "idPartParentColumn";
+            this.idPartParentColumn.ReadOnly = true;
             // 
-            // cartaColumn
+            // numSubColumn
             // 
-            this.cartaColumn.Text = "Carta de apoyo";
-            this.cartaColumn.Width = 111;
+            this.numSubColumn.HeaderText = "No.";
+            this.numSubColumn.Name = "numSubColumn";
+            this.numSubColumn.ReadOnly = true;
+            this.numSubColumn.Width = 50;
             // 
-            // cucopColumn
+            // nomSubColumn
             // 
-            this.cucopColumn.Text = "Item Ofertado";
-            this.cucopColumn.Width = 272;
+            this.nomSubColumn.HeaderText = "Nombre";
+            this.nomSubColumn.Name = "nomSubColumn";
+            this.nomSubColumn.ReadOnly = true;
+            this.nomSubColumn.Width = 250;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idItemColumn,
+            this.idSubParentColumn,
+            this.unidadColumn,
+            this.descItemColumn,
+            this.ofertaColumn});
+            this.dataGridView3.Location = new System.Drawing.Point(12, 216);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowHeadersVisible = false;
+            this.dataGridView3.Size = new System.Drawing.Size(1255, 375);
+            this.dataGridView3.TabIndex = 4;
+            // 
+            // idItemColumn
+            // 
+            this.idItemColumn.HeaderText = "#";
+            this.idItemColumn.Name = "idItemColumn";
+            this.idItemColumn.ReadOnly = true;
+            // 
+            // idSubParentColumn
+            // 
+            this.idSubParentColumn.HeaderText = "Subpartida";
+            this.idSubParentColumn.Name = "idSubParentColumn";
+            this.idSubParentColumn.ReadOnly = true;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad de Venta";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.ReadOnly = true;
+            this.unidadColumn.Width = 150;
+            // 
+            // descItemColumn
+            // 
+            this.descItemColumn.HeaderText = "Descripcion";
+            this.descItemColumn.Name = "descItemColumn";
+            this.descItemColumn.ReadOnly = true;
+            this.descItemColumn.Width = 450;
+            // 
+            // ofertaColumn
+            // 
+            this.ofertaColumn.HeaderText = "Item Ofertado";
+            this.ofertaColumn.Name = "ofertaColumn";
+            this.ofertaColumn.ReadOnly = true;
+            this.ofertaColumn.Width = 450;
             // 
             // Licitacion_Tecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1255, 603);
-            this.Controls.Add(this.objlistview_listado);
+            this.ClientSize = new System.Drawing.Size(1283, 603);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.label2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Tecnica";
             this.Text = "Licitacion_Tecnica";
-            ((System.ComponentModel.ISupportInitialize)(this.objlistview_listado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private BrightIdeasSoftware.ObjectListView objlistview_listado;
-        private BrightIdeasSoftware.OLVColumn descColumn;
-        private BrightIdeasSoftware.OLVColumn subColumn;
-        private BrightIdeasSoftware.OLVColumn itemColumn;
-        private BrightIdeasSoftware.OLVColumn cartaColumn;
-        private BrightIdeasSoftware.OLVColumn cucopColumn;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSubColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPartParentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numSubColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomSubColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSubParentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ofertaColumn;
     }
 }

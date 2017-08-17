@@ -33,28 +33,36 @@ namespace AppLicitaciones
 
         private void btn_cat_buscar_Click(object sender, EventArgs e)
         {
-            int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
-            switch (value)
+            try
             {
-                case 2:
-                    ctrl = "numero_identificador";
-                    valor = txt_parametros.Text;
-                    break;
-                case 3:
-                    ctrl = "tipo";
-                    valor = txt_parametros.Text;
-                    break;
-                case 4:
-                    ctrl = "descripcion_detallada";
-                    valor = txt_parametros.Text;
-                    break;
-                case 5:
-                    ctrl = "fabricante";
-                    valor = txt_parametros.Text;
-                    break;
+                int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
+                switch (value)
+                {
+                    case 2:
+                        ctrl = "numero_identificador";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 3:
+                        ctrl = "tipo";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 4:
+                        ctrl = "descripcion_detallada";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 5:
+                        ctrl = "fabricante";
+                        valor = txt_parametros.Text;
+                        break;
+                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                
+            }
         }
 
         private void cmb_filtros_SelectedIndexChanged(object sender, EventArgs e)

@@ -17,7 +17,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         string fileName, archivo, camino;
-        int id_fabricante, id_registro;
+        int id_fabricante, id_registro, id_pais;
         public Registros_Editar()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace AppLicitaciones
                 txt_rfc.Text = dt.Rows[0]["rfc"].ToString();
                 txt_fabricante.Text = dt.Rows[0]["fabricante"].ToString();
                 txt_marca.Text = dt.Rows[0]["marca"].ToString();
-                cmb_pais.SelectedValue = Convert.ToInt32(dt.Rows[0]["pais_origen"]);
+                id_pais = Convert.ToInt32(dt.Rows[0]["pais_origen"]); ;
                 date_emision.Value = Convert.ToDateTime(dt.Rows[0]["fecha_emision"]);
                 date_vencimiento.Value = Convert.ToDateTime(dt.Rows[0]["fecha_vencimiento"]);
                 lbl_reg_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
@@ -76,6 +76,7 @@ namespace AppLicitaciones
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.paises_origen' Puede moverla o quitarla según sea necesario.
             this.paises_origenTableAdapter.Fill(this.licitacionesDataSet.paises_origen);
+            cmb_pais.SelectedValue = id_pais;
 
         }
 

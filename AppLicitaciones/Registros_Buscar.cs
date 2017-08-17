@@ -67,44 +67,54 @@ namespace AppLicitaciones
 
         private void btn_reg_buscar_Click(object sender, EventArgs e)
         {
-            int value = Convert.ToInt32(((ComboboxItem)cmb_opciones_buscqueda.SelectedItem).Value);
-            switch (value)
+            try
             {
-                case 2:
-                    ctrl = "numero_registro";
-                    valor = txt_parametros.Text;
-                    break;
-                case 3:
-                    ctrl = "referencia";
-                    valor = txt_parametros.Text;
-                    break;
-                case 4:
-                    ctrl = "numero_solicitud";
-                    valor = txt_parametros.Text;
-                    break;
-                case 5:
-                    ctrl = "titular";
-                    valor = txt_parametros.Text;
-                    break;
-                case 6:
-                    ctrl = "fabricante";
-                    valor = txt_parametros.Text;
-                    break;
-                case 7:
-                    ctrl = "marca";
-                    valor = txt_parametros.Text;
-                    break;
-                case 8:
-                    ctrl = "denom_distintiva";
-                    valor = txt_parametros.Text;
-                    break;
-                case 9:
-                    ctrl = "denom_generica";
-                    valor = txt_parametros.Text;
-                    break;
+                int value = Convert.ToInt32(((ComboboxItem)cmb_opciones_buscqueda.SelectedItem).Value);
+                switch (value)
+                {
+                    case 2:
+                        ctrl = "numero_registro";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 3:
+                        ctrl = "referencia";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 4:
+                        ctrl = "numero_solicitud";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 5:
+                        ctrl = "titular";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 6:
+                        ctrl = "fabricante";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 7:
+                        ctrl = "marca";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 8:
+                        ctrl = "denom_distintiva";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 9:
+                        ctrl = "denom_generica";
+                        valor = txt_parametros.Text;
+                        break;
+                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            catch (Exception ex)
+            {
+                if (ex is NullReferenceException)
+                {
+                    MessageBox.Show("Selecciona una opcion");
+                }
+            }
         }
 
         private void btn_buscar_cancelar_Click(object sender, EventArgs e)

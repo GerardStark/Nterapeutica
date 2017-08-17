@@ -18,22 +18,34 @@ namespace AppLicitaciones
         MainConfig mc = new MainConfig();
         public Licitacion_Tecnica()
         {
-            InitializeComponent();
+            InitializeComponent();            
         }
         public void mostrarListadoLicitacion(int idLicitacion)
         {
-            //Muestra el listado de item de la licitacion
+            //this.idLicitacion = idLicitacion;
+            ////crea los nodos padre
+            //this.tlv_partidas.CanExpandGetter = delegate (Object x) {
+            //    return (x is Partida);
+            //};
+
+            ////crea los nodos hijo
+            //this.tlv_partidas.ChildrenGetter = delegate (Object x) {
+            //    if (x is Partida)
+            //        return ((Partida)x).Procedimientos;        
+
+            //    throw new ArgumentException("Debe ser Partida o Procedimiento");
+            //};
+
+            //this.tlv_partidas.SetObjects(Partida.GetPartidasPorBase(idLicitacion));
             this.idLicitacion = idLicitacion;
-            using (SqlConnection con = new SqlConnection(mc.con))
-            {
-                using (SqlCommand cmd = new SqlCommand("",con))
-                {
-                    
-                }
-            }
+
+
         }
 
         
+
+
+        //obtener el id del procedimiento y mostrar los items en la OLV
     }
 
 }

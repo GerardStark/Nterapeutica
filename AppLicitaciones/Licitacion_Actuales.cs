@@ -165,7 +165,17 @@ namespace AppLicitaciones
 
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
+            if (idLicitacion != 0)
+            {
+                Licitacion_Visualizar form = new Licitacion_Visualizar();
+                form.mostrarInfoBases(idLicitacion);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    //something..
+                }
 
+            }
         }
     }
 }

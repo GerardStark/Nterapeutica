@@ -80,36 +80,46 @@ namespace AppLicitaciones
 
         private void btn_cat_buscar_Click(object sender, EventArgs e)
         {
-            int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
-            switch (value)
+            try
             {
-                case 2:
-                    ctrl = "nombre_catalogo";
-                    valor = txt_parametros.Text;
-                    break;
-                case 3:
-                    ctrl = "tipo_catalogo";
-                    valor = ((ComboboxItem)cmb_tipo.SelectedItem).Text;
-                    break;
-                case 4:
-                    ctrl = "publicacion";
-                    valor = txt_parametros.Text;
-                    break;
-                case 5:
-                    ctrl = "spec_catalogo";
-                    valor = ((ComboboxItem)cmb_spec.SelectedItem).Text;
-                    break;
-                case 6:
-                    ctrl = "fabricante";
-                    valor = txt_parametros.Text;
-                    break;
-                case 7:
-                    ctrl = "referencia";
-                    valor = txt_parametros.Text;
-                    break;
+                int value = Convert.ToInt32(((ComboboxItem)cmb_filtros.SelectedItem).Value);
+                switch (value)
+                {
+                    case 2:
+                        ctrl = "nombre_catalogo";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 3:
+                        ctrl = "tipo_catalogo";
+                        valor = ((ComboboxItem)cmb_tipo.SelectedItem).Text;
+                        break;
+                    case 4:
+                        ctrl = "publicacion";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 5:
+                        ctrl = "spec_catalogo";
+                        valor = ((ComboboxItem)cmb_spec.SelectedItem).Text;
+                        break;
+                    case 6:
+                        ctrl = "fabricante";
+                        valor = txt_parametros.Text;
+                        break;
+                    case 7:
+                        ctrl = "referencia";
+                        valor = txt_parametros.Text;
+                        break;
+                }
+                this.DialogResult = DialogResult.OK;
+                this.Close();
             }
-            this.DialogResult = DialogResult.OK;
-            this.Close();                        
+            catch (Exception ex)
+            {
+                if (ex is NullReferenceException)
+                {
+                    MessageBox.Show("Selecciona una opcion");
+                }
+            }                   
         }
 
         private void Catalogos_Buscar_Load(object sender, EventArgs e)
