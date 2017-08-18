@@ -54,6 +54,8 @@
             this.rfcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_rfc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.btn_borrar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_FTD)).BeginInit();
             this.SuspendLayout();
@@ -67,12 +69,14 @@
             this.toolStripLabel2,
             this.btn_editar,
             this.toolStripLabel1,
-            this.btn_contactos,
-            this.toolStripLabel5,
             this.toolStripLabel6,
             this.btn_cancelar,
             this.toolStripLabel4,
-            this.btn_seleccionar});
+            this.btn_seleccionar,
+            this.btn_borrar,
+            this.toolStripLabel3,
+            this.btn_contactos,
+            this.toolStripLabel5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(68, 639);
@@ -280,6 +284,22 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "R.F.C";
             // 
+            // btn_borrar
+            // 
+            this.btn_borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_borrar.Image")));
+            this.btn_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_borrar.Name = "btn_borrar";
+            this.btn_borrar.Size = new System.Drawing.Size(65, 54);
+            this.btn_borrar.Text = "toolStripButton1";
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel3.Text = "Borrar";
+            // 
             // FTD_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -335,5 +355,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn apoyoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mayoristaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rfcColumn;
+        private System.Windows.Forms.ToolStripButton btn_borrar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }

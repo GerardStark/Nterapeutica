@@ -82,15 +82,12 @@ namespace AppLicitaciones
             {
                 SqlConnection con = new SqlConnection(mc.con);
                 con.Open();
-                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT nombre_catalogo,tipo_catalogo,spec_catalogo FROM catalogos_info_general WHERE nombre_catalogo = @nombre AND tipo_catalogo = @tipo AND spec_catalogo =@espec)
-                    BEGIN
-                        INSERT INTO catalogos_info_general (id_catalogo,nombre_catalogo,tipo_catalogo,publicacion,spec_catalogo,fabricante,marca,idioma,dir_archivo,actualizado_en)
-                        OUTPUT INSERTED.id_catalogo VALUES (@nombre,@año,@tipo,@espec,@fabricante,@marca,@idioma,@archivo,@actualizado)
-                    END", con);
+                SqlCommand cmd = new SqlCommand("catalogos_insert", con);
+                cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nombre",txt_nombre.Text.ToUpper());
-                cmd.Parameters.AddWithValue("@año",txt_year.Text);
-                cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);
                 cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                cmd.Parameters.AddWithValue("@año",txt_year.Text);
+                cmd.Parameters.AddWithValue("@espec", (cmb_spec.SelectedItem as ComboboxItem).Text);                
                 cmd.Parameters.AddWithValue("@fabricante", txt_fabricante.Text);
                 cmd.Parameters.AddWithValue("@marca", txt_marca.Text);
                 cmd.Parameters.AddWithValue("@idioma", (cmb_idioma.SelectedItem as ComboboxItem).Text);
@@ -110,6 +107,7 @@ namespace AppLicitaciones
                 else
                 {
                     MessageBox.Show(ex.Message);
+                    throw;
                 }
 
             }

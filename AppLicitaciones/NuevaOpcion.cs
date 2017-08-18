@@ -93,7 +93,7 @@ namespace AppLicitaciones
             this.idCucop = idCucop;
             this.optCucop = opt;
             this.idVinculo = vinc;
-            lbl_id_vinculo.Text = idVinculo.ToString();
+            //lbl_id_vinculo.Text = idVinculo.ToString();
         }
 
         private void btn_reg_vincular_Click(object sender, EventArgs e)
@@ -154,6 +154,28 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.Message);
                 throw;
+            }
+        }
+
+        private void btn_selectCarta_Click(object sender, EventArgs e)
+        {
+            FTD_Principal form = new FTD_Principal();
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                txt_carta.Text = form.nombre_fabricante;
+                int idFabricante = form.id_fabricante;
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand(@"UPDATE cucop_vinculos SET carta_apoyo = @carta WHERE id_vinculacion = @idVinc", con))
+                    {
+                        cmd.Parameters.AddWithValue("@idVinc", idVinculo);
+                        cmd.Parameters.AddWithValue("@carta", idFabricante);
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Asignado");                        
+                    }
+                }
             }
         }
     }

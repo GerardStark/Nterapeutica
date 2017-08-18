@@ -22,6 +22,7 @@ namespace AppLicitaciones
             InitializeComponent();
             this.DGV_FTD.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGV_FTD.MultiSelect = false;
+            llenartablaftd();
         }
         public void llenartablaftd()
         {
@@ -44,11 +45,6 @@ namespace AppLicitaciones
             {
                 MessageBox.Show(ex.ToString());
             }
-        }
-
-        private void DGV_FTD_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-           
         }
 
         private void btn_seleccionar_Click(object sender, EventArgs e)
@@ -159,6 +155,27 @@ namespace AppLicitaciones
         private void DGV_FTD_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             limpiarcampos();
+        }
+
+        private void btn_borrar_Click(object sender, EventArgs e)
+        {
+            if (id_fabricante != 0)
+            {
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("DELETE FROM fabricantes_titulares_distribuidores WHERE id_ftd = @id", con))
+                    {
+                        cmd.Parameters.AddWithValue("@id",id_fabricante);
+                        Int32 success = cmd.ExecuteNonQuery();
+                        if (success != 0)
+                        {
+                            MessageBox.Show("Borrado");
+                            llenartablaftd();
+                        }
+                    }
+                }
+            }
         }
     }
 }

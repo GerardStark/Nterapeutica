@@ -87,10 +87,11 @@ namespace AppLicitaciones
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
                 {
+                    con.Open();
                     //procedimiento en SQL para insertar bases
                     using (SqlCommand cmd = new SqlCommand("licitaciones_bases_insert", con))
                     {
-                        con.Open();
+                        
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@numero", txt_numero.Text.ToUpper());
                         cmd.Parameters.AddWithValue("@unidadComp", txt_unidad_compradora.Text);

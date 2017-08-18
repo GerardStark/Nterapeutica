@@ -36,8 +36,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.lbl_id_vinculo = new System.Windows.Forms.Label();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_cambiar_nombre = new System.Windows.Forms.Button();
             this.list_vinc_reg = new System.Windows.Forms.DataGridView();
             this.datColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +43,9 @@
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.list_vinc_cert = new System.Windows.Forms.DataGridView();
             this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_selectCarta = new System.Windows.Forms.Button();
+            this.txt_carta = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_reg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cert)).BeginInit();
@@ -52,7 +53,7 @@
             // 
             // txt_nombre_prod
             // 
-            this.txt_nombre_prod.Location = new System.Drawing.Point(247, 26);
+            this.txt_nombre_prod.Location = new System.Drawing.Point(263, 42);
             this.txt_nombre_prod.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_nombre_prod.Name = "txt_nombre_prod";
             this.txt_nombre_prod.Size = new System.Drawing.Size(480, 26);
@@ -61,7 +62,7 @@
             // 
             // btn_cert_vincular
             // 
-            this.btn_cert_vincular.Location = new System.Drawing.Point(895, 409);
+            this.btn_cert_vincular.Location = new System.Drawing.Point(911, 469);
             this.btn_cert_vincular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_cert_vincular.Name = "btn_cert_vincular";
             this.btn_cert_vincular.Size = new System.Drawing.Size(184, 49);
@@ -72,7 +73,7 @@
             // 
             // btm_cat_vincular
             // 
-            this.btm_cat_vincular.Location = new System.Drawing.Point(500, 409);
+            this.btm_cat_vincular.Location = new System.Drawing.Point(516, 469);
             this.btm_cat_vincular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btm_cat_vincular.Name = "btm_cat_vincular";
             this.btm_cat_vincular.Size = new System.Drawing.Size(184, 49);
@@ -83,7 +84,7 @@
             // 
             // btn_reg_vincular
             // 
-            this.btn_reg_vincular.Location = new System.Drawing.Point(100, 409);
+            this.btn_reg_vincular.Location = new System.Drawing.Point(116, 469);
             this.btn_reg_vincular.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_reg_vincular.Name = "btn_reg_vincular";
             this.btn_reg_vincular.Size = new System.Drawing.Size(184, 49);
@@ -95,7 +96,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(501, 72);
+            this.label7.Location = new System.Drawing.Point(517, 132);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 20);
@@ -105,7 +106,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(903, 72);
+            this.label6.Location = new System.Drawing.Point(919, 132);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 20);
@@ -115,7 +116,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(96, 72);
+            this.label5.Location = new System.Drawing.Point(112, 132);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 20);
@@ -125,36 +126,17 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(99, 31);
+            this.label2.Location = new System.Drawing.Point(118, 45);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 20);
             this.label2.TabIndex = 172;
             this.label2.Text = "Nombre Producto:";
             // 
-            // lbl_id_vinculo
-            // 
-            this.lbl_id_vinculo.AutoSize = true;
-            this.lbl_id_vinculo.Location = new System.Drawing.Point(21, 31);
-            this.lbl_id_vinculo.Name = "lbl_id_vinculo";
-            this.lbl_id_vinculo.Size = new System.Drawing.Size(51, 20);
-            this.lbl_id_vinculo.TabIndex = 183;
-            this.lbl_id_vinculo.Text = "label1";
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 544);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1222, 25);
-            this.toolStrip1.TabIndex = 184;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // btn_cambiar_nombre
             // 
             this.btn_cambiar_nombre.Enabled = false;
-            this.btn_cambiar_nombre.Location = new System.Drawing.Point(735, 26);
+            this.btn_cambiar_nombre.Location = new System.Drawing.Point(751, 42);
             this.btn_cambiar_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_cambiar_nombre.Name = "btn_cambiar_nombre";
             this.btn_cambiar_nombre.Size = new System.Drawing.Size(97, 26);
@@ -170,7 +152,7 @@
             this.list_vinc_reg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.list_vinc_reg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datColumn});
-            this.list_vinc_reg.Location = new System.Drawing.Point(25, 95);
+            this.list_vinc_reg.Location = new System.Drawing.Point(41, 155);
             this.list_vinc_reg.Name = "list_vinc_reg";
             this.list_vinc_reg.ReadOnly = true;
             this.list_vinc_reg.RowHeadersVisible = false;
@@ -191,7 +173,7 @@
             this.list_vinc_cat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.list_vinc_cat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreColumn});
-            this.list_vinc_cat.Location = new System.Drawing.Point(425, 95);
+            this.list_vinc_cat.Location = new System.Drawing.Point(441, 155);
             this.list_vinc_cat.Name = "list_vinc_cat";
             this.list_vinc_cat.ReadOnly = true;
             this.list_vinc_cat.RowHeadersVisible = false;
@@ -212,7 +194,7 @@
             this.list_vinc_cert.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.list_vinc_cert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeroColumn});
-            this.list_vinc_cert.Location = new System.Drawing.Point(820, 95);
+            this.list_vinc_cert.Location = new System.Drawing.Point(836, 155);
             this.list_vinc_cert.Name = "list_vinc_cert";
             this.list_vinc_cert.ReadOnly = true;
             this.list_vinc_cert.RowHeadersVisible = false;
@@ -226,16 +208,47 @@
             this.numeroColumn.ReadOnly = true;
             this.numeroColumn.Width = 330;
             // 
+            // btn_selectCarta
+            // 
+            this.btn_selectCarta.Location = new System.Drawing.Point(548, 78);
+            this.btn_selectCarta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_selectCarta.Name = "btn_selectCarta";
+            this.btn_selectCarta.Size = new System.Drawing.Size(112, 26);
+            this.btn_selectCarta.TabIndex = 191;
+            this.btn_selectCarta.Text = "Seleccionar";
+            this.btn_selectCarta.UseVisualStyleBackColor = true;
+            this.btn_selectCarta.Click += new System.EventHandler(this.btn_selectCarta_Click);
+            // 
+            // txt_carta
+            // 
+            this.txt_carta.Location = new System.Drawing.Point(263, 78);
+            this.txt_carta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_carta.Name = "txt_carta";
+            this.txt_carta.ReadOnly = true;
+            this.txt_carta.Size = new System.Drawing.Size(277, 26);
+            this.txt_carta.TabIndex = 190;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(132, 81);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(123, 20);
+            this.label1.TabIndex = 189;
+            this.label1.Text = "Carta de Apoyo:";
+            // 
             // NuevaOpcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_selectCarta);
+            this.Controls.Add(this.txt_carta);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.list_vinc_cert);
             this.Controls.Add(this.list_vinc_cat);
             this.Controls.Add(this.list_vinc_reg);
             this.Controls.Add(this.btn_cambiar_nombre);
-            this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.lbl_id_vinculo);
             this.Controls.Add(this.txt_nombre_prod);
             this.Controls.Add(this.btn_cert_vincular);
             this.Controls.Add(this.btm_cat_vincular);
@@ -265,8 +278,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lbl_id_vinculo;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Button btn_cambiar_nombre;
         private System.Windows.Forms.DataGridView list_vinc_reg;
         private System.Windows.Forms.DataGridView list_vinc_cat;
@@ -274,5 +285,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn datColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numeroColumn;
+        private System.Windows.Forms.Button btn_selectCarta;
+        private System.Windows.Forms.TextBox txt_carta;
+        private System.Windows.Forms.Label label1;
     }
 }

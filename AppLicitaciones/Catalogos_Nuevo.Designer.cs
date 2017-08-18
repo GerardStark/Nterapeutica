@@ -245,6 +245,7 @@
             this.btn_archivo.TabIndex = 1030;
             this.btn_archivo.Text = "Seleccionar";
             this.btn_archivo.UseVisualStyleBackColor = true;
+            this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
             // 
             // Catalogos_Nuevo
             // 

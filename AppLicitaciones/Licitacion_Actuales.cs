@@ -85,7 +85,7 @@ namespace AppLicitaciones
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                throw;
+               
             }
         }
 

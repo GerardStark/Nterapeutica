@@ -81,36 +81,36 @@
             // registrosSanitariosToolStripMenuItem
             // 
             this.registrosSanitariosToolStripMenuItem.Name = "registrosSanitariosToolStripMenuItem";
-            this.registrosSanitariosToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
+            this.registrosSanitariosToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.registrosSanitariosToolStripMenuItem.Text = "Registros Sanitarios";
             this.registrosSanitariosToolStripMenuItem.Click += new System.EventHandler(this.registrosSanitariosToolStripMenuItem_Click);
             // 
             // certificadosDeCalidadToolStripMenuItem
             // 
             this.certificadosDeCalidadToolStripMenuItem.Name = "certificadosDeCalidadToolStripMenuItem";
-            this.certificadosDeCalidadToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
+            this.certificadosDeCalidadToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.certificadosDeCalidadToolStripMenuItem.Text = "Certificados de Calidad";
             this.certificadosDeCalidadToolStripMenuItem.Click += new System.EventHandler(this.certificadosDeCalidadToolStripMenuItem_Click);
             // 
             // catálogosDeProductosToolStripMenuItem
             // 
             this.catálogosDeProductosToolStripMenuItem.Name = "catálogosDeProductosToolStripMenuItem";
-            this.catálogosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
+            this.catálogosDeProductosToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.catálogosDeProductosToolStripMenuItem.Text = "Catálogos de Productos";
             this.catálogosDeProductosToolStripMenuItem.Click += new System.EventHandler(this.catálogosDeProductosToolStripMenuItem_Click);
             // 
             // cuadroBasicoDelIMSSToolStripMenuItem
             // 
             this.cuadroBasicoDelIMSSToolStripMenuItem.Name = "cuadroBasicoDelIMSSToolStripMenuItem";
-            this.cuadroBasicoDelIMSSToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
+            this.cuadroBasicoDelIMSSToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
             this.cuadroBasicoDelIMSSToolStripMenuItem.Text = "Cuadro Basico del IMSS";
             this.cuadroBasicoDelIMSSToolStripMenuItem.Click += new System.EventHandler(this.cuadroBasicoDelIMSSToolStripMenuItem_Click);
             // 
             // fabricantesTitularesDistribuidoresToolStripMenuItem
             // 
             this.fabricantesTitularesDistribuidoresToolStripMenuItem.Name = "fabricantesTitularesDistribuidoresToolStripMenuItem";
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(329, 26);
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Text = "Fabricantes, Distribuidores, Titulares";
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem.Text = "Cartas de Apoyo/Marcas";
             this.fabricantesTitularesDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.fabricantesTitularesDistribuidoresToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem

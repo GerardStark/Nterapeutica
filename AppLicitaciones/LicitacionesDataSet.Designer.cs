@@ -84,9 +84,11 @@ namespace AppLicitaciones {
         
         private licitaciones_calendario_insertDataTable tablelicitaciones_calendario_insert;
         
-        private licitacion_columnasDataTable tablelicitacion_columnas;
+        private licitacion_items_info_AdDataTable tablelicitacion_items_info_Ad;
         
-        private licitacion_columnas_datosDataTable tablelicitacion_columnas_datos;
+        private licitacion_partidasDataTable tablelicitacion_partidas;
+        
+        private licitacion_subpar_proceDataTable tablelicitacion_subpar_proce;
         
         private global::System.Data.DataRelation relationFK_aux_cat_trad_ref_catalogos_claves_referencias;
         
@@ -136,13 +138,13 @@ namespace AppLicitaciones {
         
         private global::System.Data.DataRelation relationFK_registros_tramites_prorroga_registros_sanitarios;
         
-        private global::System.Data.DataRelation relationFK_licitacion_columnas_licitacion_bases;
+        private global::System.Data.DataRelation relationFK_licitacion_items_licitacion_subpar_proce;
         
-        private global::System.Data.DataRelation relationFK_licitacion_columnas_datos_licitacion_columnas;
+        private global::System.Data.DataRelation relationFK_licitacion_items_info_Ad_licitacion_subpar_proce;
         
-        private global::System.Data.DataRelation relationFK_licitacion_items_licitacion_columnas;
+        private global::System.Data.DataRelation relationFK_licitacion_partidas_licitacion_bases;
         
-        private global::System.Data.DataRelation relationFK_licitacion_columnas_licitacion_columnas1;
+        private global::System.Data.DataRelation relationFK_licitacion_subpar_proce_licitacion_partidas;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -262,11 +264,14 @@ namespace AppLicitaciones {
                 if ((ds.Tables["licitaciones_calendario_insert"] != null)) {
                     base.Tables.Add(new licitaciones_calendario_insertDataTable(ds.Tables["licitaciones_calendario_insert"]));
                 }
-                if ((ds.Tables["licitacion_columnas"] != null)) {
-                    base.Tables.Add(new licitacion_columnasDataTable(ds.Tables["licitacion_columnas"]));
+                if ((ds.Tables["licitacion_items_info_Ad"] != null)) {
+                    base.Tables.Add(new licitacion_items_info_AdDataTable(ds.Tables["licitacion_items_info_Ad"]));
                 }
-                if ((ds.Tables["licitacion_columnas_datos"] != null)) {
-                    base.Tables.Add(new licitacion_columnas_datosDataTable(ds.Tables["licitacion_columnas_datos"]));
+                if ((ds.Tables["licitacion_partidas"] != null)) {
+                    base.Tables.Add(new licitacion_partidasDataTable(ds.Tables["licitacion_partidas"]));
+                }
+                if ((ds.Tables["licitacion_subpar_proce"] != null)) {
+                    base.Tables.Add(new licitacion_subpar_proceDataTable(ds.Tables["licitacion_subpar_proce"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -590,9 +595,9 @@ namespace AppLicitaciones {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public licitacion_columnasDataTable licitacion_columnas {
+        public licitacion_items_info_AdDataTable licitacion_items_info_Ad {
             get {
-                return this.tablelicitacion_columnas;
+                return this.tablelicitacion_items_info_Ad;
             }
         }
         
@@ -600,9 +605,19 @@ namespace AppLicitaciones {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public licitacion_columnas_datosDataTable licitacion_columnas_datos {
+        public licitacion_partidasDataTable licitacion_partidas {
             get {
-                return this.tablelicitacion_columnas_datos;
+                return this.tablelicitacion_partidas;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public licitacion_subpar_proceDataTable licitacion_subpar_proce {
+            get {
+                return this.tablelicitacion_subpar_proce;
             }
         }
         
@@ -763,11 +778,14 @@ namespace AppLicitaciones {
                 if ((ds.Tables["licitaciones_calendario_insert"] != null)) {
                     base.Tables.Add(new licitaciones_calendario_insertDataTable(ds.Tables["licitaciones_calendario_insert"]));
                 }
-                if ((ds.Tables["licitacion_columnas"] != null)) {
-                    base.Tables.Add(new licitacion_columnasDataTable(ds.Tables["licitacion_columnas"]));
+                if ((ds.Tables["licitacion_items_info_Ad"] != null)) {
+                    base.Tables.Add(new licitacion_items_info_AdDataTable(ds.Tables["licitacion_items_info_Ad"]));
                 }
-                if ((ds.Tables["licitacion_columnas_datos"] != null)) {
-                    base.Tables.Add(new licitacion_columnas_datosDataTable(ds.Tables["licitacion_columnas_datos"]));
+                if ((ds.Tables["licitacion_partidas"] != null)) {
+                    base.Tables.Add(new licitacion_partidasDataTable(ds.Tables["licitacion_partidas"]));
+                }
+                if ((ds.Tables["licitacion_subpar_proce"] != null)) {
+                    base.Tables.Add(new licitacion_subpar_proceDataTable(ds.Tables["licitacion_subpar_proce"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -982,16 +1000,22 @@ namespace AppLicitaciones {
                     this.tablelicitaciones_calendario_insert.InitVars();
                 }
             }
-            this.tablelicitacion_columnas = ((licitacion_columnasDataTable)(base.Tables["licitacion_columnas"]));
+            this.tablelicitacion_items_info_Ad = ((licitacion_items_info_AdDataTable)(base.Tables["licitacion_items_info_Ad"]));
             if ((initTable == true)) {
-                if ((this.tablelicitacion_columnas != null)) {
-                    this.tablelicitacion_columnas.InitVars();
+                if ((this.tablelicitacion_items_info_Ad != null)) {
+                    this.tablelicitacion_items_info_Ad.InitVars();
                 }
             }
-            this.tablelicitacion_columnas_datos = ((licitacion_columnas_datosDataTable)(base.Tables["licitacion_columnas_datos"]));
+            this.tablelicitacion_partidas = ((licitacion_partidasDataTable)(base.Tables["licitacion_partidas"]));
             if ((initTable == true)) {
-                if ((this.tablelicitacion_columnas_datos != null)) {
-                    this.tablelicitacion_columnas_datos.InitVars();
+                if ((this.tablelicitacion_partidas != null)) {
+                    this.tablelicitacion_partidas.InitVars();
+                }
+            }
+            this.tablelicitacion_subpar_proce = ((licitacion_subpar_proceDataTable)(base.Tables["licitacion_subpar_proce"]));
+            if ((initTable == true)) {
+                if ((this.tablelicitacion_subpar_proce != null)) {
+                    this.tablelicitacion_subpar_proce.InitVars();
                 }
             }
             this.relationFK_aux_cat_trad_ref_catalogos_claves_referencias = this.Relations["FK_aux_cat_trad_ref_catalogos_claves_referencias"];
@@ -1018,10 +1042,10 @@ namespace AppLicitaciones {
             this.relationFK_registros_claves_referencias_registros_sanitarios = this.Relations["FK_registros_claves_referencias_registros_sanitarios"];
             this.relationFK_registros_sanitarios_paises_origen = this.Relations["FK_registros_sanitarios_paises_origen"];
             this.relationFK_registros_tramites_prorroga_registros_sanitarios = this.Relations["FK_registros_tramites_prorroga_registros_sanitarios"];
-            this.relationFK_licitacion_columnas_licitacion_bases = this.Relations["FK_licitacion_columnas_licitacion_bases"];
-            this.relationFK_licitacion_columnas_datos_licitacion_columnas = this.Relations["FK_licitacion_columnas_datos_licitacion_columnas"];
-            this.relationFK_licitacion_items_licitacion_columnas = this.Relations["FK_licitacion_items_licitacion_columnas"];
-            this.relationFK_licitacion_columnas_licitacion_columnas1 = this.Relations["FK_licitacion_columnas_licitacion_columnas1"];
+            this.relationFK_licitacion_items_licitacion_subpar_proce = this.Relations["FK_licitacion_items_licitacion_subpar_proce"];
+            this.relationFK_licitacion_items_info_Ad_licitacion_subpar_proce = this.Relations["FK_licitacion_items_info_Ad_licitacion_subpar_proce"];
+            this.relationFK_licitacion_partidas_licitacion_bases = this.Relations["FK_licitacion_partidas_licitacion_bases"];
+            this.relationFK_licitacion_subpar_proce_licitacion_partidas = this.Relations["FK_licitacion_subpar_proce_licitacion_partidas"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1092,10 +1116,12 @@ namespace AppLicitaciones {
             base.Tables.Add(this.tableaux_tipos_expediente);
             this.tablelicitaciones_calendario_insert = new licitaciones_calendario_insertDataTable();
             base.Tables.Add(this.tablelicitaciones_calendario_insert);
-            this.tablelicitacion_columnas = new licitacion_columnasDataTable();
-            base.Tables.Add(this.tablelicitacion_columnas);
-            this.tablelicitacion_columnas_datos = new licitacion_columnas_datosDataTable();
-            base.Tables.Add(this.tablelicitacion_columnas_datos);
+            this.tablelicitacion_items_info_Ad = new licitacion_items_info_AdDataTable();
+            base.Tables.Add(this.tablelicitacion_items_info_Ad);
+            this.tablelicitacion_partidas = new licitacion_partidasDataTable();
+            base.Tables.Add(this.tablelicitacion_partidas);
+            this.tablelicitacion_subpar_proce = new licitacion_subpar_proceDataTable();
+            base.Tables.Add(this.tablelicitacion_subpar_proce);
             this.relationFK_aux_cat_trad_ref_catalogos_claves_referencias = new global::System.Data.DataRelation("FK_aux_cat_trad_ref_catalogos_claves_referencias", new global::System.Data.DataColumn[] {
                         this.tablecatalogos_claves_referencias.id_clave_catalogoColumn}, new global::System.Data.DataColumn[] {
                         this.tableaux_cat_trad_ref.id_referenciaColumn}, false);
@@ -1192,22 +1218,22 @@ namespace AppLicitaciones {
                         this.tableregistros_sanitarios.id_registroColumn}, new global::System.Data.DataColumn[] {
                         this.tableregistros_tramites_prorroga.id_registro_sanitarioColumn}, false);
             this.Relations.Add(this.relationFK_registros_tramites_prorroga_registros_sanitarios);
-            this.relationFK_licitacion_columnas_licitacion_bases = new global::System.Data.DataRelation("FK_licitacion_columnas_licitacion_bases", new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_bases.id_basesColumn}, new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_columnas.id_basesColumn}, false);
-            this.Relations.Add(this.relationFK_licitacion_columnas_licitacion_bases);
-            this.relationFK_licitacion_columnas_datos_licitacion_columnas = new global::System.Data.DataRelation("FK_licitacion_columnas_datos_licitacion_columnas", new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_columnas.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_columnas_datos.id_columnaColumn}, false);
-            this.Relations.Add(this.relationFK_licitacion_columnas_datos_licitacion_columnas);
-            this.relationFK_licitacion_items_licitacion_columnas = new global::System.Data.DataRelation("FK_licitacion_items_licitacion_columnas", new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_columnas.idColumn}, new global::System.Data.DataColumn[] {
+            this.relationFK_licitacion_items_licitacion_subpar_proce = new global::System.Data.DataRelation("FK_licitacion_items_licitacion_subpar_proce", new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_subpar_proce.idColumn}, new global::System.Data.DataColumn[] {
                         this.tablelicitacion_items.id_paqueteColumn}, false);
-            this.Relations.Add(this.relationFK_licitacion_items_licitacion_columnas);
-            this.relationFK_licitacion_columnas_licitacion_columnas1 = new global::System.Data.DataRelation("FK_licitacion_columnas_licitacion_columnas1", new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_columnas.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tablelicitacion_columnas.id_padreColumn}, false);
-            this.Relations.Add(this.relationFK_licitacion_columnas_licitacion_columnas1);
+            this.Relations.Add(this.relationFK_licitacion_items_licitacion_subpar_proce);
+            this.relationFK_licitacion_items_info_Ad_licitacion_subpar_proce = new global::System.Data.DataRelation("FK_licitacion_items_info_Ad_licitacion_subpar_proce", new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_subpar_proce.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_items_info_Ad.id_itemColumn}, false);
+            this.Relations.Add(this.relationFK_licitacion_items_info_Ad_licitacion_subpar_proce);
+            this.relationFK_licitacion_partidas_licitacion_bases = new global::System.Data.DataRelation("FK_licitacion_partidas_licitacion_bases", new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_bases.id_basesColumn}, new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_partidas.id_basesColumn}, false);
+            this.Relations.Add(this.relationFK_licitacion_partidas_licitacion_bases);
+            this.relationFK_licitacion_subpar_proce_licitacion_partidas = new global::System.Data.DataRelation("FK_licitacion_subpar_proce_licitacion_partidas", new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_partidas.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablelicitacion_subpar_proce.id_partidaColumn}, false);
+            this.Relations.Add(this.relationFK_licitacion_subpar_proce_licitacion_partidas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1392,13 +1418,19 @@ namespace AppLicitaciones {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializelicitacion_columnas() {
+        private bool ShouldSerializelicitacion_items_info_Ad() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializelicitacion_columnas_datos() {
+        private bool ShouldSerializelicitacion_partidas() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializelicitacion_subpar_proce() {
             return false;
         }
         
@@ -1548,10 +1580,13 @@ namespace AppLicitaciones {
         public delegate void licitaciones_calendario_insertRowChangeEventHandler(object sender, licitaciones_calendario_insertRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void licitacion_columnasRowChangeEventHandler(object sender, licitacion_columnasRowChangeEvent e);
+        public delegate void licitacion_items_info_AdRowChangeEventHandler(object sender, licitacion_items_info_AdRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void licitacion_columnas_datosRowChangeEventHandler(object sender, licitacion_columnas_datosRowChangeEvent e);
+        public delegate void licitacion_partidasRowChangeEventHandler(object sender, licitacion_partidasRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void licitacion_subpar_proceRowChangeEventHandler(object sender, licitacion_subpar_proceRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -8526,7 +8561,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_itemsRow Addlicitacion_itemsRow(licitacion_columnasRow parentlicitacion_columnasRowByFK_licitacion_items_licitacion_columnas, string descripcion, string unidad_venta, System.DateTime creado_en, System.DateTime actualizado_en) {
+            public licitacion_itemsRow Addlicitacion_itemsRow(licitacion_subpar_proceRow parentlicitacion_subpar_proceRowByFK_licitacion_items_licitacion_subpar_proce, string descripcion, string unidad_venta, System.DateTime creado_en, System.DateTime actualizado_en) {
                 licitacion_itemsRow rowlicitacion_itemsRow = ((licitacion_itemsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -8535,8 +8570,8 @@ namespace AppLicitaciones {
                         unidad_venta,
                         creado_en,
                         actualizado_en};
-                if ((parentlicitacion_columnasRowByFK_licitacion_items_licitacion_columnas != null)) {
-                    columnValuesArray[1] = parentlicitacion_columnasRowByFK_licitacion_items_licitacion_columnas[0];
+                if ((parentlicitacion_subpar_proceRowByFK_licitacion_items_licitacion_subpar_proce != null)) {
+                    columnValuesArray[1] = parentlicitacion_subpar_proceRowByFK_licitacion_items_licitacion_subpar_proce[0];
                 }
                 rowlicitacion_itemsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowlicitacion_itemsRow);
@@ -11970,24 +12005,24 @@ namespace AppLicitaciones {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class licitacion_columnasDataTable : global::System.Data.TypedTableBase<licitacion_columnasRow> {
+        public partial class licitacion_items_info_AdDataTable : global::System.Data.TypedTableBase<licitacion_items_info_AdRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnid_bases;
+            private global::System.Data.DataColumn columnid_item;
             
-            private global::System.Data.DataColumn columnnombre_columna;
+            private global::System.Data.DataColumn columnnombre_adicional;
+            
+            private global::System.Data.DataColumn columnnumero_adicional;
             
             private global::System.Data.DataColumn columncreado_en;
             
-            private global::System.Data.DataColumn columnactualizado_en;
-            
-            private global::System.Data.DataColumn columnid_padre;
+            private global::System.Data.DataColumn columnactualizado_En;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasDataTable() {
-                this.TableName = "licitacion_columnas";
+            public licitacion_items_info_AdDataTable() {
+                this.TableName = "licitacion_items_info_Ad";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -11995,7 +12030,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal licitacion_columnasDataTable(global::System.Data.DataTable table) {
+            internal licitacion_items_info_AdDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -12012,7 +12047,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected licitacion_columnasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected licitacion_items_info_AdDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -12027,17 +12062,25 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_basesColumn {
+            public global::System.Data.DataColumn id_itemColumn {
                 get {
-                    return this.columnid_bases;
+                    return this.columnid_item;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn nombre_columnaColumn {
+            public global::System.Data.DataColumn nombre_adicionalColumn {
                 get {
-                    return this.columnnombre_columna;
+                    return this.columnnombre_adicional;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numero_adicionalColumn {
+                get {
+                    return this.columnnumero_adicional;
                 }
             }
             
@@ -12051,17 +12094,9 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn actualizado_enColumn {
+            public global::System.Data.DataColumn actualizado_EnColumn {
                 get {
-                    return this.columnactualizado_en;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_padreColumn {
-                get {
-                    return this.columnid_padre;
+                    return this.columnactualizado_En;
                 }
             }
             
@@ -12076,63 +12111,60 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow this[int index] {
+            public licitacion_items_info_AdRow this[int index] {
                 get {
-                    return ((licitacion_columnasRow)(this.Rows[index]));
+                    return ((licitacion_items_info_AdRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnasRowChangeEventHandler licitacion_columnasRowChanging;
+            public event licitacion_items_info_AdRowChangeEventHandler licitacion_items_info_AdRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnasRowChangeEventHandler licitacion_columnasRowChanged;
+            public event licitacion_items_info_AdRowChangeEventHandler licitacion_items_info_AdRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnasRowChangeEventHandler licitacion_columnasRowDeleting;
+            public event licitacion_items_info_AdRowChangeEventHandler licitacion_items_info_AdRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnasRowChangeEventHandler licitacion_columnasRowDeleted;
+            public event licitacion_items_info_AdRowChangeEventHandler licitacion_items_info_AdRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addlicitacion_columnasRow(licitacion_columnasRow row) {
+            public void Addlicitacion_items_info_AdRow(licitacion_items_info_AdRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow Addlicitacion_columnasRow(licitacion_basesRow parentlicitacion_basesRowByFK_licitacion_columnas_licitacion_bases, string nombre_columna, System.DateTime creado_en, System.DateTime actualizado_en, licitacion_columnasRow parentlicitacion_columnasRowByFK_licitacion_columnas_licitacion_columnas1) {
-                licitacion_columnasRow rowlicitacion_columnasRow = ((licitacion_columnasRow)(this.NewRow()));
+            public licitacion_items_info_AdRow Addlicitacion_items_info_AdRow(licitacion_subpar_proceRow parentlicitacion_subpar_proceRowByFK_licitacion_items_info_Ad_licitacion_subpar_proce, string nombre_adicional, int numero_adicional, System.DateTime creado_en, System.DateTime actualizado_En) {
+                licitacion_items_info_AdRow rowlicitacion_items_info_AdRow = ((licitacion_items_info_AdRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        nombre_columna,
+                        nombre_adicional,
+                        numero_adicional,
                         creado_en,
-                        actualizado_en,
-                        null};
-                if ((parentlicitacion_basesRowByFK_licitacion_columnas_licitacion_bases != null)) {
-                    columnValuesArray[1] = parentlicitacion_basesRowByFK_licitacion_columnas_licitacion_bases[0];
+                        actualizado_En};
+                if ((parentlicitacion_subpar_proceRowByFK_licitacion_items_info_Ad_licitacion_subpar_proce != null)) {
+                    columnValuesArray[1] = parentlicitacion_subpar_proceRowByFK_licitacion_items_info_Ad_licitacion_subpar_proce[0];
                 }
-                if ((parentlicitacion_columnasRowByFK_licitacion_columnas_licitacion_columnas1 != null)) {
-                    columnValuesArray[5] = parentlicitacion_columnasRowByFK_licitacion_columnas_licitacion_columnas1[0];
-                }
-                rowlicitacion_columnasRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowlicitacion_columnasRow);
-                return rowlicitacion_columnasRow;
+                rowlicitacion_items_info_AdRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlicitacion_items_info_AdRow);
+                return rowlicitacion_items_info_AdRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow FindByid(int id) {
-                return ((licitacion_columnasRow)(this.Rows.Find(new object[] {
+            public licitacion_items_info_AdRow FindByid(int id) {
+                return ((licitacion_items_info_AdRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                licitacion_columnasDataTable cln = ((licitacion_columnasDataTable)(base.Clone()));
+                licitacion_items_info_AdDataTable cln = ((licitacion_items_info_AdDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -12140,18 +12172,18 @@ namespace AppLicitaciones {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new licitacion_columnasDataTable();
+                return new licitacion_items_info_AdDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnid_bases = base.Columns["id_bases"];
-                this.columnnombre_columna = base.Columns["nombre_columna"];
+                this.columnid_item = base.Columns["id_item"];
+                this.columnnombre_adicional = base.Columns["nombre_adicional"];
+                this.columnnumero_adicional = base.Columns["numero_adicional"];
                 this.columncreado_en = base.Columns["creado_en"];
-                this.columnactualizado_en = base.Columns["actualizado_en"];
-                this.columnid_padre = base.Columns["id_padre"];
+                this.columnactualizado_En = base.Columns["actualizado_En"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12159,16 +12191,16 @@ namespace AppLicitaciones {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnid_bases = new global::System.Data.DataColumn("id_bases", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_bases);
-                this.columnnombre_columna = new global::System.Data.DataColumn("nombre_columna", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre_columna);
+                this.columnid_item = new global::System.Data.DataColumn("id_item", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_item);
+                this.columnnombre_adicional = new global::System.Data.DataColumn("nombre_adicional", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_adicional);
+                this.columnnumero_adicional = new global::System.Data.DataColumn("numero_adicional", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_adicional);
                 this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreado_en);
-                this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnactualizado_en);
-                this.columnid_padre = new global::System.Data.DataColumn("id_padre", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_padre);
+                this.columnactualizado_En = new global::System.Data.DataColumn("actualizado_En", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactualizado_En);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -12177,33 +12209,33 @@ namespace AppLicitaciones {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
-                this.columnnombre_columna.MaxLength = 2147483647;
+                this.columnnombre_adicional.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow Newlicitacion_columnasRow() {
-                return ((licitacion_columnasRow)(this.NewRow()));
+            public licitacion_items_info_AdRow Newlicitacion_items_info_AdRow() {
+                return ((licitacion_items_info_AdRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new licitacion_columnasRow(builder);
+                return new licitacion_items_info_AdRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(licitacion_columnasRow);
+                return typeof(licitacion_items_info_AdRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.licitacion_columnasRowChanged != null)) {
-                    this.licitacion_columnasRowChanged(this, new licitacion_columnasRowChangeEvent(((licitacion_columnasRow)(e.Row)), e.Action));
+                if ((this.licitacion_items_info_AdRowChanged != null)) {
+                    this.licitacion_items_info_AdRowChanged(this, new licitacion_items_info_AdRowChangeEvent(((licitacion_items_info_AdRow)(e.Row)), e.Action));
                 }
             }
             
@@ -12211,8 +12243,8 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.licitacion_columnasRowChanging != null)) {
-                    this.licitacion_columnasRowChanging(this, new licitacion_columnasRowChangeEvent(((licitacion_columnasRow)(e.Row)), e.Action));
+                if ((this.licitacion_items_info_AdRowChanging != null)) {
+                    this.licitacion_items_info_AdRowChanging(this, new licitacion_items_info_AdRowChangeEvent(((licitacion_items_info_AdRow)(e.Row)), e.Action));
                 }
             }
             
@@ -12220,8 +12252,8 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.licitacion_columnasRowDeleted != null)) {
-                    this.licitacion_columnasRowDeleted(this, new licitacion_columnasRowChangeEvent(((licitacion_columnasRow)(e.Row)), e.Action));
+                if ((this.licitacion_items_info_AdRowDeleted != null)) {
+                    this.licitacion_items_info_AdRowDeleted(this, new licitacion_items_info_AdRowChangeEvent(((licitacion_items_info_AdRow)(e.Row)), e.Action));
                 }
             }
             
@@ -12229,14 +12261,14 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.licitacion_columnasRowDeleting != null)) {
-                    this.licitacion_columnasRowDeleting(this, new licitacion_columnasRowChangeEvent(((licitacion_columnasRow)(e.Row)), e.Action));
+                if ((this.licitacion_items_info_AdRowDeleting != null)) {
+                    this.licitacion_items_info_AdRowDeleting(this, new licitacion_items_info_AdRowChangeEvent(((licitacion_items_info_AdRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removelicitacion_columnasRow(licitacion_columnasRow row) {
+            public void Removelicitacion_items_info_AdRow(licitacion_items_info_AdRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -12263,7 +12295,7 @@ namespace AppLicitaciones {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "licitacion_columnasDataTable";
+                attribute2.FixedValue = "licitacion_items_info_AdDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -12309,13 +12341,17 @@ namespace AppLicitaciones {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class licitacion_columnas_datosDataTable : global::System.Data.TypedTableBase<licitacion_columnas_datosRow> {
+        public partial class licitacion_partidasDataTable : global::System.Data.TypedTableBase<licitacion_partidasRow> {
             
             private global::System.Data.DataColumn columnid;
             
-            private global::System.Data.DataColumn columnid_columna;
+            private global::System.Data.DataColumn columnid_bases;
             
-            private global::System.Data.DataColumn columndescripcion;
+            private global::System.Data.DataColumn columnnumero_partida;
+            
+            private global::System.Data.DataColumn columnnombre_partida;
+            
+            private global::System.Data.DataColumn columnespecialidad;
             
             private global::System.Data.DataColumn columncreado_en;
             
@@ -12323,8 +12359,8 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosDataTable() {
-                this.TableName = "licitacion_columnas_datos";
+            public licitacion_partidasDataTable() {
+                this.TableName = "licitacion_partidas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -12332,7 +12368,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal licitacion_columnas_datosDataTable(global::System.Data.DataTable table) {
+            internal licitacion_partidasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -12349,7 +12385,7 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected licitacion_columnas_datosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected licitacion_partidasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -12364,17 +12400,33 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn id_columnaColumn {
+            public global::System.Data.DataColumn id_basesColumn {
                 get {
-                    return this.columnid_columna;
+                    return this.columnid_bases;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn descripcionColumn {
+            public global::System.Data.DataColumn numero_partidaColumn {
                 get {
-                    return this.columndescripcion;
+                    return this.columnnumero_partida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombre_partidaColumn {
+                get {
+                    return this.columnnombre_partida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn especialidadColumn {
+                get {
+                    return this.columnespecialidad;
                 }
             }
             
@@ -12405,59 +12457,61 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRow this[int index] {
+            public licitacion_partidasRow this[int index] {
                 get {
-                    return ((licitacion_columnas_datosRow)(this.Rows[index]));
+                    return ((licitacion_partidasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnas_datosRowChangeEventHandler licitacion_columnas_datosRowChanging;
+            public event licitacion_partidasRowChangeEventHandler licitacion_partidasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnas_datosRowChangeEventHandler licitacion_columnas_datosRowChanged;
+            public event licitacion_partidasRowChangeEventHandler licitacion_partidasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnas_datosRowChangeEventHandler licitacion_columnas_datosRowDeleting;
+            public event licitacion_partidasRowChangeEventHandler licitacion_partidasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event licitacion_columnas_datosRowChangeEventHandler licitacion_columnas_datosRowDeleted;
+            public event licitacion_partidasRowChangeEventHandler licitacion_partidasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Addlicitacion_columnas_datosRow(licitacion_columnas_datosRow row) {
+            public void Addlicitacion_partidasRow(licitacion_partidasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRow Addlicitacion_columnas_datosRow(licitacion_columnasRow parentlicitacion_columnasRowByFK_licitacion_columnas_datos_licitacion_columnas, string descripcion, System.DateTime creado_en, System.DateTime actualizado_en) {
-                licitacion_columnas_datosRow rowlicitacion_columnas_datosRow = ((licitacion_columnas_datosRow)(this.NewRow()));
+            public licitacion_partidasRow Addlicitacion_partidasRow(licitacion_basesRow parentlicitacion_basesRowByFK_licitacion_partidas_licitacion_bases, int numero_partida, string nombre_partida, string especialidad, System.DateTime creado_en, System.DateTime actualizado_en) {
+                licitacion_partidasRow rowlicitacion_partidasRow = ((licitacion_partidasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        descripcion,
+                        numero_partida,
+                        nombre_partida,
+                        especialidad,
                         creado_en,
                         actualizado_en};
-                if ((parentlicitacion_columnasRowByFK_licitacion_columnas_datos_licitacion_columnas != null)) {
-                    columnValuesArray[1] = parentlicitacion_columnasRowByFK_licitacion_columnas_datos_licitacion_columnas[0];
+                if ((parentlicitacion_basesRowByFK_licitacion_partidas_licitacion_bases != null)) {
+                    columnValuesArray[1] = parentlicitacion_basesRowByFK_licitacion_partidas_licitacion_bases[0];
                 }
-                rowlicitacion_columnas_datosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowlicitacion_columnas_datosRow);
-                return rowlicitacion_columnas_datosRow;
+                rowlicitacion_partidasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlicitacion_partidasRow);
+                return rowlicitacion_partidasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRow FindByid(int id) {
-                return ((licitacion_columnas_datosRow)(this.Rows.Find(new object[] {
+            public licitacion_partidasRow FindByid(int id) {
+                return ((licitacion_partidasRow)(this.Rows.Find(new object[] {
                             id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                licitacion_columnas_datosDataTable cln = ((licitacion_columnas_datosDataTable)(base.Clone()));
+                licitacion_partidasDataTable cln = ((licitacion_partidasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -12465,15 +12519,17 @@ namespace AppLicitaciones {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new licitacion_columnas_datosDataTable();
+                return new licitacion_partidasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnid = base.Columns["id"];
-                this.columnid_columna = base.Columns["id_columna"];
-                this.columndescripcion = base.Columns["descripcion"];
+                this.columnid_bases = base.Columns["id_bases"];
+                this.columnnumero_partida = base.Columns["numero_partida"];
+                this.columnnombre_partida = base.Columns["nombre_partida"];
+                this.columnespecialidad = base.Columns["especialidad"];
                 this.columncreado_en = base.Columns["creado_en"];
                 this.columnactualizado_en = base.Columns["actualizado_en"];
             }
@@ -12483,10 +12539,14 @@ namespace AppLicitaciones {
             private void InitClass() {
                 this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
-                this.columnid_columna = new global::System.Data.DataColumn("id_columna", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_columna);
-                this.columndescripcion = new global::System.Data.DataColumn("descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescripcion);
+                this.columnid_bases = new global::System.Data.DataColumn("id_bases", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_bases);
+                this.columnnumero_partida = new global::System.Data.DataColumn("numero_partida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_partida);
+                this.columnnombre_partida = new global::System.Data.DataColumn("nombre_partida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_partida);
+                this.columnespecialidad = new global::System.Data.DataColumn("especialidad", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnespecialidad);
                 this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncreado_en);
                 this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -12499,33 +12559,34 @@ namespace AppLicitaciones {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
-                this.columndescripcion.MaxLength = 2147483647;
+                this.columnnombre_partida.MaxLength = 2147483647;
+                this.columnespecialidad.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRow Newlicitacion_columnas_datosRow() {
-                return ((licitacion_columnas_datosRow)(this.NewRow()));
+            public licitacion_partidasRow Newlicitacion_partidasRow() {
+                return ((licitacion_partidasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new licitacion_columnas_datosRow(builder);
+                return new licitacion_partidasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(licitacion_columnas_datosRow);
+                return typeof(licitacion_partidasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.licitacion_columnas_datosRowChanged != null)) {
-                    this.licitacion_columnas_datosRowChanged(this, new licitacion_columnas_datosRowChangeEvent(((licitacion_columnas_datosRow)(e.Row)), e.Action));
+                if ((this.licitacion_partidasRowChanged != null)) {
+                    this.licitacion_partidasRowChanged(this, new licitacion_partidasRowChangeEvent(((licitacion_partidasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -12533,8 +12594,8 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.licitacion_columnas_datosRowChanging != null)) {
-                    this.licitacion_columnas_datosRowChanging(this, new licitacion_columnas_datosRowChangeEvent(((licitacion_columnas_datosRow)(e.Row)), e.Action));
+                if ((this.licitacion_partidasRowChanging != null)) {
+                    this.licitacion_partidasRowChanging(this, new licitacion_partidasRowChangeEvent(((licitacion_partidasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -12542,8 +12603,8 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.licitacion_columnas_datosRowDeleted != null)) {
-                    this.licitacion_columnas_datosRowDeleted(this, new licitacion_columnas_datosRowChangeEvent(((licitacion_columnas_datosRow)(e.Row)), e.Action));
+                if ((this.licitacion_partidasRowDeleted != null)) {
+                    this.licitacion_partidasRowDeleted(this, new licitacion_partidasRowChangeEvent(((licitacion_partidasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -12551,14 +12612,14 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.licitacion_columnas_datosRowDeleting != null)) {
-                    this.licitacion_columnas_datosRowDeleting(this, new licitacion_columnas_datosRowChangeEvent(((licitacion_columnas_datosRow)(e.Row)), e.Action));
+                if ((this.licitacion_partidasRowDeleting != null)) {
+                    this.licitacion_partidasRowDeleting(this, new licitacion_partidasRowChangeEvent(((licitacion_partidasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Removelicitacion_columnas_datosRow(licitacion_columnas_datosRow row) {
+            public void Removelicitacion_partidasRow(licitacion_partidasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -12585,7 +12646,343 @@ namespace AppLicitaciones {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "licitacion_columnas_datosDataTable";
+                attribute2.FixedValue = "licitacion_partidasDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class licitacion_subpar_proceDataTable : global::System.Data.TypedTableBase<licitacion_subpar_proceRow> {
+            
+            private global::System.Data.DataColumn columnid;
+            
+            private global::System.Data.DataColumn columnid_partida;
+            
+            private global::System.Data.DataColumn columnnumero_subpartida;
+            
+            private global::System.Data.DataColumn columnnombre_subpartida;
+            
+            private global::System.Data.DataColumn columncreado_en;
+            
+            private global::System.Data.DataColumn columnactualizado_en;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceDataTable() {
+                this.TableName = "licitacion_subpar_proce";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal licitacion_subpar_proceDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected licitacion_subpar_proceDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn id_partidaColumn {
+                get {
+                    return this.columnid_partida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn numero_subpartidaColumn {
+                get {
+                    return this.columnnumero_subpartida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nombre_subpartidaColumn {
+                get {
+                    return this.columnnombre_subpartida;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn creado_enColumn {
+                get {
+                    return this.columncreado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn actualizado_enColumn {
+                get {
+                    return this.columnactualizado_en;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRow this[int index] {
+                get {
+                    return ((licitacion_subpar_proceRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event licitacion_subpar_proceRowChangeEventHandler licitacion_subpar_proceRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event licitacion_subpar_proceRowChangeEventHandler licitacion_subpar_proceRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event licitacion_subpar_proceRowChangeEventHandler licitacion_subpar_proceRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event licitacion_subpar_proceRowChangeEventHandler licitacion_subpar_proceRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Addlicitacion_subpar_proceRow(licitacion_subpar_proceRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRow Addlicitacion_subpar_proceRow(licitacion_partidasRow parentlicitacion_partidasRowByFK_licitacion_subpar_proce_licitacion_partidas, int numero_subpartida, string nombre_subpartida, System.DateTime creado_en, System.DateTime actualizado_en) {
+                licitacion_subpar_proceRow rowlicitacion_subpar_proceRow = ((licitacion_subpar_proceRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        numero_subpartida,
+                        nombre_subpartida,
+                        creado_en,
+                        actualizado_en};
+                if ((parentlicitacion_partidasRowByFK_licitacion_subpar_proce_licitacion_partidas != null)) {
+                    columnValuesArray[1] = parentlicitacion_partidasRowByFK_licitacion_subpar_proce_licitacion_partidas[0];
+                }
+                rowlicitacion_subpar_proceRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowlicitacion_subpar_proceRow);
+                return rowlicitacion_subpar_proceRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRow FindByid(int id) {
+                return ((licitacion_subpar_proceRow)(this.Rows.Find(new object[] {
+                            id})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                licitacion_subpar_proceDataTable cln = ((licitacion_subpar_proceDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new licitacion_subpar_proceDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnid = base.Columns["id"];
+                this.columnid_partida = base.Columns["id_partida"];
+                this.columnnumero_subpartida = base.Columns["numero_subpartida"];
+                this.columnnombre_subpartida = base.Columns["nombre_subpartida"];
+                this.columncreado_en = base.Columns["creado_en"];
+                this.columnactualizado_en = base.Columns["actualizado_en"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.columnid_partida = new global::System.Data.DataColumn("id_partida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_partida);
+                this.columnnumero_subpartida = new global::System.Data.DataColumn("numero_subpartida", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnumero_subpartida);
+                this.columnnombre_subpartida = new global::System.Data.DataColumn("nombre_subpartida", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_subpartida);
+                this.columncreado_en = new global::System.Data.DataColumn("creado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncreado_en);
+                this.columnactualizado_en = new global::System.Data.DataColumn("actualizado_en", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnactualizado_en);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
+                this.columnnombre_subpartida.MaxLength = 2147483647;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRow Newlicitacion_subpar_proceRow() {
+                return ((licitacion_subpar_proceRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new licitacion_subpar_proceRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(licitacion_subpar_proceRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.licitacion_subpar_proceRowChanged != null)) {
+                    this.licitacion_subpar_proceRowChanged(this, new licitacion_subpar_proceRowChangeEvent(((licitacion_subpar_proceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.licitacion_subpar_proceRowChanging != null)) {
+                    this.licitacion_subpar_proceRowChanging(this, new licitacion_subpar_proceRowChangeEvent(((licitacion_subpar_proceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.licitacion_subpar_proceRowDeleted != null)) {
+                    this.licitacion_subpar_proceRowDeleted(this, new licitacion_subpar_proceRowChangeEvent(((licitacion_subpar_proceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.licitacion_subpar_proceRowDeleting != null)) {
+                    this.licitacion_subpar_proceRowDeleting(this, new licitacion_subpar_proceRowChangeEvent(((licitacion_subpar_proceRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Removelicitacion_subpar_proceRow(licitacion_subpar_proceRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                LicitacionesDataSet ds = new LicitacionesDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "licitacion_subpar_proceDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -16755,12 +17152,12 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow[] Getlicitacion_columnasRows() {
-                if ((this.Table.ChildRelations["FK_licitacion_columnas_licitacion_bases"] == null)) {
-                    return new licitacion_columnasRow[0];
+            public licitacion_partidasRow[] Getlicitacion_partidasRows() {
+                if ((this.Table.ChildRelations["FK_licitacion_partidas_licitacion_bases"] == null)) {
+                    return new licitacion_partidasRow[0];
                 }
                 else {
-                    return ((licitacion_columnasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_columnas_licitacion_bases"])));
+                    return ((licitacion_partidasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_partidas_licitacion_bases"])));
                 }
             }
         }
@@ -17170,12 +17567,12 @@ namespace AppLicitaciones {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow licitacion_columnasRow {
+            public licitacion_subpar_proceRow licitacion_subpar_proceRow {
                 get {
-                    return ((licitacion_columnasRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_items_licitacion_columnas"])));
+                    return ((licitacion_subpar_proceRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_items_licitacion_subpar_proce"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_items_licitacion_columnas"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_items_licitacion_subpar_proce"]);
                 }
             }
             
@@ -18919,25 +19316,207 @@ namespace AppLicitaciones {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class licitacion_columnasRow : global::System.Data.DataRow {
+        public partial class licitacion_items_info_AdRow : global::System.Data.DataRow {
             
-            private licitacion_columnasDataTable tablelicitacion_columnas;
+            private licitacion_items_info_AdDataTable tablelicitacion_items_info_Ad;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal licitacion_columnasRow(global::System.Data.DataRowBuilder rb) : 
+            internal licitacion_items_info_AdRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablelicitacion_columnas = ((licitacion_columnasDataTable)(this.Table));
+                this.tablelicitacion_items_info_Ad = ((licitacion_items_info_AdDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablelicitacion_columnas.idColumn]));
+                    return ((int)(this[this.tablelicitacion_items_info_Ad.idColumn]));
                 }
                 set {
-                    this[this.tablelicitacion_columnas.idColumn] = value;
+                    this[this.tablelicitacion_items_info_Ad.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id_item {
+                get {
+                    try {
+                        return ((int)(this[this.tablelicitacion_items_info_Ad.id_itemColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_item\' de la tabla \'licitacion_items_info_Ad\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_items_info_Ad.id_itemColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_adicional {
+                get {
+                    try {
+                        return ((string)(this[this.tablelicitacion_items_info_Ad.nombre_adicionalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_adicional\' de la tabla \'licitacion_items_info_Ad\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_items_info_Ad.nombre_adicionalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int numero_adicional {
+                get {
+                    try {
+                        return ((int)(this[this.tablelicitacion_items_info_Ad.numero_adicionalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_adicional\' de la tabla \'licitacion_items_info_Ad\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_items_info_Ad.numero_adicionalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime creado_en {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablelicitacion_items_info_Ad.creado_enColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'licitacion_items_info_Ad\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_items_info_Ad.creado_enColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime actualizado_En {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tablelicitacion_items_info_Ad.actualizado_EnColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_En\' de la tabla \'licitacion_items_info_Ad\' es" +
+                                " DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_items_info_Ad.actualizado_EnColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRow licitacion_subpar_proceRow {
+                get {
+                    return ((licitacion_subpar_proceRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_items_info_Ad_licitacion_subpar_proce"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_items_info_Ad_licitacion_subpar_proce"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isid_itemNull() {
+                return this.IsNull(this.tablelicitacion_items_info_Ad.id_itemColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setid_itemNull() {
+                this[this.tablelicitacion_items_info_Ad.id_itemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnombre_adicionalNull() {
+                return this.IsNull(this.tablelicitacion_items_info_Ad.nombre_adicionalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnombre_adicionalNull() {
+                this[this.tablelicitacion_items_info_Ad.nombre_adicionalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnumero_adicionalNull() {
+                return this.IsNull(this.tablelicitacion_items_info_Ad.numero_adicionalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnumero_adicionalNull() {
+                this[this.tablelicitacion_items_info_Ad.numero_adicionalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Iscreado_enNull() {
+                return this.IsNull(this.tablelicitacion_items_info_Ad.creado_enColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setcreado_enNull() {
+                this[this.tablelicitacion_items_info_Ad.creado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isactualizado_EnNull() {
+                return this.IsNull(this.tablelicitacion_items_info_Ad.actualizado_EnColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setactualizado_EnNull() {
+                this[this.tablelicitacion_items_info_Ad.actualizado_EnColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class licitacion_partidasRow : global::System.Data.DataRow {
+            
+            private licitacion_partidasDataTable tablelicitacion_partidas;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal licitacion_partidasRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tablelicitacion_partidas = ((licitacion_partidasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tablelicitacion_partidas.idColumn]));
+                }
+                set {
+                    this[this.tablelicitacion_partidas.idColumn] = value;
                 }
             }
             
@@ -18946,31 +19525,65 @@ namespace AppLicitaciones {
             public int id_bases {
                 get {
                     try {
-                        return ((int)(this[this.tablelicitacion_columnas.id_basesColumn]));
+                        return ((int)(this[this.tablelicitacion_partidas.id_basesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_bases\' de la tabla \'licitacion_columnas\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_bases\' de la tabla \'licitacion_partidas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas.id_basesColumn] = value;
+                    this[this.tablelicitacion_partidas.id_basesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string nombre_columna {
+            public int numero_partida {
                 get {
                     try {
-                        return ((string)(this[this.tablelicitacion_columnas.nombre_columnaColumn]));
+                        return ((int)(this[this.tablelicitacion_partidas.numero_partidaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_columna\' de la tabla \'licitacion_columnas\' es DBNu" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_partida\' de la tabla \'licitacion_partidas\' es DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas.nombre_columnaColumn] = value;
+                    this[this.tablelicitacion_partidas.numero_partidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_partida {
+                get {
+                    try {
+                        return ((string)(this[this.tablelicitacion_partidas.nombre_partidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_partida\' de la tabla \'licitacion_partidas\' es DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_partidas.nombre_partidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string especialidad {
+                get {
+                    try {
+                        return ((string)(this[this.tablelicitacion_partidas.especialidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'especialidad\' de la tabla \'licitacion_partidas\' es DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_partidas.especialidadColumn] = value;
                 }
             }
             
@@ -18979,14 +19592,14 @@ namespace AppLicitaciones {
             public System.DateTime creado_en {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablelicitacion_columnas.creado_enColumn]));
+                        return ((global::System.DateTime)(this[this.tablelicitacion_partidas.creado_enColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'licitacion_columnas\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'licitacion_partidas\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas.creado_enColumn] = value;
+                    this[this.tablelicitacion_partidas.creado_enColumn] = value;
                 }
             }
             
@@ -18995,31 +19608,15 @@ namespace AppLicitaciones {
             public System.DateTime actualizado_en {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablelicitacion_columnas.actualizado_enColumn]));
+                        return ((global::System.DateTime)(this[this.tablelicitacion_partidas.actualizado_enColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'licitacion_columnas\' es DBNu" +
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'licitacion_partidas\' es DBNu" +
                                 "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas.actualizado_enColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_padre {
-                get {
-                    try {
-                        return ((int)(this[this.tablelicitacion_columnas.id_padreColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_padre\' de la tabla \'licitacion_columnas\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablelicitacion_columnas.id_padreColumn] = value;
+                    this[this.tablelicitacion_partidas.actualizado_enColumn] = value;
                 }
             }
             
@@ -19027,114 +19624,93 @@ namespace AppLicitaciones {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public licitacion_basesRow licitacion_basesRow {
                 get {
-                    return ((licitacion_basesRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_columnas_licitacion_bases"])));
+                    return ((licitacion_basesRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_partidas_licitacion_bases"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_columnas_licitacion_bases"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow licitacion_columnasRowParent {
-                get {
-                    return ((licitacion_columnasRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_columnas_licitacion_columnas1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_columnas_licitacion_columnas1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_partidas_licitacion_bases"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isid_basesNull() {
-                return this.IsNull(this.tablelicitacion_columnas.id_basesColumn);
+                return this.IsNull(this.tablelicitacion_partidas.id_basesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setid_basesNull() {
-                this[this.tablelicitacion_columnas.id_basesColumn] = global::System.Convert.DBNull;
+                this[this.tablelicitacion_partidas.id_basesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isnombre_columnaNull() {
-                return this.IsNull(this.tablelicitacion_columnas.nombre_columnaColumn);
+            public bool Isnumero_partidaNull() {
+                return this.IsNull(this.tablelicitacion_partidas.numero_partidaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setnombre_columnaNull() {
-                this[this.tablelicitacion_columnas.nombre_columnaColumn] = global::System.Convert.DBNull;
+            public void Setnumero_partidaNull() {
+                this[this.tablelicitacion_partidas.numero_partidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnombre_partidaNull() {
+                return this.IsNull(this.tablelicitacion_partidas.nombre_partidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnombre_partidaNull() {
+                this[this.tablelicitacion_partidas.nombre_partidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsespecialidadNull() {
+                return this.IsNull(this.tablelicitacion_partidas.especialidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetespecialidadNull() {
+                this[this.tablelicitacion_partidas.especialidadColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscreado_enNull() {
-                return this.IsNull(this.tablelicitacion_columnas.creado_enColumn);
+                return this.IsNull(this.tablelicitacion_partidas.creado_enColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcreado_enNull() {
-                this[this.tablelicitacion_columnas.creado_enColumn] = global::System.Convert.DBNull;
+                this[this.tablelicitacion_partidas.creado_enColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isactualizado_enNull() {
-                return this.IsNull(this.tablelicitacion_columnas.actualizado_enColumn);
+                return this.IsNull(this.tablelicitacion_partidas.actualizado_enColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setactualizado_enNull() {
-                this[this.tablelicitacion_columnas.actualizado_enColumn] = global::System.Convert.DBNull;
+                this[this.tablelicitacion_partidas.actualizado_enColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_padreNull() {
-                return this.IsNull(this.tablelicitacion_columnas.id_padreColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_padreNull() {
-                this[this.tablelicitacion_columnas.id_padreColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRow[] Getlicitacion_columnas_datosRows() {
-                if ((this.Table.ChildRelations["FK_licitacion_columnas_datos_licitacion_columnas"] == null)) {
-                    return new licitacion_columnas_datosRow[0];
+            public licitacion_subpar_proceRow[] Getlicitacion_subpar_proceRows() {
+                if ((this.Table.ChildRelations["FK_licitacion_subpar_proce_licitacion_partidas"] == null)) {
+                    return new licitacion_subpar_proceRow[0];
                 }
                 else {
-                    return ((licitacion_columnas_datosRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_columnas_datos_licitacion_columnas"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_itemsRow[] Getlicitacion_itemsRows() {
-                if ((this.Table.ChildRelations["FK_licitacion_items_licitacion_columnas"] == null)) {
-                    return new licitacion_itemsRow[0];
-                }
-                else {
-                    return ((licitacion_itemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_items_licitacion_columnas"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow[] Getlicitacion_columnasRows() {
-                if ((this.Table.ChildRelations["FK_licitacion_columnas_licitacion_columnas1"] == null)) {
-                    return new licitacion_columnasRow[0];
-                }
-                else {
-                    return ((licitacion_columnasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_columnas_licitacion_columnas1"])));
+                    return ((licitacion_subpar_proceRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_subpar_proce_licitacion_partidas"])));
                 }
             }
         }
@@ -19142,59 +19718,76 @@ namespace AppLicitaciones {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class licitacion_columnas_datosRow : global::System.Data.DataRow {
+        public partial class licitacion_subpar_proceRow : global::System.Data.DataRow {
             
-            private licitacion_columnas_datosDataTable tablelicitacion_columnas_datos;
+            private licitacion_subpar_proceDataTable tablelicitacion_subpar_proce;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal licitacion_columnas_datosRow(global::System.Data.DataRowBuilder rb) : 
+            internal licitacion_subpar_proceRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablelicitacion_columnas_datos = ((licitacion_columnas_datosDataTable)(this.Table));
+                this.tablelicitacion_subpar_proce = ((licitacion_subpar_proceDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public int id {
                 get {
-                    return ((int)(this[this.tablelicitacion_columnas_datos.idColumn]));
+                    return ((int)(this[this.tablelicitacion_subpar_proce.idColumn]));
                 }
                 set {
-                    this[this.tablelicitacion_columnas_datos.idColumn] = value;
+                    this[this.tablelicitacion_subpar_proce.idColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int id_columna {
+            public int id_partida {
                 get {
                     try {
-                        return ((int)(this[this.tablelicitacion_columnas_datos.id_columnaColumn]));
+                        return ((int)(this[this.tablelicitacion_subpar_proce.id_partidaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_columna\' de la tabla \'licitacion_columnas_datos\' es DB" +
-                                "Null.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_partida\' de la tabla \'licitacion_subpar_proce\' es DBNu" +
+                                "ll.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas_datos.id_columnaColumn] = value;
+                    this[this.tablelicitacion_subpar_proce.id_partidaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string descripcion {
+            public int numero_subpartida {
                 get {
                     try {
-                        return ((string)(this[this.tablelicitacion_columnas_datos.descripcionColumn]));
+                        return ((int)(this[this.tablelicitacion_subpar_proce.numero_subpartidaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'descripcion\' de la tabla \'licitacion_columnas_datos\' es D" +
-                                "BNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'numero_subpartida\' de la tabla \'licitacion_subpar_proce\' " +
+                                "es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas_datos.descripcionColumn] = value;
+                    this[this.tablelicitacion_subpar_proce.numero_subpartidaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string nombre_subpartida {
+                get {
+                    try {
+                        return ((string)(this[this.tablelicitacion_subpar_proce.nombre_subpartidaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_subpartida\' de la tabla \'licitacion_subpar_proce\' " +
+                                "es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablelicitacion_subpar_proce.nombre_subpartidaColumn] = value;
                 }
             }
             
@@ -19203,15 +19796,15 @@ namespace AppLicitaciones {
             public System.DateTime creado_en {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablelicitacion_columnas_datos.creado_enColumn]));
+                        return ((global::System.DateTime)(this[this.tablelicitacion_subpar_proce.creado_enColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'licitacion_columnas_datos\' es DBN" +
-                                "ull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'creado_en\' de la tabla \'licitacion_subpar_proce\' es DBNul" +
+                                "l.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas_datos.creado_enColumn] = value;
+                    this[this.tablelicitacion_subpar_proce.creado_enColumn] = value;
                 }
             }
             
@@ -19220,75 +19813,109 @@ namespace AppLicitaciones {
             public System.DateTime actualizado_en {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tablelicitacion_columnas_datos.actualizado_enColumn]));
+                        return ((global::System.DateTime)(this[this.tablelicitacion_subpar_proce.actualizado_enColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'licitacion_columnas_datos\' e" +
-                                "s DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'actualizado_en\' de la tabla \'licitacion_subpar_proce\' es " +
+                                "DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablelicitacion_columnas_datos.actualizado_enColumn] = value;
+                    this[this.tablelicitacion_subpar_proce.actualizado_enColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow licitacion_columnasRow {
+            public licitacion_partidasRow licitacion_partidasRow {
                 get {
-                    return ((licitacion_columnasRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_columnas_datos_licitacion_columnas"])));
+                    return ((licitacion_partidasRow)(this.GetParentRow(this.Table.ParentRelations["FK_licitacion_subpar_proce_licitacion_partidas"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_columnas_datos_licitacion_columnas"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_licitacion_subpar_proce_licitacion_partidas"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isid_columnaNull() {
-                return this.IsNull(this.tablelicitacion_columnas_datos.id_columnaColumn);
+            public bool Isid_partidaNull() {
+                return this.IsNull(this.tablelicitacion_subpar_proce.id_partidaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setid_columnaNull() {
-                this[this.tablelicitacion_columnas_datos.id_columnaColumn] = global::System.Convert.DBNull;
+            public void Setid_partidaNull() {
+                this[this.tablelicitacion_subpar_proce.id_partidaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsdescripcionNull() {
-                return this.IsNull(this.tablelicitacion_columnas_datos.descripcionColumn);
+            public bool Isnumero_subpartidaNull() {
+                return this.IsNull(this.tablelicitacion_subpar_proce.numero_subpartidaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetdescripcionNull() {
-                this[this.tablelicitacion_columnas_datos.descripcionColumn] = global::System.Convert.DBNull;
+            public void Setnumero_subpartidaNull() {
+                this[this.tablelicitacion_subpar_proce.numero_subpartidaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool Isnombre_subpartidaNull() {
+                return this.IsNull(this.tablelicitacion_subpar_proce.nombre_subpartidaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void Setnombre_subpartidaNull() {
+                this[this.tablelicitacion_subpar_proce.nombre_subpartidaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Iscreado_enNull() {
-                return this.IsNull(this.tablelicitacion_columnas_datos.creado_enColumn);
+                return this.IsNull(this.tablelicitacion_subpar_proce.creado_enColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setcreado_enNull() {
-                this[this.tablelicitacion_columnas_datos.creado_enColumn] = global::System.Convert.DBNull;
+                this[this.tablelicitacion_subpar_proce.creado_enColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool Isactualizado_enNull() {
-                return this.IsNull(this.tablelicitacion_columnas_datos.actualizado_enColumn);
+                return this.IsNull(this.tablelicitacion_subpar_proce.actualizado_enColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void Setactualizado_enNull() {
-                this[this.tablelicitacion_columnas_datos.actualizado_enColumn] = global::System.Convert.DBNull;
+                this[this.tablelicitacion_subpar_proce.actualizado_enColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_itemsRow[] Getlicitacion_itemsRows() {
+                if ((this.Table.ChildRelations["FK_licitacion_items_licitacion_subpar_proce"] == null)) {
+                    return new licitacion_itemsRow[0];
+                }
+                else {
+                    return ((licitacion_itemsRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_items_licitacion_subpar_proce"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_items_info_AdRow[] Getlicitacion_items_info_AdRows() {
+                if ((this.Table.ChildRelations["FK_licitacion_items_info_Ad_licitacion_subpar_proce"] == null)) {
+                    return new licitacion_items_info_AdRow[0];
+                }
+                else {
+                    return ((licitacion_items_info_AdRow[])(base.GetChildRows(this.Table.ChildRelations["FK_licitacion_items_info_Ad_licitacion_subpar_proce"])));
+                }
             }
         }
         
@@ -20316,22 +20943,22 @@ namespace AppLicitaciones {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class licitacion_columnasRowChangeEvent : global::System.EventArgs {
+        public class licitacion_items_info_AdRowChangeEvent : global::System.EventArgs {
             
-            private licitacion_columnasRow eventRow;
+            private licitacion_items_info_AdRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRowChangeEvent(licitacion_columnasRow row, global::System.Data.DataRowAction action) {
+            public licitacion_items_info_AdRowChangeEvent(licitacion_items_info_AdRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnasRow Row {
+            public licitacion_items_info_AdRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -20350,22 +20977,56 @@ namespace AppLicitaciones {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class licitacion_columnas_datosRowChangeEvent : global::System.EventArgs {
+        public class licitacion_partidasRowChangeEvent : global::System.EventArgs {
             
-            private licitacion_columnas_datosRow eventRow;
+            private licitacion_partidasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRowChangeEvent(licitacion_columnas_datosRow row, global::System.Data.DataRowAction action) {
+            public licitacion_partidasRowChangeEvent(licitacion_partidasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public licitacion_columnas_datosRow Row {
+            public licitacion_partidasRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class licitacion_subpar_proceRowChangeEvent : global::System.EventArgs {
+            
+            private licitacion_subpar_proceRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRowChangeEvent(licitacion_subpar_proceRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public licitacion_subpar_proceRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -34009,7 +34670,7 @@ SELECT id, tipo_expediente, creado_en, actualizado_en, articulos FROM aux_tipos_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class licitacion_columnasTableAdapter : global::System.ComponentModel.Component {
+    public partial class licitacion_items_info_AdTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -34023,7 +34684,7 @@ SELECT id, tipo_expediente, creado_en, actualizado_en, articulos FROM aux_tipos_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public licitacion_columnasTableAdapter() {
+        public licitacion_items_info_AdTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -34120,56 +34781,56 @@ SELECT id, tipo_expediente, creado_en, actualizado_en, articulos FROM aux_tipos_
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "licitacion_columnas";
+            tableMapping.DataSetTable = "licitacion_items_info_Ad";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("id_bases", "id_bases");
-            tableMapping.ColumnMappings.Add("nombre_columna", "nombre_columna");
+            tableMapping.ColumnMappings.Add("id_item", "id_item");
+            tableMapping.ColumnMappings.Add("nombre_adicional", "nombre_adicional");
+            tableMapping.ColumnMappings.Add("numero_adicional", "numero_adicional");
             tableMapping.ColumnMappings.Add("creado_en", "creado_en");
-            tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
-            tableMapping.ColumnMappings.Add("id_padre", "id_padre");
+            tableMapping.ColumnMappings.Add("actualizado_En", "actualizado_En");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [licitacion_columnas] WHERE (([id] = @Original_id) AND ((@IsNull_id_bases = 1 AND [id_bases] IS NULL) OR ([id_bases] = @Original_id_bases)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_id_padre = 1 AND [id_padre] IS NULL) OR ([id_padre] = @Original_id_padre)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[licitacion_items_info_Ad] WHERE (([id] = @Original_id) AND ((@IsNull_id_item = 1 AND [id_item] IS NULL) OR ([id_item] = @Original_id_item)) AND ((@IsNull_numero_adicional = 1 AND [numero_adicional] IS NULL) OR ([numero_adicional] = @Original_numero_adicional)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_En = 1 AND [actualizado_En] IS NULL) OR ([actualizado_En] = @Original_actualizado_En)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numero_adicional", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_adicional", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numero_adicional", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_adicional", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_padre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_padre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_padre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_padre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_En", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_En", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_En", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_En", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [licitacion_columnas] ([id_bases], [nombre_columna], [creado_en], [actualizado_en], [id_padre]) VALUES (@id_bases, @nombre_columna, @creado_en, @actualizado_en, @id_padre);
-SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM licitacion_columnas WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[licitacion_items_info_Ad] ([id_item], [nombre_adicional], [numero_adicional], [creado_en], [actualizado_En]) VALUES (@id_item, @nombre_adicional, @numero_adicional, @creado_en, @actualizado_En);
+SELECT id, id_item, nombre_adicional, numero_adicional, creado_en, actualizado_En FROM licitacion_items_info_Ad WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_columna", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_columna", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_adicional", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_adicional", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero_adicional", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_adicional", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_padre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_padre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_En", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_En", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [licitacion_columnas] SET [id_bases] = @id_bases, [nombre_columna] = @nombre_columna, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en, [id_padre] = @id_padre WHERE (([id] = @Original_id) AND ((@IsNull_id_bases = 1 AND [id_bases] IS NULL) OR ([id_bases] = @Original_id_bases)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)) AND ((@IsNull_id_padre = 1 AND [id_padre] IS NULL) OR ([id_padre] = @Original_id_padre)));
-SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM licitacion_columnas WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[licitacion_items_info_Ad] SET [id_item] = @id_item, [nombre_adicional] = @nombre_adicional, [numero_adicional] = @numero_adicional, [creado_en] = @creado_en, [actualizado_En] = @actualizado_En WHERE (([id] = @Original_id) AND ((@IsNull_id_item = 1 AND [id_item] IS NULL) OR ([id_item] = @Original_id_item)) AND ((@IsNull_numero_adicional = 1 AND [numero_adicional] IS NULL) OR ([numero_adicional] = @Original_numero_adicional)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_En = 1 AND [actualizado_En] IS NULL) OR ([actualizado_En] = @Original_actualizado_En)));
+SELECT id, id_item, nombre_adicional, numero_adicional, creado_en, actualizado_En FROM licitacion_items_info_Ad WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_columna", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_columna", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_item", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_adicional", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_adicional", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero_adicional", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_adicional", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_padre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_padre", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_En", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_En", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_item", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_item", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_item", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numero_adicional", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_adicional", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numero_adicional", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_adicional", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_padre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_padre", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_padre", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_padre", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_En", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_En", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_En", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_En", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -34186,8 +34847,8 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM lic" +
-                "itacion_columnas";
+            this._commandCollection[0].CommandText = "SELECT id, id_item, nombre_adicional, numero_adicional, creado_en, actualizado_En" +
+                " FROM dbo.licitacion_items_info_Ad";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34195,7 +34856,7 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LicitacionesDataSet.licitacion_columnasDataTable dataTable) {
+        public virtual int Fill(LicitacionesDataSet.licitacion_items_info_AdDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -34208,9 +34869,9 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LicitacionesDataSet.licitacion_columnasDataTable GetData() {
+        public virtual LicitacionesDataSet.licitacion_items_info_AdDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LicitacionesDataSet.licitacion_columnasDataTable dataTable = new LicitacionesDataSet.licitacion_columnasDataTable();
+            LicitacionesDataSet.licitacion_items_info_AdDataTable dataTable = new LicitacionesDataSet.licitacion_items_info_AdDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -34218,7 +34879,7 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LicitacionesDataSet.licitacion_columnasDataTable dataTable) {
+        public virtual int Update(LicitacionesDataSet.licitacion_items_info_AdDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -34226,7 +34887,7 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(LicitacionesDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "licitacion_columnas");
+            return this.Adapter.Update(dataSet, "licitacion_items_info_Ad");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -34248,35 +34909,35 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_bases, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, global::System.Nullable<int> Original_id_padre) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_item, global::System.Nullable<int> Original_numero_adicional, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_En) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_id_bases.HasValue == true)) {
+            if ((Original_id_item.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_bases.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_item.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_creado_en.HasValue == true)) {
+            if ((Original_numero_adicional.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_creado_en.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_numero_adicional.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_actualizado_en.HasValue == true)) {
+            if ((Original_creado_en.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_id_padre.HasValue == true)) {
+            if ((Original_actualizado_En.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_id_padre.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_En.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
@@ -34302,33 +34963,33 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> id_bases, string nombre_columna, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, global::System.Nullable<int> id_padre) {
-            if ((id_bases.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_bases.Value));
+        public virtual int Insert(global::System.Nullable<int> id_item, string nombre_adicional, global::System.Nullable<int> numero_adicional, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_En) {
+            if ((id_item.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_item.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((nombre_columna == null)) {
+            if ((nombre_adicional == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nombre_columna));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(nombre_adicional));
             }
-            if ((creado_en.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            if ((numero_adicional.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(numero_adicional.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((actualizado_en.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(creado_en.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((id_padre.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(id_padre.Value));
+            if ((actualizado_En.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(actualizado_En.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -34353,65 +35014,65 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_bases, string nombre_columna, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, global::System.Nullable<int> id_padre, int Original_id, global::System.Nullable<int> Original_id_bases, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, global::System.Nullable<int> Original_id_padre, int id) {
-            if ((id_bases.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_bases.Value));
+        public virtual int Update(global::System.Nullable<int> id_item, string nombre_adicional, global::System.Nullable<int> numero_adicional, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_En, int Original_id, global::System.Nullable<int> Original_id_item, global::System.Nullable<int> Original_numero_adicional, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_En, int id) {
+            if ((id_item.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_item.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((nombre_columna == null)) {
+            if ((nombre_adicional == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nombre_columna));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(nombre_adicional));
             }
-            if ((creado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
+            if ((numero_adicional.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(numero_adicional.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((actualizado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(creado_en.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((id_padre.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(id_padre.Value));
+            if ((actualizado_En.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(actualizado_En.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
-            if ((Original_id_bases.HasValue == true)) {
+            if ((Original_id_item.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_id_bases.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_id_item.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_creado_en.HasValue == true)) {
+            if ((Original_numero_adicional.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Original_creado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_numero_adicional.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_actualizado_en.HasValue == true)) {
+            if ((Original_creado_en.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_creado_en.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_id_padre.HasValue == true)) {
+            if ((Original_actualizado_En.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_id_padre.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_actualizado_En.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
@@ -34438,8 +35099,8 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_bases, string nombre_columna, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, global::System.Nullable<int> id_padre, int Original_id, global::System.Nullable<int> Original_id_bases, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, global::System.Nullable<int> Original_id_padre) {
-            return this.Update(id_bases, nombre_columna, creado_en, actualizado_en, id_padre, Original_id, Original_id_bases, Original_creado_en, Original_actualizado_en, Original_id_padre, Original_id);
+        public virtual int Update(global::System.Nullable<int> id_item, string nombre_adicional, global::System.Nullable<int> numero_adicional, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_En, int Original_id, global::System.Nullable<int> Original_id_item, global::System.Nullable<int> Original_numero_adicional, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_En) {
+            return this.Update(id_item, nombre_adicional, numero_adicional, creado_en, actualizado_En, Original_id, Original_id_item, Original_numero_adicional, Original_creado_en, Original_actualizado_En, Original_id);
         }
     }
     
@@ -34452,7 +35113,7 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class licitacion_columnas_datosTableAdapter : global::System.ComponentModel.Component {
+    public partial class licitacion_partidasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -34466,7 +35127,7 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public licitacion_columnas_datosTableAdapter() {
+        public licitacion_partidasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -34563,45 +35224,55 @@ SELECT id, id_bases, nombre_columna, creado_en, actualizado_en, id_padre FROM li
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "licitacion_columnas_datos";
+            tableMapping.DataSetTable = "licitacion_partidas";
             tableMapping.ColumnMappings.Add("id", "id");
-            tableMapping.ColumnMappings.Add("id_columna", "id_columna");
-            tableMapping.ColumnMappings.Add("descripcion", "descripcion");
+            tableMapping.ColumnMappings.Add("id_bases", "id_bases");
+            tableMapping.ColumnMappings.Add("numero_partida", "numero_partida");
+            tableMapping.ColumnMappings.Add("nombre_partida", "nombre_partida");
+            tableMapping.ColumnMappings.Add("especialidad", "especialidad");
             tableMapping.ColumnMappings.Add("creado_en", "creado_en");
             tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[licitacion_columnas_datos] WHERE (([id] = @Original_id) AND ((@IsNull_id_columna = 1 AND [id_columna] IS NULL) OR ([id_columna] = @Original_id_columna)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[licitacion_partidas] WHERE (([id] = @Original_id) AND ((@IsNull_id_bases = 1 AND [id_bases] IS NULL) OR ([id_bases] = @Original_id_bases)) AND ((@IsNull_numero_partida = 1 AND [numero_partida] IS NULL) OR ([numero_partida] = @Original_numero_partida)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_columna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_columna", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_columna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_columna", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numero_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_partida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numero_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_partida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[licitacion_columnas_datos] ([id_columna], [descripcion], [creado_en], [actualizado_en]) VALUES (@id_columna, @descripcion, @creado_en, @actualizado_en);
-SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_columnas_datos WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[licitacion_partidas] ([id_bases], [numero_partida], [nombre_partida], [especialidad], [creado_en], [actualizado_en]) VALUES (@id_bases, @numero_partida, @nombre_partida, @especialidad, @creado_en, @actualizado_en);
+SELECT id, id_bases, numero_partida, nombre_partida, especialidad, creado_en, actualizado_en FROM licitacion_partidas WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_columna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_columna", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_partida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_partida", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_partida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@especialidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "especialidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[licitacion_columnas_datos] SET [id_columna] = @id_columna, [descripcion] = @descripcion, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id] = @Original_id) AND ((@IsNull_id_columna = 1 AND [id_columna] IS NULL) OR ([id_columna] = @Original_id_columna)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
-SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_columnas_datos WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[licitacion_partidas] SET [id_bases] = @id_bases, [numero_partida] = @numero_partida, [nombre_partida] = @nombre_partida, [especialidad] = @especialidad, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id] = @Original_id) AND ((@IsNull_id_bases = 1 AND [id_bases] IS NULL) OR ([id_bases] = @Original_id_bases)) AND ((@IsNull_numero_partida = 1 AND [numero_partida] IS NULL) OR ([numero_partida] = @Original_numero_partida)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
+SELECT id, id_bases, numero_partida, nombre_partida, especialidad, creado_en, actualizado_en FROM licitacion_partidas WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_columna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_columna", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_partida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_partida", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_partida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@especialidad", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "especialidad", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_columna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_columna", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_columna", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_columna", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_bases", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_bases", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numero_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_partida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numero_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_partida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -34622,8 +35293,8 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM dbo.licitacion" +
-                "_columnas_datos";
+            this._commandCollection[0].CommandText = "SELECT id, id_bases, numero_partida, nombre_partida, especialidad, creado_en, act" +
+                "ualizado_en FROM dbo.licitacion_partidas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -34631,7 +35302,7 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(LicitacionesDataSet.licitacion_columnas_datosDataTable dataTable) {
+        public virtual int Fill(LicitacionesDataSet.licitacion_partidasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -34644,9 +35315,9 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual LicitacionesDataSet.licitacion_columnas_datosDataTable GetData() {
+        public virtual LicitacionesDataSet.licitacion_partidasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            LicitacionesDataSet.licitacion_columnas_datosDataTable dataTable = new LicitacionesDataSet.licitacion_columnas_datosDataTable();
+            LicitacionesDataSet.licitacion_partidasDataTable dataTable = new LicitacionesDataSet.licitacion_partidasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -34654,7 +35325,7 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(LicitacionesDataSet.licitacion_columnas_datosDataTable dataTable) {
+        public virtual int Update(LicitacionesDataSet.licitacion_partidasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
@@ -34662,7 +35333,7 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(LicitacionesDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "licitacion_columnas_datos");
+            return this.Adapter.Update(dataSet, "licitacion_partidas");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -34684,31 +35355,39 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_columna, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_bases, global::System.Nullable<int> Original_numero_partida, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
-            if ((Original_id_columna.HasValue == true)) {
+            if ((Original_id_bases.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_columna.Value));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_bases.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_creado_en.HasValue == true)) {
+            if ((Original_numero_partida.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_creado_en.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_numero_partida.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_actualizado_en.HasValue == true)) {
+            if ((Original_creado_en.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -34730,30 +35409,42 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> id_columna, string descripcion, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
-            if ((id_columna.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_columna.Value));
+        public virtual int Insert(global::System.Nullable<int> id_bases, global::System.Nullable<int> numero_partida, string nombre_partida, string especialidad, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+            if ((id_bases.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_bases.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((descripcion == null)) {
+            if ((numero_partida.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(numero_partida.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(descripcion));
-            }
-            if ((creado_en.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
-            }
-            else {
+            if ((nombre_partida == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((actualizado_en.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(nombre_partida));
+            }
+            if ((especialidad == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(especialidad));
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -34775,57 +35466,77 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_columna, string descripcion, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_columna, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id) {
-            if ((id_columna.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_columna.Value));
+        public virtual int Update(global::System.Nullable<int> id_bases, global::System.Nullable<int> numero_partida, string nombre_partida, string especialidad, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_bases, global::System.Nullable<int> Original_numero_partida, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id) {
+            if ((id_bases.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_bases.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((descripcion == null)) {
+            if ((numero_partida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(numero_partida.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(descripcion));
-            }
-            if ((creado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(creado_en.Value));
-            }
-            else {
+            if ((nombre_partida == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((actualizado_en.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(actualizado_en.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(nombre_partida));
+            }
+            if ((especialidad == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
-            if ((Original_id_columna.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id_columna.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(especialidad));
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(creado_en.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_creado_en.HasValue == true)) {
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_id));
+            if ((Original_id_bases.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_creado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_id_bases.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_actualizado_en.HasValue == true)) {
+            if ((Original_numero_partida.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_actualizado_en.Value));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_numero_partida.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(id));
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -34846,8 +35557,451 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id_columna, string descripcion, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_columna, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
-            return this.Update(id_columna, descripcion, creado_en, actualizado_en, Original_id, Original_id_columna, Original_creado_en, Original_actualizado_en, Original_id);
+        public virtual int Update(global::System.Nullable<int> id_bases, global::System.Nullable<int> numero_partida, string nombre_partida, string especialidad, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_bases, global::System.Nullable<int> Original_numero_partida, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            return this.Update(id_bases, numero_partida, nombre_partida, especialidad, creado_en, actualizado_en, Original_id, Original_id_bases, Original_numero_partida, Original_creado_en, Original_actualizado_en, Original_id);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class licitacion_subpar_proceTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public licitacion_subpar_proceTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "licitacion_subpar_proce";
+            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("id_partida", "id_partida");
+            tableMapping.ColumnMappings.Add("numero_subpartida", "numero_subpartida");
+            tableMapping.ColumnMappings.Add("nombre_subpartida", "nombre_subpartida");
+            tableMapping.ColumnMappings.Add("creado_en", "creado_en");
+            tableMapping.ColumnMappings.Add("actualizado_en", "actualizado_en");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[licitacion_subpar_proce] WHERE (([id] = @Original_id) AND ((@IsNull_id_partida = 1 AND [id_partida] IS NULL) OR ([id_partida] = @Original_id_partida)) AND ((@IsNull_numero_subpartida = 1 AND [numero_subpartida] IS NULL) OR ([numero_subpartida] = @Original_numero_subpartida)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_partida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_partida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numero_subpartida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_subpartida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numero_subpartida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_subpartida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[licitacion_subpar_proce] ([id_partida], [numero_subpartida], [nombre_subpartida], [creado_en], [actualizado_en]) VALUES (@id_partida, @numero_subpartida, @nombre_subpartida, @creado_en, @actualizado_en);
+SELECT id, id_partida, numero_subpartida, nombre_subpartida, creado_en, actualizado_en FROM licitacion_subpar_proce WHERE (id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_partida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero_subpartida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_subpartida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_subpartida", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_subpartida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[licitacion_subpar_proce] SET [id_partida] = @id_partida, [numero_subpartida] = @numero_subpartida, [nombre_subpartida] = @nombre_subpartida, [creado_en] = @creado_en, [actualizado_en] = @actualizado_en WHERE (([id] = @Original_id) AND ((@IsNull_id_partida = 1 AND [id_partida] IS NULL) OR ([id_partida] = @Original_id_partida)) AND ((@IsNull_numero_subpartida = 1 AND [numero_subpartida] IS NULL) OR ([numero_subpartida] = @Original_numero_subpartida)) AND ((@IsNull_creado_en = 1 AND [creado_en] IS NULL) OR ([creado_en] = @Original_creado_en)) AND ((@IsNull_actualizado_en = 1 AND [actualizado_en] IS NULL) OR ([actualizado_en] = @Original_actualizado_en)));
+SELECT id, id_partida, numero_subpartida, nombre_subpartida, creado_en, actualizado_en FROM licitacion_subpar_proce WHERE (id = @id)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_partida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numero_subpartida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_subpartida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@nombre_subpartida", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "nombre_subpartida", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_id_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_partida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_partida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_partida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numero_subpartida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_subpartida", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_numero_subpartida", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numero_subpartida", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_creado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_creado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "creado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_actualizado_en", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_actualizado_en", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "actualizado_en", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AppLicitaciones.Properties.Settings.Default.LicitacionesCSG;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT id, id_partida, numero_subpartida, nombre_subpartida, creado_en, actualiza" +
+                "do_en FROM dbo.licitacion_subpar_proce";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(LicitacionesDataSet.licitacion_subpar_proceDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual LicitacionesDataSet.licitacion_subpar_proceDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            LicitacionesDataSet.licitacion_subpar_proceDataTable dataTable = new LicitacionesDataSet.licitacion_subpar_proceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet.licitacion_subpar_proceDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(LicitacionesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "licitacion_subpar_proce");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id, global::System.Nullable<int> Original_id_partida, global::System.Nullable<int> Original_numero_subpartida, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            if ((Original_id_partida.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_id_partida.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((Original_numero_subpartida.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_numero_subpartida.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(global::System.Nullable<int> id_partida, global::System.Nullable<int> numero_subpartida, string nombre_subpartida, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en) {
+            if ((id_partida.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id_partida.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((numero_subpartida.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(numero_subpartida.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((nombre_subpartida == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(nombre_subpartida));
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_partida, global::System.Nullable<int> numero_subpartida, string nombre_subpartida, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_partida, global::System.Nullable<int> Original_numero_subpartida, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en, int id) {
+            if ((id_partida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id_partida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((numero_subpartida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(numero_subpartida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((nombre_subpartida == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(nombre_subpartida));
+            }
+            if ((creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_id));
+            if ((Original_id_partida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_id_partida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((Original_numero_subpartida.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_numero_subpartida.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((Original_creado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Original_creado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            if ((Original_actualizado_en.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_actualizado_en.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(global::System.Nullable<int> id_partida, global::System.Nullable<int> numero_subpartida, string nombre_subpartida, global::System.Nullable<global::System.DateTime> creado_en, global::System.Nullable<global::System.DateTime> actualizado_en, int Original_id, global::System.Nullable<int> Original_id_partida, global::System.Nullable<int> Original_numero_subpartida, global::System.Nullable<global::System.DateTime> Original_creado_en, global::System.Nullable<global::System.DateTime> Original_actualizado_en) {
+            return this.Update(id_partida, numero_subpartida, nombre_subpartida, creado_en, actualizado_en, Original_id, Original_id_partida, Original_numero_subpartida, Original_creado_en, Original_actualizado_en, Original_id);
         }
     }
     
@@ -35295,9 +36449,11 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         
         private aux_tipos_expedienteTableAdapter _aux_tipos_expedienteTableAdapter;
         
-        private licitacion_columnasTableAdapter _licitacion_columnasTableAdapter;
+        private licitacion_items_info_AdTableAdapter _licitacion_items_info_AdTableAdapter;
         
-        private licitacion_columnas_datosTableAdapter _licitacion_columnas_datosTableAdapter;
+        private licitacion_partidasTableAdapter _licitacion_partidasTableAdapter;
+        
+        private licitacion_subpar_proceTableAdapter _licitacion_subpar_proceTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -35697,12 +36853,12 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public licitacion_columnasTableAdapter licitacion_columnasTableAdapter {
+        public licitacion_items_info_AdTableAdapter licitacion_items_info_AdTableAdapter {
             get {
-                return this._licitacion_columnasTableAdapter;
+                return this._licitacion_items_info_AdTableAdapter;
             }
             set {
-                this._licitacion_columnasTableAdapter = value;
+                this._licitacion_items_info_AdTableAdapter = value;
             }
         }
         
@@ -35711,12 +36867,26 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public licitacion_columnas_datosTableAdapter licitacion_columnas_datosTableAdapter {
+        public licitacion_partidasTableAdapter licitacion_partidasTableAdapter {
             get {
-                return this._licitacion_columnas_datosTableAdapter;
+                return this._licitacion_partidasTableAdapter;
             }
             set {
-                this._licitacion_columnas_datosTableAdapter = value;
+                this._licitacion_partidasTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public licitacion_subpar_proceTableAdapter licitacion_subpar_proceTableAdapter {
+            get {
+                return this._licitacion_subpar_proceTableAdapter;
+            }
+            set {
+                this._licitacion_subpar_proceTableAdapter = value;
             }
         }
         
@@ -35847,13 +37017,17 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                             && (this._aux_tipos_expedienteTableAdapter.Connection != null))) {
                     return this._aux_tipos_expedienteTableAdapter.Connection;
                 }
-                if (((this._licitacion_columnasTableAdapter != null) 
-                            && (this._licitacion_columnasTableAdapter.Connection != null))) {
-                    return this._licitacion_columnasTableAdapter.Connection;
+                if (((this._licitacion_items_info_AdTableAdapter != null) 
+                            && (this._licitacion_items_info_AdTableAdapter.Connection != null))) {
+                    return this._licitacion_items_info_AdTableAdapter.Connection;
                 }
-                if (((this._licitacion_columnas_datosTableAdapter != null) 
-                            && (this._licitacion_columnas_datosTableAdapter.Connection != null))) {
-                    return this._licitacion_columnas_datosTableAdapter.Connection;
+                if (((this._licitacion_partidasTableAdapter != null) 
+                            && (this._licitacion_partidasTableAdapter.Connection != null))) {
+                    return this._licitacion_partidasTableAdapter.Connection;
+                }
+                if (((this._licitacion_subpar_proceTableAdapter != null) 
+                            && (this._licitacion_subpar_proceTableAdapter.Connection != null))) {
+                    return this._licitacion_subpar_proceTableAdapter.Connection;
                 }
                 return null;
             }
@@ -35949,10 +37123,13 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                 if ((this._aux_tipos_expedienteTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._licitacion_columnasTableAdapter != null)) {
+                if ((this._licitacion_items_info_AdTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._licitacion_columnas_datosTableAdapter != null)) {
+                if ((this._licitacion_partidasTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._licitacion_subpar_proceTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -35975,12 +37152,21 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._cucopTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._licitacion_partidasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_partidas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._cucopTableAdapter.Update(updatedRows));
+                    result = (result + this._licitacion_partidasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._licitacion_subpar_proceTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_subpar_proce.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._licitacion_subpar_proceTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -35993,13 +37179,21 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._licitacion_columnasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_columnas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._cucopTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    this.SortSelfReferenceRows(updatedRows, dataSet.Relations["FK_licitacion_columnas_licitacion_columnas1"], false);
-                    result = (result + this._licitacion_columnasTableAdapter.Update(updatedRows));
+                    result = (result + this._cucopTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36009,15 +37203,6 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._licitacion_itemsTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36039,57 +37224,12 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._licitacion_vinculacionTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._licitacion_vinculacionTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._registros_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.registros_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._registros_claves_referenciasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._catalogos_traduccionesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._catalogos_traduccionesTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._certificados_calidadTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._certificados_calidadTableAdapter.Update(updatedRows));
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36111,6 +37251,60 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._catalogos_traduccionesTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._catalogos_traduccionesTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._certificados_calidadTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._certificados_calidadTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._licitacion_vinculacionTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._licitacion_vinculacionTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._registros_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.registros_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._registros_claves_referenciasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._licitacion_items_info_AdTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_items_info_Ad.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._licitacion_items_info_AdTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._aux_tipos_expedienteTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.aux_tipos_expediente.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -36129,21 +37323,21 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._aux_cat_trad_refTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._aux_entidades_federativasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.aux_entidades_federativas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aux_cat_trad_refTableAdapter.Update(updatedRows));
+                    result = (result + this._aux_entidades_federativasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._fabricantes_contactosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.fabricantes_contactos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._licitacion_preguntasTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._fabricantes_contactosTableAdapter.Update(updatedRows));
+                    result = (result + this._licitacion_preguntasTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36153,6 +37347,15 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._licitacion_calendarioTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._fabricantes_contactosTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.fabricantes_contactos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._fabricantes_contactosTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36201,30 +37404,12 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._aux_entidades_federativasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.aux_entidades_federativas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._aux_cat_trad_refTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._aux_entidades_federativasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._licitacion_preguntasTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._licitacion_preguntasTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._licitacion_columnas_datosTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.licitacion_columnas_datos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._licitacion_columnas_datosTableAdapter.Update(updatedRows));
+                    result = (result + this._aux_cat_trad_refTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -36246,11 +37431,19 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._cucopTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._licitacion_partidasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_partidas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._cucopTableAdapter.Update(addedRows));
+                    result = (result + this._licitacion_partidasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._licitacion_subpar_proceTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_subpar_proce.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._licitacion_subpar_proceTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36262,12 +37455,19 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._licitacion_columnasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_columnas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._cucopTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    this.SortSelfReferenceRows(addedRows, dataSet.Relations["FK_licitacion_columnas_licitacion_columnas1"], false);
-                    result = (result + this._licitacion_columnasTableAdapter.Update(addedRows));
+                    result = (result + this._cucopTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._registros_sanitariosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36276,14 +37476,6 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._licitacion_itemsTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36303,51 +37495,11 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._licitacion_vinculacionTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._licitacion_vinculacionTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._registros_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.registros_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._registros_claves_referenciasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._catalogos_traduccionesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._catalogos_traduccionesTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._certificados_calidadTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._certificados_calidadTableAdapter.Update(addedRows));
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36367,6 +37519,54 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._catalogos_traduccionesTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._catalogos_traduccionesTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._certificados_calidadTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._certificados_calidadTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._licitacion_vinculacionTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_vinculacion.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._licitacion_vinculacionTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._registros_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.registros_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._registros_claves_referenciasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._licitacion_items_info_AdTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_items_info_Ad.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._licitacion_items_info_AdTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._aux_tipos_expedienteTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.aux_tipos_expediente.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -36383,19 +37583,19 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aux_cat_trad_refTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._aux_entidades_federativasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.aux_entidades_federativas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aux_cat_trad_refTableAdapter.Update(addedRows));
+                    result = (result + this._aux_entidades_federativasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._fabricantes_contactosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.fabricantes_contactos.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._licitacion_preguntasTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._fabricantes_contactosTableAdapter.Update(addedRows));
+                    result = (result + this._licitacion_preguntasTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36404,6 +37604,14 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._licitacion_calendarioTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._fabricantes_contactosTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.fabricantes_contactos.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._fabricantes_contactosTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36447,27 +37655,11 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._aux_entidades_federativasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.aux_entidades_federativas.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._aux_cat_trad_refTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._aux_entidades_federativasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._licitacion_preguntasTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._licitacion_preguntasTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._licitacion_columnas_datosTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.licitacion_columnas_datos.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._licitacion_columnas_datosTableAdapter.Update(addedRows));
+                    result = (result + this._aux_cat_trad_refTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -36481,27 +37673,11 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private int UpdateDeletedRows(LicitacionesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._licitacion_columnas_datosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_columnas_datos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._aux_cat_trad_refTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_columnas_datosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._licitacion_preguntasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_preguntasTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._aux_entidades_federativasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.aux_entidades_federativas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._aux_entidades_federativasTableAdapter.Update(deletedRows));
+                    result = (result + this._aux_cat_trad_refTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36545,14 +37721,6 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._licitacion_calendarioTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._licitacion_calendarioTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._fabricantes_contactosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.fabricantes_contactos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -36561,11 +37729,27 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._aux_cat_trad_refTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.aux_cat_trad_ref.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._licitacion_calendarioTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_calendario.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._aux_cat_trad_refTableAdapter.Update(deletedRows));
+                    result = (result + this._licitacion_calendarioTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._licitacion_preguntasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_preguntas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._licitacion_preguntasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._aux_entidades_federativasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.aux_entidades_federativas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._aux_entidades_federativasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36585,43 +37769,11 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cucop_vinculos_registrosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_registros.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._licitacion_items_info_AdTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_items_info_Ad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cucop_vinculos_registrosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_catalogos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._cucop_vinculos_catalogosTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._certificados_calidadTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._certificados_calidadTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._catalogos_traduccionesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_traduccionesTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(deletedRows));
+                    result = (result + this._licitacion_items_info_AdTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36641,11 +37793,51 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._registros_sanitariosTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._certificados_calidadTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.certificados_calidad.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._registros_sanitariosTableAdapter.Update(deletedRows));
+                    result = (result + this._certificados_calidadTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._catalogos_claves_referenciasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_claves_referencias.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._catalogos_claves_referenciasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._catalogos_traduccionesTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_traducciones.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._catalogos_traduccionesTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cucop_vinculos_registrosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_registros.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cucop_vinculos_registrosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cucop_vinculos_catalogosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop_vinculos_catalogos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cucop_vinculos_catalogosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._catalogos_info_generalTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._catalogos_info_generalTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36665,14 +37857,6 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._catalogos_info_generalTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.catalogos_info_general.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._catalogos_info_generalTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._licitacion_itemsTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.licitacion_items.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -36681,12 +37865,19 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._licitacion_columnasTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_columnas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._registros_sanitariosTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.registros_sanitarios.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    this.SortSelfReferenceRows(deletedRows, dataSet.Relations["FK_licitacion_columnas_licitacion_columnas1"], true);
-                    result = (result + this._licitacion_columnasTableAdapter.Update(deletedRows));
+                    result = (result + this._registros_sanitariosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._cucopTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._cucopTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36698,11 +37889,19 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._cucopTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.cucop.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._licitacion_subpar_proceTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_subpar_proce.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._cucopTableAdapter.Update(deletedRows));
+                    result = (result + this._licitacion_subpar_proceTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._licitacion_partidasTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.licitacion_partidas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._licitacion_partidasTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -36888,13 +38087,18 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
-            if (((this._licitacion_columnasTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._licitacion_columnasTableAdapter.Connection) == false))) {
+            if (((this._licitacion_items_info_AdTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._licitacion_items_info_AdTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
-            if (((this._licitacion_columnas_datosTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._licitacion_columnas_datosTableAdapter.Connection) == false))) {
+            if (((this._licitacion_partidasTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._licitacion_partidasTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
+                        "sma cadena de conexión.");
+            }
+            if (((this._licitacion_subpar_proceTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._licitacion_subpar_proceTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
                         "sma cadena de conexión.");
             }
@@ -37173,22 +38377,31 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                         adaptersWithAcceptChangesDuringUpdate.Add(this._aux_tipos_expedienteTableAdapter.Adapter);
                     }
                 }
-                if ((this._licitacion_columnasTableAdapter != null)) {
-                    revertConnections.Add(this._licitacion_columnasTableAdapter, this._licitacion_columnasTableAdapter.Connection);
-                    this._licitacion_columnasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._licitacion_columnasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._licitacion_columnasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._licitacion_columnasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._licitacion_columnasTableAdapter.Adapter);
+                if ((this._licitacion_items_info_AdTableAdapter != null)) {
+                    revertConnections.Add(this._licitacion_items_info_AdTableAdapter, this._licitacion_items_info_AdTableAdapter.Connection);
+                    this._licitacion_items_info_AdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._licitacion_items_info_AdTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._licitacion_items_info_AdTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._licitacion_items_info_AdTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._licitacion_items_info_AdTableAdapter.Adapter);
                     }
                 }
-                if ((this._licitacion_columnas_datosTableAdapter != null)) {
-                    revertConnections.Add(this._licitacion_columnas_datosTableAdapter, this._licitacion_columnas_datosTableAdapter.Connection);
-                    this._licitacion_columnas_datosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._licitacion_columnas_datosTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._licitacion_columnas_datosTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._licitacion_columnas_datosTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._licitacion_columnas_datosTableAdapter.Adapter);
+                if ((this._licitacion_partidasTableAdapter != null)) {
+                    revertConnections.Add(this._licitacion_partidasTableAdapter, this._licitacion_partidasTableAdapter.Connection);
+                    this._licitacion_partidasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._licitacion_partidasTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._licitacion_partidasTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._licitacion_partidasTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._licitacion_partidasTableAdapter.Adapter);
+                    }
+                }
+                if ((this._licitacion_subpar_proceTableAdapter != null)) {
+                    revertConnections.Add(this._licitacion_subpar_proceTableAdapter, this._licitacion_subpar_proceTableAdapter.Connection);
+                    this._licitacion_subpar_proceTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._licitacion_subpar_proceTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._licitacion_subpar_proceTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._licitacion_subpar_proceTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._licitacion_subpar_proceTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -37357,13 +38570,17 @@ SELECT id, id_columna, descripcion, creado_en, actualizado_en FROM licitacion_co
                     this._aux_tipos_expedienteTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._aux_tipos_expedienteTableAdapter]));
                     this._aux_tipos_expedienteTableAdapter.Transaction = null;
                 }
-                if ((this._licitacion_columnasTableAdapter != null)) {
-                    this._licitacion_columnasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._licitacion_columnasTableAdapter]));
-                    this._licitacion_columnasTableAdapter.Transaction = null;
+                if ((this._licitacion_items_info_AdTableAdapter != null)) {
+                    this._licitacion_items_info_AdTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._licitacion_items_info_AdTableAdapter]));
+                    this._licitacion_items_info_AdTableAdapter.Transaction = null;
                 }
-                if ((this._licitacion_columnas_datosTableAdapter != null)) {
-                    this._licitacion_columnas_datosTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._licitacion_columnas_datosTableAdapter]));
-                    this._licitacion_columnas_datosTableAdapter.Transaction = null;
+                if ((this._licitacion_partidasTableAdapter != null)) {
+                    this._licitacion_partidasTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._licitacion_partidasTableAdapter]));
+                    this._licitacion_partidasTableAdapter.Transaction = null;
+                }
+                if ((this._licitacion_subpar_proceTableAdapter != null)) {
+                    this._licitacion_subpar_proceTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._licitacion_subpar_proceTableAdapter]));
+                    this._licitacion_subpar_proceTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

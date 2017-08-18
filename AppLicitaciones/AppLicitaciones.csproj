@@ -266,6 +266,36 @@
     <Compile Include="Licitacion_Calendario.Designer.cs">
       <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Editar.Designer.cs">
+      <DependentUpon>Licitacion_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Items_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Items_Editar.Designer.cs">
+      <DependentUpon>Licitacion_Items_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Items_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Items_Nuevo.Designer.cs">
+      <DependentUpon>Licitacion_Items_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Item_Vincular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Item_Vincular.Designer.cs">
+      <DependentUpon>Licitacion_Item_Vincular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Item_Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Item_Visualizar.Designer.cs">
+      <DependentUpon>Licitacion_Item_Visualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Nueva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -278,11 +308,35 @@
     <Compile Include="Licitacion_Nueva_Abierta.Designer.cs">
       <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Partidas_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Partidas_Editar.Designer.cs">
+      <DependentUpon>Licitacion_Partidas_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Partidas_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Partidas_Nuevo.Designer.cs">
+      <DependentUpon>Licitacion_Partidas_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Partidas_Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Partidas_Visualizar.Designer.cs">
+      <DependentUpon>Licitacion_Partidas_Visualizar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Tecnica.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Licitacion_Tecnica.Designer.cs">
       <DependentUpon>Licitacion_Tecnica.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Visualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Visualizar.Designer.cs">
+      <DependentUpon>Licitacion_Visualizar.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -439,6 +493,9 @@
     <EmbeddedResource Include="Licitacion_Calendario.resx">
       <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Editar.resx">
+      <DependentUpon>Licitacion_Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Nueva.resx">
       <DependentUpon>Licitacion_Nueva.cs</DependentUpon>
     </EmbeddedResource>
@@ -447,6 +504,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Tecnica.resx">
       <DependentUpon>Licitacion_Tecnica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Visualizar.resx">
+      <DependentUpon>Licitacion_Visualizar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
