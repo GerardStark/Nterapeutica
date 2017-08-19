@@ -48,6 +48,8 @@
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_licitaciones = new System.Windows.Forms.DataGridView();
+            this.btn_partidas = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_licitaciones)).BeginInit();
             this.SuspendLayout();
@@ -112,7 +114,9 @@
             this.btn_economica,
             this.toolStripLabel3,
             this.btn_calendario,
-            this.toolStripLabel4});
+            this.toolStripLabel4,
+            this.btn_partidas,
+            this.toolStripLabel5});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(79, 609);
@@ -224,6 +228,22 @@
             this.dgv_licitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_licitaciones_CellClick);
             this.dgv_licitaciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_licitaciones_CellFormatting);
             // 
+            // btn_partidas
+            // 
+            this.btn_partidas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_partidas.Image = ((System.Drawing.Image)(resources.GetObject("btn_partidas.Image")));
+            this.btn_partidas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_partidas.Name = "btn_partidas";
+            this.btn_partidas.Size = new System.Drawing.Size(76, 54);
+            this.btn_partidas.Text = "toolStripButton1";
+            this.btn_partidas.Click += new System.EventHandler(this.btn_partidas_Click);
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(76, 15);
+            this.toolStripLabel5.Text = "Partidas";
+            // 
             // Licitacion_Actuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -263,5 +283,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridView dgv_licitaciones;
+        private System.Windows.Forms.ToolStripButton btn_partidas;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
     }
 }

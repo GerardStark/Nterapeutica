@@ -49,7 +49,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9kF5NCV+3qTAzowuaXhLj68Mh0Lgj6l99jycIhFdurg=</dsig:DigestValue>
+        <dsig:DigestValue>Mqd355uyTc1H6LhwHOyTKyzTrZHL/Wt7IdofNPlHHPw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -67,13 +67,13 @@
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ObjectListView.dll" size="480256">
-      <assemblyIdentity name="ObjectListView" version="2.9.1.19811" publicKeyToken="B1C5BF581481BCD4" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="ObjectListView" version="2.9.1.28085" publicKeyToken="B1C5BF581481BCD4" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>xN5G1dnojHnM21gspwvM66Je8XyWLokVq0y0usm96ko=</dsig:DigestValue>
+        <dsig:DigestValue>K+4iydY8WuLzFNUe9VXuqKJ/AV6k4nAk9RHpcgaA7vo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

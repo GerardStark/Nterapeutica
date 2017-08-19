@@ -320,6 +320,12 @@
     <Compile Include="Licitacion_Partidas_Nuevo.Designer.cs">
       <DependentUpon>Licitacion_Partidas_Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Partidas_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Partidas_Principal.Designer.cs">
+      <DependentUpon>Licitacion_Partidas_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Partidas_Visualizar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -501,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Nueva_Abierta.resx">
       <DependentUpon>Licitacion_Nueva_Abierta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Partidas_Principal.resx">
+      <DependentUpon>Licitacion_Partidas_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Tecnica.resx">
       <DependentUpon>Licitacion_Tecnica.cs</DependentUpon>

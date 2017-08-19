@@ -177,5 +177,13 @@ namespace AppLicitaciones
 
             }
         }
+
+        private void btn_partidas_Click(object sender, EventArgs e)
+        {
+            if (idLicitacion != 0)
+            {
+
+            }
+        }
     }
 }

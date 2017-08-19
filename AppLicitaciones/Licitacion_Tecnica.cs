@@ -38,8 +38,6 @@ namespace AppLicitaciones
 
             //this.tlv_partidas.SetObjects(Partida.GetPartidasPorBase(idLicitacion));
             this.idLicitacion = idLicitacion;
-
-
         }
 
         
