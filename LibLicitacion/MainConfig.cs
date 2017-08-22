@@ -247,6 +247,35 @@ namespace LibLicitacion
             return nombre;
         }
 
+        public string obtenernumerolicitacion(int idBases)
+        {
+            string nombre = "";
+            if (idBases != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from licitacion_bases where id_bases=@id", conec);
+                cmd.Parameters.AddWithValue("@id", idBases);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "bases");
+                conec.Close();
+                if (ds.Tables["bases"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["bases"].Rows[0]["numero_licitacion"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
+        }
+
         public string convertirasentencia(string original)
         {
             var sourcestring = original;

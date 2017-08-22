@@ -110,19 +110,7 @@ namespace AppLicitaciones
             }
         }
 
-        private void btn_tecnica_Click(object sender, EventArgs e)
-        {
-            if (idLicitacion != 0) 
-            {
-                Licitacion_Tecnica form = new Licitacion_Tecnica();
-                form.mostrarListadoLicitacion(idLicitacion);
-                DialogResult result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    //something
-                }
-            }
-        }
+        
 
         private void btn_columnas_Click(object sender, EventArgs e)
         {
@@ -182,6 +170,9 @@ namespace AppLicitaciones
         {
             if (idLicitacion != 0)
             {
+                Licitacion_Partidas_Principal form = new Licitacion_Partidas_Principal();
+                form.mostrarPartidasLicitacion(idLicitacion);
+                form.Show();
 
             }
         }
