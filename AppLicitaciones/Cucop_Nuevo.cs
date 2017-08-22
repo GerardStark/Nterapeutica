@@ -57,10 +57,14 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = (Int32)cmd.ExecuteScalar();
+                    if (newId != 0)
+                    {
+                        MessageBox.Show("Guardado");
+                    }
                     //crearvinculodb(newId);
                     con.Close();
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    //this.DialogResult = DialogResult.OK;
+                    
                 }
                 catch (Exception ex)
                 {
@@ -86,9 +90,13 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                         Int32 newId = (Int32)cmd.ExecuteScalar();
                         //crearvinculodb(newId);
+                        if (newId != 0)
+                        {
+                            MessageBox.Show("Guardado");
+                        }
                         con.Close();
-                        this.DialogResult = DialogResult.OK;
-                        this.Close();
+                        //this.DialogResult = DialogResult.OK;
+                        //this.Close();
                     }
                     catch (Exception ex)
                     {
@@ -139,7 +147,7 @@ namespace AppLicitaciones
         }
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Abort;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -189,6 +197,11 @@ namespace AppLicitaciones
                 txt_clave_gen.ReadOnly = false;
                 txt_clave_gpo.ReadOnly = false;
             }
+        }
+
+        private void Cucop_Nuevo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

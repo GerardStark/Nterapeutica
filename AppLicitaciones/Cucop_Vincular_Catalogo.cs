@@ -273,5 +273,20 @@ namespace AppLicitaciones
                 //something
             }
         }
+
+        private void btn_catalogos_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(Catalogos_Principal))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Catalogos_Principal newForm = new Catalogos_Principal();           
+            newForm.Show();
+        }
     }
 }

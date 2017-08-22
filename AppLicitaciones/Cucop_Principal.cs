@@ -102,14 +102,10 @@ namespace AppLicitaciones
         {
             if (id_cucop != 0)
             {
-                //abre el panel de visualizacion del registro
+                //abre el panel de visualizacion del cucop
                 Cucop_Visualizar rn = new Cucop_Visualizar();
                 rn.mostrarinfocucop(id_cucop);
-                DialogResult result = rn.ShowDialog();
-                if (filtro_flag == 0)
-                {
-                    llenartablacucops();
-                }
+                DialogResult result = rn.ShowDialog();                
             }
             else
             {

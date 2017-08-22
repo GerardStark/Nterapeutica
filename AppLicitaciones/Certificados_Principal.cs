@@ -120,11 +120,7 @@ namespace AppLicitaciones
             {
                 Certificados_Visualizar cv = new Certificados_Visualizar();
                 cv.mostrarinfocertificado(id_certificado);
-                DialogResult result = cv.ShowDialog();
-                if (filtro_flag == 0)
-                {
-                    llenartablacertificados();
-                }
+                DialogResult result = cv.ShowDialog();                
             }
             else
             {

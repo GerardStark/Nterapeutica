@@ -31,13 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Nueva_Abierta));
             this.lbl_archivo = new System.Windows.Forms.Label();
-            this.cmb_especialidad = new System.Windows.Forms.ComboBox();
             this.cmb_entidad = new System.Windows.Forms.ComboBox();
             this.auxentidadesfederativasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.txt_unidad_compradora = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -71,21 +69,11 @@
             // 
             // lbl_archivo
             // 
-            this.lbl_archivo.Location = new System.Drawing.Point(159, 293);
+            this.lbl_archivo.Location = new System.Drawing.Point(159, 269);
             this.lbl_archivo.Name = "lbl_archivo";
             this.lbl_archivo.Size = new System.Drawing.Size(322, 66);
             this.lbl_archivo.TabIndex = 25;
             this.lbl_archivo.Text = "(Vacio)";
-            // 
-            // cmb_especialidad
-            // 
-            this.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_especialidad.FormattingEnabled = true;
-            this.cmb_especialidad.Location = new System.Drawing.Point(159, 89);
-            this.cmb_especialidad.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmb_especialidad.Name = "cmb_especialidad";
-            this.cmb_especialidad.Size = new System.Drawing.Size(488, 24);
-            this.cmb_especialidad.TabIndex = 4;
             // 
             // cmb_entidad
             // 
@@ -121,20 +109,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(92, 293);
+            this.label6.Location = new System.Drawing.Point(92, 269);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 16);
             this.label6.TabIndex = 21;
             this.label6.Text = "Archivo:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 16);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Especialidad:";
             // 
             // label3
             // 
@@ -190,7 +169,7 @@
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(66, 311);
+            this.btn_archivo.Location = new System.Drawing.Point(66, 287);
             this.btn_archivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(88, 21);
@@ -219,7 +198,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(4, 144);
+            this.label7.Location = new System.Drawing.Point(4, 120);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(140, 16);
             this.label7.TabIndex = 26;
@@ -227,7 +206,7 @@
             // 
             // txt_duracion_contrato
             // 
-            this.txt_duracion_contrato.Location = new System.Drawing.Point(159, 142);
+            this.txt_duracion_contrato.Location = new System.Drawing.Point(159, 118);
             this.txt_duracion_contrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_duracion_contrato.Name = "txt_duracion_contrato";
             this.txt_duracion_contrato.Size = new System.Drawing.Size(488, 22);
@@ -235,7 +214,7 @@
             // 
             // txt_num_expediente
             // 
-            this.txt_num_expediente.Location = new System.Drawing.Point(159, 167);
+            this.txt_num_expediente.Location = new System.Drawing.Point(159, 143);
             this.txt_num_expediente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_num_expediente.Name = "txt_num_expediente";
             this.txt_num_expediente.Size = new System.Drawing.Size(488, 22);
@@ -245,7 +224,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(40, 170);
+            this.label8.Location = new System.Drawing.Point(40, 146);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(108, 16);
             this.label8.TabIndex = 29;
@@ -254,7 +233,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(21, 195);
+            this.label9.Location = new System.Drawing.Point(21, 171);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(129, 16);
             this.label9.TabIndex = 32;
@@ -262,7 +241,7 @@
             // 
             // txt_nombre_operador
             // 
-            this.txt_nombre_operador.Location = new System.Drawing.Point(159, 218);
+            this.txt_nombre_operador.Location = new System.Drawing.Point(159, 194);
             this.txt_nombre_operador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_nombre_operador.Name = "txt_nombre_operador";
             this.txt_nombre_operador.Size = new System.Drawing.Size(488, 22);
@@ -270,7 +249,7 @@
             // 
             // txt_correo_operador
             // 
-            this.txt_correo_operador.Location = new System.Drawing.Point(159, 244);
+            this.txt_correo_operador.Location = new System.Drawing.Point(159, 220);
             this.txt_correo_operador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_correo_operador.Name = "txt_correo_operador";
             this.txt_correo_operador.Size = new System.Drawing.Size(488, 22);
@@ -279,7 +258,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 221);
+            this.label10.Location = new System.Drawing.Point(7, 197);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(143, 16);
             this.label10.TabIndex = 35;
@@ -288,7 +267,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 246);
+            this.label11.Location = new System.Drawing.Point(11, 222);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(135, 16);
             this.label11.TabIndex = 36;
@@ -300,7 +279,7 @@
             // 
             // txt_tipo_contrato
             // 
-            this.txt_tipo_contrato.Location = new System.Drawing.Point(159, 116);
+            this.txt_tipo_contrato.Location = new System.Drawing.Point(159, 92);
             this.txt_tipo_contrato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_tipo_contrato.Name = "txt_tipo_contrato";
             this.txt_tipo_contrato.Size = new System.Drawing.Size(488, 22);
@@ -309,7 +288,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 118);
+            this.label5.Location = new System.Drawing.Point(37, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 16);
             this.label5.TabIndex = 38;
@@ -317,7 +296,7 @@
             // 
             // txt_desc
             // 
-            this.txt_desc.Location = new System.Drawing.Point(159, 270);
+            this.txt_desc.Location = new System.Drawing.Point(159, 246);
             this.txt_desc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_desc.Name = "txt_desc";
             this.txt_desc.Size = new System.Drawing.Size(488, 22);
@@ -326,7 +305,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(68, 272);
+            this.label12.Location = new System.Drawing.Point(68, 248);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(83, 16);
             this.label12.TabIndex = 40;
@@ -338,7 +317,7 @@
             this.cmb_tipo_exp.DisplayMember = "tipo_expediente";
             this.cmb_tipo_exp.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo_exp.FormattingEnabled = true;
-            this.cmb_tipo_exp.Location = new System.Drawing.Point(159, 191);
+            this.cmb_tipo_exp.Location = new System.Drawing.Point(159, 167);
             this.cmb_tipo_exp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_tipo_exp.Name = "cmb_tipo_exp";
             this.cmb_tipo_exp.Size = new System.Drawing.Size(488, 24);
@@ -374,11 +353,9 @@
             this.Controls.Add(this.txt_duracion_contrato);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lbl_archivo);
-            this.Controls.Add(this.cmb_especialidad);
             this.Controls.Add(this.cmb_entidad);
             this.Controls.Add(this.txt_unidad_compradora);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.toolStrip1);
@@ -386,7 +363,7 @@
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Nueva_Abierta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Nueva_Abierta";
@@ -404,11 +381,9 @@
         #endregion
 
         private System.Windows.Forms.Label lbl_archivo;
-        private System.Windows.Forms.ComboBox cmb_especialidad;
         private System.Windows.Forms.ComboBox cmb_entidad;
         private System.Windows.Forms.TextBox txt_unidad_compradora;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStrip toolStrip1;

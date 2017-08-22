@@ -21,17 +21,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             lbl_archivo.Text = "(Vacio)";
-            string[] array_specs = {
-                "Cirugia Cardiovascular",
-                "Hemodinamia",
-                "Urología",
-                "Minima Invasion",
-                "Endoscopia",
-                "Terapia Endovascular Neurologica",
-                "Marcapasos",
-                "Material de Curacion",
-                "Subrogados" };
-            mc.llenarcombobox(array_specs, cmb_especialidad);
+            
         }
 
         public void pasarTipoLicitacion(string tipoLic)
@@ -42,7 +32,7 @@ namespace AppLicitaciones
         private void btn_archivo_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Filter = "PDF Files|*.pdf|Word Files|*.docx";
+            openFileDialog1.Filter = "PDF Files|*.pdf|Any Files|*.*";
             openFileDialog1.Title = "Select a PDF/Word File";
             DialogResult result = openFileDialog1.ShowDialog();
             if (result == DialogResult.OK)
@@ -96,12 +86,12 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@numero", txt_numero.Text.ToUpper());
                         cmd.Parameters.AddWithValue("@unidadComp", txt_unidad_compradora.Text);
                         cmd.Parameters.AddWithValue("@entidadFed", cmb_entidad.SelectedValue);
-                        cmd.Parameters.AddWithValue("@espec", (cmb_especialidad.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@espec", "");//no se va a usar
                         cmd.Parameters.AddWithValue("@duracion", txt_duracion_contrato.Text);
                         cmd.Parameters.AddWithValue("@tipoContrat", txt_tipo_contrato.Text);
                         cmd.Parameters.AddWithValue("@estado", 0);
                         cmd.Parameters.AddWithValue("@expediente", txt_num_expediente.Text);
-                        cmd.Parameters.AddWithValue("@tipoLic", tipoLic);
+                        cmd.Parameters.AddWithValue("@tipoLic", "");// no se va a usar
                         cmd.Parameters.AddWithValue("@tipoExp", cmb_tipo_exp.SelectedValue);
                         cmd.Parameters.AddWithValue("@nombre", txt_nombre_operador.Text);
                         cmd.Parameters.AddWithValue("@email", txt_correo_operador.Text);

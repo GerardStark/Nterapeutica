@@ -213,5 +213,21 @@ namespace AppLicitaciones
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_certificados_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(Certificados_Principal))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Certificados_Principal newForm = new Certificados_Principal();
+            
+            newForm.Show();
+        }
     }
 }

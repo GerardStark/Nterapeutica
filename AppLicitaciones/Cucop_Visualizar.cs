@@ -113,7 +113,102 @@ namespace AppLicitaciones
 
         private void btn_borrar_Click(object sender, EventArgs e)
         {
-            //TODO borrar cucop
+            DialogResult result = MessageBox.Show("Se va a borrar el Cucop/item y todos sus vinculos de Registros, Certificados y Catálogos, Continuar?", "Borrar Cucop",MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
+            {
+                try
+                {
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        //Busca los Vinculos (CHILD) del CUCOP/ITEM (parent)
+                        using (SqlCommand cmdvinculos = new SqlCommand(@"SELECT * FROM cucop_vinculos WHERE id_cucop_item = @idcucop", con))
+                        {
+                            cmdvinculos.Parameters.AddWithValue("@idCucop", id_cucop);
+                            SqlDataAdapter adapt = new SqlDataAdapter(cmdvinculos);
+                            DataTable dt = new DataTable();
+                            adapt.Fill(dt);
+                            if (dt.Rows.Count > 0)
+                            {
+                                //Busca los Registros Vinculados (GRANDCHILD) de los vinculos (CHILD)
+                                using (SqlCommand cmdRegVinc = new SqlCommand(@"SELECT * FROM cucop_vinculos_registros WHERE id_cucop_vinculo = @idVinc", con))
+                                {
+                                    cmdRegVinc.Parameters.AddWithValue("@idVinc", Convert.ToInt32(dt.Rows[0]["id_vinculacion"]));
+                                    SqlDataAdapter adaptRegVinc = new SqlDataAdapter(cmdRegVinc);
+                                    DataTable dtRegVinc = new DataTable();
+                                    adaptRegVinc.Fill(dtRegVinc);
+                                    if (dtRegVinc.Rows.Count > 0)
+                                    {
+                                        foreach (DataRow row in dtRegVinc.Rows)
+                                        {
+                                            //Busca y borra las referencias (GRANGRANCHILD) de los registros Vinculados y luego los borra (GRANDCHILD) 
+                                            using (SqlCommand cmdRegRef = new SqlCommand(@"DELETE FROM cucop_vinculos_registros_referencias Where id_vinculo_registro =  @idVinculoReg;
+                                                                                   DELETE FROM cucop_vinculos_registros WHERE id = @idVinculoReg", con))
+                                            {
+                                                cmdRegRef.Parameters.AddWithValue("@idVinculoReg", Convert.ToInt32(row["id"]));
+                                                cmdRegRef.ExecuteNonQuery();
+                                            }
+                                        }
+                                    }
+
+                                }
+
+                                //Busca los Certificados Vinculados (GRANDCHILD) de los vinculos (CHILD)
+                                using (SqlCommand cmdCertVinc = new SqlCommand(@"DELETE FROM cucop_vinculos_certificados WHERE id_cucop_vinculo = @idVinc", con))
+                                {
+                                    cmdCertVinc.Parameters.AddWithValue("@idVinc", Convert.ToInt32(dt.Rows[0]["id_vinculacion"]));
+                                    cmdCertVinc.ExecuteNonQuery();
+                                }
+
+                                //Busca los Catalogos Vinculados (GRANDCHILD) de los vinculos (CHILD)
+                                using (SqlCommand cmdCatVinc = new SqlCommand(@"SELECT * FROM cucop_vinculos_catalogos WHERE id_cucop_vinculo = @idVinc", con))
+                                {
+                                    cmdCatVinc.Parameters.AddWithValue("@idVinc", Convert.ToInt32(dt.Rows[0]["id_vinculacion"]));
+                                    SqlDataAdapter adaptCatVinc = new SqlDataAdapter(cmdCatVinc);
+                                    DataTable dtCatVinc = new DataTable();
+                                    adaptCatVinc.Fill(dtCatVinc);
+                                    if (dtCatVinc.Rows.Count > 0)
+                                    {
+                                        foreach (DataRow row in dtCatVinc.Rows)
+                                        {
+                                            //Busca y borra las referencias (GRANGRANCHILD) de los catalogos Vinculados y luego los borra (GRANDCHILD) 
+                                            using (SqlCommand cmdCatRef = new SqlCommand(@"DELETE FROM cucop_vinculos_catalogos_referencias Where id_vinculo_catalogo = @idVinculoCat
+                                                                                       DELETE FROM cucop_vinculos_catalogos WHERE id = @idVinculoCat", con))
+                                            {
+                                                cmdCatRef.Parameters.AddWithValue("@idVinculoCat", Convert.ToInt32(row["id"]));
+                                                cmdCatRef.ExecuteNonQuery();
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+
+
+                        //BORRA los Vinculos del Cucop/Item (CHILD) y luego borra el CUCOP (PARENT)
+                        using (SqlCommand cmd = new SqlCommand(@"DELETE FROM cucop_vinculos WHERE id_cucop_item = @idCucop;
+                                                             DELETE FROM cucop WHERE id_cucop = @idCucop",con))
+                        {
+                            
+                            cmd.Parameters.AddWithValue("@idCucop", id_cucop);
+                            int state = cmd.ExecuteNonQuery();
+                            if (state != 0)
+                            {
+                                MessageBox.Show("Borrado");
+                                this.DialogResult = DialogResult.OK;
+                            }
+
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    MessageBox.Show(ex.ToString());
+                    throw;
+                }
+            }
         }
 
         private void btn_vincular_Click(object sender, EventArgs e)

@@ -92,10 +92,7 @@ namespace AppLicitaciones
                 Catalogos_Visualizar rn = new Catalogos_Visualizar();
                 rn.mostrarinfocatalogo(id_catalogo);
                 DialogResult result = rn.ShowDialog();
-                if (filtro_flag == 0)
-                {
-                    llenartablacatalogos();
-                }
+                
             }
             else
             {

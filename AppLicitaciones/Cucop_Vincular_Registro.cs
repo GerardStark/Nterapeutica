@@ -287,9 +287,19 @@ namespace AppLicitaciones
 
         }
 
-        private void toolStripLabel1_Click(object sender, EventArgs e)
+        private void btn_registros_Click(object sender, EventArgs e)
         {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(Registros_Principal))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
 
+            Registros_Principal newForm = new Registros_Principal();
+            newForm.Show();
         }
     }
 }

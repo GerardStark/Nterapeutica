@@ -19,7 +19,7 @@ namespace AppLicitaciones
 
         private void btn_nuevas_Click(object sender, EventArgs e)
         {
-            Licitacion_Nueva form = new Licitacion_Nueva();            
+            Licitacion_Nueva_Abierta form = new Licitacion_Nueva_Abierta();            
             form.ShowDialog();
         }
 

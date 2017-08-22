@@ -103,6 +103,7 @@ namespace AppLicitaciones
                     }
                     else
                     {
+                        MessageBox.Show("No hay coincidencias");
                         llenartablaregistros();
                     }
                     con.Close();
@@ -129,7 +130,7 @@ namespace AppLicitaciones
                     {
                         MessageBox.Show("No hay coincidencias");
                         llenartablaregistros();
-                    }
+                    }   
                     con.Close();
                 }
             }
@@ -147,11 +148,7 @@ namespace AppLicitaciones
                 //abre el panel de visualizacion del registro
                 Registros_Visualizar rn = new Registros_Visualizar();
                 rn.mostrarinforegistro(id_registro);
-                DialogResult result = rn.ShowDialog();
-                if (filtro_flag == 0)
-                {
-                    llenartablaregistros();
-                }
+                DialogResult result = rn.ShowDialog();                
             }
             else
             {
