@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_item_nuevo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_asignar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAADtlJREFUeF7t
         1jFqwEAQBEHp/4+2kwk3tsBdBf2BgWPvAb7zvu9Puc0AAC3XUSy1GQCg5TqKpTYDALRcR7HUZgCAluso
@@ -187,7 +187,7 @@
         MwBAy3UUS20G4M89zy+QAO4gEN6JuQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_quitar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAABPhSURBVHhe7daLcVzHFQRQiREoJGViZiZlYGdCZmTPEhgVAC8W+3Zn+s3nnKouuSSLn0fd6f4N

@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Item_Oferta));
             this.txt_item = new System.Windows.Forms.TextBox();
             this.txt_cucop = new System.Windows.Forms.TextBox();
-            this.btn_item_nuevo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_asignar = new System.Windows.Forms.Button();
+            this.btn_quitar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,25 +55,25 @@
             this.txt_cucop.Size = new System.Drawing.Size(500, 300);
             this.txt_cucop.TabIndex = 4;
             // 
-            // btn_item_nuevo
+            // btn_asignar
             // 
-            this.btn_item_nuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_nuevo.BackgroundImage")));
-            this.btn_item_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_nuevo.Location = new System.Drawing.Point(533, 41);
-            this.btn_item_nuevo.Name = "btn_item_nuevo";
-            this.btn_item_nuevo.Size = new System.Drawing.Size(50, 50);
-            this.btn_item_nuevo.TabIndex = 11;
-            this.btn_item_nuevo.UseVisualStyleBackColor = true;
+            this.btn_asignar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_asignar.BackgroundImage")));
+            this.btn_asignar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_asignar.Location = new System.Drawing.Point(533, 41);
+            this.btn_asignar.Name = "btn_asignar";
+            this.btn_asignar.Size = new System.Drawing.Size(50, 50);
+            this.btn_asignar.TabIndex = 11;
+            this.btn_asignar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_quitar
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(533, 125);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(50, 50);
-            this.button1.TabIndex = 12;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_quitar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_quitar.BackgroundImage")));
+            this.btn_quitar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_quitar.Location = new System.Drawing.Point(533, 125);
+            this.btn_quitar.Name = "btn_quitar";
+            this.btn_quitar.Size = new System.Drawing.Size(50, 50);
+            this.btn_quitar.TabIndex = 12;
+            this.btn_quitar.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -121,8 +121,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.btn_item_nuevo);
+            this.Controls.Add(this.btn_quitar);
+            this.Controls.Add(this.btn_asignar);
             this.Controls.Add(this.txt_cucop);
             this.Controls.Add(this.txt_item);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -138,8 +138,8 @@
 
         private System.Windows.Forms.TextBox txt_item;
         private System.Windows.Forms.TextBox txt_cucop;
-        private System.Windows.Forms.Button btn_item_nuevo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_asignar;
+        private System.Windows.Forms.Button btn_quitar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
