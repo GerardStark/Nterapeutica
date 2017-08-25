@@ -47,8 +47,8 @@ namespace AppLicitaciones
             }
 
             Registros_Principal newForm = new Registros_Principal();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
+            //newForm.MdiParent = this;
+            //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }
 
@@ -64,8 +64,8 @@ namespace AppLicitaciones
             }
 
             Certificados_Principal newForm = new Certificados_Principal();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
+            //newForm.MdiParent = this;
+            //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }
 
@@ -81,8 +81,8 @@ namespace AppLicitaciones
             }
 
             Catalogos_Principal newForm = new Catalogos_Principal();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
+            //newForm.MdiParent = this;
+            //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }
 
@@ -98,8 +98,8 @@ namespace AppLicitaciones
             }
 
             Cucop_Principal newForm = new Cucop_Principal();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
+            //newForm.MdiParent = this;
+            //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }
         //termina la aplicacion cuando se da clic en cerrar
@@ -120,8 +120,8 @@ namespace AppLicitaciones
             }
 
             Licitacion_Actuales newForm = new Licitacion_Actuales();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
+            //newForm.MdiParent = this;
+            //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }
 
@@ -137,8 +137,8 @@ namespace AppLicitaciones
             }
 
             Licitacion_Nueva newForm = new Licitacion_Nueva();
-            newForm.MdiParent = this;
-            newForm.WindowState = FormWindowState.Maximized;
+            //newForm.MdiParent = this;
+            //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
         }       
 
@@ -154,8 +154,8 @@ namespace AppLicitaciones
             }
 
             FTD_Principal newForm = new FTD_Principal();
-            newForm.MdiParent = this;
-            newForm.llenartablaftd();
+            //newForm.MdiParent = this;
+            //newForm.llenartablaftd();
             newForm.Show();
         }
 
@@ -171,7 +171,7 @@ namespace AppLicitaciones
             }
 
             Licitaciones_Princpial newForm = new Licitaciones_Princpial();
-            newForm.MdiParent = this;            
+            //newForm.MdiParent = this;            
             newForm.Show();
         }
     }

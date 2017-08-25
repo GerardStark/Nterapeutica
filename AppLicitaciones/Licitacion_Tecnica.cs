@@ -36,9 +36,23 @@ namespace AppLicitaciones
             dgvItems.Rows.Clear();
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
-                dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre);
+                
+                dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id));
 
             }
+        }
+
+        private int getVinculaciones(int idItem)
+        {
+            try
+            {
+                int v = Vinculacion.GetVinculacionesPorItem(idItem).Single(x => x.Item == idItem).Cucop;
+                return v;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }    
         }
 
         private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -80,6 +94,37 @@ namespace AppLicitaciones
             {
                 Licitacion_Items_Editar form = new Licitacion_Items_Editar();
                 form.mostrarInfoItem(idItem);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    mostrarItemsPorProcedimiento(idSub);
+                }
+            }
+        }
+
+        private void dgvItems_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.dgvItems.Columns[e.ColumnIndex].Name)
+            {
+                case "ofertaColumn":
+                    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
+                    {
+                        e.Value = mc.obtenerDescripcionCucop(Convert.ToInt32(dgvItems.Rows[e.RowIndex].Cells["ofertaColumn"].Value));
+                    }
+                    else
+                    {
+                        e.Value = "Sin oferta";
+                    }
+                    break;
+            }
+        }
+
+        private void btn_oferta_Click(object sender, EventArgs e)
+        {
+            if (idItem != 0)
+            {
+                Licitacion_Item_Oferta form = new Licitacion_Item_Oferta();
+                form.mostrarInfoItemCucops(idItem);
                 DialogResult result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {

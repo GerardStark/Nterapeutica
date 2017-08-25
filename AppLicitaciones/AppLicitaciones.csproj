@@ -284,6 +284,12 @@
     <Compile Include="Licitacion_Items_Nuevo.Designer.cs">
       <DependentUpon>Licitacion_Items_Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Item_Oferta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Item_Oferta.Designer.cs">
+      <DependentUpon>Licitacion_Item_Oferta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Item_Vincular.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -513,6 +519,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Items_Nuevo.resx">
       <DependentUpon>Licitacion_Items_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Item_Oferta.resx">
+      <DependentUpon>Licitacion_Item_Oferta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Nueva.resx">
       <DependentUpon>Licitacion_Nueva.cs</DependentUpon>

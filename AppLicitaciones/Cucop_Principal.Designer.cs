@@ -131,11 +131,13 @@
             this.contColumn,
             this.updatedColumn});
             this.DGV_cucop.Location = new System.Drawing.Point(60, 12);
+            this.DGV_cucop.MultiSelect = false;
             this.DGV_cucop.Name = "DGV_cucop";
             this.DGV_cucop.ReadOnly = true;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV_cucop.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV_cucop.RowTemplate.Height = 100;
+            this.DGV_cucop.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_cucop.Size = new System.Drawing.Size(1228, 660);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_cucop_CellClick);

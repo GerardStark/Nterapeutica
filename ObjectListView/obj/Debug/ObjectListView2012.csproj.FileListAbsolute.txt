@@ -16,3 +16,4 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListVie
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Debug\ObjectListView2012.csproj.GenerateResource.Cache
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Debug\ObjectListView.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Debug\ObjectListView.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\ObjectListView\obj\Debug\ObjectListView2012.csproj.CoreCompileInputs.cache
