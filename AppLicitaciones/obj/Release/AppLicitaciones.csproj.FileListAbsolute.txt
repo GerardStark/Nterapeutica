@@ -65,3 +65,6 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Partidas_Editar.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Partidas_Nuevo.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Partidas_Principal.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Procedimientos_Editar.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Procedimientos_Nuevo.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Items_Nuevo.resources

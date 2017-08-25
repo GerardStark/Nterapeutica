@@ -136,7 +136,6 @@
             // 
             this.txt_numero.Location = new System.Drawing.Point(166, 12);
             this.txt_numero.Name = "txt_numero";
-            this.txt_numero.ReadOnly = true;
             this.txt_numero.Size = new System.Drawing.Size(72, 22);
             this.txt_numero.TabIndex = 32;
             // 
@@ -153,7 +152,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Partidas_Nuevo";
             this.Text = "Licitacion_Partidas_Nuevo";
             this.tt_reg_nuevo.ResumeLayout(false);

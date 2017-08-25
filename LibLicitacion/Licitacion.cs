@@ -172,6 +172,7 @@ namespace LibLicitacion
         //verifica si la lista esta vacia
         static public List<Licitacion> GetBases()
         {
+            Licitacion.AllBases.Clear();
             if (Licitacion.AllBases.Count == 0)
                 Licitacion.AllBases = Licitacion.InicializarBases();
             return Licitacion.AllBases;
@@ -246,13 +247,13 @@ namespace LibLicitacion
         }
 
         //clase principal de las partidas
-        public Partida(int id, int idBases, int numPartida, string nombPartida, string spec, DateTime created, DateTime updated)
+        public Partida(int id, int idBases, int numPartida, string nombPartida, string especialidad, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.IdBases = idBases;
             this.Numero = numPartida;
             this.Nombre = nombPartida;
-            this.Spec = spec;
+            this.Especialidad = especialidad;
             this.Created = created;
             this.Updated = updated;
         }
@@ -289,13 +290,13 @@ namespace LibLicitacion
 
         private string nombre;
 
-        public string Spec
+        public string Especialidad
         {
-            get { return spec; }
-            set { spec = value; }
+            get { return especialidad; }
+            set { especialidad = value; }
         }
 
-        private string spec;
+        private string especialidad;
 
         public DateTime Created
         {
@@ -317,8 +318,9 @@ namespace LibLicitacion
 
         //los siguientes 2 metodos llenan un objeto con las Partidas
         //verifica si el objeto esta vacio
-        static  List<Partida> GetPartidas()
+        static public List<Partida> GetPartidas()
         {
+            Partida.AllPartidas.Clear();
             if (Partida.AllPartidas.Count == 0)
                 Partida.AllPartidas = Partida.InicializarPartidas();
             return Partida.AllPartidas;
@@ -346,6 +348,7 @@ namespace LibLicitacion
                             p.Id = (Int32)dr["id"];
                             p.IdBases = (Int32)dr["id_bases"];
                             p.Nombre = (string)dr["nombre_partida"];
+                            p.Especialidad = (string)dr["especialidad"];
                             partidas.Add(p);
                         }
                     }
@@ -367,7 +370,7 @@ namespace LibLicitacion
                 if (p.idBases == idBases && !yaAgregado.ContainsKey(p.id))
                 {
                     yaAgregado[p.id] = true;
-                    partidas.Add(new Partida(p.Id, p.IdBases, p.Numero, p.Nombre, p.Spec, p.Created, p.Updated));
+                    partidas.Add(new Partida(p.Id, p.IdBases, p.Numero, p.Nombre, p.Especialidad, p.Created, p.Updated));
                 }
             }
             return partidas;
@@ -457,8 +460,9 @@ namespace LibLicitacion
 
         //los siguientes 2 metodos llenan un objeto con los Procedimientos
         //verifica si el objeto esta vacio
-        static  List<Procedimiento> GetProcedimientos()
+        static public List<Procedimiento> GetProcedimientos()
         {
+            Procedimiento.AllProcedimientos.Clear();
             if (Procedimiento.AllProcedimientos.Count == 0)
                 Procedimiento.AllProcedimientos = Procedimiento.InicializarProcedimientos();
             return Procedimiento.AllProcedimientos;
@@ -539,12 +543,14 @@ namespace LibLicitacion
         }
 
         //clase principal de los items de la licitacion
-        public Item(int id, int procedimiento, string descripcion, string unidad, DateTime created, DateTime updated)
+        public Item(int id, int procedimiento, string descripcion, string unidad, long cantidad, string contenedor, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.Procedimiento = procedimiento;
             this.Nombre = descripcion;
             this.Unidad = unidad;
+            this.Cantidad = cantidad;
+            this.Contenedor = contenedor;
             this.Created = created;
             this.Updated = updated;
         }
@@ -581,6 +587,22 @@ namespace LibLicitacion
 
         private string unidad;
 
+        public long Cantidad
+        {
+            get { return cantidad; }
+            set { cantidad = value; }
+        }
+
+        private long cantidad;
+
+        public string Contenedor
+        {
+            get { return contenedor; }
+            set { contenedor = value; }
+        }
+
+        private string contenedor;
+
         public DateTime Created
         {
             get { return created; }
@@ -599,8 +621,9 @@ namespace LibLicitacion
 
         //los siguientes 2 metodos llenan un objeto con los Items
         //verifica si el objeto esta vacio
-        static  List<Item> GetItems()
+        static public List<Item> GetItems()
         {
+            Item.AllItems.Clear();
             if (Item.AllItems.Count == 0)
                 Item.AllItems = Item.InicializarItems();
             return Item.AllItems;
@@ -651,7 +674,7 @@ namespace LibLicitacion
                 if (i.procedimiento == proce && !yaAgregado.ContainsKey(i.id))
                 {
                     yaAgregado[i.id] = true;
-                    items.Add(new Item(i.Id, i.Procedimiento, i.Nombre, i.Unidad, i.Created, i.Updated));
+                    items.Add(new Item(i.Id, i.Procedimiento, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Created, i.Updated));
                 }
             }
             return items;
@@ -738,8 +761,9 @@ namespace LibLicitacion
 
         //los siguientes 2 metodos llenan un objeto con las Vinculaciones
         //verifica si el objeto esta vacio
-        static  List<Vinculacion> GetVinculaciones()
+        static public List<Vinculacion> GetVinculaciones()
         {
+            Vinculacion.AllVinculaciones.Clear();
             if (Vinculacion.AllVinculaciones.Count == 0)
                 Vinculacion.AllVinculaciones = Vinculacion.InicializarVinculaciones();
             return Vinculacion.AllVinculaciones;
@@ -749,7 +773,29 @@ namespace LibLicitacion
         //llenar con un query
         static private List<Vinculacion> InicializarVinculaciones()
         {
+            MainConfig mc = new MainConfig();
             List<Vinculacion> vinculos = new List<Vinculacion>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM licitacion_vinculacion", con))
+                {
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Vinculacion v = new Vinculacion();
+                            v.Id    =   (Int32)dr["id_vinculacion"];
+                            v.Item  =   (Int32)dr["id_item"];
+                            v.Cucop =   (Int32)dr["id_cucop"];
+                            vinculos.Add(v);
+                        }
+                    }
+                }
+            }
             return vinculos;
         }
 

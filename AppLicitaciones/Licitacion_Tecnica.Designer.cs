@@ -48,14 +48,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_item_nuevo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btn_item_editar = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.btn_oferta = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.btn_proc_borrar = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.btn_item_borrar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btn_item_editar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -211,6 +213,7 @@
             this.btn_proc_editar.Size = new System.Drawing.Size(50, 50);
             this.btn_proc_editar.TabIndex = 8;
             this.btn_proc_editar.UseVisualStyleBackColor = true;
+            this.btn_proc_editar.Click += new System.EventHandler(this.btn_proc_editar_Click);
             // 
             // label4
             // 
@@ -231,6 +234,7 @@
             this.btn_item_nuevo.Size = new System.Drawing.Size(50, 50);
             this.btn_item_nuevo.TabIndex = 10;
             this.btn_item_nuevo.UseVisualStyleBackColor = true;
+            this.btn_item_nuevo.Click += new System.EventHandler(this.btn_item_nuevo_Click);
             // 
             // label5
             // 
@@ -241,26 +245,6 @@
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 11;
             this.label5.Text = "Nuevo item";
-            // 
-            // btn_item_editar
-            // 
-            this.btn_item_editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_editar.BackgroundImage")));
-            this.btn_item_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_editar.Location = new System.Drawing.Point(723, 168);
-            this.btn_item_editar.Name = "btn_item_editar";
-            this.btn_item_editar.Size = new System.Drawing.Size(50, 50);
-            this.btn_item_editar.TabIndex = 12;
-            this.btn_item_editar.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(722, 221);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Visualizar";
             // 
             // btn_oferta
             // 
@@ -306,11 +290,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(873, 221);
+            this.label9.Location = new System.Drawing.Point(880, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.Size = new System.Drawing.Size(19, 13);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Borrar";
+            this.label9.Text = "JA";
             // 
             // btn_item_borrar
             // 
@@ -322,19 +306,62 @@
             this.btn_item_borrar.TabIndex = 18;
             this.btn_item_borrar.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(933, 168);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(50, 50);
+            this.button1.TabIndex = 20;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(942, 221);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 13);
+            this.label10.TabIndex = 21;
+            this.label10.Text = "Borrar";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(729, 221);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Editar";
+            // 
+            // btn_item_editar
+            // 
+            this.btn_item_editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_editar.BackgroundImage")));
+            this.btn_item_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_item_editar.Location = new System.Drawing.Point(723, 168);
+            this.btn_item_editar.Name = "btn_item_editar";
+            this.btn_item_editar.Size = new System.Drawing.Size(50, 50);
+            this.btn_item_editar.TabIndex = 22;
+            this.btn_item_editar.UseVisualStyleBackColor = true;
+            this.btn_item_editar.Click += new System.EventHandler(this.btn_item_editar_Click);
+            // 
             // Licitacion_Tecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 603);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btn_item_editar);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.btn_item_borrar);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btn_proc_borrar);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.btn_oferta);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btn_item_editar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_item_nuevo);
             this.Controls.Add(this.label4);
@@ -372,8 +399,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btn_item_nuevo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btn_item_editar;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_oferta;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_proc_borrar;
@@ -385,5 +410,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ofertaColumn;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_item_editar;
     }
 }

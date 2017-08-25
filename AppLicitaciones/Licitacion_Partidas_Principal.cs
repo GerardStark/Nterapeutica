@@ -25,22 +25,10 @@ namespace AppLicitaciones
         {
             this.idBases = idBases;
             dgvPartidas.Rows.Clear();
-            using (SqlConnection con = new SqlConnection(mc.con))
+            foreach (Partida p in Partida.GetPartidasPorBase(idBases))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT id,numero_partida,nombre_partida,especialidad,id_bases FROM licitacion_partidas WHERE id_bases = @idBases", con))
-                {
-                    cmd.Parameters.AddWithValue("@idBases",idBases);
-                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapt.Fill(dt);
-                    if (dt.Rows.Count > 0 )
-                    {
-                        foreach (DataRow row in dt.Rows)
-                        {
-                            dgvPartidas.Rows.Add(row.ItemArray);
-                        }
-                    }
-                }
+                
+                dgvPartidas.Rows.Add(p.Id,p.Numero,p.Nombre,p.Especialidad,p.IdBases);
             }
         }
 

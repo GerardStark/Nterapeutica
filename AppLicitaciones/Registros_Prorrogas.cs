@@ -45,7 +45,7 @@ namespace AppLicitaciones
                 {
                     DGV_Referencias.Rows.Add(dr.ItemArray);
                 }
-                mc.buscarultimafilaeditada("registros_tramites_prorroga", DGV_Referencias);
+               // mc.buscarultimafilaeditada("registros_tramites_prorroga", DGV_Referencias);
                 con.Close();
             }
             catch (Exception ex)

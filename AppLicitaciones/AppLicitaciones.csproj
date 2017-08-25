@@ -326,6 +326,18 @@
     <Compile Include="Licitacion_Partidas_Principal.Designer.cs">
       <DependentUpon>Licitacion_Partidas_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Procedimientos_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Procedimientos_Editar.Designer.cs">
+      <DependentUpon>Licitacion_Procedimientos_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Procedimientos_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Procedimientos_Nuevo.Designer.cs">
+      <DependentUpon>Licitacion_Procedimientos_Nuevo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Tecnica.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +508,12 @@
     <EmbeddedResource Include="Licitacion_Editar.resx">
       <DependentUpon>Licitacion_Editar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Items_Editar.resx">
+      <DependentUpon>Licitacion_Items_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Items_Nuevo.resx">
+      <DependentUpon>Licitacion_Items_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Nueva.resx">
       <DependentUpon>Licitacion_Nueva.cs</DependentUpon>
     </EmbeddedResource>
@@ -510,6 +528,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Partidas_Principal.resx">
       <DependentUpon>Licitacion_Partidas_Principal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Procedimientos_Editar.resx">
+      <DependentUpon>Licitacion_Procedimientos_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Procedimientos_Nuevo.resx">
+      <DependentUpon>Licitacion_Procedimientos_Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Tecnica.resx">
       <DependentUpon>Licitacion_Tecnica.cs</DependentUpon>

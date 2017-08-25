@@ -47,8 +47,11 @@ namespace AppLicitaciones
                 {
                     SqlConnection con = new SqlConnection(mc.con);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)" +
-                        " OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
+                    SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT clave,descripcion FROM cucop WHERE descripcion = @desc)
+                    BEGIN
+                        INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)
+                        OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)
+                    END", con);
                     cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
                     cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                     cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
@@ -68,7 +71,14 @@ namespace AppLicitaciones
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    if (ex is NullReferenceException)
+                    {
+                        MessageBox.Show("Ya existe");
+                    }
+                    else
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             else
@@ -79,8 +89,11 @@ namespace AppLicitaciones
                     {
                         SqlConnection con = new SqlConnection(mc.con);
                         con.Open();
-                        SqlCommand cmd = new SqlCommand("INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)" +
-                            " OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)", con);
+                        SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT clave,descripcion FROM cucop WHERE descripcion = @desc)
+                        BEGIN
+                            INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)
+                            OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)
+                        END", con);
                         cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
                         cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                         cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
@@ -100,7 +113,15 @@ namespace AppLicitaciones
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message);
+                        if (ex is NullReferenceException)
+                        {
+                            MessageBox.Show("Ya existe");
+                        }
+                        else
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                       
                     }
 
                 }
