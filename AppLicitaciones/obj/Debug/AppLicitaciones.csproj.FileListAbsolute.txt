@@ -161,3 +161,6 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Licitacion_Items_Editar.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.csproj.CoreCompileInputs.cache
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Licitacion_Item_Oferta.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\DiffPlex.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\DiffPlex.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\DiffPlex.xml

@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>DiffPlex</id>
+    <version>1.4.1</version>
+    <authors>Matthew Manela</authors>
+    <owners>Matthew Manela</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/mmanela/diffplex/blob/master/License.txt</licenseUrl>
+    <projectUrl>https://github.com/mmanela/diffplex/</projectUrl>
+    <description>DiffPlex is a diffing library that allows you to programatically create text diffs. DiffPlex is a fast and tested library.</description>
+    <releaseNotes>* Target netstandard 1.0</releaseNotes>
+    <tags>diff</tags>
+    <repository type="git" url="https://github.com/mmanela/diffplex.git" />
+    <dependencies>
+      <group targetFramework=".NETFramework3.5" />
+      <group targetFramework=".NETStandard1.0">
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Drawing" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Runtime.Serialization" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework3.5" />
+      <frameworkAssembly assemblyName="System.Xml.Linq" targetFramework=".NETFramework3.5" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\net35\DiffPlex.dll" target="lib\net35\DiffPlex.dll" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\net35\DiffPlex.xml" target="lib\net35\DiffPlex.xml" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\netstandard1.0\DiffPlex.dll" target="lib\netstandard1.0\DiffPlex.dll" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\netstandard1.0\DiffPlex.xml" target="lib\netstandard1.0\DiffPlex.xml" />
+  </files>
+</package>

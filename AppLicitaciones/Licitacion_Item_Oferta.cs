@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DiffPlex;
+using DiffPlex.DiffBuilder;
+using DiffPlex.DiffBuilder.Model;
 
 namespace AppLicitaciones
 {
@@ -21,7 +24,7 @@ namespace AppLicitaciones
         }
 
         public void mostrarInfoItemCucops(int idItem)
-        { 
+        {
             this.idItem = idItem;
             List<ResultadoLev> comparados = new List<ResultadoLev>();
             Item item = Item.GetItems().Single(x => x.Id == idItem);
@@ -39,19 +42,44 @@ namespace AppLicitaciones
                 //{
                 //    txt_cucop.Text = c.Descripcion;
                 //}
-                
+
             }
             var topResults = comparados.OrderBy(i => i.Resultado).Take(4).ToList();
-            if (topResults[0].Resultado == 0)
+            var diffBuilder = new InlineDiffBuilder(new Differ());
+            var diff = diffBuilder.BuildDiffModel(item.Nombre, topResults[0].Cucop.Descripcion);
+
+            foreach (var line in diff.Lines)
             {
-                txt_cucop.Text = topResults[0].Cucop.Descripcion;
+                switch (line.Type)
+                {
+                    case ChangeType.Inserted:
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write("+ ");
+                        break;
+                    case ChangeType.Deleted:
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.Write("- ");
+                        break;
+                    default:
+                        Console.ForegroundColor = ConsoleColor.White;
+                        Console.Write("  ");
+                        break;
+                }
+
+                Console.WriteLine(line.Text);
+                //metodo que regrese los objetos "Item" que cumplan con ser los 3 mas cercanos a 0
+
+
             }
-            txt_opcion_uno.Text = topResults[1].Cucop.Descripcion;
-            txt_opcion_dos.Text = topResults[2].Cucop.Descripcion;
-            txt_opcion_tres.Text = topResults[3].Cucop.Descripcion;
+        }
 
-            //metodo que regrese los objetos "Item" que cumplan con ser los 3 mas cercanos a 0
+        private void btn_limpiar_resultados_Click(object sender, EventArgs e)
+        {
+           
+        }
 
+        private void btn_buscar_items_Click(object sender, EventArgs e)
+        {
 
         }
     }

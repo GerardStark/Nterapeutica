@@ -627,6 +627,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DiffPlex\DiffPlex.csproj">
+      <Project>{f866c92c-2b31-41f2-a342-c13d62ff844d}</Project>
+      <Name>DiffPlex</Name>
+    </ProjectReference>
     <ProjectReference Include="..\LibLicitacion\LibLicitacion.csproj">
       <Project>{48ad9fd2-4856-4a38-93ec-d34ad2e5d06b}</Project>
       <Name>LibLicitacion</Name>

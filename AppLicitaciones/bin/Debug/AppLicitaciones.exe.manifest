@@ -42,14 +42,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="2123208">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="2135496">
       <assemblyIdentity name="AppLicitaciones" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>PwYw2s2nz8XhTJUB+m3Wf9mCZFjT2hYKHT4JRKZLQfo=</dsig:DigestValue>
+        <dsig:DigestValue>0pCGox3WWJUKT147WnVIcen42V4NLcqqeEfci4jLd5I=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DiffPlex.dll" size="18432">
+      <assemblyIdentity name="DiffPlex" version="1.4.1.0" publicKeyToken="1D35E91D1BD7BC0F" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>FohHEjttspg4OsfpxykQGbv756bzO9TeZ3K6Gx6qTVA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
