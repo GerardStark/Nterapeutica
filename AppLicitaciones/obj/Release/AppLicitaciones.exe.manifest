@@ -42,38 +42,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="2057160">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="2103752">
       <assemblyIdentity name="AppLicitaciones" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ppirEIpA4awQ62iqXVdoA59cbEj4nvmp+ONHBtknRjw=</dsig:DigestValue>
+        <dsig:DigestValue>YTn9fiidCboFAV7/WBslgsrP9w07m6D9JL7FQ6s3g2k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LibLicitacion.dll" size="23040">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LibLicitacion.dll" size="26112">
       <assemblyIdentity name="LibLicitacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7BlY0nBUvFX4DcsGRDEWK7oKIdIYWLgtIYsL3Qkonkk=</dsig:DigestValue>
+        <dsig:DigestValue>zwwQZXndqT7JPBP8RbiyCCOm/CR8pAbg0WTvgZhzNik=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ObjectListView.dll" size="428032">
-      <assemblyIdentity name="ObjectListView" version="2.9.1.19708" publicKeyToken="B1C5BF581481BCD4" language="neutral" processorArchitecture="msil" />
+      <assemblyIdentity name="ObjectListView" version="2.9.1.20163" publicKeyToken="B1C5BF581481BCD4" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dRzboUYdN876DeRJNOI+cfjPnBoc6BrdbzVNA7PPjdw=</dsig:DigestValue>
+        <dsig:DigestValue>Mn9UkttJUJC0d2IIY6vKvv25X+hyTPqwDdCcJvM9euA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

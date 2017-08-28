@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -110,6 +112,35 @@ namespace LibLicitacion
         private static List<Cucop> InicializarCucops()
         {
             List<Cucop> cucops = new List<Cucop>();
+            MainConfig mc = new MainConfig();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT id_cucop,clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,creado_en,actualizado_en FROM cucop", con))
+                {
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Cucop c = new Cucop();
+                            c.Id = Convert.ToInt32(dr["id_cucop"]);
+                            c.Clave = dr["clave"].ToString();
+                            c.Descripcion = dr["descripcion"].ToString();
+                            c.Especialidad = dr["especialidad"].ToString();
+                            c.Presentacion = dr["presentacion_tipo"].ToString();
+                            c.Cantidad = Convert.ToInt32(dr["presentacion_cant"]);
+                            c.Contenedor = dr["presentacion_cont"].ToString();
+                            c.Created = Convert.ToDateTime(dr["creado_en"]);
+                            c.Updated = Convert.ToDateTime(dr["actualizado_en"]);
+                            cucops.Add(c);
+                        }
+                    }
+
+                }
+            }
             return cucops;
         }
 

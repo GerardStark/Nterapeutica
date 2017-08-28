@@ -68,3 +68,11 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Procedimientos_Editar.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Procedimientos_Nuevo.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Items_Nuevo.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Items_Editar.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Item_Oferta.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.csproj.CoreCompileInputs.cache
+C:\AppLicitaciones\AppLicitaciones.exe.config
+C:\AppLicitaciones\AppLicitaciones.exe.manifest
+C:\AppLicitaciones\AppLicitaciones.application
+C:\AppLicitaciones\AppLicitaciones.exe
+C:\AppLicitaciones\AppLicitaciones.pdb

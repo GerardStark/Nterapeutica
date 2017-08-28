@@ -21,19 +21,37 @@ namespace AppLicitaciones
         }
 
         public void mostrarInfoItemCucops(int idItem)
-        {
-            int [] results = new int [99];
+        { 
             this.idItem = idItem;
-            string desc = Item.GetItems().Single(x => x.Id == idItem).Nombre;
-            for (int i = 0; i < Cucop.GetCucops().Count; i++)
+            List<ResultadoLev> comparados = new List<ResultadoLev>();
+            Item item = Item.GetItems().Single(x => x.Id == idItem);
+            txt_item.Text = item.Nombre;
+            foreach (Cucop c in Cucop.GetCucops())
             {
-                foreach (Cucop c in Cucop.GetCucops())
-                {
-                    results[i] = LevenshteinDistance.Compute(desc, c.Descripcion);
-                }
+                int result = LevenshteinDistance.Compute(item.Nombre, c.Descripcion);
+                ResultadoLev r = new ResultadoLev();
+                r.Cucop = c;
+                r.Resultado = result;
+                comparados.Add(r);
+
+                //Console.WriteLine(result);
+                //if (result == 0)
+                //{
+                //    txt_cucop.Text = c.Descripcion;
+                //}
                 
             }
-            
+            var topResults = comparados.OrderBy(i => i.Resultado).Take(4).ToList();
+            if (topResults[0].Resultado == 0)
+            {
+                txt_cucop.Text = topResults[0].Cucop.Descripcion;
+            }
+            txt_opcion_uno.Text = topResults[1].Cucop.Descripcion;
+            txt_opcion_dos.Text = topResults[2].Cucop.Descripcion;
+            txt_opcion_tres.Text = topResults[3].Cucop.Descripcion;
+
+            //metodo que regrese los objetos "Item" que cumplan con ser los 3 mas cercanos a 0
+
 
         }
     }

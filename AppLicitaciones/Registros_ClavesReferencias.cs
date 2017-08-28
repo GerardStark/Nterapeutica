@@ -53,58 +53,39 @@ namespace AppLicitaciones
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
-            if (id_referencia != 0)
+            try
             {
-                DialogResult result = MessageBox.Show("Se va a duplicar la información capturada en una Referencia Nueva, ¿seguir?","Aviso de duplicado",MessageBoxButtons.OKCancel);
-                if (result == DialogResult.OK)
-                {
-                    try
-                    {
-                        SqlConnection con = new SqlConnection(mc.con);
-                        SqlCommand cmd = new SqlCommand("INSERT into registros_claves_referencias (id_registro_sanitario,clave_ref_cod, descripcion, unidad_venta,actualizado_en)" +
-                            "values (@idregistro,@clave,@descripcion,@unidad,@actualizado)", con);
-                        con.Open();
-                        cmd.Parameters.AddWithValue("@idregistro", id_registro);
-                        cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
-                        cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
-                        cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
-                        cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        MessageBox.Show("Guardado");
-                        mostrarclavesregistro(id_registro);
+                SqlConnection con = new SqlConnection(mc.con);
+                SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS ( SELECT clave_ref_cod, descripcion FROM registros_claves_referencias WHERE id_registro_sanitario = @idregistro AND clave_ref_cod = @clave AND descripcion = @descripcion)
+                        BEGIN
+                            INSERT into registros_claves_referencias (id_registro_sanitario,clave_ref_cod, descripcion, unidad_venta,actualizado_en)
+                            OUTPUT INSERTED.id_clave_registro
+                            values (@idregistro,@clave,@descripcion,@unidad,@actualizado)
+                        END", con);
+                con.Open();
+                cmd.Parameters.AddWithValue("@idregistro", id_registro);
+                cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
+                cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
+                cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
+                cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
+                Int32 newId = (Int32)cmd.ExecuteScalar();
+                MessageBox.Show("Guardado");
+                mostrarclavesregistro(id_registro);
+                con.Close();
 
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                    }
-                }
+
             }
-            else
+            catch (Exception ex)
             {
-                try
+                if (ex is NullReferenceException)
                 {
-                    SqlConnection con = new SqlConnection(mc.con);
-                    SqlCommand cmd = new SqlCommand("INSERT into registros_claves_referencias (id_registro_sanitario,clave_ref_cod, descripcion, unidad_venta,actualizado_en)" +
-                        "values (@idregistro,@clave,@descripcion,@unidad,@actualizado)", con);
-                    con.Open();
-                    cmd.Parameters.AddWithValue("@idregistro", id_registro);
-                    cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
-                    cmd.Parameters.AddWithValue("@descripcion", mc.convertirasentencia(txt_descripcion.Text));
-                    cmd.Parameters.AddWithValue("@unidad", cmb_unidad.Text);
-                    cmd.Parameters.AddWithValue("@actualizado", DateTime.Now);
-                    cmd.ExecuteNonQuery();
-                    con.Close();
-                    MessageBox.Show("Guardado");
-                    mostrarclavesregistro(id_registro);
-
+                    MessageBox.Show("Ya existe");
                 }
-                catch (Exception ex)
+                else
                 {
                     MessageBox.Show(ex.ToString());
                 }
-            }
+            }          
         }
 
         private void btn_editar_Click(object sender, EventArgs e)

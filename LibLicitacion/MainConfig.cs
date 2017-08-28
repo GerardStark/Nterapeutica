@@ -402,4 +402,35 @@ namespace LibLicitacion
             return d[n, m];
         }
     }
+
+    public class ResultadoLev
+    {
+        public ResultadoLev()
+        {
+
+        }
+
+        public ResultadoLev(Cucop cucop, int restulado)
+        {
+            this.Cucop = cucop;
+            this.Resultado = resultado;
+        }
+
+        public Cucop Cucop
+        {
+            get { return cucop; }
+            set { cucop = value; }
+        }
+
+        private Cucop cucop;
+
+        public int Resultado
+        {
+            get { return resultado; }
+            set { resultado = value; }
+        }
+
+        private int resultado;
+
+    }
 }
