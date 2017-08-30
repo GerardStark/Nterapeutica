@@ -75,6 +75,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buscar_Cucops_Vinculacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buscar_Cucops_Vinculacion.Designer.cs">
+      <DependentUpon>Buscar_Cucops_Vinculacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Catalogos_Buscar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -418,6 +424,9 @@
     <Compile Include="Visualizar_Opciones.Designer.cs">
       <DependentUpon>Visualizar_Opciones.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Buscar_Cucops_Vinculacion.resx">
+      <DependentUpon>Buscar_Cucops_Vinculacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Catalogos_Buscar.resx">
       <DependentUpon>Catalogos_Buscar.cs</DependentUpon>
     </EmbeddedResource>

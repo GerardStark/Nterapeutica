@@ -29,9 +29,9 @@
     </frameworkAssemblies>
   </metadata>
   <files>
-    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\net35\DiffPlex.dll" target="lib\net35\DiffPlex.dll" />
-    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\net35\DiffPlex.xml" target="lib\net35\DiffPlex.xml" />
-    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\netstandard1.0\DiffPlex.dll" target="lib\netstandard1.0\DiffPlex.dll" />
-    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Debug\netstandard1.0\DiffPlex.xml" target="lib\netstandard1.0\DiffPlex.xml" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\net35\DiffPlex.dll" target="lib\net35\DiffPlex.dll" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\net35\DiffPlex.xml" target="lib\net35\DiffPlex.xml" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\netstandard1.0\DiffPlex.dll" target="lib\netstandard1.0\DiffPlex.dll" />
+    <file src="C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\netstandard1.0\DiffPlex.xml" target="lib\netstandard1.0\DiffPlex.xml" />
   </files>
 </package>

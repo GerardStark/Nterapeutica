@@ -38,9 +38,8 @@
             this.btn_preguntas = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.eventLog1 = new System.Diagnostics.EventLog();
-            this.btn_buscar_items = new System.Windows.Forms.Button();
-            this.btn_limpiar_resultados = new System.Windows.Forms.Button();
             this.btn_referencias = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +81,7 @@
             // 
             this.btn_guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_guardar.BackgroundImage")));
             this.btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_guardar.Location = new System.Drawing.Point(12, 432);
+            this.btn_guardar.Location = new System.Drawing.Point(518, 95);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(50, 50);
             this.btn_guardar.TabIndex = 8;
@@ -92,7 +91,7 @@
             // 
             this.btn_borrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_borrar.BackgroundImage")));
             this.btn_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_borrar.Location = new System.Drawing.Point(68, 432);
+            this.btn_borrar.Location = new System.Drawing.Point(518, 164);
             this.btn_borrar.Name = "btn_borrar";
             this.btn_borrar.Size = new System.Drawing.Size(50, 50);
             this.btn_borrar.TabIndex = 9;
@@ -102,7 +101,7 @@
             // 
             this.btn_preguntas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_preguntas.BackgroundImage")));
             this.btn_preguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_preguntas.Location = new System.Drawing.Point(124, 432);
+            this.btn_preguntas.Location = new System.Drawing.Point(518, 233);
             this.btn_preguntas.Name = "btn_preguntas";
             this.btn_preguntas.Size = new System.Drawing.Size(50, 50);
             this.btn_preguntas.TabIndex = 10;
@@ -112,7 +111,7 @@
             // 
             this.btn_cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.BackgroundImage")));
             this.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cancelar.Location = new System.Drawing.Point(236, 432);
+            this.btn_cancelar.Location = new System.Drawing.Point(518, 376);
             this.btn_cancelar.Name = "btn_cancelar";
             this.btn_cancelar.Size = new System.Drawing.Size(50, 50);
             this.btn_cancelar.TabIndex = 12;
@@ -122,44 +121,34 @@
             // 
             this.eventLog1.SynchronizingObject = this;
             // 
-            // btn_buscar_items
-            // 
-            this.btn_buscar_items.Location = new System.Drawing.Point(518, 28);
-            this.btn_buscar_items.Name = "btn_buscar_items";
-            this.btn_buscar_items.Size = new System.Drawing.Size(157, 30);
-            this.btn_buscar_items.TabIndex = 17;
-            this.btn_buscar_items.Text = "Buscar Items Similares";
-            this.btn_buscar_items.UseVisualStyleBackColor = true;
-            this.btn_buscar_items.Click += new System.EventHandler(this.btn_buscar_items_Click);
-            // 
-            // btn_limpiar_resultados
-            // 
-            this.btn_limpiar_resultados.Location = new System.Drawing.Point(518, 64);
-            this.btn_limpiar_resultados.Name = "btn_limpiar_resultados";
-            this.btn_limpiar_resultados.Size = new System.Drawing.Size(157, 30);
-            this.btn_limpiar_resultados.TabIndex = 18;
-            this.btn_limpiar_resultados.Text = "Limpiar Resultados";
-            this.btn_limpiar_resultados.UseVisualStyleBackColor = true;
-            this.btn_limpiar_resultados.Click += new System.EventHandler(this.btn_limpiar_resultados_Click);
-            // 
             // btn_referencias
             // 
             this.btn_referencias.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_referencias.BackgroundImage")));
             this.btn_referencias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_referencias.Location = new System.Drawing.Point(180, 432);
+            this.btn_referencias.Location = new System.Drawing.Point(518, 305);
             this.btn_referencias.Name = "btn_referencias";
             this.btn_referencias.Size = new System.Drawing.Size(50, 50);
             this.btn_referencias.TabIndex = 19;
             this.btn_referencias.UseVisualStyleBackColor = true;
             // 
+            // btn_buscar
+            // 
+            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
+            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_buscar.Location = new System.Drawing.Point(518, 28);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(50, 50);
+            this.btn_buscar.TabIndex = 20;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
             // Licitacion_Item_Oferta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 523);
+            this.ClientSize = new System.Drawing.Size(583, 442);
+            this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.btn_referencias);
-            this.Controls.Add(this.btn_limpiar_resultados);
-            this.Controls.Add(this.btn_buscar_items);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_preguntas);
             this.Controls.Add(this.btn_borrar);
@@ -189,8 +178,7 @@
         private System.Windows.Forms.Button btn_preguntas;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Diagnostics.EventLog eventLog1;
-        private System.Windows.Forms.Button btn_buscar_items;
-        private System.Windows.Forms.Button btn_limpiar_resultados;
         private System.Windows.Forms.Button btn_referencias;
+        private System.Windows.Forms.Button btn_buscar;
     }
 }

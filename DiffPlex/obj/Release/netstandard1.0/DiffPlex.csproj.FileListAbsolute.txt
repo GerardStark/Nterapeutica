@@ -1,0 +1,10 @@
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\netstandard1.0\DiffPlex.deps.json
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\netstandard1.0\DiffPlex.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\netstandard1.0\DiffPlex.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\netstandard1.0\DiffPlex.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\netstandard1.0\DiffPlex.csprojResolveAssemblyReference.cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\netstandard1.0\DiffPlex.csproj.CoreCompileInputs.cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\netstandard1.0\DiffPlex.AssemblyInfo.cs
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\netstandard1.0\DiffPlex.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\netstandard1.0\DiffPlex.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\netstandard1.0\DiffPlex.pdb

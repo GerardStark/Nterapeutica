@@ -1,0 +1,9 @@
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\net35\DiffPlex.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\net35\DiffPlex.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\bin\Release\net35\DiffPlex.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\net35\DiffPlex.csproj.CoreCompileInputs.cache
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\net35\DiffPlex.AssemblyInfo.cs
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\net35\DiffPlex.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\net35\DiffPlex.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\net35\DiffPlex.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\DiffPlex\obj\Release\net35\DiffPlex.csprojResolveAssemblyReference.cache

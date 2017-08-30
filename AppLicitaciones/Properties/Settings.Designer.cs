@@ -12,7 +12,7 @@ namespace AppLicitaciones.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -26,30 +26,8 @@ namespace AppLicitaciones.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-D0FVDPE\\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Se" +
-            "curity=True")]
-        public string LicitacionesConnectionString {
-            get {
-                return ((string)(this["LicitacionesConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=APOYO3-LAP\\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Securit" +
-            "y=True")]
-        public string LicitacionesCS {
-            get {
-                return ((string)(this["LicitacionesCS"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=APOYO3-LAP\\SQLEXPRESS;Initial Catalog=Licitaciones;Persist Security I" +
-            "nfo=True;User ID=user;Password=oirwbg6v23")]
+            "nfo=True;User ID=user;Password=licitaciones")]
         public string LicitacionesCSG {
             get {
                 return ((string)(this["LicitacionesCSG"]));
