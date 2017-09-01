@@ -33,14 +33,20 @@
             this.txt_cucop = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_guardar = new System.Windows.Forms.Button();
-            this.btn_borrar = new System.Windows.Forms.Button();
-            this.btn_preguntas = new System.Windows.Forms.Button();
-            this.btn_cancelar = new System.Windows.Forms.Button();
             this.eventLog1 = new System.Diagnostics.EventLog();
-            this.btn_referencias = new System.Windows.Forms.Button();
-            this.btn_buscar = new System.Windows.Forms.Button();
+            this.btn_buscar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_info = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_junta = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_referencias = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_descartar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_item
@@ -77,82 +83,113 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Item ofertado seleccionado:";
             // 
-            // btn_guardar
-            // 
-            this.btn_guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_guardar.BackgroundImage")));
-            this.btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_guardar.Location = new System.Drawing.Point(518, 95);
-            this.btn_guardar.Name = "btn_guardar";
-            this.btn_guardar.Size = new System.Drawing.Size(50, 50);
-            this.btn_guardar.TabIndex = 8;
-            this.btn_guardar.UseVisualStyleBackColor = true;
-            // 
-            // btn_borrar
-            // 
-            this.btn_borrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_borrar.BackgroundImage")));
-            this.btn_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_borrar.Location = new System.Drawing.Point(518, 164);
-            this.btn_borrar.Name = "btn_borrar";
-            this.btn_borrar.Size = new System.Drawing.Size(50, 50);
-            this.btn_borrar.TabIndex = 9;
-            this.btn_borrar.UseVisualStyleBackColor = true;
-            // 
-            // btn_preguntas
-            // 
-            this.btn_preguntas.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_preguntas.BackgroundImage")));
-            this.btn_preguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_preguntas.Location = new System.Drawing.Point(518, 233);
-            this.btn_preguntas.Name = "btn_preguntas";
-            this.btn_preguntas.Size = new System.Drawing.Size(50, 50);
-            this.btn_preguntas.TabIndex = 10;
-            this.btn_preguntas.UseVisualStyleBackColor = true;
-            // 
-            // btn_cancelar
-            // 
-            this.btn_cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.BackgroundImage")));
-            this.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cancelar.Location = new System.Drawing.Point(518, 376);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(50, 50);
-            this.btn_cancelar.TabIndex = 12;
-            this.btn_cancelar.UseVisualStyleBackColor = true;
-            // 
             // eventLog1
             // 
             this.eventLog1.SynchronizingObject = this;
             // 
-            // btn_referencias
-            // 
-            this.btn_referencias.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_referencias.BackgroundImage")));
-            this.btn_referencias.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_referencias.Location = new System.Drawing.Point(518, 305);
-            this.btn_referencias.Name = "btn_referencias";
-            this.btn_referencias.Size = new System.Drawing.Size(50, 50);
-            this.btn_referencias.TabIndex = 19;
-            this.btn_referencias.UseVisualStyleBackColor = true;
-            // 
             // btn_buscar
             // 
-            this.btn_buscar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_buscar.BackgroundImage")));
-            this.btn_buscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_buscar.Location = new System.Drawing.Point(518, 28);
+            this.btn_buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_buscar.Image = ((System.Drawing.Image)(resources.GetObject("btn_buscar.Image")));
+            this.btn_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(50, 50);
-            this.btn_buscar.TabIndex = 20;
-            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Size = new System.Drawing.Size(73, 44);
+            this.btn_buscar.Text = "toolStripButton1";
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(73, 15);
+            this.toolStripLabel1.Text = "Cambiar";
+            // 
+            // btn_info
+            // 
+            this.btn_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
+            this.btn_info.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(73, 44);
+            this.btn_info.Text = "toolStripButton2";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(73, 15);
+            this.toolStripLabel2.Text = "Info";
+            // 
+            // btn_junta
+            // 
+            this.btn_junta.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_junta.Image = ((System.Drawing.Image)(resources.GetObject("btn_junta.Image")));
+            this.btn_junta.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_junta.Name = "btn_junta";
+            this.btn_junta.Size = new System.Drawing.Size(73, 44);
+            this.btn_junta.Text = "toolStripButton4";
+            // 
+            // toolStripLabel4
+            // 
+            this.toolStripLabel4.Name = "toolStripLabel4";
+            this.toolStripLabel4.Size = new System.Drawing.Size(73, 15);
+            this.toolStripLabel4.Text = "Preguntas JA";
+            // 
+            // btn_referencias
+            // 
+            this.btn_referencias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_referencias.Image = ((System.Drawing.Image)(resources.GetObject("btn_referencias.Image")));
+            this.btn_referencias.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_referencias.Name = "btn_referencias";
+            this.btn_referencias.Size = new System.Drawing.Size(73, 44);
+            this.btn_referencias.Text = "toolStripButton5";
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(73, 15);
+            this.toolStripLabel5.Text = "Referencias";
+            // 
+            // btn_descartar
+            // 
+            this.btn_descartar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_descartar.Image = ((System.Drawing.Image)(resources.GetObject("btn_descartar.Image")));
+            this.btn_descartar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_descartar.Name = "btn_descartar";
+            this.btn_descartar.Size = new System.Drawing.Size(73, 44);
+            this.btn_descartar.Text = "toolStripButton6";
+            // 
+            // toolStripLabel6
+            // 
+            this.toolStripLabel6.Name = "toolStripLabel6";
+            this.toolStripLabel6.Size = new System.Drawing.Size(73, 15);
+            this.toolStripLabel6.Text = "Descartar";
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_buscar,
+            this.toolStripLabel1,
+            this.btn_info,
+            this.toolStripLabel2,
+            this.btn_junta,
+            this.toolStripLabel4,
+            this.btn_referencias,
+            this.toolStripLabel5,
+            this.btn_descartar,
+            this.toolStripLabel6});
+            this.toolStrip1.Location = new System.Drawing.Point(533, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(76, 442);
+            this.toolStrip1.TabIndex = 22;
+            this.toolStrip1.Text = "toolStrip1";
             // 
             // Licitacion_Item_Oferta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 442);
-            this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.btn_referencias);
-            this.Controls.Add(this.btn_cancelar);
-            this.Controls.Add(this.btn_preguntas);
-            this.Controls.Add(this.btn_borrar);
-            this.Controls.Add(this.btn_guardar);
+            this.ClientSize = new System.Drawing.Size(609, 442);
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_cucop);
@@ -162,6 +199,8 @@
             this.Name = "Licitacion_Item_Oferta";
             this.Text = "Licitacion_Item_Oferta";
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,12 +212,17 @@
         private System.Windows.Forms.TextBox txt_cucop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btn_guardar;
-        private System.Windows.Forms.Button btn_borrar;
-        private System.Windows.Forms.Button btn_preguntas;
-        private System.Windows.Forms.Button btn_cancelar;
         private System.Diagnostics.EventLog eventLog1;
-        private System.Windows.Forms.Button btn_referencias;
-        private System.Windows.Forms.Button btn_buscar;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton btn_buscar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ToolStripButton btn_info;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton btn_junta;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel4;
+        private System.Windows.Forms.ToolStripButton btn_referencias;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        private System.Windows.Forms.ToolStripButton btn_descartar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel6;
     }
 }

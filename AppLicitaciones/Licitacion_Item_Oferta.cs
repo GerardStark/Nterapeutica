@@ -8,9 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DiffPlex;
-using DiffPlex.DiffBuilder;
-using DiffPlex.DiffBuilder.Model;
+
 
 namespace AppLicitaciones
 {
@@ -29,21 +27,21 @@ namespace AppLicitaciones
             List<ResultadoLev> comparados = new List<ResultadoLev>();
             Item item = Item.GetItems().Single(x => x.Id == idItem);
             txt_item.Text = item.Nombre;
-            foreach (Cucop c in Cucop.GetCucops())
-            {
-                int result = LevenshteinDistance.Compute(item.Nombre, c.Descripcion);
-                ResultadoLev r = new ResultadoLev();
-                r.Cucop = c;
-                r.Resultado = result;
-                comparados.Add(r);
+            //foreach (Cucop c in Cucop.GetCucops())
+            //{
+            //    int result = LevenshteinDistance.Compute(item.Nombre, c.Descripcion);
+            //    ResultadoLev r = new ResultadoLev();
+            //    r.Cucop = c;
+            //    r.Resultado = result;
+            //    comparados.Add(r);
 
-                //Console.WriteLine(result);
-                //if (result == 0)
-                //{
-                //    txt_cucop.Text = c.Descripcion;
-                //}
+            //    Console.WriteLine(result);
+            //    if (result == 0)
+            //    {
+            //        txt_cucop.Text = c.Descripcion;
+            //    }
 
-            }
+            //}
             //var topResults = comparados.OrderBy(i => i.Resultado).Take(4).ToList();
             //var diffBuilder = new InlineDiffBuilder(new Differ());
             //var diff = diffBuilder.BuildDiffModel(item.Nombre, topResults[0].Cucop.Descripcion);
@@ -67,20 +65,7 @@ namespace AppLicitaciones
             //    }
 
             //    Console.WriteLine(line.Text);
-                //metodo que regrese los objetos "Item" que cumplan con ser los 3 mas cercanos a 0
-
-
-            
-        }
-
-        private void btn_limpiar_resultados_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btn_buscar_items_Click(object sender, EventArgs e)
-        {
-
+            //metodo que regrese los objetos "Item" que cumplan con ser los 3 mas cercanos a 0
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)

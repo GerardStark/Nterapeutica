@@ -31,11 +31,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_filtrar = new System.Windows.Forms.TextBox();
             this.dgvCucops = new System.Windows.Forms.DataGridView();
+            this.btn_filtrar = new System.Windows.Forms.Button();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailsColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.btn_filtrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCucops)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,8 +70,19 @@
             this.dgvCucops.Name = "dgvCucops";
             this.dgvCucops.ReadOnly = true;
             this.dgvCucops.RowHeadersVisible = false;
-            this.dgvCucops.Size = new System.Drawing.Size(1103, 485);
+            this.dgvCucops.Size = new System.Drawing.Size(1126, 485);
             this.dgvCucops.TabIndex = 0;
+            this.dgvCucops.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCucops_CellClick);
+            // 
+            // btn_filtrar
+            // 
+            this.btn_filtrar.Location = new System.Drawing.Point(560, 8);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(75, 23);
+            this.btn_filtrar.TabIndex = 3;
+            this.btn_filtrar.Text = "Filtrar";
+            this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // idColumn
             // 
@@ -101,23 +112,14 @@
             this.detailsColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.detailsColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.detailsColumn.Text = "Ver";
+            this.detailsColumn.UseColumnTextForButtonValue = true;
             this.detailsColumn.Width = 150;
-            // 
-            // btn_filtrar
-            // 
-            this.btn_filtrar.Location = new System.Drawing.Point(560, 8);
-            this.btn_filtrar.Name = "btn_filtrar";
-            this.btn_filtrar.Size = new System.Drawing.Size(75, 23);
-            this.btn_filtrar.TabIndex = 3;
-            this.btn_filtrar.Text = "Filtrar";
-            this.btn_filtrar.UseVisualStyleBackColor = true;
-            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
             // Buscar_Cucops_Vinculacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1128, 533);
+            this.ClientSize = new System.Drawing.Size(1157, 533);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.txt_filtrar);
             this.Controls.Add(this.label1);
@@ -136,10 +138,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_filtrar;
         private System.Windows.Forms.DataGridView dgvCucops;
+        private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
         private System.Windows.Forms.DataGridViewButtonColumn detailsColumn;
-        private System.Windows.Forms.Button btn_filtrar;
     }
 }

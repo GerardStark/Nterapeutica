@@ -85,7 +85,10 @@ namespace AppLicitaciones
                 cmd.Parameters.AddWithValue("@archivo", lbl_archivo.Text);
                 cmd.Parameters.AddWithValue("actualizado", DateTime.Now);
                 cmd.ExecuteNonQuery();
-                crearDirectorios(id_tramite);
+                if (lbl_archivo.Text == "(Vacio)")
+                {
+                    crearDirectorios(id_tramite);
+                }
                 con.Close();
                 mostrarprorrogasregistro(id_registro);
             }

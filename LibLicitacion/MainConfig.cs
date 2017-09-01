@@ -305,6 +305,35 @@ namespace LibLicitacion
             return nombre;
         }
 
+        public string obenernombrecarta(int idcarta)
+        {
+            string nombre = "";
+            if (idcarta != 0)
+            {
+                SqlConnection conec = new SqlConnection(con);
+                conec.Open();
+                SqlCommand cmd = new SqlCommand("Select * from fabricantes_titulares_distribuidores where id_ftd=@id", conec);
+                cmd.Parameters.AddWithValue("@id", idcarta);
+                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adapt.Fill(ds, "ftd");
+                conec.Close();
+                if (ds.Tables["ftd"].Rows.Count > 0)
+                {
+                    nombre = ds.Tables["ftd"].Rows[0]["nombre"].ToString();
+                }
+                else
+                {
+                    nombre = "(Vacio)";
+                }
+            }
+            else
+            {
+                nombre = "(Vacio)";
+            }
+            return nombre;
+        }
+
         public string convertirasentencia(string original)
         {
             var sourcestring = original;

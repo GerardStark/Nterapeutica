@@ -46,7 +46,7 @@ namespace AppLicitaciones
                         opcion.Controls.Add(opt);
                         tabOpciones.TabPages.Add(opcion);
                         opt.pasardatosvinculo(idCucop, current, Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));                       
-                        opt.mostrarNombreProducto(Text = dt.Rows[i]["nombre"].ToString());
+                        opt.mostrarNombreProducto(dt.Rows[i]["nombre"].ToString(), Convert.ToInt32(dt.Rows[i]["carta_apoyo"]));
                         opt.buscarRegistros(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
                         opt.buscarCatalogos(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
                         opt.buscarCertificados(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));

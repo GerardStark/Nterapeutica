@@ -22,68 +22,24 @@ namespace AppLicitaciones
         }
         public void mostrarinfocucop(int id_cucop)
         {
+           
             this.id_cucop = id_cucop;
             try
             {
-                SqlConnection con = new SqlConnection(mc.con);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from cucop where id_cucop = @id", con);
-                cmd.Parameters.AddWithValue("@id", id_cucop);
-                SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adapt.Fill(dt);
-                con.Close();
-                if (dt.Rows.Count > 0)
-                {
-                    lbl_clave.Text = dt.Rows[0]["clave"].ToString();
-                    txt_descripcion.Text = dt.Rows[0]["descripcion"].ToString();
-                    lbl_spec.Text = dt.Rows[0]["especialidad"].ToString();
-                    lbl_tipo.Text = dt.Rows[0]["presentacion_tipo"].ToString();
-                    lbl_cant.Text = dt.Rows[0]["presentacion_cant"].ToString();
-                    lbl_cont.Text = dt.Rows[0]["presentacion_cont"].ToString();
-                   // mostrarVinculosCucop((Int32)dt.Rows[0]["id_cucop"]);
-                }
-
+                var cucop = Cucop.GetCucops().Where(x => x.Id == id_cucop).Single();
+                lbl_clave.Text = cucop.Clave;
+                txt_descripcion.Text = cucop.Descripcion;
+                lbl_spec.Text = cucop.Especialidad;
+                lbl_tipo.Text = cucop.Presentacion;
+                lbl_cant.Text = cucop.Cantidad.ToString(); ;
+                lbl_cont.Text = cucop.Contenedor;
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-        //private void mostrarVinculosCucop(int idCucop)
-        //{
-        //    tabOpciones.TabPages.Clear();
-        //    try
-        //    {
-        //        using (SqlConnection con = new SqlConnection(mc.con))
-        //        {
-        //            con.Open();
-        //            SqlCommand cmd = new SqlCommand(@"SELECT * From cucop_vinculos WHERE id_cucop_item = @item", con);
-        //            cmd.Parameters.AddWithValue("@item", idCucop);
-        //            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-        //            DataTable dt = new DataTable();
-        //            adapt.Fill(dt);
-        //            for (int i = 0; i < dt.Rows.Count; i++)
-        //            {
-        //                //buscar opciones, y sus vinculaciones ya establecidas
-        //                int current = i + 1;
-        //                TabPage opcion = new TabPage();
-        //                opcion.Text = "Opcion " + current;
-        //                Visualizar_Opciones opt = new Visualizar_Opciones();
-        //                opcion.Controls.Add(opt);
-        //                tabOpciones.TabPages.Add(opcion);                        
-        //                opt.mostrarNombreProducto(Text = dt.Rows[i]["nombre"].ToString());
-        //                opt.buscarRegistros(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
-        //                opt.buscarCatalogos(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
-        //                opt.buscarCertificados(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+        }        
 
         private void btn_editar_Click(object sender, EventArgs e)
         {

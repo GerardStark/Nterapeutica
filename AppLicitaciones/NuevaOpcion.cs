@@ -23,9 +23,10 @@ namespace AppLicitaciones
             InitializeComponent();
         }
 
-        public void mostrarNombreProducto(string nombre)
+        public void mostrarNombreProducto(string nombre, int idCarta)
         {
             txt_nombre_prod.Text = nombre;
+            txt_carta.Text = mc.obenernombrecarta(idCarta);
             btn_cambiar_nombre.Enabled = false;
         }
         public void buscarRegistros(int idVinculo)

@@ -96,7 +96,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(517, 132);
+            this.label7.Location = new System.Drawing.Point(518, 132);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(183, 20);
@@ -136,7 +136,7 @@
             // btn_cambiar_nombre
             // 
             this.btn_cambiar_nombre.Enabled = false;
-            this.btn_cambiar_nombre.Location = new System.Drawing.Point(751, 42);
+            this.btn_cambiar_nombre.Location = new System.Drawing.Point(752, 42);
             this.btn_cambiar_nombre.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_cambiar_nombre.Name = "btn_cambiar_nombre";
             this.btn_cambiar_nombre.Size = new System.Drawing.Size(97, 26);
@@ -152,7 +152,8 @@
             this.list_vinc_reg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.list_vinc_reg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.datColumn});
-            this.list_vinc_reg.Location = new System.Drawing.Point(41, 155);
+            this.list_vinc_reg.Location = new System.Drawing.Point(40, 155);
+            this.list_vinc_reg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_vinc_reg.Name = "list_vinc_reg";
             this.list_vinc_reg.ReadOnly = true;
             this.list_vinc_reg.RowHeadersVisible = false;
@@ -174,6 +175,7 @@
             this.list_vinc_cat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreColumn});
             this.list_vinc_cat.Location = new System.Drawing.Point(441, 155);
+            this.list_vinc_cat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_vinc_cat.Name = "list_vinc_cat";
             this.list_vinc_cat.ReadOnly = true;
             this.list_vinc_cat.RowHeadersVisible = false;
@@ -195,6 +197,7 @@
             this.list_vinc_cert.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numeroColumn});
             this.list_vinc_cert.Location = new System.Drawing.Point(836, 155);
+            this.list_vinc_cert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.list_vinc_cert.Name = "list_vinc_cert";
             this.list_vinc_cert.ReadOnly = true;
             this.list_vinc_cert.RowHeadersVisible = false;

@@ -76,3 +76,4 @@ C:\AppLicitaciones\AppLicitaciones.exe.manifest
 C:\AppLicitaciones\AppLicitaciones.application
 C:\AppLicitaciones\AppLicitaciones.exe
 C:\AppLicitaciones\AppLicitaciones.pdb
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Buscar_Cucops_Vinculacion.resources
