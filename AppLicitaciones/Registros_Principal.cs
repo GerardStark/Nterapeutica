@@ -37,6 +37,7 @@ namespace AppLicitaciones
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
+                lbl_conteo.Text = dt.Rows.Count.ToString();
                 foreach (DataRow dr in dt.Rows)
                 {
                     DGVRegistros.Rows.Add(dr.ItemArray);
@@ -217,6 +218,9 @@ namespace AppLicitaciones
                     {
                         e.Value = "(Vacio)";
                     }
+                    break;
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
                     break;
             }
         }

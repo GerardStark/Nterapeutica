@@ -53,6 +53,8 @@
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.tt_registros = new System.Windows.Forms.ToolStrip();
+            this.lbl_conteo = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).BeginInit();
             this.tt_registros.SuspendLayout();
             this.SuspendLayout();
@@ -267,20 +269,40 @@
             this.toolStripLabel3});
             this.tt_registros.Location = new System.Drawing.Point(0, 0);
             this.tt_registros.Name = "tt_registros";
-            this.tt_registros.Size = new System.Drawing.Size(91, 526);
+            this.tt_registros.Size = new System.Drawing.Size(91, 549);
             this.tt_registros.Stretch = true;
             this.tt_registros.TabIndex = 0;
             this.tt_registros.Text = "Herramientas";
+            // 
+            // lbl_conteo
+            // 
+            this.lbl_conteo.AutoSize = true;
+            this.lbl_conteo.Location = new System.Drawing.Point(1013, 524);
+            this.lbl_conteo.Name = "lbl_conteo";
+            this.lbl_conteo.Size = new System.Drawing.Size(45, 16);
+            this.lbl_conteo.TabIndex = 2;
+            this.lbl_conteo.Text = "label1";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1085, 524);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(129, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Registros Sanitarios";
             // 
             // Registros_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1223, 526);
+            this.ClientSize = new System.Drawing.Size(1223, 549);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_conteo);
             this.Controls.Add(this.DGVRegistros);
             this.Controls.Add(this.tt_registros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Registros_Principal";
             this.Text = " ";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -317,5 +339,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn emisionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimientoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
+        private System.Windows.Forms.Label lbl_conteo;
+        private System.Windows.Forms.Label label2;
     }
 }

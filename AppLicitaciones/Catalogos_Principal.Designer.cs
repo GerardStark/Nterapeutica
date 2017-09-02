@@ -41,6 +41,8 @@
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_Catalogos = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_conteo = new System.Windows.Forms.Label();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +73,7 @@
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(91, 671);
+            this.toolStrip1.Size = new System.Drawing.Size(91, 565);
             this.toolStrip1.Stretch = true;
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
@@ -175,20 +177,39 @@
             this.marcaColumn,
             this.idiomaColumn,
             this.updatedColumn});
-            this.DGV_Catalogos.Location = new System.Drawing.Point(95, 12);
+            this.DGV_Catalogos.Location = new System.Drawing.Point(84, 10);
+            this.DGV_Catalogos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DGV_Catalogos.Name = "DGV_Catalogos";
             this.DGV_Catalogos.ReadOnly = true;
-            this.DGV_Catalogos.Size = new System.Drawing.Size(1243, 649);
+            this.DGV_Catalogos.Size = new System.Drawing.Size(1105, 519);
             this.DGV_Catalogos.TabIndex = 2;
             this.DGV_Catalogos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Catalogos_CellClick);
             this.DGV_Catalogos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_Catalogos_CellFormatting);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1110, 540);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Catálogos";
+            // 
+            // lbl_conteo
+            // 
+            this.lbl_conteo.AutoSize = true;
+            this.lbl_conteo.Location = new System.Drawing.Point(1023, 540);
+            this.lbl_conteo.Name = "lbl_conteo";
+            this.lbl_conteo.Size = new System.Drawing.Size(45, 16);
+            this.lbl_conteo.TabIndex = 6;
+            this.lbl_conteo.Text = "label1";
             // 
             // idColumn
             // 
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 25;
+            this.idColumn.Width = 50;
             // 
             // nombreColumn
             // 
@@ -246,13 +267,15 @@
             // 
             // Catalogos_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 671);
+            this.ClientSize = new System.Drawing.Size(1200, 565);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_conteo);
             this.Controls.Add(this.DGV_Catalogos);
             this.Controls.Add(this.toolStrip1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Catalogos_Principal";
             this.Text = "Panel Principal de Catálogos de Productos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -278,6 +301,8 @@
         private System.Windows.Forms.DataGridView DGV_Catalogos;
         private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_conteo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoColumn;

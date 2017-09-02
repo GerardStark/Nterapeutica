@@ -36,6 +36,7 @@ namespace AppLicitaciones
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
+                lbl_conteo.Text = dt.Rows.Count.ToString();
                 foreach (DataRow dr in dt.Rows)
                 {
                     DGV_certificados.Rows.Add(dr.ItemArray);
@@ -111,7 +112,13 @@ namespace AppLicitaciones
         }
         private void DGV_certificados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+            switch (this.DGV_certificados.Columns[e.ColumnIndex].Name)
+            {
+                
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
+            }
         }
 
         private void btn_visualizar_Click(object sender, EventArgs e)

@@ -103,7 +103,7 @@
             // 
             this.cuadroBasicoDelIMSSToolStripMenuItem.Name = "cuadroBasicoDelIMSSToolStripMenuItem";
             this.cuadroBasicoDelIMSSToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
-            this.cuadroBasicoDelIMSSToolStripMenuItem.Text = "Cuadro Basico del IMSS";
+            this.cuadroBasicoDelIMSSToolStripMenuItem.Text = "CUCOP e Ítems";
             this.cuadroBasicoDelIMSSToolStripMenuItem.Click += new System.EventHandler(this.cuadroBasicoDelIMSSToolStripMenuItem_Click);
             // 
             // fabricantesTitularesDistribuidoresToolStripMenuItem

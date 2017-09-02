@@ -47,6 +47,8 @@
             this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_conteo = new System.Windows.Forms.Label();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +78,7 @@
             this.DGV_Referencias.TabIndex = 1;
             this.DGV_Referencias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellClick);
             this.DGV_Referencias.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_Referencias_CellDoubleClick);
+            this.DGV_Referencias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_Referencias_CellFormatting);
             // 
             // label3
             // 
@@ -181,7 +184,7 @@
             this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(55, 563);
+            this.toolStrip1.Size = new System.Drawing.Size(55, 594);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -211,11 +214,30 @@
             // 
             this.data_unidadesTableAdapter.ClearBeforeFill = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(677, 565);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(95, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Referencias";
+            // 
+            // lbl_conteo
+            // 
+            this.lbl_conteo.AutoSize = true;
+            this.lbl_conteo.Location = new System.Drawing.Point(593, 565);
+            this.lbl_conteo.Name = "lbl_conteo";
+            this.lbl_conteo.Size = new System.Drawing.Size(51, 20);
+            this.lbl_conteo.TabIndex = 14;
+            this.lbl_conteo.Text = "label1";
+            // 
             // idColumn
             // 
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
             // 
             // claveColumn
             // 
@@ -248,7 +270,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(788, 563);
+            this.ClientSize = new System.Drawing.Size(788, 594);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbl_conteo);
             this.Controls.Add(this.cmb_unidad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_descripcion);
@@ -291,6 +315,8 @@
         private LicitacionesDataSet licitacionesDataSet;
         private System.Windows.Forms.BindingSource dataunidadesBindingSource;
         private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbl_conteo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionColumn;

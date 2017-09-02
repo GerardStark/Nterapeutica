@@ -141,6 +141,7 @@
             this.DGV_cucop.Size = new System.Drawing.Size(1228, 660);
             this.DGV_cucop.TabIndex = 2;
             this.DGV_cucop.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_cucop_CellClick);
+            this.DGV_cucop.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_cucop_CellFormatting);
             // 
             // idColumn
             // 

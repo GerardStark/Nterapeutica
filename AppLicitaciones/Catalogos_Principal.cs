@@ -35,6 +35,7 @@ namespace AppLicitaciones
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 adapt.Fill(dt);
+                lbl_conteo.Text = dt.Rows.Count.ToString();
                 foreach (DataRow dr in dt.Rows)
                 {
                     DGV_Catalogos.Rows.Add(dr.ItemArray);
@@ -138,7 +139,13 @@ namespace AppLicitaciones
 
         private void DGV_Catalogos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            
+            switch (this.DGV_Catalogos.Columns[e.ColumnIndex].Name)
+            {
+
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
+            }
         }
 
         private void DGV_Catalogos_CellClick(object sender, DataGridViewCellEventArgs e)

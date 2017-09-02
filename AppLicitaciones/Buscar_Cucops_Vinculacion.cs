@@ -13,8 +13,7 @@ namespace AppLicitaciones
 {
     public partial class Buscar_Cucops_Vinculacion : Form
     {
-        private List<string> terminos = new List<string>();
-        private List<Cucop> cucops = Cucop.GetCucops();
+        
         public Buscar_Cucops_Vinculacion()
         {
             InitializeComponent();
@@ -37,7 +36,6 @@ namespace AppLicitaciones
             dgvCucops.Rows.Clear();
             foreach (Cucop c in Cucop.GetCucops())
             {
-
                 dgvCucops.Rows.Add(c.Id, c.Clave, c.Descripcion);
             }
         }
@@ -45,15 +43,9 @@ namespace AppLicitaciones
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
             dgvCucops.Rows.Clear();
-            
-            var terminos = txt_filtrar.Text.ToLower().Split(null);
-            var termino = terminos[0];
-            var result = from x in cucops where (x.Descripcion.Contains(termino)) select x;
-            cucops.Clear();
-            foreach (Cucop c in result)
+            foreach (Cucop c in Cucop.GetCucops().Where(x => x.Descripcion.Contains(txt_filtrar.Text)))
             {
-                dgvCucops.Rows.Add(c.Id, c.Clave, c.Descripcion);
-                cucops.Add(c);
+                dgvCucops.Rows.Add(c.Id,c.Clave,c.Descripcion);
             }
         }
 

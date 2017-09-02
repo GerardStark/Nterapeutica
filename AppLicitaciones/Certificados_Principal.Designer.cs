@@ -37,6 +37,8 @@
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_certificados = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_conteo = new System.Windows.Forms.Label();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -136,17 +138,36 @@
             this.DGV_certificados.Location = new System.Drawing.Point(60, 12);
             this.DGV_certificados.Name = "DGV_certificados";
             this.DGV_certificados.ReadOnly = true;
-            this.DGV_certificados.Size = new System.Drawing.Size(1218, 652);
+            this.DGV_certificados.RowHeadersVisible = false;
+            this.DGV_certificados.Size = new System.Drawing.Size(1204, 635);
             this.DGV_certificados.TabIndex = 2;
             this.DGV_certificados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_certificados_CellClick);
             this.DGV_certificados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_certificados_CellFormatting);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1185, 662);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Certificados";
+            // 
+            // lbl_conteo
+            // 
+            this.lbl_conteo.AutoSize = true;
+            this.lbl_conteo.Location = new System.Drawing.Point(1098, 662);
+            this.lbl_conteo.Name = "lbl_conteo";
+            this.lbl_conteo.Size = new System.Drawing.Size(51, 20);
+            this.lbl_conteo.TabIndex = 4;
+            this.lbl_conteo.Text = "label1";
             // 
             // idColumn
             // 
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 25;
+            this.idColumn.Width = 50;
             // 
             // numColumn
             // 
@@ -215,7 +236,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1290, 691);
+            this.ClientSize = new System.Drawing.Size(1285, 691);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_conteo);
             this.Controls.Add(this.DGV_certificados);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -240,6 +263,8 @@
         private System.Windows.Forms.DataGridView DGV_certificados;
         private System.Windows.Forms.ToolStripButton btn_visualizar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_conteo;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoColumn;

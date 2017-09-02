@@ -38,6 +38,7 @@ namespace AppLicitaciones
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
+                    lbl_conteo.Text = dt.Rows.Count.ToString();
                     foreach (DataRow dr in dt.Rows)
                     {
                         DGV_Referencias.Rows.Add(dr.ItemArray);
@@ -197,6 +198,17 @@ namespace AppLicitaciones
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
             this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
 
+        }
+
+        private void DGV_Referencias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.DGV_Referencias.Columns[e.ColumnIndex].Name)
+            {
+
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
+            }
         }
 
         private void DGV_Referencias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
