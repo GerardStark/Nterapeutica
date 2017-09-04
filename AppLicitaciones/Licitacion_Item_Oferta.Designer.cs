@@ -36,15 +36,15 @@
             this.eventLog1 = new System.Diagnostics.EventLog();
             this.btn_buscar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_info = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btn_junta = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_referencias = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.btn_descartar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_guardar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_info = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -103,20 +103,11 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(73, 15);
             this.toolStripLabel1.Text = "Cambiar";
             // 
-            // btn_info
-            // 
-            this.btn_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
-            this.btn_info.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_info.Name = "btn_info";
-            this.btn_info.Size = new System.Drawing.Size(73, 44);
-            this.btn_info.Text = "toolStripButton2";
-            // 
             // toolStripLabel2
             // 
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(73, 15);
-            this.toolStripLabel2.Text = "Info";
+            this.toolStripLabel2.Text = "Informacion";
             // 
             // btn_junta
             // 
@@ -126,27 +117,13 @@
             this.btn_junta.Name = "btn_junta";
             this.btn_junta.Size = new System.Drawing.Size(73, 44);
             this.btn_junta.Text = "toolStripButton4";
+            this.btn_junta.Click += new System.EventHandler(this.btn_junta_Click);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
             this.toolStripLabel4.Size = new System.Drawing.Size(73, 15);
             this.toolStripLabel4.Text = "Preguntas JA";
-            // 
-            // btn_referencias
-            // 
-            this.btn_referencias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_referencias.Image = ((System.Drawing.Image)(resources.GetObject("btn_referencias.Image")));
-            this.btn_referencias.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_referencias.Name = "btn_referencias";
-            this.btn_referencias.Size = new System.Drawing.Size(73, 44);
-            this.btn_referencias.Text = "toolStripButton5";
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(73, 15);
-            this.toolStripLabel5.Text = "Referencias";
             // 
             // btn_descartar
             // 
@@ -174,15 +151,41 @@
             this.toolStripLabel2,
             this.btn_junta,
             this.toolStripLabel4,
-            this.btn_referencias,
-            this.toolStripLabel5,
             this.btn_descartar,
-            this.toolStripLabel6});
+            this.toolStripLabel6,
+            this.btn_guardar,
+            this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(533, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(76, 442);
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
+            this.btn_guardar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(73, 44);
+            this.btn_guardar.Text = "toolStripButton1";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(73, 15);
+            this.toolStripLabel3.Text = "Guardar";
+            // 
+            // btn_info
+            // 
+            this.btn_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
+            this.btn_info.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(73, 44);
+            this.btn_info.Text = "toolStripButton2";
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
             // 
             // Licitacion_Item_Oferta
             // 
@@ -197,6 +200,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Item_Oferta";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Item_Oferta";
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
@@ -216,13 +220,13 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_buscar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton btn_info;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton btn_junta;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.ToolStripButton btn_referencias;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripButton btn_descartar;
         private System.Windows.Forms.ToolStripLabel toolStripLabel6;
+        private System.Windows.Forms.ToolStripButton btn_guardar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripButton btn_info;
     }
 }

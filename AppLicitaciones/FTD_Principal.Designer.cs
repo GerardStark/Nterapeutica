@@ -34,12 +34,14 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.btn_editar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_contactos = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.btn_cancelar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.btn_seleccionar = new System.Windows.Forms.ToolStripButton();
+            this.btn_borrar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_contactos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,8 +56,6 @@
             this.rfcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_rfc = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btn_borrar = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_FTD)).BeginInit();
             this.SuspendLayout();
@@ -116,22 +116,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(65, 15);
             this.toolStripLabel1.Text = "Editar";
             // 
-            // btn_contactos
-            // 
-            this.btn_contactos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_contactos.Image = ((System.Drawing.Image)(resources.GetObject("btn_contactos.Image")));
-            this.btn_contactos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_contactos.Name = "btn_contactos";
-            this.btn_contactos.Size = new System.Drawing.Size(65, 54);
-            this.btn_contactos.Text = "toolStripButton5";
-            this.btn_contactos.Click += new System.EventHandler(this.btn_contactos_Click);
-            // 
-            // toolStripLabel5
-            // 
-            this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(65, 15);
-            this.toolStripLabel5.Text = "Contactos";
-            // 
             // toolStripLabel6
             // 
             this.toolStripLabel6.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
@@ -166,6 +150,38 @@
             this.btn_seleccionar.Size = new System.Drawing.Size(65, 54);
             this.btn_seleccionar.Text = "toolStripButton4";
             this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
+            // 
+            // btn_borrar
+            // 
+            this.btn_borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_borrar.Image")));
+            this.btn_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_borrar.Name = "btn_borrar";
+            this.btn_borrar.Size = new System.Drawing.Size(65, 54);
+            this.btn_borrar.Text = "toolStripButton1";
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel3.Text = "Borrar";
+            // 
+            // btn_contactos
+            // 
+            this.btn_contactos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_contactos.Image = ((System.Drawing.Image)(resources.GetObject("btn_contactos.Image")));
+            this.btn_contactos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_contactos.Name = "btn_contactos";
+            this.btn_contactos.Size = new System.Drawing.Size(65, 54);
+            this.btn_contactos.Text = "toolStripButton5";
+            this.btn_contactos.Click += new System.EventHandler(this.btn_contactos_Click);
+            // 
+            // toolStripLabel5
+            // 
+            this.toolStripLabel5.Name = "toolStripLabel5";
+            this.toolStripLabel5.Size = new System.Drawing.Size(65, 15);
+            this.toolStripLabel5.Text = "Contactos";
             // 
             // label1
             // 
@@ -229,10 +245,12 @@
             this.DGV_FTD.Location = new System.Drawing.Point(71, 138);
             this.DGV_FTD.Name = "DGV_FTD";
             this.DGV_FTD.ReadOnly = true;
-            this.DGV_FTD.Size = new System.Drawing.Size(680, 489);
+            this.DGV_FTD.RowHeadersVisible = false;
+            this.DGV_FTD.Size = new System.Drawing.Size(639, 489);
             this.DGV_FTD.TabIndex = 7;
             this.DGV_FTD.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_FTD_CellClick);
             this.DGV_FTD.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_FTD_CellDoubleClick);
+            this.DGV_FTD.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_FTD_CellFormatting);
             // 
             // idColumn
             // 
@@ -284,27 +302,11 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "R.F.C";
             // 
-            // btn_borrar
-            // 
-            this.btn_borrar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_borrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_borrar.Image")));
-            this.btn_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_borrar.Name = "btn_borrar";
-            this.btn_borrar.Size = new System.Drawing.Size(65, 54);
-            this.btn_borrar.Text = "toolStripButton1";
-            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
-            // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(65, 15);
-            this.toolStripLabel3.Text = "Borrar";
-            // 
             // FTD_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(771, 639);
+            this.ClientSize = new System.Drawing.Size(723, 639);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txt_rfc);
             this.Controls.Add(this.DGV_FTD);

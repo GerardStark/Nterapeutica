@@ -177,5 +177,16 @@ namespace AppLicitaciones
                 }
             }
         }
+
+        private void DGV_FTD_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.DGV_FTD.Columns[e.ColumnIndex].Name)
+            {
+
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
+            }
+        }
     }
 }

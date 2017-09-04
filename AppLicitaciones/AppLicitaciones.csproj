@@ -308,6 +308,12 @@
     <Compile Include="Licitacion_Item_Visualizar.Designer.cs">
       <DependentUpon>Licitacion_Item_Visualizar.cs</DependentUpon>
     </Compile>
+    <Compile Include="licitacion_junta_preguntas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="licitacion_junta_preguntas.Designer.cs">
+      <DependentUpon>licitacion_junta_preguntas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Nueva.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -531,6 +537,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Item_Oferta.resx">
       <DependentUpon>Licitacion_Item_Oferta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="licitacion_junta_preguntas.resx">
+      <DependentUpon>licitacion_junta_preguntas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Nueva.resx">
       <DependentUpon>Licitacion_Nueva.cs</DependentUpon>

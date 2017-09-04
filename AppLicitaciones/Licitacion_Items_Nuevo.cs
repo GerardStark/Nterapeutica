@@ -49,11 +49,22 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(txt_cantidad.Text));
                     cmd.Parameters.AddWithValue("@contenedor", (cmb_cont.SelectedItem as ComboboxItem).Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                    Int32 newId = cmd.ExecuteNonQuery();
+                    Int32 newId = (Int32)cmd.ExecuteScalar();
                     if (newId != 0)
                     {
-                        MessageBox.Show("Guardado");
-                        this.DialogResult = DialogResult.OK;
+                        using (SqlCommand cmdd = new SqlCommand("licitacion_vinculacion_create", con))
+                        {
+                            cmdd.CommandType = CommandType.StoredProcedure;
+                            cmdd.Parameters.AddWithValue("@idItem", newId);
+                            cmdd.Parameters.AddWithValue("@idCucop", DBNull.Value);
+                            cmdd.Parameters.AddWithValue("@updated", DateTime.Now);
+                            int confirm = cmdd.ExecuteNonQuery();
+                            if (confirm != 0)
+                            {
+                                MessageBox.Show("Guardado");
+                                this.DialogResult = DialogResult.OK;
+                            }
+                        }
                     }
                 }
             }

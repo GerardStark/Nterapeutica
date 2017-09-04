@@ -14,7 +14,7 @@ namespace AppLicitaciones
 {
     public partial class Cucop_Visualizar : Form
     {
-        int id_cucop = 0;
+        public int id_cucop = 0;
         MainConfig mc = new MainConfig();
         public Cucop_Visualizar()
         {
@@ -177,6 +177,11 @@ namespace AppLicitaciones
                 mostrarinfocucop(id_cucop);
                 
             }
+        }
+
+        private void btn_seleccionar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

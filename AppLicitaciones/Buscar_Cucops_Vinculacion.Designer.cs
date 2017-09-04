@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_filtrar = new System.Windows.Forms.TextBox();
             this.dgvCucops = new System.Windows.Forms.DataGridView();
@@ -36,7 +37,6 @@
             this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detailsColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_filtrar = new System.Windows.Forms.Button();
-            this.pnl_tags = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCucops)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,9 @@
             // 
             this.dgvCucops.AllowUserToAddRows = false;
             this.dgvCucops.AllowUserToDeleteRows = false;
+            this.dgvCucops.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvCucops.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCucops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCucops.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -71,7 +74,10 @@
             this.dgvCucops.Name = "dgvCucops";
             this.dgvCucops.ReadOnly = true;
             this.dgvCucops.RowHeadersVisible = false;
-            this.dgvCucops.Size = new System.Drawing.Size(1126, 485);
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCucops.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvCucops.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCucops.Size = new System.Drawing.Size(1259, 633);
             this.dgvCucops.TabIndex = 0;
             this.dgvCucops.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCucops_CellClick);
             // 
@@ -86,7 +92,7 @@
             this.claveColumn.HeaderText = "Clave";
             this.claveColumn.Name = "claveColumn";
             this.claveColumn.ReadOnly = true;
-            this.claveColumn.Width = 250;
+            this.claveColumn.Width = 200;
             // 
             // descColumn
             // 
@@ -104,7 +110,6 @@
             this.detailsColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.detailsColumn.Text = "Ver";
             this.detailsColumn.UseColumnTextForButtonValue = true;
-            this.detailsColumn.Width = 150;
             // 
             // btn_filtrar
             // 
@@ -116,19 +121,11 @@
             this.btn_filtrar.UseVisualStyleBackColor = true;
             this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
             // 
-            // pnl_tags
-            // 
-            this.pnl_tags.Location = new System.Drawing.Point(641, 7);
-            this.pnl_tags.Name = "pnl_tags";
-            this.pnl_tags.Size = new System.Drawing.Size(497, 24);
-            this.pnl_tags.TabIndex = 4;
-            // 
             // Buscar_Cucops_Vinculacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1157, 533);
-            this.Controls.Add(this.pnl_tags);
+            this.ClientSize = new System.Drawing.Size(1283, 681);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.txt_filtrar);
             this.Controls.Add(this.label1);
@@ -136,6 +133,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Buscar_Cucops_Vinculacion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Buscar_Cucops_Vinculacion";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCucops)).EndInit();
             this.ResumeLayout(false);
@@ -152,6 +150,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
         private System.Windows.Forms.DataGridViewButtonColumn detailsColumn;
-        private System.Windows.Forms.Panel pnl_tags;
     }
 }

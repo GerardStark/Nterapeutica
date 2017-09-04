@@ -46,6 +46,8 @@
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_licitaciones = new System.Windows.Forms.DataGridView();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_licitaciones)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(62, 15);
+            this.toolStripLabel1.Size = new System.Drawing.Size(74, 15);
             this.toolStripLabel1.Text = "Visualizar";
             // 
             // toolStrip1
@@ -76,7 +78,9 @@
             this.btn_calendario,
             this.toolStripLabel4,
             this.btn_partidas,
-            this.toolStripLabel5});
+            this.toolStripLabel5,
+            this.toolStripButton1,
+            this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(65, 609);
@@ -89,14 +93,14 @@
             this.btn_calendario.Image = ((System.Drawing.Image)(resources.GetObject("btn_calendario.Image")));
             this.btn_calendario.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_calendario.Name = "btn_calendario";
-            this.btn_calendario.Size = new System.Drawing.Size(62, 54);
+            this.btn_calendario.Size = new System.Drawing.Size(74, 54);
             this.btn_calendario.Text = "toolStripButton1";
             this.btn_calendario.Click += new System.EventHandler(this.btn_calendario_Click);
             // 
             // toolStripLabel4
             // 
             this.toolStripLabel4.Name = "toolStripLabel4";
-            this.toolStripLabel4.Size = new System.Drawing.Size(62, 15);
+            this.toolStripLabel4.Size = new System.Drawing.Size(74, 15);
             this.toolStripLabel4.Text = "Calendario";
             // 
             // btn_partidas
@@ -105,14 +109,14 @@
             this.btn_partidas.Image = ((System.Drawing.Image)(resources.GetObject("btn_partidas.Image")));
             this.btn_partidas.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_partidas.Name = "btn_partidas";
-            this.btn_partidas.Size = new System.Drawing.Size(62, 54);
+            this.btn_partidas.Size = new System.Drawing.Size(74, 54);
             this.btn_partidas.Text = "toolStripButton1";
             this.btn_partidas.Click += new System.EventHandler(this.btn_partidas_Click);
             // 
             // toolStripLabel5
             // 
             this.toolStripLabel5.Name = "toolStripLabel5";
-            this.toolStripLabel5.Size = new System.Drawing.Size(62, 15);
+            this.toolStripLabel5.Size = new System.Drawing.Size(74, 15);
             this.toolStripLabel5.Text = "Partidas";
             // 
             // updatedColumn
@@ -204,6 +208,21 @@
             this.dgv_licitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_licitaciones_CellClick);
             this.dgv_licitaciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_licitaciones_CellFormatting);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(62, 54);
+            this.toolStripButton1.Text = "toolStripButton1";
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(62, 15);
+            this.toolStripLabel2.Text = "Actas";
+            // 
             // Licitacion_Actuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -242,5 +261,7 @@
         private System.Windows.Forms.DataGridView dgv_licitaciones;
         private System.Windows.Forms.ToolStripButton btn_partidas;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel2;
     }
 }

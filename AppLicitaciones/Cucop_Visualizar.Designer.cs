@@ -128,6 +128,7 @@
             this.btn_seleccionar.Name = "btn_seleccionar";
             this.btn_seleccionar.Size = new System.Drawing.Size(54, 54);
             this.btn_seleccionar.Text = "toolStripButton1";
+            this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
             // 
             // label9
             // 

@@ -13,7 +13,7 @@ namespace AppLicitaciones
 {
     public partial class Buscar_Cucops_Vinculacion : Form
     {
-        
+        public int idCucop = 0;
         public Buscar_Cucops_Vinculacion()
         {
             InitializeComponent();
@@ -56,7 +56,12 @@ namespace AppLicitaciones
                 Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
                 Cucop_Visualizar form = new Cucop_Visualizar();
                 form.mostrarinfocucop(idCucop);
-                form.ShowDialog();
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.idCucop = form.id_cucop;
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
     }
