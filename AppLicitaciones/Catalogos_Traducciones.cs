@@ -129,7 +129,7 @@ namespace AppLicitaciones
                     SqlConnection con = new SqlConnection(mc.con);
                     DataTable dt = new DataTable();
                     con.Open();
-                    SqlCommand cmd = new SqlCommand("Select * from registros_tramites_prorroga where id_tramite_prorroga=@id", con);
+                    SqlCommand cmd = new SqlCommand("Select * from catalogos_traducciones where id_traduccion_cat=@id", con);
                     cmd.Parameters.AddWithValue("@id", id_catalogo);
                     cmd.ExecuteScalar();
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
@@ -137,7 +137,7 @@ namespace AppLicitaciones
                     try
                     {
                         File.Delete(Path.GetDirectoryName(Application.ExecutablePath) +
-                            @"\DocumentosNT\Registros-Sanitarios\" + id_catalogo + @"\traducciones\" + id_traduccion +
+                            @"\DocumentosNT\Catalogos-Productos\" + id_catalogo + @"\traducciones\" + id_traduccion +
                             @"\" + dt.Rows[0]["dir_archivo"].ToString());
                         cmd = new SqlCommand("UPDATE catalogos_traducciones set dir_archivo=@archivo where id_traduccion_cat=" + id_traduccion + "", con);
                         cmd.Parameters.AddWithValue("@archivo", "(Vacio)");

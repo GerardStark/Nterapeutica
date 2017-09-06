@@ -36,13 +36,13 @@
             this.btn_historico = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_todas = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.eventos = new System.Windows.Forms.MonthCalendar();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_todas = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,6 +113,22 @@
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btn_todas
+            // 
+            this.btn_todas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_todas.Image = ((System.Drawing.Image)(resources.GetObject("btn_todas.Image")));
+            this.btn_todas.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_todas.Name = "btn_todas";
+            this.btn_todas.Size = new System.Drawing.Size(81, 54);
+            this.btn_todas.Text = "toolStripButton1";
+            this.btn_todas.Click += new System.EventHandler(this.btn_todas_Click);
+            // 
+            // toolStripLabel2
+            // 
+            this.toolStripLabel2.Name = "toolStripLabel2";
+            this.toolStripLabel2.Size = new System.Drawing.Size(81, 15);
+            this.toolStripLabel2.Text = "Todas las Licit.";
+            // 
             // eventos
             // 
             this.eventos.CalendarDimensions = new System.Drawing.Size(2, 1);
@@ -152,22 +168,6 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Progreso de Licitaciones Activas";
             // 
-            // btn_todas
-            // 
-            this.btn_todas.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_todas.Image = ((System.Drawing.Image)(resources.GetObject("btn_todas.Image")));
-            this.btn_todas.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_todas.Name = "btn_todas";
-            this.btn_todas.Size = new System.Drawing.Size(81, 54);
-            this.btn_todas.Text = "toolStripButton1";
-            this.btn_todas.Click += new System.EventHandler(this.btn_todas_Click);
-            // 
-            // toolStripLabel2
-            // 
-            this.toolStripLabel2.Name = "toolStripLabel2";
-            this.toolStripLabel2.Size = new System.Drawing.Size(81, 15);
-            this.toolStripLabel2.Text = "Todas las Licit.";
-            // 
             // Licitaciones_Princpial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -182,8 +182,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Licitaciones_Princpial";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitaciones_Princpial";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);

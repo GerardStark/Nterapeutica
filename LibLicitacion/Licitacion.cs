@@ -230,13 +230,27 @@ namespace LibLicitacion
         {
             get
             {
-                if (this.id != 0)
-                    this.partidas = Partida.GetPartidasPorBase(this.id);
+                if (this.Id != 0)
+                    this.partidas = Partida.GetPartidasPorBase(this.Id);
                 return this.partidas;
             }
         }
 
         private List<Partida> partidas;
+
+        public List<Acta> Actas
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.actas = Acta.GetActasPorLicitacion(this.Id);
+                return this.actas;
+            }
+        }
+
+        private List<Acta> actas;
+
+        
     }    
 
     public class Partida
@@ -367,9 +381,9 @@ namespace LibLicitacion
             List<Partida> partidas = new List<Partida>();
             foreach (Partida p in Partida.GetPartidas())
             {
-                if (p.idBases == idBases && !yaAgregado.ContainsKey(p.id))
+                if (p.idBases == idBases && !yaAgregado.ContainsKey(p.Id))
                 {
-                    yaAgregado[p.id] = true;
+                    yaAgregado[p.Id] = true;
                     partidas.Add(new Partida(p.Id, p.IdBases, p.Numero, p.Nombre, p.Especialidad, p.Created, p.Updated));
                 }
             }
@@ -381,8 +395,8 @@ namespace LibLicitacion
         {
             get
             {
-                if (this.id != 0)
-                    this.procedimientos = Procedimiento.GetProcedimientosPorPartidas(this.id);
+                if (this.Id != 0)
+                    this.procedimientos = Procedimiento.GetProcedimientosPorPartidas(this.Id);
                 return this.procedimientos;
             }
         }
@@ -511,9 +525,9 @@ namespace LibLicitacion
             List<Procedimiento> procedimientos = new List<Procedimiento>();
             foreach (Procedimiento p in Procedimiento.GetProcedimientos())
             {
-                if (p.partida == partida && !yaAgregado.ContainsKey(p.id))
+                if (p.partida == partida && !yaAgregado.ContainsKey(p.Id))
                 {
-                    yaAgregado[p.id] = true;
+                    yaAgregado[p.Id] = true;
                     procedimientos.Add(new Procedimiento(p.Id, p.Partida, p.Numero, p.Nombre, p.Created, p.Updated));
                 }
             }
@@ -525,8 +539,8 @@ namespace LibLicitacion
         {
             get
             {
-                if (this.id != 0)
-                    this.items = Item.GetItemsPorProcedimiento(this.id);
+                if (this.Id != 0)
+                    this.items = Item.GetItemsPorProcedimiento(this.Id);
                 return this.items;
             }
         }
@@ -671,9 +685,9 @@ namespace LibLicitacion
             List<Item> items = new List<Item>();
             foreach (Item i in Item.GetItems())
             {
-                if (i.procedimiento == proce && !yaAgregado.ContainsKey(i.id))
+                if (i.procedimiento == proce && !yaAgregado.ContainsKey(i.Id))
                 {
-                    yaAgregado[i.id] = true;
+                    yaAgregado[i.Id] = true;
                     items.Add(new Item(i.Id, i.Procedimiento, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Created, i.Updated));
                 }
             }
@@ -685,8 +699,8 @@ namespace LibLicitacion
         {
             get
             {
-                if (this.id != 0)
-                    this.vinculos = Vinculacion.GetVinculacionesPorItem(this.id);
+                if (this.Id != 0)
+                    this.vinculos = Vinculacion.GetVinculacionesPorItem(this.Id);
                 return this.vinculos;
             }
         }
@@ -701,6 +715,7 @@ namespace LibLicitacion
 
         }
 
+        //clase principal de los vinculos de la licitacion
         public Vinculacion(int id, int item, int cucop, int carta, DateTime created, DateTime updated)
         {
             this.Id = id;
@@ -790,7 +805,10 @@ namespace LibLicitacion
                             Vinculacion v = new Vinculacion();
                             v.Id    =   (Int32)dr["id_vinculacion"];
                             v.Item  =   (Int32)dr["id_item"];
-                            v.Cucop =   (Int32)dr["id_cucop"];
+                            if (dr["id_cucop"] != DBNull.Value)
+                            {
+                                v.Cucop = (Int32)dr["id_cucop"];
+                            }
                             vinculos.Add(v);
                         }
                     }
@@ -811,14 +829,289 @@ namespace LibLicitacion
             List<Vinculacion> vinculaciones = new List<Vinculacion>();
             foreach (Vinculacion v in Vinculacion.GetVinculaciones())
             {
-                if (v.item == item && !yaAgregado.ContainsKey(v.id))
+                if (v.item == item && !yaAgregado.ContainsKey(v.Id))
                 {
-                    yaAgregado[v.id] = true;
+                    yaAgregado[v.Id] = true;
                     vinculaciones.Add(new Vinculacion(v.Id,v.item,v.Cucop,v.Carta,v.Created,v.Updated));
                 }
             }
             return vinculaciones;
         }
+
+        public List<Pregunta> Preguntas
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.preguntas = Pregunta.GetPreguntasPorVinculacion(this.Id);
+                return this.preguntas;
+            }
+        }
+
+        private List<Pregunta> preguntas;
     }
 
+    public class Acta
+    {
+        public Acta()
+        {
+
+        }
+
+        //clase principal de las actas de la licitacion
+        public Acta(int id, int idLicit, int tipo, string descripcion, DateTime emision, string archivo,DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Tipo = tipo;
+            this.IdBases = idLicit;
+            this.Descripcion = descripcion;
+            this.Emision = emision;
+            this.Archivo = archivo;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int Tipo
+        {
+            get { return tipo; }
+            set { tipo = value; }
+        }
+
+        private int tipo;
+
+        public int IdBases
+        {
+            get { return idBases; }
+            set { idBases = value; }
+        }
+
+        private int idBases;
+
+        public string Descripcion
+        {
+            get { return descripcion; }
+            set { descripcion = value; }
+        }
+
+        private string descripcion;
+
+        public DateTime Emision
+        {
+            get { return emision; }
+            set { emision = value; }
+        }
+
+        private DateTime emision;
+
+        public string Archivo
+        {
+            get { return archivo; }
+            set { archivo = value; }
+        }
+
+        private string archivo;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        //los siguientes 2 metodos llenan un objeto con las Actas
+        //verifica si el objeto esta vacio
+        static public List<Acta> GetActas()
+        {
+            Acta.AllActas.Clear();
+            if (Acta.AllActas.Count == 0)
+                Acta.AllActas = Acta.InicializarActas();
+            return Acta.AllActas;
+        }
+
+        //crea el objeto con las actas 
+        //llenar con un query
+        static private List<Acta> InicializarActas()
+        {
+            MainConfig mc = new MainConfig();
+            List<Acta> actas = new List<Acta>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM licitacion_actas", con))
+                {
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Acta a = new Acta();
+                            a.Id = (Int32)dr["id"];
+                            a.Tipo = (Int32)dr["tipo_acta"];
+                            a.Descripcion = dr["descripcion"].ToString();
+                            a.Emision = (DateTime)dr["fecha_emision"];
+                            a.Updated = (DateTime)dr["actualizado_en"];
+                            a.IdBases = (Int32)dr["id_licitacion"];
+                            a.Archivo = dr["dir_archivo"].ToString();
+                            actas.Add(a);
+                        }
+                    }
+                }
+            }
+            return actas;
+        }
+
+        //objeto donde se almacenan las actas
+        static private List<Acta> AllActas = new List<Acta>();
+
+
+        //obtener actas por licitacion
+        static public List<Acta> GetActasPorLicitacion(int bases)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<Acta> actas = new List<Acta>();
+            foreach (Acta a in Acta.GetActas())
+            {
+                if (a.IdBases == bases && !yaAgregado.ContainsKey(a.Id))
+                {
+                    yaAgregado[a.Id] = true;
+                    actas.Add(new Acta(a.Id, a.IdBases, a.Tipo, a.Descripcion,a.Emision, a.Archivo,a.Created, a.Updated));
+                }
+            }
+            return actas;
+        }
+    }
+
+    public class Pregunta
+    {
+        public Pregunta()
+        {
+
+        }
+
+        public Pregunta(int id, int vinculacion, string enunciado, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Vinculacion = vinculacion;
+            this.Enunciado = enunciado;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }        
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int Vinculacion
+        {
+            get { return vinculacion; }
+            set { vinculacion = value; }
+        }
+
+        private int vinculacion;
+
+        public string Enunciado
+        {
+            get { return enunciado; }
+            set { enunciado = value; }
+        }
+
+        private string enunciado;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        public static List<Pregunta> GetPreguntas()
+        {
+            Pregunta.AllPreguntas.Clear();
+            if (Pregunta.AllPreguntas.Count == 0)
+                Pregunta.AllPreguntas = Pregunta.InicializarPreguntas();
+            return Pregunta.AllPreguntas;
+        }
+
+        private static List<Pregunta> InicializarPreguntas()
+        {
+            MainConfig mc = new MainConfig();
+            List<Pregunta> preguntas = new List<Pregunta>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM licitacion_preguntas";
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Pregunta p = new Pregunta();
+                            p.Id = (Int32)dr["id"];
+                            p.Vinculacion = (Int32)dr["id_vinculacion"];
+                            p.Enunciado = dr["pregunta"].ToString();
+                            p.Created = (DateTime)dr["creado_en"];
+                            p.Updated = (DateTime)dr["actualizado_en"];
+                            preguntas.Add(p);
+                        }
+                    }
+                    
+                }
+            }
+            return preguntas;
+        }
+
+        private static List<Pregunta> AllPreguntas = new List<Pregunta>();
+
+        public static List<Pregunta> GetPreguntasPorVinculacion(int vinc)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<Pregunta> preguntas = new List<Pregunta>();
+            foreach (Pregunta p in Pregunta.GetPreguntas())
+            {
+                if (p.Vinculacion == vinc && !yaAgregado.ContainsKey(p.Id))
+                {
+                    yaAgregado[p.Id] = true;
+                    preguntas.Add(new Pregunta(p.Id, p.Vinculacion, p.Enunciado, p.Created, p.Updated));
+                }
+            }
+            return preguntas;
+        }
+    }
+    
 }

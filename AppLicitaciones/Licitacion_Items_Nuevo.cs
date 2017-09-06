@@ -23,7 +23,8 @@ namespace AppLicitaciones
                 "Pieza",
                 "Paquete",
                 "Kit",
-                "Caja"
+                "Caja",
+                "Equipo"
             };
             mc.llenarcombobox(array_tipos, cmb_tipo);
             mc.llenarcombobox(array_tipos, cmb_cont);

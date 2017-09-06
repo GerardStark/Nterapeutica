@@ -42,9 +42,9 @@
             this.btn_descartar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.btn_info = new System.Windows.Forms.ToolStripButton();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
-            this.btn_info = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -161,6 +161,16 @@
             this.toolStrip1.TabIndex = 22;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // btn_info
+            // 
+            this.btn_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
+            this.btn_info.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_info.Name = "btn_info";
+            this.btn_info.Size = new System.Drawing.Size(73, 44);
+            this.btn_info.Text = "toolStripButton2";
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
+            // 
             // btn_guardar
             // 
             this.btn_guardar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -177,16 +187,6 @@
             this.toolStripLabel3.Size = new System.Drawing.Size(73, 15);
             this.toolStripLabel3.Text = "Guardar";
             // 
-            // btn_info
-            // 
-            this.btn_info.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_info.Image")));
-            this.btn_info.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_info.Name = "btn_info";
-            this.btn_info.Size = new System.Drawing.Size(73, 44);
-            this.btn_info.Text = "toolStripButton2";
-            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
-            // 
             // Licitacion_Item_Oferta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -202,6 +202,7 @@
             this.Name = "Licitacion_Item_Oferta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Item_Oferta";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Licitacion_Item_Oferta_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.eventLog1)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

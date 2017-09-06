@@ -175,5 +175,12 @@ namespace AppLicitaciones
 
             }
         }
+
+        private void btn_actas_Click(object sender, EventArgs e)
+        {
+            Licitacion_Actas_Principal form = new Licitacion_Actas_Principal();
+            form.mostrarActasLicitacion(idLicitacion);
+            form.Show();
+        }
     }
 }

@@ -345,7 +345,7 @@ namespace LibLicitacion
             var result = r.Replace(lowerCase, s => s.Value.ToUpper());
             return result;
         }
-
+        
         public void buscarultimafilaeditada(string tabla, DataGridView dgv)
         {
             using (SqlConnection conect = new SqlConnection(con))

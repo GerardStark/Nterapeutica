@@ -249,6 +249,11 @@
     <Compile Include="FTD_Principal.Designer.cs">
       <DependentUpon>FTD_Principal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Iconos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Iconos.resx</DependentUpon>
+    </Compile>
     <Compile Include="LicitacionesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,6 +264,12 @@
     </Compile>
     <Compile Include="Licitaciones_Princpial.Designer.cs">
       <DependentUpon>Licitaciones_Princpial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Licitacion_Actas_Principal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Actas_Principal.Designer.cs">
+      <DependentUpon>Licitacion_Actas_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Licitacion_Actuales.cs">
       <SubType>Form</SubType>
@@ -517,8 +528,15 @@
     <EmbeddedResource Include="FTD_Principal.resx">
       <DependentUpon>FTD_Principal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Iconos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Iconos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Licitaciones_Princpial.resx">
       <DependentUpon>Licitaciones_Princpial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Actas_Principal.resx">
+      <DependentUpon>Licitacion_Actas_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Actuales.resx">
       <DependentUpon>Licitacion_Actuales.cs</DependentUpon>
@@ -653,6 +671,1809 @@
       <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
       <Name>ObjectListView2012</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\alert-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-add-contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-arrow-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-arrow-down-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-arrow-down-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-arrow-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-arrow-up-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-arrow-up-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-battery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-call.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-contacts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-developer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-display.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-dropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-forums.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-friends.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-hand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-inbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-keypad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-locate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-mixer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-playstore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-promotion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-reminder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-social.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-social-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-sort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-stair-drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-stopwatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-storage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-system-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-system-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-system-windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-user-menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-volume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\android-wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aperture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-down-c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-graph-down-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-graph-down-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-graph-up-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-graph-up-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-left-c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-move.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-resize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-return-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-return-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-right-c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-shrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-swap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow-up-c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\asterisk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery-charging.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery-full.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery-half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battery-low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beaker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluetooth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bonfire.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bookmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bug.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatboxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatbox-working.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatbubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatbubbles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chatbubble-working.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkmark-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chevron-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\closed-captioning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\code-working.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coffee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\compose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\connection-bars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contrast.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\document-text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\egg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-disabled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\film-marker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fireball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flame.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flash-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flask.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fork-repo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funnel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game-controller-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\game-controller-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hammer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\headphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\heart-broken.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-buoy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icecream.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-social-google-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-social-google-plus-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\information-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ionic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-alarm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-alarm-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-albums.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-albums-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-americanfootball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-americanfootball-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-analytics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-analytics-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-thin-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-thin-left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-thin-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-thin-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-arrow-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-at.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-at-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-barcode-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-baseball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-baseball-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-basketball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-basketball-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-bell-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-bolt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-bolt-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-bookmarks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-bookmarks-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-box.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-box-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-briefcase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-briefcase-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-browsers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-browsers-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-calculator-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-calendar-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-camera-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cart-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-chatboxes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-chatboxes-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-chatbubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-chatbubble-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-checkmark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-checkmark-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-checkmark-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-circle-filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-circle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-clock-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-close-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-close-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloud.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloud-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloud-download-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloud-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloud-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloud-upload-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloudy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloudy-night.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloudy-night-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cloudy-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-cog-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-compose.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-compose-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-contact-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-copy-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-download-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-drag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-email.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-email-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-expand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-eye-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-fastforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-fastforward-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-filing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-filing-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-film.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-film-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-flag-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-folder-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-football-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-gear-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-glasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-glasses-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-heart-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-help-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-help-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-home-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-infinite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-infinite-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-information-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-information-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-ionic-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-keypad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-keypad-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-lightbulb-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-location-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-locked-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-loop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-loop-strong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-medkit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-medkit-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-mic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-mic-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-mic-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-minus-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-minus-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-monitor-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-moon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-moon-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-more-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-musical-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-musical-notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-navigate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-navigate-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-paper.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-paper-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-paperplane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-paperplane-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-partlysunny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-partlysunny-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pause-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-paw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-paw-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-people.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-people-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-personadd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-personadd-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-person-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-photos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-photos-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pie-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-play-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-plus-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-plus-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pricetag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pricetag-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pricetags.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pricetags-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-printer-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pulse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-pulse-strong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-rainy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-rainy-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-recording.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-recording-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-redo-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-refresh-empty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-refresh-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-reverse-camera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-reverse-camera-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-rewind-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-search-strong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-settings-strong.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-shrink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-skipbackward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-skipbackward-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-skipforward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-skipforward-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-snowy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-speedometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-speedometer-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-star-half.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-star-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-stopwatch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-stopwatch-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-sunny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-sunny-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-telephone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-telephone-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-tennisball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-tennisball-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-thunderstorm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-thunderstorm-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-time-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-timer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-timer-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-toggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-toggle-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-trash-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-undo-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-unlocked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-unlocked-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-upload-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-videocam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-videocam-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-volume-high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-volume-low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-wineglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-wineglass-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-world.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ios7-world-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ipad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ipod.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\knife.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\laptop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\leaf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\levels.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lightbulb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\link.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load-c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load-d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\locked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\magnet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\man.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\medkit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\merge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mic-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mic-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mic-c.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\model-s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monitor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\music-note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navicon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navicon-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\navigate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-smoking.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuclear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\outlet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paper-airplane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paperclip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person-stalker.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pie-graph.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pinpoint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pizza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plane.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\planet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\playstation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-circled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus-round.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\podium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pricetag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pricetags.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pull-request.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qr-scanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\radio-waves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reply-all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ribbon-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ribbon-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scissors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\share.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\shuffle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip-backward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\skip-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-android.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-android-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-apple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-apple-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-bitcoin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-bitcoin-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-buffer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-buffer-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-designernews.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-designernews-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-dribbble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-dribbble-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-dropbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-dropbox-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-facebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-facebook-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-foursquare.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-foursquare-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-freebsd-devil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-github.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-github-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-google.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-google-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-googleplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-googleplus-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-hackernews.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-hackernews-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-instagram.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-instagram-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-linkedin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-linkedin-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-pinterest.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-pinterest-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-reddit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-reddit-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-rss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-rss-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-skype.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-skype-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-tumblr.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-tumblr-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-tux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-twitter-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-usd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-usd-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-vimeo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-vimeo-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-windows.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-windows-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-wordpress.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-wordpress-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-yahoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-yahoo-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-youtube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\social-youtube-outline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speakerphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\speedometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\spoon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stats-bars.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\steam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thermometer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbsdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thumbsup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toggle-filled.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trash-b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\umbrella.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\university.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\unlocked.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\videocamera.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-high.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-low.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-medium.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\volume-mute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\waterdrop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wifi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wineglass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\woman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xbox.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

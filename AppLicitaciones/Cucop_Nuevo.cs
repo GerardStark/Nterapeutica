@@ -26,10 +26,11 @@ namespace AppLicitaciones
                 "Material de Curacion",
                 "Subrogados" };
         string[] array_tipos = {
-            "Pieza",
-            "Paquete",
-            "Kit",
-            "Caja"
+                "Pieza",
+                "Paquete",
+                "Kit",
+                "Caja",
+                "Equipo"
         };
         public Cucop_Nuevo()
         {

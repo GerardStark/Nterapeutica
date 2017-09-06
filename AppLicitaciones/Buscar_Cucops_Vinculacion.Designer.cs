@@ -77,7 +77,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCucops.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCucops.RowTemplate.DefaultCellStyle.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCucops.Size = new System.Drawing.Size(1259, 633);
+            this.dgvCucops.Size = new System.Drawing.Size(1042, 633);
             this.dgvCucops.TabIndex = 0;
             this.dgvCucops.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCucops_CellClick);
             // 
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1283, 681);
+            this.ClientSize = new System.Drawing.Size(1066, 681);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.txt_filtrar);
             this.Controls.Add(this.label1);
