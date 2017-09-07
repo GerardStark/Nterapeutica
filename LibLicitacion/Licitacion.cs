@@ -250,7 +250,19 @@ namespace LibLicitacion
 
         private List<Acta> actas;
 
-        
+        public List<Calendario> Calendarios
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.calendarios = Calendario.GetCalendarioPorLicitacion(this.Id);
+                return this.calendarios;
+            }
+        }
+
+        private List<Calendario> calendarios;
+
+
     }    
 
     public class Partida
@@ -1114,4 +1126,169 @@ namespace LibLicitacion
         }
     }
     
+    public class Calendario
+    {
+        public Calendario()
+        {
+
+        }
+
+        public Calendario(int id, int bases, DateTime publicacion, DateTime junta, DateTime apertura, DateTime fallo, DateTime firma, DateTime visita, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Bases = bases;
+            this.Publicacion = publicacion;
+            this.Junta = junta;
+            this.Apertura = apertura;
+            this.Fallo = fallo;
+            this.Firma = firma;
+            this.Visita = visita;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int Bases
+        {
+            get { return bases; }
+            set { bases = value; }
+        }
+
+        private int bases;
+
+        public DateTime Publicacion
+        {
+            get { return publicacion; }
+            set { publicacion = value; }
+        }
+
+        private DateTime publicacion;
+
+        public DateTime Junta
+        {
+            get { return junta; }
+            set { junta = value; }
+        }
+
+        private DateTime junta;
+
+        public DateTime Apertura
+        {
+            get { return apertura; }
+            set { apertura = value; }
+        }
+
+        private DateTime apertura;
+
+        public DateTime Fallo
+        {
+            get { return fallo; }
+            set { fallo = value; }
+        }
+
+        private DateTime fallo;
+
+        public DateTime Firma
+        {
+            get { return firma; }
+            set { firma = value; }
+        }
+
+        private DateTime firma;
+
+        public DateTime Visita
+        {
+            get { return visita; }
+            set { visita = value; }
+        }
+
+        private DateTime visita;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        public static List<Calendario> GetCalendarios()
+        {
+            Calendario.AllCalendarios.Clear();
+            if (Calendario.AllCalendarios.Count == 0)
+                Calendario.AllCalendarios = Calendario.InicializarCalendarios();
+            return Calendario.AllCalendarios;
+        }
+
+        private static List<Calendario> InicializarCalendarios()
+        {
+            MainConfig mc = new MainConfig();
+            List<Calendario> calendarios = new List<Calendario>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM licitacion_calendario";
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Calendario c = new Calendario();
+                            c.Id = (Int32)dr["id"];
+                            c.Bases = (Int32)dr["id_bases"];
+                            c.Publicacion = (DateTime)dr["fecha_publicacion"];
+                            c.Junta = (DateTime)dr["fecha_junta_aclaraciones"];
+                            c.Apertura = (DateTime)dr["fecha_apertura"];
+                            c.Fallo = (DateTime)dr["fecha_fallo"];
+                            c.Firma = (DateTime)dr["fecha_firma"];
+                            c.Visita = (DateTime)dr["fecha_visita"];
+                            c.Created = (DateTime)dr["creado_en"];
+                            c.Updated = (DateTime)dr["actualizado_en"];
+                            calendarios.Add(c);
+                        }
+                    }
+
+                }
+            }
+            return calendarios;
+        }
+
+        private static List<Calendario> AllCalendarios = new List<Calendario>();
+
+        public static List<Calendario> GetCalendarioPorLicitacion(int bases)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<Calendario> calendarios = new List<Calendario>();
+            foreach (Calendario c in Calendario.GetCalendarios())
+            {
+                if (c.Bases == bases && !yaAgregado.ContainsKey(c.Id))
+                {
+                    yaAgregado[c.Id] = true;
+                    calendarios.Add(new Calendario(c.Id,c.Bases,c.Publicacion,c.Junta,c.Apertura,c.Fallo,c.Firma,c.Visita,c.Created,c.Updated));
+                }
+            }
+            return calendarios;
+        }
+    }
+
 }
+

@@ -94,6 +94,7 @@
             this.dgvProcedimientos.Size = new System.Drawing.Size(454, 180);
             this.dgvProcedimientos.TabIndex = 3;
             this.dgvProcedimientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcedimientos_CellClick);
+            this.dgvProcedimientos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProcedimientos_CellFormatting);
             // 
             // idSubColumn
             // 

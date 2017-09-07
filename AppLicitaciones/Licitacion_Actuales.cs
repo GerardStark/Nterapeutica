@@ -106,6 +106,9 @@ namespace AppLicitaciones
                         e.Value = "(Vacio)";
                     }
                     break;
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
             }
         }
 

@@ -116,6 +116,9 @@ namespace AppLicitaciones
                         e.Value = "Sin oferta";
                     }
                     break;
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
             }
         }
 
@@ -130,6 +133,16 @@ namespace AppLicitaciones
                 {
                     mostrarItemsPorProcedimiento(idSub);
                 }
+            }
+        }
+
+        private void dgvProcedimientos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.dgvProcedimientos.Columns[e.ColumnIndex].Name)
+            {
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
             }
         }
 

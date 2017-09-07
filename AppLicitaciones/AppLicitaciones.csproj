@@ -283,6 +283,12 @@
     <Compile Include="Licitacion_Calendario.Designer.cs">
       <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Calendario_Principal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Calendario_Principal.Designer.cs">
+      <DependentUpon>Licitacion_Calendario_Principal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -543,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Calendario.resx">
       <DependentUpon>Licitacion_Calendario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Calendario_Principal.resx">
+      <DependentUpon>Licitacion_Calendario_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Editar.resx">
       <DependentUpon>Licitacion_Editar.cs</DependentUpon>

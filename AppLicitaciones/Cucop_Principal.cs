@@ -124,6 +124,11 @@ namespace AppLicitaciones
             }
         }
 
+        private void Cucop_Principal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
+
         private void DGV_cucop_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LibLicitacion;
 
 namespace AppLicitaciones
 {
@@ -54,6 +55,23 @@ namespace AppLicitaciones
             {
                 //something
             }
+        }
+
+        private void panelEventos_Paint(object sender, PaintEventArgs e)
+        {
+            foreach (Calendario item in Calendario.GetCalendarios())
+            {
+                Label lb = new Label();
+                lb.Text = item.Id.ToString();
+                panelEventos.Controls.Add(lb);
+            }
+        }
+
+        private void Licitaciones_Princpial_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.licitacion_bases' Puede moverla o quitarla según sea necesario.
+            this.licitacion_basesTableAdapter.Fill(this.licitacionesDataSet.licitacion_bases);
+
         }
     }
 }

@@ -14,6 +14,7 @@ namespace AppLicitaciones
     public partial class Buscar_Cucops_Vinculacion : Form
     {
         public int idCucop = 0;
+        MainConfig mc = new MainConfig();
         public Buscar_Cucops_Vinculacion()
         {
             InitializeComponent();
@@ -36,7 +37,7 @@ namespace AppLicitaciones
             dgvCucops.Rows.Clear();
             foreach (Cucop c in Cucop.GetCucops())
             {
-                dgvCucops.Rows.Add(c.Id, c.Clave, c.Descripcion);
+                dgvCucops.Rows.Add(c.Id, c.Clave, c.Descripcion, c.Updated);
             }
         }
 
@@ -62,6 +63,28 @@ namespace AppLicitaciones
                     this.idCucop = form.id_cucop;
                     this.DialogResult = DialogResult.OK;
                 }
+            }
+        }
+
+        private void bnt_cucosps_Click(object sender, EventArgs e)
+        {
+            Cucop_Principal form = new Cucop_Principal();
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                llenarListaCucops();
+                mc.buscarultimafilaeditada("cucop", dgvCucops);
+            }
+        }
+
+        private void dgvCucops_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            switch (this.dgvCucops.Columns[e.ColumnIndex].Name)
+            {
+
+                case "idColumn":
+                    e.Value = e.RowIndex + 1;
+                    break;
             }
         }
     }

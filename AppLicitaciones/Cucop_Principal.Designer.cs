@@ -208,6 +208,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Cucop_Principal";
             this.Text = "Panel Principal de Codigos de Cuadro Básico del IMSS";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cucop_Principal_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_cucop)).EndInit();
