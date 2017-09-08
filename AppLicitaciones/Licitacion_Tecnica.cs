@@ -146,6 +146,16 @@ namespace AppLicitaciones
             }
         }
 
+        private void btn_proc_borrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_item_borrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_proc_nuevo_Click(object sender, EventArgs e)
         {
             Licitacion_Procedimientos_Nuevo form = new Licitacion_Procedimientos_Nuevo();

@@ -37,6 +37,10 @@
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_numero = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_max = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_min = new System.Windows.Forms.TextBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,7 +84,7 @@
             this.btn_reg_descartar,
             this.btn_reg_guardar,
             this.txt_limpiar_campos});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 156);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 213);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(542, 57);
             this.tt_reg_nuevo.TabIndex = 29;
@@ -117,11 +121,47 @@
             this.txt_numero.Size = new System.Drawing.Size(72, 22);
             this.txt_numero.TabIndex = 36;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(100, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "Maximo:";
+            // 
+            // txt_max
+            // 
+            this.txt_max.Location = new System.Drawing.Point(164, 150);
+            this.txt_max.Name = "txt_max";
+            this.txt_max.Size = new System.Drawing.Size(121, 22);
+            this.txt_max.TabIndex = 69;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(104, 125);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 16);
+            this.label4.TabIndex = 68;
+            this.label4.Text = "Minimo:";
+            // 
+            // txt_min
+            // 
+            this.txt_min.Location = new System.Drawing.Point(164, 122);
+            this.txt_min.Name = "txt_min";
+            this.txt_min.Size = new System.Drawing.Size(121, 22);
+            this.txt_min.TabIndex = 67;
+            // 
             // Licitacion_Procedimientos_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 213);
+            this.ClientSize = new System.Drawing.Size(542, 270);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_max);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_min);
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_nombre);
@@ -149,5 +189,9 @@
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_numero;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_max;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_min;
     }
 }

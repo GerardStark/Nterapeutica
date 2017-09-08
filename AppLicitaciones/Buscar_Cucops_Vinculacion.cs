@@ -52,7 +52,7 @@ namespace AppLicitaciones
 
         private void dgvCucops_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 3)
+            if (e.ColumnIndex == 4)
             {
                 Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
                 Cucop_Visualizar form = new Cucop_Visualizar();

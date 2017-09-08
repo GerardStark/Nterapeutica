@@ -39,13 +39,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_numero = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_max = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_min = new System.Windows.Forms.TextBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 15);
+            this.label1.Location = new System.Drawing.Point(38, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 16);
             this.label1.TabIndex = 0;
@@ -53,7 +57,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(166, 40);
+            this.txt_nombre.Location = new System.Drawing.Point(168, 40);
             this.txt_nombre.Multiline = true;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(357, 63);
@@ -63,7 +67,7 @@
             // 
             this.cmb_especialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_especialidad.FormattingEnabled = true;
-            this.cmb_especialidad.Location = new System.Drawing.Point(166, 109);
+            this.cmb_especialidad.Location = new System.Drawing.Point(168, 109);
             this.cmb_especialidad.Name = "cmb_especialidad";
             this.cmb_especialidad.Size = new System.Drawing.Size(357, 24);
             this.cmb_especialidad.TabIndex = 2;
@@ -76,7 +80,7 @@
             this.btn_reg_descartar,
             this.btn_reg_guardar,
             this.txt_limpiar_campos});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 156);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 220);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(542, 57);
             this.tt_reg_nuevo.TabIndex = 28;
@@ -117,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 43);
+            this.label2.Location = new System.Drawing.Point(23, 43);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(139, 16);
             this.label2.TabIndex = 29;
@@ -126,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(69, 112);
+            this.label3.Location = new System.Drawing.Point(71, 112);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 16);
             this.label3.TabIndex = 30;
@@ -134,16 +138,52 @@
             // 
             // txt_numero
             // 
-            this.txt_numero.Location = new System.Drawing.Point(166, 12);
+            this.txt_numero.Location = new System.Drawing.Point(168, 12);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(72, 22);
             this.txt_numero.TabIndex = 32;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(104, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.TabIndex = 74;
+            this.label4.Text = "Maximo:";
+            // 
+            // txt_max
+            // 
+            this.txt_max.Location = new System.Drawing.Point(168, 167);
+            this.txt_max.Name = "txt_max";
+            this.txt_max.Size = new System.Drawing.Size(121, 22);
+            this.txt_max.TabIndex = 73;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(108, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.TabIndex = 72;
+            this.label5.Text = "Minimo:";
+            // 
+            // txt_min
+            // 
+            this.txt_min.Location = new System.Drawing.Point(168, 139);
+            this.txt_min.Name = "txt_min";
+            this.txt_min.Size = new System.Drawing.Size(121, 22);
+            this.txt_min.TabIndex = 71;
             // 
             // Licitacion_Partidas_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 213);
+            this.ClientSize = new System.Drawing.Size(542, 277);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_max);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txt_min);
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -174,5 +214,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_numero;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_max;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_min;
     }
 }

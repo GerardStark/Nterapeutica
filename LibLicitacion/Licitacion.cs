@@ -205,7 +205,7 @@ namespace LibLicitacion
                             b.Especialidad = (string)dr["especialidad"];
                             b.DuracionContrato = (string)dr["duracion_contrato"];
                             b.TipoContrato = (string)dr["tipo_contratacion"];
-                            b.Expediente = (Int32)dr["expediente"];
+                            b.Expediente = (long)dr["expediente"];
                             b.TipoLicitacion = (string)dr["tipo_licitacion"];
                             b.TipoExpediente = (Int32)dr["tipo_expediente"];
                             b.NombreOperador = (string)dr["operador_nombre"];
@@ -273,13 +273,15 @@ namespace LibLicitacion
         }
 
         //clase principal de las partidas
-        public Partida(int id, int idBases, int numPartida, string nombPartida, string especialidad, DateTime created, DateTime updated)
+        public Partida(int id, int idBases, int numPartida, string nombPartida, string especialidad, int minimo, int maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.IdBases = idBases;
             this.Numero = numPartida;
             this.Nombre = nombPartida;
             this.Especialidad = especialidad;
+            this.Minimo = minimo;
+            this.Maximo = maximo;
             this.Created = created;
             this.Updated = updated;
         }
@@ -330,6 +332,22 @@ namespace LibLicitacion
             set { created = value; }
         }
 
+        public int Minimo
+        {
+            get { return minimo; }
+            set { minimo = value; }
+        }
+
+        private int minimo;
+
+        public int Maximo
+        {
+            get { return maximo; }
+            set { maximo = value; }
+        }
+
+        private int maximo;
+
         private DateTime created;
 
         public DateTime Updated
@@ -375,6 +393,10 @@ namespace LibLicitacion
                             p.IdBases = (Int32)dr["id_bases"];
                             p.Nombre = (string)dr["nombre_partida"];
                             p.Especialidad = (string)dr["especialidad"];
+                            p.Minimo = (Int32)dr["minimo"];
+                            p.Maximo = (Int32)dr["maximo"];
+                            p.Created = (DateTime)dr["creado_en"];
+                            p.Updated = (DateTime)dr["actualizado_en"];
                             partidas.Add(p);
                         }
                     }
@@ -396,7 +418,7 @@ namespace LibLicitacion
                 if (p.idBases == idBases && !yaAgregado.ContainsKey(p.Id))
                 {
                     yaAgregado[p.Id] = true;
-                    partidas.Add(new Partida(p.Id, p.IdBases, p.Numero, p.Nombre, p.Especialidad, p.Created, p.Updated));
+                    partidas.Add(new Partida(p.Id, p.IdBases, p.Numero, p.Nombre, p.Especialidad, p.Minimo, p.Maximo, p.Created, p.Updated));
                 }
             }
             return partidas;
@@ -426,12 +448,14 @@ namespace LibLicitacion
         }
 
         //clase principal de los procedimientos/subpartidas
-        public Procedimiento(int id, int partida, int numero, string nombre, DateTime created, DateTime updated)
+        public Procedimiento(int id, int partida, int numero, string nombre, int minimo, int maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.Partida = partida;
             this.Numero = numero;
             this.Nombre = nombre;
+            this.Minimo = minimo;
+            this.Maximo = maximo;
             this.Created = created;
             this.Updated = updated;
         }
@@ -467,6 +491,22 @@ namespace LibLicitacion
         }
 
         private string nombre;
+
+        public int Minimo
+        {
+            get { return minimo; }
+            set { minimo = value; }
+        }
+
+        private int minimo;
+
+        public int Maximo
+        {
+            get { return maximo; }
+            set { maximo = value; }
+        }
+
+        private int maximo;
 
         public DateTime Created
         {
@@ -517,8 +557,10 @@ namespace LibLicitacion
                             p.partida = (Int32)dr["id_partida"];
                             p.Numero = (Int32)dr["numero_subpartida"];
                             p.Nombre = (string)dr["nombre_subpartida"];
-                            //p.Created = Convert.ToDateTime( dr["creado_en"]);
-                            //p.pdated = Convert.ToDateTime( dr["actualizado_en"]);
+                            p.Minimo = (Int32)dr["minimo"];
+                            p.Maximo = (Int32)dr["maximo"];
+                            p.Created = (DateTime)dr["creado_en"];
+                            p.Updated = (DateTime)dr["actualizado_en"];
                             procedimientos.Add(p);
                         }
                     }
@@ -540,7 +582,7 @@ namespace LibLicitacion
                 if (p.partida == partida && !yaAgregado.ContainsKey(p.Id))
                 {
                     yaAgregado[p.Id] = true;
-                    procedimientos.Add(new Procedimiento(p.Id, p.Partida, p.Numero, p.Nombre, p.Created, p.Updated));
+                    procedimientos.Add(new Procedimiento(p.Id, p.Partida, p.Numero, p.Nombre, p.Minimo, p.Maximo, p.Created, p.Updated));
                 }
             }
             return procedimientos;
@@ -569,7 +611,7 @@ namespace LibLicitacion
         }
 
         //clase principal de los items de la licitacion
-        public Item(int id, int procedimiento, string descripcion, string unidad, long cantidad, string contenedor, DateTime created, DateTime updated)
+        public Item(int id, int procedimiento, string descripcion, string unidad, long cantidad, string contenedor, int minimo, int maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.Procedimiento = procedimiento;
@@ -577,6 +619,8 @@ namespace LibLicitacion
             this.Unidad = unidad;
             this.Cantidad = cantidad;
             this.Contenedor = contenedor;
+            this.Minimo = minimo;
+            this.Maximo = maximo;
             this.Created = created;
             this.Updated = updated;
         }
@@ -629,6 +673,22 @@ namespace LibLicitacion
 
         private string contenedor;
 
+        public int Minimo
+        {
+            get { return minimo; }
+            set { minimo = value; }
+        }
+
+        private int minimo;
+
+        public int Maximo
+        {
+            get { return maximo; }
+            set { maximo = value; }
+        }
+
+        private int maximo;
+
         public DateTime Created
         {
             get { return created; }
@@ -678,6 +738,10 @@ namespace LibLicitacion
                             i.Procedimiento = (Int32)dr["id_paquete"];
                             i.Nombre = (string)dr["descripcion"];
                             i.Unidad = (string)dr["unidad_venta"];
+                            i.Minimo = (Int32)dr["minimo"];
+                            i.Maximo = (Int32)dr["maximo"];
+                            i.Created = (DateTime)dr["creado_en"];
+                            i.Updated = (DateTime)dr["actualizado_en"];
                             items.Add(i);
                         }
                     }
@@ -700,7 +764,7 @@ namespace LibLicitacion
                 if (i.procedimiento == proce && !yaAgregado.ContainsKey(i.Id))
                 {
                     yaAgregado[i.Id] = true;
-                    items.Add(new Item(i.Id, i.Procedimiento, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Created, i.Updated));
+                    items.Add(new Item(i.Id, i.Procedimiento, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Minimo, i.Maximo,i.Created, i.Updated));
                 }
             }
             return items;
@@ -1253,7 +1317,7 @@ namespace LibLicitacion
                         foreach (DataRow dr in dt.Rows)
                         {
                             Calendario c = new Calendario();
-                            c.Id = (Int32)dr["id"];
+                            c.Id = (Int32)dr["id_calendario"];
                             c.Bases = (Int32)dr["id_bases"];
                             c.Publicacion = (DateTime)dr["fecha_publicacion"];
                             c.Junta = (DateTime)dr["fecha_junta_aclaraciones"];

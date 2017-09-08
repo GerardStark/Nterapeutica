@@ -353,6 +353,7 @@
             this.btn_reg_borrar.Size = new System.Drawing.Size(54, 54);
             this.btn_reg_borrar.Text = "toolStripButton3";
             this.btn_reg_borrar.ToolTipText = "Borrar";
+            this.btn_reg_borrar.Click += new System.EventHandler(this.btn_reg_borrar_Click);
             // 
             // Licitacion_Visualizar
             // 
@@ -388,8 +389,9 @@
             this.Controls.Add(this.btn_archivo);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Visualizar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Visualizar";
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();

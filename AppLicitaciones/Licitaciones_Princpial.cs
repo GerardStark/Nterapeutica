@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibLicitacion;
+using System.Reflection;
 
 namespace AppLicitaciones
 {
@@ -57,21 +58,32 @@ namespace AppLicitaciones
             }
         }
 
-        private void panelEventos_Paint(object sender, PaintEventArgs e)
-        {
-            foreach (Calendario item in Calendario.GetCalendarios())
-            {
-                Label lb = new Label();
-                lb.Text = item.Id.ToString();
-                panelEventos.Controls.Add(lb);
-            }
-        }
-
         private void Licitaciones_Princpial_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.licitacion_bases' Puede moverla o quitarla según sea necesario.
             this.licitacion_basesTableAdapter.Fill(this.licitacionesDataSet.licitacion_bases);
+            mostrarEventosProximos();
+        }
 
+        private void mostrarEventosProximos()
+        {
+            DateTime min = DateTime.Today;
+            DateTime max = DateTime.Today.AddDays(7);            
+            foreach (Calendario c in Calendario.GetCalendarios())
+            {
+ 
+                PropertyInfo[] p = c.GetType().GetProperties();
+                for (int i = 2; i < p.Length - 2; i++)
+                {
+                    if ((DateTime)p[i].GetValue(c) > min && (DateTime)p[i].GetValue(c) < max)
+                    {
+                        Licitacion_Calendario_Principal l = new Licitacion_Calendario_Principal();
+                        l.mostrarInfoEvento(c, p[i].Name, p[i].GetValue(c));
+                        panelEventos.Controls.Add(l);
+                    }
+                   
+                }
+            }
         }
     }
 }

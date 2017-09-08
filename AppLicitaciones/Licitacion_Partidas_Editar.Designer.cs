@@ -39,6 +39,10 @@
             this.cmb_especialidad = new System.Windows.Forms.ComboBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_max = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txt_min = new System.Windows.Forms.TextBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +80,7 @@
             this.btn_reg_descartar,
             this.btn_reg_guardar,
             this.txt_limpiar_campos});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 156);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 220);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(542, 57);
             this.tt_reg_nuevo.TabIndex = 36;
@@ -139,11 +143,47 @@
             this.label1.TabIndex = 33;
             this.label1.Text = "Numero de Partida:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(104, 170);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 16);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "Maximo:";
+            // 
+            // txt_max
+            // 
+            this.txt_max.Location = new System.Drawing.Point(168, 167);
+            this.txt_max.Name = "txt_max";
+            this.txt_max.Size = new System.Drawing.Size(121, 22);
+            this.txt_max.TabIndex = 69;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(108, 142);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 16);
+            this.label5.TabIndex = 68;
+            this.label5.Text = "Minimo:";
+            // 
+            // txt_min
+            // 
+            this.txt_min.Location = new System.Drawing.Point(168, 139);
+            this.txt_min.Name = "txt_min";
+            this.txt_min.Size = new System.Drawing.Size(121, 22);
+            this.txt_min.TabIndex = 67;
+            // 
             // Licitacion_Partidas_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 213);
+            this.ClientSize = new System.Drawing.Size(542, 277);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_max);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txt_min);
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -152,7 +192,7 @@
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Partidas_Editar";
             this.Text = "Licitacion_Partidas_Editar";
             this.tt_reg_nuevo.ResumeLayout(false);
@@ -174,5 +214,9 @@
         private System.Windows.Forms.ComboBox cmb_especialidad;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_max;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_min;
     }
 }

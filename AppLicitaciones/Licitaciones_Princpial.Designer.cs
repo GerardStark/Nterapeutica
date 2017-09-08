@@ -43,15 +43,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelAvances = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.licitacionbasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.panelEventos = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
-            this.licitacionbasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacion_basesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.licitacion_basesTableAdapter();
             this.toolStrip1.SuspendLayout();
             this.panelAvances.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripLabel1
@@ -140,7 +140,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(594, 14);
+            this.label1.Location = new System.Drawing.Point(715, 14);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 16);
             this.label1.TabIndex = 2;
@@ -160,7 +160,7 @@
             this.panelAvances.Controls.Add(this.comboBox1);
             this.panelAvances.Location = new System.Drawing.Point(91, 33);
             this.panelAvances.Name = "panelAvances";
-            this.panelAvances.Size = new System.Drawing.Size(492, 488);
+            this.panelAvances.Size = new System.Drawing.Size(621, 488);
             this.panelAvances.TabIndex = 6;
             // 
             // comboBox1
@@ -169,22 +169,31 @@
             this.comboBox1.DisplayMember = "numero_licitacion";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 3);
+            this.comboBox1.Location = new System.Drawing.Point(146, 3);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(305, 24);
             this.comboBox1.TabIndex = 0;
             this.comboBox1.ValueMember = "id_bases";
             // 
+            // licitacionbasesBindingSource
+            // 
+            this.licitacionbasesBindingSource.DataMember = "licitacion_bases";
+            this.licitacionbasesBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // panelEventos
             // 
             this.panelEventos.AutoScroll = true;
             this.panelEventos.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panelEventos.Location = new System.Drawing.Point(594, 33);
+            this.panelEventos.Location = new System.Drawing.Point(718, 33);
             this.panelEventos.Name = "panelEventos";
-            this.panelEventos.Size = new System.Drawing.Size(424, 488);
+            this.panelEventos.Size = new System.Drawing.Size(300, 488);
             this.panelEventos.TabIndex = 5;
             this.panelEventos.WrapContents = false;
-            this.panelEventos.Paint += new System.Windows.Forms.PaintEventHandler(this.panelEventos_Paint);
             // 
             // label3
             // 
@@ -194,16 +203,6 @@
             this.label3.Size = new System.Drawing.Size(161, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Avance de los Proyectos:";
-            // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // licitacionbasesBindingSource
-            // 
-            this.licitacionbasesBindingSource.DataMember = "licitacion_bases";
-            this.licitacionbasesBindingSource.DataSource = this.licitacionesDataSet;
             // 
             // licitacion_basesTableAdapter
             // 
@@ -221,7 +220,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitaciones_Princpial";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitaciones_Princpial";
@@ -229,8 +228,8 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panelAvances.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -37,19 +37,23 @@
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.txt_limpiar_campos = new System.Windows.Forms.ToolStripButton();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txt_max = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_min = new System.Windows.Forms.TextBox();
             this.tt_reg_nuevo.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_numero
             // 
-            this.txt_numero.Location = new System.Drawing.Point(164, 7);
+            this.txt_numero.Location = new System.Drawing.Point(164, 11);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(72, 22);
             this.txt_numero.TabIndex = 41;
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(57, 51);
+            this.label2.Location = new System.Drawing.Point(57, 55);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 48);
             this.label2.TabIndex = 40;
@@ -57,7 +61,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(164, 48);
+            this.txt_nombre.Location = new System.Drawing.Point(164, 52);
             this.txt_nombre.Multiline = true;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(357, 63);
@@ -65,7 +69,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(57, 4);
+            this.label1.Location = new System.Drawing.Point(57, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 40);
             this.label1.TabIndex = 38;
@@ -79,7 +83,7 @@
             this.btn_reg_descartar,
             this.btn_reg_guardar,
             this.txt_limpiar_campos});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 156);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 213);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(542, 57);
             this.tt_reg_nuevo.TabIndex = 37;
@@ -116,18 +120,54 @@
             this.txt_limpiar_campos.Size = new System.Drawing.Size(54, 54);
             this.txt_limpiar_campos.Text = "Limpiar";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(100, 152);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 16);
+            this.label3.TabIndex = 70;
+            this.label3.Text = "Maximo:";
+            // 
+            // txt_max
+            // 
+            this.txt_max.Location = new System.Drawing.Point(164, 149);
+            this.txt_max.Name = "txt_max";
+            this.txt_max.Size = new System.Drawing.Size(121, 22);
+            this.txt_max.TabIndex = 69;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(104, 124);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 16);
+            this.label4.TabIndex = 68;
+            this.label4.Text = "Minimo:";
+            // 
+            // txt_min
+            // 
+            this.txt_min.Location = new System.Drawing.Point(164, 121);
+            this.txt_min.Name = "txt_min";
+            this.txt_min.Size = new System.Drawing.Size(121, 22);
+            this.txt_min.TabIndex = 67;
+            // 
             // Licitacion_Procedimientos_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(542, 213);
+            this.ClientSize = new System.Drawing.Size(542, 270);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txt_max);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_min);
             this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tt_reg_nuevo);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Procedimientos_Editar";
             this.Text = "Licitacion_Procedimientos_Editar";
             this.tt_reg_nuevo.ResumeLayout(false);
@@ -147,5 +187,9 @@
         private System.Windows.Forms.ToolStripButton btn_reg_descartar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.ToolStripButton txt_limpiar_campos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_max;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_min;
     }
 }

@@ -147,5 +147,70 @@ namespace AppLicitaciones
                 this.mostrarInfoBases(idLicit);
             }
         }
+
+        private void btn_reg_borrar_Click(object sender, EventArgs e)
+        {
+            Licitacion licit = Licitacion.GetBases().Where(x => x.Id == idLicit).Single();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    DialogResult result = MessageBox.Show("Borrar Licitacion: "+licit.NumeroLicitacion+"?","Borrar Licitacion",MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        try
+                        {
+                            cmd.Connection = con;
+                            foreach (Acta a in licit.Actas)
+                            {
+                                cmd.CommandText = "DELETE FROM licitacion_actas WHERE id=" + a.Id;
+                                cmd.ExecuteNonQuery();
+
+                            }
+
+                            foreach (Calendario c in licit.Calendarios)
+                            {
+                                cmd.CommandText = "DELETE FROM licitacion_calendario WHERE id_calendario=" + c.Id;
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            foreach (Partida p in licit.Partidas)
+                            {
+                                foreach (Procedimiento q in p.Procedimientos)
+                                {
+                                    foreach (Item i in q.Items)
+                                    {
+                                        foreach (Vinculacion v in i.Vinculos)
+                                        {
+                                            foreach (Pregunta r in v.Preguntas)
+                                            {
+                                                cmd.CommandText = "DELETE FROM licitacion_preguntas WHERE id=" + r.Id;
+                                                cmd.ExecuteNonQuery();
+                                            }
+                                            cmd.CommandText = "DELETE FROM licitacion_vinculacion WHERE id_vinculacion = " + v.Id;
+                                            cmd.ExecuteNonQuery();
+                                        }
+                                        cmd.CommandText = "DELETE FROM licitacion_items WHERE id_item = " + i.Id;
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                    cmd.CommandText = "DELETE FROM licitacion_subpar_proce WHERE id=" + q.Id;
+                                    cmd.ExecuteNonQuery();
+                                }
+                                cmd.CommandText = "DELETE FROM licitacion_partidas WHERE id=" + p.Id;
+                                cmd.ExecuteNonQuery();
+                            }
+                            cmd.CommandText = "DELETE FROM licitacion_bases WHERE id_bases = " + licit.Id;
+                            cmd.ExecuteNonQuery();
+                            MessageBox.Show("Borrado");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+            }
+        }
     }
 }
