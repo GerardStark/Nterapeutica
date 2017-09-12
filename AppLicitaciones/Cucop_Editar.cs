@@ -16,6 +16,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         int id_cucop = 0;
+        string contenedor, tipo;
         string[] array_specs = {
                 "Cirugia Cardiovascular",
                 "Hemodinamia",
@@ -36,8 +37,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             mc.llenarcombobox(array_specs, cmb_spec);
-            mc.llenarcombobox(array_tipos, cmb_tipo);
-            mc.llenarcombobox(array_tipos, cmb_cont);
+            //mc.llenarcombobox(array_tipos, cmb_tipo);
+            //mc.llenarcombobox(array_tipos, cmb_cont);
         }
 
         public void llenarinfocucop(int id_cucop)
@@ -59,8 +60,8 @@ namespace AppLicitaciones
                     txt_desc.Text = dt.Rows[0]["descripcion"].ToString();
                     txt_cantidad.Text = dt.Rows[0]["presentacion_cant"].ToString();
                     cmb_spec.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["especialidad"].ToString(), cmb_spec);
-                    cmb_cont.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["presentacion_cont"].ToString(),cmb_cont);
-                    cmb_tipo.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["presentacion_tipo"].ToString(), cmb_tipo);
+                    contenedor = dt.Rows[0]["presentacion_cont"].ToString();
+                    tipo = dt.Rows[0]["presentacion_tipo"].ToString();
                     string cucop = dt.Rows[0]["clave"].ToString();
                     if (cucop == "S.C.C/B")
                     {
@@ -98,9 +99,9 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
                     cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                     cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
-                    cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@tipo", cmb_tipo.Text);
                     cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
-                    cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@cont", cmb_cont.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -127,9 +128,9 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
                         cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                         cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
-                        cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@tipo", cmb_tipo);
                         cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
-                        cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@cont", cmb_cont.Text);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -169,6 +170,15 @@ namespace AppLicitaciones
                 txt_clave_gen.ReadOnly = false;
                 txt_clave_gpo.ReadOnly = false;
             }
+        }
+
+        private void Cucop_Editar_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+            cmb_cont.Text = contenedor;
+            cmb_tipo.Text = tipo;
+
         }
     }
 }

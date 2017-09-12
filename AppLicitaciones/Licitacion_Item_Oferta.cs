@@ -164,5 +164,31 @@ namespace AppLicitaciones
         {
             this.DialogResult = DialogResult.OK;
         }
+
+        private void btn_descartar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("¿Borrar Vinculo?","Desvincular",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("licitacion_vinculacion_update", con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@idVinc", idVinc);
+                        cmd.Parameters.AddWithValue("@idItem", idItem);
+                        cmd.Parameters.AddWithValue("@idCucop", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                        int confirm = cmd.ExecuteNonQuery();
+                        if (confirm != 0)
+                        {
+                            MessageBox.Show("Borrado");
+                            mostrarInfoItemCucops(idItem);
+                        }
+                    }
+                }
+            }
+        }
     }
 }

@@ -68,6 +68,8 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@numero", numPartida);
                     cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                     cmd.Parameters.AddWithValue("@espec", (cmb_especialidad.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@max",txt_max.Text);
+                    cmd.Parameters.AddWithValue("@min", txt_min.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = cmd.ExecuteNonQuery();
                     if (newId != 0)

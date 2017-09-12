@@ -133,6 +133,7 @@
             this.btn_descartar.Name = "btn_descartar";
             this.btn_descartar.Size = new System.Drawing.Size(73, 44);
             this.btn_descartar.Text = "toolStripButton6";
+            this.btn_descartar.Click += new System.EventHandler(this.btn_descartar_Click);
             // 
             // toolStripLabel6
             // 

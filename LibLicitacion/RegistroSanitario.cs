@@ -16,7 +16,7 @@ namespace LibLicitacion
         }
 
         public RegistroSanitario(int id, string numero, string solicitud, string titular, string rfc, string distintiva, string generica, string fabricante,
-            string marca, int pais,DateTime emision, DateTime vencimiento, string archivo, DateTime creado, DateTime actualizado)
+            string marca, int pais, DateTime emision, DateTime vencimiento, string archivo, DateTime creado, DateTime actualizado)
         {
             this.Id = id;
             this.Numero = numero;
@@ -181,7 +181,7 @@ namespace LibLicitacion
                         foreach (DataRow dr in dt.Rows)
                         {
                             RegistroSanitario c = new RegistroSanitario();
-                            c.Id = Convert.ToInt32(dr["id_cucop"]);
+                            c.Id = Convert.ToInt32(dr["id_registro"]);
                             c.Numero = dr["numero_registro"].ToString();
                             c.Solicitud = dr["numero_solicitud"].ToString();
                             c.Titular = dr["titular"].ToString();
@@ -218,6 +218,33 @@ namespace LibLicitacion
         }
 
         private List<ReferenciaRegistro> referencias;
+
+        public List<ProrrogaRegistro> Prorrogas
+        {
+            get
+            {
+                if (this.id != 0)
+                    this.prorrogas = ProrrogaRegistro.GetProrrogasPorRegistro(this.id);
+                return this.prorrogas;
+            }
+        }
+
+        private List<ProrrogaRegistro> prorrogas;
+
+        static public List<RegistroSanitario> GetRegistrosVencidos()
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<RegistroSanitario> vencidos = new List<RegistroSanitario>();
+            foreach (RegistroSanitario r in RegistroSanitario.GetRegistros())
+            {
+                if (r.vencimiento <= DateTime.Today  && !yaAgregado.ContainsKey(r.Id))
+                {
+                    yaAgregado[r.Id] = true;
+                    vencidos.Add(r);
+                }
+            }
+            return vencidos;
+        }
     }
 
     public class ReferenciaRegistro
@@ -355,6 +382,144 @@ namespace LibLicitacion
                 }
             }
             return referencias;
+        }
+    } 
+
+    public class ProrrogaRegistro
+    {
+        public ProrrogaRegistro()
+        {
+
+        }
+
+        public ProrrogaRegistro(int id, int idRegistro, string tramite, DateTime emision, string archivo, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Registro = idRegistro;
+            this.Tramite = tramite;
+            this.Emision = emision;
+            this.Archivo = archivo;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int Registro
+        {
+            get { return registro; }
+            set { registro = value; }
+        }
+
+        private int registro;
+
+        public string Tramite
+        {
+            get { return tramite; }
+            set { tramite = value; }
+        }
+
+        private string tramite;
+
+        public DateTime Emision
+        {
+            get { return emision; }
+            set { emision = value; }
+        }
+
+        private DateTime emision;
+
+        public string Archivo
+        {
+            get { return archivo; }
+            set { archivo = value; }
+        }
+
+        private string archivo;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        static public List<ProrrogaRegistro> GetProrrogas()
+        {
+            ProrrogaRegistro.AllProrrogas.Clear();
+            if (ProrrogaRegistro.AllProrrogas.Count == 0)
+                ProrrogaRegistro.AllProrrogas = ProrrogaRegistro.InicializarProrrogas();
+            return ProrrogaRegistro.AllProrrogas;
+        }
+
+        //crea el objeto con las vinculaciones 
+        //llenar con un query
+        static private List<ProrrogaRegistro> InicializarProrrogas()
+        {
+            MainConfig mc = new MainConfig();
+            List<ProrrogaRegistro> prorrogas = new List<ProrrogaRegistro>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM registros_tramites_prorroga", con))
+                {
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            ProrrogaRegistro p = new ProrrogaRegistro();
+                            p.Id = (Int32)dr["id_vinculacion"];
+                            p.Registro = (Int32)dr["id_registro_sanitario"];
+                            p.Tramite = dr["numero_tramite"].ToString();
+                            p.Emision = (DateTime)dr["fecha_emision"];
+                            p.Archivo = dr["dir_archivo"].ToString();
+                            p.Created = (DateTime)dr["creado_en"];
+                            p.Updated = (DateTime)dr["actualizado_en"];
+                            prorrogas.Add(p);
+                        }
+                    }
+                }
+            }
+            return prorrogas;
+        }
+
+        //objeto donde se almacenan las vinculaciones
+        static private List<ProrrogaRegistro> AllProrrogas = new List<ProrrogaRegistro>();
+
+        //obtener los items del vinculos de los cucop (opciones)
+
+        //obtener vinculos por cucop
+        static public List<ProrrogaRegistro> GetProrrogasPorRegistro(int reg)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<ProrrogaRegistro> prorrogas = new List<ProrrogaRegistro>();
+            foreach (ProrrogaRegistro p in ProrrogaRegistro.GetProrrogas())
+            {
+                if (p.Registro == reg && !yaAgregado.ContainsKey(p.Id))
+                {
+                    yaAgregado[p.Id] = true;
+                    prorrogas.Add(new ProrrogaRegistro(p.Id, p.Registro, p.Tramite, p.Emision, p.Archivo, p.Created, p.Updated));
+                }
+            }
+            return prorrogas;
         }
     }
 }

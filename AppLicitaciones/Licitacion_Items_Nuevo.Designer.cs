@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Items_Nuevo));
             this.tt_reg_nuevo = new System.Windows.Forms.ToolStrip();
             this.btn_reg_descartar = new System.Windows.Forms.ToolStripButton();
@@ -41,12 +42,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.cmb_cont = new System.Windows.Forms.ComboBox();
+            this.dataunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
             this.tt_reg_nuevo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tt_reg_nuevo
@@ -151,15 +159,34 @@
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(121, 22);
             this.txt_cantidad.TabIndex = 57;
+            this.txt_cantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cantidad_KeyPress);
             // 
             // cmb_cont
             // 
+            this.cmb_cont.DataSource = this.dataunidadesBindingSource1;
+            this.cmb_cont.DisplayMember = "unidad";
             this.cmb_cont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cont.FormattingEnabled = true;
             this.cmb_cont.Location = new System.Drawing.Point(122, 206);
             this.cmb_cont.Name = "cmb_cont";
             this.cmb_cont.Size = new System.Drawing.Size(121, 24);
             this.cmb_cont.TabIndex = 58;
+            this.cmb_cont.ValueMember = "id";
+            // 
+            // dataunidadesBindingSource1
+            // 
+            this.dataunidadesBindingSource1.DataMember = "data_unidades";
+            this.dataunidadesBindingSource1.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataunidadesBindingSource
+            // 
+            this.dataunidadesBindingSource.DataMember = "data_unidades";
+            this.dataunidadesBindingSource.DataSource = this.licitacionesDataSet;
             // 
             // label7
             // 
@@ -181,12 +208,15 @@
             // 
             // cmb_tipo
             // 
+            this.cmb_tipo.DataSource = this.dataunidadesBindingSource;
+            this.cmb_tipo.DisplayMember = "unidad";
             this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
             this.cmb_tipo.Location = new System.Drawing.Point(122, 140);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(121, 24);
             this.cmb_tipo.TabIndex = 56;
+            this.cmb_tipo.ValueMember = "id";
             // 
             // txt_descripcion
             // 
@@ -204,6 +234,10 @@
             this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 54;
             this.label1.Text = "Descripcion";
+            // 
+            // data_unidadesTableAdapter
+            // 
+            this.data_unidadesTableAdapter.ClearBeforeFill = true;
             // 
             // Licitacion_Items_Nuevo
             // 
@@ -228,8 +262,12 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Items_Nuevo";
             this.Text = "Licitacion_Items_Nuevo";
+            this.Load += new System.EventHandler(this.Licitacion_Items_Nuevo_Load);
             this.tt_reg_nuevo.ResumeLayout(false);
             this.tt_reg_nuevo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,5 +292,9 @@
         private System.Windows.Forms.ComboBox cmb_tipo;
         private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.Label label1;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource;
+        private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource1;
     }
 }

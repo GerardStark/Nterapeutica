@@ -37,7 +37,8 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 
-                dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id));
+                dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id), getUltimoModificado(i.Id));
+                mc.buscarultimafilaeditada("licitacion_vinculacion", dgvItems);
 
             }
         }
@@ -53,6 +54,21 @@ namespace AppLicitaciones
             {
                 return 0;
             }    
+        }
+
+        private DateTime getUltimoModificado(int idItem)
+        {
+            try
+            {
+                DateTime date = Vinculacion.GetVinculacionesPorItem(idItem).Single(x => x.Item == idItem).Updated;
+                return date;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return DateTime.MinValue;
+            }
+            
         }
 
         private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)

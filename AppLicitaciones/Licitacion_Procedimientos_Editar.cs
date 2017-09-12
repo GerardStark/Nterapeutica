@@ -40,6 +40,8 @@ namespace AppLicitaciones
                         {
                             txt_numero.Text = dt.Rows[0]["numero_subpartida"].ToString();
                             txt_nombre.Text = dt.Rows[0]["nombre_subpartida"].ToString();
+                            txt_min.Text = dt.Rows[0]["minimo"].ToString();
+                            txt_max.Text = dt.Rows[0]["maximo"].ToString();
                         }
                     }
                 }
@@ -59,6 +61,8 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@idSub", idSub);
                     cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
                     cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
+                    cmd.Parameters.AddWithValue("@max", txt_max.Text);
+                    cmd.Parameters.AddWithValue("@min", txt_min.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = cmd.ExecuteNonQuery();
                     if (newId != 0)

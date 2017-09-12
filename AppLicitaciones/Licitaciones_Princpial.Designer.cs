@@ -42,7 +42,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panelAvances = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lbl_cat = new System.Windows.Forms.LinkLabel();
+            this.lbl_cert = new System.Windows.Forms.LinkLabel();
+            this.lbl_reg = new System.Windows.Forms.LinkLabel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cmb_licitacion = new System.Windows.Forms.ComboBox();
             this.licitacionbasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.panelEventos = new System.Windows.Forms.FlowLayoutPanel();
@@ -157,23 +166,117 @@
             // 
             // panelAvances
             // 
-            this.panelAvances.Controls.Add(this.comboBox1);
+            this.panelAvances.Controls.Add(this.lbl_cat);
+            this.panelAvances.Controls.Add(this.lbl_cert);
+            this.panelAvances.Controls.Add(this.lbl_reg);
+            this.panelAvances.Controls.Add(this.label9);
+            this.panelAvances.Controls.Add(this.label8);
+            this.panelAvances.Controls.Add(this.label7);
+            this.panelAvances.Controls.Add(this.label6);
+            this.panelAvances.Controls.Add(this.label5);
+            this.panelAvances.Controls.Add(this.label4);
+            this.panelAvances.Controls.Add(this.cmb_licitacion);
             this.panelAvances.Location = new System.Drawing.Point(91, 33);
             this.panelAvances.Name = "panelAvances";
             this.panelAvances.Size = new System.Drawing.Size(621, 488);
             this.panelAvances.TabIndex = 6;
             // 
-            // comboBox1
+            // lbl_cat
             // 
-            this.comboBox1.DataSource = this.licitacionbasesBindingSource;
-            this.comboBox1.DisplayMember = "numero_licitacion";
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(146, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(305, 24);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "id_bases";
+            this.lbl_cat.AutoSize = true;
+            this.lbl_cat.Location = new System.Drawing.Point(48, 262);
+            this.lbl_cat.Name = "lbl_cat";
+            this.lbl_cat.Size = new System.Drawing.Size(69, 16);
+            this.lbl_cat.TabIndex = 9;
+            this.lbl_cat.TabStop = true;
+            this.lbl_cat.Text = "linkLabel3";
+            // 
+            // lbl_cert
+            // 
+            this.lbl_cert.AutoSize = true;
+            this.lbl_cert.Location = new System.Drawing.Point(48, 390);
+            this.lbl_cert.Name = "lbl_cert";
+            this.lbl_cert.Size = new System.Drawing.Size(69, 16);
+            this.lbl_cert.TabIndex = 8;
+            this.lbl_cert.TabStop = true;
+            this.lbl_cert.Text = "linkLabel2";
+            // 
+            // lbl_reg
+            // 
+            this.lbl_reg.AutoSize = true;
+            this.lbl_reg.Location = new System.Drawing.Point(48, 134);
+            this.lbl_reg.Name = "lbl_reg";
+            this.lbl_reg.Size = new System.Drawing.Size(69, 16);
+            this.lbl_reg.TabIndex = 7;
+            this.lbl_reg.TabStop = true;
+            this.lbl_reg.Text = "linkLabel1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(19, 341);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(183, 16);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "% de certificados Aceptables";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(19, 221);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(174, 16);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "% de catálogos Aceptables";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 101);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(172, 16);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "% de Registros Aceptables";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(19, 325);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(149, 16);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Certificados de calidad:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(19, 205);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 16);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Catálogos de productos:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(19, 85);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(132, 16);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Registros Sanitarios:";
+            // 
+            // cmb_licitacion
+            // 
+            this.cmb_licitacion.DataSource = this.licitacionbasesBindingSource;
+            this.cmb_licitacion.DisplayMember = "numero_licitacion";
+            this.cmb_licitacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_licitacion.FormattingEnabled = true;
+            this.cmb_licitacion.Location = new System.Drawing.Point(146, 3);
+            this.cmb_licitacion.Name = "cmb_licitacion";
+            this.cmb_licitacion.Size = new System.Drawing.Size(305, 24);
+            this.cmb_licitacion.TabIndex = 0;
+            this.cmb_licitacion.ValueMember = "id_bases";
+            this.cmb_licitacion.SelectedIndexChanged += new System.EventHandler(this.cmb_licitacion_SelectedIndexChanged);
             // 
             // licitacionbasesBindingSource
             // 
@@ -228,6 +331,7 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panelAvances.ResumeLayout(false);
+            this.panelAvances.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -249,11 +353,20 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelAvances;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_licitacion;
         private System.Windows.Forms.FlowLayoutPanel panelEventos;
         private System.Windows.Forms.Label label3;
         private LicitacionesDataSet licitacionesDataSet;
         private System.Windows.Forms.BindingSource licitacionbasesBindingSource;
         private LicitacionesDataSetTableAdapters.licitacion_basesTableAdapter licitacion_basesTableAdapter;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.LinkLabel lbl_cat;
+        private System.Windows.Forms.LinkLabel lbl_cert;
+        private System.Windows.Forms.LinkLabel lbl_reg;
     }
 }

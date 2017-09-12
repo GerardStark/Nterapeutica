@@ -36,8 +36,8 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             mc.llenarcombobox(array_specs, cmb_spec);
-            mc.llenarcombobox(array_tipos,cmb_tipo);
-            mc.llenarcombobox(array_tipos, cmb_cont);
+            //mc.llenarcombobox(array_tipos,cmb_tipo);
+            //mc.llenarcombobox(array_tipos, cmb_cont);
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -56,9 +56,9 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@clave", "S.C.C/B");
                     cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                     cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
-                    cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@tipo", cmb_tipo.Text);
                     cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
-                    cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@cont", cmb_cont.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = (Int32)cmd.ExecuteScalar();
                     if (newId != 0)
@@ -224,6 +224,13 @@ namespace AppLicitaciones
         private void Cucop_Nuevo_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void Cucop_Nuevo_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+
         }
     }
 }

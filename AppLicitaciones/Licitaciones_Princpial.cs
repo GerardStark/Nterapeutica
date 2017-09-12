@@ -80,8 +80,53 @@ namespace AppLicitaciones
                         Licitacion_Calendario_Principal l = new Licitacion_Calendario_Principal();
                         l.mostrarInfoEvento(c, p[i].Name, p[i].GetValue(c));
                         panelEventos.Controls.Add(l);
-                    }
-                   
+                    }                   
+                }
+            }
+        }
+
+        private void cmb_licitacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int licit = (Int32)cmb_licitacion.SelectedValue;
+                int _totalRegistros = 0;
+                int _totalVencidos = 0;
+                if (licit > 0)
+                {
+                    Licitacion l = Licitacion.GetBases().Where(x => x.Id == licit).Single();
+                    var vinculos = l.Partidas.SelectMany(p => p.Procedimientos).
+                                    SelectMany(i => i.Items).Select(v => v.Vinculos).ToList();
+
+                    //var cucop = Cucop.GetCucops().Where(x => x.Id == vinculo.Single().Cucop);
+
+                    //foreach (CucopVinculos v in cucop.Single().Vinculos)
+                    //{                    
+                    //    foreach (VinculoRegistros x in v.Registros)
+                    //    {
+                    //        var vencidos = RegistroSanitario.GetRegistrosVencidos().Where(r => r.Id == x.Registro).ToList();
+                    //        _totalVencidos++;
+                    //    }
+                    
+
+                    //    foreach (VinculoCatalogos x in v.Catalogos)
+                    //    {
+
+                    //    }
+
+                    //    foreach (VinculoCertificados x in v.Certificados)
+                    //    {
+
+                    //    }
+                    //}
+                    //lbl_reg.Text = "Total de Registros: " + _totalRegistros + " de los cuales: " + _totalVencidos + " estan vencidos o no se tramitaron en tiempo";
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is NullReferenceException)
+                {
+                    
                 }
             }
         }

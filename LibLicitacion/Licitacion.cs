@@ -885,6 +885,8 @@ namespace LibLicitacion
                             {
                                 v.Cucop = (Int32)dr["id_cucop"];
                             }
+                            v.Created = (DateTime)dr["creado_en"];
+                            v.Updated = (DateTime)dr["actualizado_en"];
                             vinculos.Add(v);
                         }
                     }

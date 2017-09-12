@@ -16,6 +16,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         int idItem;
+        string contenedor, tipo;
         public Licitacion_Items_Editar()
         {
             InitializeComponent();
@@ -25,8 +26,8 @@ namespace AppLicitaciones
                 "Kit",
                 "Caja"
             };
-            mc.llenarcombobox(array_tipos, cmb_tipo);
-            mc.llenarcombobox(array_tipos, cmb_cont);
+            //mc.llenarcombobox(array_tipos, cmb_tipo);
+            //mc.llenarcombobox(array_tipos, cmb_cont);
         }
 
         public void mostrarInfoItem(int idItem)
@@ -44,9 +45,11 @@ namespace AppLicitaciones
                     if (dt.Rows.Count > 0)
                     {
                         txt_descripcion.Text = dt.Rows[0]["descripcion"].ToString();
-                        cmb_tipo.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["unidad_venta"].ToString(), cmb_tipo);
+                        tipo = dt.Rows[0]["unidad_venta"].ToString();
                         txt_cantidad.Text = dt.Rows[0]["cantidad"].ToString();
-                        cmb_cont.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["contenedor"].ToString(), cmb_cont);
+                        contenedor = dt.Rows[0]["contenedor"].ToString();
+                        txt_min.Text = dt.Rows[0]["minimo"].ToString();
+                        txt_max.Text = dt.Rows[0]["maximo"].ToString();
                     }
                 }
             }
@@ -66,9 +69,11 @@ namespace AppLicitaciones
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idItem", idItem);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                    cmd.Parameters.AddWithValue("@unidad", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@unidad",cmb_tipo.Text);
                     cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(txt_cantidad.Text));
-                    cmd.Parameters.AddWithValue("@contenedor", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@contenedor", cmb_cont.Text);
+                    cmd.Parameters.AddWithValue("@max", txt_max.Text);
+                    cmd.Parameters.AddWithValue("@min", txt_min.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = cmd.ExecuteNonQuery();
                     if (newId != 0)
@@ -77,6 +82,23 @@ namespace AppLicitaciones
                         this.DialogResult = DialogResult.OK;
                     }
                 }
+            }
+        }
+
+        private void Licitacion_Items_Editar_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+            cmb_cont.Text = contenedor;
+            cmb_tipo.Text = tipo;
+
+        }
+
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

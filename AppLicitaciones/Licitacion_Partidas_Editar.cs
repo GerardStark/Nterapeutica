@@ -48,6 +48,8 @@ namespace AppLicitaciones
                         txt_numero.Text = dt.Rows[0]["numero_partida"].ToString();
                         txt_nombre.Text = dt.Rows[0]["nombre_partida"].ToString();
                         cmb_especialidad.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["especialidad"].ToString(), cmb_especialidad);
+                        txt_min.Text = dt.Rows[0]["minimo"].ToString();
+                        txt_max.Text = dt.Rows[0]["maximo"].ToString();
                     }
                 }
             }
@@ -64,6 +66,8 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@idPartida", idPartida);
                     cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                     cmd.Parameters.AddWithValue("@espec", (cmb_especialidad.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@max", txt_max.Text);
+                    cmd.Parameters.AddWithValue("@min", txt_min.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = cmd.ExecuteNonQuery();
                     if (newId != 0)

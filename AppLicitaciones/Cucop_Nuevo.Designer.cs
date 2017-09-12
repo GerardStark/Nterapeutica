@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cucop_Nuevo));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_tipo = new System.Windows.Forms.ComboBox();
+            this.dataunidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.cmb_cont = new System.Windows.Forms.ComboBox();
@@ -51,7 +54,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmb_spec = new System.Windows.Forms.ComboBox();
             this.chk_sccb = new System.Windows.Forms.CheckBox();
+            this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
+            this.dataunidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -181,12 +189,25 @@
             // 
             // cmb_tipo
             // 
+            this.cmb_tipo.DataSource = this.dataunidadesBindingSource;
+            this.cmb_tipo.DisplayMember = "unidad";
             this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
             this.cmb_tipo.Location = new System.Drawing.Point(282, 255);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(121, 28);
             this.cmb_tipo.TabIndex = 6;
+            this.cmb_tipo.ValueMember = "id";
+            // 
+            // dataunidadesBindingSource
+            // 
+            this.dataunidadesBindingSource.DataMember = "data_unidades";
+            this.dataunidadesBindingSource.DataSource = this.licitacionesDataSet;
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label6
             // 
@@ -208,12 +229,15 @@
             // 
             // cmb_cont
             // 
+            this.cmb_cont.DataSource = this.dataunidadesBindingSource1;
+            this.cmb_cont.DisplayMember = "unidad";
             this.cmb_cont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cont.FormattingEnabled = true;
             this.cmb_cont.Location = new System.Drawing.Point(282, 321);
             this.cmb_cont.Name = "cmb_cont";
             this.cmb_cont.Size = new System.Drawing.Size(121, 28);
             this.cmb_cont.TabIndex = 8;
+            this.cmb_cont.ValueMember = "id";
             // 
             // txt_cantidad
             // 
@@ -261,6 +285,15 @@
             this.chk_sccb.UseVisualStyleBackColor = true;
             this.chk_sccb.CheckedChanged += new System.EventHandler(this.chk_sccb_CheckedChanged);
             // 
+            // data_unidadesTableAdapter
+            // 
+            this.data_unidadesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataunidadesBindingSource1
+            // 
+            this.dataunidadesBindingSource1.DataMember = "data_unidades";
+            this.dataunidadesBindingSource1.DataSource = this.licitacionesDataSet;
+            // 
             // Cucop_Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -292,8 +325,12 @@
             this.Name = "Cucop_Nuevo";
             this.Text = "Cucop_Nuevo";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cucop_Nuevo_FormClosing);
+            this.Load += new System.EventHandler(this.Cucop_Nuevo_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +360,9 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmb_spec;
         private System.Windows.Forms.CheckBox chk_sccb;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource;
+        private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
+        private System.Windows.Forms.BindingSource dataunidadesBindingSource1;
     }
 }

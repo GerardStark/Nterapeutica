@@ -26,8 +26,8 @@ namespace AppLicitaciones
                 "Caja",
                 "Equipo"
             };
-            mc.llenarcombobox(array_tipos, cmb_tipo);
-            mc.llenarcombobox(array_tipos, cmb_cont);
+            //mc.llenarcombobox(array_tipos, cmb_tipo);
+            //mc.llenarcombobox(array_tipos, cmb_cont);
 
         }
 
@@ -46,9 +46,11 @@ namespace AppLicitaciones
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idSub",idSub);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
-                    cmd.Parameters.AddWithValue("@unidad", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@unidad", cmb_tipo.Text);
                     cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(txt_cantidad.Text));
-                    cmd.Parameters.AddWithValue("@contenedor", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                    cmd.Parameters.AddWithValue("@contenedor", cmb_cont.Text);
+                    cmd.Parameters.AddWithValue("@max", txt_max.Text);
+                    cmd.Parameters.AddWithValue("@min", txt_min.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = (Int32)cmd.ExecuteScalar();
                     if (newId != 0)
@@ -74,6 +76,21 @@ namespace AppLicitaciones
         private void btn_reg_descartar_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void Licitacion_Items_Nuevo_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+
+        }
+
+        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
