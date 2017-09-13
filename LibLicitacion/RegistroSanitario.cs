@@ -155,7 +155,7 @@ namespace LibLicitacion
 
         private DateTime updated;
 
-        //llenado de los cucops
+        //llenado de los registros
         public static List<RegistroSanitario> GetRegistros()
         {
             RegistroSanitario.AllRegistros.Clear();
@@ -231,7 +231,7 @@ namespace LibLicitacion
 
         private List<ProrrogaRegistro> prorrogas;
 
-        static public List<RegistroSanitario> GetRegistrosVencidos()
+        static public List<RegistroSanitario> GetVencidos()
         {
             Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
             List<RegistroSanitario> vencidos = new List<RegistroSanitario>();

@@ -124,7 +124,7 @@
   <data name="btn_reg_descartar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAABh5SURBVHhe7daJsSTXjQVQ0QOZRE+GnokeaDwhPZpJsLvI
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABh5SURBVHhe7daJsSTXjQVQ0QOZRE+GnokeaDwhPZpJsLvI
         3+i/1JJAvuWciBuK0EJ1VwLv4l8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAcLH/+f6vADvw5sEvv/zynyP/F//6/d8CWJY3Dw5vFuEWCwEsy5sHh3cWwUIAy4q3Lb113jz2EwOf
@@ -235,7 +235,7 @@
   <data name="btn_reg_guardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAABUCSURBVHhe7d2NkdzG1QVQKYMNgSFsCA6BITADOwMrAzsD
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABUCSURBVHhe7d2NkdzG1QVQKYMNgSFsCA6BITADOwMrAzsD
         MgOHYGVAZiBlQGZg3xYWEjXanRn0oIFu4JyqW/4RuZxpPPR9VZ8/6QcAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOB1P/7448f8y4fp
@@ -331,7 +331,7 @@
   <data name="txt_limpiar_campos.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAtdSURBVHhe7drRcSPXEUBRheAQFIJDckZSBnYIzsAhSJnY
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAtdSURBVHhe7drRcSPXEUBRheAQFIJDckZSBnYIzsAhSJnY
         GdjASlumRr1cghgAM++eU3Wrdv/ZeGA3fwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
@@ -385,6 +385,9 @@
   </data>
   <metadata name="paisesorigenBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>346, 17</value>
+  </metadata>
+  <metadata name="licitacionesDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>161, 17</value>
   </metadata>
   <metadata name="licitacionesDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>161, 17</value>

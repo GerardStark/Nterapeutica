@@ -369,6 +369,7 @@
             this.updatedColumn.HeaderText = "Actualizado";
             this.updatedColumn.Name = "updatedColumn";
             this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
             // 
             // Licitacion_Tecnica
             // 

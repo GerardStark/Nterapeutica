@@ -77,9 +77,9 @@
             this.tt_reg_editar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_reg_descartar,
             this.btn_reg_guardar});
-            this.tt_reg_editar.Location = new System.Drawing.Point(0, 464);
+            this.tt_reg_editar.Location = new System.Drawing.Point(0, 378);
             this.tt_reg_editar.Name = "tt_reg_editar";
-            this.tt_reg_editar.Size = new System.Drawing.Size(1029, 57);
+            this.tt_reg_editar.Size = new System.Drawing.Size(920, 57);
             this.tt_reg_editar.TabIndex = 52;
             this.tt_reg_editar.Text = "Menú";
             // 
@@ -111,9 +111,10 @@
             this.cmb_pais.DisplayMember = "nombre";
             this.cmb_pais.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_pais.FormattingEnabled = true;
-            this.cmb_pais.Location = new System.Drawing.Point(707, 173);
+            this.cmb_pais.Location = new System.Drawing.Point(628, 105);
+            this.cmb_pais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_pais.Name = "cmb_pais";
-            this.cmb_pais.Size = new System.Drawing.Size(288, 28);
+            this.cmb_pais.Size = new System.Drawing.Size(256, 24);
             this.cmb_pais.TabIndex = 130;
             this.cmb_pais.ValueMember = "id_pais";
             // 
@@ -129,26 +130,28 @@
             // 
             // txt_rfc
             // 
-            this.txt_rfc.Location = new System.Drawing.Point(211, 146);
+            this.txt_rfc.Location = new System.Drawing.Point(188, 140);
+            this.txt_rfc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_rfc.Name = "txt_rfc";
-            this.txt_rfc.Size = new System.Drawing.Size(290, 26);
+            this.txt_rfc.Size = new System.Drawing.Size(258, 22);
             this.txt_rfc.TabIndex = 109;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(158, 149);
+            this.label9.Location = new System.Drawing.Point(140, 142);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 20);
+            this.label9.Size = new System.Drawing.Size(38, 16);
             this.label9.TabIndex = 129;
             this.label9.Text = "RFC:";
             // 
             // rad_prorroga
             // 
             this.rad_prorroga.AutoSize = true;
-            this.rad_prorroga.Location = new System.Drawing.Point(921, 133);
+            this.rad_prorroga.Location = new System.Drawing.Point(376, 21);
+            this.rad_prorroga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rad_prorroga.Name = "rad_prorroga";
-            this.rad_prorroga.Size = new System.Drawing.Size(88, 24);
+            this.rad_prorroga.Size = new System.Drawing.Size(79, 20);
             this.rad_prorroga.TabIndex = 122;
             this.rad_prorroga.TabStop = true;
             this.rad_prorroga.Text = "Prórroga";
@@ -157,9 +160,10 @@
             // rad_modificacion
             // 
             this.rad_modificacion.AutoSize = true;
-            this.rad_modificacion.Location = new System.Drawing.Point(800, 133);
+            this.rad_modificacion.Location = new System.Drawing.Point(268, 21);
+            this.rad_modificacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rad_modificacion.Name = "rad_modificacion";
-            this.rad_modificacion.Size = new System.Drawing.Size(115, 24);
+            this.rad_modificacion.Size = new System.Drawing.Size(102, 20);
             this.rad_modificacion.TabIndex = 121;
             this.rad_modificacion.TabStop = true;
             this.rad_modificacion.Text = "Modificación";
@@ -168,9 +172,10 @@
             // rad_registro
             // 
             this.rad_registro.AutoSize = true;
-            this.rad_registro.Location = new System.Drawing.Point(707, 133);
+            this.rad_registro.Location = new System.Drawing.Point(186, 21);
+            this.rad_registro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rad_registro.Name = "rad_registro";
-            this.rad_registro.Size = new System.Drawing.Size(87, 24);
+            this.rad_registro.Size = new System.Drawing.Size(77, 20);
             this.rad_registro.TabIndex = 119;
             this.rad_registro.TabStop = true;
             this.rad_registro.Text = "Registro";
@@ -179,48 +184,52 @@
             // lbl_tipo
             // 
             this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Location = new System.Drawing.Point(656, 131);
+            this.lbl_tipo.Location = new System.Drawing.Point(140, 19);
             this.lbl_tipo.Name = "lbl_tipo";
-            this.lbl_tipo.Size = new System.Drawing.Size(43, 20);
+            this.lbl_tipo.Size = new System.Drawing.Size(39, 16);
             this.lbl_tipo.TabIndex = 128;
             this.lbl_tipo.Text = "Tipo:";
             // 
             // lbl_reg_archivo
             // 
             this.lbl_reg_archivo.AutoSize = true;
-            this.lbl_reg_archivo.Location = new System.Drawing.Point(520, 360);
+            this.lbl_reg_archivo.Location = new System.Drawing.Point(462, 254);
             this.lbl_reg_archivo.Name = "lbl_reg_archivo";
-            this.lbl_reg_archivo.Size = new System.Drawing.Size(60, 20);
+            this.lbl_reg_archivo.Size = new System.Drawing.Size(52, 16);
             this.lbl_reg_archivo.TabIndex = 127;
             this.lbl_reg_archivo.Text = "label13";
             // 
             // date_vencimiento
             // 
-            this.date_vencimiento.Location = new System.Drawing.Point(707, 266);
+            this.date_vencimiento.Location = new System.Drawing.Point(628, 179);
+            this.date_vencimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_vencimiento.Name = "date_vencimiento";
-            this.date_vencimiento.Size = new System.Drawing.Size(288, 26);
+            this.date_vencimiento.Size = new System.Drawing.Size(256, 22);
             this.date_vencimiento.TabIndex = 125;
             // 
             // date_emision
             // 
-            this.date_emision.Location = new System.Drawing.Point(707, 220);
+            this.date_emision.Location = new System.Drawing.Point(628, 142);
+            this.date_emision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_emision.Name = "date_emision";
-            this.date_emision.Size = new System.Drawing.Size(288, 26);
+            this.date_emision.Size = new System.Drawing.Size(256, 22);
             this.date_emision.TabIndex = 124;
             // 
             // txt_generica
             // 
-            this.txt_generica.Location = new System.Drawing.Point(212, 312);
+            this.txt_generica.Location = new System.Drawing.Point(188, 273);
+            this.txt_generica.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_generica.Multiline = true;
             this.txt_generica.Name = "txt_generica";
-            this.txt_generica.Size = new System.Drawing.Size(289, 110);
+            this.txt_generica.Size = new System.Drawing.Size(257, 89);
             this.txt_generica.TabIndex = 113;
             // 
             // btn_archivo
             // 
-            this.btn_archivo.Location = new System.Drawing.Point(707, 311);
+            this.btn_archivo.Location = new System.Drawing.Point(628, 215);
+            this.btn_archivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_archivo.Name = "btn_archivo";
-            this.btn_archivo.Size = new System.Drawing.Size(123, 36);
+            this.btn_archivo.Size = new System.Drawing.Size(109, 29);
             this.btn_archivo.TabIndex = 126;
             this.btn_archivo.Text = "Buscar";
             this.btn_archivo.UseVisualStyleBackColor = true;
@@ -228,144 +237,150 @@
             // 
             // txt_marca
             // 
-            this.txt_marca.Location = new System.Drawing.Point(707, 82);
+            this.txt_marca.Location = new System.Drawing.Point(628, 66);
+            this.txt_marca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(288, 26);
+            this.txt_marca.Size = new System.Drawing.Size(256, 22);
             this.txt_marca.TabIndex = 117;
             // 
             // txt_fabricante
             // 
-            this.txt_fabricante.Location = new System.Drawing.Point(707, 35);
+            this.txt_fabricante.Location = new System.Drawing.Point(628, 28);
+            this.txt_fabricante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_fabricante.Name = "txt_fabricante";
-            this.txt_fabricante.Size = new System.Drawing.Size(288, 26);
+            this.txt_fabricante.Size = new System.Drawing.Size(256, 22);
             this.txt_fabricante.TabIndex = 115;
             // 
             // txt_distintiva
             // 
-            this.txt_distintiva.Location = new System.Drawing.Point(211, 181);
+            this.txt_distintiva.Location = new System.Drawing.Point(188, 168);
+            this.txt_distintiva.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_distintiva.Multiline = true;
             this.txt_distintiva.Name = "txt_distintiva";
-            this.txt_distintiva.Size = new System.Drawing.Size(290, 110);
+            this.txt_distintiva.Size = new System.Drawing.Size(258, 89);
             this.txt_distintiva.TabIndex = 112;
             // 
             // txt_titular
             // 
-            this.txt_titular.Location = new System.Drawing.Point(210, 110);
+            this.txt_titular.Location = new System.Drawing.Point(187, 111);
+            this.txt_titular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_titular.Name = "txt_titular";
-            this.txt_titular.Size = new System.Drawing.Size(290, 26);
+            this.txt_titular.Size = new System.Drawing.Size(258, 22);
             this.txt_titular.TabIndex = 108;
             // 
             // txt_solicitud
             // 
-            this.txt_solicitud.Location = new System.Drawing.Point(210, 70);
+            this.txt_solicitud.Location = new System.Drawing.Point(187, 79);
+            this.txt_solicitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_solicitud.Name = "txt_solicitud";
-            this.txt_solicitud.Size = new System.Drawing.Size(290, 26);
+            this.txt_solicitud.Size = new System.Drawing.Size(258, 22);
             this.txt_solicitud.TabIndex = 106;
             // 
             // txt_numero
             // 
-            this.txt_numero.Location = new System.Drawing.Point(211, 32);
+            this.txt_numero.Location = new System.Drawing.Point(188, 49);
+            this.txt_numero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_numero.Name = "txt_numero";
-            this.txt_numero.Size = new System.Drawing.Size(289, 26);
+            this.txt_numero.Size = new System.Drawing.Size(257, 22);
             this.txt_numero.TabIndex = 103;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(635, 319);
+            this.label12.Location = new System.Drawing.Point(564, 222);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(65, 20);
+            this.label12.Size = new System.Drawing.Size(56, 16);
             this.label12.TabIndex = 123;
             this.label12.Text = "Archivo:";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(528, 271);
+            this.label11.Location = new System.Drawing.Point(469, 183);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(172, 20);
+            this.label11.Size = new System.Drawing.Size(145, 16);
             this.label11.TabIndex = 120;
             this.label11.Text = "Fecha de Vencimiento:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(560, 225);
+            this.label10.Location = new System.Drawing.Point(498, 146);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(140, 20);
+            this.label10.Size = new System.Drawing.Size(119, 16);
             this.label10.TabIndex = 118;
             this.label10.Text = "Fecha de Emision:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(584, 175);
+            this.label8.Location = new System.Drawing.Point(519, 106);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 20);
+            this.label8.Size = new System.Drawing.Size(100, 16);
             this.label8.TabIndex = 116;
             this.label8.Text = "Pais de Origen:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(643, 85);
+            this.label7.Location = new System.Drawing.Point(572, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(57, 20);
+            this.label7.Size = new System.Drawing.Size(49, 16);
             this.label7.TabIndex = 114;
             this.label7.Text = "Marca:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(611, 38);
+            this.label6.Location = new System.Drawing.Point(543, 30);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.Size = new System.Drawing.Size(75, 16);
             this.label6.TabIndex = 111;
             this.label6.Text = "Fabricante:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 315);
+            this.label5.Location = new System.Drawing.Point(18, 275);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(184, 20);
+            this.label5.Size = new System.Drawing.Size(156, 16);
             this.label5.TabIndex = 110;
             this.label5.Text = "Denominacion Generica:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 184);
+            this.label4.Location = new System.Drawing.Point(19, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 20);
+            this.label4.Size = new System.Drawing.Size(155, 16);
             this.label4.TabIndex = 107;
             this.label4.Text = "Denominacion Distintiva:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(148, 113);
+            this.label3.Location = new System.Drawing.Point(132, 114);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 20);
+            this.label3.Size = new System.Drawing.Size(48, 16);
             this.label3.TabIndex = 105;
             this.label3.Text = "Titular:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(131, 73);
+            this.label2.Location = new System.Drawing.Point(116, 82);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 20);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 104;
             this.label2.Text = "Solicitud:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(135, 35);
+            this.label1.Location = new System.Drawing.Point(120, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 20);
+            this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 102;
             this.label1.Text = "Numero:";
             // 
@@ -375,9 +390,9 @@
             // 
             // Registros_Editar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 521);
+            this.ClientSize = new System.Drawing.Size(920, 435);
             this.Controls.Add(this.cmb_pais);
             this.Controls.Add(this.txt_rfc);
             this.Controls.Add(this.label9);
@@ -408,8 +423,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tt_reg_editar);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Registros_Editar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Registro Sanitario";
