@@ -45,6 +45,7 @@ namespace AppLicitaciones
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idSub",idSub);
+                    cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
                     cmd.Parameters.AddWithValue("@unidad", cmb_tipo.Text);
                     cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(txt_cantidad.Text));
@@ -82,6 +83,8 @@ namespace AppLicitaciones
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
             this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+            long numero = Item.GetItemsPorProcedimiento(idSub).Last().Numero + 1;
+            txt_numero.Text = numero.ToString();
 
         }
 

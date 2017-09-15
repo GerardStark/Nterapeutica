@@ -83,6 +83,30 @@ namespace AppLicitaciones
             }
         }
 
+        private void btn_borrar_Click(object sender, EventArgs e)
+        {
+            if (idPartida != 0)
+            {
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand("DELETE FROM licitacion_partidas WHERE id =@id",con))
+                    {
+                        cmd.Parameters.AddWithValue("@id", idPartida);
+                        int result = cmd.ExecuteNonQuery();
+                        if (result != 0)
+                        {
+                            mostrarPartidasLicitacion(idBases);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una partida");
+            }
+        }
+
         private void btn_visualizar_Click(object sender, EventArgs e)
         {
             if (idPartida != 0)

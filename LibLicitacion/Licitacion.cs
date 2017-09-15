@@ -273,7 +273,7 @@ namespace LibLicitacion
         }
 
         //clase principal de las partidas
-        public Partida(int id, int idBases, int numPartida, string nombPartida, string especialidad, int minimo, int maximo, DateTime created, DateTime updated)
+        public Partida(int id, int idBases, int numPartida, string nombPartida, string especialidad, long minimo, long maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.IdBases = idBases;
@@ -332,21 +332,21 @@ namespace LibLicitacion
             set { created = value; }
         }
 
-        public int Minimo
+        public long Minimo
         {
             get { return minimo; }
             set { minimo = value; }
         }
 
-        private int minimo;
+        private long minimo;
 
-        public int Maximo
+        public long Maximo
         {
             get { return maximo; }
             set { maximo = value; }
         }
 
-        private int maximo;
+        private long maximo;
 
         private DateTime created;
 
@@ -392,9 +392,10 @@ namespace LibLicitacion
                             p.Id = (Int32)dr["id"];
                             p.IdBases = (Int32)dr["id_bases"];
                             p.Nombre = (string)dr["nombre_partida"];
+                            p.Numero = (Int32)dr["numero_partida"];
                             p.Especialidad = (string)dr["especialidad"];
-                            p.Minimo = (Int32)dr["minimo"];
-                            p.Maximo = (Int32)dr["maximo"];
+                            p.Minimo = (long)dr["minimo"];
+                            p.Maximo = (long)dr["maximo"];
                             p.Created = (DateTime)dr["creado_en"];
                             p.Updated = (DateTime)dr["actualizado_en"];
                             partidas.Add(p);
@@ -448,7 +449,7 @@ namespace LibLicitacion
         }
 
         //clase principal de los procedimientos/subpartidas
-        public Procedimiento(int id, int partida, int numero, string nombre, int minimo, int maximo, DateTime created, DateTime updated)
+        public Procedimiento(int id, int partida, int numero, string nombre, long minimo, long maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.Partida = partida;
@@ -492,21 +493,21 @@ namespace LibLicitacion
 
         private string nombre;
 
-        public int Minimo
+        public long Minimo
         {
             get { return minimo; }
             set { minimo = value; }
         }
 
-        private int minimo;
+        private long minimo;
 
-        public int Maximo
+        public long Maximo
         {
             get { return maximo; }
             set { maximo = value; }
         }
 
-        private int maximo;
+        private long maximo;
 
         public DateTime Created
         {
@@ -557,8 +558,8 @@ namespace LibLicitacion
                             p.partida = (Int32)dr["id_partida"];
                             p.Numero = (Int32)dr["numero_subpartida"];
                             p.Nombre = (string)dr["nombre_subpartida"];
-                            p.Minimo = (Int32)dr["minimo"];
-                            p.Maximo = (Int32)dr["maximo"];
+                            p.Minimo = (long)dr["minimo"];
+                            p.Maximo = (long)dr["maximo"];
                             p.Created = (DateTime)dr["creado_en"];
                             p.Updated = (DateTime)dr["actualizado_en"];
                             procedimientos.Add(p);
@@ -611,10 +612,11 @@ namespace LibLicitacion
         }
 
         //clase principal de los items de la licitacion
-        public Item(int id, int procedimiento, string descripcion, string unidad, long cantidad, string contenedor, int minimo, int maximo, DateTime created, DateTime updated)
+        public Item(int id, int procedimiento, long numero, string descripcion, string unidad, long cantidad, string contenedor, long minimo, long maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.Procedimiento = procedimiento;
+            this.Numero = numero;
             this.Nombre = descripcion;
             this.Unidad = unidad;
             this.Cantidad = cantidad;
@@ -640,6 +642,14 @@ namespace LibLicitacion
         }
 
         private int procedimiento;
+
+        public long Numero
+        {
+            get { return numero; }
+            set { numero = value; }
+        }
+
+        private long numero;
 
         public string Nombre
         {
@@ -673,21 +683,21 @@ namespace LibLicitacion
 
         private string contenedor;
 
-        public int Minimo
+        public long Minimo
         {
             get { return minimo; }
             set { minimo = value; }
         }
 
-        private int minimo;
+        private long minimo;
 
-        public int Maximo
+        public long Maximo
         {
             get { return maximo; }
             set { maximo = value; }
         }
 
-        private int maximo;
+        private long maximo;
 
         public DateTime Created
         {
@@ -736,10 +746,11 @@ namespace LibLicitacion
                             Item i = new Item();
                             i.Id = (Int32)dr["id_item"];
                             i.Procedimiento = (Int32)dr["id_paquete"];
+                            i.Numero = (long)dr["numero"];
                             i.Nombre = (string)dr["descripcion"];
                             i.Unidad = (string)dr["unidad_venta"];
-                            i.Minimo = (Int32)dr["minimo"];
-                            i.Maximo = (Int32)dr["maximo"];
+                            i.Minimo = (long)dr["minimo"];
+                            i.Maximo = (long)dr["maximo"];
                             i.Created = (DateTime)dr["creado_en"];
                             i.Updated = (DateTime)dr["actualizado_en"];
                             items.Add(i);
@@ -764,7 +775,7 @@ namespace LibLicitacion
                 if (i.procedimiento == proce && !yaAgregado.ContainsKey(i.Id))
                 {
                     yaAgregado[i.Id] = true;
-                    items.Add(new Item(i.Id, i.Procedimiento, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Minimo, i.Maximo,i.Created, i.Updated));
+                    items.Add(new Item(i.Id, i.Procedimiento, i.Numero, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Minimo, i.Maximo,i.Created, i.Updated));
                 }
             }
             return items;
@@ -782,6 +793,18 @@ namespace LibLicitacion
         }
 
         private List<Vinculacion> vinculos;
+
+        public List<ItemInfoAd> Infos
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.infos = ItemInfoAd.GetInfosPorItem(this.Id);
+                return this.infos;
+            }
+        }
+
+        private List<ItemInfoAd> infos;
     }
 
     public class Vinculacion
@@ -1199,16 +1222,18 @@ namespace LibLicitacion
 
         }
 
-        public Calendario(int id, int bases, DateTime publicacion, DateTime junta, DateTime apertura, DateTime fallo, DateTime firma, DateTime visita, DateTime creado, DateTime actualizado)
+        public Calendario(int id, int bases, DateTime publicacion, DateTime dof, DateTime junta, DateTime apertura, DateTime fallo, DateTime firma, DateTime visita, DateTime muestras, DateTime creado, DateTime actualizado)
         {
             this.Id = id;
             this.Bases = bases;
             this.Publicacion = publicacion;
+            this.PublicacionDof = dof;
             this.Junta = junta;
             this.Apertura = apertura;
             this.Fallo = fallo;
             this.Firma = firma;
             this.Visita = visita;
+            this.Muestras = muestras;
             this.Created = creado;
             this.Updated = actualizado;
         }
@@ -1236,6 +1261,14 @@ namespace LibLicitacion
         }
 
         private DateTime publicacion;
+
+        public DateTime PublicacionDof
+        {
+            get { return publicaciondof; }
+            set { publicaciondof = value; }
+        }
+
+        private DateTime publicaciondof;
 
         public DateTime Junta
         {
@@ -1276,6 +1309,14 @@ namespace LibLicitacion
         }
 
         private DateTime visita;
+
+        public DateTime Muestras
+        {
+            get { return muestras; }
+            set { muestras = value; }
+        }
+
+        private DateTime muestras;
 
         public DateTime Created
         {
@@ -1321,12 +1362,14 @@ namespace LibLicitacion
                             Calendario c = new Calendario();
                             c.Id = (Int32)dr["id_calendario"];
                             c.Bases = (Int32)dr["id_bases"];
-                            c.Publicacion = (DateTime)dr["fecha_publicacion"];
+                            c.Publicacion = (DateTime)dr["fecha_publicacion_cnet"];
+                            c.PublicacionDof = (DateTime)dr["fecha_publicacion_dof"];
                             c.Junta = (DateTime)dr["fecha_junta_aclaraciones"];
                             c.Apertura = (DateTime)dr["fecha_apertura"];
                             c.Fallo = (DateTime)dr["fecha_fallo"];
                             c.Firma = (DateTime)dr["fecha_firma"];
                             c.Visita = (DateTime)dr["fecha_visita"];
+                            c.Muestras = (DateTime)dr["fecha_muestras"];
                             c.Created = (DateTime)dr["creado_en"];
                             c.Updated = (DateTime)dr["actualizado_en"];
                             calendarios.Add(c);
@@ -1349,7 +1392,130 @@ namespace LibLicitacion
                 if (c.Bases == bases && !yaAgregado.ContainsKey(c.Id))
                 {
                     yaAgregado[c.Id] = true;
-                    calendarios.Add(new Calendario(c.Id,c.Bases,c.Publicacion,c.Junta,c.Apertura,c.Fallo,c.Firma,c.Visita,c.Created,c.Updated));
+                    calendarios.Add(new Calendario(c.Id,c.Bases,c.Publicacion, c.PublicacionDof, c.Junta,c.Apertura,c.Fallo,c.Firma,c.Visita,c.Muestras, c.Created,c.Updated));
+                }
+            }
+            return calendarios;
+        }
+    }
+
+    public class ItemInfoAd{
+
+        public ItemInfoAd(){
+
+        }
+
+        public ItemInfoAd(int id, int idItem, string nombre, string valor, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Item = idItem;
+            this.Nombre = nombre;
+            this.Valor = valor;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get{return id;}
+            set{id = value;}            
+        }
+
+        private int id;
+
+        private int Item
+        {
+            get{return item;}
+            set{item = value;}
+        }
+        
+        private int item;
+
+        public string Nombre
+        {
+            get{return nombre;}
+            set{nombre = value;}
+        }
+
+        private string nombre;
+
+        public string Valor
+        {
+            get{return valor;}
+            set{valor = value;}
+        }
+
+        private string valor;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        public static List<ItemInfoAd> GetInfos()
+        {
+            ItemInfoAd.AllInfos.Clear();
+            if (ItemInfoAd.AllInfos.Count == 0)
+                ItemInfoAd.AllInfos = ItemInfoAd.InicializarInfos();
+            return ItemInfoAd.AllInfos;
+        }
+
+        private static List<ItemInfoAd> InicializarInfos()
+        {
+            MainConfig mc = new MainConfig();
+            List<ItemInfoAd> infos = new List<ItemInfoAd>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM licitacion_items_info_Ad";
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            ItemInfoAd c = new ItemInfoAd();
+                            c.Id = (Int32)dr["id"];
+                            c.Item = (Int32)dr["id_item"];
+                            c.Nombre  = dr["nombre_adicional"].ToString();
+                            c.Valor   = dr["numero_adicional"].ToString();                            
+                            c.Created = (DateTime)dr["creado_en"];                            
+                            c.Updated = (DateTime)dr["actualizado_en"];
+                            infos.Add(c);
+                        }
+                    }
+
+                }
+            }
+            return infos;
+        }
+
+        private static List<ItemInfoAd> AllInfos = new List<ItemInfoAd>();
+
+        public static List<ItemInfoAd> GetInfosPorItem(int item)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<ItemInfoAd> calendarios = new List<ItemInfoAd>();
+            foreach (ItemInfoAd c in ItemInfoAd.GetInfos())
+            {
+                if (c.Item == item && !yaAgregado.ContainsKey(c.Id))
+                {
+                    yaAgregado[c.Id] = true;
+                    calendarios.Add(c);
                 }
             }
             return calendarios;

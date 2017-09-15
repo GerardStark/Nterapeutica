@@ -44,6 +44,7 @@ namespace AppLicitaciones
                     adapt.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
+                        txt_numero.Text = dt.Rows[0]["numero"].ToString();
                         txt_descripcion.Text = dt.Rows[0]["descripcion"].ToString();
                         tipo = dt.Rows[0]["unidad_venta"].ToString();
                         txt_cantidad.Text = dt.Rows[0]["cantidad"].ToString();
@@ -68,6 +69,7 @@ namespace AppLicitaciones
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@idItem", idItem);
+                    cmd.Parameters.AddWithValue("@numero", txt_numero.Text);
                     cmd.Parameters.AddWithValue("@descripcion", txt_descripcion.Text);
                     cmd.Parameters.AddWithValue("@unidad",cmb_tipo.Text);
                     cmd.Parameters.AddWithValue("@cantidad", Convert.ToInt32(txt_cantidad.Text));

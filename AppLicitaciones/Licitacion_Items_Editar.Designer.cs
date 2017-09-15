@@ -51,6 +51,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txt_max = new System.Windows.Forms.TextBox();
             this.data_unidadesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.data_unidadesTableAdapter();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txt_numero = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataunidadesBindingSource)).BeginInit();
@@ -60,7 +62,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(35, 209);
+            this.label9.Location = new System.Drawing.Point(35, 246);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 16);
             this.label9.TabIndex = 49;
@@ -69,7 +71,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(51, 177);
+            this.label8.Location = new System.Drawing.Point(51, 214);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 16);
             this.label8.TabIndex = 48;
@@ -77,7 +79,7 @@
             // 
             // txt_cantidad
             // 
-            this.txt_cantidad.Location = new System.Drawing.Point(122, 174);
+            this.txt_cantidad.Location = new System.Drawing.Point(122, 211);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(121, 22);
             this.txt_cantidad.TabIndex = 44;
@@ -89,7 +91,7 @@
             this.cmb_cont.DisplayMember = "unidad";
             this.cmb_cont.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cont.FormattingEnabled = true;
-            this.cmb_cont.Location = new System.Drawing.Point(122, 206);
+            this.cmb_cont.Location = new System.Drawing.Point(122, 243);
             this.cmb_cont.Name = "cmb_cont";
             this.cmb_cont.Size = new System.Drawing.Size(121, 24);
             this.cmb_cont.TabIndex = 45;
@@ -113,7 +115,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(61, 143);
+            this.label7.Location = new System.Drawing.Point(61, 180);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 16);
             this.label7.TabIndex = 47;
@@ -122,7 +124,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(118, 108);
+            this.label6.Location = new System.Drawing.Point(118, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(90, 16);
             this.label6.TabIndex = 46;
@@ -134,7 +136,7 @@
             this.cmb_tipo.DisplayMember = "unidad";
             this.cmb_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_tipo.FormattingEnabled = true;
-            this.cmb_tipo.Location = new System.Drawing.Point(122, 140);
+            this.cmb_tipo.Location = new System.Drawing.Point(122, 177);
             this.cmb_tipo.Name = "cmb_tipo";
             this.cmb_tipo.Size = new System.Drawing.Size(121, 24);
             this.cmb_tipo.TabIndex = 43;
@@ -142,7 +144,7 @@
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(100, 12);
+            this.txt_descripcion.Location = new System.Drawing.Point(100, 49);
             this.txt_descripcion.Multiline = true;
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(437, 79);
@@ -151,7 +153,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 13);
+            this.label1.Location = new System.Drawing.Point(14, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 16);
             this.label1.TabIndex = 41;
@@ -165,7 +167,7 @@
             this.btn_reg_descartar,
             this.btn_reg_guardar,
             this.txt_limpiar_campos});
-            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 236);
+            this.tt_reg_nuevo.Location = new System.Drawing.Point(0, 284);
             this.tt_reg_nuevo.Name = "tt_reg_nuevo";
             this.tt_reg_nuevo.Size = new System.Drawing.Size(549, 57);
             this.tt_reg_nuevo.TabIndex = 40;
@@ -206,7 +208,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(300, 140);
+            this.label2.Location = new System.Drawing.Point(300, 177);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 16);
             this.label2.TabIndex = 51;
@@ -214,7 +216,7 @@
             // 
             // txt_min
             // 
-            this.txt_min.Location = new System.Drawing.Point(360, 137);
+            this.txt_min.Location = new System.Drawing.Point(360, 174);
             this.txt_min.Name = "txt_min";
             this.txt_min.Size = new System.Drawing.Size(121, 22);
             this.txt_min.TabIndex = 50;
@@ -222,7 +224,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(296, 168);
+            this.label3.Location = new System.Drawing.Point(296, 205);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 16);
             this.label3.TabIndex = 53;
@@ -230,7 +232,7 @@
             // 
             // txt_max
             // 
-            this.txt_max.Location = new System.Drawing.Point(360, 165);
+            this.txt_max.Location = new System.Drawing.Point(360, 202);
             this.txt_max.Name = "txt_max";
             this.txt_max.Size = new System.Drawing.Size(121, 22);
             this.txt_max.TabIndex = 52;
@@ -239,11 +241,29 @@
             // 
             this.data_unidadesTableAdapter.ClearBeforeFill = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(76, 24);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(18, 16);
+            this.label4.TabIndex = 70;
+            this.label4.Text = "#:";
+            // 
+            // txt_numero
+            // 
+            this.txt_numero.Location = new System.Drawing.Point(100, 21);
+            this.txt_numero.Name = "txt_numero";
+            this.txt_numero.Size = new System.Drawing.Size(121, 22);
+            this.txt_numero.TabIndex = 69;
+            // 
             // Licitacion_Items_Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(549, 293);
+            this.ClientSize = new System.Drawing.Size(549, 341);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txt_numero);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_max);
             this.Controls.Add(this.label2);
@@ -296,5 +316,7 @@
         private System.Windows.Forms.BindingSource dataunidadesBindingSource;
         private LicitacionesDataSetTableAdapters.data_unidadesTableAdapter data_unidadesTableAdapter;
         private System.Windows.Forms.BindingSource dataunidadesBindingSource1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_numero;
     }
 }

@@ -48,7 +48,7 @@ namespace AppLicitaciones
                 {
                     SqlConnection con = new SqlConnection(mc.con);
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT clave,descripcion FROM cucop WHERE descripcion = @desc)
+                    SqlCommand cmd = new SqlCommand(@"
                     BEGIN
                         INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)
                         OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)
@@ -90,7 +90,7 @@ namespace AppLicitaciones
                     {
                         SqlConnection con = new SqlConnection(mc.con);
                         con.Open();
-                        SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT clave,descripcion FROM cucop WHERE descripcion = @desc)
+                        SqlCommand cmd = new SqlCommand(@"
                         BEGIN
                             INSERT INTO cucop (clave,descripcion,especialidad,presentacion_tipo,presentacion_cant,presentacion_cont,actualizado_en)
                             OUTPUT INSERTED.id_cucop values(@clave,@desc,@spec,@tipo,@cant,@cont,@updated)

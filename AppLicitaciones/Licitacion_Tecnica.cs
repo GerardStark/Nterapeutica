@@ -172,6 +172,16 @@ namespace AppLicitaciones
 
         }
 
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_preguntas_ja_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btn_proc_nuevo_Click(object sender, EventArgs e)
         {
             Licitacion_Procedimientos_Nuevo form = new Licitacion_Procedimientos_Nuevo();

@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -40,7 +41,7 @@ namespace AppLicitaciones
                         lbl_numero.Text = dt.Rows[0]["numero_licitacion"].ToString();
                         lbl_unidad.Text = dt.Rows[0]["unidad_compradora"].ToString();
                         lbl_entidad.Text = obtenerNombreEntidadFederativa((Int32)dt.Rows[0]["entidad_federativa"]);//obtener texto
-                        lbl_spec.Text = dt.Rows[0]["especialidad"].ToString();
+                        //lbl_spec.Text = dt.Rows[0]["especialidad"].ToString();
                         lbl_tipocontrato.Text = dt.Rows[0]["tipo_contratacion"].ToString();
                         lbl_durcontrato.Text = dt.Rows[0]["duracion_contrato"].ToString();
                         lbl_numexped.Text = dt.Rows[0]["expediente"].ToString();
@@ -49,11 +50,59 @@ namespace AppLicitaciones
                         lbl_correo.Text = dt.Rows[0]["operador_correo"].ToString();
                         lbl_desc.Text = dt.Rows[0]["descripcion"].ToString();
                         lbl_archivo.Text = dt.Rows[0]["dir_archivo"].ToString();
+                        obtenercalendario(idLicit);
                     }
                 }
             }
         }
+        public void obtenercalendario(int idlicit)
+        {
+            var bases = Licitacion.GetBases().Where(x => x.Id == idlicit).Single();
+            var c = bases.Calendarios.Single();
+            lblCnet.Text = c.Publicacion.ToString();
+            lblDof.Text = c.PublicacionDof.ToString();
+            lblJA.Text = c.Junta.ToString();
+            lblApertura.Text = c.Apertura.ToString();
+            lblFallo.Text = c.Fallo.ToString();
+            lblFirma.Text = c.Firma.ToString();
+            lblVisita.Text = c.Visita.ToString();
 
+            PropertyInfo[] p = c.GetType().GetProperties();
+            for (int i = 2; i < p.Length - 2; i++)
+            {
+                
+
+                if ((DateTime)p[i].GetValue(c) == DateTimePicker.MinimumDateTime)
+                {
+                    switch (p[i].Name)
+                    {
+                        case "Publicacion":
+                            lblCnet.Text = "No aplica";
+                            break;
+                        case "PublicacionDof":
+                            lblDof.Text = "No aplica";
+                            break;
+                        case "Junta":
+                            lblJA.Text = "No aplica";
+                            break;
+                        case "Apertura":
+                            lblApertura.Text = "No aplica";
+                            break;
+                        case "Fallo":
+                            lblFallo.Text = "No aplica";
+                            break;
+                        case "Firma":
+                            lblFirma.Text = "No aplica";
+                            break;
+                        case "Visita":
+                            lblVisita.Text = "No aplica";
+                            break;
+                    }
+                }
+            }
+            
+
+        }
         private string obtenerNombreEntidadFederativa(int id)
         {
             string nombre = "";
@@ -211,6 +260,21 @@ namespace AppLicitaciones
                     }
                 }
             }
+        }
+
+        private void Licitacion_Visualizar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Tecnica));
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProcedimientos = new System.Windows.Forms.DataGridView();
@@ -38,6 +38,12 @@
             this.numSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ofertaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_proc_nuevo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,12 +61,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_item_editar = new System.Windows.Forms.Button();
-            this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ofertaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -89,8 +89,8 @@
             this.dgvProcedimientos.Name = "dgvProcedimientos";
             this.dgvProcedimientos.ReadOnly = true;
             this.dgvProcedimientos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProcedimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcedimientos.Size = new System.Drawing.Size(454, 180);
             this.dgvProcedimientos.TabIndex = 3;
@@ -145,13 +145,55 @@
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1255, 351);
             this.dgvItems.TabIndex = 4;
             this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
             this.dgvItems.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItems_CellFormatting);
+            // 
+            // idItemColumn
+            // 
+            this.idItemColumn.HeaderText = "#";
+            this.idItemColumn.Name = "idItemColumn";
+            this.idItemColumn.ReadOnly = true;
+            this.idItemColumn.Width = 75;
+            // 
+            // idSubParentColumn
+            // 
+            this.idSubParentColumn.HeaderText = "Subpartida";
+            this.idSubParentColumn.Name = "idSubParentColumn";
+            this.idSubParentColumn.ReadOnly = true;
+            this.idSubParentColumn.Width = 125;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad de Venta";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.ReadOnly = true;
+            this.unidadColumn.Width = 150;
+            // 
+            // descItemColumn
+            // 
+            this.descItemColumn.HeaderText = "Descripcion";
+            this.descItemColumn.Name = "descItemColumn";
+            this.descItemColumn.ReadOnly = true;
+            this.descItemColumn.Width = 450;
+            // 
+            // ofertaColumn
+            // 
+            this.ofertaColumn.HeaderText = "Item Ofertado";
+            this.ofertaColumn.Name = "ofertaColumn";
+            this.ofertaColumn.ReadOnly = true;
+            this.ofertaColumn.Width = 450;
+            // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
             // 
             // label1
             // 
@@ -271,21 +313,23 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(880, 221);
+            this.label9.Location = new System.Drawing.Point(870, 221);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(19, 13);
+            this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 19;
-            this.label9.Text = "JA";
+            this.label9.Text = "Info Ad";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // btn_preguntas_ja
             // 
-            this.btn_preguntas_ja.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_preguntas_ja.BackgroundImage")));
+            this.btn_preguntas_ja.BackgroundImage = global::AppLicitaciones.Iconos.android_developer;
             this.btn_preguntas_ja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_preguntas_ja.Location = new System.Drawing.Point(864, 168);
             this.btn_preguntas_ja.Name = "btn_preguntas_ja";
             this.btn_preguntas_ja.Size = new System.Drawing.Size(50, 50);
             this.btn_preguntas_ja.TabIndex = 18;
             this.btn_preguntas_ja.UseVisualStyleBackColor = true;
+            this.btn_preguntas_ja.Click += new System.EventHandler(this.btn_preguntas_ja_Click);
             // 
             // btn_item_borrar
             // 
@@ -328,48 +372,6 @@
             this.btn_item_editar.TabIndex = 22;
             this.btn_item_editar.UseVisualStyleBackColor = true;
             this.btn_item_editar.Click += new System.EventHandler(this.btn_item_editar_Click);
-            // 
-            // idItemColumn
-            // 
-            this.idItemColumn.HeaderText = "#";
-            this.idItemColumn.Name = "idItemColumn";
-            this.idItemColumn.ReadOnly = true;
-            this.idItemColumn.Width = 75;
-            // 
-            // idSubParentColumn
-            // 
-            this.idSubParentColumn.HeaderText = "Subpartida";
-            this.idSubParentColumn.Name = "idSubParentColumn";
-            this.idSubParentColumn.ReadOnly = true;
-            this.idSubParentColumn.Width = 125;
-            // 
-            // unidadColumn
-            // 
-            this.unidadColumn.HeaderText = "Unidad de Venta";
-            this.unidadColumn.Name = "unidadColumn";
-            this.unidadColumn.ReadOnly = true;
-            this.unidadColumn.Width = 150;
-            // 
-            // descItemColumn
-            // 
-            this.descItemColumn.HeaderText = "Descripcion";
-            this.descItemColumn.Name = "descItemColumn";
-            this.descItemColumn.ReadOnly = true;
-            this.descItemColumn.Width = 450;
-            // 
-            // ofertaColumn
-            // 
-            this.ofertaColumn.HeaderText = "Item Ofertado";
-            this.ofertaColumn.Name = "ofertaColumn";
-            this.ofertaColumn.ReadOnly = true;
-            this.ofertaColumn.Width = 450;
-            // 
-            // updatedColumn
-            // 
-            this.updatedColumn.HeaderText = "Actualizado";
-            this.updatedColumn.Name = "updatedColumn";
-            this.updatedColumn.ReadOnly = true;
-            this.updatedColumn.Visible = false;
             // 
             // Licitacion_Tecnica
             // 

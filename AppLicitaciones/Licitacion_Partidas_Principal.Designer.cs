@@ -30,6 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Partidas_Principal));
             this.dgvPartidas = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idBasesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_visualizar = new System.Windows.Forms.Button();
             this.btn_tecnica = new System.Windows.Forms.Button();
@@ -38,11 +43,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idBasesColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,6 +68,40 @@
             this.dgvPartidas.TabIndex = 0;
             this.dgvPartidas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPartidas_CellClick);
             this.dgvPartidas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPartidas_CellFormatting);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 75;
+            // 
+            // numColumn
+            // 
+            this.numColumn.HeaderText = "Numero";
+            this.numColumn.Name = "numColumn";
+            this.numColumn.ReadOnly = true;
+            // 
+            // nombColumn
+            // 
+            this.nombColumn.HeaderText = "Nombre";
+            this.nombColumn.Name = "nombColumn";
+            this.nombColumn.ReadOnly = true;
+            this.nombColumn.Width = 250;
+            // 
+            // specColumn
+            // 
+            this.specColumn.HeaderText = "Especialidad";
+            this.specColumn.Name = "specColumn";
+            this.specColumn.ReadOnly = true;
+            this.specColumn.Width = 150;
+            // 
+            // idBasesColumn
+            // 
+            this.idBasesColumn.HeaderText = "Licitación";
+            this.idBasesColumn.Name = "idBasesColumn";
+            this.idBasesColumn.ReadOnly = true;
+            this.idBasesColumn.Width = 200;
             // 
             // btn_nuevo
             // 
@@ -115,6 +149,7 @@
             this.btn_borrar.Size = new System.Drawing.Size(50, 50);
             this.btn_borrar.TabIndex = 4;
             this.btn_borrar.UseVisualStyleBackColor = true;
+            this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
             // 
             // label1
             // 
@@ -151,40 +186,6 @@
             this.label4.Size = new System.Drawing.Size(45, 16);
             this.label4.TabIndex = 8;
             this.label4.Text = "Borrar";
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 75;
-            // 
-            // numColumn
-            // 
-            this.numColumn.HeaderText = "Numero";
-            this.numColumn.Name = "numColumn";
-            this.numColumn.ReadOnly = true;
-            // 
-            // nombColumn
-            // 
-            this.nombColumn.HeaderText = "Nombre";
-            this.nombColumn.Name = "nombColumn";
-            this.nombColumn.ReadOnly = true;
-            this.nombColumn.Width = 250;
-            // 
-            // specColumn
-            // 
-            this.specColumn.HeaderText = "Especialidad";
-            this.specColumn.Name = "specColumn";
-            this.specColumn.ReadOnly = true;
-            this.specColumn.Width = 150;
-            // 
-            // idBasesColumn
-            // 
-            this.idBasesColumn.HeaderText = "Licitación";
-            this.idBasesColumn.Name = "idBasesColumn";
-            this.idBasesColumn.ReadOnly = true;
-            this.idBasesColumn.Width = 200;
             // 
             // Licitacion_Partidas_Principal
             // 

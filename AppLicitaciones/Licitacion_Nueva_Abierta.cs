@@ -103,7 +103,7 @@ namespace AppLicitaciones
                         if (newId != 0)
                         {
                             Licitacion_Calendario form = new Licitacion_Calendario();
-                            form.pasarIdLicitaciones(newId);
+                            form.pasaridbases(newId);
                             DialogResult result =  form.ShowDialog();
                             if (result == DialogResult.OK)
                             {

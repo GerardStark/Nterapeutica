@@ -43,7 +43,7 @@ namespace AppLicitaciones
                 "Marcapasos",
                 "Material de Curacion",
                 "Subrogados" };
-            mc.llenarcombobox(array_specs, cmb_especialidad);
+           // mc.llenarcombobox(array_specs, cmb_especialidad);
         }
 
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@numero", txt_numero.Text.ToUpper());
                         cmd.Parameters.AddWithValue("@unidadComp", txt_unidad_compradora.Text);
                         cmd.Parameters.AddWithValue("@entidadFed", cmb_entidad.SelectedValue);
-                        cmd.Parameters.AddWithValue("@espec", (cmb_especialidad.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@espec","");
                         cmd.Parameters.AddWithValue("@duracion", txt_duracion_contrato.Text);
                         cmd.Parameters.AddWithValue("@tipoContrat", txt_tipo_contrato.Text);
                         cmd.Parameters.AddWithValue("@estado", 0);
@@ -130,11 +130,11 @@ namespace AppLicitaciones
                         txt_numero.Text = dt.Rows[0]["numero_licitacion"].ToString();
                         txt_unidad_compradora.Text = dt.Rows[0]["unidad_compradora"].ToString();
                         entidad = (Int32)dt.Rows[0]["entidad_federativa"];//obtener texto
-                        cmb_especialidad.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["especialidad"].ToString(),cmb_especialidad);
+                        //cmb_especialidad.SelectedIndex = mc.obtenervaluecomboitem(dt.Rows[0]["especialidad"].ToString(),cmb_especialidad);
                         txt_tipo_contrato.Text = dt.Rows[0]["tipo_contratacion"].ToString();
                         txt_duracion_contrato.Text = dt.Rows[0]["duracion_contrato"].ToString();
                         txt_num_expediente.Text = dt.Rows[0]["expediente"].ToString();
-                        tipoexp = (Int32)dt.Rows[0]["tipo_expediente"];//obtener texto
+                        //tipoexp = (Int32)dt.Rows[0]["tipo_expediente"];//obtener texto
                         txt_nombre_operador.Text = dt.Rows[0]["operador_nombre"].ToString();
                         txt_correo_operador.Text = dt.Rows[0]["operador_correo"].ToString();
                         txt_desc.Text = dt.Rows[0]["descripcion"].ToString();

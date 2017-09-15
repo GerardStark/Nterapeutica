@@ -44,6 +44,18 @@
             this.dtp_firma = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.dtp_visita = new System.Windows.Forms.DateTimePicker();
+            this.dtp_dof = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.chkCnet = new System.Windows.Forms.CheckBox();
+            this.chkDof = new System.Windows.Forms.CheckBox();
+            this.chkJA = new System.Windows.Forms.CheckBox();
+            this.chkApertura = new System.Windows.Forms.CheckBox();
+            this.chkFallo = new System.Windows.Forms.CheckBox();
+            this.chkFirma = new System.Windows.Forms.CheckBox();
+            this.chkVisita = new System.Windows.Forms.CheckBox();
+            this.chkMuestras = new System.Windows.Forms.CheckBox();
+            this.dtp_muestras = new System.Windows.Forms.DateTimePicker();
+            this.label8 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,9 +66,9 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_guardar,
             this.btn_cancelar});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 267);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 385);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(377, 57);
+            this.toolStrip1.Size = new System.Drawing.Size(441, 57);
             this.toolStrip1.TabIndex = 18;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -101,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 59);
+            this.label2.Location = new System.Drawing.Point(42, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(218, 16);
             this.label2.TabIndex = 21;
@@ -109,7 +121,7 @@
             // 
             // dtp_junta
             // 
-            this.dtp_junta.Location = new System.Drawing.Point(45, 78);
+            this.dtp_junta.Location = new System.Drawing.Point(45, 121);
             this.dtp_junta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_junta.Name = "dtp_junta";
             this.dtp_junta.Size = new System.Drawing.Size(285, 22);
@@ -118,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(42, 101);
+            this.label3.Location = new System.Drawing.Point(42, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(227, 16);
             this.label3.TabIndex = 23;
@@ -126,7 +138,7 @@
             // 
             // dtp_propuestas
             // 
-            this.dtp_propuestas.Location = new System.Drawing.Point(45, 119);
+            this.dtp_propuestas.Location = new System.Drawing.Point(45, 162);
             this.dtp_propuestas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_propuestas.Name = "dtp_propuestas";
             this.dtp_propuestas.Size = new System.Drawing.Size(285, 22);
@@ -135,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(42, 142);
+            this.label4.Location = new System.Drawing.Point(42, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(174, 16);
             this.label4.TabIndex = 25;
@@ -143,7 +155,7 @@
             // 
             // dtp_fallo
             // 
-            this.dtp_fallo.Location = new System.Drawing.Point(45, 161);
+            this.dtp_fallo.Location = new System.Drawing.Point(45, 204);
             this.dtp_fallo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_fallo.Name = "dtp_fallo";
             this.dtp_fallo.Size = new System.Drawing.Size(285, 22);
@@ -152,7 +164,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(42, 184);
+            this.label5.Location = new System.Drawing.Point(42, 227);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(191, 16);
             this.label5.TabIndex = 27;
@@ -160,7 +172,7 @@
             // 
             // dtp_firma
             // 
-            this.dtp_firma.Location = new System.Drawing.Point(45, 202);
+            this.dtp_firma.Location = new System.Drawing.Point(45, 245);
             this.dtp_firma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_firma.Name = "dtp_firma";
             this.dtp_firma.Size = new System.Drawing.Size(285, 22);
@@ -169,7 +181,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(42, 226);
+            this.label6.Location = new System.Drawing.Point(42, 269);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(211, 16);
             this.label6.TabIndex = 29;
@@ -177,17 +189,143 @@
             // 
             // dtp_visita
             // 
-            this.dtp_visita.Location = new System.Drawing.Point(45, 244);
+            this.dtp_visita.Location = new System.Drawing.Point(45, 287);
             this.dtp_visita.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtp_visita.Name = "dtp_visita";
             this.dtp_visita.Size = new System.Drawing.Size(285, 22);
             this.dtp_visita.TabIndex = 30;
             // 
+            // dtp_dof
+            // 
+            this.dtp_dof.Location = new System.Drawing.Point(45, 78);
+            this.dtp_dof.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_dof.Name = "dtp_dof";
+            this.dtp_dof.Size = new System.Drawing.Size(285, 22);
+            this.dtp_dof.TabIndex = 32;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(42, 60);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(235, 16);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Fecha de Publicacion en Diario Oficial";
+            // 
+            // chkCnet
+            // 
+            this.chkCnet.AutoSize = true;
+            this.chkCnet.Location = new System.Drawing.Point(336, 40);
+            this.chkCnet.Name = "chkCnet";
+            this.chkCnet.Size = new System.Drawing.Size(85, 20);
+            this.chkCnet.TabIndex = 33;
+            this.chkCnet.Text = "No aplica";
+            this.chkCnet.UseVisualStyleBackColor = true;
+            // 
+            // chkDof
+            // 
+            this.chkDof.AutoSize = true;
+            this.chkDof.Location = new System.Drawing.Point(337, 82);
+            this.chkDof.Name = "chkDof";
+            this.chkDof.Size = new System.Drawing.Size(85, 20);
+            this.chkDof.TabIndex = 34;
+            this.chkDof.Text = "No aplica";
+            this.chkDof.UseVisualStyleBackColor = true;
+            // 
+            // chkJA
+            // 
+            this.chkJA.AutoSize = true;
+            this.chkJA.Location = new System.Drawing.Point(336, 125);
+            this.chkJA.Name = "chkJA";
+            this.chkJA.Size = new System.Drawing.Size(85, 20);
+            this.chkJA.TabIndex = 35;
+            this.chkJA.Text = "No aplica";
+            this.chkJA.UseVisualStyleBackColor = true;
+            // 
+            // chkApertura
+            // 
+            this.chkApertura.AutoSize = true;
+            this.chkApertura.Location = new System.Drawing.Point(337, 166);
+            this.chkApertura.Name = "chkApertura";
+            this.chkApertura.Size = new System.Drawing.Size(85, 20);
+            this.chkApertura.TabIndex = 36;
+            this.chkApertura.Text = "No aplica";
+            this.chkApertura.UseVisualStyleBackColor = true;
+            // 
+            // chkFallo
+            // 
+            this.chkFallo.AutoSize = true;
+            this.chkFallo.Location = new System.Drawing.Point(336, 208);
+            this.chkFallo.Name = "chkFallo";
+            this.chkFallo.Size = new System.Drawing.Size(85, 20);
+            this.chkFallo.TabIndex = 37;
+            this.chkFallo.Text = "No aplica";
+            this.chkFallo.UseVisualStyleBackColor = true;
+            // 
+            // chkFirma
+            // 
+            this.chkFirma.AutoSize = true;
+            this.chkFirma.Location = new System.Drawing.Point(336, 249);
+            this.chkFirma.Name = "chkFirma";
+            this.chkFirma.Size = new System.Drawing.Size(85, 20);
+            this.chkFirma.TabIndex = 38;
+            this.chkFirma.Text = "No aplica";
+            this.chkFirma.UseVisualStyleBackColor = true;
+            // 
+            // chkVisita
+            // 
+            this.chkVisita.AutoSize = true;
+            this.chkVisita.Location = new System.Drawing.Point(336, 291);
+            this.chkVisita.Name = "chkVisita";
+            this.chkVisita.Size = new System.Drawing.Size(85, 20);
+            this.chkVisita.TabIndex = 39;
+            this.chkVisita.Text = "No aplica";
+            this.chkVisita.UseVisualStyleBackColor = true;
+            // 
+            // chkMuestras
+            // 
+            this.chkMuestras.AutoSize = true;
+            this.chkMuestras.Location = new System.Drawing.Point(336, 337);
+            this.chkMuestras.Name = "chkMuestras";
+            this.chkMuestras.Size = new System.Drawing.Size(85, 20);
+            this.chkMuestras.TabIndex = 42;
+            this.chkMuestras.Text = "No aplica";
+            this.chkMuestras.UseVisualStyleBackColor = true;
+            // 
+            // dtp_muestras
+            // 
+            this.dtp_muestras.Location = new System.Drawing.Point(45, 333);
+            this.dtp_muestras.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtp_muestras.Name = "dtp_muestras";
+            this.dtp_muestras.Size = new System.Drawing.Size(285, 22);
+            this.dtp_muestras.TabIndex = 41;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(42, 315);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(194, 16);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Fecha de entrega de Muestras:";
+            // 
             // Licitacion_Calendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 324);
+            this.ClientSize = new System.Drawing.Size(441, 442);
+            this.Controls.Add(this.chkMuestras);
+            this.Controls.Add(this.dtp_muestras);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.chkVisita);
+            this.Controls.Add(this.chkFirma);
+            this.Controls.Add(this.chkFallo);
+            this.Controls.Add(this.chkApertura);
+            this.Controls.Add(this.chkJA);
+            this.Controls.Add(this.chkDof);
+            this.Controls.Add(this.chkCnet);
+            this.Controls.Add(this.dtp_dof);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.dtp_visita);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dtp_firma);
@@ -202,10 +340,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Calendario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Licitacion_Calendario";
+            this.Load += new System.EventHandler(this.Licitacion_Calendario_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -230,5 +369,17 @@
         private System.Windows.Forms.DateTimePicker dtp_firma;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dtp_visita;
+        private System.Windows.Forms.DateTimePicker dtp_dof;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkCnet;
+        private System.Windows.Forms.CheckBox chkDof;
+        private System.Windows.Forms.CheckBox chkJA;
+        private System.Windows.Forms.CheckBox chkApertura;
+        private System.Windows.Forms.CheckBox chkFallo;
+        private System.Windows.Forms.CheckBox chkFirma;
+        private System.Windows.Forms.CheckBox chkVisita;
+        private System.Windows.Forms.CheckBox chkMuestras;
+        private System.Windows.Forms.DateTimePicker dtp_muestras;
+        private System.Windows.Forms.Label label8;
     }
 }

@@ -37,7 +37,7 @@ namespace AppLicitaciones
             this.idPartida = idPartida;
             using (SqlConnection con = new SqlConnection(mc.con))
             {
-                using (SqlCommand cmd = new SqlCommand("SELECT id,numero_partida,nombre_partida,especialidad,id_bases FROM licitacion_partidas WHERE id = @idPartida", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM licitacion_partidas WHERE id = @idPartida", con))
                 {
                     cmd.Parameters.AddWithValue("@idPartida", idPartida);
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
