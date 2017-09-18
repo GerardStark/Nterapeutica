@@ -33,15 +33,31 @@ namespace AppLicitaciones
 
         private void mostrarItemsPorProcedimiento(int idSub)
         {
-            dgvItems.Rows.Clear();
+            dgvItems.Rows.Clear();           
+            foreach (ProceInfoAd i in Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos)
+            {
+                DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
+                col.Name = i.Nombre + "Column";
+                col.HeaderText = i.Valor;
+                if (!dgvItems.Columns.Contains(i.Nombre + "Column"))
+                {
+                    dgvItems.Columns.Add(col);
+                }
+            }
+
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
+                var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
+                DataGridViewRow row = new DataGridViewRow();
+                foreach (ProceInfoAd p in infoproce)
+                {
+                   //agregar cada atributo del item + los atributos extra para poder generar la referencia de manera correcta
+                   //genrar las referencias de manera que pueda reorganizar las columnas
+                }
                 
-                dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id), getUltimoModificado(i.Id));
-                mc.buscarultimafilaeditada("licitacion_vinculacion", dgvItems);
-
+                
             }
-        }
+        }        
 
         private int getVinculaciones(int idItem)
         {
@@ -178,6 +194,13 @@ namespace AppLicitaciones
         }
 
         private void btn_preguntas_ja_Click(object sender, EventArgs e)
+        {
+            Licitacion_Items_InfoAd form = new Licitacion_Items_InfoAd();
+            form.mostrarInfosProce(idSub);
+            form.Show();
+        }
+
+        private void Licitacion_Tecnica_Load(object sender, EventArgs e)
         {
 
         }

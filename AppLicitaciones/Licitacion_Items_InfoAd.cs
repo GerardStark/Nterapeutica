@@ -14,20 +14,21 @@ namespace AppLicitaciones
 {
     public partial class Licitacion_Items_InfoAd : Form
     {
-        int idItem = 0, idInfo = 0;
+        int idSub = 0, idInfo = 0;
         MainConfig mc = new MainConfig();
         public Licitacion_Items_InfoAd()
         {
             InitializeComponent();
         }
 
-        public void mostrarInfosItem(int idItem)
+        public void mostrarInfosProce(int idSub)
         {
-            this.idItem = idItem;
-            var infos = Item.GetItems().Where(x => x.Id == idItem).Single().Infos.ToList();
-            foreach (ItemInfoAd item in infos)
+            dgvInfos.Rows.Clear();
+            this.idSub = idSub;
+            var infos = Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos.ToList();
+            foreach (ProceInfoAd info in infos)
             {
-                dgvInfos.Rows.Add(item.Id, item.Nombre, item.Valor);
+                dgvInfos.Rows.Add(info.Id, info.Nombre, info.Valor);
             }
         }
 
@@ -39,16 +40,16 @@ namespace AppLicitaciones
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = con;
-                    cmd.CommandText = "licitacion_item_infoad_insert";
+                    cmd.CommandText = "licitacion_proce_infoad_insert";
                     cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@idItem",idItem);
+                    cmd.Parameters.AddWithValue("@idSub", idSub);
                     cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
                     cmd.Parameters.AddWithValue("@valor",txt_valor.Text);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     int result = cmd.ExecuteNonQuery();
                     if (result != 0)
                     {
-                        mostrarInfosItem(idItem);
+                        mostrarInfosProce(idSub);
                     }
                 }
             }
@@ -68,10 +69,20 @@ namespace AppLicitaciones
                         int result = cmd.ExecuteNonQuery();
                         if (result != 0)
                         {
-                            mostrarInfosItem(idItem);
+                            mostrarInfosProce(idSub);
                         }
                     }
                 }
+            }
+        }
+
+        private void dgvInfos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                idInfo = (Int32)dgvInfos.Rows[e.RowIndex].Cells["idColumn"].Value;
+                txt_nombre.Text = dgvInfos.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
+                txt_valor.Text = dgvInfos.Rows[e.RowIndex].Cells["valorColumn"].Value.ToString();
             }
         }
 
@@ -85,7 +96,7 @@ namespace AppLicitaciones
                     using (SqlCommand cmd = new SqlCommand())
                     {
                         cmd.Connection = con;
-                        cmd.CommandText = "licitacion_item_infoad_update";
+                        cmd.CommandText = "licitacion_proce_infoad_update";
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idinfo", idInfo);
                         cmd.Parameters.AddWithValue("@nombre", txt_nombre.Text);
@@ -94,7 +105,7 @@ namespace AppLicitaciones
                         int result = cmd.ExecuteNonQuery();
                         if (result != 0)
                         {
-                            mostrarInfosItem(idItem);
+                            mostrarInfosProce(idSub);
                         }
                     }
                 }

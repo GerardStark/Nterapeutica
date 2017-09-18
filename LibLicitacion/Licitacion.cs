@@ -602,6 +602,18 @@ namespace LibLicitacion
 
         private List<Item> items;
 
+        public List<ProceInfoAd> Infos
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.infos = ProceInfoAd.GetInfosPorProcedimiento(this.Id);
+                return this.infos;
+            }
+        }
+
+        private List<ProceInfoAd> infos;
+
     }
 
     public class Item
@@ -805,6 +817,7 @@ namespace LibLicitacion
         }
 
         private List<ItemInfoAd> infos;
+
     }
 
     public class Vinculacion
@@ -1399,16 +1412,17 @@ namespace LibLicitacion
         }
     }
 
-    public class ItemInfoAd{
+    public class ProceInfoAd
+    {
 
-        public ItemInfoAd(){
+        public ProceInfoAd(){
 
         }
 
-        public ItemInfoAd(int id, int idItem, string nombre, string valor, DateTime creado, DateTime actualizado)
+        public ProceInfoAd(int id, int subpartida, string nombre, string valor, DateTime creado, DateTime actualizado)
         {
             this.Id = id;
-            this.Item = idItem;
+            this.Subpartida = subpartida;
             this.Nombre = nombre;
             this.Valor = valor;
             this.Created = creado;
@@ -1423,13 +1437,13 @@ namespace LibLicitacion
 
         private int id;
 
-        private int Item
+        private int Subpartida
         {
-            get{return item;}
-            set{item = value;}
+            get{return subpartida;}
+            set{ subpartida = value;}
         }
         
-        private int item;
+        private int subpartida;
 
         public string Nombre
         {
@@ -1443,6 +1457,130 @@ namespace LibLicitacion
         {
             get{return valor;}
             set{valor = value;}
+        }
+
+        private string valor;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        public static List<ProceInfoAd> GetInfos()
+        {
+            ProceInfoAd.AllInfos.Clear();
+            if (ProceInfoAd.AllInfos.Count == 0)
+                ProceInfoAd.AllInfos = ProceInfoAd.InicializarInfos();
+            return ProceInfoAd.AllInfos;
+        }
+
+        private static List<ProceInfoAd> InicializarInfos()
+        {
+            MainConfig mc = new MainConfig();
+            List<ProceInfoAd> infos = new List<ProceInfoAd>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM licitacion_items_info_Ad";
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            ProceInfoAd c = new ProceInfoAd();
+                            c.Id = (Int32)dr["id"];
+                            c.subpartida = (Int32)dr["id_proce"];
+                            c.Nombre  = dr["nombre_adicional"].ToString();
+                            c.Valor   = dr["numero_adicional"].ToString();                            
+                            c.Created = (DateTime)dr["creado_en"];                            
+                            c.Updated = (DateTime)dr["actualizado_en"];
+                            infos.Add(c);
+                        }
+                    }
+
+                }
+            }
+            return infos;
+        }
+
+        private static List<ProceInfoAd> AllInfos = new List<ProceInfoAd>();
+
+        public static List<ProceInfoAd> GetInfosPorProcedimiento(int sub)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<ProceInfoAd> infos = new List<ProceInfoAd>();
+            foreach (ProceInfoAd c in ProceInfoAd.GetInfos())
+            {
+                if (c.subpartida == sub && !yaAgregado.ContainsKey(c.Id))
+                {
+                    yaAgregado[c.Id] = true;
+                    infos.Add(c);
+                }
+            }
+            return infos;
+        }
+    }
+
+    public class ItemInfoAd
+    {
+        public ItemInfoAd()
+        {
+
+        }
+
+        public ItemInfoAd(int id, int info, int item, string valor, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Info = info;
+            this.Item = item;
+            this.Valor = valor;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int Info
+        {
+            get { return info; }
+            set { info = value; }
+        }
+
+        private int info;
+
+        public int Item
+        {
+            get { return item; }
+            set { item = value; }
+        }
+
+        private int item;
+
+        public string Valor
+        {
+            get { return valor; }
+            set { valor = value; }
         }
 
         private string valor;
@@ -1480,7 +1618,7 @@ namespace LibLicitacion
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = con;
-                    cmd.CommandText = "SELECT * FROM licitacion_items_info_Ad";
+                    cmd.CommandText = "SELECT * FROM licitacion_info_ad_vinc";
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);
@@ -1490,10 +1628,10 @@ namespace LibLicitacion
                         {
                             ItemInfoAd c = new ItemInfoAd();
                             c.Id = (Int32)dr["id"];
+                            c.Info = (Int32)dr["id_info"];
                             c.Item = (Int32)dr["id_item"];
-                            c.Nombre  = dr["nombre_adicional"].ToString();
-                            c.Valor   = dr["numero_adicional"].ToString();                            
-                            c.Created = (DateTime)dr["creado_en"];                            
+                            c.Valor = dr["valor"].ToString();
+                            c.Created = (DateTime)dr["creado_en"];
                             c.Updated = (DateTime)dr["actualizado_en"];
                             infos.Add(c);
                         }
@@ -1509,18 +1647,21 @@ namespace LibLicitacion
         public static List<ItemInfoAd> GetInfosPorItem(int item)
         {
             Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
-            List<ItemInfoAd> calendarios = new List<ItemInfoAd>();
+            List<ItemInfoAd> infos = new List<ItemInfoAd>();
             foreach (ItemInfoAd c in ItemInfoAd.GetInfos())
             {
                 if (c.Item == item && !yaAgregado.ContainsKey(c.Id))
                 {
                     yaAgregado[c.Id] = true;
-                    calendarios.Add(c);
+                    infos.Add(c);
                 }
             }
-            return calendarios;
+            return infos;
         }
+
     }
 
+
 }
+
 

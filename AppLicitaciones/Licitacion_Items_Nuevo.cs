@@ -34,6 +34,20 @@ namespace AppLicitaciones
         public void pasarIdPartida(int idSub)
         {
             this.idSub = idSub;
+            var infos = Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos.ToList();
+            if (infos.Count > 0)
+            {
+                infoAd.Visible = true;
+                foreach (ProceInfoAd item in infos)
+                {
+                    Label l = new Label();
+                    l.Text = item.Nombre + ": ";
+                    TextBox t = new TextBox();
+                    t.Name = "txt_" + item.Nombre;
+                    infoAd.Controls.Add(l);
+                    infoAd.Controls.Add(t);
+                }
+            }
         }
 
         private void btn_reg_guardar_Click(object sender, EventArgs e)
@@ -56,6 +70,20 @@ namespace AppLicitaciones
                     Int32 newId = (Int32)cmd.ExecuteScalar();
                     if (newId != 0)
                     {
+                        var infos = Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos.ToList();
+                        foreach (ProceInfoAd item in infos)
+                        {
+                            
+                            using (SqlCommand cmi = new SqlCommand("licitacion_info_vinc_create"))
+                            {
+                                cmi.CommandType = CommandType.StoredProcedure;
+                                cmi.Parameters.AddWithValue("@idInfo", item.Id);
+                                cmi.Parameters.AddWithValue("@idItem", newId);
+                                cmi.Parameters.AddWithValue("@valor", ((TextBox)infoAd.Controls["txt_"+item.Nombre]).Text);
+                                cmi.Parameters.AddWithValue("@updated", DateTime.Now);
+                                cmi.ExecuteNonQuery();
+                            }
+                        }
                         using (SqlCommand cmdd = new SqlCommand("licitacion_vinculacion_create", con))
                         {
                             cmdd.CommandType = CommandType.StoredProcedure;
@@ -83,6 +111,7 @@ namespace AppLicitaciones
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
             this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
+            
             long numero = Item.GetItemsPorProcedimiento(idSub).Last().Numero + 1;
             txt_numero.Text = numero.ToString();
 

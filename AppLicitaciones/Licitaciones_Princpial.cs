@@ -60,6 +60,7 @@ namespace AppLicitaciones
 
         private void Licitaciones_Princpial_Load(object sender, EventArgs e)
         {
+          
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.licitacion_bases' Puede moverla o quitarla según sea necesario.
             this.licitacion_basesTableAdapter.Fill(this.licitacionesDataSet.licitacion_bases);
             mostrarEventosProximos();

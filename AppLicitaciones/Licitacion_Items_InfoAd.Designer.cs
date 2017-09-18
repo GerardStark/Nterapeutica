@@ -32,6 +32,7 @@
             this.tt_reg_editar = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_borrar = new System.Windows.Forms.ToolStripButton();
+            this.btn_editar = new System.Windows.Forms.ToolStripButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.txt_valor = new System.Windows.Forms.TextBox();
@@ -39,8 +40,7 @@
             this.dgvInfos = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valueColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_editar = new System.Windows.Forms.ToolStripButton();
+            this.valorColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tt_reg_editar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfos)).BeginInit();
             this.SuspendLayout();
@@ -76,9 +76,19 @@
             this.btn_borrar.Image = global::AppLicitaciones.Iconos.close_round;
             this.btn_borrar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btn_borrar.Name = "btn_borrar";
-            this.btn_borrar.Size = new System.Drawing.Size(44, 44);
+            this.btn_borrar.Size = new System.Drawing.Size(42, 44);
             this.btn_borrar.Text = "toolStripButton1";
             this.btn_borrar.Click += new System.EventHandler(this.btn_borrar_Click);
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_editar.Image = global::AppLicitaciones.Iconos.edit;
+            this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(42, 44);
+            this.btn_editar.Text = "toolStripButton1";
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // label1
             // 
@@ -93,14 +103,14 @@
             // 
             this.txt_nombre.Location = new System.Drawing.Point(189, 12);
             this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(270, 22);
+            this.txt_nombre.Size = new System.Drawing.Size(220, 22);
             this.txt_nombre.TabIndex = 90;
             // 
             // txt_valor
             // 
             this.txt_valor.Location = new System.Drawing.Point(189, 40);
             this.txt_valor.Name = "txt_valor";
-            this.txt_valor.Size = new System.Drawing.Size(270, 22);
+            this.txt_valor.Size = new System.Drawing.Size(220, 22);
             this.txt_valor.TabIndex = 91;
             // 
             // label2
@@ -114,6 +124,8 @@
             // 
             // dgvInfos
             // 
+            this.dgvInfos.AllowUserToAddRows = false;
+            this.dgvInfos.AllowUserToDeleteRows = false;
             this.dgvInfos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -121,48 +133,43 @@
             this.dgvInfos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
             this.nombreColumn,
-            this.valueColumn});
+            this.valorColumn});
             this.dgvInfos.Location = new System.Drawing.Point(56, 77);
             this.dgvInfos.MultiSelect = false;
             this.dgvInfos.Name = "dgvInfos";
+            this.dgvInfos.ReadOnly = true;
             this.dgvInfos.RowHeadersVisible = false;
             this.dgvInfos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInfos.Size = new System.Drawing.Size(403, 447);
+            this.dgvInfos.Size = new System.Drawing.Size(353, 447);
             this.dgvInfos.TabIndex = 93;
+            this.dgvInfos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvInfos_CellClick);
             // 
             // idColumn
             // 
             this.idColumn.HeaderText = "#";
             this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
             this.idColumn.Width = 50;
             // 
             // nombreColumn
             // 
             this.nombreColumn.HeaderText = "Nombre";
             this.nombreColumn.Name = "nombreColumn";
+            this.nombreColumn.ReadOnly = true;
             this.nombreColumn.Width = 175;
             // 
-            // valueColumn
+            // valorColumn
             // 
-            this.valueColumn.HeaderText = "Valor";
-            this.valueColumn.Name = "valueColumn";
-            this.valueColumn.Width = 175;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_editar.Image = global::AppLicitaciones.Iconos.edit;
-            this.btn_editar.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(44, 44);
-            this.btn_editar.Text = "toolStripButton1";
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            this.valorColumn.HeaderText = "Valor";
+            this.valorColumn.Name = "valorColumn";
+            this.valorColumn.ReadOnly = true;
+            this.valorColumn.Width = 125;
             // 
             // Licitacion_Items_InfoAd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 536);
+            this.ClientSize = new System.Drawing.Size(426, 536);
             this.Controls.Add(this.dgvInfos);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txt_valor);
@@ -170,7 +177,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tt_reg_editar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Items_InfoAd";
             this.Text = "Licitacion_Items_InfoAd";
             this.tt_reg_editar.ResumeLayout(false);
@@ -191,9 +198,9 @@
         private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvInfos;
+        private System.Windows.Forms.ToolStripButton btn_editar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn valueColumn;
-        private System.Windows.Forms.ToolStripButton btn_editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorColumn;
     }
 }

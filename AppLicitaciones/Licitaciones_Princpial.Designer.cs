@@ -52,15 +52,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cmb_licitacion = new System.Windows.Forms.ComboBox();
-            this.licitacionbasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
             this.panelEventos = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
+            this.licitacionesDataSet = new AppLicitaciones.LicitacionesDataSet();
+            this.licitacionbasesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.licitacion_basesTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.licitacion_basesTableAdapter();
             this.toolStrip1.SuspendLayout();
             this.panelAvances.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripLabel1
@@ -278,16 +278,6 @@
             this.cmb_licitacion.ValueMember = "id_bases";
             this.cmb_licitacion.SelectedIndexChanged += new System.EventHandler(this.cmb_licitacion_SelectedIndexChanged);
             // 
-            // licitacionbasesBindingSource
-            // 
-            this.licitacionbasesBindingSource.DataMember = "licitacion_bases";
-            this.licitacionbasesBindingSource.DataSource = this.licitacionesDataSet;
-            // 
-            // licitacionesDataSet
-            // 
-            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
-            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // panelEventos
             // 
             this.panelEventos.AutoScroll = true;
@@ -306,6 +296,16 @@
             this.label3.Size = new System.Drawing.Size(161, 16);
             this.label3.TabIndex = 7;
             this.label3.Text = "Avance de los Proyectos:";
+            // 
+            // licitacionesDataSet
+            // 
+            this.licitacionesDataSet.DataSetName = "LicitacionesDataSet";
+            this.licitacionesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // licitacionbasesBindingSource
+            // 
+            this.licitacionbasesBindingSource.DataMember = "licitacion_bases";
+            this.licitacionbasesBindingSource.DataSource = this.licitacionesDataSet;
             // 
             // licitacion_basesTableAdapter
             // 
@@ -332,8 +332,8 @@
             this.toolStrip1.PerformLayout();
             this.panelAvances.ResumeLayout(false);
             this.panelAvances.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.licitacionbasesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -356,9 +356,6 @@
         private System.Windows.Forms.ComboBox cmb_licitacion;
         private System.Windows.Forms.FlowLayoutPanel panelEventos;
         private System.Windows.Forms.Label label3;
-        private LicitacionesDataSet licitacionesDataSet;
-        private System.Windows.Forms.BindingSource licitacionbasesBindingSource;
-        private LicitacionesDataSetTableAdapters.licitacion_basesTableAdapter licitacion_basesTableAdapter;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -368,5 +365,8 @@
         private System.Windows.Forms.LinkLabel lbl_cat;
         private System.Windows.Forms.LinkLabel lbl_cert;
         private System.Windows.Forms.LinkLabel lbl_reg;
+        private LicitacionesDataSet licitacionesDataSet;
+        private System.Windows.Forms.BindingSource licitacionbasesBindingSource;
+        private LicitacionesDataSetTableAdapters.licitacion_basesTableAdapter licitacion_basesTableAdapter;
     }
 }
