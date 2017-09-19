@@ -25,20 +25,20 @@ namespace AppLicitaciones
         public void mostrarInfoPregunta(int idVinculo)
         {
 
-            this.idVinc = idVinculo;
-            Vinculacion vinc = Vinculacion.GetVinculaciones().Where(x => x.Id == idVinculo).Single();
-            txt_item.Text = Item.GetItems().Where(x => x.Id == vinc.Item).Single().Nombre;
-            txt_oferta.Text = Cucop.GetCucops().Where(x => x.Id == vinc.Cucop).Single().Descripcion;
-            if (vinc.Preguntas.Count > 0)
-            {
-                txt_pregunta.Text = vinc.Preguntas.Single().Enunciado; 
-                this.idPregunta = vinc.Preguntas.Single().Id;
-            }
-            else
-            {
-                txt_pregunta.Text = "Sin Pregunta";
-                this.idPregunta = 0;
-            }
+            //this.idVinc = idVinculo;
+            //CucopVinculos vinc = CucopVinculos.GetVinculaciones().Where(x => x.Id == idVinculo).Single();
+            //txt_item.Text = Item.GetItems().Where(x => x.Id == vinc.IdItem).Single().Nombre;
+            //txt_oferta.Text = Item.GetItems().Where(x => x.Id == vinc.IdItem).Single().Nombre;
+            //if (vinc.Preguntas.Count > 0)
+            //{
+            //    txt_pregunta.Text = vinc.Preguntas.Single().Enunciado; 
+            //    this.idPregunta = vinc.Preguntas.Single().Id;
+            //}
+            //else
+            //{
+            //    txt_pregunta.Text = "Sin Pregunta";
+            //    this.idPregunta = 0;
+            //}
            
             
         }

@@ -15,7 +15,7 @@ namespace AppLicitaciones
     public partial class Licitacion_Items_Editar : Form
     {
         MainConfig mc = new MainConfig();
-        int idItem;
+        int idItem, idSub;
         string contenedor, tipo;
         public Licitacion_Items_Editar()
         {
@@ -51,18 +51,26 @@ namespace AppLicitaciones
                         contenedor = dt.Rows[0]["contenedor"].ToString();
                         txt_min.Text = dt.Rows[0]["minimo"].ToString();
                         txt_max.Text = dt.Rows[0]["maximo"].ToString();
+                        idSub = (Int32)dt.Rows[0]["id_paquete"];
                         var infos = Procedimiento.GetProcedimientos().Where(x => x.Id == (Int32)dt.Rows[0]["id_paquete"]).Single().Infos.ToList();
                         if (infos.Count > 0)
                         {
                             infoAd.Visible = true;
                             foreach (ProceInfoAd i in infos)
                             {
-                                
+                                //var valor = Item.GetItems().Where(x => x.Id == (Int32)dt.Rows[0]["id_item"]).FirstOrDefault().Infos.Where(y => y.Info == i.Id).FirstOrDefault().Valor;
                                 Label l = new Label();
                                 l.Text = i.Nombre + ": ";
                                 TextBox t = new TextBox();
                                 t.Name = "txt_" + i.Nombre;
-                                t.Text = Item.GetItems().Where(x => x.Id == (Int32)dt.Rows[0]["id_item"]).Single().Infos.Where(y => y.Info == i.Id).Single().Valor.ToString();
+                                if (Item.GetItems().Where(x => x.Id == (Int32)dt.Rows[0]["id_item"]).FirstOrDefault().Infos.Any())
+                                {
+                                    t.Text = Item.GetItems().Where(x => x.Id == (Int32)dt.Rows[0]["id_item"]).FirstOrDefault().Infos.Where(y => y.Info == i.Id).FirstOrDefault().Valor;
+                                }
+                                else
+                                {
+                                    t.Text = "";
+                                }
                                 infoAd.Controls.Add(l);
                                 infoAd.Controls.Add(t);
                             }
@@ -96,6 +104,49 @@ namespace AppLicitaciones
                     Int32 newId = cmd.ExecuteNonQuery();
                     if (newId != 0)
                     {
+                        var infosi = Item.GetItems().Where(x => x.Id == idItem).FirstOrDefault().Infos;
+                        if (infosi.Count > 0)
+                        {
+                            foreach (ItemInfoAd item in infosi)
+                            {
+                                using (SqlCommand cmi = new SqlCommand("licitacion_info_vinc_update",con))
+                                {
+                                    
+                                    string nombre = ProceInfoAd.GetInfosPorProcedimiento(idSub).Where(x => x.Id == item.Info).FirstOrDefault().Nombre;
+                                    cmi.CommandType = CommandType.StoredProcedure;
+                                    cmi.Parameters.AddWithValue("@idInfo", item.Id);
+                                    cmi.Parameters.AddWithValue("@valor", ((TextBox)infoAd.Controls["txt_" + nombre]).Text);
+                                    cmi.Parameters.AddWithValue("@updated", DateTime.Now);
+                                    int result = cmi.ExecuteNonQuery();
+                                    if (result != 0)
+                                    {
+                                        
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var infosp = Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos.ToList();
+                            foreach (ProceInfoAd item in infosp)
+                            {
+
+                                using (SqlCommand cmi = new SqlCommand("licitacion_info_vinc_create",con))
+                                {
+                                    
+                                    cmi.CommandType = CommandType.StoredProcedure;
+                                    cmi.Parameters.AddWithValue("@idInfo", item.Id);
+                                    cmi.Parameters.AddWithValue("@idItem", idItem);
+                                    cmi.Parameters.AddWithValue("@valor", ((TextBox)infoAd.Controls["txt_" + item.Nombre]).Text);
+                                    cmi.Parameters.AddWithValue("@updated", DateTime.Now);
+                                    int result = cmi.ExecuteNonQuery();
+                                    if (result != 0)
+                                    {
+                                       
+                                    }
+                                }
+                            }
+                        }
                         MessageBox.Show("Guardado");
                         this.DialogResult = DialogResult.OK;
                     }

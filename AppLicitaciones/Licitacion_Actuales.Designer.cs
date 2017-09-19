@@ -48,6 +48,8 @@
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_licitaciones = new System.Windows.Forms.DataGridView();
+            this.btn_reportes = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_licitaciones)).BeginInit();
             this.SuspendLayout();
@@ -80,7 +82,9 @@
             this.btn_partidas,
             this.toolStripLabel5,
             this.btn_actas,
-            this.toolStripLabel2});
+            this.toolStripLabel2,
+            this.btn_reportes,
+            this.toolStripLabel3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(65, 487);
@@ -225,6 +229,22 @@
             this.dgv_licitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_licitaciones_CellClick);
             this.dgv_licitaciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_licitaciones_CellFormatting);
             // 
+            // btn_reportes
+            // 
+            this.btn_reportes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_reportes.Image = global::AppLicitaciones.Iconos.android_printer;
+            this.btn_reportes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_reportes.Name = "btn_reportes";
+            this.btn_reportes.Size = new System.Drawing.Size(62, 44);
+            this.btn_reportes.Text = "toolStripButton1";
+            this.btn_reportes.Click += new System.EventHandler(this.btn_reportes_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(62, 15);
+            this.toolStripLabel3.Text = "Reportes";
+            // 
             // Licitacion_Actuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -265,5 +285,7 @@
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripButton btn_actas;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton btn_reportes;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }

@@ -16,6 +16,7 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         string[] array_specs = {
+                "Seleccionar especialidad",
                 "Cirugia Cardiovascular",
                 "Hemodinamia",
                 "Urología",
@@ -24,7 +25,8 @@ namespace AppLicitaciones
                 "Terapia Endovascular Neurologica",
                 "Marcapasos",
                 "Material de Curacion",
-                "Subrogados" };
+                "Subrogados",
+                "No tiene"};
         string[] array_tipos = {
                 "Pieza",
                 "Paquete",
@@ -36,6 +38,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             mc.llenarcombobox(array_specs, cmb_spec);
+            cmb_spec.SelectedIndex = 0;
             //mc.llenarcombobox(array_tipos,cmb_tipo);
             //mc.llenarcombobox(array_tipos, cmb_cont);
         }
@@ -74,7 +77,7 @@ namespace AppLicitaciones
                 {
                     if (ex is NullReferenceException)
                     {
-                        MessageBox.Show("Ya existe");
+                        MessageBox.Show("Error");
                     }
                     else
                     {
@@ -98,17 +101,15 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@clave", txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text);
                         cmd.Parameters.AddWithValue("@desc", mc.convertirasentencia(txt_desc.Text));
                         cmd.Parameters.AddWithValue("@spec", (cmb_spec.SelectedItem as ComboboxItem).Text);
-                        cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@tipo", cmb_tipo.Text);
                         cmd.Parameters.AddWithValue("@cant", txt_cantidad.Text);
-                        cmd.Parameters.AddWithValue("@cont", (cmb_cont.SelectedItem as ComboboxItem).Text);
+                        cmd.Parameters.AddWithValue("@cont", cmb_cont.Text);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                         Int32 newId = (Int32)cmd.ExecuteScalar();
-                        //crearvinculodb(newId);
                         if (newId != 0)
                         {
                             MessageBox.Show("Guardado");
                         }
-                        con.Close();
                         //this.DialogResult = DialogResult.OK;
                         //this.Close();
                     }
@@ -116,7 +117,7 @@ namespace AppLicitaciones
                     {
                         if (ex is NullReferenceException)
                         {
-                            MessageBox.Show("Ya existe");
+                            MessageBox.Show("Error");
                         }
                         else
                         {

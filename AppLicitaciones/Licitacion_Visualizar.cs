@@ -230,13 +230,15 @@ namespace AppLicitaciones
                                 {
                                     foreach (Item i in q.Items)
                                     {
-                                        foreach (Vinculacion v in i.Vinculos)
+                                        foreach (Pregunta r in i.Preguntas)
                                         {
-                                            foreach (Pregunta r in v.Preguntas)
-                                            {
-                                                cmd.CommandText = "DELETE FROM licitacion_preguntas WHERE id=" + r.Id;
-                                                cmd.ExecuteNonQuery();
-                                            }
+                                            cmd.CommandText = "DELETE FROM licitacion_preguntas WHERE id=" + r.Id;
+                                            cmd.ExecuteNonQuery();
+                                        }
+
+                                        foreach (CucopVinculos v in i.Vinculos)
+                                        {
+                                            
                                             cmd.CommandText = "DELETE FROM licitacion_vinculacion WHERE id_vinculacion = " + v.Id;
                                             cmd.ExecuteNonQuery();
                                         }

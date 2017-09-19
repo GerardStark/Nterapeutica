@@ -48,14 +48,12 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
+                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id),getUltimoModificado(i.Id));
                 DataGridViewRow row = new DataGridViewRow();
                 foreach (ProceInfoAd p in infoproce)
                 {
-                   //agregar cada atributo del item + los atributos extra para poder generar la referencia de manera correcta
-                   //genrar las referencias de manera que pueda reorganizar las columnas
-                }
-                
-                
+                  
+                }               
             }
         }        
 
@@ -63,7 +61,7 @@ namespace AppLicitaciones
         {
             try
             {
-                int v = Vinculacion.GetVinculacionesPorItem(idItem).Single(x => x.Item == idItem).Cucop;
+                int v = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Id;
                 return v;
             }
             catch (Exception)
@@ -74,16 +72,14 @@ namespace AppLicitaciones
 
         private DateTime getUltimoModificado(int idItem)
         {
-            try
+           
+            if (CucopVinculos.GetVinculacionesPorItem(idItem).Any())
             {
-                DateTime date = Vinculacion.GetVinculacionesPorItem(idItem).Single(x => x.Item == idItem).Updated;
+                DateTime date = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Updated;
                 return date;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                return DateTime.MinValue;
-            }
+            return DateTime.Today;
+            
             
         }
 
@@ -180,12 +176,100 @@ namespace AppLicitaciones
 
         private void btn_proc_borrar_Click(object sender, EventArgs e)
         {
+            if (idSub != 0)
+            {
+                DialogResult result = MessageBox.Show("Borrar Procedimiento? Esto borrata toda la informacion relacionada al procedimiento/subpartida", "Borrar Procedimiento/Subpartida", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    var proce = Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single();
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            foreach (Item i in proce.Items)
+                            {
+                                foreach (CucopVinculos v in i.Vinculos)
+                                {
+                                   
+                                    cmd.CommandText = "DELETE FROM licitacion_vinculacion WHERE id=" + v.Id;
+                                    cmd.ExecuteNonQuery();
+                                }
 
+                                foreach (Pregunta p in i.Preguntas)
+                                {
+                                    cmd.CommandText = "DELETE FROM licitacion_preguntas WHERE id=" + p.Id;
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                foreach (ItemInfoAd f in i.Infos)
+                                {
+                                    cmd.CommandText = "DELETE FROM licitacion_itenms_info_ad_vinc WHERE id=" + f.Id;
+                                    cmd.ExecuteNonQuery();
+                                }
+                                cmd.CommandText = "DELETE FROM licitacion_items WHERE id=" + i.Id;
+                                cmd.ExecuteNonQuery();
+                            }
+                            cmd.CommandText = "DELETE FROM licitacion_subpar_proce WHERE id=" + proce.Id;
+                            cmd.ExecuteNonQuery();
+                        }                        
+                    }
+                    idSub = 0;
+                    MessageBox.Show("Procedimiento/Subpartida Eliminado");
+
+                }
+                else
+                {
+                    MessageBox.Show("Cancelado");
+                }
+            }
+            
         }
 
         private void btn_item_borrar_Click(object sender, EventArgs e)
         {
+            if (idItem != 0)
+            {
+                DialogResult result = MessageBox.Show("Borrar item? esto borrara toda la informacion relacionada al item", "Borrar Item", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    var item = Item.GetItems().Where(x => x.Id == idItem).Single();
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            foreach (CucopVinculos v in item.Vinculos)
+                            {
+                                
+                                cmd.CommandText = "DELETE FROM licitacion_vinculacion WHERE id=" + v.Id;
+                                cmd.ExecuteNonQuery();
+                            }
 
+                            foreach (Pregunta p in item.Preguntas)
+                            {
+                                cmd.CommandText = "DELETE FROM licitacion_preguntas WHERE id=" + p.Id;
+                                cmd.ExecuteNonQuery();
+                            }
+
+                            foreach (ItemInfoAd f in item.Infos)
+                            {
+                                cmd.CommandText = "DELETE FROM licitacion_itenms_info_ad_vinc WHERE id=" + f.Id;
+                                cmd.ExecuteNonQuery();
+                            }
+                            cmd.CommandText = "DELETE FROM licitacion_items WHERE id=" + item.Id;
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+                    idItem = 0;
+                    MessageBox.Show("Item Eliminado");
+
+                }
+                else
+                {
+                    MessageBox.Show("Cancelado");
+                }
+            }
         }
 
         private void label9_Click(object sender, EventArgs e)

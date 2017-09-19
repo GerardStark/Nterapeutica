@@ -134,6 +134,7 @@ namespace AppLicitaciones
                         txt_tipo_contrato.Text = dt.Rows[0]["tipo_contratacion"].ToString();
                         txt_duracion_contrato.Text = dt.Rows[0]["duracion_contrato"].ToString();
                         txt_num_expediente.Text = dt.Rows[0]["expediente"].ToString();
+                        tipoexp = (Int32)dt.Rows[0]["tipo_expediente"];
                         //tipoexp = (Int32)dt.Rows[0]["tipo_expediente"];//obtener texto
                         txt_nombre_operador.Text = dt.Rows[0]["operador_nombre"].ToString();
                         txt_correo_operador.Text = dt.Rows[0]["operador_correo"].ToString();

@@ -18,6 +18,7 @@ namespace AppLicitaciones
         int id_cucop = 0;
         string contenedor, tipo;
         string[] array_specs = {
+                "Seleccionar especialidad",
                 "Cirugia Cardiovascular",
                 "Hemodinamia",
                 "Urología",
@@ -26,7 +27,8 @@ namespace AppLicitaciones
                 "Terapia Endovascular Neurologica",
                 "Marcapasos",
                 "Material de Curacion",
-                "Subrogados" };
+                "Subrogados",
+                "No tiene"};
         string[] array_tipos = {
             "Pieza",
             "Paquete",

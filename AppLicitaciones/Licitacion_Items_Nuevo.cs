@@ -74,7 +74,7 @@ namespace AppLicitaciones
                         foreach (ProceInfoAd item in infos)
                         {
                             
-                            using (SqlCommand cmi = new SqlCommand("licitacion_info_vinc_create"))
+                            using (SqlCommand cmi = new SqlCommand("licitacion_info_vinc_create",con))
                             {
                                 cmi.CommandType = CommandType.StoredProcedure;
                                 cmi.Parameters.AddWithValue("@idInfo", item.Id);
@@ -111,9 +111,18 @@ namespace AppLicitaciones
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
             this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
-            
-            long numero = Item.GetItemsPorProcedimiento(idSub).Last().Numero + 1;
-            txt_numero.Text = numero.ToString();
+            long numero = 0;
+            if (Item.GetItemsPorProcedimiento(idSub).Any())
+            {
+                numero = Item.GetItemsPorProcedimiento(idSub).Last().Numero + 1;
+                txt_numero.Text = numero.ToString();
+            }
+            else
+            {
+                numero = numero + 1;
+                txt_numero.Text = numero.ToString();
+            }
+           
 
         }
 

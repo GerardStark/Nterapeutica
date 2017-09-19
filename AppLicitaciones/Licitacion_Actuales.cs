@@ -185,5 +185,15 @@ namespace AppLicitaciones
             form.mostrarActasLicitacion(idLicitacion);
             form.Show();
         }
+
+        private void btn_reportes_Click(object sender, EventArgs e)
+        {
+            if (idLicitacion != 0)
+            {
+                Licitacion_Reportes form = new Licitacion_Reportes();
+                form.pasaridBases(idLicitacion);
+                form.Show();
+            }
+        }
     }
 }
