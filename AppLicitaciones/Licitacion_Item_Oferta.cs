@@ -32,12 +32,15 @@ namespace AppLicitaciones
             txt_item.Text = item.Nombre;
             //try
             //{
-            CucopVinculos vinculo = item.Vinculos.Single();
-            idVinc = vinculo.Id;
-            if (vinculo.IdItem != 0)
+            if (item.Vinculos.Any())
             {
-                txt_cucop.Text = Item.GetItems().Where(x => x.Id == vinculo.IdItem).Single().Nombre;
-                idCucop = item.Vinculos.Single().IdItem;
+                CucopVinculos vinculo = item.Vinculos.Single();
+                idVinc = vinculo.Id;
+                if (vinculo.IdItem != 0)
+                {
+                    txt_cucop.Text = Item.GetItems().Where(x => x.Id == vinculo.IdItem).Single().Nombre;
+                    idCucop = item.Vinculos.Single().IdItem;
+                }
             }
             else
             {

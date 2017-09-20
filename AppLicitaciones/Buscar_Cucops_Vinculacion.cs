@@ -21,7 +21,7 @@ namespace AppLicitaciones
             llenarListaCucops();
             foreach (DataGridViewColumn col in dgvCucops.Columns)
             {
-                if (col.Index == 3)
+                if (col.Index == 4)
                 {
                     col.ReadOnly = false;
                 }
@@ -35,45 +35,39 @@ namespace AppLicitaciones
         private void llenarListaCucops()
         {
             dgvCucops.Rows.Clear();
-            foreach (Cucop c in Cucop.GetCucops())
+            foreach (Item i in Item.GetItems())
             {
-                dgvCucops.Rows.Add(c.Id, c.Clave, c.Descripcion, c.Updated);
+                var numlicit = Licitacion.GetBases()
+                    .Where(x => x.Id == Partida.GetPartidas()
+                    .Where(z => z.Id == Procedimiento.GetProcedimientos()
+                    .Where(y => y.Id == i.Procedimiento).Single().Partida)
+                    .Single().IdBases).Single().NumeroLicitacion;
+                dgvCucops.Rows.Add(i.Id,numlicit, i.Ccb, i.Nombre, i.Updated);
             }
         }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
             dgvCucops.Rows.Clear();
-            foreach (Cucop c in Cucop.GetCucops().Where(x => x.Descripcion.Contains(txt_filtrar.Text)))
+            foreach (Item i in Item.GetItems().Where(x => x.Nombre.Contains(txt_filtrar.Text)))
             {
-                dgvCucops.Rows.Add(c.Id,c.Clave,c.Descripcion);
+                dgvCucops.Rows.Add();
             }
         }
 
         private void dgvCucops_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 4)
+            if (e.ColumnIndex == 5)
             {
                 Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
-                Cucop_Visualizar form = new Cucop_Visualizar();
-                form.mostrarinfocucop(idCucop);
+                Licitacion_Item_Visualizar form = new Licitacion_Item_Visualizar();
+                form.mostrarinfoItem(idCucop);
                 DialogResult result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    this.idCucop = form.id_cucop;
+                    this.idCucop = form.idItem;
                     this.DialogResult = DialogResult.OK;
                 }
-            }
-        }
-
-        private void bnt_cucosps_Click(object sender, EventArgs e)
-        {
-            Cucop_Principal form = new Cucop_Principal();
-            DialogResult result = form.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                llenarListaCucops();
-                mc.buscarultimafilaeditada("cucop", dgvCucops);
             }
         }
 

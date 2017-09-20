@@ -583,6 +583,9 @@
     <EmbeddedResource Include="Licitacion_Item_Oferta.resx">
       <DependentUpon>Licitacion_Item_Oferta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Item_Visualizar.resx">
+      <DependentUpon>Licitacion_Item_Visualizar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="licitacion_junta_preguntas.resx">
       <DependentUpon>licitacion_junta_preguntas.cs</DependentUpon>
     </EmbeddedResource>

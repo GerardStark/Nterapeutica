@@ -16,18 +16,11 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         int idItem, idSub;
-        string contenedor, tipo;
+        string contenedor, tipo, ccb;
         public Licitacion_Items_Editar()
         {
             InitializeComponent();
-            string[] array_tipos = {
-                "Pieza",
-                "Paquete",
-                "Kit",
-                "Caja"
-            };
-            //mc.llenarcombobox(array_tipos, cmb_tipo);
-            //mc.llenarcombobox(array_tipos, cmb_cont);
+           
         }
 
         public void mostrarInfoItem(int idItem)
@@ -49,9 +42,24 @@ namespace AppLicitaciones
                         tipo = dt.Rows[0]["unidad_venta"].ToString();
                         txt_cantidad.Text = dt.Rows[0]["cantidad"].ToString();
                         contenedor = dt.Rows[0]["contenedor"].ToString();
+                        ccb = dt.Rows[0]["codigo_cuadro_basico"].ToString();
                         txt_min.Text = dt.Rows[0]["minimo"].ToString();
                         txt_max.Text = dt.Rows[0]["maximo"].ToString();
                         idSub = (Int32)dt.Rows[0]["id_paquete"];
+                        if (ccb == "S.C.C/B")
+                        {
+                            chk_sccb.Checked = true;
+                        }
+                        else
+                        {
+                            string[] substrings = ccb.Split('.');
+                            chk_sccb.Checked = false;
+                            txt_clave_gpo.Text = substrings[0];
+                            txt_clave_gen.Text = substrings[1];
+                            txt_clave_esp.Text = substrings[2];
+                            txt_clave_dif.Text = substrings[3];
+                            txt_clave_var.Text = substrings[4];
+                        }
                         var infos = Procedimiento.GetProcedimientos().Where(x => x.Id == (Int32)dt.Rows[0]["id_paquete"]).Single().Infos.ToList();
                         if (infos.Count > 0)
                         {
@@ -83,9 +91,45 @@ namespace AppLicitaciones
         {
             this.DialogResult = DialogResult.Cancel;
         }
-        
+
+        private void chk_sccb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_sccb.Checked == true)
+            {
+                txt_clave_dif.Enabled = false;
+                txt_clave_esp.Enabled = false;
+                txt_clave_gen.Enabled = false;
+                txt_clave_gpo.Enabled = false;
+                txt_clave_var.Enabled = false;
+            }
+            else
+            {
+                txt_clave_dif.Enabled = true;
+                txt_clave_esp.Enabled = true;
+                txt_clave_gen.Enabled = true;
+                txt_clave_gpo.Enabled = true;
+                txt_clave_var.Enabled = true;
+            }
+        }
+
+        private void onlynumbers(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
+            if (chk_sccb.Checked == true)
+            {
+                ccb = "S.C.C/B";
+            }
+            else
+            {
+                ccb = txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text + "." + txt_clave_dif.Text + "." + txt_clave_var.Text;
+            }
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
@@ -100,6 +144,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@contenedor", cmb_cont.Text);
                     cmd.Parameters.AddWithValue("@max", txt_max.Text);
                     cmd.Parameters.AddWithValue("@min", txt_min.Text);
+                    cmd.Parameters.AddWithValue("@ccb", ccb);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = cmd.ExecuteNonQuery();
                     if (newId != 0)

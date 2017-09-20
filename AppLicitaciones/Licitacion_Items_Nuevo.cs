@@ -16,19 +16,11 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         int idSub;
+        string ccb;
         public Licitacion_Items_Nuevo()
         {
             InitializeComponent();
-            string[] array_tipos = {
-                "Pieza",
-                "Paquete",
-                "Kit",
-                "Caja",
-                "Equipo"
-            };
-            //mc.llenarcombobox(array_tipos, cmb_tipo);
-            //mc.llenarcombobox(array_tipos, cmb_cont);
-
+            
         }
 
         public void pasarIdPartida(int idSub)
@@ -48,10 +40,18 @@ namespace AppLicitaciones
                     infoAd.Controls.Add(t);
                 }
             }
-        }
+        }        
 
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
+            if (chk_sccb.Checked == true)
+            {
+                ccb = "S.C.C/B";
+            }
+            else
+            {
+                ccb = txt_clave_gpo.Text + "." + txt_clave_gen.Text + "." + txt_clave_esp.Text + "." + txt_clave_dif.Text + "." + txt_clave_var.Text;
+            }
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
@@ -66,6 +66,7 @@ namespace AppLicitaciones
                     cmd.Parameters.AddWithValue("@contenedor", cmb_cont.Text);
                     cmd.Parameters.AddWithValue("@max", txt_max.Text);
                     cmd.Parameters.AddWithValue("@min", txt_min.Text);
+                    cmd.Parameters.AddWithValue("@ccb", ccb);
                     cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                     Int32 newId = (Int32)cmd.ExecuteScalar();
                     if (newId != 0)
@@ -81,22 +82,27 @@ namespace AppLicitaciones
                                 cmi.Parameters.AddWithValue("@idItem", newId);
                                 cmi.Parameters.AddWithValue("@valor", ((TextBox)infoAd.Controls["txt_"+item.Nombre]).Text);
                                 cmi.Parameters.AddWithValue("@updated", DateTime.Now);
-                                cmi.ExecuteNonQuery();
+                                int confirm = cmi.ExecuteNonQuery();
+                                if (confirm != 0)
+                                {
+                                    MessageBox.Show("guardado");
+                                    this.DialogResult = DialogResult.OK;
+                                }
                             }
                         }
-                        using (SqlCommand cmdd = new SqlCommand("licitacion_vinculacion_create", con))
-                        {
-                            cmdd.CommandType = CommandType.StoredProcedure;
-                            cmdd.Parameters.AddWithValue("@idItem", newId);
-                            cmdd.Parameters.AddWithValue("@idCucop", DBNull.Value);
-                            cmdd.Parameters.AddWithValue("@updated", DateTime.Now);
-                            int confirm = cmdd.ExecuteNonQuery();
-                            if (confirm != 0)
-                            {
-                                MessageBox.Show("Guardado");
-                                this.DialogResult = DialogResult.OK;
-                            }
-                        }
+                        //using (SqlCommand cmdd = new SqlCommand("licitacion_vinculacion_create", con))
+                        //{
+                        //    cmdd.CommandType = CommandType.StoredProcedure;
+                        //    cmdd.Parameters.AddWithValue("@idItem", newId);
+                        //    cmdd.Parameters.AddWithValue("@idCucop", DBNull.Value);
+                        //    cmdd.Parameters.AddWithValue("@updated", DateTime.Now);
+                        //    int confirm = cmdd.ExecuteNonQuery();
+                        //    if (confirm != 0)
+                        //    {
+                        //        MessageBox.Show("Guardado");
+                        //        this.DialogResult = DialogResult.OK;
+                        //    }
+                        //}
                     }
                 }
             }
@@ -122,15 +128,33 @@ namespace AppLicitaciones
                 numero = numero + 1;
                 txt_numero.Text = numero.ToString();
             }
-           
-
         }
 
-        private void txt_cantidad_KeyPress(object sender, KeyPressEventArgs e)
+        private void onlynumbers(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void chk_sccb_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_sccb.Checked == true)
+            {
+                txt_clave_dif.Enabled = false;
+                txt_clave_esp.Enabled = false;
+                txt_clave_gen.Enabled = false;
+                txt_clave_gpo.Enabled = false;
+                txt_clave_var.Enabled = false;                
+            }
+            else
+            {
+                txt_clave_dif.Enabled = true;
+                txt_clave_esp.Enabled = true;
+                txt_clave_gen.Enabled = true;
+                txt_clave_gpo.Enabled = true;
+                txt_clave_var.Enabled = true;
             }
         }
     }

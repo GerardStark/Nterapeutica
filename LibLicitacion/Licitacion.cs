@@ -624,11 +624,12 @@ namespace LibLicitacion
         }
 
         //clase principal de los items de la licitacion
-        public Item(int id, int procedimiento, long numero, string descripcion, string unidad, long cantidad, string contenedor, long minimo, long maximo, DateTime created, DateTime updated)
+        public Item(int id, int procedimiento, long numero, string ccb, string descripcion, string unidad, long cantidad, string contenedor, long minimo, long maximo, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.Procedimiento = procedimiento;
             this.Numero = numero;
+            this.Ccb = ccb;
             this.Nombre = descripcion;
             this.Unidad = unidad;
             this.Cantidad = cantidad;
@@ -670,6 +671,14 @@ namespace LibLicitacion
         }
 
         private string nombre;
+
+        public string Ccb
+        {
+            get { return ccb; }
+            set { ccb = value; }
+        }
+
+        private string ccb;
 
         public string Unidad
         {
@@ -759,6 +768,7 @@ namespace LibLicitacion
                             i.Id = (Int32)dr["id_item"];
                             i.Procedimiento = (Int32)dr["id_paquete"];
                             i.Numero = (long)dr["numero"];
+                            i.Ccb = dr["codigo_cuadro_basico"].ToString();
                             i.Nombre = (string)dr["descripcion"];
                             i.Unidad = (string)dr["unidad_venta"];
                             i.Minimo = (long)dr["minimo"];
@@ -787,7 +797,7 @@ namespace LibLicitacion
                 if (i.procedimiento == proce && !yaAgregado.ContainsKey(i.Id))
                 {
                     yaAgregado[i.Id] = true;
-                    items.Add(new Item(i.Id, i.Procedimiento, i.Numero, i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Minimo, i.Maximo,i.Created, i.Updated));
+                    items.Add(new Item(i.Id, i.Procedimiento, i.Numero, i.Ccb,i.Nombre, i.Unidad, i.Cantidad, i.Contenedor, i.Minimo, i.Maximo,i.Created, i.Updated));
                 }
             }
             return items;
@@ -936,10 +946,17 @@ namespace LibLicitacion
                         {
                             CucopVinculos v = new CucopVinculos();
                             v.Id = (Int32)dr["id_vinculacion"];
-                            v.Opcion = (Int32)dr["opcion"];
+                            v.Opcion = (Int32)dr["opcion"];                            
                             v.IdItem = (Int32)dr["id_item"];
-                            v.Nombre = (string)dr["nombre"];
-                            v.CartaApoyo = Convert.ToInt32(dr["carta_apoyo"]);
+                            if (dr["nombre"] != DBNull.Value)
+                            {
+                                v.Nombre = (string)dr["nombre"];
+                            }
+
+                            if (dr["carta_apoyo"] != DBNull.Value)
+                            {
+                                v.CartaApoyo = Convert.ToInt32(dr["carta_apoyo"]);
+                            }                           
                             v.Created = (DateTime)dr["creado_en"];
                             v.Updated = (DateTime)dr["actualizado_en"];
                             vinculos.Add(v);

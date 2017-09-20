@@ -32,7 +32,7 @@ namespace AppLicitaciones
                 using (SqlConnection con = new SqlConnection(mc.con))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(@"SELECT id_vinculacion,opcion,nombre From cucop_vinculos WHERE id_cucop_item = @item", con);
+                    SqlCommand cmd = new SqlCommand(@"SELECT id_vinculacion,opcion,nombre From cucop_vinculos WHERE id_item = @item", con);
                     cmd.Parameters.AddWithValue("@item", idCucop);
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();

@@ -35,21 +35,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_carta = new System.Windows.Forms.Label();
             this.lbl_nombre = new System.Windows.Forms.Label();
-            this.dgvReg = new System.Windows.Forms.DataGridView();
-            this.dgvCat = new System.Windows.Forms.DataGridView();
-            this.dgvCer = new System.Windows.Forms.DataGridView();
-            this.idregColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idcerColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCat)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCer)).BeginInit();
+            this.pnl_reg = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_cat = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnl_cer = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(76, 66);
+            this.label1.Location = new System.Drawing.Point(3, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 16);
             this.label1.TabIndex = 0;
@@ -58,7 +52,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(384, 66);
+            this.label2.Location = new System.Drawing.Point(3, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 16);
             this.label2.TabIndex = 4;
@@ -67,7 +61,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(693, 66);
+            this.label3.Location = new System.Drawing.Point(3, 428);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(148, 16);
             this.label3.TabIndex = 5;
@@ -109,76 +103,42 @@
             this.lbl_nombre.TabIndex = 9;
             this.lbl_nombre.Text = "nombre";
             // 
-            // dgvReg
+            // pnl_reg
             // 
-            this.dgvReg.AllowUserToAddRows = false;
-            this.dgvReg.AllowUserToDeleteRows = false;
-            this.dgvReg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReg.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idregColumn});
-            this.dgvReg.Location = new System.Drawing.Point(20, 85);
-            this.dgvReg.Name = "dgvReg";
-            this.dgvReg.ReadOnly = true;
-            this.dgvReg.RowHeadersVisible = false;
-            this.dgvReg.Size = new System.Drawing.Size(240, 150);
-            this.dgvReg.TabIndex = 10;
+            this.pnl_reg.AutoScroll = true;
+            this.pnl_reg.Location = new System.Drawing.Point(6, 86);
+            this.pnl_reg.Name = "pnl_reg";
+            this.pnl_reg.Size = new System.Drawing.Size(414, 157);
+            this.pnl_reg.TabIndex = 10;
+            this.pnl_reg.WrapContents = false;
             // 
-            // dgvCat
+            // pnl_cat
             // 
-            this.dgvCat.AllowUserToAddRows = false;
-            this.dgvCat.AllowUserToDeleteRows = false;
-            this.dgvCat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcatColumn});
-            this.dgvCat.Location = new System.Drawing.Point(336, 85);
-            this.dgvCat.Name = "dgvCat";
-            this.dgvCat.ReadOnly = true;
-            this.dgvCat.RowHeadersVisible = false;
-            this.dgvCat.Size = new System.Drawing.Size(240, 150);
-            this.dgvCat.TabIndex = 11;
+            this.pnl_cat.AutoScroll = true;
+            this.pnl_cat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnl_cat.Location = new System.Drawing.Point(6, 265);
+            this.pnl_cat.Name = "pnl_cat";
+            this.pnl_cat.Size = new System.Drawing.Size(414, 157);
+            this.pnl_cat.TabIndex = 11;
+            this.pnl_cat.WrapContents = false;
             // 
-            // dgvCer
+            // pnl_cer
             // 
-            this.dgvCer.AllowUserToAddRows = false;
-            this.dgvCer.AllowUserToDeleteRows = false;
-            this.dgvCer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idcerColumn});
-            this.dgvCer.Location = new System.Drawing.Point(653, 85);
-            this.dgvCer.Name = "dgvCer";
-            this.dgvCer.ReadOnly = true;
-            this.dgvCer.RowHeadersVisible = false;
-            this.dgvCer.Size = new System.Drawing.Size(240, 150);
-            this.dgvCer.TabIndex = 12;
-            // 
-            // idregColumn
-            // 
-            this.idregColumn.HeaderText = "Numero";
-            this.idregColumn.Name = "idregColumn";
-            this.idregColumn.ReadOnly = true;
-            this.idregColumn.Width = 240;
-            // 
-            // idcatColumn
-            // 
-            this.idcatColumn.HeaderText = "Nombre";
-            this.idcatColumn.Name = "idcatColumn";
-            this.idcatColumn.ReadOnly = true;
-            this.idcatColumn.Width = 240;
-            // 
-            // idcerColumn
-            // 
-            this.idcerColumn.HeaderText = "Numero";
-            this.idcerColumn.Name = "idcerColumn";
-            this.idcerColumn.ReadOnly = true;
-            this.idcerColumn.Width = 240;
+            this.pnl_cer.AutoScroll = true;
+            this.pnl_cer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnl_cer.Location = new System.Drawing.Point(6, 447);
+            this.pnl_cer.Name = "pnl_cer";
+            this.pnl_cer.Size = new System.Drawing.Size(414, 157);
+            this.pnl_cer.TabIndex = 11;
+            this.pnl_cer.WrapContents = false;
             // 
             // VisualizarDocumentacionCucop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dgvCer);
-            this.Controls.Add(this.dgvCat);
-            this.Controls.Add(this.dgvReg);
+            this.Controls.Add(this.pnl_cer);
+            this.Controls.Add(this.pnl_cat);
+            this.Controls.Add(this.pnl_reg);
             this.Controls.Add(this.lbl_nombre);
             this.Controls.Add(this.lbl_carta);
             this.Controls.Add(this.label5);
@@ -189,10 +149,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "VisualizarDocumentacionCucop";
-            this.Size = new System.Drawing.Size(930, 280);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvReg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCat)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCer)).EndInit();
+            this.Size = new System.Drawing.Size(423, 614);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,11 +164,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_carta;
         private System.Windows.Forms.Label lbl_nombre;
-        private System.Windows.Forms.DataGridView dgvReg;
-        private System.Windows.Forms.DataGridView dgvCat;
-        private System.Windows.Forms.DataGridView dgvCer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idregColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcatColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idcerColumn;
+        private System.Windows.Forms.FlowLayoutPanel pnl_reg;
+        private System.Windows.Forms.FlowLayoutPanel pnl_cat;
+        private System.Windows.Forms.FlowLayoutPanel pnl_cer;
     }
 }

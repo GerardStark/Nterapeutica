@@ -76,6 +76,7 @@ namespace AppLicitaciones
                         txt_clave_gpo.Text = substrings[0];
                         txt_clave_gen.Text = substrings[1];
                         txt_clave_esp.Text = substrings[2];
+                   
                     }
 
                 }

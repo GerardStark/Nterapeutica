@@ -25,17 +25,23 @@ namespace AppLicitaciones
             lbl_carta.Text = opcion.CartaApoyo.ToString();
             foreach (VinculoRegistros r in opcion.Registros)
             {
-                dgvReg.Rows.Add(r.Registro);               
+                LinkLabel l = new LinkLabel();
+                l.Text = RegistroSanitario.GetRegistros().Where(x => x.Id == r.Registro).Single().Numero;
+                pnl_reg.Controls.Add(l);
             }
 
             foreach (VinculoCatalogos c in opcion.Catalogos)
             {
-                dgvCat.Rows.Add(c.Catalogo);
+                LinkLabel l = new LinkLabel();
+                l.Text = CatalogoProductos.getCatalogos().Where(x => x.Id == c.Catalogo).Single().Nombre;
+                pnl_cat.Controls.Add(l);
             }
 
             foreach (VinculoCertificados c in opcion.Certificados)
             {
-                dgvCer.Rows.Add(c.Certificado);
+                LinkLabel l = new LinkLabel();
+                l.Text = CertificadoCalidad.GetCertificados().Where(x => x.Id == c.Certificado).Single().Numero;
+                pnl_cer.Controls.Add(l);
             }
         }
     }

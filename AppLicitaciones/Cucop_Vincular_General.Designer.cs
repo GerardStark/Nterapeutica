@@ -32,9 +32,11 @@
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_agregar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.tabOpciones = new System.Windows.Forms.TabControl();
+            this.btn_buscar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.tabOpciones = new System.Windows.Forms.TabControl();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +47,8 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_agregar,
             this.toolStripLabel1,
+            this.btn_buscar,
+            this.toolStripLabel3,
             this.toolStripButton1,
             this.toolStripLabel2});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -69,13 +73,21 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel1.Text = "Agregar";
             // 
-            // tabOpciones
+            // btn_buscar
             // 
-            this.tabOpciones.Location = new System.Drawing.Point(58, 12);
-            this.tabOpciones.Name = "tabOpciones";
-            this.tabOpciones.SelectedIndex = 0;
-            this.tabOpciones.Size = new System.Drawing.Size(1247, 607);
-            this.tabOpciones.TabIndex = 52;
+            this.btn_buscar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_buscar.Image = global::AppLicitaciones.Iconos.search;
+            this.btn_buscar.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(52, 54);
+            this.btn_buscar.Text = "toolStripButton2";
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(52, 15);
+            this.toolStripLabel3.Text = "Buscar";
             // 
             // toolStripButton1
             // 
@@ -92,6 +104,14 @@
             this.toolStripLabel2.Name = "toolStripLabel2";
             this.toolStripLabel2.Size = new System.Drawing.Size(52, 15);
             this.toolStripLabel2.Text = "Eliminar";
+            // 
+            // tabOpciones
+            // 
+            this.tabOpciones.Location = new System.Drawing.Point(58, 12);
+            this.tabOpciones.Name = "tabOpciones";
+            this.tabOpciones.SelectedIndex = 0;
+            this.tabOpciones.Size = new System.Drawing.Size(1247, 607);
+            this.tabOpciones.TabIndex = 52;
             // 
             // Cucop_Vincular_General
             // 
@@ -119,5 +139,7 @@
         public System.Windows.Forms.TabControl tabOpciones;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.ToolStripButton btn_buscar;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
     }
 }

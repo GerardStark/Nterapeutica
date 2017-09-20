@@ -28,17 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Tecnica));
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProcedimientos = new System.Windows.Forms.DataGridView();
+            this.idSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPartParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvItems = new System.Windows.Forms.DataGridView();
             this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ofertaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_proc_nuevo = new System.Windows.Forms.Button();
@@ -57,10 +60,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btn_item_editar = new System.Windows.Forms.Button();
-            this.idSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPartParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btn_filtrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -89,13 +90,40 @@
             this.dgvProcedimientos.Name = "dgvProcedimientos";
             this.dgvProcedimientos.ReadOnly = true;
             this.dgvProcedimientos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvProcedimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcedimientos.Size = new System.Drawing.Size(705, 180);
             this.dgvProcedimientos.TabIndex = 3;
             this.dgvProcedimientos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProcedimientos_CellClick);
             this.dgvProcedimientos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvProcedimientos_CellFormatting);
+            // 
+            // idSubColumn
+            // 
+            this.idSubColumn.HeaderText = "#";
+            this.idSubColumn.Name = "idSubColumn";
+            this.idSubColumn.ReadOnly = true;
+            this.idSubColumn.Width = 50;
+            // 
+            // idPartParentColumn
+            // 
+            this.idPartParentColumn.HeaderText = "Partida";
+            this.idPartParentColumn.Name = "idPartParentColumn";
+            this.idPartParentColumn.ReadOnly = true;
+            // 
+            // numSubColumn
+            // 
+            this.numSubColumn.HeaderText = "No.";
+            this.numSubColumn.Name = "numSubColumn";
+            this.numSubColumn.ReadOnly = true;
+            this.numSubColumn.Width = 50;
+            // 
+            // nomSubColumn
+            // 
+            this.nomSubColumn.HeaderText = "Nombre";
+            this.nomSubColumn.Name = "nomSubColumn";
+            this.nomSubColumn.ReadOnly = true;
+            this.nomSubColumn.Width = 500;
             // 
             // dgvItems
             // 
@@ -111,15 +139,14 @@
             this.idSubParentColumn,
             this.unidadColumn,
             this.descItemColumn,
-            this.ofertaColumn,
             this.updatedColumn});
             this.dgvItems.Location = new System.Drawing.Point(12, 240);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1255, 429);
             this.dgvItems.TabIndex = 4;
@@ -154,13 +181,6 @@
             this.descItemColumn.ReadOnly = true;
             this.descItemColumn.Width = 450;
             // 
-            // ofertaColumn
-            // 
-            this.ofertaColumn.HeaderText = "Item Ofertado";
-            this.ofertaColumn.Name = "ofertaColumn";
-            this.ofertaColumn.ReadOnly = true;
-            this.ofertaColumn.Width = 450;
-            // 
             // updatedColumn
             // 
             this.updatedColumn.HeaderText = "Actualizado";
@@ -181,9 +201,9 @@
             // 
             this.btn_proc_nuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_proc_nuevo.BackgroundImage")));
             this.btn_proc_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_proc_nuevo.Location = new System.Drawing.Point(725, 18);
+            this.btn_proc_nuevo.Location = new System.Drawing.Point(725, 9);
             this.btn_proc_nuevo.Name = "btn_proc_nuevo";
-            this.btn_proc_nuevo.Size = new System.Drawing.Size(50, 50);
+            this.btn_proc_nuevo.Size = new System.Drawing.Size(35, 35);
             this.btn_proc_nuevo.TabIndex = 6;
             this.btn_proc_nuevo.UseVisualStyleBackColor = true;
             this.btn_proc_nuevo.Click += new System.EventHandler(this.btn_proc_nuevo_Click);
@@ -192,7 +212,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(729, 71);
+            this.label3.Location = new System.Drawing.Point(721, 47);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 7;
@@ -202,9 +222,9 @@
             // 
             this.btn_proc_editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_proc_editar.BackgroundImage")));
             this.btn_proc_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_proc_editar.Location = new System.Drawing.Point(725, 87);
+            this.btn_proc_editar.Location = new System.Drawing.Point(723, 63);
             this.btn_proc_editar.Name = "btn_proc_editar";
-            this.btn_proc_editar.Size = new System.Drawing.Size(50, 50);
+            this.btn_proc_editar.Size = new System.Drawing.Size(35, 35);
             this.btn_proc_editar.TabIndex = 8;
             this.btn_proc_editar.UseVisualStyleBackColor = true;
             this.btn_proc_editar.Click += new System.EventHandler(this.btn_proc_editar_Click);
@@ -213,7 +233,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(731, 140);
+            this.label4.Location = new System.Drawing.Point(723, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(34, 13);
             this.label4.TabIndex = 9;
@@ -223,9 +243,9 @@
             // 
             this.btn_item_nuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_nuevo.BackgroundImage")));
             this.btn_item_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_nuevo.Location = new System.Drawing.Point(1001, 172);
+            this.btn_item_nuevo.Location = new System.Drawing.Point(968, 187);
             this.btn_item_nuevo.Name = "btn_item_nuevo";
-            this.btn_item_nuevo.Size = new System.Drawing.Size(50, 50);
+            this.btn_item_nuevo.Size = new System.Drawing.Size(35, 35);
             this.btn_item_nuevo.TabIndex = 10;
             this.btn_item_nuevo.UseVisualStyleBackColor = true;
             this.btn_item_nuevo.Click += new System.EventHandler(this.btn_item_nuevo_Click);
@@ -234,7 +254,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(998, 225);
+            this.label5.Location = new System.Drawing.Point(957, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 11;
@@ -242,11 +262,11 @@
             // 
             // btn_oferta
             // 
-            this.btn_oferta.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_oferta.BackgroundImage")));
+            this.btn_oferta.BackgroundImage = global::AppLicitaciones.Iconos.android_note;
             this.btn_oferta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_oferta.Location = new System.Drawing.Point(1145, 172);
+            this.btn_oferta.Location = new System.Drawing.Point(1131, 187);
             this.btn_oferta.Name = "btn_oferta";
-            this.btn_oferta.Size = new System.Drawing.Size(50, 50);
+            this.btn_oferta.Size = new System.Drawing.Size(35, 35);
             this.btn_oferta.TabIndex = 14;
             this.btn_oferta.UseVisualStyleBackColor = true;
             this.btn_oferta.Click += new System.EventHandler(this.btn_oferta_Click);
@@ -255,19 +275,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1136, 225);
+            this.label7.Location = new System.Drawing.Point(1134, 225);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 15;
-            this.label7.Text = "Item Ofertado";
+            this.label7.Text = "Docs";
             // 
             // btn_proc_borrar
             // 
             this.btn_proc_borrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_proc_borrar.BackgroundImage")));
             this.btn_proc_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_proc_borrar.Location = new System.Drawing.Point(723, 158);
+            this.btn_proc_borrar.Location = new System.Drawing.Point(722, 117);
             this.btn_proc_borrar.Name = "btn_proc_borrar";
-            this.btn_proc_borrar.Size = new System.Drawing.Size(50, 50);
+            this.btn_proc_borrar.Size = new System.Drawing.Size(35, 35);
             this.btn_proc_borrar.TabIndex = 16;
             this.btn_proc_borrar.UseVisualStyleBackColor = true;
             this.btn_proc_borrar.Click += new System.EventHandler(this.btn_proc_borrar_Click);
@@ -276,7 +296,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(732, 211);
+            this.label8.Location = new System.Drawing.Point(722, 155);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 13);
             this.label8.TabIndex = 17;
@@ -286,7 +306,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(787, 71);
+            this.label9.Location = new System.Drawing.Point(721, 209);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(41, 13);
             this.label9.TabIndex = 19;
@@ -297,9 +317,9 @@
             // 
             this.btn_preguntas_ja.BackgroundImage = global::AppLicitaciones.Iconos.android_developer;
             this.btn_preguntas_ja.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_preguntas_ja.Location = new System.Drawing.Point(781, 18);
+            this.btn_preguntas_ja.Location = new System.Drawing.Point(722, 171);
             this.btn_preguntas_ja.Name = "btn_preguntas_ja";
-            this.btn_preguntas_ja.Size = new System.Drawing.Size(50, 50);
+            this.btn_preguntas_ja.Size = new System.Drawing.Size(35, 35);
             this.btn_preguntas_ja.TabIndex = 18;
             this.btn_preguntas_ja.UseVisualStyleBackColor = true;
             this.btn_preguntas_ja.Click += new System.EventHandler(this.btn_preguntas_ja_Click);
@@ -308,9 +328,9 @@
             // 
             this.btn_item_borrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_borrar.BackgroundImage")));
             this.btn_item_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_borrar.Location = new System.Drawing.Point(1217, 172);
+            this.btn_item_borrar.Location = new System.Drawing.Point(1183, 187);
             this.btn_item_borrar.Name = "btn_item_borrar";
-            this.btn_item_borrar.Size = new System.Drawing.Size(50, 50);
+            this.btn_item_borrar.Size = new System.Drawing.Size(35, 35);
             this.btn_item_borrar.TabIndex = 20;
             this.btn_item_borrar.UseVisualStyleBackColor = true;
             this.btn_item_borrar.Click += new System.EventHandler(this.btn_item_borrar_Click);
@@ -319,7 +339,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1226, 225);
+            this.label10.Location = new System.Drawing.Point(1183, 225);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 21;
@@ -329,7 +349,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1080, 225);
+            this.label6.Location = new System.Drawing.Point(1024, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 23;
@@ -339,45 +359,40 @@
             // 
             this.btn_item_editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_editar.BackgroundImage")));
             this.btn_item_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_editar.Location = new System.Drawing.Point(1074, 172);
+            this.btn_item_editar.Location = new System.Drawing.Point(1023, 187);
             this.btn_item_editar.Name = "btn_item_editar";
-            this.btn_item_editar.Size = new System.Drawing.Size(50, 50);
+            this.btn_item_editar.Size = new System.Drawing.Size(35, 35);
             this.btn_item_editar.TabIndex = 22;
             this.btn_item_editar.UseVisualStyleBackColor = true;
             this.btn_item_editar.Click += new System.EventHandler(this.btn_item_editar_Click);
             // 
-            // idSubColumn
+            // label11
             // 
-            this.idSubColumn.HeaderText = "#";
-            this.idSubColumn.Name = "idSubColumn";
-            this.idSubColumn.ReadOnly = true;
-            this.idSubColumn.Width = 50;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(1076, 225);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(40, 13);
+            this.label11.TabIndex = 25;
+            this.label11.Text = "Buscar";
             // 
-            // idPartParentColumn
+            // btn_filtrar
             // 
-            this.idPartParentColumn.HeaderText = "Partida";
-            this.idPartParentColumn.Name = "idPartParentColumn";
-            this.idPartParentColumn.ReadOnly = true;
-            // 
-            // numSubColumn
-            // 
-            this.numSubColumn.HeaderText = "No.";
-            this.numSubColumn.Name = "numSubColumn";
-            this.numSubColumn.ReadOnly = true;
-            this.numSubColumn.Width = 50;
-            // 
-            // nomSubColumn
-            // 
-            this.nomSubColumn.HeaderText = "Nombre";
-            this.nomSubColumn.Name = "nomSubColumn";
-            this.nomSubColumn.ReadOnly = true;
-            this.nomSubColumn.Width = 500;
+            this.btn_filtrar.BackgroundImage = global::AppLicitaciones.Iconos.search;
+            this.btn_filtrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_filtrar.Location = new System.Drawing.Point(1079, 187);
+            this.btn_filtrar.Name = "btn_filtrar";
+            this.btn_filtrar.Size = new System.Drawing.Size(35, 35);
+            this.btn_filtrar.TabIndex = 24;
+            this.btn_filtrar.UseVisualStyleBackColor = true;
             // 
             // Licitacion_Tecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 681);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_item_editar);
             this.Controls.Add(this.label10);
@@ -432,15 +447,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_item_editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idItemColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSubParentColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ofertaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSubColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idPartParentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numSubColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomSubColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSubParentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btn_filtrar;
     }
 }

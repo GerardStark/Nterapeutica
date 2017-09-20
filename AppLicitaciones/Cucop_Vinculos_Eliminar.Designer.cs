@@ -51,7 +51,7 @@
             this.dgv_vinculos.Name = "dgv_vinculos";
             this.dgv_vinculos.ReadOnly = true;
             this.dgv_vinculos.RowHeadersVisible = false;
-            this.dgv_vinculos.Size = new System.Drawing.Size(528, 522);
+            this.dgv_vinculos.Size = new System.Drawing.Size(578, 522);
             this.dgv_vinculos.TabIndex = 0;
             this.dgv_vinculos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_vinculos_CellClick);
             // 
@@ -82,12 +82,13 @@
             this.btnEliminarColumn.ReadOnly = true;
             this.btnEliminarColumn.Text = "Eliminar";
             this.btnEliminarColumn.ToolTipText = "Eliminar";
+            this.btnEliminarColumn.Width = 150;
             // 
             // Cucop_Vinculos_Eliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 522);
+            this.ClientSize = new System.Drawing.Size(578, 522);
             this.Controls.Add(this.dgv_vinculos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);

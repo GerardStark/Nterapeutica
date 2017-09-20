@@ -33,7 +33,7 @@ namespace AppLicitaciones
 
         private void mostrarItemsPorProcedimiento(int idSub)
         {
-            dgvItems.Rows.Clear();           
+            dgvItems.Rows.Clear();            
             foreach (ProceInfoAd i in Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos)
             {
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
-                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id),getUltimoModificado(i.Id));
+                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Unidad, i.Nombre,getUltimoModificado(i.Id));
                 DataGridViewRow row = new DataGridViewRow();
                 foreach (ProceInfoAd p in infoproce)
                 {
@@ -59,25 +59,26 @@ namespace AppLicitaciones
 
         private int getVinculaciones(int idItem)
         {
-            try
-            {
-                int v = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Id;
-                return v;
-            }
-            catch (Exception)
-            {
-                return 0;
-            }    
+            //try
+            //{
+            //    int v = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Id;
+            //    return v;
+            //}
+            //catch (Exception)
+            //{
+            //    return 0;
+            //}    
+            return 0;
         }
 
         private DateTime getUltimoModificado(int idItem)
         {
            
-            if (CucopVinculos.GetVinculacionesPorItem(idItem).Any())
-            {
-                DateTime date = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Updated;
-                return date;
-            }
+            //if (CucopVinculos.GetVinculacionesPorItem(idItem).Any())
+            //{
+            //    DateTime date = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Updated;
+            //    return date;
+            //}
             return DateTime.Today;
             
             
@@ -134,16 +135,16 @@ namespace AppLicitaciones
         {
             switch (this.dgvItems.Columns[e.ColumnIndex].Name)
             {
-                case "ofertaColumn":
-                    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
-                    {
-                        e.Value = mc.obtenerDescripcionCucop(Convert.ToInt32(dgvItems.Rows[e.RowIndex].Cells["ofertaColumn"].Value));
-                    }
-                    else
-                    {
-                        e.Value = "Sin oferta";
-                    }
-                    break;
+                //case "ofertaColumn":
+                //    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
+                //    {
+                //        e.Value = mc.obtenerDescripcionCucop(Convert.ToInt32(dgvItems.Rows[e.RowIndex].Cells["ofertaColumn"].Value));
+                //    }
+                //    else
+                //    {
+                //        e.Value = "Sin oferta";
+                //    }
+                //    break;
                 case "idColumn":
                     e.Value = e.RowIndex + 1;
                     break;
@@ -154,13 +155,10 @@ namespace AppLicitaciones
         {
             if (idItem != 0)
             {
-                Licitacion_Item_Oferta form = new Licitacion_Item_Oferta();
-                form.mostrarInfoItemCucops(idItem);
-                DialogResult result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    mostrarItemsPorProcedimiento(idSub);
-                }
+                Cucop_Vincular_General cvg = new Cucop_Vincular_General();
+                cvg.mostrarvinculoscucop(idItem);
+                DialogResult result = cvg.ShowDialog();
+                mostrarItemsPorProcedimiento(idSub);
             }
         }
 
@@ -187,12 +185,13 @@ namespace AppLicitaciones
                         con.Open();
                         using (SqlCommand cmd = new SqlCommand())
                         {
+                            cmd.Connection = con;
                             foreach (Item i in proce.Items)
                             {
                                 foreach (CucopVinculos v in i.Vinculos)
                                 {
                                    
-                                    cmd.CommandText = "DELETE FROM licitacion_vinculacion WHERE id=" + v.Id;
+                                    cmd.CommandText = "DELETE FROM cucup_vinculos WHERE id_vinculacion=" + v.Id;
                                     cmd.ExecuteNonQuery();
                                 }
 
@@ -207,7 +206,7 @@ namespace AppLicitaciones
                                     cmd.CommandText = "DELETE FROM licitacion_itenms_info_ad_vinc WHERE id=" + f.Id;
                                     cmd.ExecuteNonQuery();
                                 }
-                                cmd.CommandText = "DELETE FROM licitacion_items WHERE id=" + i.Id;
+                                cmd.CommandText = "DELETE FROM licitacion_items WHERE id_item=" + i.Id;
                                 cmd.ExecuteNonQuery();
                             }
                             cmd.CommandText = "DELETE FROM licitacion_subpar_proce WHERE id=" + proce.Id;
@@ -216,6 +215,7 @@ namespace AppLicitaciones
                     }
                     idSub = 0;
                     MessageBox.Show("Procedimiento/Subpartida Eliminado");
+                    MostrarProcedimientosPorPartida(idPartida);
 
                 }
                 else
@@ -239,10 +239,11 @@ namespace AppLicitaciones
                         con.Open();
                         using (SqlCommand cmd = new SqlCommand())
                         {
+                            cmd.Connection = con;
                             foreach (CucopVinculos v in item.Vinculos)
                             {
                                 
-                                cmd.CommandText = "DELETE FROM licitacion_vinculacion WHERE id=" + v.Id;
+                                cmd.CommandText = "DELETE FROM cucup_vinculos WHERE id_vinculacion=" + v.Id;
                                 cmd.ExecuteNonQuery();
                             }
 
@@ -254,15 +255,16 @@ namespace AppLicitaciones
 
                             foreach (ItemInfoAd f in item.Infos)
                             {
-                                cmd.CommandText = "DELETE FROM licitacion_itenms_info_ad_vinc WHERE id=" + f.Id;
+                                cmd.CommandText = "DELETE FROM licitacion_info_ad_vinc WHERE id=" + f.Id;
                                 cmd.ExecuteNonQuery();
                             }
-                            cmd.CommandText = "DELETE FROM licitacion_items WHERE id=" + item.Id;
+                            cmd.CommandText = "DELETE FROM licitacion_items WHERE id_item=" + item.Id;
                             cmd.ExecuteNonQuery();
                         }
                     }
                     idItem = 0;
                     MessageBox.Show("Item Eliminado");
+                    mostrarItemsPorProcedimiento(idSub);
 
                 }
                 else

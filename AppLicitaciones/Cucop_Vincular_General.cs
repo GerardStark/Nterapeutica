@@ -31,7 +31,7 @@ namespace AppLicitaciones
                 using (SqlConnection con = new SqlConnection(mc.con))
                 {
                     con.Open();
-                    SqlCommand cmd = new SqlCommand(@"SELECT * From cucop_vinculos WHERE id_cucop_item = @item", con);
+                    SqlCommand cmd = new SqlCommand(@"SELECT * From cucop_vinculos WHERE id_item = @item", con);
                     cmd.Parameters.AddWithValue("@item", idCucop);
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -45,8 +45,12 @@ namespace AppLicitaciones
                         NuevaOpcion opt = new NuevaOpcion();
                         opcion.Controls.Add(opt);
                         tabOpciones.TabPages.Add(opcion);
-                        opt.pasardatosvinculo(idCucop, current, Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));                       
-                        opt.mostrarNombreProducto(dt.Rows[i]["nombre"].ToString(), Convert.ToInt32(dt.Rows[i]["carta_apoyo"]));
+                        opt.pasardatosvinculo(idCucop, current, Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
+                        if (dt.Rows[i]["carta_apoyo"] != DBNull.Value && dt.Rows[i]["nombre"] != DBNull.Value)
+                        {
+                            opt.mostrarNombreProducto(dt.Rows[i]["nombre"].ToString(), Convert.ToInt32(dt.Rows[i]["carta_apoyo"]));
+                        }
+                        
                         opt.buscarRegistros(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
                         opt.buscarCatalogos(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
                         opt.buscarCertificados(Convert.ToInt32(dt.Rows[i]["id_vinculacion"]));
@@ -55,7 +59,7 @@ namespace AppLicitaciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -67,7 +71,7 @@ namespace AppLicitaciones
                 {
                     con.Open();
                     int cont = tabOpciones.TabPages.Count;
-                    SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos (opcion,id_cucop_item,actualizado_en) OUTPUT INSERTED.id_vinculacion
+                    SqlCommand cmd = new SqlCommand(@"INSERT INTO cucop_vinculos (opcion,id_item,actualizado_en) OUTPUT INSERTED.id_vinculacion
                     VALUES (@opt,@cucop,@update)", con);
                     cmd.Parameters.AddWithValue("@opt", cont + 1);
                     cmd.Parameters.AddWithValue("@cucop", idCucop);
@@ -79,7 +83,7 @@ namespace AppLicitaciones
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -91,6 +95,16 @@ namespace AppLicitaciones
             if (result == DialogResult.OK)
             {
                 mostrarvinculoscucop(idCucop);
+            }
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            Buscar_Cucops_Vinculacion form = new Buscar_Cucops_Vinculacion();
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //copiar los vinculos
             }
         }
     }  
