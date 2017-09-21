@@ -52,5 +52,19 @@ namespace AppLicitaciones
             }
 
         }
+
+        private void btn_seleccionar_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Esta accion copiara la documentacion de "+lbl_ccb.Text+", continuar?","Copiar Documentacion",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                this.DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void btn_ok_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
     }
 }

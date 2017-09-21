@@ -106,6 +106,7 @@
             // pnl_reg
             // 
             this.pnl_reg.AutoScroll = true;
+            this.pnl_reg.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnl_reg.Location = new System.Drawing.Point(6, 86);
             this.pnl_reg.Name = "pnl_reg";
             this.pnl_reg.Size = new System.Drawing.Size(414, 157);

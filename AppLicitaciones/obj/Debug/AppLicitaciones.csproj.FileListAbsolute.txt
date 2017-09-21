@@ -171,3 +171,4 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\bin\Debug\itextsharp.xml
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Licitacion_Reportes.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Licitacion_Item_Visualizar.resources
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Debug\AppLicitaciones.Licitacion_Items_Buscar.resources

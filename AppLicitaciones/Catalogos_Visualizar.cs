@@ -93,6 +93,13 @@ namespace AppLicitaciones
         {
             //todo borrar catalogos
         }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            Catalogos_ClavesReferencias ct = new Catalogos_ClavesReferencias();
+            ct.mostrarclavescatalogos(id_catalogo);
+            ct.Show();
+        }
     }
     
 }

@@ -50,6 +50,7 @@
             this.lbl_tipo = new System.Windows.Forms.Label();
             this.lbl_marca = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,7 +179,8 @@
             this.tt_reg_editar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_reg_guardar,
             this.btn_reg_editar,
-            this.btn_reg_borrar});
+            this.btn_reg_borrar,
+            this.toolStripButton1});
             this.tt_reg_editar.Location = new System.Drawing.Point(0, 390);
             this.tt_reg_editar.Name = "tt_reg_editar";
             this.tt_reg_editar.Size = new System.Drawing.Size(663, 57);
@@ -255,6 +257,16 @@
             this.label8.TabIndex = 90;
             this.label8.Text = "Marca";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::AppLicitaciones.Iconos.pricetag;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(54, 54);
+            this.toolStripButton1.Text = "btn_referencias";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // Catalogos_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -312,5 +324,6 @@
         private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.Label lbl_marca;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

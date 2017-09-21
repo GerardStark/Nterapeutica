@@ -298,6 +298,12 @@
     <Compile Include="Licitacion_Editar.Designer.cs">
       <DependentUpon>Licitacion_Editar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Licitacion_Items_Buscar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licitacion_Items_Buscar.Designer.cs">
+      <DependentUpon>Licitacion_Items_Buscar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Licitacion_Items_Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -570,6 +576,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Editar.resx">
       <DependentUpon>Licitacion_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licitacion_Items_Buscar.resx">
+      <DependentUpon>Licitacion_Items_Buscar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Licitacion_Items_Editar.resx">
       <DependentUpon>Licitacion_Items_Editar.cs</DependentUpon>

@@ -1145,6 +1145,138 @@ namespace LibLicitacion
             }
             return registros;
         }
+
+        public List<vinculoRegistroReferencia> Referencias
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.referencias = vinculoRegistroReferencia.GerRefPorVincReg(this.Id);
+                return this.referencias;
+            }
+        }
+
+        private List<vinculoRegistroReferencia> referencias;
+
+    }
+
+    public class vinculoRegistroReferencia
+    {
+        public vinculoRegistroReferencia()
+        {
+
+        }
+
+        public vinculoRegistroReferencia(int id, int vincReg, int referencia, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.VinculoRegistro = vincReg;
+            this.Referencia = referencia;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int VinculoRegistro
+        {
+            get { return vincReg; }
+            set { vincReg = value; }
+        }
+
+        private int vincReg;
+
+        public int Referencia
+        {
+            get { return referencia; }
+            set { referencia = value; }
+        }
+
+        private int referencia;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        static public List<vinculoRegistroReferencia> GetVinculoRegistroReferencias()
+        {
+            vinculoRegistroReferencia.AllReferencias.Clear();
+            if (vinculoRegistroReferencia.AllReferencias.Count == 0)
+                vinculoRegistroReferencia.AllReferencias = vinculoRegistroReferencia.InicializarVinculoRegistroReferencias();
+            return vinculoRegistroReferencia.AllReferencias;
+        }
+
+        //crea el objeto con las vinculaciones de los catalogos
+        //llenar con un query
+        static private List<vinculoRegistroReferencia> InicializarVinculoRegistroReferencias()
+        {
+            MainConfig mc = new MainConfig();
+            List<vinculoRegistroReferencia> referencias = new List<vinculoRegistroReferencia>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM cucop_vinculos_catalogos_referencias", con))
+                {
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            vinculoRegistroReferencia v = new vinculoRegistroReferencia();
+                            v.Id = (Int32)dr["id"];
+                            v.VinculoRegistro = (Int32)dr["id_vinculo_catalogo"];
+                            v.Referencia = (Int32)dr["id_referencia"];
+                            v.Created = (DateTime)dr["creado_en"];
+                            v.Updated = (DateTime)dr["actualizado_en"];
+                            referencias.Add(v);
+                        }
+                    }
+                }
+            }
+            return referencias;
+        }
+
+        //objeto donde se almacenan las vinculaciones de catalogos
+        static private List<vinculoRegistroReferencia> AllReferencias = new List<vinculoRegistroReferencia>();
+
+        //obtener los catalogos vinculados a ese vinculo(opcion) de cucop
+
+        //obtener catalogos por opcion
+        static public List<vinculoRegistroReferencia> GerRefPorVincReg(int vincreg)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<vinculoRegistroReferencia> referencias = new List<vinculoRegistroReferencia>();
+            foreach (vinculoRegistroReferencia v in vinculoRegistroReferencia.GetVinculoRegistroReferencias())
+            {
+                if (v.VinculoRegistro == vincreg && !yaAgregado.ContainsKey(v.id))
+                {
+                    yaAgregado[v.id] = true;
+                    referencias.Add(v);
+                }
+            }
+            return referencias;
+        }
+
     }
 
     public class VinculoCertificados
@@ -1380,6 +1512,136 @@ namespace LibLicitacion
                 }
             }
             return catalogos;
+        }
+
+        public List<vinculoCatalogoReferencia> Referencias
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.referencias = vinculoCatalogoReferencia.GerRefPorVincCat(this.Id);
+                return this.referencias;
+            }
+        }
+
+        private List<vinculoCatalogoReferencia> referencias;
+    } 
+
+    public class vinculoCatalogoReferencia
+    {
+        public vinculoCatalogoReferencia()
+        {
+
+        }
+
+        public vinculoCatalogoReferencia(int id, int vincCat, int referencia, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.VinculoCatalogo = vincCat;
+            this.Referencia = referencia;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int VinculoCatalogo
+        {
+            get { return vincCat; }
+            set { vincCat = value; }
+        }
+
+        private int vincCat;
+
+        public int Referencia
+        {
+            get { return referencia; }
+            set { referencia = value; }
+        }
+
+        private int referencia;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        static public List<vinculoCatalogoReferencia> GetVinculoCatalogosReferencias()
+        {
+            vinculoCatalogoReferencia.AllReferencias.Clear();
+            if (vinculoCatalogoReferencia.AllReferencias.Count == 0)
+                vinculoCatalogoReferencia.AllReferencias = vinculoCatalogoReferencia.InicializarVinculoCatalogoReferencias();
+            return vinculoCatalogoReferencia.AllReferencias;
+        }
+
+        //crea el objeto con las vinculaciones de los catalogos
+        //llenar con un query
+        static private List<vinculoCatalogoReferencia> InicializarVinculoCatalogoReferencias()
+        {
+            MainConfig mc = new MainConfig();
+            List<vinculoCatalogoReferencia> referencias = new List<vinculoCatalogoReferencia>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM cucop_vinculos_catalogos_referencias", con))
+                {
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            vinculoCatalogoReferencia v = new vinculoCatalogoReferencia();
+                            v.Id = (Int32)dr["id"];
+                            v.VinculoCatalogo = (Int32)dr["id_vinculo_catalogo"];
+                            v.Referencia = (Int32)dr["id_referencia"];
+                            v.Created = (DateTime)dr["creado_en"];
+                            v.Updated = (DateTime)dr["actualizado_en"];
+                            referencias.Add(v);
+                        }
+                    }
+                }
+            }
+            return referencias;
+        }
+
+        //objeto donde se almacenan las vinculaciones de catalogos
+        static private List<vinculoCatalogoReferencia> AllReferencias = new List<vinculoCatalogoReferencia>();
+
+        //obtener los catalogos vinculados a ese vinculo(opcion) de cucop
+
+        //obtener catalogos por opcion
+        static public List<vinculoCatalogoReferencia> GerRefPorVincCat(int vincreg)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<vinculoCatalogoReferencia> referencias = new List<vinculoCatalogoReferencia>();
+            foreach (vinculoCatalogoReferencia v in vinculoCatalogoReferencia.GetVinculoCatalogosReferencias())
+            {
+                if (v.VinculoCatalogo == vincreg && !yaAgregado.ContainsKey(v.Id))
+                {
+                    yaAgregado[v.Id] = true;
+                    referencias.Add(v);
+                }
+            }
+            return referencias;
         }
     }
 

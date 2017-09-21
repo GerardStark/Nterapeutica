@@ -61,6 +61,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_distintiva = new System.Windows.Forms.Label();
             this.lbl_generica = new System.Windows.Forms.Label();
+            this.btn_referencias = new System.Windows.Forms.ToolStripButton();
             this.tt_reg_editar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -261,7 +262,8 @@
             this.tt_reg_editar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_reg_guardar,
             this.btn_reg_editar,
-            this.btn_reg_borrar});
+            this.btn_reg_borrar,
+            this.btn_referencias});
             this.tt_reg_editar.Location = new System.Drawing.Point(0, 545);
             this.tt_reg_editar.Name = "tt_reg_editar";
             this.tt_reg_editar.Size = new System.Drawing.Size(1251, 57);
@@ -364,6 +366,16 @@
             this.lbl_generica.TabIndex = 93;
             this.lbl_generica.Text = "label22";
             // 
+            // btn_referencias
+            // 
+            this.btn_referencias.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_referencias.Image = global::AppLicitaciones.Iconos.pricetag;
+            this.btn_referencias.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_referencias.Name = "btn_referencias";
+            this.btn_referencias.Size = new System.Drawing.Size(54, 54);
+            this.btn_referencias.Text = "toolStripButton1";
+            this.btn_referencias.Click += new System.EventHandler(this.btn_referencias_Click);
+            // 
             // Registros_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -444,5 +456,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label lbl_distintiva;
         private System.Windows.Forms.Label lbl_generica;
+        private System.Windows.Forms.ToolStripButton btn_referencias;
     }
 }

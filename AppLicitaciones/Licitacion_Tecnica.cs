@@ -288,7 +288,27 @@ namespace AppLicitaciones
 
         private void Licitacion_Tecnica_Load(object sender, EventArgs e)
         {
+            int proces = Procedimiento.GetProcedimientosPorPartidas(idPartida).Count;
+            lbl_proces.Text = proces.ToString();
+            
+        }
 
+        private void btn_filtrar_Click(object sender, EventArgs e)
+        {
+            Licitacion_Items_Buscar form = new Licitacion_Items_Buscar();
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                dgvItems.Rows.Clear();
+                string filtro = form.filtro;
+                foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
+                {
+                    if (i.Nombre.Contains(filtro))
+                    {
+                        dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getUltimoModificado(i.Id));
+                    }                    
+                }
+            }
         }
 
         private void btn_proc_nuevo_Click(object sender, EventArgs e)

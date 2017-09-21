@@ -166,5 +166,12 @@ namespace AppLicitaciones
                 }
             }
         }
+
+        private void btn_referencias_Click(object sender, EventArgs e)
+        {
+            Registros_ClavesReferencias rc = new Registros_ClavesReferencias();
+            rc.mostrarclavesregistro(id_registro);
+            rc.Show();
+        }
     }
 }

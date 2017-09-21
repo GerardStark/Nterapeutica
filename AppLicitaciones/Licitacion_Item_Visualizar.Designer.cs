@@ -51,6 +51,8 @@
             this.lbl_min = new System.Windows.Forms.Label();
             this.lbl_max = new System.Windows.Forms.Label();
             this.tabOpciones = new System.Windows.Forms.TabControl();
+            this.btn_ok = new System.Windows.Forms.Button();
+            this.btn_seleccionar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -83,7 +85,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(34, 330);
+            this.label4.Location = new System.Drawing.Point(34, 169);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(109, 16);
             this.label4.TabIndex = 3;
@@ -92,7 +94,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 360);
+            this.label5.Location = new System.Drawing.Point(34, 199);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(62, 16);
             this.label5.TabIndex = 4;
@@ -101,7 +103,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 390);
+            this.label6.Location = new System.Drawing.Point(34, 229);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(78, 16);
             this.label6.TabIndex = 5;
@@ -110,7 +112,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(34, 420);
+            this.label7.Location = new System.Drawing.Point(34, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 16);
             this.label7.TabIndex = 6;
@@ -119,7 +121,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(34, 450);
+            this.label8.Location = new System.Drawing.Point(34, 289);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 16);
             this.label8.TabIndex = 7;
@@ -128,7 +130,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(34, 170);
+            this.label9.Location = new System.Drawing.Point(34, 320);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 8;
@@ -199,16 +201,16 @@
             // 
             // lbl_desc
             // 
-            this.lbl_desc.Location = new System.Drawing.Point(164, 170);
+            this.lbl_desc.Location = new System.Drawing.Point(164, 320);
             this.lbl_desc.Name = "lbl_desc";
-            this.lbl_desc.Size = new System.Drawing.Size(509, 150);
+            this.lbl_desc.Size = new System.Drawing.Size(509, 264);
             this.lbl_desc.TabIndex = 16;
             this.lbl_desc.Text = "label17";
             // 
             // lbl_uni
             // 
             this.lbl_uni.AutoSize = true;
-            this.lbl_uni.Location = new System.Drawing.Point(164, 330);
+            this.lbl_uni.Location = new System.Drawing.Point(164, 169);
             this.lbl_uni.Name = "lbl_uni";
             this.lbl_uni.Size = new System.Drawing.Size(52, 16);
             this.lbl_uni.TabIndex = 17;
@@ -217,7 +219,7 @@
             // lbl_cant
             // 
             this.lbl_cant.AutoSize = true;
-            this.lbl_cant.Location = new System.Drawing.Point(164, 360);
+            this.lbl_cant.Location = new System.Drawing.Point(164, 199);
             this.lbl_cant.Name = "lbl_cant";
             this.lbl_cant.Size = new System.Drawing.Size(52, 16);
             this.lbl_cant.TabIndex = 18;
@@ -226,7 +228,7 @@
             // lbl_cont
             // 
             this.lbl_cont.AutoSize = true;
-            this.lbl_cont.Location = new System.Drawing.Point(164, 390);
+            this.lbl_cont.Location = new System.Drawing.Point(164, 229);
             this.lbl_cont.Name = "lbl_cont";
             this.lbl_cont.Size = new System.Drawing.Size(52, 16);
             this.lbl_cont.TabIndex = 19;
@@ -235,7 +237,7 @@
             // lbl_min
             // 
             this.lbl_min.AutoSize = true;
-            this.lbl_min.Location = new System.Drawing.Point(164, 420);
+            this.lbl_min.Location = new System.Drawing.Point(164, 259);
             this.lbl_min.Name = "lbl_min";
             this.lbl_min.Size = new System.Drawing.Size(52, 16);
             this.lbl_min.TabIndex = 20;
@@ -244,7 +246,7 @@
             // lbl_max
             // 
             this.lbl_max.AutoSize = true;
-            this.lbl_max.Location = new System.Drawing.Point(164, 450);
+            this.lbl_max.Location = new System.Drawing.Point(164, 289);
             this.lbl_max.Name = "lbl_max";
             this.lbl_max.Size = new System.Drawing.Size(52, 16);
             this.lbl_max.TabIndex = 21;
@@ -258,11 +260,35 @@
             this.tabOpciones.Size = new System.Drawing.Size(427, 629);
             this.tabOpciones.TabIndex = 22;
             // 
+            // btn_ok
+            // 
+            this.btn_ok.BackgroundImage = global::AppLicitaciones.Iconos.android_checkmark;
+            this.btn_ok.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_ok.Location = new System.Drawing.Point(10, 599);
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.Size = new System.Drawing.Size(50, 50);
+            this.btn_ok.TabIndex = 23;
+            this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
+            // 
+            // btn_seleccionar
+            // 
+            this.btn_seleccionar.BackgroundImage = global::AppLicitaciones.Iconos.android_hand;
+            this.btn_seleccionar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_seleccionar.Location = new System.Drawing.Point(62, 599);
+            this.btn_seleccionar.Name = "btn_seleccionar";
+            this.btn_seleccionar.Size = new System.Drawing.Size(50, 50);
+            this.btn_seleccionar.TabIndex = 24;
+            this.btn_seleccionar.UseVisualStyleBackColor = true;
+            this.btn_seleccionar.Click += new System.EventHandler(this.btn_seleccionar_Click);
+            // 
             // Licitacion_Item_Visualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 661);
+            this.Controls.Add(this.btn_seleccionar);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.tabOpciones);
             this.Controls.Add(this.lbl_max);
             this.Controls.Add(this.lbl_min);
@@ -320,5 +346,7 @@
         private System.Windows.Forms.Label lbl_min;
         private System.Windows.Forms.Label lbl_max;
         private System.Windows.Forms.TabControl tabOpciones;
+        private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.Button btn_seleccionar;
     }
 }

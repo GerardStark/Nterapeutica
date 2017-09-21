@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Tecnica));
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProcedimientos = new System.Windows.Forms.DataGridView();
@@ -62,6 +62,12 @@
             this.btn_item_editar = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_filtrar = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lbl_proces = new System.Windows.Forms.Label();
+            this.lbl_items = new System.Windows.Forms.Label();
+            this.lbl_itemssr = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -90,8 +96,8 @@
             this.dgvProcedimientos.Name = "dgvProcedimientos";
             this.dgvProcedimientos.ReadOnly = true;
             this.dgvProcedimientos.RowHeadersVisible = false;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProcedimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcedimientos.Size = new System.Drawing.Size(705, 180);
             this.dgvProcedimientos.TabIndex = 3;
@@ -145,8 +151,8 @@
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1255, 429);
             this.dgvItems.TabIndex = 4;
@@ -385,12 +391,73 @@
             this.btn_filtrar.Size = new System.Drawing.Size(35, 35);
             this.btn_filtrar.TabIndex = 24;
             this.btn_filtrar.UseVisualStyleBackColor = true;
+            this.btn_filtrar.Click += new System.EventHandler(this.btn_filtrar_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(879, 18);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(136, 16);
+            this.label12.TabIndex = 26;
+            this.label12.Text = "Total Procedimientos";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(879, 47);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 16);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Total de Items";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(882, 77);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(159, 16);
+            this.label14.TabIndex = 28;
+            this.label14.Text = "Items Sin Documentacion";
+            // 
+            // lbl_proces
+            // 
+            this.lbl_proces.AutoSize = true;
+            this.lbl_proces.Location = new System.Drawing.Point(1061, 18);
+            this.lbl_proces.Name = "lbl_proces";
+            this.lbl_proces.Size = new System.Drawing.Size(52, 16);
+            this.lbl_proces.TabIndex = 29;
+            this.lbl_proces.Text = "label15";
+            // 
+            // lbl_items
+            // 
+            this.lbl_items.AutoSize = true;
+            this.lbl_items.Location = new System.Drawing.Point(1061, 47);
+            this.lbl_items.Name = "lbl_items";
+            this.lbl_items.Size = new System.Drawing.Size(52, 16);
+            this.lbl_items.TabIndex = 30;
+            this.lbl_items.Text = "label16";
+            // 
+            // lbl_itemssr
+            // 
+            this.lbl_itemssr.AutoSize = true;
+            this.lbl_itemssr.Location = new System.Drawing.Point(1061, 77);
+            this.lbl_itemssr.Name = "lbl_itemssr";
+            this.lbl_itemssr.Size = new System.Drawing.Size(52, 16);
+            this.lbl_itemssr.TabIndex = 31;
+            this.lbl_itemssr.Text = "label17";
             // 
             // Licitacion_Tecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 681);
+            this.Controls.Add(this.lbl_itemssr);
+            this.Controls.Add(this.lbl_items);
+            this.Controls.Add(this.lbl_proces);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btn_filtrar);
             this.Controls.Add(this.label6);
@@ -458,5 +525,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btn_filtrar;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl_proces;
+        private System.Windows.Forms.Label lbl_items;
+        private System.Windows.Forms.Label lbl_itemssr;
     }
 }

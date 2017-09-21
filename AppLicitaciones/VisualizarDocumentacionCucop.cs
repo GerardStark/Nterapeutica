@@ -18,31 +18,65 @@ namespace AppLicitaciones
             InitializeComponent();
         }
 
+        //crear un evento que al dar clic al respectivo vinculo mande a los RECACE
         public void mostrarDocumentacionOpcion(int id)
         {
             var opcion = CucopVinculos.GetVinculaciones().Where(x => x.Id == id).Single();
             lbl_nombre.Text = opcion.Nombre;
             lbl_carta.Text = opcion.CartaApoyo.ToString();
-            foreach (VinculoRegistros r in opcion.Registros)
+            foreach (VinculoRegistros re in opcion.Registros)
             {
                 LinkLabel l = new LinkLabel();
-                l.Text = RegistroSanitario.GetRegistros().Where(x => x.Id == r.Registro).Single().Numero;
+                l.Text = RegistroSanitario.GetRegistros().Where(x => x.Id == re.Registro).Single().Numero;
+                l.Tag = re.Registro;
+                l.LinkClicked += verRegistro;
                 pnl_reg.Controls.Add(l);
             }
 
-            foreach (VinculoCatalogos c in opcion.Catalogos)
+            foreach (VinculoCatalogos ca in opcion.Catalogos)
             {
                 LinkLabel l = new LinkLabel();
-                l.Text = CatalogoProductos.getCatalogos().Where(x => x.Id == c.Catalogo).Single().Nombre;
+                l.Text = CatalogoProductos.getCatalogos().Where(x => x.Id == ca.Catalogo).Single().Nombre;
+                l.Tag = ca.Catalogo;
+                l.LinkClicked += verCatalogo;
                 pnl_cat.Controls.Add(l);
             }
 
-            foreach (VinculoCertificados c in opcion.Certificados)
+            foreach (VinculoCertificados ce in opcion.Certificados)
             {
                 LinkLabel l = new LinkLabel();
-                l.Text = CertificadoCalidad.GetCertificados().Where(x => x.Id == c.Certificado).Single().Numero;
+                l.Text = CertificadoCalidad.GetCertificados().Where(x => x.Id == ce.Certificado).Single().Numero;
+                l.Tag = ce.Certificado;
+                l.LinkClicked += verCertificado;
                 pnl_cer.Controls.Add(l);
             }
+        }
+
+        private void verRegistro(object sender, EventArgs e)
+        {
+            LinkLabel l = sender as LinkLabel;
+            int id = Convert.ToInt32(l.Tag);
+            Registros_Visualizar form = new Registros_Visualizar();
+            form.mostrarinforegistro(id);
+            form.Show();
+        }
+
+        private void verCatalogo(object sender, EventArgs e)
+        {
+            LinkLabel l = sender as LinkLabel;
+            int id = Convert.ToInt32(l.Tag);
+            Catalogos_Visualizar form = new Catalogos_Visualizar();
+            form.mostrarinfocatalogo(id);
+            form.Show();
+        }
+
+        private void verCertificado(object sender, EventArgs e)
+        {
+            LinkLabel l = sender as LinkLabel;
+            int id = Convert.ToInt32(l.Tag);
+            Certificados_Visualizar form = new Certificados_Visualizar();
+            form.mostrarinfocertificado(id);
+            form.Show();
         }
     }
 }
