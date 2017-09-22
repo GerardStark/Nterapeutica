@@ -48,40 +48,22 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
-                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Unidad, i.Nombre,getUltimoModificado(i.Id));
-                DataGridViewRow row = new DataGridViewRow();
-                foreach (ProceInfoAd p in infoproce)
-                {
-                  
-                }               
+                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);                                             
             }
         }        
 
-        private int getVinculaciones(int idItem)
+        private string getVinculaciones(int idItem)
         {
-            //try
-            //{
-            //    int v = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Id;
-            //    return v;
-            //}
-            //catch (Exception)
-            //{
-            //    return 0;
-            //}    
-            return 0;
-        }
-
-        private DateTime getUltimoModificado(int idItem)
-        {
-           
-            //if (CucopVinculos.GetVinculacionesPorItem(idItem).Any())
-            //{
-            //    DateTime date = CucopVinculos.GetVinculacionesPorItem(idItem).Single(x => x.IdItem == idItem).Updated;
-            //    return date;
-            //}
-            return DateTime.Today;
-            
-            
+            string nombres = "";
+            if (Item.GetItems().Where(x => x.Id == idItem).Single().Vinculos.Any())
+            {
+                foreach (CucopVinculos item in Item.GetItems().Where(x => x.Id == idItem).Single().Vinculos)
+                {
+                    nombres = nombres +", "+ item.Nombre;
+                }
+                return nombres;
+            }
+            return "Sin Documentación";
         }
 
         private void dgvItems_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -290,7 +272,27 @@ namespace AppLicitaciones
         {
             int proces = Procedimiento.GetProcedimientosPorPartidas(idPartida).Count;
             lbl_proces.Text = proces.ToString();
-            
+            int items = 0;
+            foreach (Procedimiento p in Procedimiento.GetProcedimientosPorPartidas(idPartida))
+            {
+                items = items +p.Items.Count;
+            }
+            lbl_items.Text = items.ToString();
+            int nodocs = 0;
+            foreach (Procedimiento p in Procedimiento.GetProcedimientosPorPartidas(idPartida))
+            {
+                foreach (Item i in p.Items)
+                {
+                    if (!i.Vinculos.Any())
+                    {
+                        nodocs++;
+                    }
+                }
+            }
+            lbl_itemssr.Text = nodocs.ToString();
+
+
+
         }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
@@ -300,15 +302,26 @@ namespace AppLicitaciones
             if (result == DialogResult.OK)
             {
                 dgvItems.Rows.Clear();
-                string filtro = form.filtro;
+                string filtro = form.filtro;               
                 foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
                 {
                     if (i.Nombre.Contains(filtro))
                     {
-                        dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getUltimoModificado(i.Id));
-                    }                    
-                }
+                        dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, "", i.Updated);
+                    }                  
+                }               
             }
+        }
+
+        private void btn_preguntas_Click(object sender, EventArgs e)
+        {
+            if (idItem != 0)
+            {
+                licitacion_junta_preguntas form = new licitacion_junta_preguntas();
+                form.mostrarInfoPregunta(idItem);
+                form.Show();
+            }
+            
         }
 
         private void btn_proc_nuevo_Click(object sender, EventArgs e)

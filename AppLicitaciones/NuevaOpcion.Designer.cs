@@ -46,6 +46,7 @@
             this.btn_selectCarta = new System.Windows.Forms.Button();
             this.txt_carta = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_quitar_carta = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_reg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.list_vinc_cert)).BeginInit();
@@ -241,10 +242,22 @@
             this.label1.TabIndex = 189;
             this.label1.Text = "Carta de Apoyo:";
             // 
+            // btn_quitar_carta
+            // 
+            this.btn_quitar_carta.Location = new System.Drawing.Point(663, 78);
+            this.btn_quitar_carta.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_quitar_carta.Name = "btn_quitar_carta";
+            this.btn_quitar_carta.Size = new System.Drawing.Size(112, 26);
+            this.btn_quitar_carta.TabIndex = 192;
+            this.btn_quitar_carta.Text = "Quitar";
+            this.btn_quitar_carta.UseVisualStyleBackColor = true;
+            this.btn_quitar_carta.Click += new System.EventHandler(this.btn_quitar_carta_Click);
+            // 
             // NuevaOpcion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.btn_quitar_carta);
             this.Controls.Add(this.btn_selectCarta);
             this.Controls.Add(this.txt_carta);
             this.Controls.Add(this.label1);
@@ -291,5 +304,6 @@
         private System.Windows.Forms.Button btn_selectCarta;
         private System.Windows.Forms.TextBox txt_carta;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_quitar_carta;
     }
 }

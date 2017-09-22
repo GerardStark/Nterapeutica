@@ -288,5 +288,10 @@ namespace AppLicitaciones
             Catalogos_Principal newForm = new Catalogos_Principal();           
             newForm.Show();
         }
+
+        private void Cucop_Vincular_Catalogo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

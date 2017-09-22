@@ -16,33 +16,31 @@ namespace AppLicitaciones
     {
         MainConfig mc = new MainConfig();
         int idPregunta = 0;
-        int idVinc;
+        int idItem = 0;
         public licitacion_junta_preguntas()
         {
             InitializeComponent();
         }
 
-        public void mostrarInfoPregunta(int idVinculo)
+        public void mostrarInfoPregunta(int idItem)
         {
+            //anterior es la pregunta deseada :/
+            this.idItem = idItem;
+            txt_anterior.Text = Item.GetItems().Where(x => x.Id == idItem).Single().Nombre;
+            if (Item.GetItems().Where(x => x.Id == idItem).Single().Preguntas.Any())
+            {
 
-            //this.idVinc = idVinculo;
-            //CucopVinculos vinc = CucopVinculos.GetVinculaciones().Where(x => x.Id == idVinculo).Single();
-            //txt_item.Text = Item.GetItems().Where(x => x.Id == vinc.IdItem).Single().Nombre;
-            //txt_oferta.Text = Item.GetItems().Where(x => x.Id == vinc.IdItem).Single().Nombre;
-            //if (vinc.Preguntas.Count > 0)
-            //{
-            //    txt_pregunta.Text = vinc.Preguntas.Single().Enunciado; 
-            //    this.idPregunta = vinc.Preguntas.Single().Id;
-            //}
-            //else
-            //{
-            //    txt_pregunta.Text = "Sin Pregunta";
-            //    this.idPregunta = 0;
-            //}
-           
-            
+                var pregunta = Item.GetItems().Where(x => x.Id == idItem).Single().Preguntas.Single();
+                txt_deseada.Text = pregunta.Anterior;
+                txt_pregunta.Text = pregunta.Enunciado;
+            }
+            else
+            {
+                txt_anterior.Text = Item.GetItems().Where(x => x.Id == idItem).Single().Nombre;
+                txt_pregunta.Text = "No tiene enunciado";
+                txt_deseada.Text = "No tiene descripcion";
+            }
         }
-
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             using (SqlConnection con = new SqlConnection(mc.con))
@@ -57,6 +55,7 @@ namespace AppLicitaciones
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@idPregunta", idPregunta);
                         cmd.Parameters.AddWithValue("@enunciado", txt_pregunta.Text);
+                        cmd.Parameters.AddWithValue("@anterior",txt_deseada.Text);
                         cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                         int confirm = cmd.ExecuteNonQuery();
                         if (confirm != 0)
@@ -68,11 +67,12 @@ namespace AppLicitaciones
                 }
                 else
                 {
-                    using (SqlCommand cmdp = new SqlCommand("licitacion_pregunta_create", con))
+                    using (SqlCommand cmdp = new SqlCommand("licitacion_pregunta_insert", con))
                     {
                         cmdp.CommandType = CommandType.StoredProcedure;
-                        cmdp.Parameters.AddWithValue("@idVinc", idVinc);
+                        cmdp.Parameters.AddWithValue("@item", idItem);
                         cmdp.Parameters.AddWithValue("@enunciado", txt_pregunta.Text);
+                        cmdp.Parameters.AddWithValue("@anterior", txt_deseada.Text);
                         cmdp.Parameters.AddWithValue("@updated", DateTime.Now);
                         int result = cmdp.ExecuteNonQuery();
                         if (result != 0)

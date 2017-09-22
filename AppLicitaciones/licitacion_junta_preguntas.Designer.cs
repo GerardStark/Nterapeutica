@@ -30,10 +30,10 @@
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
-            this.txt_item = new System.Windows.Forms.TextBox();
+            this.txt_anterior = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_oferta = new System.Windows.Forms.TextBox();
+            this.txt_deseada = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_pregunta = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
@@ -62,39 +62,39 @@
             this.btn_guardar.Text = "toolStripButton1";
             this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
-            // txt_item
+            // txt_anterior
             // 
-            this.txt_item.Location = new System.Drawing.Point(19, 36);
-            this.txt_item.Multiline = true;
-            this.txt_item.Name = "txt_item";
-            this.txt_item.Size = new System.Drawing.Size(467, 154);
-            this.txt_item.TabIndex = 1;
+            this.txt_anterior.Location = new System.Drawing.Point(19, 36);
+            this.txt_anterior.Multiline = true;
+            this.txt_anterior.Name = "txt_anterior";
+            this.txt_anterior.Size = new System.Drawing.Size(467, 154);
+            this.txt_anterior.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(19, 17);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 16);
+            this.label1.Size = new System.Drawing.Size(129, 16);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Requerimiento(ítem):";
+            this.label1.Text = "Descripcion Anterior";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(19, 211);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 16);
+            this.label2.Size = new System.Drawing.Size(140, 16);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Ítem Ofertado:";
+            this.label2.Text = "Descripcion Deseada";
             // 
-            // txt_oferta
+            // txt_deseada
             // 
-            this.txt_oferta.Location = new System.Drawing.Point(19, 230);
-            this.txt_oferta.Multiline = true;
-            this.txt_oferta.Name = "txt_oferta";
-            this.txt_oferta.Size = new System.Drawing.Size(467, 154);
-            this.txt_oferta.TabIndex = 4;
+            this.txt_deseada.Location = new System.Drawing.Point(19, 230);
+            this.txt_deseada.Multiline = true;
+            this.txt_deseada.Name = "txt_deseada";
+            this.txt_deseada.Size = new System.Drawing.Size(467, 154);
+            this.txt_deseada.TabIndex = 4;
             // 
             // label3
             // 
@@ -120,10 +120,10 @@
             this.ClientSize = new System.Drawing.Size(506, 639);
             this.Controls.Add(this.txt_pregunta);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txt_oferta);
+            this.Controls.Add(this.txt_deseada);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txt_item);
+            this.Controls.Add(this.txt_anterior);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -140,10 +140,10 @@
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_guardar;
-        private System.Windows.Forms.TextBox txt_item;
+        private System.Windows.Forms.TextBox txt_anterior;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txt_oferta;
+        private System.Windows.Forms.TextBox txt_deseada;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_pregunta;
     }

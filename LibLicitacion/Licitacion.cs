@@ -833,7 +833,7 @@ namespace LibLicitacion
             get
             {
                 if (this.Id != 0)
-                    this.preguntas = Pregunta.GetPreguntasPorVinculacion(this.Id);
+                    this.preguntas = Pregunta.GetPreguntasPorItem(this.Id);
                 return this.preguntas;
             }
         }
@@ -1801,11 +1801,12 @@ namespace LibLicitacion
 
         }
 
-        public Pregunta(int id, int vinculacion, string enunciado, DateTime creado, DateTime actualizado)
+        public Pregunta(int id, int vinculacion, string enunciado, string anterior, DateTime creado, DateTime actualizado)
         {
             this.Id = id;
             this.Vinculacion = vinculacion;
             this.Enunciado = enunciado;
+            this.Anterior = anterior;
             this.Created = creado;
             this.Updated = actualizado;
         }        
@@ -1833,6 +1834,14 @@ namespace LibLicitacion
         }
 
         private string enunciado;
+
+        public string Anterior
+        {
+            get { return anterior; }
+            set { anterior = value; }
+        }
+
+        private string anterior;
 
         public DateTime Created
         {
@@ -1877,8 +1886,9 @@ namespace LibLicitacion
                         {
                             Pregunta p = new Pregunta();
                             p.Id = (Int32)dr["id"];
-                            p.Vinculacion = (Int32)dr["id_vinculacion"];
+                            p.Vinculacion = (Int32)dr["id_item"];
                             p.Enunciado = dr["pregunta"].ToString();
+                            p.Anterior = dr["desc_anterior"].ToString();
                             p.Created = (DateTime)dr["creado_en"];
                             p.Updated = (DateTime)dr["actualizado_en"];
                             preguntas.Add(p);
@@ -1892,16 +1902,16 @@ namespace LibLicitacion
 
         private static List<Pregunta> AllPreguntas = new List<Pregunta>();
 
-        public static List<Pregunta> GetPreguntasPorVinculacion(int vinc)
+        public static List<Pregunta> GetPreguntasPorItem(int item)
         {
             Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
             List<Pregunta> preguntas = new List<Pregunta>();
             foreach (Pregunta p in Pregunta.GetPreguntas())
             {
-                if (p.Vinculacion == vinc && !yaAgregado.ContainsKey(p.Id))
+                if (p.Vinculacion == item && !yaAgregado.ContainsKey(p.Id))
                 {
                     yaAgregado[p.Id] = true;
-                    preguntas.Add(new Pregunta(p.Id, p.Vinculacion, p.Enunciado, p.Created, p.Updated));
+                    preguntas.Add(new Pregunta(p.Id, p.Vinculacion, p.Enunciado,p.Anterior, p.Created, p.Updated));
                 }
             }
             return preguntas;

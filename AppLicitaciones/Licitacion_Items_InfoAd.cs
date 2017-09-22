@@ -59,18 +59,34 @@ namespace AppLicitaciones
         {
             if (idInfo != 0)
             {
-                using (SqlConnection con = new SqlConnection())
+                DialogResult result = MessageBox.Show("Esto borrara la columna y la informacion \n de los items que se hayan asignado","¿Borrar columna de Info Ad?",MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand("DELETE FROM licitacion_items_info_Ad WHERE id = @id", con))
+                    try
                     {
-                        cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.Parameters.AddWithValue("@id", idInfo);
-                        int result = cmd.ExecuteNonQuery();
-                        if (result != 0)
+                        using (SqlConnection con = new SqlConnection(mc.con))
                         {
-                            mostrarInfosProce(idSub);
+                            con.Open();
+                            using (SqlCommand cmd = new SqlCommand())
+                            {
+                                cmd.Connection = con;
+                                foreach (ProceInfoAd p in ProceInfoAd.GetInfos().Where(x => x.Id == idInfo))
+                                {
+                                    foreach (ItemInfoAd i in ItemInfoAd.GetInfos().Where(x => x.Info == p.Id))
+                                    {
+                                        cmd.CommandText = @"DELETE FROM [dbo].[licitacion_info_ad_vinc] WHERE [id_info] =" + i.Info + ";";
+                                        cmd.ExecuteNonQuery();
+                                    }
+                                    cmd.CommandText = @"DELETE FROM [dbo].[licitacion_items_info_Ad] WHERE [id] =" + p.Id + ";";
+                                    cmd.ExecuteNonQuery();
+                                }
+                            }
                         }
+                        mostrarInfosProce(idSub);
+                    }
+                    catch (Exception ex) 
+                    {
+                        MessageBox.Show(ex.ToString());
                     }
                 }
             }
@@ -84,6 +100,11 @@ namespace AppLicitaciones
                 txt_nombre.Text = dgvInfos.Rows[e.RowIndex].Cells["nombreColumn"].Value.ToString();
                 txt_valor.Text = dgvInfos.Rows[e.RowIndex].Cells["valorColumn"].Value.ToString();
             }
+        }
+
+        private void Licitacion_Items_InfoAd_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btn_editar_Click(object sender, EventArgs e)

@@ -41,6 +41,8 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btn_guardar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_certificados = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.dgv_certificados = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,8 +52,6 @@
             this.dgv_vinculados = new System.Windows.Forms.DataGridView();
             this.idvinccertColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numvinccertColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_certificados = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_certificados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).BeginInit();
@@ -78,7 +78,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(335, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(90, 486);
+            this.toolStrip1.Size = new System.Drawing.Size(90, 467);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -172,6 +172,22 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(88, 15);
             this.toolStripLabel2.Text = "Terminar";
             // 
+            // btn_certificados
+            // 
+            this.btn_certificados.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_certificados.Image = ((System.Drawing.Image)(resources.GetObject("btn_certificados.Image")));
+            this.btn_certificados.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_certificados.Name = "btn_certificados";
+            this.btn_certificados.Size = new System.Drawing.Size(88, 54);
+            this.btn_certificados.Text = "toolStripButton1";
+            this.btn_certificados.Click += new System.EventHandler(this.btn_certificados_Click);
+            // 
+            // toolStripLabel1
+            // 
+            this.toolStripLabel1.Name = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(88, 15);
+            this.toolStripLabel1.Text = "Ir a Certificados";
+            // 
             // dgv_certificados
             // 
             this.dgv_certificados.AllowUserToAddRows = false;
@@ -255,22 +271,6 @@
             this.numvinccertColumn.ReadOnly = true;
             this.numvinccertColumn.Width = 250;
             // 
-            // btn_certificados
-            // 
-            this.btn_certificados.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_certificados.Image = ((System.Drawing.Image)(resources.GetObject("btn_certificados.Image")));
-            this.btn_certificados.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_certificados.Name = "btn_certificados";
-            this.btn_certificados.Size = new System.Drawing.Size(88, 54);
-            this.btn_certificados.Text = "toolStripButton1";
-            this.btn_certificados.Click += new System.EventHandler(this.btn_certificados_Click);
-            // 
-            // toolStripLabel1
-            // 
-            this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(88, 15);
-            this.toolStripLabel1.Text = "Ir a Certificados";
-            // 
             // Cucop_Vincular_Certificado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -284,6 +284,7 @@
             this.Name = "Cucop_Vincular_Certificado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Vincular_Certificado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cucop_Vincular_Certificado_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_certificados)).EndInit();

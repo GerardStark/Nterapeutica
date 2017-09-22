@@ -229,5 +229,10 @@ namespace AppLicitaciones
             
             newForm.Show();
         }
+
+        private void Cucop_Vincular_Certificado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

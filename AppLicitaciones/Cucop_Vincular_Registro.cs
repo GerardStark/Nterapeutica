@@ -301,5 +301,10 @@ namespace AppLicitaciones
             Registros_Principal newForm = new Registros_Principal();
             newForm.Show();
         }
+
+        private void Cucop_Vincular_Registro_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

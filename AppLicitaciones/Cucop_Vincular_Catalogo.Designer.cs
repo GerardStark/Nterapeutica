@@ -43,6 +43,8 @@
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
+            this.btn_catalogos = new System.Windows.Forms.ToolStripButton();
+            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.dgv_catalogos = new System.Windows.Forms.DataGridView();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,8 +55,6 @@
             this.dgv_vinculados = new System.Windows.Forms.DataGridView();
             this.idvinccatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numvinccatColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_catalogos = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_catalogos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).BeginInit();
@@ -83,7 +83,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(341, 18);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(80, 561);
+            this.toolStrip1.Size = new System.Drawing.Size(80, 542);
             this.toolStrip1.TabIndex = 5;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -193,6 +193,22 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(78, 15);
             this.toolStripLabel1.Text = "Referencias";
             // 
+            // btn_catalogos
+            // 
+            this.btn_catalogos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_catalogos.Image = ((System.Drawing.Image)(resources.GetObject("btn_catalogos.Image")));
+            this.btn_catalogos.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_catalogos.Name = "btn_catalogos";
+            this.btn_catalogos.Size = new System.Drawing.Size(78, 54);
+            this.btn_catalogos.Text = "toolStripButton2";
+            this.btn_catalogos.Click += new System.EventHandler(this.btn_catalogos_Click);
+            // 
+            // toolStripLabel7
+            // 
+            this.toolStripLabel7.Name = "toolStripLabel7";
+            this.toolStripLabel7.Size = new System.Drawing.Size(78, 15);
+            this.toolStripLabel7.Text = "Ir a Catalogos";
+            // 
             // dgv_catalogos
             // 
             this.dgv_catalogos.AllowUserToAddRows = false;
@@ -284,22 +300,6 @@
             this.numvinccatColumn.ReadOnly = true;
             this.numvinccatColumn.Width = 250;
             // 
-            // btn_catalogos
-            // 
-            this.btn_catalogos.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_catalogos.Image = ((System.Drawing.Image)(resources.GetObject("btn_catalogos.Image")));
-            this.btn_catalogos.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_catalogos.Name = "btn_catalogos";
-            this.btn_catalogos.Size = new System.Drawing.Size(78, 54);
-            this.btn_catalogos.Text = "toolStripButton2";
-            this.btn_catalogos.Click += new System.EventHandler(this.btn_catalogos_Click);
-            // 
-            // toolStripLabel7
-            // 
-            this.toolStripLabel7.Name = "toolStripLabel7";
-            this.toolStripLabel7.Size = new System.Drawing.Size(78, 15);
-            this.toolStripLabel7.Text = "Ir a Catalogos";
-            // 
             // Cucop_Vincular_Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -313,6 +313,7 @@
             this.Name = "Cucop_Vincular_Catalogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Vincular_Catalogo";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cucop_Vincular_Catalogo_FormClosing);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_catalogos)).EndInit();

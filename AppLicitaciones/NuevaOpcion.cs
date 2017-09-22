@@ -179,5 +179,21 @@ namespace AppLicitaciones
                 }
             }
         }
+
+        private void btn_quitar_carta_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(@"UPDATE cucop_vinculos SET carta_apoyo = @carta WHERE id_vinculacion = @idVinc", con))
+                {
+                    cmd.Parameters.AddWithValue("@idVinc", idVinculo);
+                    cmd.Parameters.AddWithValue("@carta", DBNull.Value);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Removido");
+                    txt_carta.Text = "";
+                }
+            }
+        }
     }
 }

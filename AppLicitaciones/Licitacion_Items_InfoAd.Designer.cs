@@ -180,6 +180,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Licitacion_Items_InfoAd";
             this.Text = "Licitacion_Items_InfoAd";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Licitacion_Items_InfoAd_FormClosing);
             this.tt_reg_editar.ResumeLayout(false);
             this.tt_reg_editar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInfos)).EndInit();

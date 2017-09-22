@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Tecnica));
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProcedimientos = new System.Windows.Forms.DataGridView();
@@ -38,11 +38,6 @@
             this.numSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomSubColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvItems = new System.Windows.Forms.DataGridView();
-            this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_proc_nuevo = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -68,6 +63,14 @@
             this.lbl_proces = new System.Windows.Forms.Label();
             this.lbl_items = new System.Windows.Forms.Label();
             this.lbl_itemssr = new System.Windows.Forms.Label();
+            this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.docsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btn_preguntas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -96,8 +99,8 @@
             this.dgvProcedimientos.Name = "dgvProcedimientos";
             this.dgvProcedimientos.ReadOnly = true;
             this.dgvProcedimientos.RowHeadersVisible = false;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvProcedimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcedimientos.Size = new System.Drawing.Size(705, 180);
             this.dgvProcedimientos.TabIndex = 3;
@@ -145,54 +148,20 @@
             this.idSubParentColumn,
             this.unidadColumn,
             this.descItemColumn,
+            this.docsColumn,
             this.updatedColumn});
             this.dgvItems.Location = new System.Drawing.Point(12, 240);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1255, 429);
             this.dgvItems.TabIndex = 4;
             this.dgvItems.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvItems_CellClick);
             this.dgvItems.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvItems_CellFormatting);
-            // 
-            // idItemColumn
-            // 
-            this.idItemColumn.HeaderText = "#";
-            this.idItemColumn.Name = "idItemColumn";
-            this.idItemColumn.ReadOnly = true;
-            this.idItemColumn.Width = 75;
-            // 
-            // idSubParentColumn
-            // 
-            this.idSubParentColumn.HeaderText = "Subpartida";
-            this.idSubParentColumn.Name = "idSubParentColumn";
-            this.idSubParentColumn.ReadOnly = true;
-            this.idSubParentColumn.Width = 125;
-            // 
-            // unidadColumn
-            // 
-            this.unidadColumn.HeaderText = "Unidad de Venta";
-            this.unidadColumn.Name = "unidadColumn";
-            this.unidadColumn.ReadOnly = true;
-            this.unidadColumn.Width = 150;
-            // 
-            // descItemColumn
-            // 
-            this.descItemColumn.HeaderText = "Descripcion";
-            this.descItemColumn.Name = "descItemColumn";
-            this.descItemColumn.ReadOnly = true;
-            this.descItemColumn.Width = 450;
-            // 
-            // updatedColumn
-            // 
-            this.updatedColumn.HeaderText = "Actualizado";
-            this.updatedColumn.Name = "updatedColumn";
-            this.updatedColumn.ReadOnly = true;
-            this.updatedColumn.Visible = false;
             // 
             // label1
             // 
@@ -249,7 +218,7 @@
             // 
             this.btn_item_nuevo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_nuevo.BackgroundImage")));
             this.btn_item_nuevo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_nuevo.Location = new System.Drawing.Point(968, 187);
+            this.btn_item_nuevo.Location = new System.Drawing.Point(958, 187);
             this.btn_item_nuevo.Name = "btn_item_nuevo";
             this.btn_item_nuevo.Size = new System.Drawing.Size(35, 35);
             this.btn_item_nuevo.TabIndex = 10;
@@ -260,7 +229,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(957, 223);
+            this.label5.Location = new System.Drawing.Point(947, 223);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 11;
@@ -270,7 +239,7 @@
             // 
             this.btn_oferta.BackgroundImage = global::AppLicitaciones.Iconos.android_note;
             this.btn_oferta.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_oferta.Location = new System.Drawing.Point(1131, 187);
+            this.btn_oferta.Location = new System.Drawing.Point(1121, 187);
             this.btn_oferta.Name = "btn_oferta";
             this.btn_oferta.Size = new System.Drawing.Size(35, 35);
             this.btn_oferta.TabIndex = 14;
@@ -281,7 +250,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1134, 225);
+            this.label7.Location = new System.Drawing.Point(1124, 225);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(32, 13);
             this.label7.TabIndex = 15;
@@ -334,7 +303,7 @@
             // 
             this.btn_item_borrar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_borrar.BackgroundImage")));
             this.btn_item_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_borrar.Location = new System.Drawing.Point(1183, 187);
+            this.btn_item_borrar.Location = new System.Drawing.Point(1173, 187);
             this.btn_item_borrar.Name = "btn_item_borrar";
             this.btn_item_borrar.Size = new System.Drawing.Size(35, 35);
             this.btn_item_borrar.TabIndex = 20;
@@ -345,7 +314,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(1183, 225);
+            this.label10.Location = new System.Drawing.Point(1173, 225);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(35, 13);
             this.label10.TabIndex = 21;
@@ -355,7 +324,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1024, 225);
+            this.label6.Location = new System.Drawing.Point(1014, 225);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 23;
@@ -365,7 +334,7 @@
             // 
             this.btn_item_editar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_item_editar.BackgroundImage")));
             this.btn_item_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_item_editar.Location = new System.Drawing.Point(1023, 187);
+            this.btn_item_editar.Location = new System.Drawing.Point(1013, 187);
             this.btn_item_editar.Name = "btn_item_editar";
             this.btn_item_editar.Size = new System.Drawing.Size(35, 35);
             this.btn_item_editar.TabIndex = 22;
@@ -376,7 +345,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(1076, 225);
+            this.label11.Location = new System.Drawing.Point(1066, 225);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 25;
@@ -386,7 +355,7 @@
             // 
             this.btn_filtrar.BackgroundImage = global::AppLicitaciones.Iconos.search;
             this.btn_filtrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_filtrar.Location = new System.Drawing.Point(1079, 187);
+            this.btn_filtrar.Location = new System.Drawing.Point(1069, 187);
             this.btn_filtrar.Name = "btn_filtrar";
             this.btn_filtrar.Size = new System.Drawing.Size(35, 35);
             this.btn_filtrar.TabIndex = 24;
@@ -447,11 +416,76 @@
             this.lbl_itemssr.TabIndex = 31;
             this.lbl_itemssr.Text = "label17";
             // 
+            // idItemColumn
+            // 
+            this.idItemColumn.HeaderText = "#";
+            this.idItemColumn.Name = "idItemColumn";
+            this.idItemColumn.ReadOnly = true;
+            this.idItemColumn.Width = 75;
+            // 
+            // idSubParentColumn
+            // 
+            this.idSubParentColumn.HeaderText = "Subpartida";
+            this.idSubParentColumn.Name = "idSubParentColumn";
+            this.idSubParentColumn.ReadOnly = true;
+            this.idSubParentColumn.Width = 125;
+            // 
+            // unidadColumn
+            // 
+            this.unidadColumn.HeaderText = "Unidad de Venta";
+            this.unidadColumn.Name = "unidadColumn";
+            this.unidadColumn.ReadOnly = true;
+            this.unidadColumn.Width = 150;
+            // 
+            // descItemColumn
+            // 
+            this.descItemColumn.HeaderText = "Descripcion";
+            this.descItemColumn.Name = "descItemColumn";
+            this.descItemColumn.ReadOnly = true;
+            this.descItemColumn.Width = 450;
+            // 
+            // docsColumn
+            // 
+            this.docsColumn.HeaderText = "Documentación";
+            this.docsColumn.Name = "docsColumn";
+            this.docsColumn.ReadOnly = true;
+            this.docsColumn.Width = 300;
+            // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1224, 223);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Junta a.";
+            // 
+            // btn_preguntas
+            // 
+            this.btn_preguntas.BackgroundImage = global::AppLicitaciones.Iconos.help;
+            this.btn_preguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_preguntas.Location = new System.Drawing.Point(1228, 187);
+            this.btn_preguntas.Name = "btn_preguntas";
+            this.btn_preguntas.Size = new System.Drawing.Size(35, 35);
+            this.btn_preguntas.TabIndex = 32;
+            this.btn_preguntas.UseVisualStyleBackColor = true;
+            this.btn_preguntas.Click += new System.EventHandler(this.btn_preguntas_Click);
+            // 
             // Licitacion_Tecnica
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 681);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.btn_preguntas);
             this.Controls.Add(this.lbl_itemssr);
             this.Controls.Add(this.lbl_items);
             this.Controls.Add(this.lbl_proces);
@@ -518,11 +552,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idPartParentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numSubColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomSubColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idItemColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idSubParentColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.Label label12;
@@ -531,5 +560,13 @@
         private System.Windows.Forms.Label lbl_proces;
         private System.Windows.Forms.Label lbl_items;
         private System.Windows.Forms.Label lbl_itemssr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSubParentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn docsColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btn_preguntas;
     }
 }

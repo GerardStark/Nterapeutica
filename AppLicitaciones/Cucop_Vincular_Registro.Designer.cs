@@ -185,7 +185,7 @@
             this.toolStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             this.toolStrip1.Location = new System.Drawing.Point(342, 35);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(75, 561);
+            this.toolStrip1.Size = new System.Drawing.Size(75, 542);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -349,6 +349,7 @@
             this.Name = "Cucop_Vincular_Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cucop_Vincular_Registro";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Cucop_Vincular_Registro_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_vinculados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
             this.toolStrip1.ResumeLayout(false);
