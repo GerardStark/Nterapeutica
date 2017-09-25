@@ -37,10 +37,13 @@
             this.catálogosDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cuadroBasicoDelIMSSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fabricantesTitularesDistribuidoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manualesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noSeQueEstoyHaciendoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesosDeLicitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impresionDeReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,11 +62,13 @@
             // 
             // licitacionesToolStripMenuItem
             // 
+            this.licitacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.procesosDeLicitacionToolStripMenuItem,
+            this.impresionDeReportesToolStripMenuItem});
             this.licitacionesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("licitacionesToolStripMenuItem.Image")));
             this.licitacionesToolStripMenuItem.Name = "licitacionesToolStripMenuItem";
             this.licitacionesToolStripMenuItem.Size = new System.Drawing.Size(118, 25);
             this.licitacionesToolStripMenuItem.Text = "Licitaciones";
-            this.licitacionesToolStripMenuItem.Click += new System.EventHandler(this.licitacionesToolStripMenuItem_Click);
             // 
             // bancoDeDatosToolStripMenuItem
             // 
@@ -72,7 +77,8 @@
             this.certificadosDeCalidadToolStripMenuItem,
             this.catálogosDeProductosToolStripMenuItem,
             this.cuadroBasicoDelIMSSToolStripMenuItem,
-            this.fabricantesTitularesDistribuidoresToolStripMenuItem});
+            this.fabricantesTitularesDistribuidoresToolStripMenuItem,
+            this.especialistasToolStripMenuItem});
             this.bancoDeDatosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("bancoDeDatosToolStripMenuItem.Image")));
             this.bancoDeDatosToolStripMenuItem.Name = "bancoDeDatosToolStripMenuItem";
             this.bancoDeDatosToolStripMenuItem.Size = new System.Drawing.Size(145, 25);
@@ -113,6 +119,13 @@
             this.fabricantesTitularesDistribuidoresToolStripMenuItem.Text = "Cartas de Apoyo/Marcas";
             this.fabricantesTitularesDistribuidoresToolStripMenuItem.Click += new System.EventHandler(this.fabricantesTitularesDistribuidoresToolStripMenuItem_Click);
             // 
+            // especialistasToolStripMenuItem
+            // 
+            this.especialistasToolStripMenuItem.Name = "especialistasToolStripMenuItem";
+            this.especialistasToolStripMenuItem.Size = new System.Drawing.Size(250, 26);
+            this.especialistasToolStripMenuItem.Text = "Especialistas";
+            this.especialistasToolStripMenuItem.Click += new System.EventHandler(this.especialistasToolStripMenuItem_Click);
+            // 
             // ayudaToolStripMenuItem
             // 
             this.ayudaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -141,6 +154,20 @@
             this.noSeQueEstoyHaciendoToolStripMenuItem.Name = "noSeQueEstoyHaciendoToolStripMenuItem";
             this.noSeQueEstoyHaciendoToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
             this.noSeQueEstoyHaciendoToolStripMenuItem.Text = "No se que estoy haciendo";
+            // 
+            // procesosDeLicitacionToolStripMenuItem
+            // 
+            this.procesosDeLicitacionToolStripMenuItem.Name = "procesosDeLicitacionToolStripMenuItem";
+            this.procesosDeLicitacionToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.procesosDeLicitacionToolStripMenuItem.Text = "Procesos de Licitacion";
+            this.procesosDeLicitacionToolStripMenuItem.Click += new System.EventHandler(this.procesosDeLicitacionToolStripMenuItem_Click);
+            // 
+            // impresionDeReportesToolStripMenuItem
+            // 
+            this.impresionDeReportesToolStripMenuItem.Name = "impresionDeReportesToolStripMenuItem";
+            this.impresionDeReportesToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.impresionDeReportesToolStripMenuItem.Text = "Impresion de Reportes";
+            this.impresionDeReportesToolStripMenuItem.Click += new System.EventHandler(this.impresionDeReportesToolStripMenuItem_Click);
             // 
             // Form_Principal
             // 
@@ -177,5 +204,8 @@
         private System.Windows.Forms.ToolStripMenuItem informacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem noSeQueEstoyHaciendoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fabricantesTitularesDistribuidoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem especialistasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procesosDeLicitacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem impresionDeReportesToolStripMenuItem;
     }
 }

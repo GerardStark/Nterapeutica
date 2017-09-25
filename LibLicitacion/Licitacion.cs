@@ -225,6 +225,38 @@ namespace LibLicitacion
         //objeto donde se almacenan las bases
         static private List<Licitacion> AllBases = new List<Licitacion>();
 
+        //Licitaciones Activas
+        //static public List<Licitacion> GetActivas()
+        //{
+        //    Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+        //    List<Licitacion> activas = new List<Licitacion>();
+        //    foreach (Licitacion l in GetBases())
+        //    {
+        //        if (l.calendarios.Single().Firma <= DateTime.Today && !yaAgregado.ContainsKey(l.Id))
+        //        {
+        //            yaAgregado[l.Id] = true;
+        //            activas.Add(l);
+        //        }
+        //    }
+        //    return activas;
+        //}
+
+        ////Licitaciones Concluidas
+        //static public List<Licitacion> GetConcluidas()
+        //{
+        //    Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+        //    List<Licitacion> concluidas = new List<Licitacion>();
+        //    foreach (Licitacion l in GetBases())
+        //    {
+        //        if (l.calendarios.Single().Firma > DateTime.Today && !yaAgregado.ContainsKey(l.Id))
+        //        {
+        //            yaAgregado[l.Id] = true;
+        //            concluidas.Add(l);
+        //        }
+        //    }
+        //    return concluidas;
+        //}
+
         //obtener partidas correspondientes a cada base
         public List<Partida> Partidas
         {

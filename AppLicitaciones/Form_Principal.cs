@@ -159,7 +159,22 @@ namespace AppLicitaciones
             newForm.Show();
         }
 
-        private void licitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void especialistasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(Especialistas_Principal))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Especialistas_Principal newForm = new Especialistas_Principal();
+            newForm.Show();
+        }
+
+        private void procesosDeLicitacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (Form form in Application.OpenForms)
             {
@@ -171,6 +186,22 @@ namespace AppLicitaciones
             }
 
             Licitaciones_Princpial newForm = new Licitaciones_Princpial();
+            //newForm.MdiParent = this;            
+            newForm.Show();
+        }
+
+        private void impresionDeReportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType() == typeof(Licitacion_Reportes))
+                {
+                    form.Activate();
+                    return;
+                }
+            }
+
+            Licitacion_Reportes newForm = new Licitacion_Reportes();
             //newForm.MdiParent = this;            
             newForm.Show();
         }
