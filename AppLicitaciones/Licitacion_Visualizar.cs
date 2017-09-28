@@ -37,7 +37,7 @@ namespace AppLicitaciones
                     adapt.Fill(dt);
                     if (dt.Rows.Count > 0)
                     {
-                        lbl_tipo.Text = dt.Rows[0]["tipo_licitacion"].ToString();
+                        
                         lbl_numero.Text = dt.Rows[0]["numero_licitacion"].ToString();
                         lbl_unidad.Text = dt.Rows[0]["unidad_compradora"].ToString();
                         lbl_entidad.Text = obtenerNombreEntidadFederativa((Int32)dt.Rows[0]["entidad_federativa"]);//obtener texto
@@ -189,7 +189,7 @@ namespace AppLicitaciones
         {
             Licitacion_Editar form = new Licitacion_Editar();
             form.llenarFormularioEdicionLicitacion(idLicit);
-            form.pasarTipoLicitacion(lbl_tipo.Text);
+           
             DialogResult result = form.ShowDialog();
             if (result == DialogResult.OK)
             {

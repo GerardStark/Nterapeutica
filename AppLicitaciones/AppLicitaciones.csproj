@@ -64,6 +64,9 @@
     <Reference Include="itextsharp, Version=5.5.12.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
       <HintPath>..\packages\iTextSharp.5.5.12\lib\itextsharp.dll</HintPath>
     </Reference>
+    <Reference Include="ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=MSIL">
+      <HintPath>..\packages\ObjectListView.Official.2.9.1\lib\net20\ObjectListView.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -468,12 +471,6 @@
     <Compile Include="Registros_Editar.Designer.cs">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_AvanceLicitacion.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_AvanceLicitacion.Designer.cs">
-      <DependentUpon>Reporte_AvanceLicitacion.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte_CatFaltGral.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -521,6 +518,12 @@
     </Compile>
     <Compile Include="Reporte_ListaCartas.Designer.cs">
       <DependentUpon>Reporte_ListaCartas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reporte_Principal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Reporte_Principal.Designer.cs">
+      <DependentUpon>Reporte_Principal.cs</DependentUpon>
     </Compile>
     <Compile Include="Reporte_Referencias.cs">
       <SubType>UserControl</SubType>
@@ -757,9 +760,6 @@
     <EmbeddedResource Include="Registros_Editar.resx">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_AvanceLicitacion.resx">
-      <DependentUpon>Reporte_AvanceLicitacion.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporte_CatFaltGral.resx">
       <DependentUpon>Reporte_CatFaltGral.cs</DependentUpon>
     </EmbeddedResource>
@@ -783,6 +783,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_ListaCartas.resx">
       <DependentUpon>Reporte_ListaCartas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reporte_Principal.resx">
+      <DependentUpon>Reporte_Principal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_Referencias.resx">
       <DependentUpon>Reporte_Referencias.cs</DependentUpon>
@@ -844,10 +847,6 @@
     <ProjectReference Include="..\LibLicitacion\LibLicitacion.csproj">
       <Project>{48ad9fd2-4856-4a38-93ec-d34ad2e5d06b}</Project>
       <Name>LibLicitacion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ObjectListView\ObjectListView2012.csproj">
-      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
-      <Name>ObjectListView2012</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

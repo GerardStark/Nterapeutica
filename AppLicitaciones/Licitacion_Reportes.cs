@@ -23,8 +23,8 @@ namespace AppLicitaciones
             InitializeComponent();
             string[] reportes = {
                 "Seleccionar...",
-                "% de avance en la licitación",
-                "Información de las bases",
+                "Información y Avance de las Licitaciones",
+                "Lista de Cartas de Apoyo",                
                 "Registros vencidos por carta de apoyo",
                 "Registros vencidos en general",
                 "Registros por vencer por canta de apoyo",
@@ -34,8 +34,7 @@ namespace AppLicitaciones
                 "Certificados vencidos por carta de apoyo",
                 "Certificados vencidos en general",
                 "Certificados por vencer por canta de apoyo",
-                "Certificados por vencer en general",
-                "Lista de Cartas de Apoyo",
+                "Certificados por vencer en general",                
                 "Referencias",    
             };
             mc.llenarcombobox(reportes,cmbRep);
@@ -84,40 +83,7 @@ namespace AppLicitaciones
         {
             cmbRep.SelectedIndex = 0;
             //radAct.Checked = true;           
-        }
-
-        private void radioEstadosLicic(object sender, EventArgs e)
-        {
-            
-            //var bases = Licitacion.GetBases();
-            //RadioButton rad = sender as RadioButton;
-            //if (rad.Name == "radAct")
-            //{
-            //    for (int i = 0; i < bases.Count; i++)
-            //    {
-            //        if (bases[i].Calendarios.Single().Firma > DateTime.Today)
-            //        {
-            //            ComboboxItem item = new ComboboxItem();
-            //            item.Text = bases[i].NumeroLicitacion;
-            //            item.Value = i + 1;
-            //            ((ComboBox)flpDatos.Controls["cmbNumLicit"]).Items.Add(item);
-            //        }
-            //    }
-            //}
-            //else if (rad.Name == "radConc")
-            //{
-            //    for (int i = 0; i < bases.Count; i++)
-            //    {
-            //        if (bases[i].Calendarios.Single().Firma < DateTime.Today)
-            //        {
-            //            ComboboxItem item = new ComboboxItem();
-            //            item.Text = bases[i].NumeroLicitacion;
-            //            item.Value = i + 1;
-            //            ((ComboBox)flpDatos.Controls["cmbNumLicit"]).Items.Add(item);
-            //        }
-            //    }
-            //}
-        }
+        }        
 
         private void cmbRep_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -133,8 +99,8 @@ namespace AppLicitaciones
                         pnlFormatReport.Controls.Add(infoLic);
                         break;
                     case 2:
-                        Reporte_AvanceLicitacion avLic = new Reporte_AvanceLicitacion();
-                        pnlFormatReport.Controls.Add(avLic);
+                        Reporte_ListaCartas  liCa= new Reporte_ListaCartas();
+                        pnlFormatReport.Controls.Add(liCa);
                         break;
                     case 3:
                         Reporte_RegVencPorCarta reVPC = new Reporte_RegVencPorCarta();
@@ -177,13 +143,9 @@ namespace AppLicitaciones
                         pnlFormatReport.Controls.Add(ceXFGral);
                         break;
                     case 13:
-                        Reporte_ListaCartas  liCa= new Reporte_ListaCartas();
-                        pnlFormatReport.Controls.Add(liCa);
-                        break;
-                    case 14:
-                        Reporte_Referencias  refRep= new Reporte_Referencias();
+                        Reporte_Referencias refRep = new Reporte_Referencias();
                         pnlFormatReport.Controls.Add(refRep);
-                        break;
+                        break;               
                 }
             }
         }        

@@ -65,7 +65,7 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@tipoContrat", txt_tipo_contrato.Text);
                         cmd.Parameters.AddWithValue("@estado", 0);
                         cmd.Parameters.AddWithValue("@expediente", txt_num_expediente.Text);
-                        cmd.Parameters.AddWithValue("@tipoLic", tipoLic);
+                        cmd.Parameters.AddWithValue("@tipoLic", "");
                         cmd.Parameters.AddWithValue("@tipoExp", cmb_tipo_exp.SelectedValue);
                         cmd.Parameters.AddWithValue("@nombre", txt_nombre_operador.Text);
                         cmd.Parameters.AddWithValue("@email", txt_correo_operador.Text);

@@ -803,6 +803,8 @@ namespace LibLicitacion
                             i.Ccb = dr["codigo_cuadro_basico"].ToString();
                             i.Nombre = (string)dr["descripcion"];
                             i.Unidad = (string)dr["unidad_venta"];
+                            i.Cantidad = (long)dr["cantidad"];
+                            i.Contenedor = dr["contenedor"].ToString();
                             i.Minimo = (long)dr["minimo"];
                             i.Maximo = (long)dr["maximo"];
                             i.Created = (DateTime)dr["creado_en"];
@@ -1059,6 +1061,20 @@ namespace LibLicitacion
 
         private List<VinculoCatalogos> catalogos;
 
+        static public List<CucopVinculos> GetVinculacionesPorCarta(int carta)
+        {
+            Dictionary<int, bool> yaAgregado = new Dictionary<int, bool>();
+            List<CucopVinculos> vinculaciones = new List<CucopVinculos>();
+            foreach (CucopVinculos v in CucopVinculos.GetVinculaciones())
+            {
+                if (v.CartaApoyo == carta && !yaAgregado.ContainsKey(v.id))
+                {
+                    yaAgregado[v.id] = true;
+                    vinculaciones.Add(new CucopVinculos(v.Id, v.Opcion, v.IdItem, v.Nombre, v.CartaApoyo, v.Created, v.Updated));
+                }
+            }
+            return vinculaciones;
+        }
     }
 
     public class VinculoRegistros
@@ -2381,6 +2397,152 @@ namespace LibLicitacion
             return infos;
         }
 
+    }
+
+    public class Carta
+    {
+        public Carta()
+        {
+
+        }
+
+        public Carta(int id, string nombre, string apoyo, string mayorista, string rfc, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Nombre = nombre;
+            this.Apoyo = apoyo;
+            this.Mayorista = mayorista;
+            this.RFC = rfc;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        private string nombre;
+
+        public string Apoyo
+        {
+            get { return apoyo; }
+            set { apoyo = value; }
+        }
+
+        private string apoyo;
+
+        public string Mayorista
+        {
+            get { return mayorista; }
+            set { mayorista = value; }
+        }
+
+        private string mayorista;
+
+        public string RFC
+        {
+            get { return rfc; }
+            set { rfc = value; }
+        }
+
+        private string rfc;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        public static List<Carta> GetCartas()
+        {
+            Carta.AllCartas.Clear();
+            if (Carta.AllCartas.Count == 0)
+                Carta.AllCartas = Carta.InicializarCartas();
+            return Carta.AllCartas;
+        }
+
+        private static List<Carta> InicializarCartas()
+        {
+            MainConfig mc = new MainConfig();
+            List<Carta> cartas = new List<Carta>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM fabricantes_titulares_distribuidores";
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            Carta c = new Carta();
+                            c.Id = (Int32)dr["id_ftd"];
+                            c.Nombre = dr["nombre"].ToString();
+                            c.Apoyo = dr["tipo_apoyo"].ToString();
+                            c.Mayorista = dr["distribuidor_mayorista"].ToString();
+                            c.RFC = dr["rfc"].ToString();
+                            c.Created = (DateTime)dr["creado_en"];
+                            c.Updated = (DateTime)dr["actualizado_en"];
+                            cartas.Add(c);
+                        }
+                    }
+
+                }
+            }
+            return cartas;
+        }
+
+        private static List<Carta> AllCartas = new List<Carta>();
+
+        public List<CucopVinculos> Vinculos
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.vinculos = CucopVinculos.GetVinculacionesPorCarta(this.Id);
+                return vinculos;
+            }
+        }
+
+        private List<CucopVinculos> vinculos;
+
+        public List<Item> ItemsPorLicitacion(int licit)
+        {
+            List<CucopVinculos> vinculos = Licitacion.GetBases().FirstOrDefault(x => x.Id == licit).Partidas.SelectMany(x => x.Procedimientos).SelectMany(x => x.Items).SelectMany(x => x.Vinculos).Where(x => x.CartaApoyo == this.Id).ToList();
+            foreach (CucopVinculos vinc in vinculos)
+            {
+                if (Item.GetItems().Where(x => x.Id.Equals(vinc.IdItem)).Any())
+                {
+                    this.itemsporlicit.Add(Item.GetItems().Where(x => x.Id.Equals(vinc.IdItem)).Single());
+                }
+            }
+            return itemsporlicit;
+        }
+
+        private List<Item> itemsporlicit = new List<Item>();
     }
 
 

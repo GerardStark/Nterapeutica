@@ -52,8 +52,6 @@
             this.lbl_operador = new System.Windows.Forms.Label();
             this.lbl_correo = new System.Windows.Forms.Label();
             this.lbl_desc = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lbl_tipo = new System.Windows.Forms.Label();
             this.tt_reg_editar = new System.Windows.Forms.ToolStrip();
             this.btn_reg_guardar = new System.Windows.Forms.ToolStripButton();
             this.btn_reg_editar = new System.Windows.Forms.ToolStripButton();
@@ -282,24 +280,6 @@
             this.lbl_desc.TabIndex = 77;
             this.lbl_desc.Text = "label23";
             // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(57, 14);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(117, 16);
-            this.label13.TabIndex = 78;
-            this.label13.Text = "Tipo de Licitacion:";
-            // 
-            // lbl_tipo
-            // 
-            this.lbl_tipo.AutoSize = true;
-            this.lbl_tipo.Location = new System.Drawing.Point(180, 14);
-            this.lbl_tipo.Name = "lbl_tipo";
-            this.lbl_tipo.Size = new System.Drawing.Size(52, 16);
-            this.lbl_tipo.TabIndex = 79;
-            this.lbl_tipo.Text = "label13";
-            // 
             // tt_reg_editar
             // 
             this.tt_reg_editar.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -506,8 +486,6 @@
             this.Controls.Add(this.lblApertura);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tt_reg_editar);
-            this.Controls.Add(this.lbl_tipo);
-            this.Controls.Add(this.label13);
             this.Controls.Add(this.lbl_desc);
             this.Controls.Add(this.lbl_correo);
             this.Controls.Add(this.lbl_operador);
@@ -568,8 +546,6 @@
         private System.Windows.Forms.Label lbl_operador;
         private System.Windows.Forms.Label lbl_correo;
         private System.Windows.Forms.Label lbl_desc;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lbl_tipo;
         private System.Windows.Forms.ToolStrip tt_reg_editar;
         private System.Windows.Forms.ToolStripButton btn_reg_guardar;
         private System.Windows.Forms.ToolStripButton btn_reg_editar;

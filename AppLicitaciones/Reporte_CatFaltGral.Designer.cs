@@ -35,7 +35,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "Reporte_CatFaltGral";
-            this.Size = new System.Drawing.Size(1210, 557);
+            this.Size = new System.Drawing.Size(1210, 618);
             this.ResumeLayout(false);
 
         }

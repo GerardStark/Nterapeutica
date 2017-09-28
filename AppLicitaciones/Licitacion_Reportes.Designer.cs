@@ -59,14 +59,14 @@
             // 
             this.pnlFormatReport.Location = new System.Drawing.Point(12, 42);
             this.pnlFormatReport.Name = "pnlFormatReport";
-            this.pnlFormatReport.Size = new System.Drawing.Size(1210, 557);
+            this.pnlFormatReport.Size = new System.Drawing.Size(1210, 618);
             this.pnlFormatReport.TabIndex = 1;
             // 
             // Licitacion_Reportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1234, 611);
+            this.ClientSize = new System.Drawing.Size(1234, 672);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pnlFormatReport);
             this.Controls.Add(this.cmbRep);
