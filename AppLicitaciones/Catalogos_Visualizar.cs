@@ -91,7 +91,35 @@ namespace AppLicitaciones
 
         private void btn_reg_borrar_Click(object sender, EventArgs e)
         {
-            //todo borrar catalogos
+            DialogResult result = MessageBox.Show("Esto Borrara toda la informacion relacionada al catalogo","¿Borrar Catalogo?",MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                var catalogo = CatalogoProductos.getCatalogos().Where(x => x.Id == id_catalogo).Single();
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        foreach (ReferenciaCatalogo reca in catalogo.Referencias)
+                        {
+                            cmd.CommandText = "DELETE FROM catalogos_claves_referencias WHERE id_clave_catalogo=" + reca.Id;
+                            cmd.ExecuteNonQuery();
+                        }
+
+                        foreach (TraduccionCatalogo trca in catalogo.Traducciones)
+                        {
+                            cmd.CommandText = "DELETE FROM catalogos_traducciones id_traduccion_cat=" + trca.Id;
+                            cmd.ExecuteNonQuery();
+
+                        }
+                        cmd.CommandText = "DELETE FROM catalogos_info_general WHERE id_catalogo=" + catalogo.Id;
+                        cmd.ExecuteNonQuery();
+                        MessageBox.Show("Catalogo Borrado");
+                        this.DialogResult = DialogResult.OK;
+                    }
+                }
+            }
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)

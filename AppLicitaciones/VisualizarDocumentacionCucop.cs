@@ -27,8 +27,8 @@ namespace AppLicitaciones
             foreach (VinculoRegistros re in opcion.Registros)
             {
                 LinkLabel l = new LinkLabel();
-                l.Text = RegistroSanitario.GetRegistros().Where(x => x.Id == re.Registro).Single().Numero;
-                l.Tag = re.Registro;
+                l.Text = RegistroSanitario.GetRegistros().Where(x => x.Id == re.Nombre).Single().Nombre;
+                l.Tag = re.Nombre;
                 l.LinkClicked += verRegistro;
                 pnl_reg.Controls.Add(l);
             }
@@ -45,8 +45,8 @@ namespace AppLicitaciones
             foreach (VinculoCertificados ce in opcion.Certificados)
             {
                 LinkLabel l = new LinkLabel();
-                l.Text = CertificadoCalidad.GetCertificados().Where(x => x.Id == ce.Certificado).Single().Numero;
-                l.Tag = ce.Certificado;
+                l.Text = CertificadoCalidad.GetCertificados().Where(x => x.Id == ce.Nombre).Single().Nombre;
+                l.Tag = ce.Nombre;
                 l.LinkClicked += verCertificado;
                 pnl_cer.Controls.Add(l);
             }

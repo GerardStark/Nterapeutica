@@ -18,7 +18,7 @@ namespace LibLicitacion
         public CertificadoCalidad(int id, string numero, string tipo, string descripcion, string fabricante, DateTime emision, DateTime vencimiento, string idioma, string archivo, string traduccion, DateTime creado, DateTime actualizado)
         {
             this.Id = id;
-            this.Numero = numero;
+            this.Nombre = numero;
             this.Tipo = tipo;
             this.Descripcion = descripcion;
             this.Fabricante = fabricante;
@@ -39,7 +39,7 @@ namespace LibLicitacion
 
         private int id;
 
-        public string Numero
+        public string Nombre
         {
             get {return numero; }
             set {numero = value; }
@@ -154,7 +154,7 @@ namespace LibLicitacion
                         {
                             CertificadoCalidad c = new CertificadoCalidad();
                             c.Id = Convert.ToInt32(dr["id_certificado"]);
-                            c.Numero = dr["numero_identificador"].ToString();
+                            c.Nombre = dr["numero_identificador"].ToString();
                             c.Tipo = dr["tipo"].ToString();
                             c.Descripcion = dr["descripcion_detallada"].ToString();
                             c.Fabricante = dr["fabricante"].ToString();                            

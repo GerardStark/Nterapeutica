@@ -19,7 +19,7 @@ namespace LibLicitacion
             string marca, int pais, DateTime emision, DateTime vencimiento, string archivo, DateTime creado, DateTime actualizado)
         {
             this.Id = id;
-            this.Numero = numero;
+            this.Nombre = numero;
             this.Solicitud = solicitud;
             this.Titular = titular;
             this.RFC = rfc;
@@ -43,7 +43,7 @@ namespace LibLicitacion
 
         private int id;
 
-        public string Numero
+        public string Nombre
         {
             get { return numero; }
             set { numero = value; }
@@ -182,7 +182,7 @@ namespace LibLicitacion
                         {
                             RegistroSanitario c = new RegistroSanitario();
                             c.Id = Convert.ToInt32(dr["id_registro"]);
-                            c.Numero = dr["numero_registro"].ToString();
+                            c.Nombre = dr["numero_registro"].ToString();
                             c.Solicitud = dr["numero_solicitud"].ToString();
                             c.Titular = dr["titular"].ToString();
                             c.RFC = dr["rfc"].ToString();
@@ -348,7 +348,7 @@ namespace LibLicitacion
                         foreach (DataRow dr in dt.Rows)
                         {
                             ReferenciaRegistro r = new ReferenciaRegistro();
-                            r.Id = (Int32)dr["id_vinculacion"];
+                            r.Id = (Int32)dr["id_clave_registro"];
                             r.Registro = (Int32)dr["id_registro_sanitario"];
                             r.Clave = dr["clave_ref_cod"].ToString();
                             r.Descripcion = dr["descripcion"].ToString();
@@ -486,7 +486,7 @@ namespace LibLicitacion
                         foreach (DataRow dr in dt.Rows)
                         {
                             ProrrogaRegistro p = new ProrrogaRegistro();
-                            p.Id = (Int32)dr["id_vinculacion"];
+                            p.Id = (Int32)dr["id_tramite_prorroga"];
                             p.Registro = (Int32)dr["id_registro_sanitario"];
                             p.Tramite = dr["numero_tramite"].ToString();
                             p.Emision = (DateTime)dr["fecha_emision"];

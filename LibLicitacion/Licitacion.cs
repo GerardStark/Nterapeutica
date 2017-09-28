@@ -1088,7 +1088,7 @@ namespace LibLicitacion
         {
             this.Id = id;
             this.CucopVinculo = cucopVinculo;
-            this.Registro = registro;
+            this.Nombre = registro;
             this.Created = creado;
             this.Updated = actualizado;
         }
@@ -1109,7 +1109,7 @@ namespace LibLicitacion
 
         private int cucopVinculo;
 
-        public int Registro
+        public int Nombre
         {
             get { return registro; }
             set { registro = value; }
@@ -1162,7 +1162,7 @@ namespace LibLicitacion
                             VinculoRegistros v = new VinculoRegistros();
                             v.Id = (Int32)dr["id"];
                             v.CucopVinculo = (Int32)dr["id_cucop_vinculo"];
-                            v.Registro = (Int32)dr["id_registro"];
+                            v.Nombre = (Int32)dr["id_registro"];
                             v.Created = (DateTime)dr["creado_en"];
                             v.Updated = (DateTime)dr["actualizado_en"];
                             registros.Add(v);
@@ -1188,7 +1188,7 @@ namespace LibLicitacion
                 if (v.CucopVinculo == cucopVinc && !yaAgregado.ContainsKey(v.id))
                 {
                     yaAgregado[v.id] = true;
-                    registros.Add(new VinculoRegistros(v.Id, v.CucopVinculo, v.Registro, v.Created, v.Updated));
+                    registros.Add(new VinculoRegistros(v.Id, v.CucopVinculo, v.Nombre, v.Created, v.Updated));
                 }
             }
             return registros;
@@ -1281,7 +1281,7 @@ namespace LibLicitacion
             using (SqlConnection con = new SqlConnection(mc.con))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM cucop_vinculos_catalogos_referencias", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM cucop_vinculos_registros_referencias", con))
                 {
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -1292,7 +1292,7 @@ namespace LibLicitacion
                         {
                             vinculoRegistroReferencia v = new vinculoRegistroReferencia();
                             v.Id = (Int32)dr["id"];
-                            v.VinculoRegistro = (Int32)dr["id_vinculo_catalogo"];
+                            v.VinculoRegistro = (Int32)dr["id_vinculo_registro"];
                             v.Referencia = (Int32)dr["id_referencia"];
                             v.Created = (DateTime)dr["creado_en"];
                             v.Updated = (DateTime)dr["actualizado_en"];
@@ -1316,10 +1316,10 @@ namespace LibLicitacion
             List<vinculoRegistroReferencia> referencias = new List<vinculoRegistroReferencia>();
             foreach (vinculoRegistroReferencia v in vinculoRegistroReferencia.GetVinculoRegistroReferencias())
             {
-                if (v.VinculoRegistro == vincreg && !yaAgregado.ContainsKey(v.id))
+                if (v.VinculoRegistro == vincreg && !yaAgregado.ContainsKey(v.Id))
                 {
-                    yaAgregado[v.id] = true;
-                    referencias.Add(v);
+                    yaAgregado[v.Id] = true;
+                    referencias.Add(new vinculoRegistroReferencia(v.Id, v.VinculoRegistro, v.Referencia, v.Created, v.Updated));
                 }
             }
             return referencias;
@@ -1338,7 +1338,7 @@ namespace LibLicitacion
         {
             this.Id = id;
             this.CucopVinculo = cucopVinculo;
-            this.Certificado = certificado;
+            this.Nombre = certificado;
             this.Created = creado;
             this.Updated = actualizado;
         }
@@ -1359,7 +1359,7 @@ namespace LibLicitacion
 
         private int cucopVinculo;
 
-        public int Certificado
+        public int Nombre
         {
             get { return certificado; }
             set { certificado = value; }
@@ -1412,7 +1412,7 @@ namespace LibLicitacion
                             VinculoCertificados v = new VinculoCertificados();
                             v.Id = (Int32)dr["id"];
                             v.CucopVinculo = (Int32)dr["id_cucop_vinculo"];
-                            v.Certificado = (Int32)dr["id_certificados"];
+                            v.Nombre = (Int32)dr["id_certificados"];
                             v.Created = (DateTime)dr["creado_en"];
                             v.Updated = (DateTime)dr["actualizado_en"];
                             certificados.Add(v);
@@ -1438,7 +1438,7 @@ namespace LibLicitacion
                 if (v.CucopVinculo == cucopVinc && !yaAgregado.ContainsKey(v.id))
                 {
                     yaAgregado[v.id] = true;
-                    certificados.Add(new VinculoCertificados(v.Id, v.CucopVinculo, v.Certificado, v.Created, v.Updated));
+                    certificados.Add(new VinculoCertificados(v.Id, v.CucopVinculo, v.Nombre, v.Created, v.Updated));
                 }
             }
             return certificados;

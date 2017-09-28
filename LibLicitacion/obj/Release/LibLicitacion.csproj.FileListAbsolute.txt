@@ -7,3 +7,5 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Release\LibLicitacion.csproj.CoreCompileInputs.cache
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\itextsharp.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\itextsharp.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\ObjectListView.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\ObjectListView.xml

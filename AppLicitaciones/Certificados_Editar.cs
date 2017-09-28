@@ -195,12 +195,13 @@ namespace AppLicitaciones
         private void btn_reg_guardar_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(mc.con);
-            SqlCommand cmd = new SqlCommand(@"IF NOT EXISTS (SELECT numero_identificador,tipo,fabricante FROM certificados_calidad WHERE numero_identificador = @clave AND tipo = @tipo AND fabricante =@fabr)
+            SqlCommand cmd = new SqlCommand(@"
                 BEGIN
                     UPDATE certificados_calidad SET numero_identificador = @clave, tipo = @tipo,descripcion_detallada = @desc,fabricante = @fabr,
-                    fecha_emision = @emision,fecha_vencimiento = @vencimento,idioma = @idioma,dir_archivo = @archivo,dir_archivo_traduccion = @trad ,actualizado_en = @updated
+                    fecha_emision = @emision,fecha_vencimiento = @vencimento,idioma = @idioma,dir_archivo = @archivo, dir_archivo_traduccion = @trad ,actualizado_en = @updated
                     WHERE id_certificado = @id 
                 END", con);
+            con.Open();
             cmd.Parameters.AddWithValue("@id", id_certificado);
             cmd.Parameters.AddWithValue("@clave", txt_clave.Text.ToUpper());
             cmd.Parameters.AddWithValue("@tipo", (cmb_tipo.SelectedItem as ComboboxItem).Text);
@@ -212,7 +213,7 @@ namespace AppLicitaciones
             cmd.Parameters.AddWithValue("@archivo", lbl_archivo.Text);
             cmd.Parameters.AddWithValue("@trad", lbl_trad.Text);
             cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-            con.Open();
+            
             cmd.ExecuteNonQuery();
             mc.crearDirectorios(archivo, fileName, id_certificado, "Certificados-Calidad");
             mc.crearDirectorios(archivotrad, fileNametrad, id_certificado, "Certificados-Calidad");

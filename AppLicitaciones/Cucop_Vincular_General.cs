@@ -129,7 +129,7 @@ namespace AppLicitaciones
                                 cmd.CommandText = @"cucop_vinculos_registros_insert";
                                 cmd.Parameters.Clear();
                                 cmd.Parameters.AddWithValue("@idVinculo", idVinc);
-                                cmd.Parameters.AddWithValue("@idRegistro", re.Registro);
+                                cmd.Parameters.AddWithValue("@idRegistro", re.Nombre);
                                 cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                                 Int32 idVincReg = (Int32)cmd.ExecuteScalar();
                                 foreach (vinculoRegistroReferencia rerf in re.Referencias)
@@ -167,7 +167,7 @@ namespace AppLicitaciones
                                 cmd.CommandText = @"cucop_vinculos_certificados_insert";
                                 cmd.Parameters.Clear();
                                 cmd.Parameters.AddWithValue("@idVinculo", idVinc);
-                                cmd.Parameters.AddWithValue("@idCertificado", ce.Certificado);
+                                cmd.Parameters.AddWithValue("@idCertificado", ce.Nombre);
                                 cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                                 cmd.ExecuteNonQuery();
                             }
