@@ -228,10 +228,10 @@ namespace AppLicitaciones
                                 {
                                     foreach (vinculoRegistroReferencia reref in vre.Referencias)
                                     {
-                                        cmd.CommandText = "DELETE FROM cucop_vinculos WHERE id=" + reref.Id;
+                                        cmd.CommandText = "DELETE FROM cucop_vinculos_registros_referencias WHERE id=" + reref.Id;
                                         cmd.ExecuteNonQuery();
                                     }
-                                    cmd.CommandText = "DELETE FROM cucop_vinculos WHERE id_vinculacion=" + vre.Id;
+                                    cmd.CommandText = "DELETE FROM cucop_vinculos_registros WHERE id=" + vre.Id;
                                     cmd.ExecuteNonQuery();
                                 }
 
@@ -239,16 +239,16 @@ namespace AppLicitaciones
                                 {
                                     foreach (vinculoCatalogoReferencia reca in vca.Referencias)
                                     {
-                                        cmd.CommandText = "DELETE FROM cucop_vinculos WHERE id_vinculacion=" + reca.Id;
+                                        cmd.CommandText = "DELETE FROM cucop_vinculos_registros_catalogos WHERE id=" + reca.Id;
                                         cmd.ExecuteNonQuery();
                                     }
-                                    cmd.CommandText = "DELETE FROM cucop_vinculos WHERE id_vinculacion=" + vca.Id;
+                                    cmd.CommandText = "DELETE FROM cucop_vinculos_catalogos WHERE id=" + vca.Id;
                                     cmd.ExecuteNonQuery();
                                 }
 
                                 foreach (VinculoCertificados vce in v.Certificados)
                                 {
-                                    cmd.CommandText = "DELETE FROM cucop_vinculos WHERE id_vinculacion=" + vce.Id;
+                                    cmd.CommandText = "DELETE FROM cucop_vinculos_certificados WHERE id=" + vce.Id;
                                     cmd.ExecuteNonQuery();
                                 }
                                 cmd.CommandText = "DELETE FROM cucop_vinculos WHERE id_vinculacion=" + v.Id;

@@ -86,17 +86,11 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Item_Visualizar.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Licitacion_Items_Buscar.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Especialistas_Principal.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_CatFaltGral.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_CatFaltPorCarta.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_CertVencGral.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_CertVencPorCarta.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_CertXVencGral.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_CertXVencPorCarta.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_InfoLicitacion.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_ListaCartas.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_Referencias.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_RegVencGral.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_RegVencPorCarta.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_RegXVencGral.resources
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_RegXVencPorCarta.resources
-C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\AppLicitaciones\obj\Release\AppLicitaciones.Reporte_Principal.resources

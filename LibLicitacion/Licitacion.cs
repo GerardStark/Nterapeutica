@@ -1456,7 +1456,7 @@ namespace LibLicitacion
         {
             this.Id = id;
             this.CucopVinculo = cucopVinculo;
-            this.Catalogo = catalogo;
+            this.Nombre = catalogo;
             this.Created = creado;
             this.Updated = actualizado;
         }
@@ -1477,7 +1477,7 @@ namespace LibLicitacion
 
         private int cucopVinculo;
 
-        public int Catalogo
+        public int Nombre
         {
             get { return catalogo; }
             set { catalogo = value; }
@@ -1530,7 +1530,7 @@ namespace LibLicitacion
                             VinculoCatalogos v = new VinculoCatalogos();
                             v.Id = (Int32)dr["id"];
                             v.CucopVinculo = (Int32)dr["id_cucop_vinculo"];
-                            v.Catalogo = (Int32)dr["id_catalogo"];
+                            v.Nombre = (Int32)dr["id_catalogo"];
                             v.Created = (DateTime)dr["creado_en"];
                             v.Updated = (DateTime)dr["actualizado_en"];
                             catalogos.Add(v);
@@ -1556,7 +1556,7 @@ namespace LibLicitacion
                 if (v.CucopVinculo == cucopVinc && !yaAgregado.ContainsKey(v.id))
                 {
                     yaAgregado[v.id] = true;
-                    catalogos.Add(new VinculoCatalogos(v.Id, v.CucopVinculo, v.Catalogo, v.Created, v.Updated));
+                    catalogos.Add(new VinculoCatalogos(v.Id, v.CucopVinculo, v.Nombre, v.Created, v.Updated));
                 }
             }
             return catalogos;

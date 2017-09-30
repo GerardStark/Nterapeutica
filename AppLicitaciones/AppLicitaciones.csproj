@@ -471,35 +471,17 @@
     <Compile Include="Registros_Editar.Designer.cs">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_CatFaltGral.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_CatFaltGral.Designer.cs">
-      <DependentUpon>Reporte_CatFaltGral.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte_CatFaltPorCarta.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reporte_CatFaltPorCarta.Designer.cs">
       <DependentUpon>Reporte_CatFaltPorCarta.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_CertVencGral.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_CertVencGral.Designer.cs">
-      <DependentUpon>Reporte_CertVencGral.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte_CertVencPorCarta.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reporte_CertVencPorCarta.Designer.cs">
       <DependentUpon>Reporte_CertVencPorCarta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte_CertXVencGral.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_CertXVencGral.Designer.cs">
-      <DependentUpon>Reporte_CertXVencGral.cs</DependentUpon>
     </Compile>
     <Compile Include="Reporte_CertXVencPorCarta.cs">
       <SubType>UserControl</SubType>
@@ -519,35 +501,17 @@
     <Compile Include="Reporte_ListaCartas.Designer.cs">
       <DependentUpon>Reporte_ListaCartas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_Principal.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_Principal.Designer.cs">
-      <DependentUpon>Reporte_Principal.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte_Referencias.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reporte_Referencias.Designer.cs">
       <DependentUpon>Reporte_Referencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reporte_RegVencGral.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_RegVencGral.Designer.cs">
-      <DependentUpon>Reporte_RegVencGral.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reporte_RegVencPorCarta.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Reporte_RegVencPorCarta.Designer.cs">
       <DependentUpon>Reporte_RegVencPorCarta.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Reporte_RegXVencGral.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Reporte_RegXVencGral.Designer.cs">
-      <DependentUpon>Reporte_RegXVencGral.cs</DependentUpon>
     </Compile>
     <Compile Include="Reporte_RegXVencPorCarta.cs">
       <SubType>UserControl</SubType>
@@ -760,20 +724,11 @@
     <EmbeddedResource Include="Registros_Editar.resx">
       <DependentUpon>Registros_Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_CatFaltGral.resx">
-      <DependentUpon>Reporte_CatFaltGral.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporte_CatFaltPorCarta.resx">
       <DependentUpon>Reporte_CatFaltPorCarta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_CertVencGral.resx">
-      <DependentUpon>Reporte_CertVencGral.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporte_CertVencPorCarta.resx">
       <DependentUpon>Reporte_CertVencPorCarta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_CertXVencGral.resx">
-      <DependentUpon>Reporte_CertXVencGral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_CertXVencPorCarta.resx">
       <DependentUpon>Reporte_CertXVencPorCarta.cs</DependentUpon>
@@ -784,20 +739,11 @@
     <EmbeddedResource Include="Reporte_ListaCartas.resx">
       <DependentUpon>Reporte_ListaCartas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_Principal.resx">
-      <DependentUpon>Reporte_Principal.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporte_Referencias.resx">
       <DependentUpon>Reporte_Referencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_RegVencGral.resx">
-      <DependentUpon>Reporte_RegVencGral.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reporte_RegVencPorCarta.resx">
       <DependentUpon>Reporte_RegVencPorCarta.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reporte_RegXVencGral.resx">
-      <DependentUpon>Reporte_RegXVencGral.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte_RegXVencPorCarta.resx">
       <DependentUpon>Reporte_RegXVencPorCarta.cs</DependentUpon>

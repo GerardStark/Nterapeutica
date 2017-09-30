@@ -148,7 +148,7 @@ namespace AppLicitaciones
                                 cmd.CommandText = @"cucop_vinculos_catalogos_insert";
                                 cmd.Parameters.Clear();
                                 cmd.Parameters.AddWithValue("@idVinculo", idVinc);
-                                cmd.Parameters.AddWithValue("@idCatalogo", ca.Catalogo);
+                                cmd.Parameters.AddWithValue("@idCatalogo", ca.Nombre);
                                 cmd.Parameters.AddWithValue("@updated", DateTime.Now);
                                 Int32 idVincCat = (Int32)cmd.ExecuteScalar();
                                 foreach (vinculoCatalogoReferencia carf in ca.Referencias)

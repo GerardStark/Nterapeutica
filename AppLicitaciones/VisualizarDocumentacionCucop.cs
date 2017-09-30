@@ -36,8 +36,8 @@ namespace AppLicitaciones
             foreach (VinculoCatalogos ca in opcion.Catalogos)
             {
                 LinkLabel l = new LinkLabel();
-                l.Text = CatalogoProductos.getCatalogos().Where(x => x.Id == ca.Catalogo).Single().Nombre;
-                l.Tag = ca.Catalogo;
+                l.Text = CatalogoProductos.getCatalogos().Where(x => x.Id == ca.Nombre).Single().Nombre;
+                l.Tag = ca.Nombre;
                 l.LinkClicked += verCatalogo;
                 pnl_cat.Controls.Add(l);
             }
