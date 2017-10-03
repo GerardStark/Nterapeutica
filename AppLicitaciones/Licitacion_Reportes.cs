@@ -30,7 +30,8 @@ namespace AppLicitaciones
                 "Catalogos faltantes por carta de apoyo",                
                 "Certificados vencidos por carta de apoyo",                
                 "Certificados por vencer por canta de apoyo",                                
-                "Referencias",    
+                "Referencias",
+                "Listado en Excel"
             };
             mc.llenarcombobox(reportes,cmbRep);
             //radAct.CheckedChanged += radioEstadosLicic;
@@ -120,7 +121,11 @@ namespace AppLicitaciones
                     case 8:
                         Reporte_Referencias refRep = new Reporte_Referencias();
                         pnlFormatReport.Controls.Add(refRep);
-                        break;                              
+                        break;
+                    case 9:
+                        Reporte_ListadoExcel listex = new Reporte_ListadoExcel();
+                        pnlFormatReport.Controls.Add(listex);
+                        break;
                 }
             }
         }        

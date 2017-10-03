@@ -32,7 +32,7 @@ namespace AppLicitaciones
         MainConfig mc = new MainConfig();
         private void herramientasAdminToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
         }
         //estableque el padre MDI y que la ventana no se pueda abrir mas de una vez y esté maximizada.
         private void registrosSanitariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,11 +140,11 @@ namespace AppLicitaciones
             //newForm.MdiParent = this;
             //newForm.WindowState = FormWindowState.Maximized;
             newForm.Show();
-        }       
+        }
 
         private void fabricantesTitularesDistribuidoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            foreach(Form form in Application.OpenForms)
+            foreach (Form form in Application.OpenForms)
             {
                 if (form.GetType() == typeof(FTD_Principal))
                 {
@@ -204,6 +204,25 @@ namespace AppLicitaciones
             Licitacion_Reportes newForm = new Licitacion_Reportes();
             //newForm.MdiParent = this;            
             newForm.Show();
+        }
+
+        private void Form_Principal_Load(object sender, EventArgs e)
+        {
+            var licitaciones = from lc in Licitacion.GetBases()
+                               from cl in lc.Calendarios
+                               where cl.Firma > DateTime.Today
+                               select lc;
+            foreach (Licitacion lc in licitaciones)
+            {
+                dgvCalendario.Rows.Add(
+                    lc.NumeroLicitacion,
+                    lc.Calendarios.First().Junta,
+                    lc.Calendarios.First().Apertura,
+                    lc.Calendarios.First().Fallo,
+                    lc.Calendarios.First().Muestras,
+                    lc.Calendarios.First().Firma
+                    );
+            }
         }
     }
 }

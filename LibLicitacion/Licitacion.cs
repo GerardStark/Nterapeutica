@@ -2529,6 +2529,18 @@ namespace LibLicitacion
 
         private List<CucopVinculos> vinculos;
 
+        public List<CartaContacto> Contactos
+        {
+            get
+            {
+                if (this.Id != 0)
+                    this.contactos = CartaContacto.getContactos().Where(x => x.Carta == this.Id).ToList();
+                return contactos;
+            }
+        }
+
+        private List<CartaContacto> contactos;
+
         public List<Item> ItemsPorLicitacion(int licit)
         {
             List<CucopVinculos> vinculos = Licitacion.GetBases().FirstOrDefault(x => x.Id == licit).Partidas.SelectMany(x => x.Procedimientos).SelectMany(x => x.Items).SelectMany(x => x.Vinculos).Where(x => x.CartaApoyo == this.Id).ToList();
@@ -2543,6 +2555,155 @@ namespace LibLicitacion
         }
 
         private List<Item> itemsporlicit = new List<Item>();
+    }
+
+    public class CartaContacto
+    {
+        public CartaContacto()
+        {
+
+        }
+
+        public CartaContacto(int id, int carta, string nombre, string telefono, string telefonodos, string correo, string correodos, string comentarios, DateTime creado, DateTime actualizado)
+        {
+            this.Id = id;
+            this.Carta = carta;
+            this.Nombre = nombre;
+            this.Telefono = telefono;
+            this.TelefonoDos = telefonodos;
+            this.Correo = correo;
+            this.CorreoDos = correodos;
+            this.Comentarios = comentarios;
+            this.Created = creado;
+            this.Updated = actualizado;
+        }
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+
+        private int id;
+
+        public int Carta
+        {
+            get { return carta; }
+            set { carta = value; }
+        }
+
+        private int carta;
+
+        public string Nombre
+        {
+            get { return nombre; }
+            set { nombre = value; }
+        }
+
+        private string nombre;
+
+        public string Telefono
+        {
+            get { return telefono; }
+            set { telefono = value; }
+        }
+
+        private string telefono;
+
+        public string TelefonoDos
+        {
+            get { return teledos; }
+            set { teledos = value; }
+        }
+
+        private string teledos;
+
+        public string Correo
+        {
+            get { return correo; }
+            set { correo = value; }
+        }
+
+        private string correo;
+
+        public string CorreoDos
+        {
+            get { return correodos; }
+            set { correodos = value; }
+        }
+
+        private string correodos;
+
+        public string Comentarios
+        {
+            get { return coment; }
+            set { coment = value; }
+        }
+
+        private string coment;
+
+        public DateTime Created
+        {
+            get { return created; }
+            set { created = value; }
+        }
+
+        private DateTime created;
+
+        public DateTime Updated
+        {
+            get { return updated; }
+            set { updated = value; }
+        }
+
+        private DateTime updated;
+
+        public static List<CartaContacto> getContactos()
+        {
+            CartaContacto.AllContactos.Clear();
+            if (CartaContacto.AllContactos.Count == 0)
+                CartaContacto.AllContactos = CartaContacto.InicializarContactos();
+            return CartaContacto.AllContactos;
+        }
+
+        private static List<CartaContacto> InicializarContactos()
+        {
+            MainConfig mc = new MainConfig();
+            List<CartaContacto> cartas = new List<CartaContacto>();
+            using (SqlConnection con = new SqlConnection(mc.con))
+            {
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = con;
+                    cmd.CommandText = "SELECT * FROM fabricantes_contactos";
+                    SqlDataAdapter adapt = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    adapt.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in dt.Rows)
+                        {
+                            CartaContacto c = new CartaContacto();
+                            c.Id = (Int32)dr["id_contacto"];
+                            c.carta = (Int32)dr["id_ftd"];
+                            c.Nombre = dr["nombre"].ToString();
+                            c.Telefono = dr["telefono"].ToString();
+                            c.TelefonoDos = dr["telefono_dos"].ToString();
+                            c.Correo = dr["correo_electronico"].ToString();
+                            c.CorreoDos = dr["correo_electronico_dos"].ToString();
+                            c.Comentarios = dr["comentarios"].ToString();                            
+                            c.Created = (DateTime)dr["creado_en"];
+                            c.Updated = (DateTime)dr["actualizado_en"];
+                            cartas.Add(c);
+                        }
+                    }
+
+                }
+            }
+            return cartas;
+        }
+
+        private static List<CartaContacto> AllContactos = new List<CartaContacto>();
     }
 
 

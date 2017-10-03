@@ -50,6 +50,7 @@
     <Compile Include="CatalogoProductos.cs" />
     <Compile Include="CertificadoCalidad.cs" />
     <Compile Include="Cucop.cs" />
+    <Compile Include="Especialistas.cs" />
     <Compile Include="Licitacion.cs" />
     <Compile Include="MainConfig.cs" />
     <Compile Include="PredicateBuilder.cs" />

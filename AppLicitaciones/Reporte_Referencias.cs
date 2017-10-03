@@ -166,18 +166,19 @@ namespace AppLicitaciones
                         header.Alignment = Element.ALIGN_CENTER;
                         myDocument.Add(header);
                         myDocument.Add(new Phrase("\n"));
-                        PdfPTable table = new PdfPTable(6);
+                        PdfPTable table = new PdfPTable(7);
 
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
                         table.HorizontalAlignment = 0;
-                        float[] widths = new float[] { 20f, 20f, 100f, 20f, 20f, 20f };
+                        float[] widths = new float[] { 20f, 20f, 20f, 100f, 20f, 20f, 20f };
                         table.SetWidths(widths);
                         PdfPCell numlicit = new PdfPCell(new Phrase(licit.NumeroLicitacion));
-                        numlicit.Colspan = 6;
+                        numlicit.Colspan = 7;
                         numlicit.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(numlicit);
                         table.AddCell(new Phrase("Partida", times));
+                        table.AddCell(new Phrase("Procedimiento", times));
                         table.AddCell(new Phrase("Clave CB", times));
                         table.AddCell(new Phrase("Descripcion", times));
                         table.AddCell(new Phrase("Presentacion", times));
@@ -192,13 +193,21 @@ namespace AppLicitaciones
                                    select cv;
 
                         //contenido de la tabla 
+                        
+
                         foreach (CucopVinculos vin in vinc)
                         {
+                            
                             table.AddCell(new Phrase((from pa in Partida.GetPartidasPorBase(idLicit)
                                                       from pr in pa.Procedimientos
                                                       from it in pr.Items
                                                       where it.Id == vin.IdItem
                                                       select pa.Numero).First().ToString(), times));
+                            table.AddCell(new Phrase((from pa in Partida.GetPartidasPorBase(idLicit)
+                                                      from pr in pa.Procedimientos
+                                                      from it in pr.Items
+                                                      where it.Id == vin.IdItem
+                                                      select pr.Nombre).First().ToString(), times));
                             table.AddCell(new Phrase((from it in items
                                                       where it.Id == vin.IdItem
                                                       select it.Ccb).First().ToString(), times));
@@ -280,18 +289,19 @@ namespace AppLicitaciones
                         header.Alignment = Element.ALIGN_CENTER;
                         myDocument.Add(header);
                         myDocument.Add(new Phrase("\n"));
-                        PdfPTable table = new PdfPTable(6);
+                        PdfPTable table = new PdfPTable(7);
 
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
                         table.HorizontalAlignment = 0;
-                        float[] widths = new float[] { 20f, 20f, 100f, 20f, 20f, 20f };
+                        float[] widths = new float[] { 20f, 20f, 20f, 100f, 20f, 20f, 20f };
                         table.SetWidths(widths);
                         PdfPCell numlicit = new PdfPCell(new Phrase(licit.NumeroLicitacion));
-                        numlicit.Colspan = 6;
+                        numlicit.Colspan = 7;
                         numlicit.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(numlicit);
                         table.AddCell(new Phrase("Partida", times));
+                        table.AddCell(new Phrase("Procedimiento", times));
                         table.AddCell(new Phrase("Clave CB", times));
                         table.AddCell(new Phrase("Descripcion", times));
                         table.AddCell(new Phrase("Presentacion", times));
@@ -313,6 +323,11 @@ namespace AppLicitaciones
                                                       from it in pr.Items
                                                       where it.Id == vin.IdItem
                                                       select pa.Numero).First().ToString(), times));
+                            table.AddCell(new Phrase((from pa in Partida.GetPartidasPorBase(idLicit)
+                                                      from pr in pa.Procedimientos
+                                                      from it in pr.Items
+                                                      where it.Id == vin.IdItem
+                                                      select pr.Nombre).First().ToString(), times));
                             table.AddCell(new Phrase((from it in items
                                                       where it.Id == vin.IdItem
                                                       select it.Ccb).First().ToString(), times));
@@ -370,14 +385,8 @@ namespace AppLicitaciones
                     //obtener todos los vinculos de la licitacion, que contengan el id del registro sanitario, sacar los datos, copiar el archivo de RS
                     //e imprimirlos por registro,
                     int idcat = catalogosU[i];
-                    var vcat = (from pa in Partida.GetPartidasPorBase(idLicit)
-                                from pr in pa.Procedimientos
-                                from it in pr.Items
-                                from cv in it.Vinculos
-                                from ce in cv.Catalogos
-                                where ce.Nombre == idcat
-                                select ce.Nombre).First();
-                    var cat = CatalogoProductos.getCatalogos().Where(x => x.Id == vcat).First();
+                    
+                    var cat = CatalogoProductos.getCatalogos().Where(x => x.Id == idcat).First();
                     using (MemoryStream myMemoryStream = new MemoryStream())
                     {
                         BaseFont bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
@@ -391,23 +400,22 @@ namespace AppLicitaciones
                         header.Alignment = Element.ALIGN_CENTER;
                         myDocument.Add(header);
                         myDocument.Add(new Phrase("\n"));
-                        PdfPTable table = new PdfPTable(8);
+                        PdfPTable table = new PdfPTable(7);
 
                         table.TotalWidth = 500f;
                         table.LockedWidth = true;
                         table.HorizontalAlignment = 0;
-                        float[] widths = new float[] { 20f, 20f, 100f, 20f, 20f, 20f, 20f,20f };
+                        float[] widths = new float[] { 20f, 20f, 20f,100f, 20f, 20f,20f };
                         table.SetWidths(widths);
                         PdfPCell numlicit = new PdfPCell(new Phrase(licit.NumeroLicitacion));
-                        numlicit.Colspan = 8;
+                        numlicit.Colspan = 7;
                         numlicit.HorizontalAlignment = 1; //0=Left, 1=Centre, 2=Right
                         table.AddCell(numlicit);
                         table.AddCell(new Phrase("Partida", times));
+                        table.AddCell(new Phrase("Procedimiento", times));
                         table.AddCell(new Phrase("Clave CB", times));
                         table.AddCell(new Phrase("Descripcion", times));
-                        table.AddCell(new Phrase("Presentacion", times));
-                        table.AddCell(new Phrase("Cantidad", times));
-                        table.AddCell(new Phrase("Contenedor", times));
+                        table.AddCell(new Phrase("Nombre del Catálogo", times));                        
                         table.AddCell(new Phrase("Paginas", times));
                         table.AddCell(new Phrase("Referencias", times));
                         var vinc = from pa in Partida.GetPartidasPorBase(idLicit)
@@ -421,43 +429,56 @@ namespace AppLicitaciones
                         //contenido de la tabla 
                         foreach (CucopVinculos vin in vinc)
                         {
+                            //numero partida
                             table.AddCell(new Phrase((from pa in Partida.GetPartidasPorBase(idLicit)
                                                       from pr in pa.Procedimientos
                                                       from it in pr.Items
                                                       where it.Id == vin.IdItem
                                                       select pa.Numero).First().ToString(), times));
+                            //procedimiento
+                            table.AddCell(new Phrase((from pa in Partida.GetPartidasPorBase(idLicit)
+                                                      from pr in pa.Procedimientos
+                                                      from it in pr.Items
+                                                      where it.Id == vin.IdItem
+                                                      select pr.Nombre).First().ToString(), times));
+                            //ccb
                             table.AddCell(new Phrase((from it in items
                                                       where it.Id == vin.IdItem
                                                       select it.Ccb).First().ToString(), times));
+                            //descripcion
                             table.AddCell(new Phrase((from it in items
                                                       where it.Id == vin.IdItem
                                                       select it.Nombre).First().ToString(), times));
-                            table.AddCell(new Phrase((from it in items
-                                                      where it.Id == vin.IdItem
-                                                      select it.Unidad).First().ToString(), times));
-                            table.AddCell(new Phrase((from it in items
-                                                      where it.Id == vin.IdItem
-                                                      select it.Cantidad).First().ToString(), times));
-                            table.AddCell(new Phrase((from it in items
-                                                      where it.Id == vin.IdItem
-                                                      select it.Contenedor).First().ToString(), times));
+                            //nombre catalogo
+                            table.AddCell(new Phrase(cat.Nombre, times));
+
                             //cat onlys
+
                             string referencias = "";
                             string paginas = "";
                             var refs = from ca in vin.Catalogos
                                        from rf in ca.Referencias
-                                       where rf.VinculoCatalogo == ca.Id
+                                       where rf.VinculoCatalogo == ca.Id && ca.Nombre == idcat
                                        select rf;
-                            foreach (vinculoCatalogoReferencia item in refs)
+
+                            var vcat = from ca in vin.Catalogos
+                                        where ca.Nombre == cat.Id
+                                        select ca;
+                            foreach (VinculoCatalogos v in vcat)
                             {
-                                if (ReferenciaCatalogo.GetReferencias().Where(x => x.Id == item.Referencia).Any())
+                                foreach (vinculoCatalogoReferencia item in v.Referencias)
                                 {
-                                    referencias += "\n" + ReferenciaCatalogo.GetReferencias().Where(x => x.Id == item.Referencia).Single().Referencia;
-                                    paginas += "\n" + ReferenciaCatalogo.GetReferencias().Where(x => x.Id == item.Referencia).Single().PaginaCat;
+                                    if (ReferenciaCatalogo.GetReferencias().Where(x => x.Id == item.Referencia).Any())
+                                    {
+
+                                        referencias += "\n" + ReferenciaCatalogo.GetReferencias().Where(x => x.Id == item.Referencia).Single().Referencia;
+                                        paginas += "\n" + ReferenciaCatalogo.GetReferencias().Where(x => x.Id == item.Referencia).Single().PaginaCat;
+                                    }
                                 }
+                                table.AddCell(new Phrase(paginas, times));
+                                table.AddCell(new Phrase(referencias, times));
                             }
-                            table.AddCell(new Phrase(paginas, times));
-                            table.AddCell(new Phrase(referencias, times));
+                            
                         }
                         myDocument.Add(table);
                         //agregar folio

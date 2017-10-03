@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.licitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesosDeLicitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.impresionDeReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bancoDeDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosSanitariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.certificadosDeCalidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,9 +44,15 @@
             this.manualesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noSeQueEstoyHaciendoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procesosDeLicitacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.impresionDeReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvCalendario = new System.Windows.Forms.DataGridView();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.juntaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.aperColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.falloColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.muestrasColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firmaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendario)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -69,6 +77,20 @@
             this.licitacionesToolStripMenuItem.Name = "licitacionesToolStripMenuItem";
             this.licitacionesToolStripMenuItem.Size = new System.Drawing.Size(118, 25);
             this.licitacionesToolStripMenuItem.Text = "Licitaciones";
+            // 
+            // procesosDeLicitacionToolStripMenuItem
+            // 
+            this.procesosDeLicitacionToolStripMenuItem.Name = "procesosDeLicitacionToolStripMenuItem";
+            this.procesosDeLicitacionToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.procesosDeLicitacionToolStripMenuItem.Text = "Procesos de Licitacion";
+            this.procesosDeLicitacionToolStripMenuItem.Click += new System.EventHandler(this.procesosDeLicitacionToolStripMenuItem_Click);
+            // 
+            // impresionDeReportesToolStripMenuItem
+            // 
+            this.impresionDeReportesToolStripMenuItem.Name = "impresionDeReportesToolStripMenuItem";
+            this.impresionDeReportesToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
+            this.impresionDeReportesToolStripMenuItem.Text = "Impresion de Reportes";
+            this.impresionDeReportesToolStripMenuItem.Click += new System.EventHandler(this.impresionDeReportesToolStripMenuItem_Click);
             // 
             // bancoDeDatosToolStripMenuItem
             // 
@@ -155,36 +177,86 @@
             this.noSeQueEstoyHaciendoToolStripMenuItem.Size = new System.Drawing.Size(258, 26);
             this.noSeQueEstoyHaciendoToolStripMenuItem.Text = "No se que estoy haciendo";
             // 
-            // procesosDeLicitacionToolStripMenuItem
+            // dgvCalendario
             // 
-            this.procesosDeLicitacionToolStripMenuItem.Name = "procesosDeLicitacionToolStripMenuItem";
-            this.procesosDeLicitacionToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.procesosDeLicitacionToolStripMenuItem.Text = "Procesos de Licitacion";
-            this.procesosDeLicitacionToolStripMenuItem.Click += new System.EventHandler(this.procesosDeLicitacionToolStripMenuItem_Click);
+            this.dgvCalendario.AllowUserToAddRows = false;
+            this.dgvCalendario.AllowUserToDeleteRows = false;
+            this.dgvCalendario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalendario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.numColumn,
+            this.juntaColumn,
+            this.aperColumn,
+            this.falloColumn,
+            this.muestrasColumn,
+            this.firmaColumn});
+            this.dgvCalendario.Location = new System.Drawing.Point(12, 32);
+            this.dgvCalendario.Name = "dgvCalendario";
+            this.dgvCalendario.ReadOnly = true;
+            this.dgvCalendario.RowHeadersVisible = false;
+            this.dgvCalendario.RowTemplate.Height = 60;
+            this.dgvCalendario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCalendario.Size = new System.Drawing.Size(1304, 647);
+            this.dgvCalendario.TabIndex = 1;
             // 
-            // impresionDeReportesToolStripMenuItem
+            // numColumn
             // 
-            this.impresionDeReportesToolStripMenuItem.Name = "impresionDeReportesToolStripMenuItem";
-            this.impresionDeReportesToolStripMenuItem.Size = new System.Drawing.Size(237, 26);
-            this.impresionDeReportesToolStripMenuItem.Text = "Impresion de Reportes";
-            this.impresionDeReportesToolStripMenuItem.Click += new System.EventHandler(this.impresionDeReportesToolStripMenuItem_Click);
+            this.numColumn.HeaderText = "# Licitacion";
+            this.numColumn.Name = "numColumn";
+            this.numColumn.ReadOnly = true;
+            this.numColumn.Width = 300;
+            // 
+            // juntaColumn
+            // 
+            this.juntaColumn.HeaderText = "Junta de Aclaraciones";
+            this.juntaColumn.Name = "juntaColumn";
+            this.juntaColumn.ReadOnly = true;
+            this.juntaColumn.Width = 200;
+            // 
+            // aperColumn
+            // 
+            this.aperColumn.HeaderText = "Apertura";
+            this.aperColumn.Name = "aperColumn";
+            this.aperColumn.ReadOnly = true;
+            this.aperColumn.Width = 200;
+            // 
+            // falloColumn
+            // 
+            this.falloColumn.HeaderText = "Fallo";
+            this.falloColumn.Name = "falloColumn";
+            this.falloColumn.ReadOnly = true;
+            this.falloColumn.Width = 200;
+            // 
+            // muestrasColumn
+            // 
+            this.muestrasColumn.HeaderText = "Muestras";
+            this.muestrasColumn.Name = "muestrasColumn";
+            this.muestrasColumn.ReadOnly = true;
+            this.muestrasColumn.Width = 200;
+            // 
+            // firmaColumn
+            // 
+            this.firmaColumn.HeaderText = "Firma del Contrato";
+            this.firmaColumn.Name = "firmaColumn";
+            this.firmaColumn.ReadOnly = true;
+            this.firmaColumn.Width = 200;
             // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1328, 691);
+            this.Controls.Add(this.dgvCalendario);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form_Principal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pantalla Principal de Licitaciones.";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Form_Principal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalendario)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +279,12 @@
         private System.Windows.Forms.ToolStripMenuItem especialistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem procesosDeLicitacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem impresionDeReportesToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvCalendario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn juntaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn aperColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn falloColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn muestrasColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firmaColumn;
     }
 }
