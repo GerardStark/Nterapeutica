@@ -136,46 +136,88 @@ namespace AppLicitaciones
                          select it).ToList();
             for (int i = 0; i < items.Count; i++)
             {
-                foreach (CucopVinculos vinc in items[i].Vinculos)
+                if (items[i].Vinculos.Any())
+                {
+                    foreach (CucopVinculos vinc in items[i].Vinculos)
+                    {
+                        dgvListado.Rows.Add(
+                        i + 1,
+                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
+                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
+                        items[i].Ccb,
+                        items[i].Nombre,
+                        items[i].Unidad,
+                        items[i].Cantidad,
+                        items[i].Contenedor,
+                        items[i].Minimo,
+                        items[i].Maximo,
+                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
+                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
+                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
+                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
+                        getFabricantes(vinc.Id),
+                        getContactos(vinc.CartaApoyo),
+                        getMarcas(vinc.Id),
+                        getPaises(vinc.Id),
+                        getTratados(vinc.Id),
+                        vinc.Nombre,
+                        getRegistros(vinc.Registros),
+                        getRegVencimientos(vinc.Registros),
+                        getRegPorcent(vinc.Registros),
+                        getCfsFda(vinc.Certificados),
+                        getCfsFdaVencimientos(vinc.Certificados),
+                        getCeIso(vinc.Certificados),
+                        getCeIsoVencimientos(vinc.Certificados),
+                        getCertPorcent(vinc.Certificados),
+                        getCatNombres(vinc.Catalogos),
+                        getCatReferencias(vinc.Catalogos),
+                        getCatPaginas(vinc.Catalogos),
+                        getCatPaginasPdf(vinc.Catalogos),
+                        getCatPorcent(vinc.Catalogos),
+                        "",
+                        ""
+                        );
+
+                    }
+                }
+                else
                 {
                     dgvListado.Rows.Add(
-                    i + 1,
-                    procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
-                    procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
-                    items[i].Ccb,
-                    items[i].Nombre,
-                    items[i].Unidad,
-                    items[i].Cantidad,
-                    items[i].Contenedor,
-                    items[i].Minimo,
-                    items[i].Maximo,
-                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
-                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
-                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
-                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
-                    getFabricantes(vinc.Id),
-                    getContactos(vinc.CartaApoyo),
-                    getMarcas(vinc.Id),                    
-                    getPaises(vinc.Id),
-                    getTratados(vinc.Id),
-                    vinc.Nombre,
-                    getRegistros(vinc.Registros),
-                    getRegVencimientos(vinc.Registros),
-                    getRegPorcent(vinc.Registros),
-                    getCfsFda(vinc.Certificados),
-                    getCfsFdaVencimientos(vinc.Certificados),
-                    getCeIso(vinc.Certificados),
-                    getCeIsoVencimientos(vinc.Certificados),
-                    getCertPorcent(vinc.Certificados),
-                    getCatNombres(vinc.Catalogos),
-                    getCatReferencias(vinc.Catalogos),
-                    getCatPaginas(vinc.Catalogos),
-                    getCatPaginasPdf(vinc.Catalogos),
-                    getCatPorcent(vinc.Catalogos),
-                    "",
-                    ""
-                    );
-
+                        i + 1,
+                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
+                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
+                        items[i].Ccb,
+                        items[i].Nombre,
+                        items[i].Unidad,
+                        items[i].Cantidad,
+                        items[i].Contenedor,
+                        items[i].Minimo,
+                        items[i].Maximo,
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "");
                 }
             
             }
@@ -489,7 +531,7 @@ namespace AppLicitaciones
 
                 try
                 {
-                    worksheet.Name = "ExportedFromDatGrid";
+                   
 
                     int cellRowIndex = 1;
                     int cellColumnIndex = 1;
@@ -505,7 +547,7 @@ namespace AppLicitaciones
 
                                 worksheet.Cell(cellRowIndex, cellColumnIndex).Value = dgvListado.Columns[j].HeaderText;
                                 worksheet.Cell(cellRowIndex, cellColumnIndex).Style.Border.OutsideBorder = XLBorderStyleValues.Thick;
-                                worksheet.Cell(cellRowIndex, cellColumnIndex).Style.Fill.BackgroundColor = XLColor.LightYellow;
+                                worksheet.Cell(cellRowIndex, cellColumnIndex).Style.Fill.BackgroundColor = XLColor.LightGreen;
 
                             }
                             else
@@ -523,7 +565,7 @@ namespace AppLicitaciones
                     if (svg.ShowDialog() == DialogResult.OK)
                     {
                         worksheet.Rows().AdjustToContents();
-                        worksheet.Columns().AdjustToContents();
+                        worksheet.Columns().Width = 15;
                         worksheet.Style.Alignment.WrapText = true;
                         workbook.SaveAs(svg.SelectedPath + @"\"+ numLicit + ".xlsx");
                         MessageBox.Show("Export Successful");

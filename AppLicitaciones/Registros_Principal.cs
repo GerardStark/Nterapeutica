@@ -15,7 +15,7 @@ namespace AppLicitaciones
     public partial class Registros_Principal : Form
     {
         MainConfig mc = new MainConfig();
-        int id_registro = 0, filtro_flag = 0;
+        int id_registro = 0;
         public Registros_Principal()
         {
             InitializeComponent();

@@ -121,10 +121,10 @@ namespace AppLicitaciones
                     e.Value = e.RowIndex + 1;
                     break;
                 case "idSubParentColumn":
-                    e.Value = (from pr in Procedimiento.GetProcedimientos()
-                               from it in pr.Items
-                               where it.Id == Convert.ToInt32(dgvItems.Rows[e.RowIndex].Cells["idItemColumn"].Value)
-                               select pr.Numero).FirstOrDefault();
+                    e.Value = (from sb in Procedimiento.GetProcedimientosPorPartidas(idPartida)
+                               from it in sb.Items
+                               where it.Id == ((Int32)dgvItems.Rows[e.RowIndex].Cells["idItemColumn"].Value)
+                               select sb.Numero).FirstOrDefault();
                     break;
             }
         }
