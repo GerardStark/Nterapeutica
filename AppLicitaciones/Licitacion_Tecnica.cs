@@ -48,7 +48,7 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
-                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);                                             
+                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Numero,i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);                                             
             }
         }        
 
@@ -117,18 +117,14 @@ namespace AppLicitaciones
         {
             switch (this.dgvItems.Columns[e.ColumnIndex].Name)
             {
-                //case "ofertaColumn":
-                //    if (e.Value != null && e.Value != DBNull.Value && Convert.ToInt32(e.Value) > 0)
-                //    {
-                //        e.Value = mc.obtenerDescripcionCucop(Convert.ToInt32(dgvItems.Rows[e.RowIndex].Cells["ofertaColumn"].Value));
-                //    }
-                //    else
-                //    {
-                //        e.Value = "Sin oferta";
-                //    }
-                //    break;
-                case "idColumn":
+                case "idItemColumn":
                     e.Value = e.RowIndex + 1;
+                    break;
+                case "idSubParentColumn":
+                    e.Value = (from pr in Procedimiento.GetProcedimientos()
+                               from it in pr.Items
+                               where it.Id == Convert.ToInt32(dgvItems.Rows[e.RowIndex].Cells["idItemColumn"].Value)
+                               select pr.Numero).FirstOrDefault();
                     break;
             }
         }
@@ -148,8 +144,14 @@ namespace AppLicitaciones
         {
             switch (this.dgvProcedimientos.Columns[e.ColumnIndex].Name)
             {
-                case "idColumn":
+                case "idSubColumn":
                     e.Value = e.RowIndex + 1;
+                    break;
+                case "idPartParentColumn":
+                    e.Value = (from pt in Partida.GetPartidas()
+                              from sb in pt.Procedimientos
+                              where sb.Id == Convert.ToInt32(dgvProcedimientos.Rows[e.RowIndex].Cells["idSubColumn"].Value)
+                              select pt.Nombre).FirstOrDefault();
                     break;
             }
         }

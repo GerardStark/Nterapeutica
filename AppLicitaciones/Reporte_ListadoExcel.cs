@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using System.Reflection;
 using System.IO;
 using System.Diagnostics;
+using ClosedXML.Excel;
 
 namespace AppLicitaciones
 {
@@ -68,6 +69,7 @@ namespace AppLicitaciones
 
         private void cmbNumLicit_SelectedIndexChanged(object sender, EventArgs e)
         {
+            dgvListado.Rows.Clear();
             int idlicit = Convert.ToInt32((cmbNumLicit.SelectedItem as ComboboxItem).Value);
             mostrarTablaListado(idlicit);
         }
@@ -147,31 +149,31 @@ namespace AppLicitaciones
                     items[i].Contenedor,
                     items[i].Minimo,
                     items[i].Maximo,
-                    vinc.CartaApoyo,
+                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
                     Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
                     Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
                     Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
                     getFabricantes(vinc.Id),
                     getContactos(vinc.CartaApoyo),
-                    //getMarcas(vinc.Id),                    
-                    //getPaises(vinc.Id),
-                    //getTratados(vinc.Id),
+                    getMarcas(vinc.Id),                    
+                    getPaises(vinc.Id),
+                    getTratados(vinc.Id),
                     vinc.Nombre,
-                    //getRegistros(vinc.Registros),
-                    //getRegVencimientos(vinc.Registros),
-                    //getRegPorcent(vinc.Registros),
-                    //getCfsFda(vinc.Certificados),
-                    //getCfsFdaVencimientos(vinc.Certificados),
-                    //getCeIso(vinc.Certificados),
-                    //getCeIsoVencimientos(vinc.Certificados),
-                    //getCertPorcent(vinc.Certificados),
-                    //getCatNombres(vinc.Catalogos),
-                    //getCatReferencias(vinc.Catalogos),
-                    //getCatPaginas(vinc.Catalogos),
-                    //getCatPaginasPdf(vinc.Catalogos),
-                    //getCatPorcent(vinc.Catalogos),
+                    getRegistros(vinc.Registros),
+                    getRegVencimientos(vinc.Registros),
+                    getRegPorcent(vinc.Registros),
+                    getCfsFda(vinc.Certificados),
+                    getCfsFdaVencimientos(vinc.Certificados),
+                    getCeIso(vinc.Certificados),
+                    getCeIsoVencimientos(vinc.Certificados),
+                    getCertPorcent(vinc.Certificados),
+                    getCatNombres(vinc.Catalogos),
+                    getCatReferencias(vinc.Catalogos),
+                    getCatPaginas(vinc.Catalogos),
+                    getCatPaginasPdf(vinc.Catalogos),
+                    getCatPorcent(vinc.Catalogos),
+                    "",
                     ""
-                    //getPreguntas(vinc.Id)
                     );
 
                 }
@@ -179,14 +181,281 @@ namespace AppLicitaciones
             }
         }
 
+        private object getPreguntas(CucopVinculos vinc)
+        {
+            var pregunta = (from it in Item.GetItems()
+                           from pr in it.Preguntas
+                           where it.Id == vinc.IdItem
+                           select pr.Enunciado).FirstOrDefault();
+            return pregunta;
+        }
+
+        private object getCatPorcent(List<VinculoCatalogos> catalogos)
+        {
+            if (catalogos.Any())
+                return 1;
+            return 0;
+        }
+
+        private object getCatPaginasPdf(List<VinculoCatalogos> catalogos)
+        {
+            string stpags = "";
+            foreach (VinculoCatalogos vca in catalogos)
+            {
+                foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                {
+                    var pag = (from cr in ReferenciaCatalogo.GetReferencias()
+                               where cr.Catalogo == vca.Nombre
+                               select cr.PaginaPDF).FirstOrDefault();
+                    stpags = stpags + pag + "/";
+                }
+            }
+            return stpags;
+        }
+
+        private object getCatPaginas(List<VinculoCatalogos> catalogos)
+        {
+            string stpags = "";
+            foreach (VinculoCatalogos vca in catalogos)
+            {
+                foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                {
+                    var pag = (from cr in ReferenciaCatalogo.GetReferencias()
+                                where cr.Catalogo == vca.Nombre
+                                select cr.PaginaCat).FirstOrDefault();
+                    stpags = stpags + pag + "/";
+                }
+            }
+            return stpags;
+        }
+
+        private object getCatReferencias(List<VinculoCatalogos> catalogos)
+        {
+            string strefs = "";
+            foreach (VinculoCatalogos vca in catalogos)
+            {
+                foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                {
+                    var cref = (from cr in ReferenciaCatalogo.GetReferencias()
+                                where cr.Catalogo == vca.Nombre
+                                select cr.Referencia).FirstOrDefault();
+                    strefs = strefs + cref + "/";
+                }                
+            }
+            return strefs;
+        }
+
+        private object getCatNombres(List<VinculoCatalogos> catalogos)
+        {
+            string stcats = "";
+            foreach (VinculoCatalogos vce in catalogos)
+            {
+                var cat = (from ca in CatalogoProductos.getCatalogos()
+                           where ca.Id == vce.Nombre
+                           select ca.Nombre).FirstOrDefault();
+                stcats = stcats + cat + "/";
+            }
+            return stcats;
+        }
+
+        private object getCertPorcent(List<VinculoCertificados> certificados)
+        {
+            foreach (VinculoCertificados vre in certificados)
+            {
+                var cert = (from re in CertificadoCalidad.GetCertificados()
+                           where re.Id == vre.Nombre
+                           select re.Vencimiento).FirstOrDefault();
+                if (cert > DateTime.Today.AddDays(-150))
+                    return 1;
+            }
+            return 0;
+        }
+
+        private object getCeIsoVencimientos(List<VinculoCertificados> certificados)
+        {
+            string stvencimientos = "";
+            foreach (VinculoCertificados vce in certificados)
+            {
+                var cert = (from ce in CertificadoCalidad.GetCertificados()
+                            where ce.Id == vce.Nombre && ce.Tipo != "FDA"
+                            select ce.Vencimiento).FirstOrDefault();
+                stvencimientos = stvencimientos + cert + "/";
+            }
+            return stvencimientos;
+        }
+
+        private object getCeIso(List<VinculoCertificados> certificados)
+        {
+            string stcert = "";
+            foreach (VinculoCertificados vce in certificados)
+            {
+                var cert = (from ce in CertificadoCalidad.GetCertificados()
+                            where ce.Id == vce.Nombre && ce.Tipo != "FDA"
+                            select ce.Nombre).FirstOrDefault();
+                stcert = stcert + cert + "/";
+            }
+            return stcert;
+        }
+
+        private object getCfsFdaVencimientos(List<VinculoCertificados> certificados)
+        {
+            string stvencimientos = "";
+            foreach (VinculoCertificados vce in certificados)
+            {
+                var cert = (from ce in CertificadoCalidad.GetCertificados()
+                            where ce.Id == vce.Nombre && ce.Tipo == "FDA"
+                            select ce.Vencimiento).FirstOrDefault();
+                stvencimientos = stvencimientos + cert + "/";
+            }
+            return stvencimientos;
+        }
+
+        private object getCfsFda(List<VinculoCertificados> certificados)
+        {
+            string stcert = "";
+            foreach (VinculoCertificados vce in certificados)
+            {
+                var cert = (from ce in CertificadoCalidad.GetCertificados()
+                            where ce.Id == vce.Nombre && ce.Tipo == "FDA"
+                           select ce.Nombre).FirstOrDefault();
+                stcert = stcert + cert + "/";
+            }
+            return stcert;
+        }
+
+        private object getRegPorcent(List<VinculoRegistros> registros)
+        {            
+            foreach (VinculoRegistros vre in registros)
+            {
+                var reg = (from re in RegistroSanitario.GetRegistros()
+                           where re.Id == vre.Nombre
+                           select re).First();
+                if (reg.Vencimiento > DateTime.Today.AddDays(-150))
+                    return 1;
+            }
+            return 0;
+        }
+
+        private object getRegVencimientos(List<VinculoRegistros> registros)
+        {
+            string stvencimientos = "";
+            foreach (VinculoRegistros vre in registros)
+            {
+                var reg = (from re in RegistroSanitario.GetRegistros()
+                           where re.Id == vre.Nombre
+                           select re).First();
+                stvencimientos = stvencimientos + reg.Vencimiento + "/";
+            }
+            return stvencimientos;
+        }
+
+        private object getRegistros(List<VinculoRegistros> registros)
+        {
+            string stregistros = "";
+            foreach (VinculoRegistros vre in registros)
+            {
+                var reg = (from re in RegistroSanitario.GetRegistros()
+                            where re.Id == vre.Nombre
+                            select re).First();
+                stregistros = stregistros + reg.Nombre + "/";
+            }
+            return stregistros;
+        }
+            
+
+        private object getTratados(int vinc)
+        {
+            string tratados = "";
+            var vc = from v in CucopVinculos.GetVinculaciones()
+                     where v.Id == vinc
+                     select v;
+            foreach (VinculoRegistros vre in vc.Single().Registros)
+            {
+                var pais = (from re in RegistroSanitario.GetRegistros()
+                            where re.Id == vre.Nombre
+                            select re).First().Pais;
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = "SELECT * FROM paises_origen WHERE id_pais = " + pais;
+                        using (SqlDataAdapter adapt = new SqlDataAdapter())
+                        {
+                            adapt.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                adapt.Fill(dt);
+                                tratados = tratados + dt.Rows[0]["tratado de comercio"].ToString() + "/";
+                            }
+                        }
+                    }
+                }
+            }
+            return tratados;
+        }
+
+        private object getPaises(int vinc)
+        {
+            string paises = "";
+            var vc = from v in CucopVinculos.GetVinculaciones()
+                     where v.Id == vinc
+                     select v;
+            foreach (VinculoRegistros vre in vc.Single().Registros)
+            {
+                var pais = (from re in RegistroSanitario.GetRegistros()
+                             where re.Id == vre.Nombre
+                             select re).First().Pais;
+                using (SqlConnection con = new SqlConnection(mc.con))
+                {
+                    con.Open();
+                    using (SqlCommand cmd = new SqlCommand())
+                    {
+                        cmd.Connection = con;
+                        cmd.CommandText = "SELECT * FROM paises_origen WHERE id_pais = " + pais;
+                        using (SqlDataAdapter adapt = new SqlDataAdapter())
+                        {
+                            adapt.SelectCommand = cmd;
+                            using (DataTable dt = new DataTable())
+                            {
+                                adapt.Fill(dt);
+                                paises = paises + dt.Rows[0]["nombre"].ToString() +"/";
+                            }
+                        }
+                    }
+                }
+            }
+            return paises;
+        }
+
+        private object getMarcas(int vinc)
+        {
+            string marcas = "";
+            var vc = from v in CucopVinculos.GetVinculaciones()
+                       where v.Id == vinc select v;
+            foreach (VinculoRegistros vre in vc.Single().Registros)
+            {
+                var marca = (from re in RegistroSanitario.GetRegistros()
+                          where re.Id == vre.Nombre
+                          select re).First().Marca;
+                marcas = marcas + marca + "/";
+                
+            }
+            return marcas;
+        }
+
         private object getContactos(int cartaApoyo)
         {
             string contactos = "";
             var cartas = (from ct in Carta.GetCartas()
                          where ct.Id == cartaApoyo select ct).Single();
-            foreach (CartaContacto item in cartas.Contactos)
+            if (cartas.Contactos.Any())
             {
-                contactos += item.Nombre + "\n" + item.Telefono + "\n" + item.Correo + "\n" + item.Comentarios;
+                foreach (CartaContacto item in cartas.Contactos)
+                {
+                    contactos += item.Nombre + " " + item.Telefono + " " + item.Correo + " " + item.Comentarios +"/";
+                }
             }
             return contactos;
         }
@@ -201,48 +470,79 @@ namespace AppLicitaciones
             {
                 if (RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).Any())
                 {
-                    fabricantes += "\n" + RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).FirstOrDefault().Fabricante;
+                    fabricantes += RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).FirstOrDefault().Fabricante + "/";
                 }
             }
             return fabricantes;
-        } 
-    }
+        }
 
-    class ObjListado
-    {
-        public int Consecutivo { get; set; }
-        public string Procedimiento { get; set; }
-        public float NumItem { get; set; }
-        public string Descripcion { get; set; }
-        public string Presentacion { get; set; }
-        public long Cantidad { get; set; }
-        public string Contenedor { get; set; }
-        public long Minimo { get; set; }
-        public long Maximo { get; set; }
-        public string Carta { get; set; }
-        public string RFC { get; set; }
-        public string Apoyo { get; set; }
-        public string Mayorista { get; set; }
-        public string Fabricante { get; set; }
-        public string Contacto { get; set; }
-        public string Marca { get; set; }
-        public string NombreProducto { get; set; }
-        public string Pais { get; set; }
-        public string Tratado { get; set; }
-        public string Registro { get; set; }
-        public DateTime VencimientoRegistro { get; set; }
-        public int PorcentajeReg { get; set; }
-        public string CertificadoCfsFda { get; set; }
-        public DateTime VencimientoCfsFda { get; set; }
-        public string CertificadoCeIso { get; set; }
-        public DateTime VencimientoCeIso { get; set; }
-        public int PorcentajeCert { get; set; }
-        public string NombreCatalogo { get; set; }
-        public string Referencia { get; set; }
-        public string Pagina { get; set; }
-        public string PaginaPdf { get; set; }
-        public int ProcentajeCat { get; set; }
-        public string Observaciones { get; set; }
-        public string PreguntaJa { get; set; }
-    }
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+            // Creating a Excel object. 
+            if (idLicit != 0)
+            {
+                var numLicit = (from bs in Licitacion.GetBases()
+                               where bs.Id == idLicit
+                               select bs.NumeroLicitacion).FirstOrDefault();
+                var workbook = new XLWorkbook();
+                var worksheet = workbook.Worksheets.Add(numLicit);
+
+                try
+                {
+                    worksheet.Name = "ExportedFromDatGrid";
+
+                    int cellRowIndex = 1;
+                    int cellColumnIndex = 1;
+
+                    //Loop through each row and read value from each column. 
+                    for (int i = 0; i < dgvListado.Rows.Count - 1; i++)
+                    {
+                        for (int j = 0; j < dgvListado.Columns.Count; j++)
+                        {
+                            // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check. 
+                            if (cellRowIndex == 1)
+                            {
+
+                                worksheet.Cell(cellRowIndex, cellColumnIndex).Value = dgvListado.Columns[j].HeaderText;
+                                worksheet.Cell(cellRowIndex, cellColumnIndex).Style.Border.OutsideBorder = XLBorderStyleValues.Thick;
+                                worksheet.Cell(cellRowIndex, cellColumnIndex).Style.Fill.BackgroundColor = XLColor.LightYellow;
+
+                            }
+                            else
+                            {
+                                worksheet.Cell(cellRowIndex, cellColumnIndex).Value = dgvListado.Rows[i].Cells[j].Value.ToString();
+                            }
+                            cellColumnIndex++;
+                        }
+                        cellColumnIndex = 1;
+                        cellRowIndex++;
+                    }
+
+                    //Getting the location and file name of the excel to save from user. 
+                    FolderBrowserDialog svg = new FolderBrowserDialog();
+                    if (svg.ShowDialog() == DialogResult.OK)
+                    {
+                        worksheet.Rows().AdjustToContents();
+                        worksheet.Columns().AdjustToContents();
+                        worksheet.Style.Alignment.WrapText = true;
+                        workbook.SaveAs(svg.SelectedPath + @"\"+ numLicit + ".xlsx");
+                        MessageBox.Show("Export Successful");
+                    }
+                }
+                catch (System.Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+
+                }
+            } 
+        }
+
+        private void copyAlltoClipboard()
+        {
+            dgvListado.SelectAll();
+            DataObject dataObj = dgvListado.GetClipboardContent();
+            if (dataObj != null)
+                Clipboard.SetDataObject(dataObj);
+        }
+    }    
 }

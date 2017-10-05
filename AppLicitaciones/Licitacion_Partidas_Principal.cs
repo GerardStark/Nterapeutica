@@ -45,7 +45,10 @@ namespace AppLicitaciones
 
         private void dgvPartidas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            idPartida = (Int32)dgvPartidas.Rows[e.RowIndex].Cells["idColumn"].Value;
+            if (e.RowIndex != -1)
+            {
+                idPartida = (Int32)dgvPartidas.Rows[e.RowIndex].Cells["idColumn"].Value;
+            }
         }
 
         private void dgvPartidas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)

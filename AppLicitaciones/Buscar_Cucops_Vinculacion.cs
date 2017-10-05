@@ -37,21 +37,37 @@ namespace AppLicitaciones
             dgvCucops.Rows.Clear();
             foreach (Item i in Item.GetItems())
             {
-                var numlicit = Licitacion.GetBases()
-                    .Where(x => x.Id == Partida.GetPartidas()
-                    .Where(z => z.Id == Procedimiento.GetProcedimientos()
-                    .Where(y => y.Id == i.Procedimiento).Single().Partida)
-                    .Single().IdBases).Single().NumeroLicitacion;
-                dgvCucops.Rows.Add(i.Id,numlicit, i.Ccb, i.Nombre, i.Updated);
+                var numlicit = (from bs in Licitacion.GetBases()
+                                from pt in bs.Partidas
+                                from pr in pt.Procedimientos
+                                from it in pr.Items
+                                where it.Id == i.Id
+                                select bs.NumeroLicitacion).ToString();
+                if (i.Vinculos.Any())
+                {
+                    
+                    dgvCucops.Rows.Add(i.Id, numlicit, i.Ccb, i.Nombre, i.Updated);
+                }
             }
         }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
+            
             dgvCucops.Rows.Clear();
-            foreach (Item i in Item.GetItems().Where(x => x.Nombre.Contains(txt_filtrar.Text)))
+            foreach (Item i in Item.GetItems())
             {
-                dgvCucops.Rows.Add();
+                var numlicit = (from bs in Licitacion.GetBases()
+                                from pt in bs.Partidas
+                                from pr in pt.Procedimientos
+                                from it in pr.Items
+                                where it.Id == i.Id
+                                select bs.NumeroLicitacion).ToString();
+                if (i.Nombre.Contains(txt_filtrar.Text) && i.Vinculos.Any())
+                {
+                    dgvCucops.Rows.Add(i.Id, numlicit, i.Ccb, i.Nombre, i.Updated);
+                }
+                
             }
         }
 

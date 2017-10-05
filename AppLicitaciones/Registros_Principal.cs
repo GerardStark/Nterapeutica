@@ -32,7 +32,7 @@ namespace AppLicitaciones
                 DGVRegistros.Rows.Clear();
                 SqlConnection con = new SqlConnection(mc.con);
                 SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,rfc,tipo,titular,fabricante,marca,pais_origen," +
-                    "fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios", con);
+                    "denom_distintiva,denom_generica,fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios", con);
                 con.Open();
                 SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -90,7 +90,7 @@ namespace AppLicitaciones
                     con = new SqlConnection(mc.con);
                     con.Open();
                     SqlCommand cmd = new SqlCommand("Select id_registro,numero_registro,numero_solicitud,rfc,tipo,titular,fabricante,marca,pais_origen," +
-                    "fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios where id_registro in " +
+                    "denom_distintiva,denom_generica,fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios where id_registro in " +
                         "(SELECT Id_registro_sanitario FROM registros_claves_referencias WHERE clave_ref_cod Like '%" + valor + "%')", con);
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
@@ -116,7 +116,7 @@ namespace AppLicitaciones
                     con = new SqlConnection(mc.con);
                     con.Open();
                     SqlCommand cmd = new SqlCommand("Select id_registro, numero_registro, numero_solicitud, rfc, tipo, titular, fabricante, marca, pais_origen, " +
-                    "fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios where " + ctrl + " Like '%" + valor + "%'", con);
+                    "denom_distintiva,denom_generica,fecha_emision,fecha_vencimiento,actualizado_en from registros_sanitarios where " + ctrl + " Like '%" + valor + "%'", con);
                     SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                     DataTable dt = new DataTable();
                     adapt.Fill(dt);

@@ -43,18 +43,20 @@
             this.tt_registros = new System.Windows.Forms.ToolStrip();
             this.lbl_conteo = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paisColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rfcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.solColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rfcColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titularColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fabrColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marcaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paisColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.distintivaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genericaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emisionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimientoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGVRegistros)).BeginInit();
             this.tt_registros.SuspendLayout();
             this.SuspendLayout();
@@ -74,6 +76,8 @@
             this.fabrColumn,
             this.marcaColumn,
             this.paisColumn,
+            this.distintivaColumn,
+            this.genericaColumn,
             this.emisionColumn,
             this.vencimientoColumn,
             this.updatedColumn});
@@ -211,72 +215,13 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Registros Sanitarios";
             // 
-            // updatedColumn
+            // idColumn
             // 
-            this.updatedColumn.HeaderText = "Actualizado";
-            this.updatedColumn.Name = "updatedColumn";
-            this.updatedColumn.ReadOnly = true;
-            this.updatedColumn.Visible = false;
-            // 
-            // vencimientoColumn
-            // 
-            this.vencimientoColumn.HeaderText = "Vencimiento";
-            this.vencimientoColumn.Name = "vencimientoColumn";
-            this.vencimientoColumn.ReadOnly = true;
-            this.vencimientoColumn.Width = 125;
-            // 
-            // emisionColumn
-            // 
-            this.emisionColumn.HeaderText = "Emision";
-            this.emisionColumn.Name = "emisionColumn";
-            this.emisionColumn.ReadOnly = true;
-            this.emisionColumn.Width = 125;
-            // 
-            // paisColumn
-            // 
-            this.paisColumn.HeaderText = "Pais";
-            this.paisColumn.Name = "paisColumn";
-            this.paisColumn.ReadOnly = true;
-            // 
-            // marcaColumn
-            // 
-            this.marcaColumn.HeaderText = "Marca";
-            this.marcaColumn.Name = "marcaColumn";
-            this.marcaColumn.ReadOnly = true;
-            this.marcaColumn.Width = 125;
-            // 
-            // fabrColumn
-            // 
-            this.fabrColumn.HeaderText = "Fabricante";
-            this.fabrColumn.Name = "fabrColumn";
-            this.fabrColumn.ReadOnly = true;
-            this.fabrColumn.Width = 125;
-            // 
-            // titularColumn
-            // 
-            this.titularColumn.HeaderText = "Titular";
-            this.titularColumn.Name = "titularColumn";
-            this.titularColumn.ReadOnly = true;
-            this.titularColumn.Width = 125;
-            // 
-            // tipoColumn
-            // 
-            this.tipoColumn.HeaderText = "Tipo";
-            this.tipoColumn.Name = "tipoColumn";
-            this.tipoColumn.ReadOnly = true;
-            // 
-            // rfcColumn
-            // 
-            this.rfcColumn.HeaderText = "RFC";
-            this.rfcColumn.Name = "rfcColumn";
-            this.rfcColumn.ReadOnly = true;
-            // 
-            // solColumn
-            // 
-            this.solColumn.HeaderText = "Solicitud";
-            this.solColumn.Name = "solColumn";
-            this.solColumn.ReadOnly = true;
-            this.solColumn.Width = 125;
+            this.idColumn.Frozen = true;
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
             // 
             // numColumn
             // 
@@ -285,13 +230,84 @@
             this.numColumn.ReadOnly = true;
             this.numColumn.Width = 125;
             // 
-            // idColumn
+            // solColumn
             // 
-            this.idColumn.Frozen = true;
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 50;
+            this.solColumn.HeaderText = "Solicitud";
+            this.solColumn.Name = "solColumn";
+            this.solColumn.ReadOnly = true;
+            this.solColumn.Width = 125;
+            // 
+            // rfcColumn
+            // 
+            this.rfcColumn.HeaderText = "RFC";
+            this.rfcColumn.Name = "rfcColumn";
+            this.rfcColumn.ReadOnly = true;
+            // 
+            // tipoColumn
+            // 
+            this.tipoColumn.HeaderText = "Tipo";
+            this.tipoColumn.Name = "tipoColumn";
+            this.tipoColumn.ReadOnly = true;
+            // 
+            // titularColumn
+            // 
+            this.titularColumn.HeaderText = "Titular";
+            this.titularColumn.Name = "titularColumn";
+            this.titularColumn.ReadOnly = true;
+            this.titularColumn.Width = 125;
+            // 
+            // fabrColumn
+            // 
+            this.fabrColumn.HeaderText = "Fabricante";
+            this.fabrColumn.Name = "fabrColumn";
+            this.fabrColumn.ReadOnly = true;
+            this.fabrColumn.Width = 125;
+            // 
+            // marcaColumn
+            // 
+            this.marcaColumn.HeaderText = "Marca";
+            this.marcaColumn.Name = "marcaColumn";
+            this.marcaColumn.ReadOnly = true;
+            this.marcaColumn.Width = 125;
+            // 
+            // paisColumn
+            // 
+            this.paisColumn.HeaderText = "Pais";
+            this.paisColumn.Name = "paisColumn";
+            this.paisColumn.ReadOnly = true;
+            // 
+            // distintivaColumn
+            // 
+            this.distintivaColumn.HeaderText = "Denom. Distintiva";
+            this.distintivaColumn.Name = "distintivaColumn";
+            this.distintivaColumn.ReadOnly = true;
+            // 
+            // genericaColumn
+            // 
+            this.genericaColumn.HeaderText = "Denom. Generica";
+            this.genericaColumn.Name = "genericaColumn";
+            this.genericaColumn.ReadOnly = true;
+            // 
+            // emisionColumn
+            // 
+            this.emisionColumn.HeaderText = "Emision";
+            this.emisionColumn.Name = "emisionColumn";
+            this.emisionColumn.ReadOnly = true;
+            this.emisionColumn.Width = 125;
+            // 
+            // vencimientoColumn
+            // 
+            this.vencimientoColumn.HeaderText = "Vencimiento";
+            this.vencimientoColumn.Name = "vencimientoColumn";
+            this.vencimientoColumn.ReadOnly = true;
+            this.vencimientoColumn.Width = 125;
+            // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
             // 
             // Registros_Principal
             // 
@@ -339,6 +355,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fabrColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn marcaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paisColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn distintivaColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genericaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn emisionColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimientoColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;

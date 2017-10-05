@@ -13,6 +13,7 @@ namespace AppLicitaciones
 {
     public partial class Form_Principal : Form
     {
+        int idLicitacion = 0;
         public Form_Principal()
         {
             InitializeComponent();
@@ -215,6 +216,7 @@ namespace AppLicitaciones
             foreach (Licitacion lc in licitaciones)
             {
                 dgvCalendario.Rows.Add(
+                    lc.Id,
                     lc.NumeroLicitacion,
                     lc.Calendarios.First().Junta,
                     lc.Calendarios.First().Apertura,
@@ -222,6 +224,18 @@ namespace AppLicitaciones
                     lc.Calendarios.First().Muestras,
                     lc.Calendarios.First().Firma
                     );
+            }
+        }
+
+        private void dgvCalendario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (Convert.ToInt32(dgvCalendario.Rows[e.RowIndex].Cells["idColumn"].Value) != 0)
+            {
+                Licitacion_Partidas_Principal form = new Licitacion_Partidas_Principal();
+                form.mostrarPartidasLicitacion(Convert.ToInt32(dgvCalendario.Rows[e.RowIndex].Cells["idColumn"].Value));
+                form.Show();
+
             }
         }
     }

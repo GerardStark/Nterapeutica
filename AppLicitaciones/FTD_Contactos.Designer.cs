@@ -37,6 +37,13 @@
             this.toolStripLabel4 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_contactos = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emaildosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonodosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ComentariosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_comentarios = new System.Windows.Forms.TextBox();
             this.txt_telefono_dos = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
@@ -49,13 +56,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emaildosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonodosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ComentariosColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_contactos)).BeginInit();
             this.SuspendLayout();
@@ -143,10 +143,56 @@
             this.DGV_contactos.Name = "DGV_contactos";
             this.DGV_contactos.ReadOnly = true;
             this.DGV_contactos.RowHeadersVisible = false;
+            this.DGV_contactos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGV_contactos.Size = new System.Drawing.Size(663, 418);
             this.DGV_contactos.TabIndex = 2;
+            this.DGV_contactos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_contactos_CellClick);
             this.DGV_contactos.RowHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_contactos_RowHeaderMouseClick);
             this.DGV_contactos.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGV_contactos_RowHeaderMouseDoubleClick);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
+            // 
+            // nombreColumn
+            // 
+            this.nombreColumn.HeaderText = "Nombre";
+            this.nombreColumn.Name = "nombreColumn";
+            this.nombreColumn.ReadOnly = true;
+            // 
+            // emailColumn
+            // 
+            this.emailColumn.HeaderText = "Email";
+            this.emailColumn.Name = "emailColumn";
+            this.emailColumn.ReadOnly = true;
+            // 
+            // emaildosColumn
+            // 
+            this.emaildosColumn.HeaderText = "Email 2";
+            this.emaildosColumn.Name = "emaildosColumn";
+            this.emaildosColumn.ReadOnly = true;
+            // 
+            // telefonoColumn
+            // 
+            this.telefonoColumn.HeaderText = "Telefono";
+            this.telefonoColumn.Name = "telefonoColumn";
+            this.telefonoColumn.ReadOnly = true;
+            // 
+            // telefonodosColumn
+            // 
+            this.telefonodosColumn.HeaderText = "Telefono 2";
+            this.telefonodosColumn.Name = "telefonodosColumn";
+            this.telefonodosColumn.ReadOnly = true;
+            this.telefonodosColumn.Width = 110;
+            // 
+            // ComentariosColumn
+            // 
+            this.ComentariosColumn.HeaderText = "Comentarios";
+            this.ComentariosColumn.Name = "ComentariosColumn";
+            this.ComentariosColumn.ReadOnly = true;
             // 
             // txt_comentarios
             // 
@@ -244,50 +290,6 @@
             this.label1.Size = new System.Drawing.Size(69, 20);
             this.label1.TabIndex = 16;
             this.label1.Text = "Nombre:";
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 50;
-            // 
-            // nombreColumn
-            // 
-            this.nombreColumn.HeaderText = "Nombre";
-            this.nombreColumn.Name = "nombreColumn";
-            this.nombreColumn.ReadOnly = true;
-            // 
-            // emailColumn
-            // 
-            this.emailColumn.HeaderText = "Email";
-            this.emailColumn.Name = "emailColumn";
-            this.emailColumn.ReadOnly = true;
-            // 
-            // emaildosColumn
-            // 
-            this.emaildosColumn.HeaderText = "Email 2";
-            this.emaildosColumn.Name = "emaildosColumn";
-            this.emaildosColumn.ReadOnly = true;
-            // 
-            // telefonoColumn
-            // 
-            this.telefonoColumn.HeaderText = "Telefono";
-            this.telefonoColumn.Name = "telefonoColumn";
-            this.telefonoColumn.ReadOnly = true;
-            // 
-            // telefonodosColumn
-            // 
-            this.telefonodosColumn.HeaderText = "Telefono 2";
-            this.telefonodosColumn.Name = "telefonodosColumn";
-            this.telefonodosColumn.ReadOnly = true;
-            this.telefonodosColumn.Width = 110;
-            // 
-            // ComentariosColumn
-            // 
-            this.ComentariosColumn.HeaderText = "Comentarios";
-            this.ComentariosColumn.Name = "ComentariosColumn";
-            this.ComentariosColumn.ReadOnly = true;
             // 
             // FTD_Contactos
             // 

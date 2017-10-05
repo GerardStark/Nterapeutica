@@ -21,3 +21,8 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\obj\Debug\LibLicitacion.csprojResolveAssemblyReference.cache
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\ObjectListView.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\ObjectListView.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\ClosedXML.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\FastMember.Signed.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\ClosedXML.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Debug\DocumentFormat.OpenXml.xml

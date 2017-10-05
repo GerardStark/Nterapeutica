@@ -130,6 +130,14 @@ namespace AppLicitaciones
             }
         }
 
+        private void DGV_contactos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                id_contacto = (Int32)DGV_contactos.Rows[e.RowIndex].Cells["idColumn"].Value;
+            }
+        }
+
         private void btn_guardar_Click(object sender, EventArgs e)
         {
             try

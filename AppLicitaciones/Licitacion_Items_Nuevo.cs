@@ -85,8 +85,7 @@ namespace AppLicitaciones
                                 int confirm = cmi.ExecuteNonQuery();
                                 if (confirm != 0)
                                 {
-                                    MessageBox.Show("guardado");
-                                    this.DialogResult = DialogResult.OK;
+                                    
                                 }
                             }
                         }
@@ -103,7 +102,8 @@ namespace AppLicitaciones
                         //        this.DialogResult = DialogResult.OK;
                         //    }
                         //}
-                        MessageBox.Show("Guardado");
+                        MessageBox.Show("guardado");
+                        this.DialogResult = DialogResult.OK;
                     }
                 }
             }
@@ -117,6 +117,13 @@ namespace AppLicitaciones
         private void Licitacion_Items_Nuevo_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'licitacionesDataSet.data_unidades' Puede moverla o quitarla según sea necesario.
+            txt_cantidad.Text = "1";
+            txt_max.Text = (from pr in Procedimiento.GetProcedimientos()
+                            where pr.Id == idSub
+                            select pr.Maximo).FirstOrDefault().ToString();
+            txt_min.Text = (from pr in Procedimiento.GetProcedimientos()
+                            where pr.Id == idSub
+                            select pr.Minimo).FirstOrDefault().ToString();
             this.data_unidadesTableAdapter.Fill(this.licitacionesDataSet.data_unidades);
             long numero = 0;
             if (Item.GetItemsPorProcedimiento(idSub).Any())

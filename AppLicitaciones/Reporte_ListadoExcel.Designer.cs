@@ -61,6 +61,7 @@
             this.btnImprimir.Size = new System.Drawing.Size(50, 50);
             this.btnImprimir.TabIndex = 6;
             this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // radConc
             // 
@@ -112,6 +113,7 @@
             this.dgvListado.Name = "dgvListado";
             this.dgvListado.ReadOnly = true;
             this.dgvListado.RowHeadersVisible = false;
+            this.dgvListado.RowTemplate.Height = 60;
             this.dgvListado.Size = new System.Drawing.Size(948, 611);
             this.dgvListado.TabIndex = 2;
             // 

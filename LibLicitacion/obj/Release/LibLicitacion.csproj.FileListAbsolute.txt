@@ -9,3 +9,8 @@ C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\itextsharp.xml
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\ObjectListView.dll
 C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\ObjectListView.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\ClosedXML.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\DocumentFormat.OpenXml.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\FastMember.Signed.dll
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\ClosedXML.xml
+C:\Users\apoyo3\Documents\Visual Studio 2017\Projects\licitaciones\LibLicitacion\bin\Release\DocumentFormat.OpenXml.xml

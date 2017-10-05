@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Licitacion_Tecnica));
             this.label2 = new System.Windows.Forms.Label();
             this.dgvProcedimientos = new System.Windows.Forms.DataGridView();
@@ -63,14 +63,15 @@
             this.lbl_proces = new System.Windows.Forms.Label();
             this.lbl_items = new System.Windows.Forms.Label();
             this.lbl_itemssr = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btn_preguntas = new System.Windows.Forms.Button();
             this.idItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSubParentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numItemColummn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descItemColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.docsColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label15 = new System.Windows.Forms.Label();
-            this.btn_preguntas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProcedimientos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -99,8 +100,8 @@
             this.dgvProcedimientos.Name = "dgvProcedimientos";
             this.dgvProcedimientos.ReadOnly = true;
             this.dgvProcedimientos.RowHeadersVisible = false;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProcedimientos.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProcedimientos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProcedimientos.Size = new System.Drawing.Size(705, 180);
             this.dgvProcedimientos.TabIndex = 3;
@@ -146,6 +147,7 @@
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idItemColumn,
             this.idSubParentColumn,
+            this.numItemColummn,
             this.unidadColumn,
             this.descItemColumn,
             this.docsColumn,
@@ -155,8 +157,8 @@
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.RowHeadersVisible = false;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItems.Size = new System.Drawing.Size(1255, 429);
             this.dgvItems.TabIndex = 4;
@@ -416,6 +418,27 @@
             this.lbl_itemssr.TabIndex = 31;
             this.lbl_itemssr.Text = "label17";
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1224, 223);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Text = "Junta a.";
+            // 
+            // btn_preguntas
+            // 
+            this.btn_preguntas.BackgroundImage = global::AppLicitaciones.Iconos.help;
+            this.btn_preguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_preguntas.Location = new System.Drawing.Point(1228, 187);
+            this.btn_preguntas.Name = "btn_preguntas";
+            this.btn_preguntas.Size = new System.Drawing.Size(35, 35);
+            this.btn_preguntas.TabIndex = 32;
+            this.btn_preguntas.UseVisualStyleBackColor = true;
+            this.btn_preguntas.Click += new System.EventHandler(this.btn_preguntas_Click);
+            // 
             // idItemColumn
             // 
             this.idItemColumn.HeaderText = "#";
@@ -429,6 +452,12 @@
             this.idSubParentColumn.Name = "idSubParentColumn";
             this.idSubParentColumn.ReadOnly = true;
             this.idSubParentColumn.Width = 125;
+            // 
+            // numItemColummn
+            // 
+            this.numItemColummn.HeaderText = "No.";
+            this.numItemColummn.Name = "numItemColummn";
+            this.numItemColummn.ReadOnly = true;
             // 
             // unidadColumn
             // 
@@ -457,27 +486,6 @@
             this.updatedColumn.Name = "updatedColumn";
             this.updatedColumn.ReadOnly = true;
             this.updatedColumn.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1224, 223);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(45, 13);
-            this.label15.TabIndex = 33;
-            this.label15.Text = "Junta a.";
-            // 
-            // btn_preguntas
-            // 
-            this.btn_preguntas.BackgroundImage = global::AppLicitaciones.Iconos.help;
-            this.btn_preguntas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_preguntas.Location = new System.Drawing.Point(1228, 187);
-            this.btn_preguntas.Name = "btn_preguntas";
-            this.btn_preguntas.Size = new System.Drawing.Size(35, 35);
-            this.btn_preguntas.TabIndex = 32;
-            this.btn_preguntas.UseVisualStyleBackColor = true;
-            this.btn_preguntas.Click += new System.EventHandler(this.btn_preguntas_Click);
             // 
             // Licitacion_Tecnica
             // 
@@ -560,13 +568,14 @@
         private System.Windows.Forms.Label lbl_proces;
         private System.Windows.Forms.Label lbl_items;
         private System.Windows.Forms.Label lbl_itemssr;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btn_preguntas;
         private System.Windows.Forms.DataGridViewTextBoxColumn idItemColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSubParentColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numItemColummn;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descItemColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn docsColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Button btn_preguntas;
     }
 }

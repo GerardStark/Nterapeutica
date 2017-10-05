@@ -45,6 +45,7 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.noSeQueEstoyHaciendoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvCalendario = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.juntaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aperColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -183,6 +184,7 @@
             this.dgvCalendario.AllowUserToDeleteRows = false;
             this.dgvCalendario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalendario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idColumn,
             this.numColumn,
             this.juntaColumn,
             this.aperColumn,
@@ -197,6 +199,14 @@
             this.dgvCalendario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCalendario.Size = new System.Drawing.Size(1304, 647);
             this.dgvCalendario.TabIndex = 1;
+            this.dgvCalendario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendario_CellDoubleClick);
+            // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "Id";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Visible = false;
             // 
             // numColumn
             // 
@@ -280,6 +290,7 @@
         private System.Windows.Forms.ToolStripMenuItem procesosDeLicitacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem impresionDeReportesToolStripMenuItem;
         private System.Windows.Forms.DataGridView dgvCalendario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn juntaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn aperColumn;
