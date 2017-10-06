@@ -19,6 +19,7 @@ namespace AppLicitaciones
         public Catalogos_ClavesReferencias()
         {
             InitializeComponent();
+            mc.DoubleBuffered(DGV_Referencias, true);
             this.DGV_Referencias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Referencias.MultiSelect = false;
         }

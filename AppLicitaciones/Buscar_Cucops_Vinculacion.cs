@@ -14,76 +14,52 @@ namespace AppLicitaciones
     public partial class Buscar_Cucops_Vinculacion : Form
     {
         public int idCucop = 0;
+       
         MainConfig mc = new MainConfig();
         public Buscar_Cucops_Vinculacion()
         {
             InitializeComponent();
             llenarListaCucops();
-            foreach (DataGridViewColumn col in dgvCucops.Columns)
-            {
-                if (col.Index == 4)
-                {
-                    col.ReadOnly = false;
-                }
-                else
-                {
-                    col.ReadOnly = true;
-                }
-            }
+            mc.DoubleBuffered(dgvCucops, true);
         }
 
         private void llenarListaCucops()
         {
+            List<Item> items = Item.GetItems();
             dgvCucops.Rows.Clear();
-            foreach (Item i in Item.GetItems())
+            foreach (Item i in items)
             {
-                var numlicit = (from bs in Licitacion.GetBases()
-                                from pt in bs.Partidas
-                                from pr in pt.Procedimientos
-                                from it in pr.Items
-                                where it.Id == i.Id
-                                select bs.NumeroLicitacion).ToString();
+                
                 if (i.Vinculos.Any())
                 {
                     
-                    dgvCucops.Rows.Add(i.Id, numlicit, i.Ccb, i.Nombre, i.Updated);
+                    dgvCucops.Rows.Add(i.Id, i.Ccb, i.Nombre, i.Updated);
                 }
             }
         }
 
         private void btn_filtrar_Click(object sender, EventArgs e)
         {
-            
+            List<Item> items = Item.GetItems();
+            string texto = txt_filtrar.Text;
             dgvCucops.Rows.Clear();
-            foreach (Item i in Item.GetItems())
+            var results = items.Where(x => x.Nombre.IndexOf(texto, StringComparison.OrdinalIgnoreCase) > -1 && x.Vinculos.Any()).ToList();
+            foreach (Item i in results)
             {
-                var numlicit = (from bs in Licitacion.GetBases()
-                                from pt in bs.Partidas
-                                from pr in pt.Procedimientos
-                                from it in pr.Items
-                                where it.Id == i.Id
-                                select bs.NumeroLicitacion).ToString();
-                if (i.Nombre.Contains(txt_filtrar.Text) && i.Vinculos.Any())
-                {
-                    dgvCucops.Rows.Add(i.Id, numlicit, i.Ccb, i.Nombre, i.Updated);
-                }
-                
+                dgvCucops.Rows.Add(i.Id, i.Ccb, i.Nombre, i.Updated);
             }
         }
 
         private void dgvCucops_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 5)
+            Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
+            Licitacion_Item_Visualizar form = new Licitacion_Item_Visualizar();
+            form.mostrarinfoItem(idCucop);
+            DialogResult result = form.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
-                Licitacion_Item_Visualizar form = new Licitacion_Item_Visualizar();
-                form.mostrarinfoItem(idCucop);
-                DialogResult result = form.ShowDialog();
-                if (result == DialogResult.OK)
-                {
-                    this.idCucop = form.idItem;
-                    this.DialogResult = DialogResult.OK;
-                }
+                this.idCucop = form.idItem;
+                this.DialogResult = DialogResult.OK;
             }
         }
 

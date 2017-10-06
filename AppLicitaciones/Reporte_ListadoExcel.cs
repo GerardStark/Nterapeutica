@@ -25,6 +25,7 @@ namespace AppLicitaciones
         public Reporte_ListadoExcel()
         {
             InitializeComponent();
+            mc.DoubleBuffered(dgvListado, true);
             radAct.CheckedChanged += radioEstadosLicic;
             radConc.CheckedChanged += radioEstadosLicic;
         }
@@ -577,14 +578,6 @@ namespace AppLicitaciones
 
                 }
             } 
-        }
-
-        private void copyAlltoClipboard()
-        {
-            dgvListado.SelectAll();
-            DataObject dataObj = dgvListado.GetClipboardContent();
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
         }
     }    
 }

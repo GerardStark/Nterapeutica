@@ -20,6 +20,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablaregistros();
+            mc.DoubleBuffered(DGVRegistros, true);
             this.DGVRegistros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGVRegistros.MultiSelect = false;
             //DGVRegistros.DefaultCellStyle.SelectionBackColor = DGVRegistros.DefaultCellStyle.BackColor;

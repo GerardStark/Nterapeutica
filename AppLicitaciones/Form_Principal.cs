@@ -218,13 +218,21 @@ namespace AppLicitaciones
                 dgvCalendario.Rows.Add(
                     lc.Id,
                     lc.NumeroLicitacion,
-                    lc.Calendarios.First().Junta,
-                    lc.Calendarios.First().Apertura,
-                    lc.Calendarios.First().Fallo,
-                    lc.Calendarios.First().Muestras,
-                    lc.Calendarios.First().Firma
+                    checarFecha(lc.Calendarios.First().Junta),
+                    checarFecha(lc.Calendarios.First().Apertura),
+                    checarFecha(lc.Calendarios.First().Fallo),
+                    checarFecha(lc.Calendarios.First().Muestras),
+                    checarFecha(lc.Calendarios.First().Firma)
                     );
             }
+        }
+
+        private object checarFecha(DateTime valor)
+        {
+            if (valor == DateTimePicker.MinimumDateTime)
+                return "No Aplica";
+            return valor;
+            
         }
 
         private void dgvCalendario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -237,6 +245,12 @@ namespace AppLicitaciones
                 form.Show();
 
             }
+        }
+
+        private void dgvCalendario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+           
+            
         }
     }
 }

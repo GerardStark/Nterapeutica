@@ -200,6 +200,7 @@
             this.dgvCalendario.Size = new System.Drawing.Size(1304, 647);
             this.dgvCalendario.TabIndex = 1;
             this.dgvCalendario.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalendario_CellDoubleClick);
+            this.dgvCalendario.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCalendario_CellFormatting);
             // 
             // idColumn
             // 

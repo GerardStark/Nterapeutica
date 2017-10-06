@@ -21,6 +21,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablacertificados();
+            mc.DoubleBuffered(DGV_certificados, true);
             this.DGV_certificados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGV_certificados.MultiSelect = false;
         }

@@ -34,7 +34,6 @@
             this.dgvCucops = new System.Windows.Forms.DataGridView();
             this.btn_filtrar = new System.Windows.Forms.Button();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.licitColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.claveColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,7 +68,6 @@
             this.dgvCucops.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCucops.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
-            this.licitColumn,
             this.claveColumn,
             this.descColumn,
             this.updatedColumn,
@@ -102,12 +100,6 @@
             this.idColumn.Name = "idColumn";
             this.idColumn.ReadOnly = true;
             this.idColumn.Width = 50;
-            // 
-            // licitColumn
-            // 
-            this.licitColumn.HeaderText = "Licitacion";
-            this.licitColumn.Name = "licitColumn";
-            this.licitColumn.ReadOnly = true;
             // 
             // claveColumn
             // 
@@ -166,7 +158,6 @@
         private System.Windows.Forms.DataGridView dgvCucops;
         private System.Windows.Forms.Button btn_filtrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn licitColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn claveColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;

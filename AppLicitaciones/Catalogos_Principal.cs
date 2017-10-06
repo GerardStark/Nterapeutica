@@ -20,6 +20,7 @@ namespace AppLicitaciones
         {
             InitializeComponent();
             llenartablacatalogos();
+            mc.DoubleBuffered(DGV_Catalogos,true);
             this.DGV_Catalogos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             this.DGV_Catalogos.MultiSelect = false;
         }

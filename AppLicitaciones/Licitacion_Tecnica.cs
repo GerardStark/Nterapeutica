@@ -18,7 +18,9 @@ namespace AppLicitaciones
         MainConfig mc = new MainConfig();
         public Licitacion_Tecnica()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            mc.DoubleBuffered(dgvItems, true);
+            mc.DoubleBuffered(dgvProcedimientos, true);
         }
         public void MostrarProcedimientosPorPartida(int idPartida)
         {
