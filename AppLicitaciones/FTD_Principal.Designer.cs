@@ -235,6 +235,9 @@
             // 
             this.DGV_FTD.AllowUserToAddRows = false;
             this.DGV_FTD.AllowUserToDeleteRows = false;
+            this.DGV_FTD.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_FTD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_FTD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,

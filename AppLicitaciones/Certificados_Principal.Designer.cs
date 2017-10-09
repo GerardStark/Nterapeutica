@@ -37,8 +37,6 @@
             this.btn_visualizar = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.DGV_certificados = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lbl_conteo = new System.Windows.Forms.Label();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +47,8 @@
             this.archivoColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tradColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_conteo = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGV_certificados)).BeginInit();
             this.SuspendLayout();
@@ -123,6 +123,9 @@
             // 
             this.DGV_certificados.AllowUserToAddRows = false;
             this.DGV_certificados.AllowUserToDeleteRows = false;
+            this.DGV_certificados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_certificados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_certificados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
@@ -143,24 +146,6 @@
             this.DGV_certificados.TabIndex = 2;
             this.DGV_certificados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_certificados_CellClick);
             this.DGV_certificados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DGV_certificados_CellFormatting);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(1185, 662);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Certificados";
-            // 
-            // lbl_conteo
-            // 
-            this.lbl_conteo.AutoSize = true;
-            this.lbl_conteo.Location = new System.Drawing.Point(1098, 662);
-            this.lbl_conteo.Name = "lbl_conteo";
-            this.lbl_conteo.Size = new System.Drawing.Size(51, 20);
-            this.lbl_conteo.TabIndex = 4;
-            this.lbl_conteo.Text = "label1";
             // 
             // idColumn
             // 
@@ -231,6 +216,26 @@
             this.updatedColumn.Name = "updatedColumn";
             this.updatedColumn.ReadOnly = true;
             this.updatedColumn.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(1185, 662);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 20);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Certificados";
+            // 
+            // lbl_conteo
+            // 
+            this.lbl_conteo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_conteo.AutoSize = true;
+            this.lbl_conteo.Location = new System.Drawing.Point(1098, 662);
+            this.lbl_conteo.Name = "lbl_conteo";
+            this.lbl_conteo.Size = new System.Drawing.Size(51, 20);
+            this.lbl_conteo.TabIndex = 4;
+            this.lbl_conteo.Text = "label1";
             // 
             // Certificados_Principal
             // 

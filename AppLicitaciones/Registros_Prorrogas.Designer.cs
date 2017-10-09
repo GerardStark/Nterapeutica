@@ -57,6 +57,9 @@
             // 
             this.DGV_Referencias.AllowUserToAddRows = false;
             this.DGV_Referencias.AllowUserToDeleteRows = false;
+            this.DGV_Referencias.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGV_Referencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV_Referencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,

@@ -209,15 +209,15 @@ namespace AppLicitaciones
 
         private void Form_Principal_Load(object sender, EventArgs e)
         {
-            var licitaciones = from lc in Licitacion.GetBases()
-                               from cl in lc.Calendarios
-                               where cl.Firma > DateTime.Today
-                               select lc;
+            var licitaciones = (from lc in Licitacion.GetBases()                              
+                               where lc.Estado == 1
+                               select lc).ToList();
             foreach (Licitacion lc in licitaciones)
             {
+                string nombre = lc.NumeroLicitacion + "\r\n" + lc.Descripcion;
                 dgvCalendario.Rows.Add(
                     lc.Id,
-                    lc.NumeroLicitacion,
+                    nombre,
                     checarFecha(lc.Calendarios.First().Junta),
                     checarFecha(lc.Calendarios.First().Apertura),
                     checarFecha(lc.Calendarios.First().Fallo),

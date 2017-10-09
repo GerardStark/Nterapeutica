@@ -89,7 +89,7 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@espec", "");//no se va a usar
                         cmd.Parameters.AddWithValue("@duracion", txt_duracion_contrato.Text);
                         cmd.Parameters.AddWithValue("@tipoContrat", txt_tipo_contrato.Text);
-                        cmd.Parameters.AddWithValue("@estado", 0);
+                        cmd.Parameters.AddWithValue("@estado", 1);
                         cmd.Parameters.AddWithValue("@expediente", txt_num_expediente.Text);
                         cmd.Parameters.AddWithValue("@tipoLic", "");// no se va a usar
                         cmd.Parameters.AddWithValue("@tipoExp", cmb_tipo_exp.SelectedValue);

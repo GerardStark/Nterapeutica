@@ -38,16 +38,16 @@
             this.toolStripLabel5 = new System.Windows.Forms.ToolStripLabel();
             this.btn_actas = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoExpColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.expColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unicompColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgv_licitaciones = new System.Windows.Forms.DataGridView();
+            this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unicompColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entidadColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.expColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoExpColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.updatedColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_licitaciones)).BeginInit();
             this.SuspendLayout();
@@ -135,69 +135,6 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(62, 15);
             this.toolStripLabel2.Text = "Actas";
             // 
-            // updatedColumn
-            // 
-            this.updatedColumn.HeaderText = "Actualizado en";
-            this.updatedColumn.Name = "updatedColumn";
-            this.updatedColumn.ReadOnly = true;
-            this.updatedColumn.Visible = false;
-            // 
-            // descColumn
-            // 
-            this.descColumn.HeaderText = "Descripcion";
-            this.descColumn.Name = "descColumn";
-            this.descColumn.ReadOnly = true;
-            this.descColumn.Width = 215;
-            // 
-            // tipoExpColumn
-            // 
-            this.tipoExpColumn.HeaderText = "Tipo de Exp.";
-            this.tipoExpColumn.Name = "tipoExpColumn";
-            this.tipoExpColumn.ReadOnly = true;
-            this.tipoExpColumn.Width = 150;
-            // 
-            // expColumn
-            // 
-            this.expColumn.HeaderText = "Expendiente";
-            this.expColumn.Name = "expColumn";
-            this.expColumn.ReadOnly = true;
-            this.expColumn.Width = 150;
-            // 
-            // specColumn
-            // 
-            this.specColumn.HeaderText = "Especialidad";
-            this.specColumn.Name = "specColumn";
-            this.specColumn.ReadOnly = true;
-            this.specColumn.Width = 150;
-            // 
-            // entidadColumn
-            // 
-            this.entidadColumn.HeaderText = "Entidad F.";
-            this.entidadColumn.Name = "entidadColumn";
-            this.entidadColumn.ReadOnly = true;
-            this.entidadColumn.Width = 150;
-            // 
-            // unicompColumn
-            // 
-            this.unicompColumn.HeaderText = "Unidad Compradora";
-            this.unicompColumn.Name = "unicompColumn";
-            this.unicompColumn.ReadOnly = true;
-            this.unicompColumn.Width = 175;
-            // 
-            // numColumn
-            // 
-            this.numColumn.HeaderText = "Numero";
-            this.numColumn.Name = "numColumn";
-            this.numColumn.ReadOnly = true;
-            this.numColumn.Width = 125;
-            // 
-            // idColumn
-            // 
-            this.idColumn.HeaderText = "#";
-            this.idColumn.Name = "idColumn";
-            this.idColumn.ReadOnly = true;
-            this.idColumn.Width = 50;
-            // 
             // dgv_licitaciones
             // 
             this.dgv_licitaciones.AllowUserToAddRows = false;
@@ -225,6 +162,69 @@
             this.dgv_licitaciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_licitaciones_CellClick);
             this.dgv_licitaciones.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_licitaciones_CellFormatting);
             // 
+            // idColumn
+            // 
+            this.idColumn.HeaderText = "#";
+            this.idColumn.Name = "idColumn";
+            this.idColumn.ReadOnly = true;
+            this.idColumn.Width = 50;
+            // 
+            // numColumn
+            // 
+            this.numColumn.HeaderText = "Numero";
+            this.numColumn.Name = "numColumn";
+            this.numColumn.ReadOnly = true;
+            this.numColumn.Width = 200;
+            // 
+            // unicompColumn
+            // 
+            this.unicompColumn.HeaderText = "Unidad Compradora";
+            this.unicompColumn.Name = "unicompColumn";
+            this.unicompColumn.ReadOnly = true;
+            this.unicompColumn.Width = 175;
+            // 
+            // entidadColumn
+            // 
+            this.entidadColumn.HeaderText = "Entidad F.";
+            this.entidadColumn.Name = "entidadColumn";
+            this.entidadColumn.ReadOnly = true;
+            this.entidadColumn.Width = 150;
+            // 
+            // specColumn
+            // 
+            this.specColumn.HeaderText = "Especialidad";
+            this.specColumn.Name = "specColumn";
+            this.specColumn.ReadOnly = true;
+            this.specColumn.Width = 150;
+            // 
+            // expColumn
+            // 
+            this.expColumn.HeaderText = "Expendiente";
+            this.expColumn.Name = "expColumn";
+            this.expColumn.ReadOnly = true;
+            this.expColumn.Width = 150;
+            // 
+            // tipoExpColumn
+            // 
+            this.tipoExpColumn.HeaderText = "Tipo de Exp.";
+            this.tipoExpColumn.Name = "tipoExpColumn";
+            this.tipoExpColumn.ReadOnly = true;
+            this.tipoExpColumn.Width = 150;
+            // 
+            // descColumn
+            // 
+            this.descColumn.HeaderText = "Descripcion";
+            this.descColumn.Name = "descColumn";
+            this.descColumn.ReadOnly = true;
+            this.descColumn.Width = 215;
+            // 
+            // updatedColumn
+            // 
+            this.updatedColumn.HeaderText = "Actualizado en";
+            this.updatedColumn.Name = "updatedColumn";
+            this.updatedColumn.ReadOnly = true;
+            this.updatedColumn.Visible = false;
+            // 
             // Licitacion_Actuales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,19 +251,19 @@
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_calendario;
         private System.Windows.Forms.ToolStripLabel toolStripLabel4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tipoExpColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn expColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn entidadColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unicompColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridView dgv_licitaciones;
         private System.Windows.Forms.ToolStripButton btn_partidas;
         private System.Windows.Forms.ToolStripLabel toolStripLabel5;
         private System.Windows.Forms.ToolStripButton btn_actas;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unicompColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn entidadColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn expColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoExpColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn updatedColumn;
     }
 }

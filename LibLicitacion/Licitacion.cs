@@ -17,7 +17,7 @@ namespace LibLicitacion
 
         public Licitacion(int id, string numLicit, string unidadComp, int entiFedr, string spec, string durContr, string tipoContr,
            long expediente, string tipoLicit, int tipoExp, string nombOper,
-           string emailOper, string descrip, string archivo, DateTime created, DateTime updated)
+           string emailOper, string descrip, string archivo, int estado, DateTime created, DateTime updated)
         {
             this.Id = id;
             this.NumeroLicitacion = numLicit;
@@ -33,6 +33,7 @@ namespace LibLicitacion
             this.EmailOperador = emailOper;
             this.Descripcion = descrip;
             this.NombreArchivo = archivo;
+            this.Estado = estado;
             this.Created = created;
             this.Updated = updated;
         }
@@ -149,6 +150,14 @@ namespace LibLicitacion
 
         private string archivo;
 
+        public int Estado
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
+
+        private int estado;
+
         public DateTime Created
         {
             get { return created; }
@@ -212,6 +221,7 @@ namespace LibLicitacion
                             b.EmailOperador = (string)dr["operador_correo"];
                             b.Descripcion = (string)dr["descripcion"];
                             b.NombreArchivo = (string)dr["dir_archivo"];
+                            b.Estado = (Byte)dr["estado"];
                             b.Created = (DateTime)dr["creado_en"];
                             b.Updated = (DateTime)dr["actualizado_en"];
                             bases.Add(b);

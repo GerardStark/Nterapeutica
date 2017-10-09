@@ -27,30 +27,13 @@ namespace AppLicitaciones
             {
                 using (SqlConnection con = new SqlConnection(mc.con))
                 {
-                    if (estado == 1)
+                    if (estado == 1 || estado == 0)
                     {
                         using (SqlCommand cmd = new SqlCommand(@"SELECT id_bases,numero_licitacion,unidad_compradora,entidad_federativa,especialidad,expediente,tipo_expediente,descripcion,actualizado_en 
-                                                         FROM licitacion_bases WHERE id_bases IN (SELECT id_bases FROM licitacion_calendario WHERE @hoy <= fecha_firma)", con))
+                                                         FROM licitacion_bases WHERE id_bases IN (SELECT id_bases FROM licitacion_calendario WHERE estado = @estado)", con))
                         {
                             con.Open();
-                            cmd.Parameters.AddWithValue("@hoy", DateTime.Now);
-                            SqlDataAdapter adapt = new SqlDataAdapter(cmd);
-                            DataTable dt = new DataTable();
-                            adapt.Fill(dt);
-                            foreach (DataRow dr in dt.Rows)
-                            {
-                                dgv_licitaciones.Rows.Add(dr.ItemArray);
-                            }
-                            mc.buscarultimafilaeditada("licitacion_bases", dgv_licitaciones);
-                        }
-                    }
-                    else if (estado == 0)
-                    {
-                        using (SqlCommand cmd = new SqlCommand(@"SELECT id_bases,numero_licitacion,unidad_compradora,entidad_federativa,especialidad,expediente,tipo_expediente,descripcion,actualizado_en 
-                                                         FROM licitacion_bases WHERE id_bases IN (SELECT id_bases FROM licitacion_calendario WHERE @hoy >= fecha_firma)", con))
-                        {
-                            con.Open();
-                            cmd.Parameters.AddWithValue("@hoy", DateTime.Now);
+                            cmd.Parameters.AddWithValue("@estado", estado);
                             SqlDataAdapter adapt = new SqlDataAdapter(cmd);
                             DataTable dt = new DataTable();
                             adapt.Fill(dt);
@@ -62,8 +45,7 @@ namespace AppLicitaciones
                         }
                     }
                     else
-                    {
-                        
+                    {                        
                         using (SqlCommand cmd = new SqlCommand(@"SELECT id_bases,numero_licitacion,unidad_compradora,entidad_federativa,especialidad,expediente,tipo_expediente,descripcion,actualizado_en 
                                                         FROM licitacion_bases", con))
                         {

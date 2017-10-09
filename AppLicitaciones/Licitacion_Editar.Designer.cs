@@ -61,6 +61,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.aux_entidades_federativasTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.aux_entidades_federativasTableAdapter();
             this.aux_tipos_expedienteTableAdapter = new AppLicitaciones.LicitacionesDataSetTableAdapters.aux_tipos_expedienteTableAdapter();
+            this.btn_inactiva = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.auxtiposexpedienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licitacionesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.auxentidadesfederativasBindingSource)).BeginInit();
@@ -268,7 +269,8 @@
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(50, 50);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btn_guardar,
-            this.btn_cancelar});
+            this.btn_cancelar,
+            this.btn_inactiva});
             this.toolStrip1.Location = new System.Drawing.Point(0, 357);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(664, 57);
@@ -330,6 +332,15 @@
             // aux_tipos_expedienteTableAdapter
             // 
             this.aux_tipos_expedienteTableAdapter.ClearBeforeFill = true;
+            // 
+            // btn_inactiva
+            // 
+            this.btn_inactiva.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_inactiva.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_inactiva.Name = "btn_inactiva";
+            this.btn_inactiva.Size = new System.Drawing.Size(23, 54);
+            this.btn_inactiva.Text = "toolStripButton1";
+            this.btn_inactiva.Click += new System.EventHandler(this.btn_inactiva_Click);
             // 
             // Licitacion_Editar
             // 
@@ -408,5 +419,6 @@
         private LicitacionesDataSetTableAdapters.aux_entidades_federativasTableAdapter aux_entidades_federativasTableAdapter;
         private System.Windows.Forms.BindingSource auxtiposexpedienteBindingSource;
         private LicitacionesDataSetTableAdapters.aux_tipos_expedienteTableAdapter aux_tipos_expedienteTableAdapter;
+        private System.Windows.Forms.ToolStripButton btn_inactiva;
     }
 }

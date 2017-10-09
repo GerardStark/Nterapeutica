@@ -39,7 +39,7 @@ namespace AppLicitaciones
             {
                 for (int i = 0; i < bases.Count; i++)
                 {
-                    if (bases[i].Calendarios.Single().Firma > DateTime.Today)
+                    if (bases[i].Estado == 1)
                     {
                         ComboboxItem item = new ComboboxItem();
                         item.Text = bases[i].NumeroLicitacion;
@@ -52,7 +52,7 @@ namespace AppLicitaciones
             {
                 for (int i = 0; i < bases.Count; i++)
                 {
-                    if (bases[i].Calendarios.Single().Firma < DateTime.Today)
+                    if ((bases[i].Estado != 1))
                     {
                         ComboboxItem item = new ComboboxItem();
                         item.Text = bases[i].NumeroLicitacion;
@@ -90,6 +90,7 @@ namespace AppLicitaciones
                 "Contenedor",
                 "Minimo",
                 "Maximo",
+                "opcion",
                 "Carta de Apoyo",
                 "RFC",
                 "Apoyo",
@@ -152,6 +153,7 @@ namespace AppLicitaciones
                         items[i].Contenedor,
                         items[i].Minimo,
                         items[i].Maximo,
+                        vinc.Opcion.ToString(),
                         Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
                         Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
                         Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,

@@ -16,6 +16,7 @@ namespace AppLicitaciones
     public partial class Licitacion_Editar : Form
     {
         int idlicit, entidad,tipoexp;
+        Byte estado;
         MainConfig mc = new MainConfig();
         string archivo, fileName, tipoLic, camino;
 
@@ -27,6 +28,60 @@ namespace AppLicitaciones
             this.aux_entidades_federativasTableAdapter.Fill(this.licitacionesDataSet.aux_entidades_federativas);
             cmb_entidad.SelectedValue = entidad;
             cmb_tipo_exp.SelectedValue = tipoexp;
+            if (estado == 1)
+            {
+                btn_inactiva.Image = Iconos.eye_disabled;
+            }
+            else
+            {
+                btn_inactiva.Image = Iconos.eye;
+            }
+        }
+
+        private void btn_inactiva_Click(object sender, EventArgs e)
+        {
+
+            if (estado == 1)
+            {
+               
+                if (MessageBox.Show("¿Marcar licitacion como terminada?", "Terminar Licitacion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.Connection = con;
+                            cmd.CommandText = @"UPDATE licitacion_bases SET estado = @estado WHERE id_bases = @id";
+                            cmd.Parameters.AddWithValue("@estado", 0);
+                            cmd.Parameters.AddWithValue("@id", idlicit);
+                            if (cmd.ExecuteNonQuery() != 0)
+                                MessageBox.Show("Licitacion Marcada Como Inactiva");
+
+                        }
+                    }
+                }
+            }
+            else
+            {
+                if (MessageBox.Show("¿Marcar licitacion como Activa?", "Activar Licitacion", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    using (SqlConnection con = new SqlConnection(mc.con))
+                    {
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand())
+                        {
+                            cmd.Connection = con;
+                            cmd.CommandText = @"UPDATE licitacion_bases SET estado = @estado WHERE id_bases = @id";
+                            cmd.Parameters.AddWithValue("@estado", 1);
+                            cmd.Parameters.AddWithValue("@id", idlicit);
+                            if (cmd.ExecuteNonQuery() != 0)
+                                MessageBox.Show("Licitacion Marcada Como Activa");
+
+                        }
+                    }
+                }
+            }
         }
 
         public Licitacion_Editar()
@@ -63,7 +118,6 @@ namespace AppLicitaciones
                         cmd.Parameters.AddWithValue("@espec","");
                         cmd.Parameters.AddWithValue("@duracion", txt_duracion_contrato.Text);
                         cmd.Parameters.AddWithValue("@tipoContrat", txt_tipo_contrato.Text);
-                        cmd.Parameters.AddWithValue("@estado", 0);
                         cmd.Parameters.AddWithValue("@expediente", txt_num_expediente.Text);
                         cmd.Parameters.AddWithValue("@tipoLic", "");
                         cmd.Parameters.AddWithValue("@tipoExp", cmb_tipo_exp.SelectedValue);
@@ -135,6 +189,7 @@ namespace AppLicitaciones
                         txt_duracion_contrato.Text = dt.Rows[0]["duracion_contrato"].ToString();
                         txt_num_expediente.Text = dt.Rows[0]["expediente"].ToString();
                         tipoexp = (Int32)dt.Rows[0]["tipo_expediente"];
+                        estado = (Byte)dt.Rows[0]["estado"];
                         //tipoexp = (Int32)dt.Rows[0]["tipo_expediente"];//obtener texto
                         txt_nombre_operador.Text = dt.Rows[0]["operador_nombre"].ToString();
                         txt_correo_operador.Text = dt.Rows[0]["operador_correo"].ToString();

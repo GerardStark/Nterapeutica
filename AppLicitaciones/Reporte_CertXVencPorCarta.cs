@@ -38,7 +38,7 @@ namespace AppLicitaciones
             {
                 for (int i = 0; i < bases.Count; i++)
                 {
-                    if (bases[i].Calendarios.Single().Firma > DateTime.Today)
+                    if (bases[i].Estado == 1)
                     {
                         ComboboxItem item = new ComboboxItem();
                         item.Text = bases[i].NumeroLicitacion;
@@ -51,7 +51,7 @@ namespace AppLicitaciones
             {
                 for (int i = 0; i < bases.Count; i++)
                 {
-                    if (bases[i].Calendarios.Single().Firma < DateTime.Today)
+                    if ((bases[i].Estado != 1))
                     {
                         ComboboxItem item = new ComboboxItem();
                         item.Text = bases[i].NumeroLicitacion;
