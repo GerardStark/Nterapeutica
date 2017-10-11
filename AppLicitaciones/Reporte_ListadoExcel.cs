@@ -245,14 +245,17 @@ namespace AppLicitaciones
         private object getCatPaginasPdf(List<VinculoCatalogos> catalogos)
         {
             string stpags = "";
-            foreach (VinculoCatalogos vca in catalogos)
+            if (catalogos.Any())
             {
-                foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                foreach (VinculoCatalogos vca in catalogos)
                 {
-                    var pag = (from cr in ReferenciaCatalogo.GetReferencias()
-                               where cr.Catalogo == vca.Nombre
-                               select cr.PaginaPDF).FirstOrDefault();
-                    stpags = stpags + pag + "/";
+                    foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                    {
+                        var pag = (from cr in ReferenciaCatalogo.GetReferencias()
+                                   where cr.Catalogo == vca.Nombre
+                                   select cr.PaginaPDF).FirstOrDefault();
+                        stpags = stpags + pag + "/";
+                    }
                 }
             }
             return stpags;
@@ -261,14 +264,17 @@ namespace AppLicitaciones
         private object getCatPaginas(List<VinculoCatalogos> catalogos)
         {
             string stpags = "";
-            foreach (VinculoCatalogos vca in catalogos)
+            if (catalogos.Any())
             {
-                foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                foreach (VinculoCatalogos vca in catalogos)
                 {
-                    var pag = (from cr in ReferenciaCatalogo.GetReferencias()
-                                where cr.Catalogo == vca.Nombre
-                                select cr.PaginaCat).FirstOrDefault();
-                    stpags = stpags + pag + "/";
+                    foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                    {
+                        var pag = (from cr in ReferenciaCatalogo.GetReferencias()
+                                   where cr.Catalogo == vca.Nombre
+                                   select cr.PaginaCat).FirstOrDefault();
+                        stpags = stpags + pag + "/";
+                    }
                 }
             }
             return stpags;
@@ -277,15 +283,18 @@ namespace AppLicitaciones
         private object getCatReferencias(List<VinculoCatalogos> catalogos)
         {
             string strefs = "";
-            foreach (VinculoCatalogos vca in catalogos)
+            if (catalogos.Any())
             {
-                foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                foreach (VinculoCatalogos vca in catalogos)
                 {
-                    var cref = (from cr in ReferenciaCatalogo.GetReferencias()
-                                where cr.Catalogo == vca.Nombre
-                                select cr.Referencia).FirstOrDefault();
-                    strefs = strefs + cref + "/";
-                }                
+                    foreach (vinculoCatalogoReferencia item in vca.Referencias)
+                    {
+                        var cref = (from cr in ReferenciaCatalogo.GetReferencias()
+                                    where cr.Catalogo == vca.Nombre
+                                    select cr.Referencia).FirstOrDefault();
+                        strefs = strefs + cref + "/";
+                    }
+                }
             }
             return strefs;
         }
@@ -293,25 +302,31 @@ namespace AppLicitaciones
         private object getCatNombres(List<VinculoCatalogos> catalogos)
         {
             string stcats = "";
-            foreach (VinculoCatalogos vce in catalogos)
+            if (catalogos.Any())
             {
-                var cat = (from ca in CatalogoProductos.getCatalogos()
-                           where ca.Id == vce.Nombre
-                           select ca.Nombre).FirstOrDefault();
-                stcats = stcats + cat + "/";
+                foreach (VinculoCatalogos vce in catalogos)
+                {
+                    var cat = (from ca in CatalogoProductos.getCatalogos()
+                               where ca.Id == vce.Nombre
+                               select ca.Nombre).FirstOrDefault();
+                    stcats = stcats + cat + "/";
+                }
             }
             return stcats;
         }
 
         private object getCertPorcent(List<VinculoCertificados> certificados)
         {
-            foreach (VinculoCertificados vre in certificados)
+            if (certificados.Any())
             {
-                var cert = (from re in CertificadoCalidad.GetCertificados()
-                           where re.Id == vre.Nombre
-                           select re.Vencimiento).FirstOrDefault();
-                if (cert > DateTime.Today.AddDays(-150))
-                    return 1;
+                foreach (VinculoCertificados vre in certificados)
+                {
+                    var cert = (from re in CertificadoCalidad.GetCertificados()
+                                where re.Id == vre.Nombre
+                                select re.Vencimiento).FirstOrDefault();
+                    if (cert > DateTime.Today.AddDays(-150))
+                        return 1;
+                }
             }
             return 0;
         }
@@ -319,12 +334,15 @@ namespace AppLicitaciones
         private object getCeIsoVencimientos(List<VinculoCertificados> certificados)
         {
             string stvencimientos = "";
-            foreach (VinculoCertificados vce in certificados)
+            if (certificados.Any())
             {
-                var cert = (from ce in CertificadoCalidad.GetCertificados()
-                            where ce.Id == vce.Nombre && ce.Tipo != "FDA"
-                            select ce.Vencimiento).FirstOrDefault();
-                stvencimientos = stvencimientos + cert + "/";
+                foreach (VinculoCertificados vce in certificados)
+                {
+                    var cert = (from ce in CertificadoCalidad.GetCertificados()
+                                where ce.Id == vce.Nombre && ce.Tipo != "FDA"
+                                select ce.Vencimiento).FirstOrDefault();
+                    stvencimientos = stvencimientos + cert + "/";
+                }
             }
             return stvencimientos;
         }
@@ -332,12 +350,15 @@ namespace AppLicitaciones
         private object getCeIso(List<VinculoCertificados> certificados)
         {
             string stcert = "";
-            foreach (VinculoCertificados vce in certificados)
+            if (certificados.Any())
             {
-                var cert = (from ce in CertificadoCalidad.GetCertificados()
-                            where ce.Id == vce.Nombre && ce.Tipo != "FDA"
-                            select ce.Nombre).FirstOrDefault();
-                stcert = stcert + cert + "/";
+                foreach (VinculoCertificados vce in certificados)
+                {
+                    var cert = (from ce in CertificadoCalidad.GetCertificados()
+                                where ce.Id == vce.Nombre && ce.Tipo != "FDA"
+                                select ce.Nombre).FirstOrDefault();
+                    stcert = stcert + cert + "/";
+                }
             }
             return stcert;
         }
@@ -345,12 +366,15 @@ namespace AppLicitaciones
         private object getCfsFdaVencimientos(List<VinculoCertificados> certificados)
         {
             string stvencimientos = "";
-            foreach (VinculoCertificados vce in certificados)
+            if (certificados.Any())
             {
-                var cert = (from ce in CertificadoCalidad.GetCertificados()
-                            where ce.Id == vce.Nombre && ce.Tipo == "FDA"
-                            select ce.Vencimiento).FirstOrDefault();
-                stvencimientos = stvencimientos + cert + "/";
+                foreach (VinculoCertificados vce in certificados)
+                {
+                    var cert = (from ce in CertificadoCalidad.GetCertificados()
+                                where ce.Id == vce.Nombre && ce.Tipo == "FDA"
+                                select ce.Vencimiento).FirstOrDefault();
+                    stvencimientos = stvencimientos + cert + "/";
+                }
             }
             return stvencimientos;
         }
@@ -358,25 +382,31 @@ namespace AppLicitaciones
         private object getCfsFda(List<VinculoCertificados> certificados)
         {
             string stcert = "";
-            foreach (VinculoCertificados vce in certificados)
+            if (certificados.Any())
             {
-                var cert = (from ce in CertificadoCalidad.GetCertificados()
-                            where ce.Id == vce.Nombre && ce.Tipo == "FDA"
-                           select ce.Nombre).FirstOrDefault();
-                stcert = stcert + cert + "/";
+                foreach (VinculoCertificados vce in certificados)
+                {
+                    var cert = (from ce in CertificadoCalidad.GetCertificados()
+                                where ce.Id == vce.Nombre && ce.Tipo == "FDA"
+                                select ce.Nombre).FirstOrDefault();
+                    stcert = stcert + cert + "/";
+                }
             }
             return stcert;
         }
 
         private object getRegPorcent(List<VinculoRegistros> registros)
-        {            
-            foreach (VinculoRegistros vre in registros)
+        {
+            if (registros.Any())
             {
-                var reg = (from re in RegistroSanitario.GetRegistros()
-                           where re.Id == vre.Nombre
-                           select re).First();
-                if (reg.Vencimiento > DateTime.Today.AddDays(-150))
-                    return 1;
+                foreach (VinculoRegistros vre in registros)
+                {
+                    var reg = (from re in RegistroSanitario.GetRegistros()
+                               where re.Id == vre.Nombre
+                               select re).First();
+                    if (reg.Vencimiento > DateTime.Today.AddDays(-150))
+                        return 1;
+                }
             }
             return 0;
         }
@@ -384,12 +414,15 @@ namespace AppLicitaciones
         private object getRegVencimientos(List<VinculoRegistros> registros)
         {
             string stvencimientos = "";
-            foreach (VinculoRegistros vre in registros)
+            if (registros.Any())
             {
-                var reg = (from re in RegistroSanitario.GetRegistros()
-                           where re.Id == vre.Nombre
-                           select re).First();
-                stvencimientos = stvencimientos + reg.Vencimiento + "/";
+                foreach (VinculoRegistros vre in registros)
+                {
+                    var reg = (from re in RegistroSanitario.GetRegistros()
+                               where re.Id == vre.Nombre
+                               select re).First();
+                    stvencimientos = stvencimientos + reg.Vencimiento + "/";
+                }
             }
             return stvencimientos;
         }
@@ -397,12 +430,15 @@ namespace AppLicitaciones
         private object getRegistros(List<VinculoRegistros> registros)
         {
             string stregistros = "";
-            foreach (VinculoRegistros vre in registros)
+            if (registros.Any())
             {
-                var reg = (from re in RegistroSanitario.GetRegistros()
-                            where re.Id == vre.Nombre
-                            select re).First();
-                stregistros = stregistros + reg.Nombre + "/";
+                foreach (VinculoRegistros vre in registros)
+                {
+                    var reg = (from re in RegistroSanitario.GetRegistros()
+                               where re.Id == vre.Nombre
+                               select re).First();
+                    stregistros = stregistros + reg.Nombre + "/";
+                }
             }
             return stregistros;
         }
@@ -414,25 +450,28 @@ namespace AppLicitaciones
             var vc = from v in CucopVinculos.GetVinculaciones()
                      where v.Id == vinc
                      select v;
-            foreach (VinculoRegistros vre in vc.Single().Registros)
+            if (vc.Any())
             {
-                var pais = (from re in RegistroSanitario.GetRegistros()
-                            where re.Id == vre.Nombre
-                            select re).First().Pais;
-                using (SqlConnection con = new SqlConnection(mc.con))
+                foreach (VinculoRegistros vre in vc.Single().Registros)
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand())
+                    var pais = (from re in RegistroSanitario.GetRegistros()
+                                where re.Id == vre.Nombre
+                                select re).First().Pais;
+                    using (SqlConnection con = new SqlConnection(mc.con))
                     {
-                        cmd.Connection = con;
-                        cmd.CommandText = "SELECT * FROM paises_origen WHERE id_pais = " + pais;
-                        using (SqlDataAdapter adapt = new SqlDataAdapter())
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand())
                         {
-                            adapt.SelectCommand = cmd;
-                            using (DataTable dt = new DataTable())
+                            cmd.Connection = con;
+                            cmd.CommandText = "SELECT * FROM paises_origen WHERE id_pais = " + pais;
+                            using (SqlDataAdapter adapt = new SqlDataAdapter())
                             {
-                                adapt.Fill(dt);
-                                tratados = tratados + dt.Rows[0]["tratado de comercio"].ToString() + "/";
+                                adapt.SelectCommand = cmd;
+                                using (DataTable dt = new DataTable())
+                                {
+                                    adapt.Fill(dt);
+                                    tratados = tratados + dt.Rows[0]["tratado de comercio"].ToString() + "/";
+                                }
                             }
                         }
                     }
@@ -447,25 +486,28 @@ namespace AppLicitaciones
             var vc = from v in CucopVinculos.GetVinculaciones()
                      where v.Id == vinc
                      select v;
-            foreach (VinculoRegistros vre in vc.Single().Registros)
+            if (vc.Any())
             {
-                var pais = (from re in RegistroSanitario.GetRegistros()
-                             where re.Id == vre.Nombre
-                             select re).First().Pais;
-                using (SqlConnection con = new SqlConnection(mc.con))
+                foreach (VinculoRegistros vre in vc.Single().Registros)
                 {
-                    con.Open();
-                    using (SqlCommand cmd = new SqlCommand())
+                    var pais = (from re in RegistroSanitario.GetRegistros()
+                                where re.Id == vre.Nombre
+                                select re).First().Pais;
+                    using (SqlConnection con = new SqlConnection(mc.con))
                     {
-                        cmd.Connection = con;
-                        cmd.CommandText = "SELECT * FROM paises_origen WHERE id_pais = " + pais;
-                        using (SqlDataAdapter adapt = new SqlDataAdapter())
+                        con.Open();
+                        using (SqlCommand cmd = new SqlCommand())
                         {
-                            adapt.SelectCommand = cmd;
-                            using (DataTable dt = new DataTable())
+                            cmd.Connection = con;
+                            cmd.CommandText = "SELECT * FROM paises_origen WHERE id_pais = " + pais;
+                            using (SqlDataAdapter adapt = new SqlDataAdapter())
                             {
-                                adapt.Fill(dt);
-                                paises = paises + dt.Rows[0]["nombre"].ToString() +"/";
+                                adapt.SelectCommand = cmd;
+                                using (DataTable dt = new DataTable())
+                                {
+                                    adapt.Fill(dt);
+                                    paises = paises + dt.Rows[0]["nombre"].ToString() + "/";
+                                }
                             }
                         }
                     }
@@ -479,13 +521,16 @@ namespace AppLicitaciones
             string marcas = "";
             var vc = from v in CucopVinculos.GetVinculaciones()
                        where v.Id == vinc select v;
-            foreach (VinculoRegistros vre in vc.Single().Registros)
+            if (vc.Any())
             {
-                var marca = (from re in RegistroSanitario.GetRegistros()
-                          where re.Id == vre.Nombre
-                          select re).First().Marca;
-                marcas = marcas + marca + "/";
-                
+                foreach (VinculoRegistros vre in vc.Single().Registros)
+                {
+                    var marca = (from re in RegistroSanitario.GetRegistros()
+                                 where re.Id == vre.Nombre
+                                 select re).First().Marca;
+                    marcas = marcas + marca + "/";
+
+                }
             }
             return marcas;
         }
@@ -511,11 +556,14 @@ namespace AppLicitaciones
             var reg = (from vc in CucopVinculos.GetVinculaciones().Where(x => x.Id == vinc)
                       from rg in vc.Registros
                       select rg).ToList();
-            foreach (VinculoRegistros vre in reg)
+            if (reg.Any())
             {
-                if (RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).Any())
+                foreach (VinculoRegistros vre in reg)
                 {
-                    fabricantes += RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).FirstOrDefault().Fabricante + "/";
+                    if (RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).Any())
+                    {
+                        fabricantes += RegistroSanitario.GetRegistros().Where(x => x.Id == vre.Nombre).FirstOrDefault().Fabricante + "/";
+                    }
                 }
             }
             return fabricantes;
@@ -555,7 +603,15 @@ namespace AppLicitaciones
                             }
                             else
                             {
-                                worksheet.Cell(cellRowIndex, cellColumnIndex).Value = dgvListado.Rows[i].Cells[j].Value.ToString();
+                                if (dgvListado.Rows[i].Cells[j].Value != null)
+                                {
+                                    worksheet.Cell(cellRowIndex, cellColumnIndex).Value = dgvListado.Rows[i].Cells[j].Value.ToString();
+                                }
+                                else
+                                {
+                                    worksheet.Cell(cellRowIndex, cellColumnIndex).Value = "";
+                                }
+                               
                             }
                             cellColumnIndex++;
                         }
@@ -577,6 +633,7 @@ namespace AppLicitaciones
                 catch (System.Exception ex)
                 {
                     MessageBox.Show(ex.ToString());
+                   
 
                 }
             } 

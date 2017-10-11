@@ -19,24 +19,30 @@ namespace AppLicitaciones
         public Licitacion_Tecnica()
         {
             InitializeComponent();
+            dgvProcedimientos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
+            dgvItems.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.EnableResizing;
             mc.DoubleBuffered(dgvItems, true);
             mc.DoubleBuffered(dgvProcedimientos, true);
         }
         public void MostrarProcedimientosPorPartida(int idPartida)
         {
-            this.idPartida = idPartida;
             dgvProcedimientos.Rows.Clear();
-            Procedimiento.GetProcedimientos();
-            foreach(Procedimiento p in Procedimiento.GetProcedimientosPorPartidas(idPartida))
+            this.idPartida = idPartida;
+            var proces = Procedimiento.GetProcedimientosPorPartidas(idPartida).ToList();
+            foreach (Procedimiento p in proces)
             {
-                dgvProcedimientos.Rows.Add(p.Id,p.Partida,p.Numero,p.Nombre);
+                dgvProcedimientos.Rows.Add(p.Id,p.Numero,p.Nombre);
             }
         }
 
         private void mostrarItemsPorProcedimiento(int idSub)
         {
-            dgvItems.Rows.Clear();            
-            foreach (ProceInfoAd i in Procedimiento.GetProcedimientos().Where(x => x.Id == idSub).Single().Infos)
+            dgvItems.Rows.Clear();
+            var infos =  (from pr in Procedimiento.GetProcedimientos()
+                         where pr.Id == idSub
+                         select pr.Infos).First();
+           
+            foreach (ProceInfoAd i in infos)
             {
                 DataGridViewTextBoxColumn col = new DataGridViewTextBoxColumn();
                 col.Name = i.Nombre + "Column";
@@ -50,16 +56,19 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
-                dgvItems.Rows.Add(i.Id,i.Procedimiento, i.Numero,i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);                                             
+                dgvItems.Rows.Add(i.Id, i.Numero,i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);                                             
             }
         }        
 
         private string getVinculaciones(int idItem)
         {
             string nombres = "";
-            if (Item.GetItems().Where(x => x.Id == idItem).Single().Vinculos.Any())
+            var vincs = (from it in Item.GetItems()
+                         where it.Id == idItem
+                         select it.Vinculos).First();
+            if (vincs.Any())
             {
-                foreach (CucopVinculos item in Item.GetItems().Where(x => x.Id == idItem).Single().Vinculos)
+                foreach (CucopVinculos item in vincs)
                 {
                     nombres = nombres +", "+ item.Nombre;
                 }
@@ -122,12 +131,12 @@ namespace AppLicitaciones
                 case "idItemColumn":
                     e.Value = e.RowIndex + 1;
                     break;
-                case "idSubParentColumn":
-                    e.Value = (from sb in Procedimiento.GetProcedimientosPorPartidas(idPartida)
-                               from it in sb.Items
-                               where it.Id == ((Int32)dgvItems.Rows[e.RowIndex].Cells["idItemColumn"].Value)
-                               select sb.Numero).FirstOrDefault();
-                    break;
+                //case "idSubParentColumn":
+                //    e.Value = (from sb in Procedimiento.GetProcedimientosPorPartidas(idPartida)
+                //               from it in sb.Items
+                //               where it.Id == ((Int32)dgvItems.Rows[e.RowIndex].Cells["idItemColumn"].Value)
+                //               select sb.Numero).FirstOrDefault();
+                //    break;
             }
         }
 
@@ -149,12 +158,12 @@ namespace AppLicitaciones
                 case "idSubColumn":
                     e.Value = e.RowIndex + 1;
                     break;
-                case "idPartParentColumn":
-                    e.Value = (from pt in Partida.GetPartidas()
-                              from sb in pt.Procedimientos
-                              where sb.Id == Convert.ToInt32(dgvProcedimientos.Rows[e.RowIndex].Cells["idSubColumn"].Value)
-                              select pt.Nombre).FirstOrDefault();
-                    break;
+                //case "idPartParentColumn":
+                //    e.Value = (from pt in Partida.GetPartidas()
+                //              from sb in pt.Procedimientos
+                //              where sb.Id == Convert.ToInt32(dgvProcedimientos.Rows[e.RowIndex].Cells["idSubColumn"].Value)
+                //              select pt.Nombre).FirstOrDefault();
+                //    break;
             }
         }
 
@@ -354,6 +363,19 @@ namespace AppLicitaciones
             
         }
 
+        private void btn_lista_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Solo se deberia usar esta herramienta si los items no tienen CCB, son de presentacion en pieza/1/pieza y no tienen datos de maximo y minimo especificos, seguir?,","Advertencia",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                Licitacion_items_lista form = new Licitacion_items_lista();
+                form.pasardatossubpar(idSub);
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    mostrarItemsPorProcedimiento(idSub);
+                }
+            }
+        }
+
         private void btn_proc_nuevo_Click(object sender, EventArgs e)
         {
             Licitacion_Procedimientos_Nuevo form = new Licitacion_Procedimientos_Nuevo();
@@ -369,7 +391,6 @@ namespace AppLicitaciones
         {
             if (e.RowIndex != -1)
             {
-                dgvItems.Rows.Clear();
                 idSub = Convert.ToInt32(dgvProcedimientos.Rows[e.RowIndex].Cells["idSubColumn"].Value);
                 mostrarItemsPorProcedimiento(idSub);
             }

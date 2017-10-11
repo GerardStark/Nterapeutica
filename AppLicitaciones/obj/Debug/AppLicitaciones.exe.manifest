@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="6628808">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="6671304">
       <assemblyIdentity name="AppLicitaciones" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>YF2vEfesT7G//RXnFtgjkik05hPdTIHdRP3kb8PpFyQ=</dsig:DigestValue>
+        <dsig:DigestValue>Y0zJFTHeE8Cmlvm8hgjhGustEESWqBUNQDvDbwSpcMU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LibLicitacion.dll" size="83968">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LibLicitacion.dll" size="83456">
       <assemblyIdentity name="LibLicitacion" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>5SQ1btTsXANX+WW7yVXOV16ykljguI0m+xE3e897uZ0=</dsig:DigestValue>
+        <dsig:DigestValue>EaH/0x83JAo1iRgm1kU2OGd7SL74RzY84+VUW5EibxE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -125,13 +125,13 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="AppLicitaciones.exe.config" size="568">
+  <file name="AppLicitaciones.exe.config" size="566">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>d8oxB7qnMxlJ6oNIg4+sDw+YriqDiNIlVkSVXK4fG6A=</dsig:DigestValue>
+      <dsig:DigestValue>gFUwXOxKlQxBmQd4kA+S6dux5IegSeTsRX4Z9ICO+R4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

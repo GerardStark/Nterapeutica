@@ -16,7 +16,7 @@ namespace LibLicitacion
 {
     public class MainConfig
     {
-        public string con = @"Data Source=192.168.1.89\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=licitaciones; ";  
+        public string con = @"Data Source=192.168.1.89\SQLEXPRESS;Initial Catalog=Licitaciones;Integrated Security=false; User Id=user; Password=sistemalic; ";  
         public bool ChecarTipoUsuario(int tipo_usuario)
         {
             if (tipo_usuario != 1)

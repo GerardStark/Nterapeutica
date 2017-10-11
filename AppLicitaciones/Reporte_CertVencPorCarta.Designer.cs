@@ -32,6 +32,7 @@
             this.tlvReg = new BrightIdeasSoftware.TreeListView();
             this.reqColumn = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.pnlDatos = new System.Windows.Forms.Panel();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_imprimir = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.radConc = new System.Windows.Forms.RadioButton();
@@ -68,6 +69,7 @@
             // pnlDatos
             // 
             this.pnlDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlDatos.Controls.Add(this.checkBox1);
             this.pnlDatos.Controls.Add(this.btn_imprimir);
             this.pnlDatos.Controls.Add(this.btnImprimir);
             this.pnlDatos.Controls.Add(this.radConc);
@@ -79,6 +81,17 @@
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(338, 611);
             this.pnlDatos.TabIndex = 4;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(12, 57);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(180, 20);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Todos los CE capturados";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // btn_imprimir
             // 
@@ -131,7 +144,7 @@
             // 
             this.cmbNumLicit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbNumLicit.FormattingEnabled = true;
-            this.cmbNumLicit.Location = new System.Drawing.Point(15, 86);
+            this.cmbNumLicit.Location = new System.Drawing.Point(15, 149);
             this.cmbNumLicit.Margin = new System.Windows.Forms.Padding(5);
             this.cmbNumLicit.Name = "cmbNumLicit";
             this.cmbNumLicit.Size = new System.Drawing.Size(315, 24);
@@ -141,7 +154,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 58);
+            this.label1.Location = new System.Drawing.Point(9, 121);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(74, 16);
@@ -155,7 +168,7 @@
             this.Controls.Add(this.tlvReg);
             this.Controls.Add(this.pnlDatos);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Reporte_CertVencPorCarta";
             this.Size = new System.Drawing.Size(1210, 621);
             this.Load += new System.EventHandler(this.Reporte_CertVencPorCarta_Load);
@@ -177,5 +190,6 @@
         private System.Windows.Forms.RadioButton radAct;
         private System.Windows.Forms.ComboBox cmbNumLicit;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
