@@ -90,7 +90,7 @@ namespace AppLicitaciones
                 "Contenedor",
                 "Minimo",
                 "Maximo",
-                "opcion",
+                "Opcion",
                 "Carta de Apoyo",
                 "RFC",
                 "Apoyo",
@@ -123,6 +123,7 @@ namespace AppLicitaciones
             {
                 DataGridViewColumn c = new DataGridViewColumn();
                 c.HeaderText = columnas[i];
+                c.Name = columnas[i] + "Column";
                 c.Width = 150;
                 c.CellTemplate = new DataGridViewTextBoxCell();
                 dgvListado.Columns.Add(c);
@@ -130,100 +131,188 @@ namespace AppLicitaciones
 
             //llena las filas
             var partidas = Partida.GetPartidasPorBase(idBases);
-            var procedimientos = partidas.SelectMany(x => x.Procedimientos);
-            var items = (from li in Licitacion.GetBases().Where(x => x.Id == idBases)
-                         from pa in li.Partidas
-                         from pr in pa.Procedimientos
+            var procedimientos = partidas.SelectMany(x => x.Procedimientos).ToList();
+            var items = (from pr in procedimientos
                          from it in pr.Items
                          select it).ToList();
-            for (int i = 0; i < items.Count; i++)
+            foreach (Partida pd in partidas)
             {
-                if (items[i].Vinculos.Any())
+                foreach (Procedimiento pt in pd.Procedimientos)
                 {
-                    foreach (CucopVinculos vinc in items[i].Vinculos)
+                    foreach (Item it in pt.Items)
                     {
-                        dgvListado.Rows.Add(
-                        i + 1,
-                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
-                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
-                        items[i].Ccb,
-                        items[i].Nombre,
-                        items[i].Unidad,
-                        items[i].Cantidad,
-                        items[i].Contenedor,
-                        items[i].Minimo,
-                        items[i].Maximo,
-                        vinc.Opcion.ToString(),
-                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
-                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
-                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
-                        Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
-                        getFabricantes(vinc.Id),
-                        getContactos(vinc.CartaApoyo),
-                        getMarcas(vinc.Id),
-                        getPaises(vinc.Id),
-                        getTratados(vinc.Id),
-                        vinc.Nombre,
-                        getRegistros(vinc.Registros),
-                        getRegVencimientos(vinc.Registros),
-                        getRegPorcent(vinc.Registros),
-                        getCfsFda(vinc.Certificados),
-                        getCfsFdaVencimientos(vinc.Certificados),
-                        getCeIso(vinc.Certificados),
-                        getCeIsoVencimientos(vinc.Certificados),
-                        getCertPorcent(vinc.Certificados),
-                        getCatNombres(vinc.Catalogos),
-                        getCatReferencias(vinc.Catalogos),
-                        getCatPaginas(vinc.Catalogos),
-                        getCatPaginasPdf(vinc.Catalogos),
-                        getCatPorcent(vinc.Catalogos),
-                        "",
-                        ""
-                        );
+                        if (it.Vinculos.Any())
+                        {
 
+                        }
                     }
                 }
-                else
-                {
-                    dgvListado.Rows.Add(
-                        i + 1,
-                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
-                        procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
-                        items[i].Ccb,
-                        items[i].Nombre,
-                        items[i].Unidad,
-                        items[i].Cantidad,
-                        items[i].Contenedor,
-                        items[i].Minimo,
-                        items[i].Maximo,
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "",
-                        "");
-                }
-            
             }
+            //for (int i = 0; i < items.Count; i++)
+            //{
+            //    if (items[i].Vinculos.Any())
+            //    {
+            //        var proce = procedimientos.Where(x => x.Id == items[i].Procedimiento).First();
+            //        dgvListado.Rows.Add(
+            //        "X",
+            //        proce.Nombre,
+            //        proce.Numero,
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        proce.Minimo,
+            //        proce.Maximo,
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X");//36
+            //        foreach (CucopVinculos vinc in items[i].Vinculos)
+            //        {
+            //            dgvListado.Rows.Add(
+            //            i + 1,
+            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + " " + procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
+            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
+            //            items[i].Ccb,
+            //            items[i].Nombre,
+            //            items[i].Unidad,
+            //            items[i].Cantidad,
+            //            items[i].Contenedor,
+            //            items[i].Minimo,
+            //            items[i].Maximo,
+            //            vinc.Opcion.ToString(),
+            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
+            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
+            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
+            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
+            //            getFabricantes(vinc.Id),
+            //            getContactos(vinc.CartaApoyo),
+            //            getMarcas(vinc.Id),
+            //            getPaises(vinc.Id),
+            //            getTratados(vinc.Id),
+            //            vinc.Nombre,
+            //            getRegistros(vinc.Registros),
+            //            getRegVencimientos(vinc.Registros),
+            //            getRegPorcent(vinc.Registros),
+            //            getCfsFda(vinc.Certificados),
+            //            getCfsFdaVencimientos(vinc.Certificados),
+            //            getCeIso(vinc.Certificados),
+            //            getCeIsoVencimientos(vinc.Certificados),
+            //            getCertPorcent(vinc.Certificados),
+            //            getCatNombres(vinc.Catalogos),
+            //            getCatReferencias(vinc.Catalogos),
+            //            getCatPaginas(vinc.Catalogos),
+            //            getCatPaginasPdf(vinc.Catalogos),
+            //            getCatPorcent(vinc.Catalogos),
+            //            "",
+            //            "");//36
+
+            //        }
+            //    }
+            //    else
+            //    {
+            //        var proce = procedimientos.Where(x => x.Id == items[i].Procedimiento).First();
+            //        dgvListado.Rows.Add(
+            //        "X",
+            //        proce.Nombre,
+            //        proce.Numero,
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        proce.Minimo,
+            //        proce.Maximo,
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X",
+            //        "X");//36
+
+            //        dgvListado.Rows.Add(
+            //            i + 1,
+            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
+            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
+            //            items[i].Ccb,
+            //            items[i].Nombre,
+            //            items[i].Unidad,
+            //            items[i].Cantidad,
+            //            items[i].Contenedor,
+            //            items[i].Minimo,
+            //            items[i].Maximo,
+            //            1,
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "",
+            //            "");
+            //    }
+            
+            //}
         }
 
         private object getPreguntas(CucopVinculos vinc)
@@ -587,8 +676,11 @@ namespace AppLicitaciones
                     int cellRowIndex = 1;
                     int cellColumnIndex = 1;
 
+                    //agregar encabezados bien sin que se coma la primera fila del listado
+                    //agregar las "X" AKA nombre del listado antes del inicio del mismo
+                    //agregar los 1 automaticamente si ya se va a generar
                     //Loop through each row and read value from each column. 
-                    for (int i = 0; i < dgvListado.Rows.Count - 1; i++)
+                    for (int i = 0; i < dgvListado.Rows.Count; i++)
                     {
                         for (int j = 0; j < dgvListado.Columns.Count; j++)
                         {
@@ -603,12 +695,15 @@ namespace AppLicitaciones
                             }
                             else
                             {
-                                if (dgvListado.Rows[i].Cells[j].Value != null)
+                                if (dgvListado.Rows[i-1].Cells[j].Value != null)
                                 {
-                                    worksheet.Cell(cellRowIndex, cellColumnIndex).Value = dgvListado.Rows[i].Cells[j].Value.ToString();
+                                    worksheet.Cell(cellRowIndex, cellColumnIndex).DataType = XLCellValues.Text;
+
+                                    worksheet.Cell(cellRowIndex, cellColumnIndex).SetValue<string>(Convert.ToString(dgvListado.Rows[i-1].Cells[j].Value));                                    
                                 }
                                 else
                                 {
+                                    worksheet.Cell(cellRowIndex, cellColumnIndex).DataType = XLCellValues.Text;
                                     worksheet.Cell(cellRowIndex, cellColumnIndex).Value = "";
                                 }
                                

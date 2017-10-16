@@ -13,6 +13,7 @@ namespace AppLicitaciones
     public partial class Licitacion_Items_Buscar : Form
     {
         public string filtro = "";
+        public int chkTodos = 0;
         public Licitacion_Items_Buscar()
         {
             InitializeComponent();
@@ -28,6 +29,11 @@ namespace AppLicitaciones
             this.filtro = txt_filtro.Text;
             this.DialogResult = DialogResult.OK;
             
+        }
+
+        private void btnTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            chkTodos = 1;
         }
     }
 }

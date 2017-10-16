@@ -31,7 +31,7 @@ namespace AppLicitaciones
             var proces = Procedimiento.GetProcedimientosPorPartidas(idPartida).ToList();
             foreach (Procedimiento p in proces)
             {
-                dgvProcedimientos.Rows.Add(p.Id,p.Numero,p.Nombre);
+                dgvProcedimientos.Rows.Add(p.Id,p.Numero,p.Nombre, p.Updated);
             }
         }
 
@@ -56,7 +56,7 @@ namespace AppLicitaciones
             foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
             {
                 var infoproce = Procedimiento.GetProcedimientos().Where(x => x.Id == i.Procedimiento).Single().Infos.ToList();
-                dgvItems.Rows.Add(i.Id, i.Numero,i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);                                             
+                dgvItems.Rows.Add(i.Id, i.Numero,i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);               
             }
         }        
 
@@ -119,7 +119,7 @@ namespace AppLicitaciones
                 DialogResult result = form.ShowDialog();
                 if (result == DialogResult.OK)
                 {
-                    mostrarItemsPorProcedimiento(idSub);
+                   
                 }
             }
         }
@@ -147,7 +147,7 @@ namespace AppLicitaciones
                 Cucop_Vincular_General cvg = new Cucop_Vincular_General();
                 cvg.mostrarvinculoscucop(idItem);
                 DialogResult result = cvg.ShowDialog();
-                mostrarItemsPorProcedimiento(idSub);
+                
             }
         }
 
@@ -341,14 +341,30 @@ namespace AppLicitaciones
             if (result == DialogResult.OK)
             {
                 dgvItems.Rows.Clear();
-                string filtro = form.filtro;               
-                foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
+                string filtro = form.filtro;
+                int todos = form.chkTodos;
+                if (todos == 1)
                 {
-                    if (i.Nombre.Contains(filtro))
+                    var items = Procedimiento.GetProcedimientosPorPartidas(idPartida).SelectMany(x => x.Items).ToList();
+                               
+                    foreach (Item i in items)
                     {
-                        dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, "", i.Updated);
-                    }                  
-                }               
+                        if (i.Nombre.Contains(filtro))
+                        {
+                            dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (Item i in Item.GetItemsPorProcedimiento(idSub))
+                    {
+                        if (i.Nombre.Contains(filtro))
+                        {
+                            dgvItems.Rows.Add(i.Id, i.Procedimiento, i.Unidad, i.Nombre, getVinculaciones(i.Id), i.Updated);
+                        }
+                    }
+                }
             }
         }
 

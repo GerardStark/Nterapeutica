@@ -19,7 +19,7 @@ namespace AppLicitaciones
         public Buscar_Cucops_Vinculacion()
         {
             InitializeComponent();
-            llenarListaCucops();
+           
             mc.DoubleBuffered(dgvCucops, true);
         }
 

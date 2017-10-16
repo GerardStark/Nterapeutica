@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="6671304">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="AppLicitaciones.exe" size="6667720">
       <assemblyIdentity name="AppLicitaciones" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Y0zJFTHeE8Cmlvm8hgjhGustEESWqBUNQDvDbwSpcMU=</dsig:DigestValue>
+        <dsig:DigestValue>XQ9UEqO4iZUtByIh2FVnvR89PATJd3kUXFUAq2NLo34=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -109,7 +109,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>EaH/0x83JAo1iRgm1kU2OGd7SL74RzY84+VUW5EibxE=</dsig:DigestValue>
+        <dsig:DigestValue>j2pDyaIXgY38aDXWFl0IS2DNLyHLN7J/ns6trb6Guzo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
