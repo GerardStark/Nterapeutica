@@ -104,7 +104,7 @@
             this.txt_nombre.Multiline = true;
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(357, 63);
-            this.txt_nombre.TabIndex = 34;
+            this.txt_nombre.TabIndex = 2;
             // 
             // label2
             // 
@@ -119,7 +119,7 @@
             this.txt_numero.Location = new System.Drawing.Point(164, 12);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(72, 22);
-            this.txt_numero.TabIndex = 36;
+            this.txt_numero.TabIndex = 1;
             // 
             // label3
             // 
@@ -135,7 +135,7 @@
             this.txt_max.Location = new System.Drawing.Point(164, 150);
             this.txt_max.Name = "txt_max";
             this.txt_max.Size = new System.Drawing.Size(121, 22);
-            this.txt_max.TabIndex = 69;
+            this.txt_max.TabIndex = 4;
             // 
             // label4
             // 
@@ -151,7 +151,7 @@
             this.txt_min.Location = new System.Drawing.Point(164, 122);
             this.txt_min.Name = "txt_min";
             this.txt_min.Size = new System.Drawing.Size(121, 22);
-            this.txt_min.TabIndex = 67;
+            this.txt_min.TabIndex = 3;
             // 
             // Licitacion_Procedimientos_Nuevo
             // 

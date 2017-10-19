@@ -33,22 +33,47 @@ namespace AppLicitaciones
                     using (SqlConnection con = new SqlConnection(mc.con))
                     {
                         con.Open();
-                        using (SqlCommand cmd = new SqlCommand())
+                        if (chkccb.Checked == true)
                         {
-                            cmd.Connection = con;
-                            cmd.CommandText = "licitacion_item_insert";
-                            cmd.CommandType = CommandType.StoredProcedure;
-                            cmd.Parameters.AddWithValue("@idSub", subpar.Id);
-                            cmd.Parameters.AddWithValue("@numero", i+1);
-                            cmd.Parameters.AddWithValue("@descripcion", items[i]);
-                            cmd.Parameters.AddWithValue("@unidad", "Pieza");
-                            cmd.Parameters.AddWithValue("@cantidad", 1);
-                            cmd.Parameters.AddWithValue("@contenedor", "Pieza");
-                            cmd.Parameters.AddWithValue("@max", subpar.Maximo);
-                            cmd.Parameters.AddWithValue("@min", subpar.Minimo);
-                            cmd.Parameters.AddWithValue("@ccb", "S.C.C/B");
-                            cmd.Parameters.AddWithValue("@updated", DateTime.Now);
-                            cmd.ExecuteNonQuery();
+                            using (SqlCommand cmd = new SqlCommand())
+                            {
+                                cmd.Connection = con;
+                                cmd.CommandText = "licitacion_item_insert";
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@idSub", subpar.Id);
+                                cmd.Parameters.AddWithValue("@numero", i + 1);
+                                cmd.Parameters.AddWithValue("@descripcion", items[i]);
+                                cmd.Parameters.AddWithValue("@unidad", "Pieza");
+                                cmd.Parameters.AddWithValue("@cantidad", 1);
+                                cmd.Parameters.AddWithValue("@contenedor", "Pieza");
+                                cmd.Parameters.AddWithValue("@max", subpar.Maximo);
+                                cmd.Parameters.AddWithValue("@min", subpar.Minimo);
+                                cmd.Parameters.AddWithValue("@ccb", "S.C.C/B");
+                                cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+                        else
+                        {
+                            List<string> ccbs = txtCcb.Text.Split(new[] { "\r\n" }, StringSplitOptions.None)
+                            .ToList();
+                            using (SqlCommand cmd = new SqlCommand())
+                            {
+                                cmd.Connection = con;
+                                cmd.CommandText = "licitacion_item_insert";
+                                cmd.CommandType = CommandType.StoredProcedure;
+                                cmd.Parameters.AddWithValue("@idSub", subpar.Id);
+                                cmd.Parameters.AddWithValue("@numero", i + 1);
+                                cmd.Parameters.AddWithValue("@descripcion", items[i]);
+                                cmd.Parameters.AddWithValue("@unidad", "Pieza");
+                                cmd.Parameters.AddWithValue("@cantidad", 1);
+                                cmd.Parameters.AddWithValue("@contenedor", "Pieza");
+                                cmd.Parameters.AddWithValue("@max", subpar.Maximo);
+                                cmd.Parameters.AddWithValue("@min", subpar.Minimo);
+                                cmd.Parameters.AddWithValue("@ccb", checarCCB(ccbs[i]) );
+                                cmd.Parameters.AddWithValue("@updated", DateTime.Now);
+                                cmd.ExecuteNonQuery();
+                            }
                         }
                     }
                 }
@@ -56,6 +81,13 @@ namespace AppLicitaciones
                 this.DialogResult = DialogResult.OK;
             
             }
+        }
+
+        private object checarCCB(string v)
+        {
+            if (v == "SCCB" || v == "SCBB" || v == "SC/CB" || v == "SC/BB")
+                return "S.C.C/B";
+            return v + "..";            
         }
 
         internal void pasardatossubpar(int idSub)

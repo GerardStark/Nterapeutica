@@ -43,6 +43,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnDoc = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPartidas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -187,11 +189,34 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Borrar";
             // 
+            // btnDoc
+            // 
+            this.btnDoc.BackgroundImage = global::AppLicitaciones.Iconos.android_folder;
+            this.btnDoc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDoc.Location = new System.Drawing.Point(744, 44);
+            this.btnDoc.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDoc.Name = "btnDoc";
+            this.btnDoc.Size = new System.Drawing.Size(50, 50);
+            this.btnDoc.TabIndex = 9;
+            this.btnDoc.UseVisualStyleBackColor = true;
+            this.btnDoc.Click += new System.EventHandler(this.btnDoc_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(741, 24);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(60, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Ver Doc.";
+            // 
             // Licitacion_Partidas_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(813, 534);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnDoc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -228,5 +253,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idBasesColumn;
+        private System.Windows.Forms.Button btnDoc;
+        private System.Windows.Forms.Label label5;
     }
 }

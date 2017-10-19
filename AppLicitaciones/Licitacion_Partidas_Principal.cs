@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -107,6 +108,25 @@ namespace AppLicitaciones
             else
             {
                 MessageBox.Show("Selecciona una partida");
+            }
+        }
+
+        private void btnDoc_Click(object sender, EventArgs e)
+        {
+            var li = Licitacion.GetBases().Where(x => x.Id == idBases).First();
+            string newpath = Path.GetDirectoryName(Application.ExecutablePath) + @"\DocumentosNT\Licitaciones\";
+            string pathanexos = newpath + "\\" + idBases + "\\" + li.NombreArchivo;
+
+            if (li.NombreArchivo != "(Vacio)")
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(pathanexos);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

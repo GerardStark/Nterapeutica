@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.pnlDatos = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbPart = new System.Windows.Forms.ComboBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.radConc = new System.Windows.Forms.RadioButton();
             this.radAct = new System.Windows.Forms.RadioButton();
             this.cmbNumLicit = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvListado = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnlDatos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListado)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // 
             this.pnlDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlDatos.Controls.Add(this.label2);
-            this.pnlDatos.Controls.Add(this.comboBox1);
+            this.pnlDatos.Controls.Add(this.cmbPart);
             this.pnlDatos.Controls.Add(this.btnImprimir);
             this.pnlDatos.Controls.Add(this.radConc);
             this.pnlDatos.Controls.Add(this.radAct);
@@ -55,6 +55,25 @@
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(254, 611);
             this.pnlDatos.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(5, 92);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(61, 16);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "# Partida";
+            // 
+            // cmbPart
+            // 
+            this.cmbPart.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPart.FormattingEnabled = true;
+            this.cmbPart.Location = new System.Drawing.Point(7, 111);
+            this.cmbPart.Name = "cmbPart";
+            this.cmbPart.Size = new System.Drawing.Size(242, 24);
+            this.cmbPart.TabIndex = 7;
+            this.cmbPart.SelectedIndexChanged += new System.EventHandler(this.cmbPart_SelectedIndexChanged);
             // 
             // btnImprimir
             // 
@@ -124,24 +143,6 @@
             this.dgvListado.Size = new System.Drawing.Size(948, 611);
             this.dgvListado.TabIndex = 2;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 186);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(242, 24);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 167);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 16);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "# Partida";
-            // 
             // Reporte_ListadoExcel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -170,6 +171,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvListado;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPart;
     }
 }

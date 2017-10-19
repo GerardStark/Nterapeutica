@@ -21,7 +21,7 @@ namespace AppLicitaciones
     public partial class Reporte_ListadoExcel : UserControl
     {
         MainConfig mc = new MainConfig();
-        int idLicit = 0;
+        int idLicit = 0, idSub = 0;
         public Reporte_ListadoExcel()
         {
             InitializeComponent();
@@ -70,20 +70,36 @@ namespace AppLicitaciones
 
         private void cmbNumLicit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dgvListado.Rows.Clear();
+            
             int idlicit = Convert.ToInt32((cmbNumLicit.SelectedItem as ComboboxItem).Value);
-            mostrarTablaListado(idlicit);
+            //mostrarTablaListado(idlicit);
+            mostrarPartidas(idlicit);
+        }
+
+        private void mostrarPartidas(int idlicit)
+        {
+            this.idLicit = idlicit;
+            foreach (Partida pt in Partida.GetPartidasPorBase(idlicit))
+            {
+                ComboboxItem cmbit = new ComboboxItem();
+                cmbit.Text = pt.Nombre;
+                cmbit.Value = pt.Id;
+                cmbPart.Items.Add(cmbit);
+                cmbPart.SelectedIndex = 0;
+            }
         }
 
         public void mostrarTablaListado(int idBases)
         {
             //crear el listado de la licitacion
-            this.idLicit = idBases;
+
+
+            //llena las filas
+            DataTable dt = new DataTable();
             string[] columnas = new string[] {
-                "Consecutivo",
                 "Procedimiento",
                 "# Item",
-                "Clave CCB",                
+                "Clave CCB",
                 "Descripcion",
                 "Presentacion",
                 "Cantidad",
@@ -100,7 +116,7 @@ namespace AppLicitaciones
                 "Marca",
                 "Pais",
                 "Tratado",
-                "Nombre del Producto",                
+                "Nombre del Producto",
                 "Registro",
                 "Vencimiento Registro",
                 "% Registros",
@@ -117,202 +133,141 @@ namespace AppLicitaciones
                 "Observaciones",
                 "Pregunta de JA"
 ,            };
-            
+
             //agrega las columnas
             for (int i = 0; i < columnas.Length; i++)
             {
-                DataGridViewColumn c = new DataGridViewColumn();
-                c.HeaderText = columnas[i];
-                c.Name = columnas[i] + "Column";
-                c.Width = 150;
-                c.CellTemplate = new DataGridViewTextBoxCell();
-                dgvListado.Columns.Add(c);
+                dt.Columns.Add(columnas[i], typeof(string));
             }
-
-            //llena las filas
-            var partidas = Partida.GetPartidasPorBase(idBases);
-            var procedimientos = partidas.SelectMany(x => x.Procedimientos).ToList();
-            var items = (from pr in procedimientos
-                         from it in pr.Items
-                         select it).ToList();
-            foreach (Partida pd in partidas)
+            if (Partida.GetPartidas().Where(x => x.Id == idBases).Any())
             {
-                foreach (Procedimiento pt in pd.Procedimientos)
+                var partida = Partida.GetPartidas().Where(x => x.Id == idBases).First();
+                foreach (Procedimiento pt in partida.Procedimientos)
                 {
+                    dt.Rows.Add(
+                    pt.Nombre,
+                    pt.Numero,
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    pt.Minimo,
+                    pt.Maximo,
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X",
+                    "X");//36
+
                     foreach (Item it in pt.Items)
                     {
                         if (it.Vinculos.Any())
                         {
-
+                            foreach (CucopVinculos vinc in it.Vinculos)
+                            {
+                                dt.Rows.Add(
+                                    pt.Nombre,
+                                    pt.Numero + "." + it.Numero,
+                                    it.Ccb,
+                                    it.Nombre,
+                                    it.Unidad,
+                                    it.Cantidad,
+                                    it.Contenedor,
+                                    it.Minimo,
+                                    it.Maximo,
+                                    vinc.Opcion.ToString(),
+                                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
+                                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
+                                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
+                                    Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
+                                    getFabricantes(vinc.Id),
+                                    getContactos(vinc.CartaApoyo),
+                                    getMarcas(vinc.Id),
+                                    getPaises(vinc.Id),
+                                    getTratados(vinc.Id),
+                                    vinc.Nombre,
+                                    getRegistros(vinc.Registros),
+                                    getRegVencimientos(vinc.Registros),
+                                    getRegPorcent(vinc.Registros),
+                                    getCfsFda(vinc.Certificados),
+                                    getCfsFdaVencimientos(vinc.Certificados),
+                                    getCeIso(vinc.Certificados),
+                                    getCeIsoVencimientos(vinc.Certificados),
+                                    getCertPorcent(vinc.Certificados),
+                                    getCatNombres(vinc.Catalogos),
+                                    getCatReferencias(vinc.Catalogos),
+                                    getCatPaginas(vinc.Catalogos),
+                                    getCatPaginasPdf(vinc.Catalogos),
+                                    getCatPorcent(vinc.Catalogos),
+                                    "",
+                                    "");//36
+                            }
+                        }
+                        else
+                        {
+                            dt.Rows.Add(
+                            pt.Nombre,
+                            pt.Numero + "." + it.Numero,
+                            it.Ccb,
+                            it.Nombre,
+                            it.Unidad,
+                            it.Cantidad,
+                            it.Contenedor,
+                            it.Minimo,
+                            it.Maximo,
+                            1,
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "");
                         }
                     }
                 }
             }
-            //for (int i = 0; i < items.Count; i++)
-            //{
-            //    if (items[i].Vinculos.Any())
-            //    {
-            //        var proce = procedimientos.Where(x => x.Id == items[i].Procedimiento).First();
-            //        dgvListado.Rows.Add(
-            //        "X",
-            //        proce.Nombre,
-            //        proce.Numero,
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        proce.Minimo,
-            //        proce.Maximo,
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X");//36
-            //        foreach (CucopVinculos vinc in items[i].Vinculos)
-            //        {
-            //            dgvListado.Rows.Add(
-            //            i + 1,
-            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + " " + procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
-            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
-            //            items[i].Ccb,
-            //            items[i].Nombre,
-            //            items[i].Unidad,
-            //            items[i].Cantidad,
-            //            items[i].Contenedor,
-            //            items[i].Minimo,
-            //            items[i].Maximo,
-            //            vinc.Opcion.ToString(),
-            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Nombre,
-            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().RFC,
-            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Apoyo,
-            //            Carta.GetCartas().Where(x => x.Id == vinc.CartaApoyo).FirstOrDefault().Mayorista,
-            //            getFabricantes(vinc.Id),
-            //            getContactos(vinc.CartaApoyo),
-            //            getMarcas(vinc.Id),
-            //            getPaises(vinc.Id),
-            //            getTratados(vinc.Id),
-            //            vinc.Nombre,
-            //            getRegistros(vinc.Registros),
-            //            getRegVencimientos(vinc.Registros),
-            //            getRegPorcent(vinc.Registros),
-            //            getCfsFda(vinc.Certificados),
-            //            getCfsFdaVencimientos(vinc.Certificados),
-            //            getCeIso(vinc.Certificados),
-            //            getCeIsoVencimientos(vinc.Certificados),
-            //            getCertPorcent(vinc.Certificados),
-            //            getCatNombres(vinc.Catalogos),
-            //            getCatReferencias(vinc.Catalogos),
-            //            getCatPaginas(vinc.Catalogos),
-            //            getCatPaginasPdf(vinc.Catalogos),
-            //            getCatPorcent(vinc.Catalogos),
-            //            "",
-            //            "");//36
-
-            //        }
-            //    }
-            //    else
-            //    {
-            //        var proce = procedimientos.Where(x => x.Id == items[i].Procedimiento).First();
-            //        dgvListado.Rows.Add(
-            //        "X",
-            //        proce.Nombre,
-            //        proce.Numero,
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        proce.Minimo,
-            //        proce.Maximo,
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X",
-            //        "X");//36
-
-            //        dgvListado.Rows.Add(
-            //            i + 1,
-            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Nombre,
-            //            procedimientos.Where(x => x.Id == items[i].Procedimiento).FirstOrDefault().Numero + "." + items[i].Numero,
-            //            items[i].Ccb,
-            //            items[i].Nombre,
-            //            items[i].Unidad,
-            //            items[i].Cantidad,
-            //            items[i].Contenedor,
-            //            items[i].Minimo,
-            //            items[i].Maximo,
-            //            1,
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "",
-            //            "");
-            //    }
-            
-            //}
+            dgvListado.DataSource = dt;
         }
 
         private object getPreguntas(CucopVinculos vinc)
@@ -666,6 +621,9 @@ namespace AppLicitaciones
                 var numLicit = (from bs in Licitacion.GetBases()
                                where bs.Id == idLicit
                                select bs.NumeroLicitacion).FirstOrDefault();
+                var ptnom = (from pt in Partida.GetPartidas()
+                             where pt.Id == idSub
+                             select pt.Nombre).FirstOrDefault();
                 var workbook = new XLWorkbook();
                 var worksheet = workbook.Worksheets.Add(numLicit);
 
@@ -721,7 +679,7 @@ namespace AppLicitaciones
                         worksheet.Rows().AdjustToContents();
                         worksheet.Columns().Width = 15;
                         worksheet.Style.Alignment.WrapText = true;
-                        workbook.SaveAs(svg.SelectedPath + @"\"+ numLicit + ".xlsx");
+                        workbook.SaveAs(svg.SelectedPath + @"\"+ numLicit +" "+ ptnom + ".xlsx");
                         MessageBox.Show("Export Successful");
                     }
                 }
@@ -732,6 +690,14 @@ namespace AppLicitaciones
 
                 }
             } 
+        }
+
+        private void cmbPart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dgvListado.Rows.Clear();
+            int idpartida = ((Int32)(cmbPart.SelectedItem as ComboboxItem).Value);
+            this.idSub = idpartida;
+            mostrarTablaListado(idpartida);
         }
     }    
 }

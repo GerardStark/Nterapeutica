@@ -52,14 +52,17 @@ namespace AppLicitaciones
 
         private void dgvCucops_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
-            Licitacion_Item_Visualizar form = new Licitacion_Item_Visualizar();
-            form.mostrarinfoItem(idCucop);
-            DialogResult result = form.ShowDialog();
-            if (result == DialogResult.OK)
+            if (e.RowIndex != -1)
             {
-                this.idCucop = form.idItem;
-                this.DialogResult = DialogResult.OK;
+                Int32 idCucop = (Int32)dgvCucops.Rows[e.RowIndex].Cells["idColumn"].Value;
+                Licitacion_Item_Visualizar form = new Licitacion_Item_Visualizar();
+                form.mostrarinfoItem(idCucop);
+                DialogResult result = form.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    this.idCucop = form.idItem;
+                    this.DialogResult = DialogResult.OK;
+                }
             }
         }
 

@@ -115,7 +115,7 @@
             this.cmb_pais.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmb_pais.Name = "cmb_pais";
             this.cmb_pais.Size = new System.Drawing.Size(256, 24);
-            this.cmb_pais.TabIndex = 130;
+            this.cmb_pais.TabIndex = 12;
             this.cmb_pais.ValueMember = "id_pais";
             // 
             // paisesorigenBindingSource
@@ -134,7 +134,7 @@
             this.txt_rfc.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_rfc.Name = "txt_rfc";
             this.txt_rfc.Size = new System.Drawing.Size(258, 22);
-            this.txt_rfc.TabIndex = 109;
+            this.txt_rfc.TabIndex = 7;
             // 
             // label9
             // 
@@ -152,7 +152,7 @@
             this.rad_prorroga.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rad_prorroga.Name = "rad_prorroga";
             this.rad_prorroga.Size = new System.Drawing.Size(79, 20);
-            this.rad_prorroga.TabIndex = 122;
+            this.rad_prorroga.TabIndex = 3;
             this.rad_prorroga.TabStop = true;
             this.rad_prorroga.Text = "Prórroga";
             this.rad_prorroga.UseVisualStyleBackColor = true;
@@ -164,7 +164,7 @@
             this.rad_modificacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rad_modificacion.Name = "rad_modificacion";
             this.rad_modificacion.Size = new System.Drawing.Size(102, 20);
-            this.rad_modificacion.TabIndex = 121;
+            this.rad_modificacion.TabIndex = 2;
             this.rad_modificacion.TabStop = true;
             this.rad_modificacion.Text = "Modificación";
             this.rad_modificacion.UseVisualStyleBackColor = true;
@@ -176,7 +176,7 @@
             this.rad_registro.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rad_registro.Name = "rad_registro";
             this.rad_registro.Size = new System.Drawing.Size(77, 20);
-            this.rad_registro.TabIndex = 119;
+            this.rad_registro.TabIndex = 1;
             this.rad_registro.TabStop = true;
             this.rad_registro.Text = "Registro";
             this.rad_registro.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@
             this.date_vencimiento.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_vencimiento.Name = "date_vencimiento";
             this.date_vencimiento.Size = new System.Drawing.Size(256, 22);
-            this.date_vencimiento.TabIndex = 125;
+            this.date_vencimiento.TabIndex = 14;
             // 
             // date_emision
             // 
@@ -213,7 +213,7 @@
             this.date_emision.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.date_emision.Name = "date_emision";
             this.date_emision.Size = new System.Drawing.Size(256, 22);
-            this.date_emision.TabIndex = 124;
+            this.date_emision.TabIndex = 13;
             // 
             // txt_generica
             // 
@@ -222,7 +222,7 @@
             this.txt_generica.Multiline = true;
             this.txt_generica.Name = "txt_generica";
             this.txt_generica.Size = new System.Drawing.Size(257, 89);
-            this.txt_generica.TabIndex = 113;
+            this.txt_generica.TabIndex = 9;
             // 
             // btn_archivo
             // 
@@ -230,7 +230,7 @@
             this.btn_archivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_archivo.Name = "btn_archivo";
             this.btn_archivo.Size = new System.Drawing.Size(109, 29);
-            this.btn_archivo.TabIndex = 126;
+            this.btn_archivo.TabIndex = 15;
             this.btn_archivo.Text = "Buscar";
             this.btn_archivo.UseVisualStyleBackColor = true;
             this.btn_archivo.Click += new System.EventHandler(this.btn_archivo_Click);
@@ -241,7 +241,7 @@
             this.txt_marca.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_marca.Name = "txt_marca";
             this.txt_marca.Size = new System.Drawing.Size(256, 22);
-            this.txt_marca.TabIndex = 117;
+            this.txt_marca.TabIndex = 11;
             // 
             // txt_fabricante
             // 
@@ -249,7 +249,7 @@
             this.txt_fabricante.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_fabricante.Name = "txt_fabricante";
             this.txt_fabricante.Size = new System.Drawing.Size(256, 22);
-            this.txt_fabricante.TabIndex = 115;
+            this.txt_fabricante.TabIndex = 10;
             // 
             // txt_distintiva
             // 
@@ -258,7 +258,7 @@
             this.txt_distintiva.Multiline = true;
             this.txt_distintiva.Name = "txt_distintiva";
             this.txt_distintiva.Size = new System.Drawing.Size(258, 89);
-            this.txt_distintiva.TabIndex = 112;
+            this.txt_distintiva.TabIndex = 8;
             // 
             // txt_titular
             // 
@@ -266,7 +266,7 @@
             this.txt_titular.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_titular.Name = "txt_titular";
             this.txt_titular.Size = new System.Drawing.Size(258, 22);
-            this.txt_titular.TabIndex = 108;
+            this.txt_titular.TabIndex = 6;
             // 
             // txt_solicitud
             // 
@@ -274,7 +274,7 @@
             this.txt_solicitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_solicitud.Name = "txt_solicitud";
             this.txt_solicitud.Size = new System.Drawing.Size(258, 22);
-            this.txt_solicitud.TabIndex = 106;
+            this.txt_solicitud.TabIndex = 5;
             // 
             // txt_numero
             // 
@@ -282,7 +282,7 @@
             this.txt_numero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_numero.Name = "txt_numero";
             this.txt_numero.Size = new System.Drawing.Size(257, 22);
-            this.txt_numero.TabIndex = 103;
+            this.txt_numero.TabIndex = 4;
             // 
             // label12
             // 
@@ -424,7 +424,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tt_reg_editar);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Registros_Editar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Editar Registro Sanitario";
